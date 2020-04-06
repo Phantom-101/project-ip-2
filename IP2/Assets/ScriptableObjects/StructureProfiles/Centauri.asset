@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a3313b8eb137c40ae8788739c979c9, type: 3}
+  m_Name: Centauri
+  m_EditorClassIdentifier: 
+  hull: 15
+  armor: 30
+  shield: 85
+  capacitance: 100
+  generation: 5
+  speed: 60
+  turnSpeed: 30
+  sensorRange: 5
+  inventorySize: 5
+  maxMods: 5
+  maxTurrets: 3
+  turretLocations:
+  - {x: 0, y: 0, z: 8}
+  - {x: 4, y: 0, z: 6}
+  - {x: -4, y: 0, z: 6}
+  maxBays: 5
+  maxRigs: 5
+  signature: {fileID: 2800000, guid: 74a47010841ac814d96ad9eb65d37fa7, type: 3}
