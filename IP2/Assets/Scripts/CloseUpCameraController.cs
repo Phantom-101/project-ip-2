@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CloseUpCameraController : MonoBehaviour
 {
-    public float currentZoom = 60.0f;
-    public float targetZoom = 60.0f;
+    public float currentZoom = 1.0f;
+    public float targetZoom = 1.0f;
     public float zoomInterpolation = 0.0f;
 
-    float offset = -50.0f;
+    float offset = -1.0f;
     Vector3 desiredPosition;
     public GameObject target;
 
@@ -24,7 +24,7 @@ public class CloseUpCameraController : MonoBehaviour
     void Update()
     {
         if(target != null) {
-            desiredPosition = target.transform.position + target.transform.up * 15.0f + target.transform.forward * offset;
+            desiredPosition = target.transform.position + target.transform.up * 0.15f + target.transform.forward * offset;
             transform.position = Vector3.Slerp(transform.position, desiredPosition, Time.deltaTime);
             transform.LookAt(target.transform.position, transform.up);
             ChangeZoom();
@@ -37,7 +37,7 @@ public class CloseUpCameraController : MonoBehaviour
         if (input != 0.0f)
         {
             zoomInterpolation = 0.0f;
-            targetZoom = Mathf.Clamp(currentZoom - input * 250.0f, 25.0f, 250.0f);
+            targetZoom = Mathf.Clamp(currentZoom - input * 0.25f, 0.25f, 2.5f);
         }
         if (zoomInterpolation < 1.0f) zoomInterpolation += 0.5f * Time.deltaTime;
         else if (zoomInterpolation > 1.0f) zoomInterpolation = 1.0f;

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New StructureProfile", menuName = "ScriptableObjects/StructureProfile")]
 public class StructureProfile : ScriptableObject
 {
+    public Mesh mesh;
     public float hull;
     public float armor;
     public float shield;

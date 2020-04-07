@@ -12,29 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a3313b8eb137c40ae8788739c979c9, type: 3}
   m_Name: Ravager
   m_EditorClassIdentifier: 
+  mesh: {fileID: 5699855876839754550, guid: f784204332889194db2582a62608349a, type: 3}
   hull: 300
   armor: 800
   shield: 3000
   capacitance: 700
   generation: 50
-  speed: 30
-  turnSpeed: 2.5
+  speed: 0.025
+  turnSpeed: 4
   sensorRange: 5
   inventorySize: 5
   maxMods: 5
   maxTurrets: 11
   turretLocations:
-  - {x: 0, y: 2, z: 125}
-  - {x: 0, y: 13, z: 60}
-  - {x: 14, y: 13, z: 35}
-  - {x: -14, y: 13, z: 35}
-  - {x: 16.5, y: 13, z: 15}
-  - {x: -16.5, y: 13, z: 15}
-  - {x: 16.5, y: 13, z: -13}
-  - {x: -16.5, y: 13, z: -13}
-  - {x: 0, y: 16.5, z: -36}
-  - {x: 0, y: 19, z: -2}
-  - {x: 0, y: 2, z: -88}
+  - {x: 0, y: 0.0025, z: 0.15625}
+  - {x: 0, y: 0.01625, z: 0.075}
+  - {x: 0.0175, y: 0.01625, z: 0.04375}
+  - {x: -0.0175, y: 0.01625, z: 0.04375}
+  - {x: 0.020625, y: 0.01625, z: 0.01875}
+  - {x: -0.020625, y: 0.01625, z: 0.01875}
+  - {x: 0.020625, y: 0.01625, z: -0.01625}
+  - {x: -0.020625, y: 0.01625, z: -0.01625}
+  - {x: 0, y: 0.020625, z: -0.045}
+  - {x: 0, y: 0.002375, z: -0.0025}
+  - {x: 0, y: 0.0025, z: -0.11}
   maxBays: 5
   maxRigs: 5
   signature: {fileID: 2800000, guid: fe1a0afa962a68849bdf9e1434a8fb3b, type: 3}

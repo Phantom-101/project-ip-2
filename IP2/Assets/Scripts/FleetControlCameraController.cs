@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FleetControlCameraController : MonoBehaviour
 {
-    public float currentZoom = 60.0f;
-    public float targetZoom = 60.0f;
+    public float currentZoom = 1.0f;
+    public float targetZoom = 1.0f;
     public float zoomInterpolation = 0.0f;
 
-    float offset = -50.0f;
+    float offset = -1.0f;
     Vector3 desiredPosition;
     public GameObject target;
 
@@ -45,7 +45,7 @@ public class FleetControlCameraController : MonoBehaviour
         if(input != 0.0f)
         {
             zoomInterpolation = 0.0f;
-            targetZoom = Mathf.Clamp(currentZoom - input * 1000.0f, 25.0f, 5000.0f);
+            targetZoom = Mathf.Clamp(currentZoom - input * 1.0f, 0.25f, 50.0f);
         }
         if (zoomInterpolation < 1.0f) zoomInterpolation += 0.5f * Time.deltaTime;
         else if (zoomInterpolation > 1.0f) zoomInterpolation = 1.0f;

@@ -25,8 +25,8 @@ MonoBehaviour:
   burstInterval: 0.05
   repeating: 0
   damageMultiplier: 0.5
-  optimalRange: 4000
-  falloffRange: 5500
+  optimalRange: 8
+  falloffRange: 11
   accepted:
   - {fileID: 11400000, guid: 6ed76f481ca009942ab61c46fb0f6272, type: 2}
   showLoadedAmmoIcon: 1
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  LROWidthMultiplier: 5
+  LROWidthMultiplier: 0.05
   useWidthMultiplier: 0
   LROStartWidth: 0
   LROEndWidth: 0

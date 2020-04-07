@@ -25,17 +25,17 @@ public class StructureMovementManager : MonoBehaviour
 
     void CalculateTargets() {
         if(translationPercentage.x > 1.0f) translationPercentage.x = 1.0f;
-        targetTranslation.x = ssm.GetStat("structure current speed") * translationPercentage.x;
+        targetTranslation.x = ssm.GetStat("structure speed") * translationPercentage.x;
         if(translationPercentage.y > 1.0f) translationPercentage.y = 1.0f;
-        targetTranslation.y = ssm.GetStat("structure current speed") * translationPercentage.y;
+        targetTranslation.y = ssm.GetStat("structure speed") * translationPercentage.y;
         if(translationPercentage.z > 1.0f) translationPercentage.z = 1.0f;
-        targetTranslation.z = ssm.GetStat("structure current speed") * translationPercentage.z;
+        targetTranslation.z = ssm.GetStat("structure speed") * translationPercentage.z;
         if(rotationPercentage.x > 1.0f) rotationPercentage.x = 1.0f;
-        targetRotation.x = ssm.GetStat("structure current turnSpeed") * rotationPercentage.x;
+        targetRotation.x = ssm.GetStat("structure turn speed") * rotationPercentage.x;
         if(rotationPercentage.y > 1.0f) rotationPercentage.y = 1.0f;
-        targetRotation.y = ssm.GetStat("structure current turnSpeed") * rotationPercentage.y;
+        targetRotation.y = ssm.GetStat("structure turn speed") * rotationPercentage.y;
         if(rotationPercentage.z > 1.0f) rotationPercentage.z = 1.0f;
-        targetRotation.z = ssm.GetStat("structure current turnSpeed") * rotationPercentage.z;
+        targetRotation.z = ssm.GetStat("structure turn speed") * rotationPercentage.z;
     }
 
     void InterpolateCurrents() {

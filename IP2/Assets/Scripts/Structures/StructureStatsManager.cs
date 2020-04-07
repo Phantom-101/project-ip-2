@@ -11,41 +11,37 @@ public class StructureStatsManager : MonoBehaviour
 
     StructuresManager sm;
 
-    void Start() {
+    void Awake() {
         InitializeStats();
     }
 
     void Update() {
-        if (GetStat("structure current hull") <= 0.0f) sm.Destroyed(this);
+        if (GetStat("structure hull") <= 0.0f) sm.Destroyed(this);
     }
 
     void InitializeStats() {
         sm = GameObject.FindObjectOfType<StructuresManager>();
-        // Max structure stats
-        stats.Add("structure max hull", new StructureStat(profile.hull));
-        stats.Add("structure max armor", new StructureStat(profile.armor));
-        stats.Add("structure max shield", new StructureStat(profile.shield));
-        stats.Add("structure max capacitance", new StructureStat(profile.capacitance));
-        stats.Add("structure max generation", new StructureStat(profile.generation));
-        stats.Add("structure max speed", new StructureStat(profile.speed));
-        stats.Add("structure max turnSpeed", new StructureStat(profile.turnSpeed));
-        stats.Add("structure max sensorRange", new StructureStat(profile.sensorRange));
-        // Current structure stats
-        stats.Add("structure current hull", new StructureStat(profile.hull));
-        stats.Add("structure current armor", new StructureStat(profile.armor));
-        stats.Add("structure current shield", new StructureStat(profile.shield));
-        stats.Add("structure current capacitance", new StructureStat(profile.capacitance));
-        stats.Add("structure current generation", new StructureStat(profile.generation));
-        stats.Add("structure current speed", new StructureStat(profile.speed));
-        stats.Add("structure current turnSpeed", new StructureStat(profile.turnSpeed));
-        stats.Add("structure current sensorRange", new StructureStat(profile.sensorRange));
-        // Resistance
-        stats.Add("structure current hull resistance", new StructureStat(0.0f));
-        stats.Add("structure current armor resistance", new StructureStat(0.0f));
-        stats.Add("structure current shield resistance", new StructureStat(0.0f));
+        // Structure stats
+        stats.Add("structure hull max", new StructureStat(profile.hull));
+        stats.Add("structure armor max", new StructureStat(profile.armor));
+        stats.Add("structure shield max", new StructureStat(profile.shield));
+        stats.Add("structure hull", new StructureStat(profile.hull));
+        stats.Add("structure armor", new StructureStat(profile.armor));
+        stats.Add("structure shield", new StructureStat(profile.shield));
+        stats.Add("structure capacitance", new StructureStat(profile.capacitance));
+        stats.Add("structure generation", new StructureStat(profile.generation));
+        stats.Add("structure speed", new StructureStat(profile.speed));
+        stats.Add("structure turn speed", new StructureStat(profile.turnSpeed));
+        stats.Add("structure sensor range", new StructureStat(profile.sensorRange));
+        stats.Add("structure sensor strength", new StructureStat(1.0f));
+        stats.Add("structure signature strength", new StructureStat(1.0f));
+        stats.Add("structure cargo hold size", new StructureStat(1.0f));
+        // Resistances
+        stats.Add("structure hull resistance", new StructureStat(0.0f));
+        stats.Add("structure armor resistance", new StructureStat(0.0f));
+        stats.Add("structure shield resistance", new StructureStat(0.0f));
         // Multipliers
-        stats.Add("structure turret damage multiplier", new StructureStat(1.0f));
-        stats.Add("structure projectile speed multiplier", new StructureStat(1.0f));
+        stats.Add("structure module turret damage", new StructureStat(1.0f));
     }
 
     public void AddModifier(string statName, StructureStatModifier modifier) {
@@ -92,45 +88,45 @@ public class StructureStatsManager : MonoBehaviour
 
     float ApplyDamageToShield(float v)
     {
-        if(v <= GetStat("structure current shield"))
+        if(v <= GetStat("structure shield"))
         {
-            SetStat("structure current shield", GetStat("structure current shield") - v);
+            SetStat("structure shield", GetStat("structure shield") - v);
             return 0.0f;
         }
         else
         {
-            v -= GetStat("structure current shield");
-            SetStat("structure current shield", 0.0f);
+            v -= GetStat("structure shield");
+            SetStat("structure shield", 0.0f);
             return v;
         }
     }
 
     float ApplyDamageToArmor(float v)
     {
-        if (v <= GetStat("structure current armor"))
+        if (v <= GetStat("structure armor"))
         {
-            SetStat("structure current armor", GetStat("structure current armor") - v);
+            SetStat("structure armor", GetStat("structure armor") - v);
             return 0.0f;
         }
         else
         {
-            v -= GetStat("structure current armor");
-            SetStat("structure current armor", 0.0f);
+            v -= GetStat("structure armor");
+            SetStat("structure armor", 0.0f);
             return v;
         }
     }
 
     float ApplyDamageToHull(float v)
     {
-        if (v <= GetStat("structure current hull"))
+        if (v <= GetStat("structure hull"))
         {
-            SetStat("structure current hull", GetStat("structure current hull") - v);
+            SetStat("structure hull", GetStat("structure hull") - v);
             return 0.0f;
         }
         else
         {
-            v -= GetStat("structure current hull");
-            SetStat("structure current hull", 0.0f);
+            v -= GetStat("structure hull");
+            SetStat("structure hull", 0.0f);
             return v;
         }
     }

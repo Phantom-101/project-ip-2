@@ -25,5 +25,6 @@ public class StructureStatModifier {
 public enum StructureStatModifierType {
     Additive,
     Multiplicative,
+    Percent,
     ImmediateAdditive
 }

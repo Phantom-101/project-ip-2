@@ -52,7 +52,7 @@ public class TurretAttachmentPoint : ActiveModuleAttachmentPoint
     protected override void OnEachActivate() {
         base.OnEachActivate();
         if(target != null) {
-            float damageMult = transform.parent.parent.GetComponent<StructureStatsManager>().GetStat("structure turret damage multiplier");
+            float damageMult = transform.parent.parent.GetComponent<StructureStatsManager>().GetStat("structure module turret damage");
             float distance = Vector3.Distance(transform.position, target.transform.position);
             float maxAccu;
             if (distance > turret.falloffRange) maxAccu = 0.0f;

@@ -45,8 +45,8 @@ public class AIController : MonoBehaviour
                 else maneuverTimer += Time.deltaTime;
             }
             Quaternion targetRotation = Quaternion.LookRotation(targetPos - transform.position);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * GetComponent<StructureStatsManager>().GetStat("structure current turnSpeed"));
-            transform.Translate(new Vector3(0.0f, 0.0f, ssm.GetStat("structure current speed") * Time.deltaTime));
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * GetComponent<StructureStatsManager>().GetStat("structure turn speed"));
+            transform.Translate(new Vector3(0.0f, 0.0f, ssm.GetStat("structure speed") * Time.deltaTime));
         }
     }
 
