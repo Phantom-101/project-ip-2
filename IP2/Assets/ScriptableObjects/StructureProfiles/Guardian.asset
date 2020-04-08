@@ -18,7 +18,7 @@ MonoBehaviour:
   shield: 95
   capacitance: 80
   generation: 5
-  speed: 0.1
+  speed: 0.5
   turnSpeed: 55
   sensorRange: 5
   inventorySize: 5

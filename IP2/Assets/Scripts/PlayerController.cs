@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject selectableListItemUI;
     public GameObject weaponModulesListItemUI;
+    public GameObject selectablesListItemUI;
     public GameObject inventoryItemUI;
     public GameObject selected;
 
@@ -15,48 +16,41 @@ public class PlayerController : MonoBehaviour
     StructureStatsManager structureStatsManager;
     StructureMovementManager structureMovementManager;
     StructureModulesManager structureModulesManager;
+    StructuresManager structuresManager;
     bool inventoryActive;
 
-    void Awake()
-    {
+    void Awake() {
         inventoryPanel = GameObject.Find("/Canvas/Inventory Panel");
         inventoryPanel.SetActive(false);
         inventoryActive = false;
         structureStatsManager = GetComponent<StructureStatsManager>();
         structureMovementManager = GetComponent<StructureMovementManager>();
         structureModulesManager = GetComponent<StructureModulesManager>();
+        structuresManager = GameObject.FindObjectOfType<StructuresManager>();
     }
 
-    void Start()
-    {
+    void Start() {
         InitializeTurretsUI();
+        UpdateSelectablesUI();
         StartCoroutine(UpdateUI());
     }
 
-    void Update()
-    {
+    void Update() {
         Inputs();
     }
 
-    void Inputs()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(inventoryActive)
-            {
+    void Inputs() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if(inventoryActive) {
                 inventoryPanel.SetActive(false);
                 inventoryActive = false;
             }
         }
-        if (!Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.I))
-        {
-            if(inventoryActive)
-            {
+        if (!Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.I)) {
+            if(inventoryActive) {
                 inventoryPanel.SetActive(false);
                 inventoryActive = false;
-            }
-            else
-            {
+            } else {
                 inventoryPanel.SetActive(true);
                 inventoryActive = true;
             }
@@ -77,8 +71,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.Z)) structureMovementManager.SetPlaneRotation(Plane.XY, 1.0f);
             if (Input.GetKey(KeyCode.C)) structureMovementManager.SetPlaneRotation(Plane.XY, -1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.XY, 0.0f);
-        if (Input.GetMouseButton(0))
-        {
+        if (Input.GetMouseButton(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, 1000000.0f) && hit.transform.gameObject != gameObject && hit.transform.gameObject.GetComponent<StructureStatsManager>())
@@ -86,16 +79,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator UpdateUI()
-    {
+    IEnumerator UpdateUI() {
         UpdateTurretsUI();
+        UpdateSelectablesUI();
         UpdateSlidersUI();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.25f);
         StartCoroutine(UpdateUI());
     }
 
-    public void RefreshInventory()
-    {
+    public void RefreshInventory() {
         int x = 0;
         int y = 0;
         GameObject content = inventoryPanel.transform.GetChild(0).GetChild(0).gameObject;
@@ -123,8 +115,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void UpdateSlidersUI()
-    {
+    void UpdateSlidersUI() {
         GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("structure hull max");
         GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("structure hull");
         GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("structure armor max");
@@ -147,6 +138,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void UpdateSelectablesUI() {
+        GameObject sp = GameObject.Find("Selectables Panel");
+        List<StructureStatsManager> structures = structuresManager.GetStructures();
+        if(structures == null) return;
+        foreach(Transform child in sp.transform) Destroy(child.gameObject);
+        int y = 0;
+        for(int i = 0; i < structures.Count; i++) {
+            GameObject element = Instantiate(selectablesListItemUI) as GameObject;
+            element.transform.SetParent(sp.transform);
+            element.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, y);
+            element.transform.GetChild(0).GetComponent<Text>().text = structures[i].gameObject.name;
+            element.transform.GetChild(1).GetComponent<Text>().text = structures[i].profile.name;
+            element.transform.GetChild(2).GetComponent<Text>().text = structures[i].faction;
+            SelectableButtonFunction(() => SetSelected(structures[element.transform.GetSiblingIndex()].gameObject), element.GetComponent<Button>());
+            y -= 15;
+        }
+    }
+
+    void SetSelected(GameObject go) {
+        selected = go;
+    }
+
     void UpdateTurretsUI() {
         GameObject tp = GameObject.Find("Turrets Panel");
         for(int i = 0; i < structureModulesManager.turretGOs.Count; i++) {
@@ -167,8 +180,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SelectableButtonFunction(UnityEngine.Events.UnityAction action, Button button)
-    {
+    void SelectableButtonFunction(UnityEngine.Events.UnityAction action, Button button) {
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(action);
     }

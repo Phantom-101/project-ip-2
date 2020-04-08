@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class StructuresManager : MonoBehaviour
 {
-    private List<StructureStatsManager> sbs;
+    public GameObject explosion;
+
+    List<StructureStatsManager> sbs;
     [SerializeField] float tickLength = 0.1f;
     
     void Start()
@@ -25,6 +27,7 @@ public class StructuresManager : MonoBehaviour
 
     public void Destroyed(StructureStatsManager sb) {
         sbs.Remove(sb);
+        Instantiate(explosion, sb.transform.position, Quaternion.identity);
         Destroy(sb.gameObject);
     }
 }

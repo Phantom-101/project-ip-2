@@ -8,6 +8,7 @@ public class Turret : ActiveModule
     public float damageMultiplier;
     public float optimalRange;
     public float falloffRange;
+    public float tracking;
     public Ammunition[] accepted;
     public bool showLoadedAmmoIcon;
     public GameObject LRO;
