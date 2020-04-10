@@ -18,16 +18,21 @@ MonoBehaviour:
   shield: 85
   capacitance: 100
   generation: 5
-  speed: 0.5
+  speed: 0.2
   turnSpeed: 50
-  sensorRange: 5
+  warpSpeedFactor: 7
+  warpAccuracy: 1
+  scannersRange: 0
+  scannersStrength: 0
+  signatureStrength: 0
+  cargoHoldSize: 0
   inventorySize: 5
   maxMods: 5
   maxTurrets: 3
   turretLocations:
-  - {x: 0, y: 0, z: 0.016}
-  - {x: 0.008, y: 0, z: 0.012}
-  - {x: -0.008, y: 0, z: 0.012}
+  - {x: 0, y: 0, z: 0.0016}
+  - {x: 0.0008, y: 0, z: 0.0012}
+  - {x: -0.0008, y: 0, z: 0.0012}
   maxBays: 5
   maxRigs: 5
   signature: {fileID: 2800000, guid: 74a47010841ac814d96ad9eb65d37fa7, type: 3}

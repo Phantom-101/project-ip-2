@@ -45,18 +45,18 @@ public class CameraSensorsOverlay : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast (ray, out hit, 1000000.0f) && hit.transform.gameObject == structureStatsManager.gameObject) {
                         GUI.Label(new Rect(screenPos.x + 30, Screen.height - screenPos.y - 20, 250, 20), structureStatsManager.gameObject.name);
-                        GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("structure hull") / structureStatsManager.GetStat("structure hull max")), 10), Color.green);
-                        GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("structure armor") / structureStatsManager.GetStat("structure armor max")), 10), Color.grey);
-                        GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("structure shield") / structureStatsManager.GetStat("structure shield max")), 10), Color.blue);
+                        GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("Hull") / structureStatsManager.GetStat("Hull Max")), 10), Color.green);
+                        GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("Armor") / structureStatsManager.GetStat("Armor Max")), 10), Color.grey);
+                        GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("Shield") / structureStatsManager.GetStat("Shield Max")), 10), Color.blue);
                         GUI.Label(new Rect(screenPos.x + 30, Screen.height - screenPos.y + 20, 250, 20), Math.Round(Vector3.Distance(playerController.gameObject.transform.position, hit.transform.position), 2).ToString());
                     }
                     if(playerController != null && playerController.selected != null && playerController.selected == structureStatsManager.gameObject) {
                         Vector3 selectedScreenPos = attachedCamera.WorldToScreenPoint(playerController.selected.transform.position);
                         if(selectedScreenPos.z > 0) {
                             GUI.Label(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y - 20, 250, 20), structureStatsManager.gameObject.name);
-                            GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("structure hull") / structureStatsManager.GetStat("structure hull max")), 10), Color.green);
-                            GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("structure armor") / structureStatsManager.GetStat("structure armor max")), 10), Color.grey);
-                            GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("structure shield") / structureStatsManager.GetStat("structure shield max")), 10), Color.blue);
+                            GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("Hull") / structureStatsManager.GetStat("Hull Max")), 10), Color.green);
+                            GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("Armor") / structureStatsManager.GetStat("Armor Max")), 10), Color.grey);
+                            GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("Shield") / structureStatsManager.GetStat("Shield Max")), 10), Color.blue);
                             GUI.Label(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y + 20, 250, 20), Math.Round(Vector3.Distance(playerController.gameObject.transform.position, structureStatsManager.transform.position), 2).ToString());
                         }
                     }

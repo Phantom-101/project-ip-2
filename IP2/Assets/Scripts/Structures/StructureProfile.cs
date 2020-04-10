@@ -13,7 +13,12 @@ public class StructureProfile : ScriptableObject
     public float generation;
     public float speed;
     public float turnSpeed;
-    public float sensorRange;
+    public float warpSpeedFactor;
+    public float warpAccuracy;
+    public float scannersRange;
+    public float scannersStrength;
+    public float signatureStrength;
+    public float cargoHoldSize;
     public float inventorySize;
     public int maxMods;
     public int maxTurrets;

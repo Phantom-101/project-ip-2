@@ -45,7 +45,7 @@ public class FleetControlCameraController : MonoBehaviour
         if(input != 0.0f)
         {
             zoomInterpolation = 0.0f;
-            targetZoom = Mathf.Clamp(currentZoom - input * 1.0f, 0.25f, 50.0f);
+            targetZoom = Mathf.Clamp(currentZoom - input * 1.0f, 0.025f, 5.0f);
         }
         if (zoomInterpolation < 1.0f) zoomInterpolation += 0.5f * Time.deltaTime;
         else if (zoomInterpolation > 1.0f) zoomInterpolation = 1.0f;

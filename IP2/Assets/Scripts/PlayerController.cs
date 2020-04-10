@@ -56,21 +56,26 @@ public class PlayerController : MonoBehaviour
             }
         }
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) {
+            structureMovementManager.OverrideOrder();
             if (Input.GetKeyDown(KeyCode.W)) structureMovementManager.ChangeAxisTranslation(Axis.Z, 0.25f);
             if (Input.GetKeyDown(KeyCode.S)) structureMovementManager.ChangeAxisTranslation(Axis.Z, -0.25f);
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
+            structureMovementManager.OverrideOrder();
             if (Input.GetKey(KeyCode.A)) structureMovementManager.SetPlaneRotation(Plane.XZ, -1.0f);
             if (Input.GetKey(KeyCode.D)) structureMovementManager.SetPlaneRotation(Plane.XZ, 1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.XZ, 0.0f);
         if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E)) {
+            structureMovementManager.OverrideOrder();
             if (Input.GetKey(KeyCode.Q)) structureMovementManager.SetPlaneRotation(Plane.YZ, -1.0f);
             if (Input.GetKey(KeyCode.E)) structureMovementManager.SetPlaneRotation(Plane.YZ, 1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.YZ, 0.0f);
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.C)) {
+            structureMovementManager.OverrideOrder();
             if (Input.GetKey(KeyCode.Z)) structureMovementManager.SetPlaneRotation(Plane.XY, 1.0f);
             if (Input.GetKey(KeyCode.C)) structureMovementManager.SetPlaneRotation(Plane.XY, -1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.XY, 0.0f);
+        if (Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.LeftControl)) structureMovementManager.WarpTo(selected);
         if (Input.GetMouseButton(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -116,12 +121,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void UpdateSlidersUI() {
-        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("structure hull max");
-        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("structure hull");
-        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("structure armor max");
-        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("structure armor");
-        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("structure shield max");
-        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("structure shield");
+        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Hull Max");
+        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("Hull");
+        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Armor Max");
+        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("Armor");
+        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Shield Max");
+        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("Shield");
     }
 
     void InitializeTurretsUI() {

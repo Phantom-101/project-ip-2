@@ -53,13 +53,13 @@ public class TurretAttachmentPoint : ActiveModuleAttachmentPoint
         base.OnEachActivate();
         if(target != null) {
             StructureStatsManager targetSSM = target.GetComponent<StructureStatsManager>();
-            float damageMult = transform.parent.parent.GetComponent<StructureStatsManager>().GetStat("structure module turret damage");
+            float damageMult = transform.parent.parent.GetComponent<StructureStatsManager>().GetStat("Turret Modules Damage Multiplier");
             float distance = Vector3.Distance(transform.position, target.transform.position);
             float accu;
             if (distance > turret.falloffRange) accu = 0.0f;
             else if (distance > turret.optimalRange) accu = (distance - turret.optimalRange) / (turret.falloffRange - turret.optimalRange);
             else accu = 1.0f;
-            accu *= turret.tracking / targetSSM.GetComponent<StructureStatsManager>().GetStat("structure speed");
+            accu *= turret.tracking / targetSSM.GetComponent<StructureStatsManager>().GetStat("Speed");
             if(accu > 1.0f) accu = 1.0f;
             float chance = Random.Range(0.0f, 1.0f);
             if(chance <= accu) targetSSM.GetComponent<StructureStatsManager>().TakeDamage(loaded.damage * turret.damageMultiplier * damageMult, transform.parent.parent.gameObject);

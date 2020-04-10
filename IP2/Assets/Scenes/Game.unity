@@ -1520,6 +1520,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &88609206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2456,6 +2457,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &151854360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2631,6 +2633,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &167212599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3493,6 +3496,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &188988795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5287,6 +5291,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &255225929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6507,6 +6512,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &308763677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7421,6 +7427,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &405295922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7592,6 +7599,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &415978367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7767,6 +7775,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &429151410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8286,6 +8295,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &458686117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8805,6 +8815,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &474411202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8980,6 +8991,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &480923613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9399,6 +9411,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &490361532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9805,6 +9818,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &503280622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10668,6 +10682,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &544428367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12940,6 +12955,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &651313408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13140,6 +13156,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &654697241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14210,6 +14227,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &749642175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14902,6 +14920,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &764354447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15421,6 +15440,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &805733694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16455,6 +16475,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &823958098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16629,6 +16650,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &824418541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17457,6 +17479,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &864977174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18491,6 +18514,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &891604410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18837,6 +18861,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &911807599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19219,6 +19244,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &939503561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19566,6 +19592,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &958993314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19852,6 +19879,10 @@ GameObject:
   - component: {fileID: 983289349}
   - component: {fileID: 983289348}
   - component: {fileID: 983289347}
+  - component: {fileID: 983289353}
+  - component: {fileID: 983289352}
+  - component: {fileID: 983289351}
+  - component: {fileID: 983289354}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -19927,12 +19958,71 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983289346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 3.866, y: 4.412, z: -6.15}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &983289351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983289346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae5c8373e9d26043bd2c4069ab431eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turrets: []
+  turretGOs: []
+--- !u!114 &983289352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983289346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4d424bc9d7f841aeebbadba51cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTranslation: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
+  currentTranslation: {x: 0, y: 0, z: 0}
+  currentRotation: {x: 0, y: 0, z: 0}
+  translationPercentage: {x: 0, y: 0, z: 0}
+  rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
+--- !u!114 &983289353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983289346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 3eab5909976c84f42afec7870cec880b, type: 2}
+  faction: 
+--- !u!114 &983289354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983289346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85392b54be70be438d8e5d251bff8d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &991265636
 GameObject:
   m_ObjectHideFlags: 0
@@ -20178,6 +20268,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1021397142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20475,6 +20566,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1030740821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21748,6 +21840,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1107463884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23410,6 +23503,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1238346662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23928,6 +24022,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1300593617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24830,6 +24925,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1361121241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25250,6 +25346,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1376599222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25425,6 +25522,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1385223367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25635,6 +25733,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1392140330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25810,6 +25909,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1393413294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25985,6 +26085,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1399830292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26493,6 +26594,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1426276267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26668,6 +26770,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1438845176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27875,6 +27978,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1483696464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28222,6 +28326,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1502811088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29381,6 +29486,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1553440843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29556,6 +29662,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1568405459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30682,6 +30789,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1624342686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33291,6 +33399,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1775568465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33553,6 +33662,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1796222780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35758,6 +35868,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1944466028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36693,6 +36804,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1978294935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36868,6 +36980,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &1997438224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37165,6 +37278,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &2003199408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38027,6 +38141,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   translationPercentage: {x: 0, y: 0, z: 0}
   rotationPercentage: {x: 0, y: 0, z: 0}
+  currentOrder: 
 --- !u!114 &2048887987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38368,7 +38483,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 10000
   field of view: 60
   orthographic: 0
@@ -38400,8 +38515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2152e751d0d23e84faaed31210f7ab9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentZoom: 1
-  targetZoom: 1
+  currentZoom: 0.1
+  targetZoom: 0.1
   zoomInterpolation: 0
   target: {fileID: 0}
 --- !u!45 &2066205350
@@ -38425,8 +38540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342551d734efbf249b511b882262e78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentZoom: 1
-  targetZoom: 1
+  currentZoom: 0.1
+  targetZoom: 0.1
   zoomInterpolation: 0
   target: {fileID: 0}
 --- !u!114 &2066205352

@@ -11,31 +11,71 @@ public class StructureMovementManager : MonoBehaviour
     [SerializeField] Vector3 translationPercentage;
     [SerializeField] Vector3 rotationPercentage;
     StructureStatsManager ssm;
+    public string currentOrder = "";
+    GameObject t;
 
     void Start() {
         ssm = GetComponent<StructureStatsManager>();
     }
 
     void Update() {
+        if(currentOrder != "") {
+            if(t == null) {
+                currentOrder = "";
+                return;
+            }
+            if(currentOrder == "Align") {
+                translationPercentage = Vector3.forward;
+                Vector3 heading = t.transform.position - transform.position;
+                Vector3 LRPerp = Vector3.Cross(transform.forward, heading);
+                float LRDif = Vector3.Dot(LRPerp, transform.up);
+                float warpAccuracy = 1.0f / Mathf.Sqrt(ssm.GetStat("Warp Accuracy"));
+                if(Mathf.Abs(LRDif) > warpAccuracy / 2.0f) rotationPercentage.y = LRDif > 1.0f ? 1.0f : -1.0f;
+                Vector3 UDPerp = Vector3.Cross(transform.forward, heading);
+                float UDDif = Vector3.Dot(UDPerp, transform.right);
+                if(Mathf.Abs(UDDif) > warpAccuracy / 2.0f) rotationPercentage.x = UDDif > 1.0f ? 1.0f : -1.0f;
+                if(Mathf.Abs(LRDif) <= warpAccuracy && Mathf.Abs(UDDif) <= warpAccuracy) {
+                    currentOrder = "Warp";
+                    return;
+                }
+            } else if (currentOrder == "Warp") {
+                float dis = Vector3.Distance(transform.position, t.transform.position);
+                if(dis > 1.0f) translationPercentage = Vector3.forward * ssm.GetStat("Warp Speed Factor") * ssm.GetStat("Warp Speed Factor");
+                else {
+                    translationPercentage = Vector3.zero;
+                    currentOrder = "";
+                    return;
+                }
+            }
+        }
         CalculateTargets();
         InterpolateCurrents();
         transform.Translate(currentTranslation * Time.deltaTime);
         transform.Rotate(currentRotation * Time.deltaTime);
     }
 
+    public void OverrideOrder() {
+        currentOrder = "";
+    }
+
+    public void WarpTo(GameObject target) {
+        t = target;
+        currentOrder = "Align";
+    }
+
     void CalculateTargets() {
-        if(translationPercentage.x > 1.0f) translationPercentage.x = 1.0f;
-        targetTranslation.x = ssm.GetStat("structure speed") * translationPercentage.x;
-        if(translationPercentage.y > 1.0f) translationPercentage.y = 1.0f;
-        targetTranslation.y = ssm.GetStat("structure speed") * translationPercentage.y;
-        if(translationPercentage.z > 1.0f) translationPercentage.z = 1.0f;
-        targetTranslation.z = ssm.GetStat("structure speed") * translationPercentage.z;
+        if(translationPercentage.x > 1.0f && currentOrder != "Warp") translationPercentage.x = 1.0f;
+        targetTranslation.x = ssm.GetStat("Speed") * translationPercentage.x;
+        if(translationPercentage.y > 1.0f && currentOrder != "Warp") translationPercentage.y = 1.0f;
+        targetTranslation.y = ssm.GetStat("Speed") * translationPercentage.y;
+        if(translationPercentage.z > 1.0f && currentOrder != "Warp") translationPercentage.z = 1.0f;
+        targetTranslation.z = ssm.GetStat("Speed") * translationPercentage.z;
         if(rotationPercentage.x > 1.0f) rotationPercentage.x = 1.0f;
-        targetRotation.x = ssm.GetStat("structure turn speed") * rotationPercentage.x;
+        targetRotation.x = ssm.GetStat("Turn Speed") * rotationPercentage.x;
         if(rotationPercentage.y > 1.0f) rotationPercentage.y = 1.0f;
-        targetRotation.y = ssm.GetStat("structure turn speed") * rotationPercentage.y;
+        targetRotation.y = ssm.GetStat("Turn Speed") * rotationPercentage.y;
         if(rotationPercentage.z > 1.0f) rotationPercentage.z = 1.0f;
-        targetRotation.z = ssm.GetStat("structure turn speed") * rotationPercentage.z;
+        targetRotation.z = ssm.GetStat("Turn Speed") * rotationPercentage.z;
     }
 
     void InterpolateCurrents() {

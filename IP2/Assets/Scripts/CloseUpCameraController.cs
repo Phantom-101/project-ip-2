@@ -37,7 +37,10 @@ public class CloseUpCameraController : MonoBehaviour
         if (input != 0.0f)
         {
             zoomInterpolation = 0.0f;
-            targetZoom = Mathf.Clamp(currentZoom - input * 0.25f, 0.25f, 2.5f);
+            float delta = 0.0f;
+            if(input > 0.0f) delta = input * 0.2f;
+            else delta = input * 0.3f;
+            targetZoom = Mathf.Clamp(currentZoom - delta, 0.025f, 0.25f);
         }
         if (zoomInterpolation < 1.0f) zoomInterpolation += 0.5f * Time.deltaTime;
         else if (zoomInterpolation > 1.0f) zoomInterpolation = 1.0f;
