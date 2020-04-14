@@ -55,27 +55,32 @@ public class PlayerController : MonoBehaviour
                 inventoryActive = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) {
-            structureMovementManager.OverrideOrder();
-            if (Input.GetKeyDown(KeyCode.W)) structureMovementManager.ChangeAxisTranslation(Axis.Z, 0.25f);
+        if ((Input.GetKeyDown(KeyCode.W) && !Input.GetKey(KeyCode.LeftControl)) || Input.GetKeyDown(KeyCode.S)) {
+            structureMovementManager.ClearOrders();
+            if (Input.GetKeyDown(KeyCode.W) && !Input.GetKey(KeyCode.LeftControl)) structureMovementManager.ChangeAxisTranslation(Axis.Z, 0.25f);
             if (Input.GetKeyDown(KeyCode.S)) structureMovementManager.ChangeAxisTranslation(Axis.Z, -0.25f);
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
-            structureMovementManager.OverrideOrder();
+            structureMovementManager.ClearOrders();
             if (Input.GetKey(KeyCode.A)) structureMovementManager.SetPlaneRotation(Plane.XZ, -1.0f);
             if (Input.GetKey(KeyCode.D)) structureMovementManager.SetPlaneRotation(Plane.XZ, 1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.XZ, 0.0f);
         if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E)) {
-            structureMovementManager.OverrideOrder();
+            structureMovementManager.ClearOrders();
             if (Input.GetKey(KeyCode.Q)) structureMovementManager.SetPlaneRotation(Plane.YZ, -1.0f);
             if (Input.GetKey(KeyCode.E)) structureMovementManager.SetPlaneRotation(Plane.YZ, 1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.YZ, 0.0f);
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.C)) {
-            structureMovementManager.OverrideOrder();
+            structureMovementManager.ClearOrders();
             if (Input.GetKey(KeyCode.Z)) structureMovementManager.SetPlaneRotation(Plane.XY, 1.0f);
             if (Input.GetKey(KeyCode.C)) structureMovementManager.SetPlaneRotation(Plane.XY, -1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.XY, 0.0f);
-        if (Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.LeftControl)) structureMovementManager.WarpTo(selected);
+        if (Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.LeftControl)) {
+            structureMovementManager.SetTarget(selected);
+            structureMovementManager.ClearOrders();
+            structureMovementManager.AddOrder("Align");
+            structureMovementManager.AddOrder("Warp");
+        }
         if (Input.GetMouseButton(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

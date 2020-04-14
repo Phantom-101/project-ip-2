@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    StructuresManager sm;
-    StructureStatsManager ssm;
-    StructureModulesManager smm;
+    StructuresManager structuresManager;
+    StructureStatsManager structureStatsManager;
+    StructureModulesManager structureModulesManager;
+    StructureMovementManager structureMovementManager;
     GameObject target;
-    ConstantForce cf;
     float maneuverTimer;
 
     void Awake()
     {
-        sm = GameObject.FindObjectOfType<StructuresManager>();
-        ssm = GetComponent<StructureStatsManager>();
-        smm = GetComponent<StructureModulesManager>();
-        cf = GetComponent<ConstantForce>();
+        structuresManager = GameObject.FindObjectOfType<StructuresManager>();
+        structureStatsManager = GetComponent<StructureStatsManager>();
+        structureModulesManager = GetComponent<StructureModulesManager>();
+        structureMovementManager = GetComponent<StructureMovementManager>();
         maneuverTimer = 0.0f;
     }
 
     void Update()
     {
-        List<StructureStatsManager> validTargets = sm.GetStructures();
+        List<StructureStatsManager> validTargets = structuresManager.GetStructures();
         float closest = float.PositiveInfinity;
         foreach(StructureStatsManager structure in validTargets) {
-            if(structure.faction != ssm.faction) {
+            if(structure.faction != structureStatsManager.faction) {
                 GameObject sGO = structure.gameObject;
                 float distance = Vector3.Distance(transform.position, sGO.transform.position);
                 if(distance < closest) {
@@ -35,7 +35,7 @@ public class AIController : MonoBehaviour
             }
         }
         if(target != null) {
-            smm.TryActivateAllWeapons(target);
+            structureModulesManager.TryActivateAllWeapons(target);
             Vector3 targetPos = target.transform.position;
             if(Vector3.Distance(transform.position, target.transform.position) > 1000.0f) {
                 if(maneuverTimer > 5.0f) {
@@ -45,8 +45,12 @@ public class AIController : MonoBehaviour
                 else maneuverTimer += Time.deltaTime;
             }
             Quaternion targetRotation = Quaternion.LookRotation(targetPos - transform.position);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * GetComponent<StructureStatsManager>().GetStat("Turn Speed"));
-            transform.Translate(new Vector3(0.0f, 0.0f, ssm.GetStat("Speed") * Time.deltaTime));
+            structureMovementManager.SetTarget(target);
+            structureMovementManager.ClearOrders();
+            structureMovementManager.AddOrder("Align");
+            structureMovementManager.SetAxisTranslation(Axis.Z, 1.0f);
+        } else {
+            structureMovementManager.SetAxisTranslation(Axis.Z, 0.0f);
         }
     }
 

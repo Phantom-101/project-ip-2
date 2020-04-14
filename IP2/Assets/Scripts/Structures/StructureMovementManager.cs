@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class StructureMovementManager : MonoBehaviour
 {
+    [SerializeField] Vector3 targetTranslationPercentage;
+    [SerializeField] Vector3 targetRotationPercentage;
     [SerializeField] Vector3 targetTranslation;
     [SerializeField] Vector3 targetRotation;
+    [SerializeField] Vector3 currentTranslationPercentage;
+    [SerializeField] Vector3 currentRotationPercentage;
     [SerializeField] Vector3 currentTranslation;
     [SerializeField] Vector3 currentRotation;
-    [SerializeField] Vector3 translationPercentage;
-    [SerializeField] Vector3 rotationPercentage;
     StructureStatsManager ssm;
-    public string currentOrder = "";
+    float speed;
+    float turnSpeed;
+    public List<string> orders = new List<string>();
     GameObject t;
 
     void Start() {
@@ -19,111 +23,127 @@ public class StructureMovementManager : MonoBehaviour
     }
 
     void Update() {
-        if(currentOrder != "") {
-            if(t == null) {
-                currentOrder = "";
-                return;
-            }
-            if(currentOrder == "Align") {
-                translationPercentage = Vector3.forward;
-                Vector3 heading = t.transform.position - transform.position;
-                Vector3 LRPerp = Vector3.Cross(transform.forward, heading);
-                float LRDif = Vector3.Dot(LRPerp, transform.up);
-                float warpAccuracy = 1.0f / Mathf.Sqrt(ssm.GetStat("Warp Accuracy"));
-                if(Mathf.Abs(LRDif) > warpAccuracy / 2.0f) rotationPercentage.y = LRDif > 1.0f ? 1.0f : -1.0f;
-                Vector3 UDPerp = Vector3.Cross(transform.forward, heading);
-                float UDDif = Vector3.Dot(UDPerp, transform.right);
-                if(Mathf.Abs(UDDif) > warpAccuracy / 2.0f) rotationPercentage.x = UDDif > 1.0f ? 1.0f : -1.0f;
-                if(Mathf.Abs(LRDif) <= warpAccuracy && Mathf.Abs(UDDif) <= warpAccuracy) {
-                    currentOrder = "Warp";
-                    return;
-                }
-            } else if (currentOrder == "Warp") {
-                float dis = Vector3.Distance(transform.position, t.transform.position);
-                if(dis > 1.0f) translationPercentage = Vector3.forward * ssm.GetStat("Warp Speed Factor") * ssm.GetStat("Warp Speed Factor");
-                else {
-                    translationPercentage = Vector3.zero;
-                    currentOrder = "";
-                    return;
-                }
-            }
-        }
+        speed = ssm.GetStat("Speed");
+        turnSpeed = ssm.GetStat("Turn Speed");
+        ExecuteOrders();
         CalculateTargets();
         InterpolateCurrents();
-        transform.Translate(currentTranslation * Time.deltaTime);
+        transform.Translate(currentTranslation * Time.deltaTime * ((orders.Count > 0 && orders[0] == "Warp") ? ssm.GetStat("Warp Speed") / speed : 1.0f));
         transform.Rotate(currentRotation * Time.deltaTime);
     }
 
-    public void OverrideOrder() {
-        currentOrder = "";
+    public void ClearOrders() {
+        orders = new List<string>();
     }
 
-    public void WarpTo(GameObject target) {
+    public void SetTarget(GameObject target) {
         t = target;
-        currentOrder = "Align";
+    }
+
+    public void AddOrder(string order){
+        orders.Add(order);
+    }
+
+    void ExecuteOrders() {
+        if(orders.Count > 0) {
+            if(t == null) {
+                orders = new List<string>();
+                return;
+            }
+            string currentOrder = orders[0];
+            if(currentOrder == "Align") {
+                Vector3 heading = t.transform.position - transform.position;
+                Vector3 LRPerp = Vector3.Cross(transform.forward, heading);
+                float LRDif = Vector3.Dot(LRPerp, transform.up);
+                float absLRDif = Mathf.Abs(LRDif);
+                float warpAccuracy = 1.0f / Mathf.Sqrt(ssm.GetStat("Warp Accuracy"));
+                if(absLRDif > warpAccuracy / 2.0f) targetRotationPercentage.y = ((LRDif > 0.0f) ? 1.0f : -1.0f);
+                Vector3 UDPerp = Vector3.Cross(transform.forward, heading);
+                float UDDif = Vector3.Dot(UDPerp, transform.right);
+                float absUDDif = Mathf.Abs(UDDif);
+                if(absUDDif > warpAccuracy / 2.0f) targetRotationPercentage.x = ((UDDif > 0.0f) ? 1.0f : -1.0f);
+                if(absLRDif <= warpAccuracy && absUDDif <= warpAccuracy) orders.RemoveAt(0);
+                return;
+            }
+            if (currentOrder == "Warp") {
+                targetRotationPercentage = Vector3.zero;
+                if(ssm.GetStat("Warp Field Strength") <= 0.0f) orders.RemoveAt(0);
+                float dis = Vector3.Distance(transform.position, t.transform.position);
+                if(dis > 1.0f) targetTranslationPercentage = Vector3.forward;
+                else {
+                    targetTranslationPercentage = Vector3.zero;
+                    orders.RemoveAt(0);
+                }
+                return;
+            }
+        }
     }
 
     void CalculateTargets() {
-        if(translationPercentage.x > 1.0f && currentOrder != "Warp") translationPercentage.x = 1.0f;
-        targetTranslation.x = ssm.GetStat("Speed") * translationPercentage.x;
-        if(translationPercentage.y > 1.0f && currentOrder != "Warp") translationPercentage.y = 1.0f;
-        targetTranslation.y = ssm.GetStat("Speed") * translationPercentage.y;
-        if(translationPercentage.z > 1.0f && currentOrder != "Warp") translationPercentage.z = 1.0f;
-        targetTranslation.z = ssm.GetStat("Speed") * translationPercentage.z;
-        if(rotationPercentage.x > 1.0f) rotationPercentage.x = 1.0f;
-        targetRotation.x = ssm.GetStat("Turn Speed") * rotationPercentage.x;
-        if(rotationPercentage.y > 1.0f) rotationPercentage.y = 1.0f;
-        targetRotation.y = ssm.GetStat("Turn Speed") * rotationPercentage.y;
-        if(rotationPercentage.z > 1.0f) rotationPercentage.z = 1.0f;
-        targetRotation.z = ssm.GetStat("Turn Speed") * rotationPercentage.z;
+        if(targetTranslationPercentage.x > 1.0f) targetTranslationPercentage.x = 1.0f;
+        targetTranslation.x = speed * targetTranslationPercentage.x;
+        if(targetTranslationPercentage.y > 1.0f) targetTranslationPercentage.y = 1.0f;
+        targetTranslation.y = speed * targetTranslationPercentage.y;
+        if(targetTranslationPercentage.z > 1.0f) targetTranslationPercentage.z = 1.0f;
+        targetTranslation.z = speed * targetTranslationPercentage.z;
+        if(targetRotationPercentage.x > 1.0f) targetRotationPercentage.x = 1.0f;
+        targetRotation.x = turnSpeed * targetRotationPercentage.x;
+        if(targetRotationPercentage.y > 1.0f) targetRotationPercentage.y = 1.0f;
+        targetRotation.y = turnSpeed * targetRotationPercentage.y;
+        if(targetRotationPercentage.z > 1.0f) targetRotationPercentage.z = 1.0f;
+        targetRotation.z = turnSpeed * targetRotationPercentage.z;
     }
 
     void InterpolateCurrents() {
-        currentTranslation.x = LinearInterpolate(currentTranslation.x, targetTranslation.x, 25.0f);
-        currentTranslation.y = LinearInterpolate(currentTranslation.y, targetTranslation.y, 25.0f);
-        currentTranslation.z = LinearInterpolate(currentTranslation.z, targetTranslation.z, 25.0f);
-        currentRotation.x = LinearInterpolate(currentRotation.x, targetRotation.x, 10.0f);
-        currentRotation.y = LinearInterpolate(currentRotation.y, targetRotation.y, 10.0f);
-        currentRotation.z = LinearInterpolate(currentRotation.z, targetRotation.z, 10.0f);
+        float speedInterpolation = ssm.GetStat("Speed Interpolation");
+        float turnSpeedInterpolation = ssm.GetStat("Turn Speed Interpolation");
+        currentTranslationPercentage.x = LinearInterpolate(currentTranslationPercentage.x, targetTranslationPercentage.x, speedInterpolation);
+        currentTranslationPercentage.y = LinearInterpolate(currentTranslationPercentage.y, targetTranslationPercentage.y, speedInterpolation);
+        currentTranslationPercentage.z = LinearInterpolate(currentTranslationPercentage.z, targetTranslationPercentage.z, speedInterpolation);
+        currentRotationPercentage.x = LinearInterpolate(currentRotationPercentage.x, targetRotationPercentage.x, turnSpeedInterpolation);
+        currentRotationPercentage.y = LinearInterpolate(currentRotationPercentage.y, targetRotationPercentage.y, turnSpeedInterpolation);
+        currentRotationPercentage.z = LinearInterpolate(currentRotationPercentage.z, targetRotationPercentage.z, turnSpeedInterpolation);
+        currentTranslation = currentTranslationPercentage * speed;
+        currentRotation = currentRotationPercentage * turnSpeed;
     }
 
     public void SetAxisTranslation(Axis axis, float percent) {
         if(axis == Axis.X) {
-            translationPercentage.x = percent;
+            targetTranslationPercentage.x = percent;
         } else if (axis == Axis.Y) {
-            translationPercentage.y = percent;
+            targetTranslationPercentage.y = percent;
         } else {
-            translationPercentage.z = percent;
+            targetTranslationPercentage.z = percent;
         }
     }
 
     public void ChangeAxisTranslation(Axis axis, float percent) {
         if(axis == Axis.X) {
-            translationPercentage.x += percent;
+            targetTranslationPercentage.x += percent;
         } else if (axis == Axis.Y) {
-            translationPercentage.y += percent;
+            targetTranslationPercentage.y += percent;
         } else {
-            translationPercentage.z += percent;
+            targetTranslationPercentage.z += percent;
         }
     }
 
     public void SetPlaneRotation(Plane plane, float percent) {
         if(plane == Plane.XY) {
-            rotationPercentage.z = percent;
+            targetRotationPercentage.z = percent;
         } else if (plane == Plane.YZ) {
-            rotationPercentage.x = percent;
+            targetRotationPercentage.x = percent;
         } else {
-            rotationPercentage.y = percent;
+            targetRotationPercentage.y = percent;
         }
     }
 
     public void ChangePlaneRotation(Plane plane, float percent) {
         if(plane == Plane.XY) {
-            rotationPercentage.z += percent;
+            targetRotationPercentage.z += percent;
         } else if (plane == Plane.YZ) {
-            rotationPercentage.x += percent;
+            targetRotationPercentage.x += percent;
         } else {
-            rotationPercentage.y += percent;
+            targetRotationPercentage.y += percent;
         }
     }
 

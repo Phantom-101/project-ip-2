@@ -12,9 +12,12 @@ public class StructureProfile : ScriptableObject
     public float capacitance;
     public float generation;
     public float speed;
+    public float speedInterpolation;
     public float turnSpeed;
-    public float warpSpeedFactor;
+    public float turnSpeedInterpolation;
+    public float warpSpeed;
     public float warpAccuracy;
+    public float warpFieldStrength;
     public float scannersRange;
     public float scannersStrength;
     public float signatureStrength;

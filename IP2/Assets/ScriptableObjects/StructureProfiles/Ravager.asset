@@ -19,9 +19,12 @@ MonoBehaviour:
   capacitance: 700
   generation: 50
   speed: 0.0025
+  speedInterpolation: 0.5
   turnSpeed: 8
-  warpSpeedFactor: 15
-  warpAccuracy: 2.5
+  turnSpeedInterpolation: 5
+  warpSpeed: 25
+  warpAccuracy: 30
+  warpFieldStrength: 1
   scannersRange: 0
   scannersStrength: 0
   signatureStrength: 0

@@ -19,9 +19,12 @@ MonoBehaviour:
   capacitance: 80
   generation: 5
   speed: 0.2
+  speedInterpolation: 2
   turnSpeed: 55
-  warpSpeedFactor: 8
-  warpAccuracy: 1
+  turnSpeedInterpolation: 25
+  warpSpeed: 100
+  warpAccuracy: 20
+  warpFieldStrength: 1
   scannersRange: 0
   scannersStrength: 0
   signatureStrength: 0
@@ -30,8 +33,8 @@ MonoBehaviour:
   maxMods: 5
   maxTurrets: 2
   turretLocations:
-  - {x: 0.0002, y: 0, z: -0.00016}
-  - {x: -0.0002, y: 0, z: -0.00016}
+  - {x: 0.002, y: 0, z: -0.0016}
+  - {x: -0.002, y: 0, z: -0.0016}
   maxBays: 5
   maxRigs: 5
   signature: {fileID: 2800000, guid: 74a47010841ac814d96ad9eb65d37fa7, type: 3}

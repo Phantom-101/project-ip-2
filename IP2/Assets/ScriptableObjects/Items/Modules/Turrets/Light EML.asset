@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basePrice: 0
   size: 0
-  icon: {fileID: 21300000, guid: 6c9a34a3bc4cdf743ae01653188f5ab2, type: 3}
+  icon: {fileID: 21300000, guid: 08be8b166e9e29e4eb189314c1bfa751, type: 3}
   mass: 0
   cycleTime: 3
   cycleTimeVariation: 0.5
