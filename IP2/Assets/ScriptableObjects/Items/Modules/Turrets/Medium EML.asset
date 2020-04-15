@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basePrice: 0
   size: 0
-  icon: {fileID: 21300000, guid: 08be8b166e9e29e4eb189314c1bfa751, type: 3}
+  icon: {fileID: 21300000, guid: ea7b150d0ac2ed5449e9b7fc6b9b50b4, type: 3}
   mass: 0
   cycleTime: 3.5
   cycleTimeVariation: 0.5
@@ -31,6 +31,8 @@ MonoBehaviour:
   accepted:
   - {fileID: 11400000, guid: 059087f09bf28004ab03a0d19b05598f, type: 2}
   showLoadedAmmoIcon: 0
+  fireableWithoutAmmo: 0
+  baseDamage: 0
   LRO: {fileID: 7960668294684066928, guid: 1e785954862847d4bb7ae7e9a4fdee82, type: 3}
   LROGradient:
     serializedVersion: 2

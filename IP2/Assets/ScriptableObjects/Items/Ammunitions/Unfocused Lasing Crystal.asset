@@ -9,30 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63de64d328a934c498fc74e960d16966, type: 3}
-  m_Name: Light EML
+  m_Script: {fileID: 11500000, guid: 2da335d8bc4dbbe46a7618a643bea9bf, type: 3}
+  m_Name: Unfocused Lasing Crystal
   m_EditorClassIdentifier: 
   basePrice: 0
   size: 0
-  icon: {fileID: 21300000, guid: ea7b150d0ac2ed5449e9b7fc6b9b50b4, type: 3}
-  mass: 0
-  cycleTime: 3
-  cycleTimeVariation: 0.5
-  cycleInterruptable: 0
-  activationAnchor: 0
-  activationOffset: 0.5
-  activationBursts: 1
-  burstInterval: 0
-  repeating: 1
-  damageMultiplier: 1.1
-  optimalRange: 1.5
-  falloffRange: 2
-  tracking: 0.3
-  accepted:
-  - {fileID: 11400000, guid: 059087f09bf28004ab03a0d19b05598f, type: 2}
-  showLoadedAmmoIcon: 0
-  fireableWithoutAmmo: 0
-  baseDamage: 0
+  icon: {fileID: 0}
+  damage: 2.5
+  speed: 0
+  tracking: 0
   LRO: {fileID: 7960668294684066928, guid: 1e785954862847d4bb7ae7e9a4fdee82, type: 3}
   LROGradient:
     serializedVersion: 2
@@ -71,8 +56,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   LROWidthMultiplier: 0
   useWidthMultiplier: 1
-  LROStartWidth: 0.001
-  LROEndWidth: 0.001
+  LROStartWidth: 0.0005
+  LROEndWidth: 0.0005
   LROWidthMultiplierCurve:
     serializedVersion: 2
     m_Curve:
@@ -98,37 +83,28 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   LROTime: 0.5
-  LROStartAlpha: 50
-  LROEndAlpha: 50
+  LROStartAlpha: 100
+  LROEndAlpha: 100
   LROAlphaMultiplierCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 10
-      outSlope: 10
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.1
-      value: 1
-      inSlope: 10
-      outSlope: 0
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.44444448
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: -0.020833332
-      outSlope: -1.1111112
-      tangentMode: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

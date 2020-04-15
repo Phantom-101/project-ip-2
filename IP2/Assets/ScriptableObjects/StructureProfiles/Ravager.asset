@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Ravager
   m_EditorClassIdentifier: 
   mesh: {fileID: 5699855876839754550, guid: f784204332889194db2582a62608349a, type: 3}
-  hull: 300
-  armor: 800
-  shield: 3000
+  hull: 30
+  armor: 80
+  shield: 300
   capacitance: 700
   generation: 50
-  speed: 0.0025
-  speedInterpolation: 0.5
+  speed: 0.025
+  speedInterpolation: 0.1
   turnSpeed: 8
-  turnSpeedInterpolation: 5
+  turnSpeedInterpolation: 1
   warpSpeed: 25
   warpAccuracy: 30
   warpFieldStrength: 1

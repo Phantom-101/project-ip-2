@@ -50,6 +50,7 @@ public class TurretAttachmentPoint : ActiveModuleAttachmentPoint
     }
 
     protected override void OnEachActivate() {
+        if(!(loaded != null || turret.fireableWithoutAmmo)) return;
         base.OnEachActivate();
         if(target != null) {
             StructureStatsManager targetSSM = target.GetComponent<StructureStatsManager>();
@@ -59,10 +60,10 @@ public class TurretAttachmentPoint : ActiveModuleAttachmentPoint
             if (distance > turret.falloffRange) accu = 0.0f;
             else if (distance > turret.optimalRange) accu = (distance - turret.optimalRange) / (turret.falloffRange - turret.optimalRange);
             else accu = 1.0f;
-            accu *= turret.tracking / targetSSM.GetComponent<StructureStatsManager>().GetStat("Speed");
+            accu *= turret.tracking / targetSSM.GetStat("Speed");
             if(accu > 1.0f) accu = 1.0f;
             float chance = Random.Range(0.0f, 1.0f);
-            if(chance <= accu) targetSSM.GetComponent<StructureStatsManager>().TakeDamage(loaded.damage * turret.damageMultiplier * damageMult, transform.parent.parent.gameObject);
+            if(chance <= accu) targetSSM.TakeDamage((loaded == null ? turret.baseDamage : loaded.damage) * turret.damageMultiplier * damageMult, transform.parent.parent.gameObject);
         }
     }
 
@@ -78,10 +79,12 @@ public class TurretAttachmentPoint : ActiveModuleAttachmentPoint
     }
 
     void HandleLRO(int n) {
-        transform.GetChild(n).GetComponent<LineRenderObject>().from = transform.position;
+        LineRenderObject lro = transform.GetChild(n).GetComponent<LineRenderObject>();
+        lro.from = transform.position;
         if(target == null) return;
-        transform.GetChild(n).GetComponent<LineRenderObject>().to = target.transform.position;
-        transform.GetChild(n).GetComponent<LineRenderObject>().Activate();
+        lro.to = target.transform.position;
+        lro.firedAs = loaded;
+        lro.Activate();
     }
 
     protected override void OnCycleEnd() {

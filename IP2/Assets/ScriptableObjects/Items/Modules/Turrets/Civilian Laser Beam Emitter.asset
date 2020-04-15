@@ -10,29 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63de64d328a934c498fc74e960d16966, type: 3}
-  m_Name: Light EML
+  m_Name: Civilian Laser Beam Emitter
   m_EditorClassIdentifier: 
   basePrice: 0
   size: 0
-  icon: {fileID: 21300000, guid: ea7b150d0ac2ed5449e9b7fc6b9b50b4, type: 3}
+  icon: {fileID: 21300000, guid: a5321ef719c989d49874d5ca50a3bccd, type: 3}
   mass: 0
-  cycleTime: 3
-  cycleTimeVariation: 0.5
-  cycleInterruptable: 0
+  cycleTime: 5
+  cycleTimeVariation: 0
+  cycleInterruptable: 1
   activationAnchor: 0
-  activationOffset: 0.5
-  activationBursts: 1
-  burstInterval: 0
+  activationOffset: 0
+  activationBursts: 10
+  burstInterval: 0.5
   repeating: 1
-  damageMultiplier: 1.1
-  optimalRange: 1.5
-  falloffRange: 2
-  tracking: 0.3
+  damageMultiplier: 0.15
+  optimalRange: 3
+  falloffRange: 5
+  tracking: 0.5
   accepted:
-  - {fileID: 11400000, guid: 059087f09bf28004ab03a0d19b05598f, type: 2}
+  - {fileID: 11400000, guid: 93cd5f8d84c9f4f46a2cff838f35045e, type: 2}
+  - {fileID: 11400000, guid: 61175685677631f4f900ec190ae9e906, type: 2}
+  - {fileID: 11400000, guid: 807bf8edeb940fc41bbe90a8ee1d88e3, type: 2}
+  - {fileID: 11400000, guid: ea82e22311904eb4d9c33ed09798ef57, type: 2}
   showLoadedAmmoIcon: 0
-  fireableWithoutAmmo: 0
-  baseDamage: 0
+  fireableWithoutAmmo: 1
+  baseDamage: 1
   LRO: {fileID: 7960668294684066928, guid: 1e785954862847d4bb7ae7e9a4fdee82, type: 3}
   LROGradient:
     serializedVersion: 2
@@ -71,8 +74,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   LROWidthMultiplier: 0
   useWidthMultiplier: 1
-  LROStartWidth: 0.001
-  LROEndWidth: 0.001
+  LROStartWidth: 0.0005
+  LROEndWidth: 0.0005
   LROWidthMultiplierCurve:
     serializedVersion: 2
     m_Curve:
@@ -105,30 +108,21 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 10
-      outSlope: 10
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.1
-      value: 1
-      inSlope: 10
-      outSlope: 0
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.44444448
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: -0.020833332
-      outSlope: -1.1111112
-      tangentMode: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

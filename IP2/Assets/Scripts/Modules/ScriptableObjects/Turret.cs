@@ -11,6 +11,8 @@ public class Turret : ActiveModule
     public float tracking;
     public Ammunition[] accepted;
     public bool showLoadedAmmoIcon;
+    public bool fireableWithoutAmmo;
+    public float baseDamage;
     public GameObject LRO;
     public Gradient LROGradient;
     public AnimationCurve LROWidthCurve;

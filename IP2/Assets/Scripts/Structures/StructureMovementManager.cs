@@ -57,11 +57,11 @@ public class StructureMovementManager : MonoBehaviour
                 float LRDif = Vector3.Dot(LRPerp, transform.up);
                 float absLRDif = Mathf.Abs(LRDif);
                 float warpAccuracy = 1.0f / Mathf.Sqrt(ssm.GetStat("Warp Accuracy"));
-                if(absLRDif > warpAccuracy / 2.0f) targetRotationPercentage.y = ((LRDif > 0.0f) ? 1.0f : -1.0f);
+                if(absLRDif > warpAccuracy / 2.0f) targetRotationPercentage.y = LRDif;
                 Vector3 UDPerp = Vector3.Cross(transform.forward, heading);
                 float UDDif = Vector3.Dot(UDPerp, transform.right);
                 float absUDDif = Mathf.Abs(UDDif);
-                if(absUDDif > warpAccuracy / 2.0f) targetRotationPercentage.x = ((UDDif > 0.0f) ? 1.0f : -1.0f);
+                if(absUDDif > warpAccuracy / 2.0f) targetRotationPercentage.x = UDDif;
                 if(absLRDif <= warpAccuracy && absUDDif <= warpAccuracy) orders.RemoveAt(0);
                 return;
             }
@@ -80,17 +80,17 @@ public class StructureMovementManager : MonoBehaviour
     }
 
     void CalculateTargets() {
-        if(targetTranslationPercentage.x > 1.0f) targetTranslationPercentage.x = 1.0f;
+        targetTranslationPercentage.x = Clamp(targetTranslationPercentage.x, -1.0f, 1.0f);
         targetTranslation.x = speed * targetTranslationPercentage.x;
-        if(targetTranslationPercentage.y > 1.0f) targetTranslationPercentage.y = 1.0f;
+        targetTranslationPercentage.y = Clamp(targetTranslationPercentage.y, -1.0f, 1.0f);
         targetTranslation.y = speed * targetTranslationPercentage.y;
-        if(targetTranslationPercentage.z > 1.0f) targetTranslationPercentage.z = 1.0f;
+        targetTranslationPercentage.z = Clamp(targetTranslationPercentage.z, -1.0f, 1.0f);
         targetTranslation.z = speed * targetTranslationPercentage.z;
-        if(targetRotationPercentage.x > 1.0f) targetRotationPercentage.x = 1.0f;
+        targetRotationPercentage.x = Clamp(targetRotationPercentage.x, -1.0f, 1.0f);
         targetRotation.x = turnSpeed * targetRotationPercentage.x;
-        if(targetRotationPercentage.y > 1.0f) targetRotationPercentage.y = 1.0f;
+        targetRotationPercentage.y = Clamp(targetRotationPercentage.y, -1.0f, 1.0f);
         targetRotation.y = turnSpeed * targetRotationPercentage.y;
-        if(targetRotationPercentage.z > 1.0f) targetRotationPercentage.z = 1.0f;
+        targetRotationPercentage.z = Clamp(targetRotationPercentage.z, -1.0f, 1.0f);
         targetRotation.z = turnSpeed * targetRotationPercentage.z;
     }
 
@@ -156,5 +156,11 @@ public class StructureMovementManager : MonoBehaviour
         } else {
             return current + interpolationValue * dt;
         }
+    }
+    
+    float Clamp(float current, float lower, float upper) {
+        if(current < lower) current = lower;
+        else if (current > upper) current = upper;
+        return current;
     }
 }

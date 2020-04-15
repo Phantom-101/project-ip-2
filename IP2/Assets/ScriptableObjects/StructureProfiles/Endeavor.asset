@@ -18,10 +18,10 @@ MonoBehaviour:
   shield: 600
   capacitance: 500
   generation: 20
-  speed: 0.003
-  speedInterpolation: 0.5
+  speed: 0.0375
+  speedInterpolation: 0.1
   turnSpeed: 10
-  turnSpeedInterpolation: 5
+  turnSpeedInterpolation: 1
   warpSpeed: 25
   warpAccuracy: 30
   warpFieldStrength: 2
