@@ -1,0 +1,80 @@
+.system-schedule-item__container
+{
+    flex-direction: row;
+    flex-grow:1;
+    flex-shrink: 1;
+    padding-top: 1px;
+}
+
+
+.system-schedule-item__enabled-toggle
+{
+    
+}
+
+.system-schedule-item__icon
+{
+    width:16px;
+    height:16px;
+}
+
+.system-schedule-item__icon--system
+{
+    background-image: var(--system-icon);
+}
+
+.system-schedule-item__icon--system-group
+{
+    background-image: var(--group-icon);
+}
+
+.system-schedule-item__icon--command-buffer
+{
+    background-image: var(--buffer-icon);
+}
+
+.system-schedule-item__icon--player-loop
+{
+    background-image: var(--group-icon);
+}
+
+.system-schedule-item__name-label
+{
+    flex: 1;
+}
+
+.system-schedule-item__matches-label
+{
+    -unity-text-align: upper-right;
+}
+
+.system-schedule-item_column-1
+{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.system-schedule-item_column-2
+{
+    width: 65px;
+    min-width: 65px;
+    max-width: 65px;
+}
+
+.system-schedule-item_column-3
+{
+    width: 75px;
+    min-width: 75px;
+    max-width: 75px;
+    white-space: nowrap;
+}
+
+.system-schedule-item__time-label
+{
+    -unity-text-align: upper-right;
+    padding-right:8px;
+}

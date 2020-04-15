@@ -1,0 +1,16 @@
+.system-schedule__resources
+{
+    /* Textures */
+    --buffer-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Buffer/Buffer.png");
+    --exclude-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Exclude/Exclude.png");
+    --filter-tag-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Filter Tag/Filter Tag.png");
+    --group-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Group/Group.png");
+    --job-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Job/Job.png");
+    --profiler-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Profiler/Profiler.png");
+    --query-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Query/Query.png");
+    --readonly-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Read Only/Read Only.png");
+    --readwrite-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Read Write/Read Write.png");
+    --writeonly-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Write Only/Write Only.png");
+    --script-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/Script/Script.png");
+    --system-icon: resource("Packages/com.unity.dots.editor/Editor Default Resources/icons/dark/System/System.png");
+}

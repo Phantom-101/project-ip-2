@@ -1,8 +1,8 @@
 
-=== Tue Mar 31 09:18:52 2020
+=== Tue Mar 31 09:32:53 2020
 
 Packages were changed.
-Update Mode: mergeDefaultDependencies
+Update Mode: resetToDefaultDependencies
 
 The following packages were added:
   com.unity.collab-proxy@1.2.16
@@ -43,3 +43,11 @@ The following packages were added:
   com.unity.textmeshpro@2.0.1
   com.unity.timeline@1.2.12
   com.unity.ugui@1.0.0
+
+=== Mon Apr  6 02:34:08 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.postprocessing from version 2.1.7 to 2.2.2
