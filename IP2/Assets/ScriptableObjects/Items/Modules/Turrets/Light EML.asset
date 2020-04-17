@@ -19,10 +19,8 @@ MonoBehaviour:
   cycleTime: 3
   cycleTimeVariation: 0.5
   cycleInterruptable: 0
-  activationAnchor: 0
-  activationOffset: 0.5
-  activationBursts: 1
-  burstInterval: 0
+  activations:
+  - 0
   repeating: 1
   damageMultiplier: 1.1
   optimalRange: 1.5

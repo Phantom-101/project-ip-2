@@ -32,9 +32,7 @@ public class ActiveModuleAttachmentPoint : ModuleAttachmentPoint
         cycleElapsed += Time.deltaTime;
     }
 
-    protected virtual void OnEachActivate() {}
-
-    protected virtual IEnumerator OnActivate() { yield return new WaitForSeconds(0.0f); }
+    protected virtual void OnActivate(int n) {}
 
     protected virtual void OnCycleStart() {}
 

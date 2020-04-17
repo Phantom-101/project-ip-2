@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 507, y: 392}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 21
+  controlID: 90
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 507, y: 392}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 22
+  controlID: 91
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 231, y: 392}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 23
+  controlID: 92
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,10 +186,10 @@ MonoBehaviour:
     y: 0
     width: 1549
     height: 685
-  m_MinSize: {x: 203, y: 121}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 202, y: 121}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 24
+  controlID: 93
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,8 +209,8 @@ MonoBehaviour:
     y: 0
     width: 296
     height: 685
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -404,8 +404,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -625.5
     m_HBaseRangeMax: 625.5
-    m_VBaseRangeMin: -332
-    m_VBaseRangeMax: 332
+    m_VBaseRangeMin: -321.5
+    m_VBaseRangeMax: 321.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -414,7 +414,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -422,11 +422,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 1251
-      height: 664
+      height: 643
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 625.5, y: 332}
+    m_Translation: {x: 625.5, y: 321.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -434,9 +434,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -625.5
-      y: -332
+      y: -321.5
       width: 1251
-      height: 664
+      height: 643
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1251, y: 664}
@@ -474,9 +474,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 344d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 3afbffff
+      m_ExpandedIDs: a4faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -586,11 +586,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.13321224, y: -0.74157953, z: 0.15457664, w: 0.6390834}
     speed: 2
-    m_Value: {x: -0.13321224, y: 0.7415796, z: -0.15457666, w: -0.6390834}
+    m_Value: {x: 0.13321176, y: -0.7415769, z: 0.1545761, w: 0.6390811}
   m_Size:
     m_Target: 11.237556
     speed: 2
-    m_Value: 9.523353
+    m_Value: 11.237556
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -758,14 +758,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/ScriptableObjects/Items/Modules/Turrets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: F:\home\woyu\Documents\Unity\Unity Projects\Stellar Voyage
+  m_LastProjectPath: F:\home\woyu\Documents\GitHub\project-ip-2\IP2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 323}
-    m_SelectedIDs: e6550000
-    m_LastClickedID: 21990
-    m_ExpandedIDs: 00000000b2550000b4550000b6550000b8550000ba550000bc550000be550000c055000000ca9a3b
+    scrollPos: {x: 0, y: 315}
+    m_SelectedIDs: f8560000
+    m_LastClickedID: 22264
+    m_ExpandedIDs: 00000000b0560000b2560000b4560000b6560000b8560000ba560000bc560000be56000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -793,7 +793,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b2550000b4550000b6550000b8550000ba550000bc550000be550000c0550000
+    m_ExpandedIDs: 00000000b0560000b2560000b4560000b6560000b8560000ba560000bc560000be560000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: e81b0000e2360000fa1b00000e240000582e0000aa380000582a0000d81e00007a1e00006615ffff161d0000141d00003cae0000a808000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

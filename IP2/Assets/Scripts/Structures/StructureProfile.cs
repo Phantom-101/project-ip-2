@@ -7,8 +7,11 @@ public class StructureProfile : ScriptableObject
 {
     public Mesh mesh;
     public float hull;
+    public float hullResistance;
     public float armor;
+    public float armorResistance;
     public float shield;
+    public float shieldResistance;
     public float capacitance;
     public float generation;
     public float speed;

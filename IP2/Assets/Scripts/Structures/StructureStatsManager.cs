@@ -6,6 +6,7 @@ public class StructureStatsManager : MonoBehaviour
 {
     public StructureProfile profile;
     public Dictionary<string, StructureStat> stats = new Dictionary<string, StructureStat>();
+    public List<StructureStatModifiersPackage> modifiersPackages = new List<StructureStatModifiersPackage>();
     public Dictionary<Item, int> cargoHold = new Dictionary<Item, int>();
     public string faction;
 
@@ -16,7 +17,8 @@ public class StructureStatsManager : MonoBehaviour
     }
 
     void Update() {
-        if (GetStat("Hull") <= 0.0f) sm.Destroyed(this);
+        IterateModifiersPackages();
+        CheckHitpointStats();
     }
 
     void InitializeStats() {
@@ -42,15 +44,33 @@ public class StructureStatsManager : MonoBehaviour
         stats.Add("Signature Strength", new StructureStat(profile.signatureStrength));
         stats.Add("Cargo Hold Size", new StructureStat(profile.cargoHoldSize));
         // Resistances
-        stats.Add("Hull Resistance", new StructureStat(0.0f));
-        stats.Add("Armor Resistance", new StructureStat(0.0f));
-        stats.Add("Shield Resistance", new StructureStat(0.0f));
+        stats.Add("Hull Resistance", new StructureStat(profile.hullResistance));
+        stats.Add("Armor Resistance", new StructureStat(profile.armorResistance));
+        stats.Add("Shield Resistance", new StructureStat(profile.shieldResistance));
         // Multipliers
         stats.Add("Turret Modules Damage Multiplier", new StructureStat(1.0f));
     }
 
-    public void AddModifier(string statName, StructureStatModifier modifier) {
-        stats[statName].modifiers.Add(modifier);
+    public void AddModifiersPackage(StructureStatModifiersPackage package) {
+        modifiersPackages.Add(package);
+        foreach(StructureStatModifier modifier in package.modifiers) AddModifier(modifier);
+    }
+
+    public void IterateModifiersPackages() {
+        foreach(StructureStatModifiersPackage package in modifiersPackages) {
+            package.duration -= Time.deltaTime;
+            if(package.duration <= 0.0f)
+                foreach(StructureStatModifier modifier in package.modifiers) RemoveModifier(modifier);
+        }
+    }
+
+    public void AddModifier(StructureStatModifier modifier) {
+        if(modifier.statModifierType == StructureStatModifierType.ImmediateAdditive) stats[modifier.targetStat].baseValue += modifier.value;
+        else stats[modifier.targetStat].modifiers.Add(modifier);
+    }
+
+    public void RemoveModifier(StructureStatModifier modifier) {
+        stats[modifier.targetStat].modifiers.Remove(modifier);
     }
 
     public void SetStat(string statName, float v) {
@@ -61,83 +81,79 @@ public class StructureStatsManager : MonoBehaviour
 
     public float GetStat(string statName) {
         float v = stats[statName].baseValue;
-        float a = 0.0f;
-        float m = 1.0f;
+        float additive = 0.0f;
+        float multiplicative = 1.0f;
+        float percent = 0.0f;
         foreach(StructureStatModifier mod in stats[statName].modifiers) {
             if(mod.statModifierType == StructureStatModifierType.Additive) {
-                a += mod.value;
-            } else {
-                m *= mod.value;
+                additive += mod.value;
+            } else if (mod.statModifierType == StructureStatModifierType.Multiplicative) {
+                multiplicative *= mod.value;
+            } else if(mod.statModifierType == StructureStatModifierType.Percent) {
+                percent += mod.value;
             }
         }
-        return v * m + a;
+        return v + additive + (multiplicative * v - v) + (percent / 100.0f) * v;
     }
 
-    public void TakeDamage(float v, GameObject from)
-    {
-        if(GetComponent<AIController>()) GetComponent<AIController>().RespondToHelpRequest(from);
-        AIController[] AIs = GameObject.FindObjectsOfType<AIController>();
-        foreach(AIController AI in AIs)
-        {
-            if(AI.gameObject.GetComponent<StructureStatsManager>().faction != "" && AI.gameObject.GetComponent<StructureStatsManager>().faction == faction)
-            {
-                AI.RespondToHelpRequest(from);
-            }
-        }
+    void CheckHitpointStats() {
+        if (GetStat("Shield") < 0.0f) SetStat("Shield", 0.0f);
+        if (GetStat("Shield") > GetStat("Shield Max")) SetStat("Shield", GetStat("Shield Max"));
+        if (GetStat("Armor") < 0.0f) SetStat("Armor", 0.0f);
+        if (GetStat("Armor") > GetStat("Armor Max")) SetStat("Armor", GetStat("Armor Max"));
+        if (GetStat("Hull") <= 0.0f) sm.Destroyed(this);
+        if (GetStat("Hull") > GetStat("Hull Max")) SetStat("Hull", GetStat("Hull Max"));
+    }
+
+    public void TakeDamage(float v, GameObject from) {
         ApplyDamageToHull(ApplyDamageToArmor(ApplyDamageToShield(v)));
-        if(GetComponent<Mineable>())
-        {
-            GetComponent<Mineable>().Mined(from);
-        }
+        CheckHitpointStats();
+        if(GetComponent<Mineable>()) GetComponent<Mineable>().Mined(from);
     }
 
-    float ApplyDamageToShield(float v)
-    {
-        if(v <= GetStat("Shield"))
-        {
-            SetStat("Shield", GetStat("Shield") - v);
+    float ApplyDamageToShield(float v) {
+        float shield = GetStat("Shield");
+        float resist = GetStat("Shield Resistance");
+        float damage = v * (1 - resist);
+        if(damage <= shield) {
+            AddModifier(new StructureStatModifier("Shield", StructureStatModifierType.ImmediateAdditive, -damage));
             return 0.0f;
-        }
-        else
-        {
-            v -= GetStat("Shield");
+        } else {
+            v -= shield;
             SetStat("Shield", 0.0f);
             return v;
         }
     }
 
-    float ApplyDamageToArmor(float v)
-    {
-        if (v <= GetStat("Armor"))
-        {
-            SetStat("Armor", GetStat("Armor") - v);
+    float ApplyDamageToArmor(float v) {
+        float armor = GetStat("Armor");
+        float resist = GetStat("Armor Resistance");
+        float damage = v * (1 - resist);
+        if(damage <= armor) {
+            AddModifier(new StructureStatModifier("Armor", StructureStatModifierType.ImmediateAdditive, -damage));
             return 0.0f;
-        }
-        else
-        {
-            v -= GetStat("Armor");
+        } else {
+            v -= armor;
             SetStat("Armor", 0.0f);
             return v;
         }
     }
 
-    float ApplyDamageToHull(float v)
-    {
-        if (v <= GetStat("Hull"))
-        {
-            SetStat("Hull", GetStat("Hull") - v);
+    float ApplyDamageToHull(float v) {
+        float hull = GetStat("Hull");
+        float resist = GetStat("Hull Resistance");
+        float damage = v * (1 - resist);
+        if(damage <= hull) {
+            AddModifier(new StructureStatModifier("Hull", StructureStatModifierType.ImmediateAdditive, -damage));
             return 0.0f;
-        }
-        else
-        {
-            v -= GetStat("Hull");
+        } else {
+            v -= hull;
             SetStat("Hull", 0.0f);
             return v;
         }
     }
 
-    public void ChangeItem(Item item, int amount)
-    {
+    public void ChangeItem(Item item, int amount) {
         if (!(cargoHold.ContainsKey(item))) cargoHold[item] = 0;
         if(cargoHold[item] + amount >= 0) cargoHold[item] += amount;
         if (GetComponent<PlayerController>()) GetComponent<PlayerController>().RefreshInventory();

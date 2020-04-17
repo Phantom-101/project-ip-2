@@ -16,13 +16,10 @@ MonoBehaviour:
   size: 0
   icon: {fileID: 21300000, guid: 6040e1f86ced63c45bdb03cf305302aa, type: 3}
   mass: 0
-  cycleTime: 10
-  cycleTimeVariation: 1
+  cycleTime: 15
   cycleInterruptable: 1
-  activationAnchor: 0
-  activationOffset: 1
-  activationBursts: 1
-  burstInterval: 0
+  activations:
+  - 0
   repeating: 0
   damageMultiplier: 0.9
   optimalRange: 10
@@ -31,6 +28,8 @@ MonoBehaviour:
   accepted:
   - {fileID: 11400000, guid: 6ed76f481ca009942ab61c46fb0f6272, type: 2}
   showLoadedAmmoIcon: 1
+  fireableWithoutAmmo: 0
+  baseDamage: 0
   LRO: {fileID: 7960668294684066928, guid: 1e785954862847d4bb7ae7e9a4fdee82, type: 3}
   LROGradient:
     serializedVersion: 2

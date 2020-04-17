@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 2520129100194924985, guid: 32d3f1618b7bf014783118d09c7e741e, type: 3}
   hull: 15
+  hullResistance: 0
   armor: 30
+  armorResistance: 0
   shield: 85
+  shieldResistance: 0
   capacitance: 100
   generation: 5
   speed: 0.1
@@ -23,19 +26,19 @@ MonoBehaviour:
   turnSpeed: 50
   turnSpeedInterpolation: 5
   warpSpeed: 100
-  warpAccuracy: 20
+  warpAccuracy: 25
   warpFieldStrength: 1
   scannersRange: 0
   scannersStrength: 0
   signatureStrength: 0
   cargoHoldSize: 0
   inventorySize: 5
-  maxMods: 5
+  maxMods: 1
   maxTurrets: 3
   turretLocations:
-  - {x: 0, y: 0, z: 0.016}
-  - {x: 0.008, y: 0, z: 0.012}
-  - {x: -0.008, y: 0, z: 0.012}
-  maxBays: 5
-  maxRigs: 5
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  maxBays: 0
+  maxRigs: 1
   signature: {fileID: 2800000, guid: 74a47010841ac814d96ad9eb65d37fa7, type: 3}

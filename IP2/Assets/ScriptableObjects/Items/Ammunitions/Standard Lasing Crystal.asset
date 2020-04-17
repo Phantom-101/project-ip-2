@@ -15,7 +15,7 @@ MonoBehaviour:
   basePrice: 0
   size: 0
   icon: {fileID: 0}
-  damage: 3
+  damage: 6
   speed: 0
   tracking: 0
   LRO: {fileID: 7960668294684066928, guid: 1e785954862847d4bb7ae7e9a4fdee82, type: 3}
@@ -90,21 +90,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 10
+      outSlope: 10
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 10
+      outSlope: 0
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.44444448
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
+      value: 0
+      inSlope: -0.020833332
+      outSlope: -1.1111112
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

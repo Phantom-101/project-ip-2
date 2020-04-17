@@ -11,8 +11,7 @@ public class AIController : MonoBehaviour
     GameObject target;
     float maneuverTimer;
 
-    void Awake()
-    {
+    void Awake() {
         structuresManager = GameObject.FindObjectOfType<StructuresManager>();
         structureStatsManager = GetComponent<StructureStatsManager>();
         structureModulesManager = GetComponent<StructureModulesManager>();
@@ -20,8 +19,7 @@ public class AIController : MonoBehaviour
         maneuverTimer = 0.0f;
     }
 
-    void Update()
-    {
+    void Update() {
         List<StructureStatsManager> validTargets = structuresManager.GetStructures();
         float closest = float.PositiveInfinity;
         foreach(StructureStatsManager structure in validTargets) {
@@ -36,6 +34,7 @@ public class AIController : MonoBehaviour
         }
         if(target != null) {
             structureModulesManager.TryActivateAllWeapons(target);
+            structureModulesManager.TryActivateAllRigs();
             Vector3 targetPos = target.transform.position;
             if(Vector3.Distance(transform.position, target.transform.position) > 1000.0f) {
                 if(maneuverTimer > 5.0f) {
@@ -52,9 +51,5 @@ public class AIController : MonoBehaviour
         } else {
             structureMovementManager.SetAxisTranslation(Axis.Z, 0.0f);
         }
-    }
-
-    public void RespondToHelpRequest(GameObject enemy) {
-        if(target == null) target = enemy;
     }
 }

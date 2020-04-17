@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Start() {
         InitializeTurretsUI();
+        InitializeRigsUI();
         UpdateSelectablesUI();
         StartCoroutine(UpdateUI());
     }
@@ -91,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator UpdateUI() {
         UpdateTurretsUI();
+        UpdateRigsUI();
         UpdateSelectablesUI();
         UpdateSlidersUI();
         yield return new WaitForSeconds(0.25f);
@@ -148,6 +150,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void InitializeRigsUI() {
+        GameObject rp = GameObject.Find("Rigs Panel");
+        foreach(Transform child in rp.transform) Destroy(child.gameObject);
+        int x = 0;
+        for(int i = 0; i < structureModulesManager.rigs.Count; i++) {
+            Rig rig = structureModulesManager.rigs[i];
+            GameObject element = Instantiate(weaponModulesListItemUI) as GameObject;
+            element.transform.SetParent(rp.transform);
+            element.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, 0.0f);
+            SelectableButtonFunction(() => structureModulesManager.ToggleRig(element.transform.GetSiblingIndex(), !structureModulesManager.rigGOs[element.transform.GetSiblingIndex()].GetComponent<RigAttachmentPoint>().moduleActive), element.GetComponent<Button>());
+            x += 30;
+        }
+    }
+
     void UpdateSelectablesUI() {
         GameObject sp = GameObject.Find("Selectables Panel");
         List<StructureStatsManager> structures = structuresManager.GetStructures();
@@ -178,15 +194,52 @@ public class PlayerController : MonoBehaviour
             GameObject button = tp.transform.GetChild(i).gameObject;
             Image img = button.GetComponent<Image>();
             Image icon = button.transform.GetChild(0).GetComponent<Image>();
-            if(tap.moduleActive) img.color = Color.green;
-            else {
-                if(tap.cycleElapsed == 0.0f) img.color = Color.white;
-                else img.color = Color.red;
+            if(tap.moduleActive) {
+                Color c = Color.green;
+                c.a = 0.25f;
+                img.color = c;
+            } else {
+                if(tap.cycleElapsed == 0.0f) {
+                    Color c = Color.white;
+                    c.a = 0.25f;
+                    img.color = c;
+                } else {
+                    Color c = Color.red;
+                    c.a = 0.25f;
+                    img.color = c;
+                }
             }
             if(tap.turret.showLoadedAmmoIcon) {
                 if(tap.loaded == null) icon.sprite = tap.turret.icon;
                 else icon.sprite = tap.loaded.icon;
             } else icon.sprite = tap.turret.icon;
+        }
+    }
+
+    void UpdateRigsUI() {
+        GameObject rp = GameObject.Find("Rigs Panel");
+        for(int i = 0; i < structureModulesManager.rigGOs.Count; i++) {
+            GameObject rigGO = structureModulesManager.rigGOs[i];
+            RigAttachmentPoint rap = rigGO.GetComponent<RigAttachmentPoint>();
+            GameObject button = rp.transform.GetChild(i).gameObject;
+            Image img = button.GetComponent<Image>();
+            Image icon = button.transform.GetChild(0).GetComponent<Image>();
+            if(rap.moduleActive) {
+                Color c = Color.green;
+                c.a = 0.25f;
+                img.color = c;
+            } else {
+                if(rap.cycleElapsed == 0.0f) {
+                    Color c = Color.white;
+                    c.a = 0.25f;
+                    img.color = c;
+                } else {
+                    Color c = Color.red;
+                    c.a = 0.25f;
+                    img.color = c;
+                }
+            }
+            icon.sprite = rap.rig.icon;
         }
     }
 

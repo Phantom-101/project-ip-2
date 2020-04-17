@@ -17,14 +17,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a5321ef719c989d49874d5ca50a3bccd, type: 3}
   mass: 0
   cycleTime: 5
-  cycleTimeVariation: 0
   cycleInterruptable: 1
-  activationAnchor: 0
-  activationOffset: 0
-  activationBursts: 10
-  burstInterval: 0.5
+  activations:
+  - 0
   repeating: 1
-  damageMultiplier: 0.15
+  damageMultiplier: 0.8
   optimalRange: 3
   falloffRange: 5
   tracking: 0.5
@@ -35,7 +32,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ea82e22311904eb4d9c33ed09798ef57, type: 2}
   showLoadedAmmoIcon: 0
   fireableWithoutAmmo: 1
-  baseDamage: 1
+  baseDamage: 3
   LRO: {fileID: 7960668294684066928, guid: 1e785954862847d4bb7ae7e9a4fdee82, type: 3}
   LROGradient:
     serializedVersion: 2
@@ -108,21 +105,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 10
+      outSlope: 10
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 10
+      outSlope: 0
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.44444448
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
+      value: 0
+      inSlope: -0.020833332
+      outSlope: -1.1111112
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
