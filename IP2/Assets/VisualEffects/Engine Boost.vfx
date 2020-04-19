@@ -669,17 +669,17 @@ VisualEffectResource:
             - serializedVersion: 3
               time: 0
               value: 0
-              inSlope: 0.1
-              outSlope: 0.1
+              inSlope: 0.01
+              outSlope: 0.01
               tangentMode: 34
               weightedMode: 0
               inWeight: 0
               outWeight: 0
             - serializedVersion: 3
               time: 1
-              value: 0.1
-              inSlope: 0.1
-              outSlope: 0.1
+              value: 0.01
+              inSlope: 0.01
+              outSlope: 0.01
               tangentMode: 34
               weightedMode: 0
               inWeight: 0
@@ -1567,7 +1567,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":0.10000000149011612,"outTangent":0.10000000149011612,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.10000000149011612,"inTangent":0.10000000149011612,"outTangent":0.10000000149011612,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":0.009999999776482582,"outTangent":0.009999999776482582,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.009999999776482582,"inTangent":0.009999999776482582,"outTangent":0.009999999776482582,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size

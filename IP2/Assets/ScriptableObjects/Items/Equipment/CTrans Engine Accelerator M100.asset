@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4f2177fe7eccf44901ffaef099439b, type: 3}
+  m_Name: CTrans Engine Accelerator M100
+  m_EditorClassIdentifier: 
+  basePrice: 0
+  size: 0
+  icon: {fileID: 21300000, guid: c374d9b23da31074a9c0e473b4a78271, type: 3}
+  signature: 0
+  activatable: 1
+  cycleTime: 5
+  cycleInterruptable: 0
+  activations:
+  - 0
+  repeating: 1
+  mustBeTargeted: 0
+  range: 0
+  requireCharge: 0
+  accepted: []
+  showLoadedChargeIcon: 0
+  vfx: {fileID: 6194271514327187734, guid: c817ffa8880f69f4bb5de0594d5a72d0, type: 3}
+  effects:
+  - Speed
+  modifierTypes: 03000000
+  values:
+  - 25
+  grantToTarget: 00
+  requirements: []
+  minValues: []
+  maxValues: []
+  duration: 5

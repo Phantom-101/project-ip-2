@@ -19,6 +19,7 @@ MonoBehaviour:
   armorResistance: 0.3
   shield: 300
   shieldResistance: 0.4
+  damagePool: 75
   capacitance: 700
   generation: 50
   speed: 0.025
@@ -33,13 +34,16 @@ MonoBehaviour:
   signatureStrength: 0
   cargoHoldSize: 0
   inventorySize: 5
-  maxMods: 3
-  maxTurrets: 4
-  turretLocations:
+  maxEquipment: 10
+  equipmentLocations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  maxBays: 1
-  maxRigs: 4
-  signature: {fileID: 2800000, guid: fe1a0afa962a68849bdf9e1434a8fb3b, type: 3}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  signatureTex: {fileID: 2800000, guid: fe1a0afa962a68849bdf9e1434a8fb3b, type: 3}

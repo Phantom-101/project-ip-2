@@ -12,6 +12,7 @@ public class StructureProfile : ScriptableObject
     public float armorResistance;
     public float shield;
     public float shieldResistance;
+    public float damagePool;
     public float capacitance;
     public float generation;
     public float speed;
@@ -26,10 +27,7 @@ public class StructureProfile : ScriptableObject
     public float signatureStrength;
     public float cargoHoldSize;
     public float inventorySize;
-    public int maxMods;
-    public int maxTurrets;
-    public Vector3[] turretLocations;
-    public int maxBays;
-    public int maxRigs;
-    public Texture signature;
+    public int maxEquipment;
+    public Vector3[] equipmentLocations;
+    public Texture signatureTex;
 }

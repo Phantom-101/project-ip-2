@@ -5,8 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class LineRenderObject : MonoBehaviour
 {
-    public Turret firedFrom;
-    public Ammunition firedAs;
+    /*
+    public Equipment firedFrom;
+    public Charge firedAs;
     public Vector3 from;
     public Vector3 to;
 
@@ -104,4 +105,5 @@ public class LineRenderObject : MonoBehaviour
             }
         }
     }
+    */
 }

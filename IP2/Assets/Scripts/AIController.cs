@@ -6,7 +6,7 @@ public class AIController : MonoBehaviour
 {
     StructuresManager structuresManager;
     StructureStatsManager structureStatsManager;
-    StructureModulesManager structureModulesManager;
+    StructureEquipmentManager structureEquipmentManager;
     StructureMovementManager structureMovementManager;
     GameObject target;
     float maneuverTimer;
@@ -14,7 +14,7 @@ public class AIController : MonoBehaviour
     void Awake() {
         structuresManager = GameObject.FindObjectOfType<StructuresManager>();
         structureStatsManager = GetComponent<StructureStatsManager>();
-        structureModulesManager = GetComponent<StructureModulesManager>();
+        structureEquipmentManager = GetComponent<StructureEquipmentManager>();
         structureMovementManager = GetComponent<StructureMovementManager>();
         maneuverTimer = 0.0f;
     }
@@ -33,8 +33,7 @@ public class AIController : MonoBehaviour
             }
         }
         if(target != null) {
-            structureModulesManager.TryActivateAllWeapons(target);
-            structureModulesManager.TryActivateAllRigs();
+            structureEquipmentManager.TryActivateAllEquipment(target);
             Vector3 targetPos = target.transform.position;
             if(Vector3.Distance(transform.position, target.transform.position) > 1000.0f) {
                 if(maneuverTimer > 5.0f) {

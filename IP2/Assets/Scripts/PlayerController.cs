@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     GameObject inventoryPanel;
     StructureStatsManager structureStatsManager;
     StructureMovementManager structureMovementManager;
-    StructureModulesManager structureModulesManager;
+    StructureEquipmentManager structureEquipmentManager;
     StructuresManager structuresManager;
     bool inventoryActive;
 
@@ -25,13 +25,12 @@ public class PlayerController : MonoBehaviour
         inventoryActive = false;
         structureStatsManager = GetComponent<StructureStatsManager>();
         structureMovementManager = GetComponent<StructureMovementManager>();
-        structureModulesManager = GetComponent<StructureModulesManager>();
+        structureEquipmentManager = GetComponent<StructureEquipmentManager>();
         structuresManager = GameObject.FindObjectOfType<StructuresManager>();
     }
 
     void Start() {
-        InitializeTurretsUI();
-        InitializeRigsUI();
+        InitializeEquipmentUI();
         UpdateSelectablesUI();
         StartCoroutine(UpdateUI());
     }
@@ -91,8 +90,7 @@ public class PlayerController : MonoBehaviour
     }
 
     IEnumerator UpdateUI() {
-        UpdateTurretsUI();
-        UpdateRigsUI();
+        UpdateEquipmentUI();
         UpdateSelectablesUI();
         UpdateSlidersUI();
         yield return new WaitForSeconds(0.25f);
@@ -136,30 +134,16 @@ public class PlayerController : MonoBehaviour
         GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("Shield");
     }
 
-    void InitializeTurretsUI() {
-        GameObject tp = GameObject.Find("Turrets Panel");
-        foreach(Transform child in tp.transform) Destroy(child.gameObject);
+    void InitializeEquipmentUI() {
+        GameObject panel = GameObject.Find("Equipment Panel");
+        foreach(Transform child in panel.transform) Destroy(child.gameObject);
         int x = 0;
-        for(int i = 0; i < structureModulesManager.turrets.Count; i++) {
-            Turret turret = structureModulesManager.turrets[i];
+        for(int i = 0; i < structureEquipmentManager.equipment.Count; i++) {
+            Equipment turret = structureEquipmentManager.equipment[i];
             GameObject element = Instantiate(weaponModulesListItemUI) as GameObject;
-            element.transform.SetParent(tp.transform);
+            element.transform.SetParent(panel.transform);
             element.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, 0.0f);
-            SelectableButtonFunction(() => structureModulesManager.ToggleWeapon(element.transform.GetSiblingIndex(), selected, !structureModulesManager.turretGOs[element.transform.GetSiblingIndex()].GetComponent<TurretAttachmentPoint>().moduleActive), element.GetComponent<Button>());
-            x += 30;
-        }
-    }
-
-    void InitializeRigsUI() {
-        GameObject rp = GameObject.Find("Rigs Panel");
-        foreach(Transform child in rp.transform) Destroy(child.gameObject);
-        int x = 0;
-        for(int i = 0; i < structureModulesManager.rigs.Count; i++) {
-            Rig rig = structureModulesManager.rigs[i];
-            GameObject element = Instantiate(weaponModulesListItemUI) as GameObject;
-            element.transform.SetParent(rp.transform);
-            element.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, 0.0f);
-            SelectableButtonFunction(() => structureModulesManager.ToggleRig(element.transform.GetSiblingIndex(), !structureModulesManager.rigGOs[element.transform.GetSiblingIndex()].GetComponent<RigAttachmentPoint>().moduleActive), element.GetComponent<Button>());
+            SelectableButtonFunction(() => structureEquipmentManager.ToggleEquipment(element.transform.GetSiblingIndex(), selected, !structureEquipmentManager.equipmentGOs[element.transform.GetSiblingIndex()].GetComponent<EquipmentAttachmentPoint>().moduleActive), element.GetComponent<Button>());
             x += 30;
         }
     }
@@ -186,20 +170,20 @@ public class PlayerController : MonoBehaviour
         selected = go;
     }
 
-    void UpdateTurretsUI() {
-        GameObject tp = GameObject.Find("Turrets Panel");
-        for(int i = 0; i < structureModulesManager.turretGOs.Count; i++) {
-            GameObject turretGO = structureModulesManager.turretGOs[i];
-            TurretAttachmentPoint tap = turretGO.GetComponent<TurretAttachmentPoint>();
-            GameObject button = tp.transform.GetChild(i).gameObject;
+    void UpdateEquipmentUI() {
+        GameObject panel = GameObject.Find("Equipment Panel");
+        for(int i = 0; i < structureEquipmentManager.equipmentGOs.Count; i++) {
+            GameObject equipmentGO = structureEquipmentManager.equipmentGOs[i];
+            EquipmentAttachmentPoint attachmentPoint = equipmentGO.GetComponent<EquipmentAttachmentPoint>();
+            GameObject button = panel.transform.GetChild(i).gameObject;
             Image img = button.GetComponent<Image>();
             Image icon = button.transform.GetChild(0).GetComponent<Image>();
-            if(tap.moduleActive) {
+            if(attachmentPoint.moduleActive) {
                 Color c = Color.green;
                 c.a = 0.25f;
                 img.color = c;
             } else {
-                if(tap.cycleElapsed == 0.0f) {
+                if(attachmentPoint.cycleElapsed == 0.0f) {
                     Color c = Color.white;
                     c.a = 0.25f;
                     img.color = c;
@@ -209,37 +193,10 @@ public class PlayerController : MonoBehaviour
                     img.color = c;
                 }
             }
-            if(tap.turret.showLoadedAmmoIcon) {
-                if(tap.loaded == null) icon.sprite = tap.turret.icon;
-                else icon.sprite = tap.loaded.icon;
-            } else icon.sprite = tap.turret.icon;
-        }
-    }
-
-    void UpdateRigsUI() {
-        GameObject rp = GameObject.Find("Rigs Panel");
-        for(int i = 0; i < structureModulesManager.rigGOs.Count; i++) {
-            GameObject rigGO = structureModulesManager.rigGOs[i];
-            RigAttachmentPoint rap = rigGO.GetComponent<RigAttachmentPoint>();
-            GameObject button = rp.transform.GetChild(i).gameObject;
-            Image img = button.GetComponent<Image>();
-            Image icon = button.transform.GetChild(0).GetComponent<Image>();
-            if(rap.moduleActive) {
-                Color c = Color.green;
-                c.a = 0.25f;
-                img.color = c;
-            } else {
-                if(rap.cycleElapsed == 0.0f) {
-                    Color c = Color.white;
-                    c.a = 0.25f;
-                    img.color = c;
-                } else {
-                    Color c = Color.red;
-                    c.a = 0.25f;
-                    img.color = c;
-                }
-            }
-            icon.sprite = rap.rig.icon;
+            if(attachmentPoint.equipment.showLoadedChargeIcon) {
+                if(attachmentPoint.loaded == null) icon.sprite = attachmentPoint.equipment.icon;
+                else icon.sprite = attachmentPoint.loaded.icon;
+            } else icon.sprite = attachmentPoint.equipment.icon;
         }
     }
 

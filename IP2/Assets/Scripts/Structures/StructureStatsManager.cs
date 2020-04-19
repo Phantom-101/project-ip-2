@@ -16,6 +16,10 @@ public class StructureStatsManager : MonoBehaviour
         InitializeStats();
     }
 
+    void Start() {
+        StartCoroutine(DamageApplicationLoop());
+    }
+
     void Update() {
         IterateModifiersPackages();
         CheckHitpointStats();
@@ -25,11 +29,13 @@ public class StructureStatsManager : MonoBehaviour
         sm = GameObject.FindObjectOfType<StructuresManager>();
         // Structure stats
         stats.Add("Hull Max", new StructureStat(profile.hull));
-        stats.Add("Armor Max", new StructureStat(profile.armor));
-        stats.Add("Shield Max", new StructureStat(profile.shield));
         stats.Add("Hull", new StructureStat(profile.hull));
+        stats.Add("Armor Max", new StructureStat(profile.armor));
         stats.Add("Armor", new StructureStat(profile.armor));
+        stats.Add("Shield Max", new StructureStat(profile.shield));
         stats.Add("Shield", new StructureStat(profile.shield));
+        stats.Add("Damage Pool Max", new StructureStat(profile.damagePool));
+        stats.Add("Damage Pool", new StructureStat(0.0f));
         stats.Add("Capacitance", new StructureStat(profile.capacitance));
         stats.Add("Generation", new StructureStat(profile.generation));
         stats.Add("Speed", new StructureStat(profile.speed));
@@ -48,7 +54,7 @@ public class StructureStatsManager : MonoBehaviour
         stats.Add("Armor Resistance", new StructureStat(profile.armorResistance));
         stats.Add("Shield Resistance", new StructureStat(profile.shieldResistance));
         // Multipliers
-        stats.Add("Turret Modules Damage Multiplier", new StructureStat(1.0f));
+        stats.Add("Turrets Damage", new StructureStat(1.0f));
     }
 
     public void AddModifiersPackage(StructureStatModifiersPackage package) {
@@ -74,9 +80,7 @@ public class StructureStatsManager : MonoBehaviour
     }
 
     public void SetStat(string statName, float v) {
-        List<StructureStatModifier> modifiers = stats[statName].modifiers;
-        stats[statName] = new StructureStat(v);
-        stats[statName].modifiers = modifiers;
+        stats[statName].baseValue = v;
     }
 
     public float GetStat(string statName) {
@@ -105,51 +109,56 @@ public class StructureStatsManager : MonoBehaviour
         if (GetStat("Hull") > GetStat("Hull Max")) SetStat("Hull", GetStat("Hull Max"));
     }
 
-    public void TakeDamage(float v, GameObject from) {
-        ApplyDamageToHull(ApplyDamageToArmor(ApplyDamageToShield(v)));
-        CheckHitpointStats();
-        if(GetComponent<Mineable>()) GetComponent<Mineable>().Mined(from);
+    IEnumerator DamageApplicationLoop() {
+        ApplyDamage();
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine(DamageApplicationLoop());
     }
 
-    float ApplyDamageToShield(float v) {
+    void ApplyDamage() {
+        if(GetStat("Damage Pool") > GetStat("Damage Pool Max")) SetStat("Damage Pool", GetStat("Damage Pool Max"));
+        ApplyDamageToShield();
+        ApplyDamageToArmor();
+        ApplyDamageToHull();
+        CheckHitpointStats();
+    }
+
+    void ApplyDamageToShield() {
         float shield = GetStat("Shield");
         float resist = GetStat("Shield Resistance");
-        float damage = v * (1 - resist);
+        float damage = GetStat("Damage Pool") * (1 - resist);
         if(damage <= shield) {
             AddModifier(new StructureStatModifier("Shield", StructureStatModifierType.ImmediateAdditive, -damage));
-            return 0.0f;
+            SetStat("Damage Pool", 0.0f);
         } else {
-            v -= shield;
+            AddModifier(new StructureStatModifier("Damage Pool", StructureStatModifierType.ImmediateAdditive, -shield));
             SetStat("Shield", 0.0f);
-            return v;
         }
     }
 
-    float ApplyDamageToArmor(float v) {
+    void ApplyDamageToArmor() {
         float armor = GetStat("Armor");
         float resist = GetStat("Armor Resistance");
-        float damage = v * (1 - resist);
+        float damage = GetStat("Damage Pool") * (1 - resist);
         if(damage <= armor) {
             AddModifier(new StructureStatModifier("Armor", StructureStatModifierType.ImmediateAdditive, -damage));
-            return 0.0f;
+            SetStat("Damage Pool", 0.0f);
         } else {
-            v -= armor;
+            AddModifier(new StructureStatModifier("Damage Pool", StructureStatModifierType.ImmediateAdditive, -armor));
             SetStat("Armor", 0.0f);
-            return v;
         }
     }
 
-    float ApplyDamageToHull(float v) {
+    void ApplyDamageToHull() {
         float hull = GetStat("Hull");
         float resist = GetStat("Hull Resistance");
-        float damage = v * (1 - resist);
+        float damage = GetStat("Damage Pool") * (1 - resist);
         if(damage <= hull) {
             AddModifier(new StructureStatModifier("Hull", StructureStatModifierType.ImmediateAdditive, -damage));
-            return 0.0f;
+            SetStat("Damage Pool", 0.0f);
         } else {
-            v -= hull;
+            AddModifier(new StructureStatModifier("Damage Pool", StructureStatModifierType.ImmediateAdditive, -hull));
             SetStat("Hull", 0.0f);
-            return v;
         }
     }
 

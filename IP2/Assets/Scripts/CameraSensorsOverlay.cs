@@ -39,14 +39,14 @@ public class CameraSensorsOverlay : MonoBehaviour
                             if(distance <= 6000.0f) {
                                 float size = 30 - distance / 200.0f;
                                 if(size < 1.0f) size = 1.0f;
-                                GUI.DrawTexture(new Rect(screenPos.x - size / 2.0f, Screen.height - screenPos.y - size / 2.0f, size, size), structureStatsManager.profile.signature);
+                                GUI.DrawTexture(new Rect(screenPos.x - size / 2.0f, Screen.height - screenPos.y - size / 2.0f, size, size), structureStatsManager.profile.signatureTex);
                             }
                         }
                         Ray ray = attachedCamera.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hit;
                         if (Physics.Raycast (ray, out hit, 1000000.0f) && hit.transform.gameObject == structureStatsManager.gameObject) {
                             GUI.Label(new Rect(screenPos.x + 30, Screen.height - screenPos.y - 20, 250, 20), structureStatsManager.gameObject.name);
-                            GUI.Label(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 250, 20), structureStatsManager.GetStat("Hull") + " / " + structureStatsManager.GetStat("Armor") + " / " + structureStatsManager.GetStat("Shield"));
+                            GUI.Label(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 250, 20), structureStatsManager.GetStat("Hull") + " / " + structureStatsManager.GetStat("Armor") + " / " + structureStatsManager.GetStat("Shield") + " (" + structureStatsManager.GetStat("Damage Pool") + ")");
                             //GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("Hull") / structureStatsManager.GetStat("Hull Max")), 10), Color.green);
                             //GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("Armor") / structureStatsManager.GetStat("Armor Max")), 10), Color.grey);
                             //GUIDrawRect(new Rect(screenPos.x + 30, Screen.height - screenPos.y, 100 * (structureStatsManager.GetStat("Shield") / structureStatsManager.GetStat("Shield Max")), 10), Color.blue);
@@ -56,7 +56,7 @@ public class CameraSensorsOverlay : MonoBehaviour
                             Vector3 selectedScreenPos = attachedCamera.WorldToScreenPoint(playerController.selected.transform.position);
                             if(selectedScreenPos.z > 0) {
                                 GUI.Label(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y - 20, 250, 20), structureStatsManager.gameObject.name);
-                                GUI.Label(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 250, 20), structureStatsManager.GetStat("Hull") + " / " + structureStatsManager.GetStat("Armor") + " / " + structureStatsManager.GetStat("Shield"));
+                                GUI.Label(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 250, 20), structureStatsManager.GetStat("Hull") + " / " + structureStatsManager.GetStat("Armor") + " / " + structureStatsManager.GetStat("Shield") + " (" + structureStatsManager.GetStat("Damage Pool") + ")");
                                 //GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("Hull") / structureStatsManager.GetStat("Hull Max")), 10), Color.green);
                                 //GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("Armor") / structureStatsManager.GetStat("Armor Max")), 10), Color.grey);
                                 //GUIDrawRect(new Rect(selectedScreenPos.x + 30, Screen.height - selectedScreenPos.y, 100 * (structureStatsManager.GetStat("Shield") / structureStatsManager.GetStat("Shield Max")), 10), Color.blue);

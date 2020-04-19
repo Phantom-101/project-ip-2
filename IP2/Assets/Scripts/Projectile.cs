@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    /*
     public float or;
     public float fr;
     public float dm;
     public GameObject from;
     public GameObject to;
-    public Ammunition ammo;
+    public Charge ammo;
     public Vector3 shotPosition;
     public float damageMult;
     public float projSpeedMult;
@@ -47,4 +48,5 @@ public class Projectile : MonoBehaviour
         if(ammo.tracking && to != null) transform.LookAt(to.transform.position);
         transform.Translate(Vector3.forward * ammo.speed * projSpeedMult * Time.deltaTime);
     }
+    */
 }
