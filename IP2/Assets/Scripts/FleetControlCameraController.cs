@@ -25,16 +25,14 @@ public class FleetControlCameraController : MonoBehaviour
             desiredPosition += dir.normalized * offset;
             transform.position = desiredPosition;
             float input = -Input.GetAxis("ArrowVertical");
-            if (transform.position.y < target.transform.position.y + 0.9f * -offset && input > 0.0f)
-            {
+            if (transform.position.y < target.transform.position.y + 0.95f * -offset && input > 0.0f) {
                 transform.RotateAround(target.transform.position, transform.TransformDirection(Vector3.right), input * 100.0f * Time.deltaTime);
             }
-            if (transform.position.y > target.transform.position.y - 0.9f * -offset && input < 0.0f)
-            {
+            if (transform.position.y > target.transform.position.y - 0.95f * -offset && input < 0.0f) {
                 transform.RotateAround(target.transform.position, transform.TransformDirection(Vector3.right), input * 100.0f * Time.deltaTime);
             }
             transform.RotateAround(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z), Vector3.up, Input.GetAxis("ArrowHorizontal") * 100.0f * Time.deltaTime);
-            transform.LookAt(target.transform.position);
+            transform.LookAt(target.transform.position, target.transform.up);
             ChangeZoom();
         }
     }
@@ -42,10 +40,9 @@ public class FleetControlCameraController : MonoBehaviour
     void ChangeZoom()
     {
         float input = Input.GetAxis("Mouse ScrollWheel");
-        if(input != 0.0f)
-        {
+        if(input != 0.0f) {
             zoomInterpolation = 0.0f;
-            targetZoom = Mathf.Clamp(currentZoom - input * 1.0f, 0.025f, 5.0f);
+            targetZoom = Mathf.Clamp(currentZoom - input * 20.0f, 0.25f, 50.0f);
         }
         if (zoomInterpolation < 1.0f) zoomInterpolation += 0.5f * Time.deltaTime;
         else if (zoomInterpolation > 1.0f) zoomInterpolation = 1.0f;

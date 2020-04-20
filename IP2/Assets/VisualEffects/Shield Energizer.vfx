@@ -208,11 +208,11 @@ VisualEffectResource:
       float tmp_bi = (float)1 / tmp_bh;\n            float3 tmp_bj = float3(tmp_bi,
       tmp_bi, tmp_bi);\n            float3 tmp_bk = attributes.position * tmp_bj;\n           
       uint tmp_bm = attributes.particleId ^ asuint(uniform_b);\n            float
-      tmp_bn = FixedRand(tmp_bm);\n            float tmp_bp = tmp_bn * (float)0.0199999996;\n           
-      float tmp_bq = (float)0.00999999978 + tmp_bp;\n            float3 tmp_br =
-      float3(tmp_bq, tmp_bq, tmp_bq);\n            float3 tmp_bs = tmp_bk * tmp_br;\n           
+      tmp_bn = FixedRand(tmp_bm);\n            float tmp_bp = tmp_bn * (float)0.200000018;\n           
+      float tmp_bq = (float)0.100000001 + tmp_bp;\n            float3 tmp_br = float3(tmp_bq,
+      tmp_bq, tmp_bq);\n            float3 tmp_bs = tmp_bk * tmp_br;\n           
       SetAttribute_E629755( /*inout */attributes.velocity, tmp_bs);\n        }\n       
-      {\n            SetAttribute_3278B22F( /*inout */attributes.size, (float)0.00100000005);\n       
+      {\n            SetAttribute_3278B22F( /*inout */attributes.size, (float)0.0500000007);\n       
       }\n        \n\r\n\t\t\r\n#if VFX_USE_ALIVE_CURRENT\r\n        if (attributes.alive)\r\n#endif      
       \r\n        {\r\n#if USE_DEAD_LIST\r\n\t        uint deadIndex = deadListIn.DecrementCounter();\r\n           
       uint index = deadListIn[deadIndex];\r\n#else\r\n            uint index = particleIndex;\r\n#endif\r\n           
@@ -662,13 +662,13 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
+        data[3]: 12
       - op: 1
-        valueIndex: 13
+        valueIndex: 28
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 12
+        data[3]: 1
       - op: 1
         valueIndex: 29
         data[0]: -1
@@ -686,13 +686,13 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
+        data[3]: 1
       - op: 1
-        valueIndex: 35
+        valueIndex: 33
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
+        data[3]: 3
       - op: 1
         valueIndex: 36
         data[0]: -1
@@ -704,21 +704,15 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
-      - op: 1
-        valueIndex: 42
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
         data[3]: 2
       - op: 1
-        valueIndex: 44
+        valueIndex: 41
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 1
-        valueIndex: 45
+        valueIndex: 42
         data[0]: -1
         data[1]: -1
         data[2]: -1
@@ -734,33 +728,31 @@ VisualEffectResource:
         - m_ExpressionIndex: 4
           m_Value: 1
         - m_ExpressionIndex: 5
-          m_Value: 0.02
+          m_Value: 0.20000002
         - m_ExpressionIndex: 6
-          m_Value: 0.01
+          m_Value: 0.1
         - m_ExpressionIndex: 11
           m_Value: 2
-        - m_ExpressionIndex: 12
-          m_Value: 0.1
+        - m_ExpressionIndex: 13
+          m_Value: 0.05
         - m_ExpressionIndex: 15
           m_Value: 0.001
-        - m_ExpressionIndex: 17
+        - m_ExpressionIndex: 16
           m_Value: 3
-        - m_ExpressionIndex: 21
+        - m_ExpressionIndex: 20
           m_Value: 6.2831855
       m_Vector2f:
         m_Array:
         - m_ExpressionIndex: 14
           m_Value: {x: 100, y: 100}
-        - m_ExpressionIndex: 20
-          m_Value: {x: 0.7, y: 0.7}
+        - m_ExpressionIndex: 19
+          m_Value: {x: 0, y: 0}
       m_Vector3f:
         m_Array:
-        - m_ExpressionIndex: 16
-          m_Value: {x: 0, y: 0, z: 0}
+        - m_ExpressionIndex: 17
+          m_Value: {x: 1, y: 1, z: 1}
         - m_ExpressionIndex: 18
-          m_Value: {x: 2, y: 3, z: 2}
-        - m_ExpressionIndex: 19
-          m_Value: {x: 0, y: 1, z: 0}
+          m_Value: {x: 0, y: 0, z: 0}
       m_Vector4f:
         m_Array: []
       m_Uint:
@@ -773,7 +765,7 @@ VisualEffectResource:
           m_Value: 1
       m_Matrix4x4f:
         m_Array:
-        - m_ExpressionIndex: 13
+        - m_ExpressionIndex: 12
           m_Value:
             e00: 1
             e01: -0
@@ -799,8 +791,8 @@ VisualEffectResource:
           m_Value:
             serializedVersion: 2
             key0: {r: 0, g: 1, b: 1, a: 0}
-            key1: {r: 0, g: 1, b: 1, a: 1}
-            key2: {r: 0.09803922, g: 0, b: 0.39215687, a: 1}
+            key1: {r: 0, g: 1, b: 1, a: 0.39215687}
+            key2: {r: 0.09803922, g: 0, b: 0.39215687, a: 0.39215687}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
             key5: {r: 0, g: 0, b: 0, a: 0}
@@ -827,7 +819,7 @@ VisualEffectResource:
             m_NumAlphaKeys: 4
       m_NamedObject:
         m_Array:
-        - m_ExpressionIndex: 22
+        - m_ExpressionIndex: 21
           m_Value: {fileID: 2800000, guid: 9a9eb762cd554611a89e6e50198213ab, type: 3}
       m_Bool:
         m_Array: []
@@ -958,7 +950,7 @@ VisualEffectResource:
       - nameId: Count
         index: 14
       - nameId: Delay
-        index: 20
+        index: 19
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: -1
@@ -979,9 +971,9 @@ VisualEffectResource:
       index: 1
     values:
     - nameId: bounds_center
-      index: 19
-    - nameId: bounds_size
       index: 18
+    - nameId: bounds_size
+      index: 17
     tasks:
     - type: 536870912
       buffers:
@@ -999,9 +991,9 @@ VisualEffectResource:
         index: 2
       params:
       - nameId: bounds_center
-        index: 19
-      - nameId: bounds_size
         index: 18
+      - nameId: bounds_size
+        index: 17
       processor: {fileID: 0}
       shaderSourceIndex: 0
     - type: 805306368
@@ -1026,7 +1018,7 @@ VisualEffectResource:
       - nameId: Color_b
         index: 8
       - nameId: mainTexture
-        index: 22
+        index: 21
       params:
       - nameId: sortPriority
         index: 3
@@ -1155,7 +1147,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":0.0,"y":1.0,"z":0.0},"size":{"x":2.0,"y":3.0,"z":2.0}}'
+      m_SerializableObject: '{"center":{"x":0.0,"y":0.0,"z":0.0},"size":{"x":1.0,"y":1.0,"z":1.0}}'
     m_Space: 0
   m_Property:
     name: bounds
@@ -1807,7 +1799,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.0,"g":1.0,"b":1.0,"a":1.0},"time":0.20000000298023225},{"color":{"r":0.09803921729326248,"g":0.0,"b":0.3921568691730499,"a":1.0},"time":0.800000011920929},{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":1.0,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.0,"g":1.0,"b":1.0,"a":1.0},"time":0.20000000298023225},{"color":{"r":0.09803921729326248,"g":0.0,"b":0.3921568691730499,"a":1.0},"time":0.800000011920929},{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.3921568691730499,"time":0.10000763088464737},{"alpha":0.3921568691730499,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -1912,7 +1904,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.7
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: Delay
@@ -3327,7 +3319,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.01
+      m_SerializableObject: 0.1
     m_Space: 2147483647
   m_Property:
     name: min
@@ -3367,7 +3359,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.03
+      m_SerializableObject: 0.3
     m_Space: 2147483647
   m_Property:
     name: max
@@ -4281,7 +4273,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.001
+      m_SerializableObject: 0.05
     m_Space: 2147483647
   m_Property:
     name: Size

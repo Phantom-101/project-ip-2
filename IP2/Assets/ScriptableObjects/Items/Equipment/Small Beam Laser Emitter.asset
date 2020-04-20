@@ -23,7 +23,8 @@ MonoBehaviour:
   - 0
   repeating: 1
   mustBeTargeted: 1
-  range: 0
+  range: 5
+  rangeStats: []
   requireCharge: 1
   accepted:
   - {fileID: 11400000, guid: a7a6c4ece33b8204e8332e3350d21506, type: 2}
@@ -34,8 +35,12 @@ MonoBehaviour:
   modifierTypes: 00000000
   values:
   - 2
+  valueStats:
+  - Turrets Damage
   grantToTarget: 01
   requirements: []
+  requirementStats: 
   minValues: []
   maxValues: []
   duration: 0
+  durationStats: []

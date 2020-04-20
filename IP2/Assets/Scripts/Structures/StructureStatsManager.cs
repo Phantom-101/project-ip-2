@@ -13,6 +13,8 @@ public class StructureStatsManager : MonoBehaviour
     StructuresManager sm;
 
     void Awake() {
+        GetComponent<MeshFilter>().mesh = profile.mesh;
+        GetComponent<MeshCollider>().sharedMesh = profile.mesh;
         InitializeStats();
     }
 

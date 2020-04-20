@@ -76,7 +76,16 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     }
 
     void ElapseCycle() {
-        if(equipment.mustBeTargeted && target == null) SetModuleActive(false);
+        if(equipment.mustBeTargeted) {
+            if(target == null) {
+                SetModuleActive(false);
+                return;
+            }
+            if(Vector3.Distance(transform.position, target.transform.position) > GetAffectedValue(equipment.range, equipment.rangeStats)) {
+                SetModuleActive(false);
+                return;
+            }
+        }
         cycleElapsed += Time.deltaTime;
         // Check if equipment should be activated
         for(int i = activatedCount; i < equipment.activations.Length; i++) {
@@ -102,17 +111,23 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         // Convert equipment to StatsModificationEquipment
         StatsModificationEquipment statsModificationEquipment = equipment as StatsModificationEquipment;
         // Setup packages
-        StructureStatModifiersPackage selfModifiersPackage = new StructureStatModifiersPackage(new List<StructureStatModifier>(), statsModificationEquipment.duration);
-        StructureStatModifiersPackage targetModifiersPackage = new StructureStatModifiersPackage(new List<StructureStatModifier>(), statsModificationEquipment.duration);
+        StructureStatModifiersPackage selfModifiersPackage = new StructureStatModifiersPackage(new List<StructureStatModifier>(),
+            GetAffectedValue(statsModificationEquipment.duration, statsModificationEquipment.durationStats));
+        StructureStatModifiersPackage targetModifiersPackage = new StructureStatModifiersPackage(new List<StructureStatModifier>(),
+            GetAffectedValue(statsModificationEquipment.duration, statsModificationEquipment.durationStats));
         // Add self-granted modifiers to cache list
         for(int i = 0; i < statsModificationEquipment.effects.Length; i++)
             if(!statsModificationEquipment.grantToTarget[i])
-                selfModifiersPackage.modifiers.Add(new StructureStatModifier(statsModificationEquipment.effects[i], statsModificationEquipment.modifierTypes[i], statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value)));
+                selfModifiersPackage.modifiers.Add(new StructureStatModifier(statsModificationEquipment.effects[i],
+                    statsModificationEquipment.modifierTypes[i],
+                    GetAffectedValue(statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value), statsModificationEquipment.valueStats)));
         // Add target-granted modifiers to cache list
         if(target != null)
             for(int i = 0; i < statsModificationEquipment.effects.Length; i++)
                 if(statsModificationEquipment.grantToTarget[i])
-                    targetModifiersPackage.modifiers.Add(new StructureStatModifier(statsModificationEquipment.effects[i], statsModificationEquipment.modifierTypes[i], statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value)));
+                    targetModifiersPackage.modifiers.Add(new StructureStatModifier(statsModificationEquipment.effects[i],
+                        statsModificationEquipment.modifierTypes[i],
+                        GetAffectedValue(statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value), statsModificationEquipment.valueStats)));
         // Add modifiers packages to both self (and target)
         fitterStatsManager.AddModifiersPackage(selfModifiersPackage);
         if(target != null) target.GetComponent<StructureStatsManager>().AddModifiersPackage(targetModifiersPackage);
@@ -146,5 +161,11 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             amount = a;
             return true;
         } else return false;
+    }
+
+    float GetAffectedValue(float baseStatValue, string[] affectors) {
+        float mult = 1.0f;
+        for(int i = 0; i < affectors.Length; i++) mult *= fitterStatsManager.GetStat(affectors[i]);
+        return mult * baseStatValue;
     }
 }

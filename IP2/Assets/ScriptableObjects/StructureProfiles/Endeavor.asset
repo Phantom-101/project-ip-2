@@ -22,7 +22,7 @@ MonoBehaviour:
   damagePool: 50
   capacitance: 500
   generation: 20
-  speed: 0.0375
+  speed: 0.4
   speedInterpolation: 0.1
   turnSpeed: 10
   turnSpeedInterpolation: 1

@@ -69,7 +69,7 @@ public class StructureMovementManager : MonoBehaviour
                 targetRotationPercentage = Vector3.zero;
                 if(ssm.GetStat("Warp Field Strength") <= 0.0f) orders.RemoveAt(0);
                 float dis = Vector3.Distance(transform.position, t.transform.position);
-                if(dis > 1.0f) targetTranslationPercentage = Vector3.forward;
+                if(dis > 5.0f) targetTranslationPercentage = Vector3.forward;
                 else {
                     targetTranslationPercentage = Vector3.zero;
                     orders.RemoveAt(0);

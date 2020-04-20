@@ -1251,8 +1251,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e697496287faa6f4d99cbf11bc2cf77f, type: 2}
   - {fileID: 11400000, guid: e697496287faa6f4d99cbf11bc2cf77f, type: 2}
   - {fileID: 11400000, guid: e697496287faa6f4d99cbf11bc2cf77f, type: 2}
-  - {fileID: 11400000, guid: e697496287faa6f4d99cbf11bc2cf77f, type: 2}
-  - {fileID: 11400000, guid: e697496287faa6f4d99cbf11bc2cf77f, type: 2}
+  - {fileID: 11400000, guid: 2a5384b14c7f7114d9caa9b3cf3c5cf6, type: 2}
+  - {fileID: 11400000, guid: 2a5384b14c7f7114d9caa9b3cf3c5cf6, type: 2}
   equipmentGOs: []
 --- !u!1 &539365229
 GameObject:
@@ -3650,8 +3650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2152e751d0d23e84faaed31210f7ab9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentZoom: 0.1
-  targetZoom: 0.1
+  currentZoom: 1
+  targetZoom: 1
   zoomInterpolation: 0
   target: {fileID: 0}
 --- !u!45 &2066205350
@@ -3675,8 +3675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342551d734efbf249b511b882262e78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentZoom: 0.1
-  targetZoom: 0.1
+  currentZoom: 1
+  targetZoom: 1
   zoomInterpolation: 0
   target: {fileID: 0}
 --- !u!114 &2066205352

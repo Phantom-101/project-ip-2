@@ -11,6 +11,7 @@ public class Equipment : Item {
     public bool repeating;
     public bool mustBeTargeted;
     public float range;
+    public string[] rangeStats;
     public bool requireCharge;
     public Charge[] accepted;
     public bool showLoadedChargeIcon;
