@@ -28,7 +28,7 @@ public class StructureStatsManager : MonoBehaviour
     }
 
     void InitializeStats() {
-        sm = GameObject.FindObjectOfType<StructuresManager>();
+        sm = FindObjectOfType<StructuresManager>();
         // Structure stats
         stats.Add("Hull Max", new StructureStat(profile.hull));
         stats.Add("Hull", new StructureStat(profile.hull));

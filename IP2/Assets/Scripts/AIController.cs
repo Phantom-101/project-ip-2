@@ -11,8 +11,9 @@ public class AIController : MonoBehaviour
     GameObject target;
     float maneuverTimer;
 
+
     void Awake() {
-        structuresManager = GameObject.FindObjectOfType<StructuresManager>();
+        structuresManager = FindObjectOfType<StructuresManager>();
         structureStatsManager = GetComponent<StructureStatsManager>();
         structureEquipmentManager = GetComponent<StructureEquipmentManager>();
         structureMovementManager = GetComponent<StructureMovementManager>();
