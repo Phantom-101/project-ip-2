@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIController : MonoBehaviour
-{
+public class AIController : MonoBehaviour {
     StructuresManager structuresManager;
     StructureStatsManager structureStatsManager;
     StructureEquipmentManager structureEquipmentManager;

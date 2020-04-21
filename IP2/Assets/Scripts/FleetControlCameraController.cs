@@ -32,7 +32,7 @@ public class FleetControlCameraController : MonoBehaviour
                 transform.RotateAround(target.transform.position, transform.TransformDirection(Vector3.right), input * 100.0f * Time.deltaTime);
             }
             transform.RotateAround(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z), Vector3.up, Input.GetAxis("ArrowHorizontal") * 100.0f * Time.deltaTime);
-            transform.LookAt(target.transform.position, target.transform.up);
+            transform.LookAt(target.transform.position);
             ChangeZoom();
         }
     }

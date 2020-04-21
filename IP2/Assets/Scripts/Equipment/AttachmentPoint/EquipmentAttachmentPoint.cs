@@ -18,6 +18,8 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     VisualEffect visualEffect;
     // StructureStatsManager of fitter
     StructureStatsManager fitterStatsManager;
+    // Audio source
+    AudioSource audioSource;
 
     // Basic activation info
     public bool moduleActive;
@@ -28,6 +30,8 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     void Awake() {
         // Get the StructureStatsManager component of the fitter
         fitterStatsManager = transform.parent.parent.GetComponent<StructureStatsManager>();
+        // Add an audio source to this GameObject
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void Initialize() {
@@ -52,6 +56,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         if(a) {
             if(equipment.mustBeTargeted && target == null) return;
             if(equipment.requireCharge && (loaded == null || amount <= 0)) return;
+            if(equipment.mustBeTargeted && (transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) return;
         } else {
             if(equipment.cycleInterruptable && activatedCount == 0) OnCycleInterrupt();
         }
@@ -76,23 +81,16 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     }
 
     void ElapseCycle() {
-        if(equipment.mustBeTargeted) {
-            if(target == null) {
-                SetModuleActive(false);
-                return;
-            }
-            if(Vector3.Distance(transform.position, target.transform.position) > GetAffectedValue(equipment.range, equipment.rangeStats)) {
-                SetModuleActive(false);
-                return;
-            }
-        }
         cycleElapsed += Time.deltaTime;
-        // Check if equipment should be activated
-        for(int i = activatedCount; i < equipment.activations.Length; i++) {
-            if(cycleElapsed >= equipment.activations[i]) {
-                // If it should, activate and increase activatedCount
-                OnActivate(i);
-                activatedCount++;
+        if(equipment.mustBeTargeted && target == null) SetModuleActive(false);
+        if(moduleActive) {
+            // Check if equipment should be activated
+            for(int i = activatedCount; i < equipment.activations.Length; i++) {
+                if(cycleElapsed >= equipment.activations[i]) {
+                    // If it should, activate and increase activatedCount
+                    OnActivate(i);
+                    activatedCount++;
+                }
             }
         }
         // If cycleElapsed is over the equipment's cycle time, end the cycle
@@ -104,6 +102,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             if(amount <= 0) return;
             amount -= 1;
         }
+        if(equipment.activationClips.Length >= 1) audioSource.PlayOneShot(equipment.activationClips[Random.Range(0, equipment.activationClips.Length - 1)], 1.0f);
         if(equipment.GetType() == typeof(StatsModificationEquipment)) OnActivateAsStatsModification(n);
     }
 

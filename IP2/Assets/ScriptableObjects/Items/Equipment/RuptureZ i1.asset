@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4f2177fe7eccf44901ffaef099439b, type: 3}
+  m_Name: RuptureZ i1
+  m_EditorClassIdentifier: 
+  basePrice: 0
+  size: 0
+  icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
+  signature: 0
+  activatable: 1
+  cycleTime: 5
+  cycleInterruptable: 0
+  activations:
+  - 0
+  activationClips:
+  - {fileID: 8300000, guid: 9bb1228cf80d3f548bb6d7d6fb268b01, type: 3}
+  repeating: 1
+  mustBeTargeted: 1
+  range: 5
+  rangeStats: []
+  requireCharge: 1
+  accepted:
+  - {fileID: 11400000, guid: a7a6c4ece33b8204e8332e3350d21506, type: 2}
+  showLoadedChargeIcon: 0
+  vfx: {fileID: 5492783275482778277, guid: 4dfcddb70cb81214e9c5a314b8487f91, type: 3}
+  effects:
+  - Damage Pool
+  modifierTypes: 00000000
+  values:
+  - 2
+  valueStats:
+  - Turrets Damage
+  grantToTarget: 01
+  requirements: []
+  requirementStats: 
+  minValues: []
+  maxValues: []
+  duration: 0
+  durationStats: []
