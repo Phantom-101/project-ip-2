@@ -36,7 +36,7 @@ MonoBehaviour:
   - Damage Pool
   modifierTypes: 00000000
   values:
-  - 2
+  - 3
   valueStats:
   - Turrets Damage
   grantToTarget: 01
