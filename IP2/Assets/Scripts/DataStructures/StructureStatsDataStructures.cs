@@ -2,39 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StructureStat {
+public struct Stat {
     public float baseValue;
-    public List<StructureStatModifier> modifiers;
+    public List<StatModifier> modifiers;
 
-    public StructureStat(float baseValue) {
+    public Stat(float baseValue) {
         this.baseValue = baseValue;
-        modifiers = new List<StructureStatModifier>();
+        modifiers = new List<StatModifier>();
     }
 }
 
-public class StructureStatModifier {
+public struct StatModifier {
     public string targetStat;
-    public StructureStatModifierType statModifierType;
+    public StatModifierType statModifierType;
     public float value;
 
-    public StructureStatModifier(string targetStat, StructureStatModifierType statModifierType, float value) {
+    public StatModifier(string targetStat, StatModifierType statModifierType, float value) {
         this.targetStat = targetStat;
         this.statModifierType = statModifierType;
         this.value = value;
     }
 }
 
-public class StructureStatModifiersPackage {
-    public List<StructureStatModifier> modifiers;
+public struct StatModifiersPackage {
+    public List<StatModifier> modifiers;
     public float duration;
 
-    public StructureStatModifiersPackage(List<StructureStatModifier> modifiers, float duration) {
+    public StatModifiersPackage(List<StatModifier> modifiers, float duration) {
         this.modifiers = modifiers;
         this.duration = duration;
     }
 }
 
-public enum StructureStatModifierType {
+public enum StatModifierType {
     ImmediateAdditive,
     Additive,
     Multiplicative,

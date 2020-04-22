@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.VFX;
 
 public class EquipmentAttachmentPoint : MonoBehaviour {
+    // Stats
+    public float hitpoints = 0;
     // Equipment
     public Equipment equipment;
     // GameObject effect
@@ -32,9 +34,13 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         fitterStatsManager = transform.parent.parent.GetComponent<StructureStatsManager>();
         // Add an audio source to this GameObject
         audioSource = gameObject.AddComponent<AudioSource>();
+        // Automatic equipment repair
+        StartCoroutine(RepairEquipment());
     }
 
     public void Initialize() {
+        // Initialize stats
+        hitpoints = equipment.hitpoints;
         // Instantiate and store VFX
         if(equipment.vfx != null) {
             effect = Instantiate(equipment.vfx) as GameObject;
@@ -42,7 +48,6 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             effect.transform.localPosition = Vector3.zero;
             visualEffect = effect.GetComponent<VisualEffect>();
         }
-
         // Initialize based on equipment type
         if(equipment.GetType() == typeof(StatsModificationEquipment)) InitializeAsStatsModification();
     }
@@ -72,6 +77,8 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     }
 
     void CheckState() {
+        if(hitpoints < 0) hitpoints = 0;
+        else if(hitpoints > equipment.hitpoints) hitpoints = equipment.hitpoints;
         if(moduleActive){
             if(cycleElapsed == 0.0f) OnCycleStart();
             ElapseCycle();
@@ -82,13 +89,24 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
 
     void ElapseCycle() {
         cycleElapsed += Time.deltaTime;
+        if(hitpoints <= 0) SetModuleActive(false);
         if(equipment.mustBeTargeted && target == null) SetModuleActive(false);
-        if(moduleActive) {
+        if(hitpoints > 0 && moduleActive) {
             // Check if equipment should be activated
             for(int i = activatedCount; i < equipment.activations.Length; i++) {
                 if(cycleElapsed >= equipment.activations[i]) {
-                    // If it should, activate and increase activatedCount
-                    OnActivate(i);
+                    // If it should, check requirements
+                    bool shouldActivate = true;
+                    for(int j = 0; j < equipment.requirementStats.Length; j++) {
+                        float statValue = fitterStatsManager.GetStat(equipment.requirements[j]);
+                        float mult = 1.0f;
+                        foreach(string stat in equipment.requirementStats) mult *= fitterStatsManager.GetStat(stat);
+                        if(!(statValue >= equipment.minValues[j] * mult && statValue <= equipment.maxValues[j] * mult)) {
+                            shouldActivate = false;
+                            break;
+                        }
+                    }
+                    if(shouldActivate) OnActivate(i);
                     activatedCount++;
                 }
             }
@@ -102,7 +120,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             if(amount <= 0) return;
             amount -= 1;
         }
-        if(equipment.activationClips.Length >= 1) audioSource.PlayOneShot(equipment.activationClips[Random.Range(0, equipment.activationClips.Length - 1)], 1.0f);
+        if(equipment.activationClips.Length >= 1) audioSource.PlayOneShot(equipment.activationClips[Random.Range(0, equipment.activationClips.Length - 1)], 0.5f);
         if(equipment.GetType() == typeof(StatsModificationEquipment)) OnActivateAsStatsModification(n);
     }
 
@@ -110,21 +128,21 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         // Convert equipment to StatsModificationEquipment
         StatsModificationEquipment statsModificationEquipment = equipment as StatsModificationEquipment;
         // Setup packages
-        StructureStatModifiersPackage selfModifiersPackage = new StructureStatModifiersPackage(new List<StructureStatModifier>(),
+        StatModifiersPackage selfModifiersPackage = new StatModifiersPackage(new List<StatModifier>(),
             GetAffectedValue(statsModificationEquipment.duration, statsModificationEquipment.durationStats));
-        StructureStatModifiersPackage targetModifiersPackage = new StructureStatModifiersPackage(new List<StructureStatModifier>(),
+        StatModifiersPackage targetModifiersPackage = new StatModifiersPackage(new List<StatModifier>(),
             GetAffectedValue(statsModificationEquipment.duration, statsModificationEquipment.durationStats));
         // Add self-granted modifiers to cache list
         for(int i = 0; i < statsModificationEquipment.effects.Length; i++)
             if(!statsModificationEquipment.grantToTarget[i])
-                selfModifiersPackage.modifiers.Add(new StructureStatModifier(statsModificationEquipment.effects[i],
+                selfModifiersPackage.modifiers.Add(new StatModifier(statsModificationEquipment.effects[i],
                     statsModificationEquipment.modifierTypes[i],
                     GetAffectedValue(statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value), statsModificationEquipment.valueStats)));
         // Add target-granted modifiers to cache list
         if(target != null)
             for(int i = 0; i < statsModificationEquipment.effects.Length; i++)
                 if(statsModificationEquipment.grantToTarget[i])
-                    targetModifiersPackage.modifiers.Add(new StructureStatModifier(statsModificationEquipment.effects[i],
+                    targetModifiersPackage.modifiers.Add(new StatModifier(statsModificationEquipment.effects[i],
                         statsModificationEquipment.modifierTypes[i],
                         GetAffectedValue(statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value), statsModificationEquipment.valueStats)));
         // Add modifiers packages to both self (and target)
@@ -166,5 +184,15 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         float mult = 1.0f;
         for(int i = 0; i < affectors.Length; i++) mult *= fitterStatsManager.GetStat(affectors[i]);
         return mult * baseStatValue;
+    }
+
+    public void ChangeHitpoints(float delta) {
+        hitpoints += delta;
+    }
+
+    IEnumerator RepairEquipment() {
+        hitpoints ++;
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine(RepairEquipment());
     }
 }

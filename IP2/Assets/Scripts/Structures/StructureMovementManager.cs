@@ -28,7 +28,8 @@ public class StructureMovementManager : MonoBehaviour
         ExecuteOrders();
         CalculateTargets();
         InterpolateCurrents();
-        transform.Translate(currentTranslation * Time.deltaTime * ((orders.Count > 0 && orders[0] == "Warp") ? ssm.GetStat("Warp Speed") / speed : 1.0f));
+        Vector3 translation = currentTranslation * Time.deltaTime * ((orders.Count > 0 && orders[0] == "Warp") ? ssm.GetStat("Warp Speed") / speed : 1.0f);
+        GetComponent<Position>().Translate(translation);
         transform.Rotate(currentRotation * Time.deltaTime);
     }
 

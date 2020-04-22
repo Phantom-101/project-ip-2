@@ -2,87 +2,100 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StructureStatsManager : MonoBehaviour
-{
+public class StructureStatsManager : MonoBehaviour {
     public StructureProfile profile;
-    public Dictionary<string, StructureStat> stats = new Dictionary<string, StructureStat>();
-    public List<StructureStatModifiersPackage> modifiersPackages = new List<StructureStatModifiersPackage>();
+    public Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
+    public List<StatModifiersPackage> modifiersPackages = new List<StatModifiersPackage>();
     public Dictionary<Item, int> cargoHold = new Dictionary<Item, int>();
     public string faction;
 
     StructuresManager sm;
+    StructureEquipmentManager structureEquipmentManager;
 
     void Awake() {
         GetComponent<MeshFilter>().mesh = profile.mesh;
         GetComponent<MeshCollider>().sharedMesh = profile.mesh;
+        structureEquipmentManager = GetComponent<StructureEquipmentManager>();
         InitializeStats();
     }
 
     void Start() {
         StartCoroutine(DamageApplicationLoop());
+        StartCoroutine(GenerateEnergy());
     }
 
     void Update() {
         IterateModifiersPackages();
-        CheckHitpointStats();
+        CheckStats();
     }
 
     void InitializeStats() {
         sm = FindObjectOfType<StructuresManager>();
         // Structure stats
-        stats.Add("Hull Max", new StructureStat(profile.hull));
-        stats.Add("Hull", new StructureStat(profile.hull));
-        stats.Add("Armor Max", new StructureStat(profile.armor));
-        stats.Add("Armor", new StructureStat(profile.armor));
-        stats.Add("Shield Max", new StructureStat(profile.shield));
-        stats.Add("Shield", new StructureStat(profile.shield));
-        stats.Add("Damage Pool Max", new StructureStat(profile.damagePool));
-        stats.Add("Damage Pool", new StructureStat(0.0f));
-        stats.Add("Capacitance", new StructureStat(profile.capacitance));
-        stats.Add("Generation", new StructureStat(profile.generation));
-        stats.Add("Speed", new StructureStat(profile.speed));
-        stats.Add("Speed Interpolation", new StructureStat(profile.speedInterpolation));
-        stats.Add("Turn Speed", new StructureStat(profile.turnSpeed));
-        stats.Add("Turn Speed Interpolation", new StructureStat(profile.turnSpeedInterpolation));
-        stats.Add("Warp Speed", new StructureStat(profile.warpSpeed));
-        stats.Add("Warp Accuracy", new StructureStat(profile.warpAccuracy));
-        stats.Add("Warp Field Strength", new StructureStat(profile.warpFieldStrength));
-        stats.Add("Scanners Range", new StructureStat(profile.scannersRange));
-        stats.Add("Scanners Strength", new StructureStat(profile.scannersStrength));
-        stats.Add("Signature Strength", new StructureStat(profile.signatureStrength));
-        stats.Add("Cargo Hold Size", new StructureStat(profile.cargoHoldSize));
+        stats.Add("Hull Max", new Stat(profile.hull));
+        stats.Add("Hull", new Stat(profile.hull));
+        stats.Add("Armor Max", new Stat(profile.armor));
+        stats.Add("Armor", new Stat(profile.armor));
+        stats.Add("Shield Max", new Stat(profile.shield));
+        stats.Add("Shield", new Stat(profile.shield));
+        stats.Add("Damage Pool Max", new Stat(profile.damagePool));
+        stats.Add("Damage Pool", new Stat(0.0f));
+        stats.Add("Equipment Damage", new Stat(0.0f));
+        stats.Add("Capacitance Max", new Stat(profile.capacitance));
+        stats.Add("Capacitance", new Stat(profile.capacitance));
+        stats.Add("Generation", new Stat(profile.generation));
+        stats.Add("Speed", new Stat(profile.speed));
+        stats.Add("Speed Interpolation", new Stat(profile.speedInterpolation));
+        stats.Add("Turn Speed", new Stat(profile.turnSpeed));
+        stats.Add("Turn Speed Interpolation", new Stat(profile.turnSpeedInterpolation));
+        stats.Add("Warp Speed", new Stat(profile.warpSpeed));
+        stats.Add("Warp Accuracy", new Stat(profile.warpAccuracy));
+        stats.Add("Warp Field Strength", new Stat(profile.warpFieldStrength));
+        stats.Add("Scanners Range", new Stat(profile.scannersRange));
+        stats.Add("Scanners Strength", new Stat(profile.scannersStrength));
+        stats.Add("Signature Strength", new Stat(profile.signatureStrength));
+        stats.Add("Cargo Hold Size", new Stat(profile.cargoHoldSize));
         // Resistances
-        stats.Add("Hull Resistance", new StructureStat(profile.hullResistance));
-        stats.Add("Armor Resistance", new StructureStat(profile.armorResistance));
-        stats.Add("Shield Resistance", new StructureStat(profile.shieldResistance));
+        stats.Add("Hull Resistance", new Stat(profile.hullResistance));
+        stats.Add("Armor Resistance", new Stat(profile.armorResistance));
+        stats.Add("Shield Resistance", new Stat(profile.shieldResistance));
         // Multipliers
-        stats.Add("Turrets Damage", new StructureStat(1.0f));
+        stats.Add("Turrets Damage", new Stat(1.0f));
     }
 
-    public void AddModifiersPackage(StructureStatModifiersPackage package) {
+    public void AddModifiersPackage(StatModifiersPackage package) {
         modifiersPackages.Add(package);
-        foreach(StructureStatModifier modifier in package.modifiers) AddModifier(modifier);
+        foreach(StatModifier modifier in package.modifiers) AddModifier(modifier);
     }
 
     public void IterateModifiersPackages() {
-        foreach(StructureStatModifiersPackage package in modifiersPackages) {
-            package.duration -= Time.deltaTime;
-            if(package.duration <= 0.0f)
-                foreach(StructureStatModifier modifier in package.modifiers) RemoveModifier(modifier);
+        foreach(StatModifiersPackage package in modifiersPackages.ToArray()) {
+            float d = package.duration - Time.deltaTime;
+            if(d > 0.0f) {
+                StatModifiersPackage newPackage = new StatModifiersPackage(package.modifiers, d);
+                modifiersPackages.Remove(package);
+                modifiersPackages.Add(newPackage);
+            } else {
+                foreach(StatModifier modifier in package.modifiers) RemoveModifier(modifier);
+            }
         }
     }
 
-    public void AddModifier(StructureStatModifier modifier) {
-        if(modifier.statModifierType == StructureStatModifierType.ImmediateAdditive) stats[modifier.targetStat].baseValue += modifier.value;
+    public void AddModifier(StatModifier modifier) {
+        if(modifier.statModifierType == StatModifierType.ImmediateAdditive) {
+            Stat newStat = new Stat(stats[modifier.targetStat].baseValue + modifier.value);
+            stats[modifier.targetStat] = newStat;
+        }
         else stats[modifier.targetStat].modifiers.Add(modifier);
     }
 
-    public void RemoveModifier(StructureStatModifier modifier) {
+    public void RemoveModifier(StatModifier modifier) {
         stats[modifier.targetStat].modifiers.Remove(modifier);
     }
 
     public void SetStat(string statName, float v) {
-        stats[statName].baseValue = v;
+        Stat newStat = new Stat(v);
+        stats[statName] = newStat;
     }
 
     public float GetStat(string statName) {
@@ -90,25 +103,41 @@ public class StructureStatsManager : MonoBehaviour
         float additive = 0.0f;
         float multiplicative = 1.0f;
         float percent = 0.0f;
-        foreach(StructureStatModifier mod in stats[statName].modifiers) {
-            if(mod.statModifierType == StructureStatModifierType.Additive) {
+        foreach(StatModifier mod in stats[statName].modifiers) {
+            if(mod.statModifierType == StatModifierType.Additive) {
                 additive += mod.value;
-            } else if (mod.statModifierType == StructureStatModifierType.Multiplicative) {
+            } else if (mod.statModifierType == StatModifierType.Multiplicative) {
                 multiplicative *= mod.value;
-            } else if(mod.statModifierType == StructureStatModifierType.Percent) {
+            } else if(mod.statModifierType == StatModifierType.Percent) {
                 percent += mod.value;
             }
         }
         return v + additive + (multiplicative * v - v) + (percent / 100.0f) * v;
     }
 
-    void CheckHitpointStats() {
-        if (GetStat("Shield") < 0.0f) SetStat("Shield", 0.0f);
-        if (GetStat("Shield") > GetStat("Shield Max")) SetStat("Shield", GetStat("Shield Max"));
-        if (GetStat("Armor") < 0.0f) SetStat("Armor", 0.0f);
-        if (GetStat("Armor") > GetStat("Armor Max")) SetStat("Armor", GetStat("Armor Max"));
+    void CheckStats() {
         if (GetStat("Hull") <= 0.0f) sm.Destroyed(this);
         if (GetStat("Hull") > GetStat("Hull Max")) SetStat("Hull", GetStat("Hull Max"));
+        if (GetStat("Armor") < 0.0f) SetStat("Armor", 0.0f);
+        if (GetStat("Armor") > GetStat("Armor Max")) SetStat("Armor", GetStat("Armor Max"));
+        if (GetStat("Shield") < 0.0f) SetStat("Shield", 0.0f);
+        if (GetStat("Shield") > GetStat("Shield Max")) SetStat("Shield", GetStat("Shield Max"));
+        if (GetStat("Capacitance") > GetStat("Capacitance Max")) SetStat("Capacitance", GetStat("Capacitance Max"));
+        bool hasEquipment = false;
+        foreach(Equipment e in structureEquipmentManager.equipment) {
+            if(e != null) {
+                hasEquipment = true;
+                break;
+            }
+        }
+        while (GetStat("Equipment Damage") > 0) {
+            if(!hasEquipment) {
+                SetStat("Equipment Damage", 0.0f);
+                break;
+            }
+            int randIndex = Random.Range(0, structureEquipmentManager.equipment.Count - 1);
+            structureEquipmentManager.equipmentGOs[randIndex].GetComponent<EquipmentAttachmentPoint>().ChangeHitpoints(-GetStat("Equipment Damage"));
+        }
     }
 
     IEnumerator DamageApplicationLoop() {
@@ -117,12 +146,18 @@ public class StructureStatsManager : MonoBehaviour
         StartCoroutine(DamageApplicationLoop());
     }
 
+    IEnumerator GenerateEnergy() {
+        AddModifier(new StatModifier("Capacitance", StatModifierType.ImmediateAdditive, GetStat("Generation")));
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine(GenerateEnergy());
+    }
+
     void ApplyDamage() {
         if(GetStat("Damage Pool") > GetStat("Damage Pool Max")) SetStat("Damage Pool", GetStat("Damage Pool Max"));
         ApplyDamageToShield();
         ApplyDamageToArmor();
         ApplyDamageToHull();
-        CheckHitpointStats();
+        CheckStats();
     }
 
     void ApplyDamageToShield() {
@@ -130,10 +165,10 @@ public class StructureStatsManager : MonoBehaviour
         float resist = GetStat("Shield Resistance");
         float damage = GetStat("Damage Pool") * (1 - resist);
         if(damage <= shield) {
-            AddModifier(new StructureStatModifier("Shield", StructureStatModifierType.ImmediateAdditive, -damage));
+            AddModifier(new StatModifier("Shield", StatModifierType.ImmediateAdditive, -damage));
             SetStat("Damage Pool", 0.0f);
         } else {
-            AddModifier(new StructureStatModifier("Damage Pool", StructureStatModifierType.ImmediateAdditive, -shield));
+            AddModifier(new StatModifier("Damage Pool", StatModifierType.ImmediateAdditive, -shield));
             SetStat("Shield", 0.0f);
         }
     }
@@ -143,10 +178,10 @@ public class StructureStatsManager : MonoBehaviour
         float resist = GetStat("Armor Resistance");
         float damage = GetStat("Damage Pool") * (1 - resist);
         if(damage <= armor) {
-            AddModifier(new StructureStatModifier("Armor", StructureStatModifierType.ImmediateAdditive, -damage));
+            AddModifier(new StatModifier("Armor", StatModifierType.ImmediateAdditive, -damage));
             SetStat("Damage Pool", 0.0f);
         } else {
-            AddModifier(new StructureStatModifier("Damage Pool", StructureStatModifierType.ImmediateAdditive, -armor));
+            AddModifier(new StatModifier("Damage Pool", StatModifierType.ImmediateAdditive, -armor));
             SetStat("Armor", 0.0f);
         }
     }
@@ -156,10 +191,10 @@ public class StructureStatsManager : MonoBehaviour
         float resist = GetStat("Hull Resistance");
         float damage = GetStat("Damage Pool") * (1 - resist);
         if(damage <= hull) {
-            AddModifier(new StructureStatModifier("Hull", StructureStatModifierType.ImmediateAdditive, -damage));
+            AddModifier(new StatModifier("Hull", StatModifierType.ImmediateAdditive, -damage));
             SetStat("Damage Pool", 0.0f);
         } else {
-            AddModifier(new StructureStatModifier("Damage Pool", StructureStatModifierType.ImmediateAdditive, -hull));
+            AddModifier(new StatModifier("Damage Pool", StatModifierType.ImmediateAdditive, -hull));
             SetStat("Hull", 0.0f);
         }
     }
