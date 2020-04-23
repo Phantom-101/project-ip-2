@@ -16,6 +16,7 @@ MonoBehaviour:
   size: 0
   icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
   signature: 0
+  hitpoints: 5
   activatable: 1
   cycleTime: 5
   cycleInterruptable: 0
@@ -27,6 +28,10 @@ MonoBehaviour:
   mustBeTargeted: 1
   range: 5
   rangeStats: []
+  requirements: []
+  requirementStats: []
+  minValues: []
+  maxValues: []
   requireCharge: 1
   accepted:
   - {fileID: 11400000, guid: a7a6c4ece33b8204e8332e3350d21506, type: 2}
@@ -40,9 +45,5 @@ MonoBehaviour:
   valueStats:
   - Turrets Damage
   grantToTarget: 01
-  requirements: []
-  requirementStats: 
-  minValues: []
-  maxValues: []
   duration: 0
   durationStats: []

@@ -120,7 +120,11 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             if(amount <= 0) return;
             amount -= 1;
         }
+        // If there is a visual effect, send event to activate it
+        if(visualEffect != null) visualEffect.SendEvent("Activate");
+        // Play audio
         if(equipment.activationClips.Length >= 1) audioSource.PlayOneShot(equipment.activationClips[Random.Range(0, equipment.activationClips.Length - 1)], 0.5f);
+        // Activate as appropriate equipment type
         if(equipment.GetType() == typeof(StatsModificationEquipment)) OnActivateAsStatsModification(n);
     }
 
@@ -148,8 +152,6 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         // Add modifiers packages to both self (and target)
         fitterStatsManager.AddModifiersPackage(selfModifiersPackage);
         if(target != null) target.GetComponent<StructureStatsManager>().AddModifiersPackage(targetModifiersPackage);
-        // If there is a visual effect, send event to activate it
-        if(visualEffect != null) visualEffect.SendEvent("Activate");
     }
 
     void OnCycleStart() {}
