@@ -5,4 +5,8 @@ Fan-based project for an Interstellar Pilot sequel.
 This aims to deliver content similar to the original IP while delivering newer and fresher content.
 
 # Price
-Free. Except maybe for in-game purchases???
+F2P.
+
+# Contribute
+Please apply at our Discord server!
+https://discordapp.com/invite/XK3jKvJ
