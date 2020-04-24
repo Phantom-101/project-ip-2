@@ -2,4 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Selectable : MonoBehaviour { }
+public class GameObjectContainer : MonoBehaviour {
+    public GameObject value;
+}

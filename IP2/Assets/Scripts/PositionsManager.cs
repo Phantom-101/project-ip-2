@@ -9,7 +9,7 @@ public class PositionsManager : MonoBehaviour {
         positions = FindObjectsOfType<Position>();
     }
 
-    public void ShiftOrigion(Vector3 playerLocation) {
+    public void ShiftOrigin(Vector3 playerLocation) {
         foreach(Position position in positions) position.Translate(-playerLocation);
     }
 }

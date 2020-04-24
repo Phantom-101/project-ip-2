@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     StructureMovementManager structureMovementManager;
     StructureEquipmentManager structureEquipmentManager;
     StructuresManager structuresManager;
+    PositionsManager positionsManager;
+    List<StructureStatsManager> structures;
     bool inventoryActive;
 
     void Awake() {
@@ -26,7 +28,8 @@ public class PlayerController : MonoBehaviour
         structureStatsManager = GetComponent<StructureStatsManager>();
         structureMovementManager = GetComponent<StructureMovementManager>();
         structureEquipmentManager = GetComponent<StructureEquipmentManager>();
-        structuresManager = GameObject.FindObjectOfType<StructuresManager>();
+        structuresManager = FindObjectOfType<StructuresManager>();
+        positionsManager = FindObjectOfType<PositionsManager>();
     }
 
     void Start() {
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
         Inputs();
+        if(transform.position.sqrMagnitude > 10000) positionsManager.ShiftOrigin(transform.position);
     }
 
     void Inputs() {
@@ -150,19 +154,39 @@ public class PlayerController : MonoBehaviour
 
     void UpdateSelectablesUI() {
         GameObject sp = GameObject.Find("Selectables Panel");
-        List<StructureStatsManager> structures = structuresManager.GetStructures();
+        int destroyed = 0;
+        List<GameObject> haveButtonTo = new List<GameObject>();
+        foreach(Transform button in sp.transform) {
+            GameObject pointsTo = button.GetComponent<GameObjectContainer>().value;
+            if(pointsTo == null) {
+                destroyed ++;
+                Destroy(button.gameObject);
+            } else {
+                haveButtonTo.Add(pointsTo);
+                if(destroyed > 0) {
+                    RectTransform buttonRectTransform = button.GetComponent<RectTransform>();
+                    buttonRectTransform.anchoredPosition = new Vector2(0.0f, buttonRectTransform.anchoredPosition.y + destroyed * 15);
+                }
+            }
+        }
+        structures = structuresManager.GetStructures();
         if(structures == null) return;
-        foreach(Transform child in sp.transform) Destroy(child.gameObject);
         int y = 0;
-        for(int i = 0; i < structures.Count; i++) {
-            GameObject element = Instantiate(selectablesListItemUI) as GameObject;
-            element.transform.SetParent(sp.transform);
-            element.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, y);
-            element.transform.GetChild(0).GetComponent<Text>().text = structures[i].gameObject.name;
-            element.transform.GetChild(1).GetComponent<Text>().text = structures[i].profile.name;
-            element.transform.GetChild(2).GetComponent<Text>().text = structures[i].faction;
-            SelectableButtonFunction(() => SetSelected(structures[element.transform.GetSiblingIndex()].gameObject), element.GetComponent<Button>());
-            y -= 15;
+        foreach(StructureStatsManager structure in structures) {
+            GameObject structureGameObject = structure.gameObject;
+            if(!haveButtonTo.Contains(structureGameObject)) {
+                GameObject element = Instantiate(selectableListItemUI) as GameObject;
+                element.transform.SetParent(sp.transform);
+                element.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, y);
+                element.transform.GetChild(0).GetComponent<Text>().text = structureGameObject.name;
+                element.transform.GetChild(1).GetComponent<Text>().text = structure.profile.name;
+                element.transform.GetChild(2).GetComponent<Text>().text = structure.faction;
+                if(structure == structureStatsManager) element.GetComponent<Button>().interactable = false;
+                element.AddComponent<GameObjectContainer>();
+                element.GetComponent<GameObjectContainer>().value = structureGameObject;
+                SelectableButtonFunction(() => SetSelected(element.GetComponent<GameObjectContainer>().value), element.GetComponent<Button>());
+                y -= 15;
+            }
         }
     }
 
