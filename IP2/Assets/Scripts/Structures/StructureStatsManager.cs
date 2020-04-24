@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StructureStatsManager : MonoBehaviour {
+    public StructureManagers structureManagers;
     public StructureProfile profile;
     public Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
     public List<StatModifiersPackage> modifiersPackages = new List<StatModifiersPackage>();
@@ -15,7 +16,9 @@ public class StructureStatsManager : MonoBehaviour {
     void Awake() {
         GetComponent<MeshFilter>().mesh = profile.mesh;
         GetComponent<MeshCollider>().sharedMesh = profile.mesh;
-        structureEquipmentManager = GetComponent<StructureEquipmentManager>();
+        sm = FindObjectOfType<StructuresManager>();
+        while(structureManagers == null) {}
+        structureEquipmentManager = structureManagers.structureEquipmentManager;
         InitializeStats();
     }
 
@@ -30,7 +33,6 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     void InitializeStats() {
-        sm = FindObjectOfType<StructuresManager>();
         // Structure stats
         stats.Add("Hull Max", new Stat(profile.hull));
         stats.Add("Hull", new Stat(profile.hull));

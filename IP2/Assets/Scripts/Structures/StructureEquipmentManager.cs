@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StructureEquipmentManager : MonoBehaviour
-{
+public class StructureEquipmentManager : MonoBehaviour {
+    public StructureManagers structureManagers;
     public List<Equipment> equipment = new List<Equipment>();
     public List<GameObject> equipmentGOs = new List<GameObject>();
 
@@ -14,7 +14,7 @@ public class StructureEquipmentManager : MonoBehaviour
     }
 
     void InitializeModules() {
-        ssm = GetComponent<StructureStatsManager>();
+        ssm = structureManagers.structureStatsManager;
         GameObject e = new GameObject("Equipment");
         e.transform.parent = transform;
         e.transform.localPosition = Vector3.zero;
@@ -32,27 +32,31 @@ public class StructureEquipmentManager : MonoBehaviour
             GameObject equipmentGO = e.transform.GetChild(i).gameObject;
             equipmentGOs.Add(equipmentGO);
             if (equipment[i] != null) {
-                equipmentGO.GetComponent<EquipmentAttachmentPoint>().equipment = equipment[i];
-                if(equipment[i].accepted.Length > 0) equipmentGO.GetComponent<EquipmentAttachmentPoint>().LoadCharge(equipment[i].accepted[0], 100);
-                equipmentGO.GetComponent<EquipmentAttachmentPoint>().Initialize();
+                EquipmentAttachmentPoint equipmentScript = equipmentGO.GetComponent<EquipmentAttachmentPoint>();
+                equipmentScript.equipment = equipment[i];
+                if(equipment[i].accepted.Length > 0) equipmentScript.LoadCharge(equipment[i].accepted[0], 100);
+                equipmentScript.Initialize();
             }
         }
     }
 
     public void TryActivateAllEquipment(GameObject to) {
         for(int i = 0; i < equipmentGOs.Count; i++) {
-            equipmentGOs[i].GetComponent<EquipmentAttachmentPoint>().target = to;
-            equipmentGOs[i].GetComponent<EquipmentAttachmentPoint>().SetModuleActive(true);
+            EquipmentAttachmentPoint equipmentScript = equipmentGOs[i].GetComponent<EquipmentAttachmentPoint>();
+            equipmentScript.target = to;
+            equipmentScript.SetModuleActive(true);
         }
     }
 
     public void TryActivateEquipment(int index, GameObject to) {
-        equipmentGOs[index].GetComponent<EquipmentAttachmentPoint>().target = to;
-        equipmentGOs[index].GetComponent<EquipmentAttachmentPoint>().SetModuleActive(true);
+        EquipmentAttachmentPoint equipmentScript = equipmentGOs[index].GetComponent<EquipmentAttachmentPoint>();
+        equipmentScript.target = to;
+        equipmentScript.SetModuleActive(true);
     }
 
     public void ToggleEquipment(int index, GameObject to, bool b) {
-        equipmentGOs[index].GetComponent<EquipmentAttachmentPoint>().target = to;
-        equipmentGOs[index].GetComponent<EquipmentAttachmentPoint>().SetModuleActive(b);
+        EquipmentAttachmentPoint equipmentScript = equipmentGOs[index].GetComponent<EquipmentAttachmentPoint>();
+        equipmentScript.target = to;
+        equipmentScript.SetModuleActive(b);
     }   
 }

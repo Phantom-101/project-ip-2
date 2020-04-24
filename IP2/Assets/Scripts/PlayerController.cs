@@ -105,14 +105,9 @@ public class PlayerController : MonoBehaviour
         int x = 0;
         int y = 0;
         GameObject content = inventoryPanel.transform.GetChild(0).GetChild(0).gameObject;
-        foreach (Transform child in content.transform)
-        {
-            Destroy(child.gameObject);
-        }
-        foreach (Item item in structureStatsManager.cargoHold.Keys)
-        {
-            if(structureStatsManager.cargoHold[item] > 0)
-            {
+        foreach (Transform child in content.transform) Destroy(child.gameObject);
+        foreach (Item item in structureStatsManager.cargoHold.Keys) {
+            if(structureStatsManager.cargoHold[item] > 0) {
                 GameObject listItem = Instantiate(inventoryItemUI) as GameObject;
                 listItem.GetComponent<RectTransform>().SetParent(content.transform, false);
                 listItem.transform.GetChild(0).GetComponent<Image>().sprite = item.icon;
@@ -120,8 +115,7 @@ public class PlayerController : MonoBehaviour
                 listItem.transform.GetChild(2).GetComponent<Text>().text = structureStatsManager.cargoHold[item].ToString();
                 listItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
                 x += 100;
-                if(x > 400)
-                {
+                if(x > 400) {
                     x = 0;
                     y += 100;
                 }
@@ -176,15 +170,16 @@ public class PlayerController : MonoBehaviour
             GameObject structureGameObject = structure.gameObject;
             if(!haveButtonTo.Contains(structureGameObject)) {
                 GameObject element = Instantiate(selectableListItemUI) as GameObject;
-                element.transform.SetParent(sp.transform);
+                Transform eTransform = element.transform;
+                eTransform.SetParent(sp.transform);
                 element.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, y);
-                element.transform.GetChild(0).GetComponent<Text>().text = structureGameObject.name;
-                element.transform.GetChild(1).GetComponent<Text>().text = structure.profile.name;
-                element.transform.GetChild(2).GetComponent<Text>().text = structure.faction;
+                eTransform.GetChild(0).GetComponent<Text>().text = structureGameObject.name;
+                eTransform.GetChild(1).GetComponent<Text>().text = structure.profile.name;
+                eTransform.GetChild(2).GetComponent<Text>().text = structure.faction;
                 if(structure == structureStatsManager) element.GetComponent<Button>().interactable = false;
-                element.AddComponent<GameObjectContainer>();
-                element.GetComponent<GameObjectContainer>().value = structureGameObject;
-                SelectableButtonFunction(() => SetSelected(element.GetComponent<GameObjectContainer>().value), element.GetComponent<Button>());
+                Container container = element.AddComponent<Container>();
+                container.items.Add(new GameObjectContainerItem(structure.gameObject));
+                SelectableButtonFunction(() => SetSelected(container.GetGameObjectContainerItem(0).value), element.GetComponent<Button>());
                 y -= 15;
             }
         }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StructureMovementManager : MonoBehaviour
-{
+public class StructureMovementManager : MonoBehaviour {
+    public StructureManagers structureManagers;
     [SerializeField] Vector3 targetTranslationPercentage;
     [SerializeField] Vector3 targetRotationPercentage;
     [SerializeField] Vector3 targetTranslation;
@@ -19,7 +19,7 @@ public class StructureMovementManager : MonoBehaviour
     GameObject t;
 
     void Start() {
-        ssm = GetComponent<StructureStatsManager>();
+        ssm = structureManagers.structureStatsManager;
     }
 
     void Update() {
