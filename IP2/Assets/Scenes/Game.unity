@@ -1137,6 +1137,7 @@ GameObject:
   - component: {fileID: 503280621}
   - component: {fileID: 503280616}
   - component: {fileID: 503280623}
+  - component: {fileID: 503280615}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1165,6 +1166,21 @@ MonoBehaviour:
   inventoryItemUI: {fileID: 8327861016218889450, guid: 9a7926d486a68974492df23b98a2fca0,
     type: 3}
   selected: {fileID: 0}
+--- !u!114 &503280615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503280613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cf4db36d91d084f81ad2ace4e7bb96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureStatsManager: {fileID: 0}
+  structureMovementManager: {fileID: 0}
+  structureEquipmentManager: {fileID: 0}
 --- !u!114 &503280616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,6 +1193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   profile: {fileID: 11400000, guid: 490290a3faedb5d06beb41885481a3a4, type: 2}
   faction: 1
 --- !u!64 &503280617
@@ -1266,6 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf4d424bc9d7f841aeebbadba51cff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   targetTranslationPercentage: {x: 0, y: 0, z: 0}
   targetRotationPercentage: {x: 0, y: 0, z: 0}
   targetTranslation: {x: 0, y: 0, z: 0}
@@ -1287,6 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3c86a053c273548a6c0d9278e9bc38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   equipment:
   - {fileID: 11400000, guid: 44a0dc675e117cb478b3356a061219df, type: 2}
   - {fileID: 11400000, guid: 44a0dc675e117cb478b3356a061219df, type: 2}
@@ -1478,6 +1497,7 @@ GameObject:
   - component: {fileID: 618343405}
   - component: {fileID: 618343404}
   - component: {fileID: 618343413}
+  - component: {fileID: 618343408}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Player
@@ -1497,6 +1517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   profile: {fileID: 11400000, guid: 7ff81c8a84a12dd46a317af6466808ee, type: 2}
   faction: 2
 --- !u!114 &618343405
@@ -1511,6 +1532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf4d424bc9d7f841aeebbadba51cff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   targetTranslationPercentage: {x: 0, y: 0, z: 0}
   targetRotationPercentage: {x: 0, y: 0, z: 0}
   targetTranslation: {x: 0, y: 0, z: 0}
@@ -1532,6 +1554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3c86a053c273548a6c0d9278e9bc38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   equipment:
   - {fileID: 11400000, guid: 6bed4501c8156b749a78b393b0eb42b1, type: 2}
   - {fileID: 11400000, guid: 6bed4501c8156b749a78b393b0eb42b1, type: 2}
@@ -1551,6 +1574,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85392b54be70be438d8e5d251bff8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &618343408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618343403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cf4db36d91d084f81ad2ace4e7bb96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureStatsManager: {fileID: 0}
+  structureMovementManager: {fileID: 0}
+  structureEquipmentManager: {fileID: 0}
 --- !u!64 &618343409
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2045,6 +2083,7 @@ GameObject:
   - component: {fileID: 1107463883}
   - component: {fileID: 1107463882}
   - component: {fileID: 1107463890}
+  - component: {fileID: 1107463886}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Player
@@ -2078,6 +2117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   profile: {fileID: 11400000, guid: 7ff81c8a84a12dd46a317af6466808ee, type: 2}
   faction: 2
 --- !u!114 &1107463883
@@ -2092,6 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf4d424bc9d7f841aeebbadba51cff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   targetTranslationPercentage: {x: 0, y: 0, z: 0}
   targetRotationPercentage: {x: 0, y: 0, z: 0}
   targetTranslation: {x: 0, y: 0, z: 0}
@@ -2113,6 +2154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3c86a053c273548a6c0d9278e9bc38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   equipment:
   - {fileID: 11400000, guid: 6bed4501c8156b749a78b393b0eb42b1, type: 2}
   - {fileID: 11400000, guid: 6bed4501c8156b749a78b393b0eb42b1, type: 2}
@@ -2132,6 +2174,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85392b54be70be438d8e5d251bff8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1107463886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107463880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cf4db36d91d084f81ad2ace4e7bb96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureStatsManager: {fileID: 0}
+  structureMovementManager: {fileID: 0}
+  structureEquipmentManager: {fileID: 0}
 --- !u!64 &1107463887
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2594,7 +2651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411794, guid: 718940f807eb53f4aa0c16d70080432d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.71
+      value: 94.1
       objectReference: {fileID: 0}
     - target: {fileID: 411794, guid: 718940f807eb53f4aa0c16d70080432d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2602,7 +2659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411794, guid: 718940f807eb53f4aa0c16d70080432d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 57.44
+      value: 112.9
       objectReference: {fileID: 0}
     - target: {fileID: 411794, guid: 718940f807eb53f4aa0c16d70080432d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3808,6 +3865,7 @@ GameObject:
   - component: {fileID: 1905189448}
   - component: {fileID: 1905189447}
   - component: {fileID: 1905189456}
+  - component: {fileID: 1905189451}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Player
@@ -3827,6 +3885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   profile: {fileID: 11400000, guid: 7ff81c8a84a12dd46a317af6466808ee, type: 2}
   faction: 2
 --- !u!114 &1905189448
@@ -3841,6 +3900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf4d424bc9d7f841aeebbadba51cff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   targetTranslationPercentage: {x: 0, y: 0, z: 0}
   targetRotationPercentage: {x: 0, y: 0, z: 0}
   targetTranslation: {x: 0, y: 0, z: 0}
@@ -3862,6 +3922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3c86a053c273548a6c0d9278e9bc38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureManagers: {fileID: 0}
   equipment:
   - {fileID: 11400000, guid: 6bed4501c8156b749a78b393b0eb42b1, type: 2}
   - {fileID: 11400000, guid: 6bed4501c8156b749a78b393b0eb42b1, type: 2}
@@ -3881,6 +3942,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85392b54be70be438d8e5d251bff8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1905189451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905189446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cf4db36d91d084f81ad2ace4e7bb96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureStatsManager: {fileID: 0}
+  structureMovementManager: {fileID: 0}
+  structureEquipmentManager: {fileID: 0}
 --- !u!64 &1905189452
 MeshCollider:
   m_ObjectHideFlags: 0

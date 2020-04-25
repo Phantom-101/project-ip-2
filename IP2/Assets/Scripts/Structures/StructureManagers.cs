@@ -9,13 +9,13 @@ public class StructureManagers : MonoBehaviour {
 
     void Awake() {
         structureStatsManager = GetComponent<StructureStatsManager>();
-        if(structureStatsManager == null) structureStatsManager = AddComponent<StructureStatsManager>();
+        if(structureStatsManager == null) structureStatsManager = gameObject.AddComponent<StructureStatsManager>();
         structureStatsManager.structureManagers = this;
         structureMovementManager = GetComponent<StructureMovementManager>();
-        if(structureMovementManager == null) structureMovementManager = AddComponent<StructureMovementManager>();
+        if(structureMovementManager == null) structureMovementManager = gameObject.AddComponent<StructureMovementManager>();
         structureMovementManager.structureManagers = this;
         structureEquipmentManager = GetComponent<StructureEquipmentManager>();
-        if(structureEquipmentManager == null) structureEquipmentManager = AddComponent<StructureEquipmentManager>();
+        if(structureEquipmentManager == null) structureEquipmentManager = gameObject.AddComponent<StructureEquipmentManager>();
         structureEquipmentManager.structureManagers = this;
     }
 }

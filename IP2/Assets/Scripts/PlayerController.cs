@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
         int destroyed = 0;
         List<GameObject> haveButtonTo = new List<GameObject>();
         foreach(Transform button in sp.transform) {
-            GameObject pointsTo = button.GetComponent<GameObjectContainer>().value;
+            GameObject pointsTo = button.GetComponent<ContainerComponent>().containers[0].value as GameObject;
             if(pointsTo == null) {
                 destroyed ++;
                 Destroy(button.gameObject);
@@ -177,9 +177,9 @@ public class PlayerController : MonoBehaviour
                 eTransform.GetChild(1).GetComponent<Text>().text = structure.profile.name;
                 eTransform.GetChild(2).GetComponent<Text>().text = structure.faction;
                 if(structure == structureStatsManager) element.GetComponent<Button>().interactable = false;
-                Container container = element.AddComponent<Container>();
-                container.items.Add(new GameObjectContainerItem(structure.gameObject));
-                SelectableButtonFunction(() => SetSelected(container.GetGameObjectContainerItem(0).value), element.GetComponent<Button>());
+                ContainerComponent containerComp = element.AddComponent<ContainerComponent>();
+                containerComp.containers.Add(new Container<Object>(structure.gameObject));
+                SelectableButtonFunction(() => SetSelected(containerComp.containers[0].value as GameObject), element.GetComponent<Button>());
                 y -= 15;
             }
         }
