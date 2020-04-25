@@ -22,7 +22,11 @@ public class Position : MonoBehaviour {
     }
 
     public void Translate(Vector3 pos) {
-        pos = transform.rotation * pos;
+        Translate(pos, Space.Self);
+    }
+
+    public void Translate(Vector3 pos, Space space) {
+        if(space == Space.Self) pos = transform.rotation * pos;
         position.x += pos.x;
         position.y += pos.y;
         position.z += pos.z;

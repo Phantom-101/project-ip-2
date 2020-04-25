@@ -27,7 +27,7 @@ MonoBehaviour:
   turnSpeed: 8
   turnSpeedInterpolation: 1
   warpSpeed: 25
-  warpAccuracy: 35
+  warpAccuracy: 100
   warpFieldStrength: 1
   scannersRange: 0
   scannersStrength: 0

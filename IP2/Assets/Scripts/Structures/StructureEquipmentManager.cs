@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StructureEquipmentManager : MonoBehaviour {
-    public StructureManagers structureManagers;
     public List<Equipment> equipment = new List<Equipment>();
     public List<GameObject> equipmentGOs = new List<GameObject>();
 
@@ -14,7 +13,7 @@ public class StructureEquipmentManager : MonoBehaviour {
     }
 
     void InitializeModules() {
-        ssm = structureManagers.structureStatsManager;
+        ssm = GetComponent<StructureStatsManager>();
         GameObject e = new GameObject("Equipment");
         e.transform.parent = transform;
         e.transform.localPosition = Vector3.zero;

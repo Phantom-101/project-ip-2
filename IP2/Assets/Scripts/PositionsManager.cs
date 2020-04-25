@@ -10,6 +10,6 @@ public class PositionsManager : MonoBehaviour {
     }
 
     public void ShiftOrigin(Vector3 playerLocation) {
-        foreach(Position position in positions) position.Translate(-playerLocation);
+        foreach(Position position in positions) position.Translate(-playerLocation, Space.World);
     }
 }

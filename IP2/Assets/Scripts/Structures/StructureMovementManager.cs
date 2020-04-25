@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StructureMovementManager : MonoBehaviour {
-    public StructureManagers structureManagers;
     [SerializeField] Vector3 targetTranslationPercentage;
     [SerializeField] Vector3 targetRotationPercentage;
     [SerializeField] Vector3 targetTranslation;
@@ -19,7 +18,7 @@ public class StructureMovementManager : MonoBehaviour {
     GameObject t;
 
     void Start() {
-        ssm = structureManagers.structureStatsManager;
+        ssm = GetComponent<StructureStatsManager>();
     }
 
     void Update() {
@@ -58,11 +57,11 @@ public class StructureMovementManager : MonoBehaviour {
                 float LRDif = Vector3.Dot(LRPerp, transform.up);
                 float absLRDif = Mathf.Abs(LRDif);
                 float warpAccuracy = 1.0f / Mathf.Sqrt(ssm.GetStat("Warp Accuracy"));
-                if(absLRDif > warpAccuracy / 2.0f) targetRotationPercentage.y = LRDif;
+                if(absLRDif > warpAccuracy / 2.0f) targetRotationPercentage.y = LRDif / 25.0f;
                 Vector3 UDPerp = Vector3.Cross(transform.forward, heading);
                 float UDDif = Vector3.Dot(UDPerp, transform.right);
                 float absUDDif = Mathf.Abs(UDDif);
-                if(absUDDif > warpAccuracy / 2.0f) targetRotationPercentage.x = UDDif;
+                if(absUDDif > warpAccuracy / 2.0f) targetRotationPercentage.x = UDDif / 25.0f;
                 if(absLRDif <= warpAccuracy && absUDDif <= warpAccuracy) orders.RemoveAt(0);
                 return;
             }

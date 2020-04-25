@@ -60,8 +60,6 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         // If module is activatable, check further conditions
         if(a) {
             if(equipment.mustBeTargeted && target == null) return;
-            if(equipment.requireCharge && (loaded == null || amount <= 0)) return;
-            if(equipment.mustBeTargeted && (transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) return;
         } else {
             if(equipment.cycleInterruptable && activatedCount == 0) OnCycleInterrupt();
         }
@@ -91,7 +89,8 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         cycleElapsed += Time.deltaTime;
         if(hitpoints <= 0) SetModuleActive(false);
         if(equipment.mustBeTargeted && target == null) SetModuleActive(false);
-        if(hitpoints > 0 && moduleActive) {
+        else if (equipment.mustBeTargeted && (transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) SetModuleActive(false);
+        if(moduleActive) {
             // Check if equipment should be activated
             for(int i = activatedCount; i < equipment.activations.Length; i++) {
                 if(cycleElapsed >= equipment.activations[i]) {

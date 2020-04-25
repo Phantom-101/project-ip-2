@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StructureStatsManager : MonoBehaviour {
-    public StructureManagers structureManagers;
     public StructureProfile profile;
     public Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
     public List<StatModifiersPackage> modifiersPackages = new List<StatModifiersPackage>();
@@ -17,8 +16,7 @@ public class StructureStatsManager : MonoBehaviour {
         GetComponent<MeshFilter>().mesh = profile.mesh;
         GetComponent<MeshCollider>().sharedMesh = profile.mesh;
         sm = FindObjectOfType<StructuresManager>();
-        while(structureManagers == null) {}
-        structureEquipmentManager = structureManagers.structureEquipmentManager;
+        structureEquipmentManager = GetComponent<StructureEquipmentManager>();
         InitializeStats();
     }
 

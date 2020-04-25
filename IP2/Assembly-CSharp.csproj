@@ -69,7 +69,6 @@
      <Compile Include="Assets\Scripts\Spawner\SphereSpawner.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureBehaviors.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureEquipmentManager.cs" />
-     <Compile Include="Assets\Scripts\Structures\StructureManagers.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureMovementManager.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureProfile.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureStatsManager.cs" />
