@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9bb1228cf80d3f548bb6d7d6fb268b01, type: 3}
   repeating: 1
   mustBeTargeted: 1
-  range: 5
+  range: 15
   rangeStats: []
   requirements: []
   requirementStats: []

@@ -52,7 +52,7 @@
      <Compile Include="Assets\Scripts\Containers\Container.cs" />
      <Compile Include="Assets\Scripts\Containers\ContainerComponent.cs" />
      <Compile Include="Assets\Scripts\DataStructures\FundamentalDataStructures.cs" />
-     <Compile Include="Assets\Scripts\DataStructures\StructureStatsDataStructures.cs" />
+     <Compile Include="Assets\Scripts\DataStructures\StatsDataStructures.cs" />
      <Compile Include="Assets\Scripts\Equipment\AttachmentPoint\EquipmentAttachmentPoint.cs" />
      <Compile Include="Assets\Scripts\Equipment\ScriptableObjects\Equipment.cs" />
      <Compile Include="Assets\Scripts\Equipment\ScriptableObjects\StatsModificationEquipment.cs" />

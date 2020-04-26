@@ -56,12 +56,15 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
 
     public virtual void SetModuleActive(bool a) {
         // If module is passive, return
-        if(!equipment.activatable) return;
+        if (!equipment.activatable) return;
         // If module is activatable, check further conditions
-        if(a) {
-            if(equipment.mustBeTargeted && target == null) return;
+        if (a) {
+            if (equipment.mustBeTargeted) {
+                if (target == null) return;
+                if ((transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) return;
+            }
         } else {
-            if(equipment.cycleInterruptable && activatedCount == 0) OnCycleInterrupt();
+            if (equipment.cycleInterruptable && activatedCount == 0) OnCycleInterrupt();
         }
         moduleActive = a;
     }
@@ -87,20 +90,19 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
 
     void ElapseCycle() {
         cycleElapsed += Time.deltaTime;
-        if(hitpoints <= 0) SetModuleActive(false);
-        if(equipment.mustBeTargeted && target == null) SetModuleActive(false);
-        else if (equipment.mustBeTargeted && (transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) SetModuleActive(false);
-        if(moduleActive) {
+        if (equipment.mustBeTargeted && target == null) SetModuleActive(false);
+        else if ((transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) SetModuleActive(false);
+        if (moduleActive) {
             // Check if equipment should be activated
-            for(int i = activatedCount; i < equipment.activations.Length; i++) {
-                if(cycleElapsed >= equipment.activations[i]) {
+            for (int i = activatedCount; i < equipment.activations.Length; i++) {
+                if (cycleElapsed >= equipment.activations[i]) {
                     // If it should, check requirements
                     bool shouldActivate = true;
-                    for(int j = 0; j < equipment.requirementStats.Length; j++) {
+                    for (int j = 0; j < equipment.requirementStats.Length; j++) {
                         float statValue = fitterStatsManager.GetStat(equipment.requirements[j]);
                         float mult = 1.0f;
-                        foreach(string stat in equipment.requirementStats) mult *= fitterStatsManager.GetStat(stat);
-                        if(!(statValue >= equipment.minValues[j] * mult && statValue <= equipment.maxValues[j] * mult)) {
+                        foreach (string stat in equipment.requirementStats) mult *= fitterStatsManager.GetStat(stat);
+                        if (!(statValue >= equipment.minValues[j] * mult && statValue <= equipment.maxValues[j] * mult)) {
                             shouldActivate = false;
                             break;
                         }
@@ -111,11 +113,11 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             }
         }
         // If cycleElapsed is over the equipment's cycle time, end the cycle
-        if(cycleElapsed >= equipment.cycleTime) OnCycleEnd();
+        if (cycleElapsed >= equipment.cycleTime) OnCycleEnd();
     }
 
     void OnActivate(int n) {
-        if(equipment.requireCharge) {
+        if (equipment.requireCharge) {
             if(amount <= 0) return;
             amount -= 1;
         }
@@ -163,7 +165,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     void OnCycleEnd() {
         cycleElapsed = 0.0f;
         activatedCount = 0;
-        if(!equipment.repeating) SetModuleActive(false);
+        if(equipment.repeating && moduleActive) SetModuleActive(true);
     }
     
     public bool LoadCharge(Charge c, int a) {
