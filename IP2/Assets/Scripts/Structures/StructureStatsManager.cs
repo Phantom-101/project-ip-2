@@ -16,6 +16,7 @@ public class StructureStatsManager : MonoBehaviour {
         GetComponent<MeshFilter>().mesh = profile.mesh;
         GetComponent<MeshCollider>().sharedMesh = profile.mesh;
         sm = FindObjectOfType<StructuresManager>();
+        sm.AddStructure(this);
         structureEquipmentManager = GetComponent<StructureEquipmentManager>();
         InitializeStats();
     }
@@ -123,6 +124,7 @@ public class StructureStatsManager : MonoBehaviour {
         if (GetStat("Shield") < 0.0f) SetStat("Shield", 0.0f);
         if (GetStat("Shield") > GetStat("Shield Max")) SetStat("Shield", GetStat("Shield Max"));
         if (GetStat("Capacitance") > GetStat("Capacitance Max")) SetStat("Capacitance", GetStat("Capacitance Max"));
+        if(GetStat("Damage Pool") > GetStat("Damage Pool Max")) SetStat("Damage Pool", GetStat("Damage Pool Max"));
         bool hasEquipment = false;
         foreach(Equipment e in structureEquipmentManager.equipment) {
             if(e != null) {
@@ -153,7 +155,6 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     void ApplyDamage() {
-        if(GetStat("Damage Pool") > GetStat("Damage Pool Max")) SetStat("Damage Pool", GetStat("Damage Pool Max"));
         ApplyDamageToShield();
         ApplyDamageToArmor();
         ApplyDamageToHull();

@@ -16,7 +16,8 @@ MonoBehaviour:
   size: 0
   icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
   signature: 0
-  hitpoints: 5
+  hitpoints: 20
+  meta: 4
   activatable: 1
   cycleTime: 5
   cycleInterruptable: 0

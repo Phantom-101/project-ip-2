@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using InputEssentials;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
     public GameObject selectableListItemUI;
     public GameObject weaponModulesListItemUI;
     public GameObject selectablesListItemUI;
@@ -44,13 +44,13 @@ public class PlayerController : MonoBehaviour
     }
 
     void Inputs() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (InputDetector.GetKeyDown(KeyCode.Escape)) {
             if(inventoryActive) {
                 inventoryPanel.SetActive(false);
                 inventoryActive = false;
             }
         }
-        if (!Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.I)) {
+        if (InputDetector.GetKeyDown(KeyCode.I)) {
             if(inventoryActive) {
                 inventoryPanel.SetActive(false);
                 inventoryActive = false;
@@ -59,31 +59,34 @@ public class PlayerController : MonoBehaviour
                 inventoryActive = true;
             }
         }
-        if ((Input.GetKeyDown(KeyCode.W) && !Input.GetKey(KeyCode.LeftControl)) || Input.GetKeyDown(KeyCode.S)) {
+        if (InputDetector.GetKeyDown(KeyCode.W) || InputDetector.GetKeyDown(KeyCode.S)) {
             structureMovementManager.ClearOrders();
-            if (Input.GetKeyDown(KeyCode.W) && !Input.GetKey(KeyCode.LeftControl)) structureMovementManager.ChangeAxisTranslation(Axis.Z, 0.25f);
-            if (Input.GetKeyDown(KeyCode.S)) structureMovementManager.ChangeAxisTranslation(Axis.Z, -0.25f);
+            if (InputDetector.GetKeyDown(KeyCode.W)) structureMovementManager.ChangeAxisTranslation(Axis.Z, 0.25f);
+            if (InputDetector.GetKeyDown(KeyCode.S)) structureMovementManager.ChangeAxisTranslation(Axis.Z, -0.25f);
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
+        if (InputDetector.GetKey(KeyCode.A) || InputDetector.GetKey(KeyCode.D)) {
             structureMovementManager.ClearOrders();
-            if (Input.GetKey(KeyCode.A)) structureMovementManager.SetPlaneRotation(Plane.XZ, -1.0f);
-            if (Input.GetKey(KeyCode.D)) structureMovementManager.SetPlaneRotation(Plane.XZ, 1.0f);
+            if (InputDetector.GetKey(KeyCode.A)) structureMovementManager.SetPlaneRotation(Plane.XZ, -1.0f);
+            if (InputDetector.GetKey(KeyCode.D)) structureMovementManager.SetPlaneRotation(Plane.XZ, 1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.XZ, 0.0f);
-        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E)) {
+        if (InputDetector.GetKey(KeyCode.Q) || InputDetector.GetKey(KeyCode.E)) {
             structureMovementManager.ClearOrders();
-            if (Input.GetKey(KeyCode.Q)) structureMovementManager.SetPlaneRotation(Plane.YZ, -1.0f);
-            if (Input.GetKey(KeyCode.E)) structureMovementManager.SetPlaneRotation(Plane.YZ, 1.0f);
+            if (InputDetector.GetKey(KeyCode.Q)) structureMovementManager.SetPlaneRotation(Plane.YZ, -1.0f);
+            if (InputDetector.GetKey(KeyCode.E)) structureMovementManager.SetPlaneRotation(Plane.YZ, 1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.YZ, 0.0f);
-        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.C)) {
+        if (InputDetector.GetKey(KeyCode.Z) || InputDetector.GetKey(KeyCode.C)) {
             structureMovementManager.ClearOrders();
-            if (Input.GetKey(KeyCode.Z)) structureMovementManager.SetPlaneRotation(Plane.XY, 1.0f);
-            if (Input.GetKey(KeyCode.C)) structureMovementManager.SetPlaneRotation(Plane.XY, -1.0f);
+            if (InputDetector.GetKey(KeyCode.Z)) structureMovementManager.SetPlaneRotation(Plane.XY, 1.0f);
+            if (InputDetector.GetKey(KeyCode.C)) structureMovementManager.SetPlaneRotation(Plane.XY, -1.0f);
         } else structureMovementManager.SetPlaneRotation(Plane.XY, 0.0f);
-        if (Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.LeftControl)) {
+        if (InputDetector.GetKeyDown(KeyCode.W, true, false, false)) {
             structureMovementManager.SetTarget(selected);
             structureMovementManager.ClearOrders();
             structureMovementManager.AddOrder("Align");
             structureMovementManager.AddOrder("Warp");
+        }
+        if (InputDetector.GetKeyDown(KeyCode.A, true, false, false)) {
+            structureEquipmentManager.TryToggleAllEquipment(selected);
         }
         if (Input.GetMouseButton(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -141,7 +144,7 @@ public class PlayerController : MonoBehaviour
             GameObject element = Instantiate(weaponModulesListItemUI) as GameObject;
             element.transform.SetParent(panel.transform);
             element.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, 0.0f);
-            SelectableButtonFunction(() => structureEquipmentManager.ToggleEquipment(element.transform.GetSiblingIndex(), selected, !structureEquipmentManager.equipmentGOs[element.transform.GetSiblingIndex()].GetComponent<EquipmentAttachmentPoint>().moduleActive), element.GetComponent<Button>());
+            SelectableButtonFunction(() => structureEquipmentManager.ToggleEquipment(element.transform.GetSiblingIndex(), selected, !structureEquipmentManager.equipmentGOs[element.transform.GetSiblingIndex()].GetComponent<EquipmentAttachmentPoint>().equipmentActive), element.GetComponent<Button>());
             x += 30;
         }
     }
@@ -165,7 +168,7 @@ public class PlayerController : MonoBehaviour
         }
         structures = structuresManager.GetStructures();
         if(structures == null) return;
-        int y = 0;
+        int y = haveButtonTo.Count * -15;
         foreach(StructureStatsManager structure in structures) {
             GameObject structureGameObject = structure.gameObject;
             if(!haveButtonTo.Contains(structureGameObject)) {
@@ -183,6 +186,7 @@ public class PlayerController : MonoBehaviour
                 y -= 15;
             }
         }
+        sp.transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(0, structures.Count * 15);
     }
 
     void SetSelected(GameObject go) {
@@ -197,7 +201,7 @@ public class PlayerController : MonoBehaviour
             GameObject button = panel.transform.GetChild(i).gameObject;
             Image img = button.GetComponent<Image>();
             Image icon = button.transform.GetChild(0).GetComponent<Image>();
-            if(attachmentPoint.moduleActive) {
+            if(attachmentPoint.equipmentActive) {
                 Color c = Color.green;
                 c.a = 0.25f;
                 img.color = c;

@@ -51,11 +51,12 @@
      <Compile Include="Assets\Scripts\CloseUpCameraController.cs" />
      <Compile Include="Assets\Scripts\Containers\Container.cs" />
      <Compile Include="Assets\Scripts\Containers\ContainerComponent.cs" />
-     <Compile Include="Assets\Scripts\DataStructures\FundamentalDataStructures.cs" />
-     <Compile Include="Assets\Scripts\DataStructures\StatsDataStructures.cs" />
      <Compile Include="Assets\Scripts\Equipment\AttachmentPoint\EquipmentAttachmentPoint.cs" />
      <Compile Include="Assets\Scripts\Equipment\ScriptableObjects\Equipment.cs" />
      <Compile Include="Assets\Scripts\Equipment\ScriptableObjects\StatsModificationEquipment.cs" />
+     <Compile Include="Assets\Scripts\Essentials\FundamentalEssentials.cs" />
+     <Compile Include="Assets\Scripts\Essentials\InputEssentials.cs" />
+     <Compile Include="Assets\Scripts\Essentials\StatsEssentials.cs" />
      <Compile Include="Assets\Scripts\FleetControlCameraController.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\LineRenderObject.cs" />

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Equipment : Item {
     public float signature;
     public float hitpoints;
+    public int meta;
     public bool activatable;
     public float cycleTime;
     public bool cycleInterruptable;

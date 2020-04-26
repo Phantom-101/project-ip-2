@@ -19,7 +19,7 @@ MonoBehaviour:
   armorResistance: 0
   shield: 0
   shieldResistance: 0
-  damagePool: 10
+  damagePool: 20
   capacitance: 0
   generation: 0
   speed: 0
@@ -35,5 +35,6 @@ MonoBehaviour:
   cargoHoldSize: 0
   inventorySize: 0
   maxEquipment: 0
+  equipmentMaxMeta: 0
   equipmentLocations: []
   signatureTex: {fileID: 2800000, guid: b959f43f2c4563942b1f056e22e29d9d, type: 3}

@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 73267784}
   - component: {fileID: 73267783}
   m_Layer: 5
-  m_Name: Scroll View
+  m_Name: Selectables Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1080,9 +1080,9 @@ MonoBehaviour:
   prefabs:
   - {fileID: 4502423357058486928, guid: bf7a85a9cc21219419acb5bbb499447b, type: 3}
   instantiated: []
-  max: 10
-  spawnInterval: 150
-  spawnRadius: 50
+  max: 5
+  spawnInterval: 30
+  spawnRadius: 5
 --- !u!1 &483951501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,9 +2014,9 @@ MonoBehaviour:
   prefabs:
   - {fileID: 4502423357058486928, guid: bf7a85a9cc21219419acb5bbb499447b, type: 3}
   instantiated: []
-  max: 10
-  spawnInterval: 150
-  spawnRadius: 50
+  max: 5
+  spawnInterval: 30
+  spawnRadius: 5
 --- !u!1 &763219522
 GameObject:
   m_ObjectHideFlags: 0

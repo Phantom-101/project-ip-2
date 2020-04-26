@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StructuresManager : MonoBehaviour
-{
+public class StructuresManager : MonoBehaviour {
     public GameObject explosion;
 
-    List<StructureStatsManager> sbs;
+    List<StructureStatsManager> sbs = new List<StructureStatsManager>();
     [SerializeField] float tickLength = 0.1f;
     
-    void Start()
-    {
-        sbs = new List<StructureStatsManager>(GameObject.FindObjectsOfType<StructureStatsManager>());
+    void Awake() {
+        //sbs = new List<StructureStatsManager>(GameObject.FindObjectsOfType<StructureStatsManager>());
         StartCoroutine(ProcessTick());
     }
 
-    IEnumerator ProcessTick()
-    {
+    public void AddStructure(StructureStatsManager ssm) {
+        sbs.Add(ssm);
+    }
+
+    IEnumerator ProcessTick() {
         yield return new WaitForSeconds(tickLength);
         StartCoroutine(ProcessTick());
     }

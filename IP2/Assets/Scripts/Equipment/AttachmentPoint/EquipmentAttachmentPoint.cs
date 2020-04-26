@@ -24,7 +24,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     AudioSource audioSource;
 
     // Basic activation info
-    public bool moduleActive;
+    public bool equipmentActive;
     public float cycleElapsed = 0.0f;
     public int activatedCount;
     public float currentCycleTime;
@@ -54,7 +54,8 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
 
     void InitializeAsStatsModification() {}
 
-    public virtual void SetModuleActive(bool a) {
+    public virtual void SetEquipmentActive(bool a) {
+        if(equipment == null) return;
         // If module is passive, return
         if (!equipment.activatable) return;
         // If module is activatable, check further conditions
@@ -66,7 +67,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         } else {
             if (equipment.cycleInterruptable && activatedCount == 0) OnCycleInterrupt();
         }
-        moduleActive = a;
+        equipmentActive = a;
     }
 
     void Update() {
@@ -80,7 +81,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     void CheckState() {
         if(hitpoints < 0) hitpoints = 0;
         else if(hitpoints > equipment.hitpoints) hitpoints = equipment.hitpoints;
-        if(moduleActive){
+        if(equipmentActive){
             if(cycleElapsed == 0.0f) OnCycleStart();
             ElapseCycle();
         } else {
@@ -90,9 +91,9 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
 
     void ElapseCycle() {
         cycleElapsed += Time.deltaTime;
-        if (equipment.mustBeTargeted && target == null) SetModuleActive(false);
-        else if ((transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) SetModuleActive(false);
-        if (moduleActive) {
+        if (equipment.mustBeTargeted && target == null) SetEquipmentActive(false);
+        else if (equipment.mustBeTargeted && (transform.position - target.transform.position).sqrMagnitude > equipment.range * equipment.range) SetEquipmentActive(false);
+        if (equipmentActive) {
             // Check if equipment should be activated
             for (int i = activatedCount; i < equipment.activations.Length; i++) {
                 if (cycleElapsed >= equipment.activations[i]) {
@@ -165,7 +166,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     void OnCycleEnd() {
         cycleElapsed = 0.0f;
         activatedCount = 0;
-        if(equipment.repeating && moduleActive) SetModuleActive(true);
+        if(equipment.repeating && equipmentActive) SetEquipmentActive(true);
     }
     
     public bool LoadCharge(Charge c, int a) {

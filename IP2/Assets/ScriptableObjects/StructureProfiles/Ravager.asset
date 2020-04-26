@@ -19,7 +19,7 @@ MonoBehaviour:
   armorResistance: 0.3
   shield: 300
   shieldResistance: 0.4
-  damagePool: 75
+  damagePool: 250
   capacitance: 700
   generation: 50
   speed: 0.25
@@ -35,6 +35,7 @@ MonoBehaviour:
   cargoHoldSize: 0
   inventorySize: 5
   maxEquipment: 10
+  equipmentMaxMeta: 5
   equipmentLocations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

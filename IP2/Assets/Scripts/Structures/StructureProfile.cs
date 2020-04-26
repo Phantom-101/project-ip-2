@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New StructureProfile", menuName = "ScriptableObjects/StructureProfile")]
-public class StructureProfile : ScriptableObject
-{
+public class StructureProfile : ScriptableObject {
     public Mesh mesh;
     public float hull;
     public float hullResistance;
@@ -28,6 +27,7 @@ public class StructureProfile : ScriptableObject
     public float cargoHoldSize;
     public float inventorySize;
     public int maxEquipment;
+    public int equipmentMaxMeta;
     public Vector3[] equipmentLocations;
     public Texture signatureTex;
 }
