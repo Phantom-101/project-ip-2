@@ -1,28 +1,81 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.7f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.7f1/PlaybackEngines'
+Base path: '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data', plugins path '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=6417 outsize=2390 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2390 outsize=4533 ok=1
+  api=4 insize=16804 outsize=9901 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=7647 outsize=2954 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2954 outsize=5408 ok=1
+  api=15 insize=848 outsize=440 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=6421 outsize=2398 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2398 outsize=4544 ok=1
+  api=15 insize=848 outsize=466 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=7225 outsize=3878 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3878 outsize=6982 ok=1
+  api=15 insize=9615 outsize=6181 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=7910 outsize=4119 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=4119 outsize=8026 ok=1
+  api=4 insize=9809 outsize=6289 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4895 outsize=2332 ok=1
+  api=4 insize=4823 outsize=2751 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=11086 outsize=3978 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3111 outsize=2047 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=40264 outsize=35783 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=40264 outsize=37115 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/Shaders/ShaderVariablesRaytracing.hlsl(1): failed to open source file: 'Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/HDRayTracingManager.cs.hlsl'
+  api=4 insize=11494 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at RaytracingReflectionFilter.compute(17): failed to open source file: 'Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/Shaders/RaytracingCommon.hlsl'
+  api=4 insize=9202 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=15 insize=7840 outsize=16429 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6119 outsize=2708 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6745 outsize=1808 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6745 outsize=919 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8512 outsize=2100 ok=1
+Cmd: compileComputeKernel
+  api=15 insize=9103 outsize=4856 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=26542 outsize=15415 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=35925 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=79447 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=14791 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=23938 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=43003 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=47854 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=72563 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5893 outsize=629 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/Shaders/ShaderVariablesRaytracing.hlsl(1): failed to open source file: 'Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/HDRayTracingManager.cs.hlsl'
+  api=4 insize=28593 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=15 insize=12177 outsize=2713 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7589 outsize=1322 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/Shaders/ShaderVariablesRaytracing.hlsl(1): failed to open source file: 'Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/HDRayTracingManager.cs.hlsl'
+  api=4 insize=8784 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=15 insize=4895 outsize=3139 ok=1
+Cmd: compileComputeKernel
+  api=15 insize=7205 outsize=6676 ok=1
+Cmd: compileComputeKernel
+  api=15 insize=11296 outsize=7098 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6420 outsize=1482 ok=1
 Cmd: compileSnippet
-  api=14 type=1 insize=2295 outsize=1050 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+  api=15 type=0 insize=1919 outsize=2993 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: initializeCompiler
 
 Quitting shader compiler process

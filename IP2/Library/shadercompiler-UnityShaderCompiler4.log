@@ -1,32 +1,61 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.7f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.7f1/PlaybackEngines'
+Base path: '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data', plugins path '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=4 insize=9515 outsize=2680 ok=1
+  api=4 insize=21596 outsize=94670 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=8653 outsize=3680 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3680 outsize=5824 ok=1
+  api=4 insize=9615 outsize=3216 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=7187 outsize=3866 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3866 outsize=7314 ok=1
+  api=4 insize=9809 outsize=4981 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=7205 outsize=3878 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3878 outsize=6957 ok=1
+  api=4 insize=22438 outsize=21741 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=9503 outsize=3624 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3624 outsize=6115 ok=1
+  api=4 insize=4823 outsize=3427 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=8190 outsize=3652 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3652 outsize=5745 ok=1
+  api=4 insize=11086 outsize=4742 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=6309 outsize=2465 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2465 outsize=3819 ok=1
+  api=4 insize=40264 outsize=39488 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/Shaders/ShaderVariablesRaytracing.hlsl(1): failed to open source file: 'Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/HDRayTracingManager.cs.hlsl'
+  api=4 insize=8511 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=22295 outsize=15906 ok=1
+Cmd: compileComputeKernel
+  api=15 insize=2307 outsize=45857 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8233 outsize=317 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6119 outsize=2055 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6745 outsize=899 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6745 outsize=1574 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9103 outsize=2745 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=26542 outsize=15695 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=67477 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=47885 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=45993 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=60190 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16295 outsize=81907 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/Shaders/ShaderVariablesRaytracing.hlsl(1): failed to open source file: 'Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/HDRayTracingManager.cs.hlsl'
+  api=4 insize=28593 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=12177 outsize=1172 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13959 outsize=3563 ok=1
+Cmd: compileComputeKernel
+  api=15 insize=7187 outsize=6724 ok=1
+Cmd: compileComputeKernel
+  api=15 insize=6316 outsize=3660 ok=1
 Cmd: compileSnippet
-  api=14 type=1 insize=11846 outsize=11918 kw=SHADOWS_SPLIT_SPHERES pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+  api=15 type=0 insize=1909 outsize=2978 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: initializeCompiler
 
 Quitting shader compiler process
