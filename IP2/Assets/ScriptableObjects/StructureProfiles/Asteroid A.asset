@@ -22,10 +22,11 @@ MonoBehaviour:
   damagePool: 20
   capacitance: 0
   generation: 0
+  mass: 5
+  drag: 1
+  angularDrag: 3
   speed: 0
-  speedInterpolation: 0
   turnSpeed: 0
-  turnSpeedInterpolation: 0
   warpSpeed: 0
   warpAccuracy: 0
   warpFieldStrength: 0

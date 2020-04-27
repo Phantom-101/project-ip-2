@@ -95,7 +95,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 38c445290885e384197c7c05e3d49f5f, type: 3}
 --- !u!114 &4502423357058594040
@@ -128,10 +128,6 @@ MonoBehaviour:
   targetRotationPercentage: {x: 0, y: 0, z: 0}
   targetTranslation: {x: 0, y: 0, z: 0}
   targetRotation: {x: 0, y: 0, z: 0}
-  currentTranslationPercentage: {x: 0, y: 0, z: 0}
-  currentRotationPercentage: {x: 0, y: 0, z: 0}
-  currentTranslation: {x: 0, y: 0, z: 0}
-  currentRotation: {x: 0, y: 0, z: 0}
   orders: []
 --- !u!114 &4502423357058594038
 MonoBehaviour:

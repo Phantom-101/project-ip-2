@@ -46,9 +46,7 @@ public class StructureStatsManager : MonoBehaviour {
         stats.Add("Capacitance", new Stat(profile.capacitance));
         stats.Add("Generation", new Stat(profile.generation));
         stats.Add("Speed", new Stat(profile.speed));
-        stats.Add("Speed Interpolation", new Stat(profile.speedInterpolation));
         stats.Add("Turn Speed", new Stat(profile.turnSpeed));
-        stats.Add("Turn Speed Interpolation", new Stat(profile.turnSpeedInterpolation));
         stats.Add("Warp Speed", new Stat(profile.warpSpeed));
         stats.Add("Warp Accuracy", new Stat(profile.warpAccuracy));
         stats.Add("Warp Field Strength", new Stat(profile.warpFieldStrength));

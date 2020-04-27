@@ -7,18 +7,21 @@ public class StructureMovementManager : MonoBehaviour {
     [SerializeField] Vector3 targetRotationPercentage;
     [SerializeField] Vector3 targetTranslation;
     [SerializeField] Vector3 targetRotation;
-    [SerializeField] Vector3 currentTranslationPercentage;
-    [SerializeField] Vector3 currentRotationPercentage;
-    [SerializeField] Vector3 currentTranslation;
-    [SerializeField] Vector3 currentRotation;
     StructureStatsManager ssm;
     float speed;
     float turnSpeed;
     public List<string> orders = new List<string>();
     GameObject t;
+    Rigidbody rigidbody;
+    ConstantForce constantForce;
 
-    void Start() {
+    void Awake() {
         ssm = GetComponent<StructureStatsManager>();
+        rigidbody = gameObject.AddComponent<Rigidbody>();
+        constantForce = gameObject.AddComponent<ConstantForce>();
+        rigidbody.mass = ssm.profile.mass;
+        rigidbody.drag = ssm.profile.drag;
+        rigidbody.angularDrag = ssm.profile.angularDrag;
     }
 
     void Update() {
@@ -26,10 +29,9 @@ public class StructureMovementManager : MonoBehaviour {
         turnSpeed = ssm.GetStat("Turn Speed");
         ExecuteOrders();
         CalculateTargets();
-        InterpolateCurrents();
-        Vector3 translation = currentTranslation * Time.deltaTime * ((orders.Count > 0 && orders[0] == "Warp") ? ssm.GetStat("Warp Speed") / speed : 1.0f);
-        GetComponent<Position>().Translate(translation);
-        transform.Rotate(currentRotation * Time.deltaTime);
+        Vector3 translation = targetTranslation * ((orders.Count > 0 && orders[0] == "Warp") ? ssm.GetStat("Warp Speed") : 1.0f);
+        constantForce.relativeForce = translation;
+        constantForce.relativeTorque = targetRotation;
     }
 
     public void ClearOrders() {
@@ -92,19 +94,6 @@ public class StructureMovementManager : MonoBehaviour {
         targetRotation.y = turnSpeed * targetRotationPercentage.y;
         targetRotationPercentage.z = Clamp(targetRotationPercentage.z, -1.0f, 1.0f);
         targetRotation.z = turnSpeed * targetRotationPercentage.z;
-    }
-
-    void InterpolateCurrents() {
-        float speedInterpolation = ssm.GetStat("Speed Interpolation");
-        float turnSpeedInterpolation = ssm.GetStat("Turn Speed Interpolation");
-        currentTranslationPercentage.x = LinearInterpolate(currentTranslationPercentage.x, targetTranslationPercentage.x, speedInterpolation);
-        currentTranslationPercentage.y = LinearInterpolate(currentTranslationPercentage.y, targetTranslationPercentage.y, speedInterpolation);
-        currentTranslationPercentage.z = LinearInterpolate(currentTranslationPercentage.z, targetTranslationPercentage.z, speedInterpolation);
-        currentRotationPercentage.x = LinearInterpolate(currentRotationPercentage.x, targetRotationPercentage.x, turnSpeedInterpolation);
-        currentRotationPercentage.y = LinearInterpolate(currentRotationPercentage.y, targetRotationPercentage.y, turnSpeedInterpolation);
-        currentRotationPercentage.z = LinearInterpolate(currentRotationPercentage.z, targetRotationPercentage.z, turnSpeedInterpolation);
-        currentTranslation = currentTranslationPercentage * speed;
-        currentRotation = currentRotationPercentage * turnSpeed;
     }
 
     public void SetAxisTranslation(Axis axis, float percent) {

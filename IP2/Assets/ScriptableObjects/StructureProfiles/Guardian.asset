@@ -22,10 +22,11 @@ MonoBehaviour:
   damagePool: 250
   capacitance: 80
   generation: 5
-  speed: 1
-  speedInterpolation: 0.15
-  turnSpeed: 55
-  turnSpeedInterpolation: 5
+  mass: 5
+  drag: 0.5
+  angularDrag: 3
+  speed: 5
+  turnSpeed: 1
   warpSpeed: 100
   warpAccuracy: 100
   warpFieldStrength: 1

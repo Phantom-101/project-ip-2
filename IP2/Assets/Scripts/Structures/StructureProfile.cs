@@ -14,10 +14,11 @@ public class StructureProfile : ScriptableObject {
     public float damagePool;
     public float capacitance;
     public float generation;
+    public float mass;
+    public float drag;
+    public float angularDrag;
     public float speed;
-    public float speedInterpolation;
     public float turnSpeed;
-    public float turnSpeedInterpolation;
     public float warpSpeed;
     public float warpAccuracy;
     public float warpFieldStrength;
