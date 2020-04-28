@@ -28,14 +28,16 @@ public class StructureEquipmentManager : MonoBehaviour {
         }
         equipmentGOs = new List<GameObject>(allowedEquipmentCount);
         for (int i = 0; i < allowedEquipmentCount; i++) {
-            if(equipment[i].meta > ssm.profile.equipmentMaxMeta) equipment[i] = null;
             GameObject equipmentGO = e.transform.GetChild(i).gameObject;
             equipmentGOs.Add(equipmentGO);
-            if (equipment[i] != null) {
-                EquipmentAttachmentPoint equipmentScript = equipmentGO.GetComponent<EquipmentAttachmentPoint>();
-                equipmentScript.equipment = equipment[i];
-                if(equipment[i].accepted.Length > 0) equipmentScript.LoadCharge(equipment[i].accepted[0], 100);
-                equipmentScript.Initialize();
+            if(equipment[i] != null) {
+                if(equipment[i].meta > ssm.profile.equipmentMaxMeta) equipment[i] = null;
+                else {
+                    EquipmentAttachmentPoint equipmentScript = equipmentGO.GetComponent<EquipmentAttachmentPoint>();
+                    equipmentScript.equipment = equipment[i];
+                    if(equipment[i].accepted.Length > 0) equipmentScript.LoadCharge(equipment[i].accepted[0], 100);
+                    equipmentScript.Initialize();
+                }
             }
         }
     }

@@ -48,11 +48,7 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             effect.transform.localPosition = Vector3.zero;
             visualEffect = effect.GetComponent<VisualEffect>();
         }
-        // Initialize based on equipment type
-        if(equipment.GetType() == typeof(StatsModificationEquipment)) InitializeAsStatsModification();
     }
-
-    void InitializeAsStatsModification() {}
 
     public virtual void SetEquipmentActive(bool a) {
         if(equipment == null) return;
@@ -79,13 +75,18 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
     }
 
     void CheckState() {
-        if(hitpoints < 0) hitpoints = 0;
-        else if(hitpoints > equipment.hitpoints) hitpoints = equipment.hitpoints;
-        if(equipmentActive){
-            if(cycleElapsed == 0.0f) OnCycleStart();
-            ElapseCycle();
+        if(equipment != null) {
+            if(hitpoints < 0) hitpoints = 0;
+            else if(hitpoints > equipment.hitpoints) hitpoints = equipment.hitpoints;
+            if(equipmentActive){
+                if(cycleElapsed == 0.0f) OnCycleStart();
+                ElapseCycle();
+            } else {
+                if(cycleElapsed > 0.0f) ElapseCycle();
+            }
         } else {
-            if(cycleElapsed > 0.0f) ElapseCycle();
+            equipmentActive = false;
+            cycleElapsed = 0.0f;
         }
     }
 
@@ -126,34 +127,35 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         if(visualEffect != null) visualEffect.SendEvent("Activate");
         // Play audio
         if(equipment.activationClips.Length >= 1) audioSource.PlayOneShot(equipment.activationClips[Random.Range(0, equipment.activationClips.Length - 1)], 0.5f);
-        // Activate as appropriate equipment type
-        if(equipment.GetType() == typeof(StatsModificationEquipment)) OnActivateAsStatsModification(n);
-    }
-
-    void OnActivateAsStatsModification(int n) {
-        // Convert equipment to StatsModificationEquipment
-        StatsModificationEquipment statsModificationEquipment = equipment as StatsModificationEquipment;
         // Setup packages
         StatModifiersPackage selfModifiersPackage = new StatModifiersPackage(new List<StatModifier>(),
-            GetAffectedValue(statsModificationEquipment.duration, statsModificationEquipment.durationStats));
+            GetAffectedValue(equipment.duration, equipment.durationStats));
         StatModifiersPackage targetModifiersPackage = new StatModifiersPackage(new List<StatModifier>(),
-            GetAffectedValue(statsModificationEquipment.duration, statsModificationEquipment.durationStats));
+            GetAffectedValue(equipment.duration, equipment.durationStats));
         // Add self-granted modifiers to cache list
-        for(int i = 0; i < statsModificationEquipment.effects.Length; i++)
-            if(!statsModificationEquipment.grantToTarget[i])
-                selfModifiersPackage.modifiers.Add(new StatModifier(statsModificationEquipment.effects[i],
-                    statsModificationEquipment.modifierTypes[i],
-                    GetAffectedValue(statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value), statsModificationEquipment.valueStats)));
+        for(int i = 0; i < equipment.effects.Length; i++)
+            if(!equipment.grantToTarget[i])
+                selfModifiersPackage.modifiers.Add(new StatModifier(equipment.effects[i],
+                    equipment.modifierTypes[i],
+                    GetAffectedValue(equipment.values[i] * (loaded == null ? 1.0f : loaded.value), equipment.valueStats)));
         // Add target-granted modifiers to cache list
         if(target != null)
-            for(int i = 0; i < statsModificationEquipment.effects.Length; i++)
-                if(statsModificationEquipment.grantToTarget[i])
-                    targetModifiersPackage.modifiers.Add(new StatModifier(statsModificationEquipment.effects[i],
-                        statsModificationEquipment.modifierTypes[i],
-                        GetAffectedValue(statsModificationEquipment.values[i] * (loaded == null ? 1.0f : loaded.value), statsModificationEquipment.valueStats)));
+            for(int i = 0; i < equipment.effects.Length; i++)
+                if(equipment.grantToTarget[i])
+                    targetModifiersPackage.modifiers.Add(new StatModifier(equipment.effects[i],
+                        equipment.modifierTypes[i],
+                        GetAffectedValue(equipment.values[i] * (loaded == null ? 1.0f : loaded.value), equipment.valueStats)));
         // Add modifiers packages to both self (and target)
         fitterStatsManager.AddModifiersPackage(selfModifiersPackage);
         if(target != null) target.GetComponent<StructureStatsManager>().AddModifiersPackage(targetModifiersPackage);
+        // Damage zone
+        if(equipment.damageZoneProfile != null) {
+            GameObject damageZoneApplier = new GameObject();
+            if (target != null) damageZoneApplier.transform.position = target.transform.position;
+            DamageZone damageZone = damageZoneApplier.AddComponent<DamageZone>();
+            damageZone.damageZoneProfile = equipment.damageZoneProfile;
+            damageZone.Initialize();
+        }
     }
 
     void OnCycleStart() {}

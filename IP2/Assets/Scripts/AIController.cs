@@ -37,7 +37,7 @@ public class AIController : MonoBehaviour {
             Vector3 targetPos = target.transform.position;
             if(Vector3.Distance(transform.position, target.transform.position) > 1000.0f) {
                 if(maneuverTimer > 5.0f) {
-                    targetPos = target.transform.position + target.transform.TransformDirection(new Vector3(Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f)) * 750.0f);
+                    targetPos = target.transform.position + target.transform.TransformDirection(new Vector3(Random.Range(5.0f, 10.0f), Random.Range(5.0f, 10.0f), Random.Range(5.0f, 10.0f)));
                     maneuverTimer = 0.0f;
                 }
                 else maneuverTimer += Time.deltaTime;

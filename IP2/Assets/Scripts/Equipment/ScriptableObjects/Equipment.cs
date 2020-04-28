@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Equipment", menuName = "ScriptableObjects/Equipment")]
 public class Equipment : Item {
     public float signature;
     public float hitpoints;
@@ -23,4 +24,12 @@ public class Equipment : Item {
     public Charge[] accepted;
     public bool showLoadedChargeIcon;
     public GameObject vfx;
+    public string[] effects;
+    public StatModifierType[] modifierTypes;
+    public float[] values;
+    public string[] valueStats;
+    public bool[] grantToTarget;
+    public float duration;
+    public string[] durationStats;
+    public DamageZoneProfile damageZoneProfile;
 }

@@ -6,6 +6,7 @@ public class StructureStatsManager : MonoBehaviour {
     public StructureProfile profile;
     public Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
     public List<StatModifiersPackage> modifiersPackages = new List<StatModifiersPackage>();
+    public List<DamageProfileStruct> damageStack = new List<DamageProfileStruct>();
     public Dictionary<Item, int> cargoHold = new Dictionary<Item, int>();
     public string faction;
 
@@ -22,7 +23,6 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     void Start() {
-        StartCoroutine(DamageApplicationLoop());
         StartCoroutine(GenerateEnergy());
     }
 
@@ -39,8 +39,6 @@ public class StructureStatsManager : MonoBehaviour {
         stats.Add("Armor", new Stat(profile.armor));
         stats.Add("Shield Max", new Stat(profile.shield));
         stats.Add("Shield", new Stat(profile.shield));
-        stats.Add("Damage Pool Max", new Stat(profile.damagePool));
-        stats.Add("Damage Pool", new Stat(0.0f));
         stats.Add("Equipment Damage", new Stat(0.0f));
         stats.Add("Capacitance Max", new Stat(profile.capacitance));
         stats.Add("Capacitance", new Stat(profile.capacitance));
@@ -122,7 +120,7 @@ public class StructureStatsManager : MonoBehaviour {
         if (GetStat("Shield") < 0.0f) SetStat("Shield", 0.0f);
         if (GetStat("Shield") > GetStat("Shield Max")) SetStat("Shield", GetStat("Shield Max"));
         if (GetStat("Capacitance") > GetStat("Capacitance Max")) SetStat("Capacitance", GetStat("Capacitance Max"));
-        if(GetStat("Damage Pool") > GetStat("Damage Pool Max")) SetStat("Damage Pool", GetStat("Damage Pool Max"));
+        ApplyDamage();
         bool hasEquipment = false;
         foreach(Equipment e in structureEquipmentManager.equipment) {
             if(e != null) {
@@ -140,61 +138,66 @@ public class StructureStatsManager : MonoBehaviour {
         }
     }
 
-    IEnumerator DamageApplicationLoop() {
-        ApplyDamage();
-        yield return new WaitForSeconds(1.0f);
-        StartCoroutine(DamageApplicationLoop());
-    }
-
     IEnumerator GenerateEnergy() {
         AddModifier(new StatModifier("Capacitance", StatModifierType.ImmediateAdditive, GetStat("Generation")));
         yield return new WaitForSeconds(1.0f);
         StartCoroutine(GenerateEnergy());
     }
 
-    void ApplyDamage() {
-        ApplyDamageToShield();
-        ApplyDamageToArmor();
-        ApplyDamageToHull();
-        CheckStats();
+    public void AddDamage(DamageProfileStruct damageProfileStruct) {
+        damageStack.Add(damageProfileStruct);
     }
 
-    void ApplyDamageToShield() {
+    void ApplyDamage() {
+        foreach(DamageProfileStruct damageProfileStruct in damageStack.ToArray()) {
+            DamageProfileStruct final = ApplyDamageToHull(ApplyDamageToArmor(ApplyDamageToShield(damageProfileStruct)));
+            if(final.value == 0.0f) damageStack.Remove(damageProfileStruct);
+            CheckStats();
+        }
+    }
+
+    DamageProfileStruct ApplyDamageToShield(DamageProfileStruct damageProfileStruct) {
+        if (damageProfileStruct.value == 0.0f) return damageProfileStruct;
+        if (damageProfileStruct.bypassShield) return damageProfileStruct;
         float shield = GetStat("Shield");
         float resist = GetStat("Shield Resistance");
-        float damage = GetStat("Damage Pool") * (1 - resist);
+        float damage = damageProfileStruct.value * (1 - resist) * damageProfileStruct.againstShield;
         if(damage <= shield) {
             AddModifier(new StatModifier("Shield", StatModifierType.ImmediateAdditive, -damage));
-            SetStat("Damage Pool", 0.0f);
+            return new DamageProfileStruct(0.0f);
         } else {
-            AddModifier(new StatModifier("Damage Pool", StatModifierType.ImmediateAdditive, -shield));
             SetStat("Shield", 0.0f);
+            return new DamageProfileStruct(damageProfileStruct, -shield / (damageProfileStruct.againstShield * (1 - resist)));
         }
     }
 
-    void ApplyDamageToArmor() {
+    DamageProfileStruct ApplyDamageToArmor(DamageProfileStruct damageProfileStruct) {
+        if (damageProfileStruct.value == 0.0f) return damageProfileStruct;
+        if (damageProfileStruct.bypassArmor) return damageProfileStruct;
         float armor = GetStat("Armor");
         float resist = GetStat("Armor Resistance");
-        float damage = GetStat("Damage Pool") * (1 - resist);
+        float damage = damageProfileStruct.value * (1 - resist) * damageProfileStruct.againstArmor;
         if(damage <= armor) {
             AddModifier(new StatModifier("Armor", StatModifierType.ImmediateAdditive, -damage));
-            SetStat("Damage Pool", 0.0f);
+            return new DamageProfileStruct(0.0f);
         } else {
-            AddModifier(new StatModifier("Damage Pool", StatModifierType.ImmediateAdditive, -armor));
             SetStat("Armor", 0.0f);
+            return new DamageProfileStruct(damageProfileStruct, -armor / (damageProfileStruct.againstArmor * (1 - resist)));
         }
     }
 
-    void ApplyDamageToHull() {
+    DamageProfileStruct ApplyDamageToHull(DamageProfileStruct damageProfileStruct) {
+        if (damageProfileStruct.value == 0.0f) return damageProfileStruct;
+        if (damageProfileStruct.bypassHull) return damageProfileStruct;
         float hull = GetStat("Hull");
         float resist = GetStat("Hull Resistance");
-        float damage = GetStat("Damage Pool") * (1 - resist);
+        float damage = damageProfileStruct.value * (1 - resist) * damageProfileStruct.againstHull;
         if(damage <= hull) {
             AddModifier(new StatModifier("Hull", StatModifierType.ImmediateAdditive, -damage));
-            SetStat("Damage Pool", 0.0f);
+            return new DamageProfileStruct(0.0f);
         } else {
-            AddModifier(new StatModifier("Damage Pool", StatModifierType.ImmediateAdditive, -hull));
             SetStat("Hull", 0.0f);
+            return new DamageProfileStruct(damageProfileStruct, -hull / (damageProfileStruct.againstHull * (1 - resist)));
         }
     }
 
