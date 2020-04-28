@@ -24,12 +24,7 @@ public class Equipment : Item {
     public Charge[] accepted;
     public bool showLoadedChargeIcon;
     public GameObject vfx;
-    public string[] effects;
-    public StatModifierType[] modifierTypes;
-    public float[] values;
-    public string[] valueStats;
-    public bool[] grantToTarget;
-    public float duration;
-    public string[] durationStats;
+    public EquipmentStatsModificationProfile passiveEffects;
+    public EquipmentStatsModificationProfile activeEffects;
     public DamageZoneProfile damageZoneProfile;
 }

@@ -26,10 +26,12 @@ public struct StatModifier {
 
 public struct StatModifiersPackage {
     public List<StatModifier> modifiers;
+    public DurationType durationType;
     public float duration;
 
-    public StatModifiersPackage(List<StatModifier> modifiers, float duration) {
+    public StatModifiersPackage(List<StatModifier> modifiers, DurationType durationType, float duration) {
         this.modifiers = modifiers;
+        this.durationType = durationType;
         this.duration = duration;
     }
 }

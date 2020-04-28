@@ -22,12 +22,11 @@ public class StructureStatsManager : MonoBehaviour {
         InitializeStats();
     }
 
-    void Start() {
-        StartCoroutine(GenerateEnergy());
-    }
+    void Start() {}
 
     void Update() {
         IterateModifiersPackages();
+        AddModifier(new StatModifier("Capacitance", StatModifierType.ImmediateAdditive, GetStat("Generation") * Time.deltaTime));
         CheckStats();
     }
 
@@ -68,7 +67,7 @@ public class StructureStatsManager : MonoBehaviour {
     public void IterateModifiersPackages() {
         foreach(StatModifiersPackage package in modifiersPackages.ToArray()) {
             float d = package.duration - Time.deltaTime;
-            if(d > 0.0f) {
+            if(d > 0.0f || package.durationType == DurationType.Infinite) {
                 StatModifiersPackage newPackage = new StatModifiersPackage(package.modifiers, d);
                 modifiersPackages.Remove(package);
                 modifiersPackages.Add(newPackage);
@@ -136,12 +135,6 @@ public class StructureStatsManager : MonoBehaviour {
             int randIndex = Random.Range(0, structureEquipmentManager.equipment.Count - 1);
             structureEquipmentManager.equipmentGOs[randIndex].GetComponent<EquipmentAttachmentPoint>().ChangeHitpoints(-GetStat("Equipment Damage"));
         }
-    }
-
-    IEnumerator GenerateEnergy() {
-        AddModifier(new StatModifier("Capacitance", StatModifierType.ImmediateAdditive, GetStat("Generation")));
-        yield return new WaitForSeconds(1.0f);
-        StartCoroutine(GenerateEnergy());
     }
 
     public void AddDamage(DamageProfileStruct damageProfileStruct) {
