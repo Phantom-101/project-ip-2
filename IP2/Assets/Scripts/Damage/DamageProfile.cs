@@ -45,6 +45,17 @@ public struct DamageProfileStruct {
         this.bypassShield = damageProfile.bypassShield;
     }
     
+    public DamageProfileStruct(DamageProfile damageProfile, float valueChange, bool multiply = false) {
+        if(multiply) this.value = damageProfile.value * valueChange;
+        else this.value = damageProfile.value + valueChange;
+        this.againstHull = damageProfile.againstHull;
+        this.againstArmor = damageProfile.againstArmor;
+        this.againstShield = damageProfile.againstShield;
+        this.bypassHull = damageProfile.bypassHull;
+        this.bypassArmor = damageProfile.bypassArmor;
+        this.bypassShield = damageProfile.bypassShield;
+    }
+
     public DamageProfileStruct(DamageProfileStruct damageProfileStruct, float valueChange, bool multiply = false) {
         if(multiply) this.value = damageProfileStruct.value * valueChange;
         else this.value = damageProfileStruct.value + valueChange;

@@ -5,28 +5,33 @@ using UnityEngine;
 public class StructureEquipmentManager : MonoBehaviour {
     public List<Equipment> equipment = new List<Equipment>();
     public List<GameObject> equipmentGOs = new List<GameObject>();
+    public List<GameObject> dockingBays = new List<GameObject>();
 
     StructureStatsManager ssm;
 
     void Start() {
+        ssm = GetComponent<StructureStatsManager>();
         InitializeEquipment();
+        InitializeDockingBays();
     }
 
     void InitializeEquipment() {
-        ssm = GetComponent<StructureStatsManager>();
         GameObject e = new GameObject("Equipment");
         e.transform.parent = transform;
         e.transform.localPosition = Vector3.zero;
         e.transform.localRotation = Quaternion.identity;
-        int allowedEquipmentCount = ssm.profile.maxEquipment;
-        if (equipment.Count != allowedEquipmentCount) equipment = new List<Equipment>(allowedEquipmentCount);
+        int allowedEquipmentCount = ssm.profile.equipmentLocations.Length;
+        if (equipment.Count != allowedEquipmentCount) {
+            equipment = new List<Equipment>();
+            for(int i = 0; i < allowedEquipmentCount; i++) equipment.Add(null);
+        }
         for(int i = 0; i < allowedEquipmentCount; i++) {
             GameObject point = new GameObject("EAP");
             point.transform.parent = e.transform;
             point.AddComponent<EquipmentAttachmentPoint>();
             point.transform.localPosition = ssm.profile.equipmentLocations[i];
         }
-        equipmentGOs = new List<GameObject>(allowedEquipmentCount);
+        equipmentGOs = new List<GameObject>();
         for (int i = 0; i < allowedEquipmentCount; i++) {
             GameObject equipmentGO = e.transform.GetChild(i).gameObject;
             equipmentGOs.Add(equipmentGO);
@@ -38,6 +43,41 @@ public class StructureEquipmentManager : MonoBehaviour {
                     if(equipment[i].accepted.Length > 0) equipmentScript.LoadCharge(equipment[i].accepted[0], 100);
                     equipmentScript.Initialize();
                 }
+            }
+        }
+    }
+
+    void InitializeDockingBays() {
+        GameObject db = new GameObject("Docking Bays");
+        db.transform.parent = transform;
+        db.transform.localPosition = Vector3.zero;
+        db.transform.localRotation = Quaternion.identity;
+        int bays = ssm.profile.dockingBayLocations.Length;
+        dockingBays = new List<GameObject>();
+        for(int i = 0; i < bays; i++) {
+            GameObject dockingBay = new GameObject("DB");
+            dockingBay.transform.parent = db.transform;
+            dockingBay.transform.localPosition = ssm.profile.dockingBayLocations[i];
+            dockingBay.transform.localRotation = Quaternion.identity;
+            dockingBays.Add(dockingBay);
+        }
+    }
+
+    public void RequestToDock(StructureStatsManager ssm) {
+        if((transform.position - ssm.transform.position).sqrMagnitude <= 100.0f) {
+            GameObject accepted = null;
+            foreach(GameObject dockingBay in dockingBays) {
+                if(dockingBay.transform.childCount == 0) {
+                    accepted = dockingBay;
+                    break;
+                }
+            }
+            if(accepted != null) {
+                ssm.transform.parent = accepted.transform;
+                ssm.transform.localPosition = Vector3.zero;
+                ssm.transform.localRotation = Quaternion.identity;
+                ssm.GetComponent<MeshCollider>().enabled = false;
+                ssm.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
     }

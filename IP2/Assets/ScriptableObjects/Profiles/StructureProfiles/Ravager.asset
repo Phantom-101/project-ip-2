@@ -27,7 +27,7 @@ MonoBehaviour:
   angularDrag: 5
   speed: 15
   turnSpeed: 0.5
-  warpSpeed: 25
+  warpSpeed: 100
   warpAccuracy: 100
   warpFieldStrength: 1
   scannersRange: 0

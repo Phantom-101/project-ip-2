@@ -52,11 +52,12 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         // Setup packages
         StatModifiersPackage selfModifiersPackage = new StatModifiersPackage(new List<StatModifier>(), DurationType.Infinite, 0.0f);
         // Add self-granted modifiers to cache list
-        for(int i = 0; i < equipment.passiveEffects.effects.Length; i++)
-            if(!equipment.passiveEffects.grantToTarget[i])
-                selfModifiersPackage.modifiers.Add(new StatModifier(equipment.passiveEffects.effects[i],
-                    equipment.passiveEffects.modifierTypes[i],
-                    GetAffectedValue(equipment.passiveEffects.values[i] * (loaded == null ? 1.0f : loaded.value), equipment.passiveEffects.valueStats)));
+        if(equipment != null && equipment.passiveEffects != null)
+            for(int i = 0; i < equipment.passiveEffects.effects.Length; i++)
+                if(!equipment.passiveEffects.grantToTarget[i])
+                    selfModifiersPackage.modifiers.Add(new StatModifier(equipment.passiveEffects.effects[i],
+                        equipment.passiveEffects.modifierTypes[i],
+                        GetAffectedValue(equipment.passiveEffects.values[i] * (loaded == null ? 1.0f : loaded.value), equipment.passiveEffects.valueStats)));
         // Add modifiers packages to self
         fitterStatsManager.AddModifiersPackage(selfModifiersPackage);
     }
@@ -139,26 +140,28 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
         // Play audio
         if(equipment.activationClips.Length >= 1) audioSource.PlayOneShot(equipment.activationClips[Random.Range(0, equipment.activationClips.Length - 1)], 0.5f);
         // Setup packages
-        StatModifiersPackage selfModifiersPackage = new StatModifiersPackage(new List<StatModifier>(), equipment.activeEffects.durationType,
-            GetAffectedValue(equipment.activeEffects.duration, equipment.activeEffects.durationStats));
-        StatModifiersPackage targetModifiersPackage = new StatModifiersPackage(new List<StatModifier>(), equipment.activeEffects.durationType,
-            GetAffectedValue(equipment.activeEffects.duration, equipment.activeEffects.durationStats));
-        // Add self-granted modifiers to cache list
-        for(int i = 0; i < equipment.activeEffects.effects.Length; i++)
-            if(!equipment.activeEffects.grantToTarget[i])
-                selfModifiersPackage.modifiers.Add(new StatModifier(equipment.activeEffects.effects[i],
-                    equipment.activeEffects.modifierTypes[i],
-                    GetAffectedValue(equipment.activeEffects.values[i] * (loaded == null ? 1.0f : loaded.value), equipment.activeEffects.valueStats)));
-        // Add target-granted modifiers to cache list
-        if(target != null)
+        if(equipment.activeEffects != null) {
+            StatModifiersPackage selfModifiersPackage = new StatModifiersPackage(new List<StatModifier>(), equipment.activeEffects.durationType,
+                GetAffectedValue(equipment.activeEffects.duration, equipment.activeEffects.durationStats));
+            StatModifiersPackage targetModifiersPackage = new StatModifiersPackage(new List<StatModifier>(), equipment.activeEffects.durationType,
+                GetAffectedValue(equipment.activeEffects.duration, equipment.activeEffects.durationStats));
+            // Add self-granted modifiers to cache list
             for(int i = 0; i < equipment.activeEffects.effects.Length; i++)
-                if(equipment.activeEffects.grantToTarget[i])
-                    targetModifiersPackage.modifiers.Add(new StatModifier(equipment.activeEffects.effects[i],
+                if(!equipment.activeEffects.grantToTarget[i])
+                    selfModifiersPackage.modifiers.Add(new StatModifier(equipment.activeEffects.effects[i],
                         equipment.activeEffects.modifierTypes[i],
                         GetAffectedValue(equipment.activeEffects.values[i] * (loaded == null ? 1.0f : loaded.value), equipment.activeEffects.valueStats)));
-        // Add modifiers packages to both self (and target)
-        fitterStatsManager.AddModifiersPackage(selfModifiersPackage);
-        if(target != null) target.GetComponent<StructureStatsManager>().AddModifiersPackage(targetModifiersPackage);
+            // Add target-granted modifiers to cache list
+            if(target != null)
+                for(int i = 0; i < equipment.activeEffects.effects.Length; i++)
+                    if(equipment.activeEffects.grantToTarget[i])
+                        targetModifiersPackage.modifiers.Add(new StatModifier(equipment.activeEffects.effects[i],
+                            equipment.activeEffects.modifierTypes[i],
+                            GetAffectedValue(equipment.activeEffects.values[i] * (loaded == null ? 1.0f : loaded.value), equipment.activeEffects.valueStats)));
+            // Add modifiers packages to both self (and target)
+            fitterStatsManager.AddModifiersPackage(selfModifiersPackage);
+            target.GetComponent<StructureStatsManager>().AddModifiersPackage(targetModifiersPackage);
+        }
         // Damage zone
         if(equipment.damageZoneProfile != null) {
             GameObject damageZoneApplier = new GameObject();

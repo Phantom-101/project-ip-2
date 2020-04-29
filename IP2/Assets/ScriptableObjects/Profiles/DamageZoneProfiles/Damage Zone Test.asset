@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24be35e2a52c9bc42a2ba49e66fbef5b, type: 3}
   m_Name: Damage Zone Test
   m_EditorClassIdentifier: 
-  radius: 0.5
+  radius: 0.1
   damageProfile: {fileID: 11400000, guid: 8bd0498e5a67d144daba66af4b6eff29, type: 2}
   applyPerFrame: 1
-  duration: 3
+  duration: 0.1

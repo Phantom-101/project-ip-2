@@ -12,7 +12,7 @@ public class DamageZone : MonoBehaviour {
     }
 
     public void Initialize() {
-        if(damageZoneProfile.duration != 0.0f) Destroy(gameObject, damageZoneProfile.duration);
+        if(damageZoneProfile.duration > 0.0f) Destroy(gameObject, damageZoneProfile.duration);
     }
 
     void Update() {
@@ -20,7 +20,7 @@ public class DamageZone : MonoBehaviour {
             foreach(StructureStatsManager structure in structuresManager.GetStructures()) {
                 if((transform.position - structure.gameObject.transform.position).sqrMagnitude <= damageZoneProfile.radius * damageZoneProfile.radius) {
                     DamageProfile damageProfile = damageZoneProfile.damageProfile;
-                    structure.AddDamage(new DamageProfileStruct(damageProfile, Time.deltaTime, true));
+                    structure.AddDamage(new DamageProfileStruct(damageProfile, Time.deltaTime / damageZoneProfile.duration, true));
                 }
             }
             if(damageZoneProfile.duration == 0.0f) Destroy(gameObject);

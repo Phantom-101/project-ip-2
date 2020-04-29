@@ -59,26 +59,28 @@ public class PlayerController : MonoBehaviour {
                 inventoryActive = true;
             }
         }
-        if (InputDetector.GetKeyDown(KeyCode.W) || InputDetector.GetKeyDown(KeyCode.S)) {
-            structureMovementManager.ClearOrders();
-            if (InputDetector.GetKeyDown(KeyCode.W)) structureMovementManager.ChangeAxisTranslation(Axis.Z, 0.25f);
-            if (InputDetector.GetKeyDown(KeyCode.S)) structureMovementManager.ChangeAxisTranslation(Axis.Z, -0.25f);
+        if(transform.parent == null) {
+            if (InputDetector.GetKeyDown(KeyCode.W) || InputDetector.GetKeyDown(KeyCode.S)) {
+                structureMovementManager.ClearOrders();
+                if (InputDetector.GetKeyDown(KeyCode.W)) structureMovementManager.ChangeAxisTranslation(Axis.Z, 0.25f);
+                if (InputDetector.GetKeyDown(KeyCode.S)) structureMovementManager.ChangeAxisTranslation(Axis.Z, -0.25f);
+            }
+            if (InputDetector.GetKey(KeyCode.A) || InputDetector.GetKey(KeyCode.D)) {
+                structureMovementManager.ClearOrders();
+                if (InputDetector.GetKey(KeyCode.A)) structureMovementManager.SetPlaneRotation(Plane.XZ, -1.0f);
+                if (InputDetector.GetKey(KeyCode.D)) structureMovementManager.SetPlaneRotation(Plane.XZ, 1.0f);
+            } else structureMovementManager.SetPlaneRotation(Plane.XZ, 0.0f);
+            if (InputDetector.GetKey(KeyCode.Q) || InputDetector.GetKey(KeyCode.E)) {
+                structureMovementManager.ClearOrders();
+                if (InputDetector.GetKey(KeyCode.Q)) structureMovementManager.SetPlaneRotation(Plane.YZ, -1.0f);
+                if (InputDetector.GetKey(KeyCode.E)) structureMovementManager.SetPlaneRotation(Plane.YZ, 1.0f);
+            } else structureMovementManager.SetPlaneRotation(Plane.YZ, 0.0f);
+            if (InputDetector.GetKey(KeyCode.Z) || InputDetector.GetKey(KeyCode.C)) {
+                structureMovementManager.ClearOrders();
+                if (InputDetector.GetKey(KeyCode.Z)) structureMovementManager.SetPlaneRotation(Plane.XY, 1.0f);
+                if (InputDetector.GetKey(KeyCode.C)) structureMovementManager.SetPlaneRotation(Plane.XY, -1.0f);
+            } else structureMovementManager.SetPlaneRotation(Plane.XY, 0.0f);
         }
-        if (InputDetector.GetKey(KeyCode.A) || InputDetector.GetKey(KeyCode.D)) {
-            structureMovementManager.ClearOrders();
-            if (InputDetector.GetKey(KeyCode.A)) structureMovementManager.SetPlaneRotation(Plane.XZ, -1.0f);
-            if (InputDetector.GetKey(KeyCode.D)) structureMovementManager.SetPlaneRotation(Plane.XZ, 1.0f);
-        } else structureMovementManager.SetPlaneRotation(Plane.XZ, 0.0f);
-        if (InputDetector.GetKey(KeyCode.Q) || InputDetector.GetKey(KeyCode.E)) {
-            structureMovementManager.ClearOrders();
-            if (InputDetector.GetKey(KeyCode.Q)) structureMovementManager.SetPlaneRotation(Plane.YZ, -1.0f);
-            if (InputDetector.GetKey(KeyCode.E)) structureMovementManager.SetPlaneRotation(Plane.YZ, 1.0f);
-        } else structureMovementManager.SetPlaneRotation(Plane.YZ, 0.0f);
-        if (InputDetector.GetKey(KeyCode.Z) || InputDetector.GetKey(KeyCode.C)) {
-            structureMovementManager.ClearOrders();
-            if (InputDetector.GetKey(KeyCode.Z)) structureMovementManager.SetPlaneRotation(Plane.XY, 1.0f);
-            if (InputDetector.GetKey(KeyCode.C)) structureMovementManager.SetPlaneRotation(Plane.XY, -1.0f);
-        } else structureMovementManager.SetPlaneRotation(Plane.XY, 0.0f);
         if (InputDetector.GetKeyDown(KeyCode.W, true, false, false)) {
             structureMovementManager.SetTarget(selected);
             structureMovementManager.ClearOrders();
@@ -87,6 +89,18 @@ public class PlayerController : MonoBehaviour {
         }
         if (InputDetector.GetKeyDown(KeyCode.A, true, false, false)) {
             structureEquipmentManager.TryToggleAllEquipment(selected);
+        }
+        if(InputDetector.GetKeyDown(KeyCode.D, true, false, false)) {
+            if(transform.parent == null) {
+                if(selected != null) {
+                    selected.GetComponent<StructureEquipmentManager>().RequestToDock(structureStatsManager);
+                }
+            } else {
+                transform.parent = null;
+                transform.Translate(Vector3.forward * 10.0f);
+                GetComponent<MeshCollider>().enabled = true;
+                GetComponent<Rigidbody>().isKinematic = false;
+            }
         }
         if (Input.GetMouseButton(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

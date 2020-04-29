@@ -10,7 +10,7 @@ public struct Vector3Double {
 
 public class Position : MonoBehaviour {
     public void ShiftOrigin(Vector3 pos) {
-        transform.Translate(-pos, Space.World);
+        transform.position -= pos;
     }
 
     public void Set(Vector3 pos) {

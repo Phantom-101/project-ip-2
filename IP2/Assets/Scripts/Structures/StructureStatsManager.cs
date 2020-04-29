@@ -68,7 +68,7 @@ public class StructureStatsManager : MonoBehaviour {
         foreach(StatModifiersPackage package in modifiersPackages.ToArray()) {
             float d = package.duration - Time.deltaTime;
             if(d > 0.0f || package.durationType == DurationType.Infinite) {
-                StatModifiersPackage newPackage = new StatModifiersPackage(package.modifiers, d);
+                StatModifiersPackage newPackage = new StatModifiersPackage(package.modifiers, package.durationType, d);
                 modifiersPackages.Remove(package);
                 modifiersPackages.Add(newPackage);
             } else {
@@ -112,6 +112,7 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     void CheckStats() {
+        ApplyDamage();
         if (GetStat("Hull") <= 0.0f) sm.Destroyed(this);
         if (GetStat("Hull") > GetStat("Hull Max")) SetStat("Hull", GetStat("Hull Max"));
         if (GetStat("Armor") < 0.0f) SetStat("Armor", 0.0f);
@@ -119,7 +120,6 @@ public class StructureStatsManager : MonoBehaviour {
         if (GetStat("Shield") < 0.0f) SetStat("Shield", 0.0f);
         if (GetStat("Shield") > GetStat("Shield Max")) SetStat("Shield", GetStat("Shield Max"));
         if (GetStat("Capacitance") > GetStat("Capacitance Max")) SetStat("Capacitance", GetStat("Capacitance Max"));
-        ApplyDamage();
         bool hasEquipment = false;
         foreach(Equipment e in structureEquipmentManager.equipment) {
             if(e != null) {
@@ -145,7 +145,6 @@ public class StructureStatsManager : MonoBehaviour {
         foreach(DamageProfileStruct damageProfileStruct in damageStack.ToArray()) {
             DamageProfileStruct final = ApplyDamageToHull(ApplyDamageToArmor(ApplyDamageToShield(damageProfileStruct)));
             if(final.value == 0.0f) damageStack.Remove(damageProfileStruct);
-            CheckStats();
         }
     }
 

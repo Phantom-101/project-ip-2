@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Damage\DamageZoneProfile.cs" />
      <Compile Include="Assets\Scripts\Equipment\AttachmentPoint\EquipmentAttachmentPoint.cs" />
      <Compile Include="Assets\Scripts\Equipment\ScriptableObjects\Equipment.cs" />
+     <Compile Include="Assets\Scripts\Equipment\ScriptableObjects\EquipmentStatsModificationProfile.cs" />
      <Compile Include="Assets\Scripts\Essentials\FundamentalEssentials.cs" />
      <Compile Include="Assets\Scripts\Essentials\InputEssentials.cs" />
      <Compile Include="Assets\Scripts\Essentials\StatsEssentials.cs" />
