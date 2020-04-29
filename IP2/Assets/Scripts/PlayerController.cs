@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour {
                     selected.GetComponent<StructureDockingManager>().Dock(structureStatsManager);
                 }
             } else {
-                transform.parent.GetComponent<StructureDockingManager>().Undock(structureStatsManager);
+                transform.parent.parent.parent.GetComponent<StructureDockingManager>().Undock(structureStatsManager);
             }
         }
         if (Input.GetMouseButton(0)) {
@@ -116,6 +116,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void RefreshInventory() {
+        return;
+        /* TODO
         int x = 0;
         int y = 0;
         GameObject content = inventoryPanel.transform.GetChild(0).GetChild(0).gameObject;
@@ -134,7 +136,7 @@ public class PlayerController : MonoBehaviour {
                     y += 100;
                 }
             }
-        }
+        }*/
     }
 
     void UpdateSlidersUI() {

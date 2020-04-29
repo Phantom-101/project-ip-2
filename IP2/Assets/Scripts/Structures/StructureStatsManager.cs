@@ -107,7 +107,7 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     public float GetStat(string statName) {
-        if(!initialized) return;
+        if(!initialized) return 0.0f;
         float v = stats[statName].baseValue;
         float additive = 0.0f;
         float multiplicative = 1.0f;

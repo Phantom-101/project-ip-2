@@ -1,74 +1,8 @@
 Base path: '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data', plugins path '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=4 insize=16804 outsize=8237 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=9615 outsize=10928 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=9809 outsize=8504 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=4823 outsize=885 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=14139 outsize=1892 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=11086 outsize=4699 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=40264 outsize=40234 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=1056 outsize=9881 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=22295 outsize=14720 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=9735 outsize=8199 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=8233 outsize=5777 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=6119 outsize=2350 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=6745 outsize=1877 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=6745 outsize=764 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 4 at Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/Shaders/ShaderVariablesRaytracing.hlsl(1): failed to open source file: 'Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/Raytracing/HDRayTracingManager.cs.hlsl'
-  api=4 insize=10112 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=4 insize=9103 outsize=4225 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=9103 outsize=8164 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=26542 outsize=15193 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16295 outsize=14780 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16295 outsize=57905 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16295 outsize=70186 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16295 outsize=33512 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16295 outsize=35998 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16295 outsize=40079 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16295 outsize=36177 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=2557 outsize=757 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=1977 outsize=2732 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=7589 outsize=1261 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=10587 outsize=9203 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=6424 outsize=4239 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=7388 outsize=6254 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=8190 outsize=5451 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=7666 outsize=5382 ok=1
 Cmd: compileSnippet
-  api=15 type=0 insize=1915 outsize=2988 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
-Cmd: initializeCompiler
+  api=15 type=0 insize=2364 outsize=13636 kw=_EMISSION _ADDITIONAL_LIGHTS _NORMALMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: compileSnippet
+  api=15 type=1 insize=2295 outsize=0 kw=UNITY_UI_ALPHACLIP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
 
 Quitting shader compiler process

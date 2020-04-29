@@ -55,7 +55,7 @@ public class StructureDockingManager : MonoBehaviour {
         }
     }
 
-    public void Undock(StructureStatsmanager requester) {
+    public void Undock(StructureStatsManager requester) {
         requester.transform.parent = null;
         requester.transform.Translate(Vector3.forward * 10.0f);
         requester.GetComponent<MeshCollider>().enabled = true;
