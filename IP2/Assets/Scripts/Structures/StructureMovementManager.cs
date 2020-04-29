@@ -3,46 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StructureMovementManager : MonoBehaviour {
+    // Movement
     [SerializeField] Vector3 targetTranslationPercentage;
     [SerializeField] Vector3 targetRotationPercentage;
     [SerializeField] Vector3 targetTranslation;
     [SerializeField] Vector3 targetRotation;
-    StructureStatsManager ssm;
+    // Cache managers
+    StructureInitializer structureInitializer;
+    StructureStatsManager structureStatsManager;
+    // Cache stats
     float speed;
     float turnSpeed;
+    // Movement orders
     public List<string> orders = new List<string>();
+    // Selected
     GameObject t;
+    // Rigidbody and ConstantForce of structure
     Rigidbody rigidbody;
     ConstantForce constantForce;
 
-    void Awake() {
-        ssm = GetComponent<StructureStatsManager>();
+    // Has this component been initialized?
+    bool initialized = false;
+
+    public void Initialize(StructureInitializer initializer) {
+        structureInitializer = initializer;
+        structureStatsManager = initializer.structureStatsManager;
+        // Initialize physics
         rigidbody = gameObject.AddComponent<Rigidbody>();
         constantForce = gameObject.AddComponent<ConstantForce>();
-        rigidbody.mass = ssm.profile.mass;
-        rigidbody.drag = ssm.profile.drag;
-        rigidbody.angularDrag = ssm.profile.angularDrag;
+        rigidbody.mass = structureStatsManager.profile.mass;
+        rigidbody.drag = structureStatsManager.profile.drag;
+        rigidbody.angularDrag = structureStatsManager.profile.angularDrag;
+        initialized = true;
     }
 
     void Update() {
-        speed = ssm.GetStat("Speed");
-        turnSpeed = ssm.GetStat("Turn Speed");
+        if(!initialized) return;
+        speed = structureStatsManager.GetStat("Speed");
+        turnSpeed = structureStatsManager.GetStat("Turn Speed");
         ExecuteOrders();
         CalculateTargets();
-        Vector3 translation = targetTranslation * ((orders.Count > 0 && orders[0] == "Warp") ? ssm.GetStat("Warp Speed") : 1.0f);
+        Vector3 translation = targetTranslation * ((orders.Count > 0 && orders[0] == "Warp") ? structureStatsManager.GetStat("Warp Speed") : 1.0f);
         constantForce.relativeForce = translation;
         constantForce.relativeTorque = targetRotation;
     }
 
     public void ClearOrders() {
+        if(!initialized) return;
         orders = new List<string>();
     }
 
     public void SetTarget(GameObject target) {
+        if(!initialized) return;
         t = target;
     }
 
     public void AddOrder(string order){
+        if(!initialized) return;
         orders.Add(order);
     }
 
@@ -58,7 +75,7 @@ public class StructureMovementManager : MonoBehaviour {
                 Vector3 LRPerp = Vector3.Cross(transform.forward, heading);
                 float LRDif = Vector3.Dot(LRPerp, transform.up);
                 float absLRDif = Mathf.Abs(LRDif);
-                float warpAccuracy = 1.0f / Mathf.Sqrt(ssm.GetStat("Warp Accuracy"));
+                float warpAccuracy = 1.0f / Mathf.Sqrt(structureStatsManager.GetStat("Warp Accuracy"));
                 if(absLRDif > warpAccuracy / 2.0f) targetRotationPercentage.y = LRDif / 25.0f;
                 Vector3 UDPerp = Vector3.Cross(transform.forward, heading);
                 float UDDif = Vector3.Dot(UDPerp, transform.right);
@@ -69,7 +86,7 @@ public class StructureMovementManager : MonoBehaviour {
             }
             if (currentOrder == "Warp") {
                 targetRotationPercentage = Vector3.zero;
-                if(ssm.GetStat("Warp Field Strength") <= 0.0f) orders.RemoveAt(0);
+                if(structureStatsManager.GetStat("Warp Field Strength") <= 0.0f) orders.RemoveAt(0);
                 float dis = Vector3.Distance(transform.position, t.transform.position);
                 if(dis > 5.0f) targetTranslationPercentage = Vector3.forward;
                 else {
@@ -97,6 +114,7 @@ public class StructureMovementManager : MonoBehaviour {
     }
 
     public void SetAxisTranslation(Axis axis, float percent) {
+        if(!initialized) return;
         if(axis == Axis.X) {
             targetTranslationPercentage.x = percent;
         } else if (axis == Axis.Y) {
@@ -107,6 +125,7 @@ public class StructureMovementManager : MonoBehaviour {
     }
 
     public void ChangeAxisTranslation(Axis axis, float percent) {
+        if(!initialized) return;
         if(axis == Axis.X) {
             targetTranslationPercentage.x += percent;
         } else if (axis == Axis.Y) {
@@ -117,6 +136,7 @@ public class StructureMovementManager : MonoBehaviour {
     }
 
     public void SetPlaneRotation(Plane plane, float percent) {
+        if(!initialized) return;
         if(plane == Plane.XY) {
             targetRotationPercentage.z = percent;
         } else if (plane == Plane.YZ) {
@@ -127,6 +147,7 @@ public class StructureMovementManager : MonoBehaviour {
     }
 
     public void ChangePlaneRotation(Plane plane, float percent) {
+        if(!initialized) return;
         if(plane == Plane.XY) {
             targetRotationPercentage.z += percent;
         } else if (plane == Plane.YZ) {

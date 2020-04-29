@@ -10,21 +10,29 @@ public class StructureStatsManager : MonoBehaviour {
     public Dictionary<Item, int> cargoHold = new Dictionary<Item, int>();
     public string faction;
 
-    StructuresManager sm;
+    StructuresManager structuresManager;
+    StructureInitializer structureInitializer;
     StructureEquipmentManager structureEquipmentManager;
 
-    void Awake() {
+    // Has this component been initialized?
+    bool initialized = false;
+
+    public void Initialize(StructureInitializer initializer) {
+        structureInitializer = initializer;
+        structureEquipmentManager = initializer.structureEquipmentManager;
+        // Setup mesh and collision
         GetComponent<MeshFilter>().mesh = profile.mesh;
         GetComponent<MeshCollider>().sharedMesh = profile.mesh;
-        sm = FindObjectOfType<StructuresManager>();
-        sm.AddStructure(this);
-        structureEquipmentManager = GetComponent<StructureEquipmentManager>();
+        // Register structure
+        structuresManager = FindObjectOfType<StructuresManager>();
+        structuresManager.AddStructure(this);
+        // Initialize stats dictionary
         InitializeStats();
+        initialized = true;
     }
 
-    void Start() {}
-
     void Update() {
+        if(!initialized) return;
         IterateModifiersPackages();
         AddModifier(new StatModifier("Capacitance", StatModifierType.ImmediateAdditive, GetStat("Generation") * Time.deltaTime));
         CheckStats();
@@ -60,11 +68,13 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     public void AddModifiersPackage(StatModifiersPackage package) {
+        if(!initialized) return;
         modifiersPackages.Add(package);
         foreach(StatModifier modifier in package.modifiers) AddModifier(modifier);
     }
 
     public void IterateModifiersPackages() {
+        if(!initialized) return;
         foreach(StatModifiersPackage package in modifiersPackages.ToArray()) {
             float d = package.duration - Time.deltaTime;
             if(d > 0.0f || package.durationType == DurationType.Infinite) {
@@ -78,6 +88,7 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     public void AddModifier(StatModifier modifier) {
+        if(!initialized) return;
         if(modifier.statModifierType == StatModifierType.ImmediateAdditive) {
             Stat newStat = new Stat(stats[modifier.targetStat].baseValue + modifier.value);
             stats[modifier.targetStat] = newStat;
@@ -86,15 +97,18 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     public void RemoveModifier(StatModifier modifier) {
+        if(!initialized) return;
         stats[modifier.targetStat].modifiers.Remove(modifier);
     }
 
     public void SetStat(string statName, float v) {
+        if(!initialized) return;
         Stat newStat = new Stat(v);
         stats[statName] = newStat;
     }
 
     public float GetStat(string statName) {
+        if(!initialized) return;
         float v = stats[statName].baseValue;
         float additive = 0.0f;
         float multiplicative = 1.0f;
@@ -113,7 +127,7 @@ public class StructureStatsManager : MonoBehaviour {
 
     void CheckStats() {
         ApplyDamage();
-        if (GetStat("Hull") <= 0.0f) sm.Destroyed(this);
+        if (GetStat("Hull") <= 0.0f) structuresManager.Destroyed(this);
         if (GetStat("Hull") > GetStat("Hull Max")) SetStat("Hull", GetStat("Hull Max"));
         if (GetStat("Armor") < 0.0f) SetStat("Armor", 0.0f);
         if (GetStat("Armor") > GetStat("Armor Max")) SetStat("Armor", GetStat("Armor Max"));
@@ -138,6 +152,7 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     public void AddDamage(DamageProfileStruct damageProfileStruct) {
+        if(!initialized) return;
         damageStack.Add(damageProfileStruct);
     }
 
@@ -194,6 +209,7 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     public void ChangeItem(Item item, int amount) {
+        if(!initialized) return;
         if (!(cargoHold.ContainsKey(item))) cargoHold[item] = 0;
         if(cargoHold[item] + amount >= 0) cargoHold[item] += amount;
         if (GetComponent<PlayerController>()) GetComponent<PlayerController>().RefreshInventory();
