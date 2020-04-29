@@ -93,13 +93,10 @@ public class PlayerController : MonoBehaviour {
         if(InputDetector.GetKeyDown(KeyCode.D, true, false, false)) {
             if(transform.parent == null) {
                 if(selected != null) {
-                    selected.GetComponent<StructureEquipmentManager>().RequestToDock(structureStatsManager);
+                    selected.GetComponent<StructureDockingManager>().Dock(structureStatsManager);
                 }
             } else {
-                transform.parent = null;
-                transform.Translate(Vector3.forward * 10.0f);
-                GetComponent<MeshCollider>().enabled = true;
-                GetComponent<Rigidbody>().isKinematic = false;
+                transform.parent.GetComponent<StructureDockingManager>().Undock(structureStatsManager);
             }
         }
         if (Input.GetMouseButton(0)) {

@@ -7,7 +7,6 @@ public class StructureStatsManager : MonoBehaviour {
     public Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
     public List<StatModifiersPackage> modifiersPackages = new List<StatModifiersPackage>();
     public List<DamageProfileStruct> damageStack = new List<DamageProfileStruct>();
-    public Dictionary<Item, int> cargoHold = new Dictionary<Item, int>();
     public string faction;
 
     StructuresManager structuresManager;
@@ -206,12 +205,5 @@ public class StructureStatsManager : MonoBehaviour {
             SetStat("Hull", 0.0f);
             return new DamageProfileStruct(damageProfileStruct, -hull / (damageProfileStruct.againstHull * (1 - resist)));
         }
-    }
-
-    public void ChangeItem(Item item, int amount) {
-        if(!initialized) return;
-        if (!(cargoHold.ContainsKey(item))) cargoHold[item] = 0;
-        if(cargoHold[item] + amount >= 0) cargoHold[item] += amount;
-        if (GetComponent<PlayerController>()) GetComponent<PlayerController>().RefreshInventory();
     }
 }

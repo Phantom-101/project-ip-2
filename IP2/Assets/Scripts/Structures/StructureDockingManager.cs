@@ -35,7 +35,7 @@ public class StructureDockingManager : MonoBehaviour {
         }
     }
 
-    public void RequestToDock(StructureStatsManager requester) {
+    public void Dock(StructureStatsManager requester) {
         if(!initialized) return;
         if((transform.position - requester.transform.position).sqrMagnitude <= 100.0f) {
             GameObject accepted = null;
@@ -53,5 +53,12 @@ public class StructureDockingManager : MonoBehaviour {
                 requester.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
+    }
+
+    public void Undock(StructureStatsmanager requester) {
+        requester.transform.parent = null;
+        requester.transform.Translate(Vector3.forward * 10.0f);
+        requester.GetComponent<MeshCollider>().enabled = true;
+        requester.GetComponent<Rigidbody>().isKinematic = false;
     }
 }
