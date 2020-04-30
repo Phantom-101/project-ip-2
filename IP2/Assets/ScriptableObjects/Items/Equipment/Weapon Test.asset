@@ -36,11 +36,7 @@ MonoBehaviour:
   accepted: []
   showLoadedChargeIcon: 0
   vfx: {fileID: 5492783275482778277, guid: 4dfcddb70cb81214e9c5a314b8487f91, type: 3}
-  effects: []
-  modifierTypes: 
-  values: []
-  valueStats: []
-  grantToTarget: 
-  duration: 0
-  durationStats: []
-  damageZoneProfile: {fileID: 11400000, guid: a7d853e4259a9064daf5b7aae01fa939, type: 2}
+  passiveEffects: {fileID: 0}
+  activeEffects: {fileID: 0}
+  healthChangeZoneProfile: {fileID: 11400000, guid: a7d853e4259a9064daf5b7aae01fa939,
+    type: 2}

@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Endeavor
   m_EditorClassIdentifier: 
   mesh: {fileID: -7498578579407885711, guid: 7cbd8b0d7de8f3346be917263bd027d0, type: 3}
-  hull: 25
-  hullResistance: 0.2
-  armor: 35
-  armorResistance: 0.25
-  shield: 180
-  shieldResistance: 0.35
-  damagePool: 250
+  hitpoints:
+  - 30
+  - 20
+  - 100
+  resistances:
+  - 0
+  - 0
+  - 0
   capacitance: 500
   generation: 20
   mass: 20
@@ -35,7 +36,6 @@ MonoBehaviour:
   signatureStrength: 0
   cargoHoldSize: 0
   inventorySize: 5
-  maxEquipment: 8
   equipmentMaxMeta: 4
   equipmentLocations:
   - {x: 0, y: 0, z: 0}
@@ -46,4 +46,5 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  dockingBayLocations: []
   signatureTex: {fileID: 2800000, guid: b959f43f2c4563942b1f056e22e29d9d, type: 3}

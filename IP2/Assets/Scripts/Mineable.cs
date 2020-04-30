@@ -13,6 +13,5 @@ public class Mineable : MonoBehaviour {
                 //miner.GetComponent<StructureStatsManager>().ChangeItem(drops[i], 1);
             }
         }
-        GetComponent<StructureStatsManager>().SetStat("Hull", GetComponent<StructureStatsManager>().profile.hull);
     }
 }

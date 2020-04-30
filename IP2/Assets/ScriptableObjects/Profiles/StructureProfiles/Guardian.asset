@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Guardian
   m_EditorClassIdentifier: 
   mesh: {fileID: 6227294948095154181, guid: b39ba6314202bee41a6740cfa10644be, type: 3}
-  hull: 15
-  hullResistance: 0
-  armor: 20
-  armorResistance: 0
-  shield: 95
-  shieldResistance: 0
-  damagePool: 250
+  hitpoints:
+  - 10
+  - 5
+  - 25
+  resistances:
+  - 0
+  - 0
+  - 0
   capacitance: 80
   generation: 5
   mass: 5
@@ -35,7 +36,6 @@ MonoBehaviour:
   signatureStrength: 0
   cargoHoldSize: 0
   inventorySize: 5
-  maxEquipment: 5
   equipmentMaxMeta: 3
   equipmentLocations:
   - {x: 0, y: 0, z: 0}
@@ -43,4 +43,5 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  dockingBayLocations: []
   signatureTex: {fileID: 2800000, guid: f6a71665c88d1b74b979ac44bb9096b3, type: 3}

@@ -197,10 +197,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 27692992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b17ccdad0778804fa334f419a2eee79, type: 3}
+  m_Script: {fileID: 11500000, guid: b642908f574222b49a96019ca01dfa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageZoneProfile: {fileID: 0}
+  healthChangeZoneProfile: {fileID: 11400000, guid: 6a7f01feb39421c41b2d2ee53844fb87,
+    type: 2}
 --- !u!1 &73267781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: []
+  capacitor: 0
   profile: {fileID: 11400000, guid: 490290a3faedb5d06beb41885481a3a4, type: 2}
   faction: 1
 --- !u!64 &503280617
@@ -1479,6 +1482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: []
+  capacitor: 0
   profile: {fileID: 11400000, guid: 7ff81c8a84a12dd46a317af6466808ee, type: 2}
   faction: 2
 --- !u!114 &532354331
@@ -1793,6 +1798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: []
+  capacitor: 0
   profile: {fileID: 11400000, guid: 7ff81c8a84a12dd46a317af6466808ee, type: 2}
   faction: 2
 --- !u!114 &618343405
@@ -2536,6 +2543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: []
+  capacitor: 0
   profile: {fileID: 11400000, guid: 7ff81c8a84a12dd46a317af6466808ee, type: 2}
   faction: 2
 --- !u!114 &1107463883
@@ -2878,7 +2887,11 @@ VFXRenderer:
   m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4466,6 +4479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: []
+  capacitor: 0
   profile: {fileID: 11400000, guid: 7ff81c8a84a12dd46a317af6466808ee, type: 2}
   faction: 2
 --- !u!114 &1905189448
@@ -5126,6 +5141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef842a01223dcd43aa8cedbefecbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: []
+  capacitor: 0
   profile: {fileID: 11400000, guid: 2254da185f2c0d744b0426aa400b877a, type: 2}
   faction: 1
 --- !u!114 &828969202460425743

@@ -163,12 +163,12 @@ public class EquipmentAttachmentPoint : MonoBehaviour {
             target.GetComponent<StructureStatsManager>().AddModifiersPackage(targetModifiersPackage);
         }
         // Damage zone
-        if(equipment.damageZoneProfile != null) {
-            GameObject damageZoneApplier = new GameObject();
+        if(equipment.healthChangeZoneProfile != null) {
+            GameObject damageZoneApplier = new GameObject("Health Change Zone");
             if (target != null) damageZoneApplier.transform.position = target.transform.position;
-            DamageZone damageZone = damageZoneApplier.AddComponent<DamageZone>();
-            damageZone.damageZoneProfile = equipment.damageZoneProfile;
-            damageZone.Initialize();
+            HealthChangeZone healthChangeZone = damageZoneApplier.AddComponent<HealthChangeZone>();
+            healthChangeZone.healthChangeZoneProfile = equipment.healthChangeZoneProfile;
+            healthChangeZone.Initialize();
         }
     }
 

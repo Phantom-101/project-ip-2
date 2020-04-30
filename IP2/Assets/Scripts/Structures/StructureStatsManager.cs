@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StructureStatsManager : MonoBehaviour {
+    public float[] hitpoints;
+    public float capacitor;
     public StructureProfile profile;
     public Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
     public List<StatModifiersPackage> modifiersPackages = new List<StatModifiersPackage>();
-    public List<DamageProfileStruct> damageStack = new List<DamageProfileStruct>();
+    public List<HealthChange> healthChangesStack = new List<HealthChange>();
     public string faction;
 
     StructuresManager structuresManager;
@@ -38,15 +40,16 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     void InitializeStats() {
+        hitpoints = new float[3];
+        hitpoints[0] = profile.hitpoints[0];
+        hitpoints[1] = profile.hitpoints[1];
+        hitpoints[2] = profile.hitpoints[2];
+        capacitor = profile.capacitance;
         // Structure stats
-        stats.Add("Hull Max", new Stat(profile.hull));
-        stats.Add("Hull", new Stat(profile.hull));
-        stats.Add("Armor Max", new Stat(profile.armor));
-        stats.Add("Armor", new Stat(profile.armor));
-        stats.Add("Shield Max", new Stat(profile.shield));
-        stats.Add("Shield", new Stat(profile.shield));
+        stats.Add("Hitpoint 0", new Stat(profile.hitpoints[0]));
+        stats.Add("Hitpoint 1", new Stat(profile.hitpoints[1]));
+        stats.Add("Hitpoint 2", new Stat(profile.hitpoints[2]));
         stats.Add("Equipment Damage", new Stat(0.0f));
-        stats.Add("Capacitance Max", new Stat(profile.capacitance));
         stats.Add("Capacitance", new Stat(profile.capacitance));
         stats.Add("Generation", new Stat(profile.generation));
         stats.Add("Speed", new Stat(profile.speed));
@@ -59,9 +62,9 @@ public class StructureStatsManager : MonoBehaviour {
         stats.Add("Signature Strength", new Stat(profile.signatureStrength));
         stats.Add("Cargo Hold Size", new Stat(profile.cargoHoldSize));
         // Resistances
-        stats.Add("Hull Resistance", new Stat(profile.hullResistance));
-        stats.Add("Armor Resistance", new Stat(profile.armorResistance));
-        stats.Add("Shield Resistance", new Stat(profile.shieldResistance));
+        stats.Add("Resistance 0", new Stat(profile.resistances[0]));
+        stats.Add("Resistance 1", new Stat(profile.resistances[1]));
+        stats.Add("Resistance 2", new Stat(profile.resistances[2]));
         // Multipliers
         stats.Add("Turrets Damage", new Stat(1.0f));
     }
@@ -125,14 +128,15 @@ public class StructureStatsManager : MonoBehaviour {
     }
 
     void CheckStats() {
-        ApplyDamage();
-        if (GetStat("Hull") <= 0.0f) structuresManager.Destroyed(this);
-        if (GetStat("Hull") > GetStat("Hull Max")) SetStat("Hull", GetStat("Hull Max"));
-        if (GetStat("Armor") < 0.0f) SetStat("Armor", 0.0f);
-        if (GetStat("Armor") > GetStat("Armor Max")) SetStat("Armor", GetStat("Armor Max"));
-        if (GetStat("Shield") < 0.0f) SetStat("Shield", 0.0f);
-        if (GetStat("Shield") > GetStat("Shield Max")) SetStat("Shield", GetStat("Shield Max"));
-        if (GetStat("Capacitance") > GetStat("Capacitance Max")) SetStat("Capacitance", GetStat("Capacitance Max"));
+        ApplyHealthChanges();
+        if(hitpoints[0] <= 0.0f) structuresManager.Destroyed(this);
+        else if (hitpoints[0] > GetStat("Hitpoint 0")) hitpoints[0] = GetStat("Hitpoint 0");
+        if(hitpoints[1] <= 0.0f) hitpoints[1] = 0.0f;
+        else if (hitpoints[1] > GetStat("Hitpoint 1")) hitpoints[1] = GetStat("Hitpoint 1");
+        if(hitpoints[2] <= 0.0f) hitpoints[2] = 0.0f;
+        else if (hitpoints[2] > GetStat("Hitpoint 2")) hitpoints[2] = GetStat("Hitpoint 2");
+        if(hitpoints[0] <= 0.0f) structuresManager.Destroyed(this);
+        else if (capacitor > GetStat("Capacitance")) capacitor = GetStat("Capacitance");
         bool hasEquipment = false;
         foreach(Equipment e in structureEquipmentManager.equipment) {
             if(e != null) {
@@ -150,60 +154,33 @@ public class StructureStatsManager : MonoBehaviour {
         }
     }
 
-    public void AddDamage(DamageProfileStruct damageProfileStruct) {
+    public void AddHealthChange(HealthChange healthChange) {
         if(!initialized) return;
-        damageStack.Add(damageProfileStruct);
+        healthChangesStack.Add(healthChange);
     }
 
-    void ApplyDamage() {
-        foreach(DamageProfileStruct damageProfileStruct in damageStack.ToArray()) {
-            DamageProfileStruct final = ApplyDamageToHull(ApplyDamageToArmor(ApplyDamageToShield(damageProfileStruct)));
-            if(final.value == 0.0f) damageStack.Remove(damageProfileStruct);
+    void ApplyHealthChanges() {
+        foreach(HealthChange healthChange in healthChangesStack.ToArray()) {
+            ApplyHealthChange(healthChange);
+            healthChangesStack.Remove(healthChange);
         }
     }
 
-    DamageProfileStruct ApplyDamageToShield(DamageProfileStruct damageProfileStruct) {
-        if (damageProfileStruct.value == 0.0f) return damageProfileStruct;
-        if (damageProfileStruct.bypassShield) return damageProfileStruct;
-        float shield = GetStat("Shield");
-        float resist = GetStat("Shield Resistance");
-        float damage = damageProfileStruct.value * (1 - resist) * damageProfileStruct.againstShield;
-        if(damage <= shield) {
-            AddModifier(new StatModifier("Shield", StatModifierType.ImmediateAdditive, -damage));
-            return new DamageProfileStruct(0.0f);
-        } else {
-            SetStat("Shield", 0.0f);
-            return new DamageProfileStruct(damageProfileStruct, -shield / (damageProfileStruct.againstShield * (1 - resist)));
-        }
-    }
-
-    DamageProfileStruct ApplyDamageToArmor(DamageProfileStruct damageProfileStruct) {
-        if (damageProfileStruct.value == 0.0f) return damageProfileStruct;
-        if (damageProfileStruct.bypassArmor) return damageProfileStruct;
-        float armor = GetStat("Armor");
-        float resist = GetStat("Armor Resistance");
-        float damage = damageProfileStruct.value * (1 - resist) * damageProfileStruct.againstArmor;
-        if(damage <= armor) {
-            AddModifier(new StatModifier("Armor", StatModifierType.ImmediateAdditive, -damage));
-            return new DamageProfileStruct(0.0f);
-        } else {
-            SetStat("Armor", 0.0f);
-            return new DamageProfileStruct(damageProfileStruct, -armor / (damageProfileStruct.againstArmor * (1 - resist)));
-        }
-    }
-
-    DamageProfileStruct ApplyDamageToHull(DamageProfileStruct damageProfileStruct) {
-        if (damageProfileStruct.value == 0.0f) return damageProfileStruct;
-        if (damageProfileStruct.bypassHull) return damageProfileStruct;
-        float hull = GetStat("Hull");
-        float resist = GetStat("Hull Resistance");
-        float damage = damageProfileStruct.value * (1 - resist) * damageProfileStruct.againstHull;
-        if(damage <= hull) {
-            AddModifier(new StatModifier("Hull", StatModifierType.ImmediateAdditive, -damage));
-            return new DamageProfileStruct(0.0f);
-        } else {
-            SetStat("Hull", 0.0f);
-            return new DamageProfileStruct(damageProfileStruct, -hull / (damageProfileStruct.againstHull * (1 - resist)));
+    void ApplyHealthChange(HealthChange healthChange) {
+        for(int i = hitpoints.Length - 1; i >= 0; i--) {
+            if(!healthChange.bypasses[i]) {
+                float curHp = hitpoints[i];
+                float resist = GetStat("Resistance " + i);
+                float change = healthChange.value * (1 - resist) * healthChange.effectiveness[i];
+                if(curHp + change >= 0.0f) {
+                    hitpoints[i] += change;
+                    healthChange = new HealthChange(0.0f, new float[3], new bool[3]);
+                } else {
+                    hitpoints[i] = 0.0f;
+                    HealthChange temp = healthChange;
+                    healthChange = new HealthChange(temp.value - curHp, temp.effectiveness, temp.bypasses);
+                }
+            }
         }
     }
 }

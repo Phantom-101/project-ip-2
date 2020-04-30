@@ -7,12 +7,8 @@ public class StructureProfile : ScriptableObject {
     [Header("Rendering")]
     public Mesh mesh;
     [Header("Hitpoints")]
-    public float hull;
-    public float hullResistance;
-    public float armor;
-    public float armorResistance;
-    public float shield;
-    public float shieldResistance;
+    public float[] hitpoints;
+    public float[] resistances;
     [Header("Stats")]
     public float capacitance;
     public float generation;

@@ -26,5 +26,5 @@ public class Equipment : Item {
     public GameObject vfx;
     public EquipmentStatsModificationProfile passiveEffects;
     public EquipmentStatsModificationProfile activeEffects;
-    public DamageZoneProfile damageZoneProfile;
+    public HealthChangeZoneProfile healthChangeZoneProfile;
 }

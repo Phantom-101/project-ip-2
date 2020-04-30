@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Military Outpost
   m_EditorClassIdentifier: 
   mesh: {fileID: -387298209978578080, guid: de121b43c4adbc442b2a5992bbcfdec8, type: 3}
-  hull: 100
-  hullResistance: 0.5
-  armor: 100
-  armorResistance: 0.5
-  shield: 100
-  shieldResistance: 0.5
+  hitpoints:
+  - 100
+  - 100
+  - 500
+  resistances:
+  - 0
+  - 0
+  - 0
   capacitance: 100
   generation: 10
   mass: 50

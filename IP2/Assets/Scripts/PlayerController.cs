@@ -140,12 +140,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     void UpdateSlidersUI() {
-        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Hull Max");
-        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("Hull");
-        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Armor Max");
-        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("Armor");
-        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Shield Max");
-        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().value = structureStatsManager.GetStat("Shield");
+        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Hitpoint 0");
+        GameObject.Find("/Canvas/Hull Slider").GetComponent<Slider>().value = structureStatsManager.hitpoints[0];
+        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Hitpoint 1");
+        GameObject.Find("/Canvas/Armor Slider").GetComponent<Slider>().value = structureStatsManager.hitpoints[1];
+        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().maxValue = structureStatsManager.GetStat("Hitpoint 2");
+        GameObject.Find("/Canvas/Shield Slider").GetComponent<Slider>().value = structureStatsManager.hitpoints[2];
     }
 
     void InitializeEquipmentUI() {
