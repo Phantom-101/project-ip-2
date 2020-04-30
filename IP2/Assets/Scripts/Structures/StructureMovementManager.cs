@@ -17,7 +17,7 @@ public class StructureMovementManager : MonoBehaviour {
     // Movement orders
     public List<string> orders = new List<string>();
     // Selected
-    GameObject t;
+    Vector3 t;
     // Rigidbody and ConstantForce of structure
     Rigidbody rigidbody;
     ConstantForce constantForce;
@@ -53,7 +53,7 @@ public class StructureMovementManager : MonoBehaviour {
         orders = new List<string>();
     }
 
-    public void SetTarget(GameObject target) {
+    public void SetTarget(Vector3 target) {
         if(!initialized) return;
         t = target;
     }
@@ -71,7 +71,7 @@ public class StructureMovementManager : MonoBehaviour {
             }
             string currentOrder = orders[0];
             if(currentOrder == "Align") {
-                Vector3 heading = t.transform.position - transform.position;
+                Vector3 heading = t - transform.position;
                 Vector3 LRPerp = Vector3.Cross(transform.forward, heading);
                 float LRDif = Vector3.Dot(LRPerp, transform.up);
                 float absLRDif = Mathf.Abs(LRDif);
@@ -87,7 +87,7 @@ public class StructureMovementManager : MonoBehaviour {
             if (currentOrder == "Warp") {
                 targetRotationPercentage = Vector3.zero;
                 if(structureStatsManager.GetStat("Warp Field Strength") <= 0.0f) orders.RemoveAt(0);
-                float dis = Vector3.Distance(transform.position, t.transform.position);
+                float dis = Vector3.Distance(transform.position, t);
                 if(dis > 5.0f) targetTranslationPercentage = Vector3.forward;
                 else {
                     targetTranslationPercentage = Vector3.zero;

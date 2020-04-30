@@ -35,15 +35,15 @@ public class AIController : MonoBehaviour {
         if(target != null) {
             structureEquipmentManager.TryActivateAllEquipment(target);
             Vector3 targetPos = target.transform.position;
-            if(Vector3.Distance(transform.position, target.transform.position) > 1000.0f) {
-                if(maneuverTimer > 5.0f) {
-                    targetPos = target.transform.position + target.transform.TransformDirection(new Vector3(Random.Range(5.0f, 10.0f), Random.Range(5.0f, 10.0f), Random.Range(5.0f, 10.0f)));
+            if(Vector3.Distance(transform.position, target.transform.position) < 25.0f) {
+                if(maneuverTimer > 30.0f) {
+                    targetPos += new Vector3(Random.Range(25.0f, 50.0f), Random.Range(25.0f, 50.0f), Random.Range(25.0f, 50.0f));
                     maneuverTimer = 0.0f;
                 }
                 else maneuverTimer += Time.deltaTime;
             }
             Quaternion targetRotation = Quaternion.LookRotation(targetPos - transform.position);
-            structureMovementManager.SetTarget(target);
+            structureMovementManager.SetTarget(targetPos);
             structureMovementManager.ClearOrders();
             structureMovementManager.AddOrder("Align");
             structureMovementManager.SetAxisTranslation(Axis.Z, 1.0f);

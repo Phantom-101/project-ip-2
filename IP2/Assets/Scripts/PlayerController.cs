@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour {
             } else structureMovementManager.SetPlaneRotation(Plane.XY, 0.0f);
         }
         if (InputDetector.GetKeyDown(KeyCode.W, true, false, false)) {
-            structureMovementManager.SetTarget(selected);
+            structureMovementManager.SetTarget(selected.transform.position);
             structureMovementManager.ClearOrders();
             structureMovementManager.AddOrder("Align");
             structureMovementManager.AddOrder("Warp");
