@@ -17,24 +17,14 @@
       "LastWriteTime": "1601-01-01T00:00:00Z"
     },
     {
-      "FullName": "UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "FilePath": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.3.7f1\\Editor\\Data\\Managed\\UnityEngine\\UnityEngine.CoreModule.dll",
-      "LastWriteTime": "1601-01-01T00:00:00Z"
-    },
-    {
-      "FullName": "Unity.Serialization, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "FilePath": "F:\\home\\woyu\\Documents\\GitHub\\project-ip-2\\IP2\\Library\\ScriptAssemblies\\Unity.Serialization.dll",
-      "LastWriteTime": "2020-04-30T02:37:22.4778496Z"
-    },
-    {
-      "FullName": "mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-      "FilePath": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.3.7f1\\Editor\\Data\\MonoBleedingEdge\\lib\\mono\\unityjit\\mscorlib.dll",
-      "LastWriteTime": "1601-01-01T00:00:00Z"
-    },
-    {
       "FullName": "Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "FilePath": "F:\\home\\woyu\\Documents\\GitHub\\project-ip-2\\IP2\\Library\\ScriptAssemblies\\Unity.Entities.dll",
       "LastWriteTime": "2020-04-30T02:37:42.9990979Z"
+    },
+    {
+      "FullName": "UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "FilePath": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.3.7f1\\Editor\\Data\\Managed\\UnityEngine\\UnityEngine.CoreModule.dll",
+      "LastWriteTime": "1601-01-01T00:00:00Z"
     },
     {
       "FullName": "Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -45,6 +35,11 @@
       "FullName": "Unity.Mathematics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "FilePath": "F:\\home\\woyu\\Documents\\GitHub\\project-ip-2\\IP2\\Library\\ScriptAssemblies\\Unity.Mathematics.dll",
       "LastWriteTime": "2020-04-30T02:37:19.3720977Z"
+    },
+    {
+      "FullName": "mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "FilePath": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.3.7f1\\Editor\\Data\\MonoBleedingEdge\\lib\\mono\\unityjit\\mscorlib.dll",
+      "LastWriteTime": "1601-01-01T00:00:00Z"
     },
     {
       "FullName": "System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
@@ -91,124 +86,20 @@
       ]
     },
     {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1<Unity.Serialization.PackedBinaryStream/InitializeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "2b17e454ee8fe366476f3dc9d05724f9",
-      "LinkName": "E63D6CC540F5F912",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1<Unity.Serialization.PackedBinaryStream/ClearJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "759380156e553336e6787acb516c33df",
-      "LinkName": "9CFDF477E5B27E59",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Serialization.Json.JsonTokenizer/DiscardCompletedJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "6264e4e053fe74b94a575c55eeb4e334",
-      "LinkName": "D145098390BDD5A2",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Serialization.Json.JsonStandardValidator/StandardJsonValidationJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "89b08540313710fa470f08e28d8411c3",
-      "LinkName": "798A502E3C4210EE",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Serialization.Json.JsonTokenizer/TokenizeJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "c53e42f4ac938937d06e64916427b28c",
-      "LinkName": "AE818C216FA2E7D0",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Serialization.NodeParser/ParseJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "d1cfd943c8010ad297b15532d36e8ca5",
-      "LinkName": "54C3E59AB6A52657",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobExtensions/JobStruct`1<Unity.Serialization.PackedBinaryWriter/WriteTokensJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "8a4caccfba2318f2f0e8a281f4c8c532",
-      "LinkName": "70A8B12CB9737BF7",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "FullName": "System.Void Unity.Jobs.IJobParallelForExtensions/ParallelForJobStruct`1<Unity.Serialization.PackedBinaryWriter/WriteCharactersJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)",
-      "ModuleOptionsHash": 10400676583197497630,
-      "ModuleHash": "71cbc22fc84501bec9fa0c8496dc209c",
-      "LinkName": "CD836E90693DA0A8",
-      "AssemblyDependencyIndices": [
-        3,
-        4,
-        5,
-        1,
-        2
-      ]
-    },
-    {
       "FullName": "System.Boolean Unity.Entities.StructuralChange::AddComponentEntityExecute(Unity.Entities.EntityComponentStore*,Unity.Entities.Entity*,System.Int32)",
       "ModuleOptionsHash": 10400676583197497630,
       "ModuleHash": "771c2a0db940ea2ab864a3a88943d29f",
       "LinkName": "AAA6AEDB2D217911",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
+        4,
+        5,
+        6,
         7,
         8,
-        5,
-        9,
-        10
+        9
       ]
     },
     {
@@ -217,15 +108,15 @@
       "ModuleHash": "e1959bf4e8470aa4fd62f26e9e08542d",
       "LinkName": "299577E4E1DF3A51",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        7,
-        3,
-        8,
         5,
-        9,
-        10
+        4,
+        6,
+        7,
+        8,
+        9
       ]
     },
     {
@@ -234,15 +125,15 @@
       "ModuleHash": "658603c5b44c0fc9b302d0a6433a7d8a",
       "LinkName": "773DC54203A6998F",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        7,
+        4,
         5,
+        7,
+        6,
         8,
-        9,
-        10
+        9
       ]
     },
     {
@@ -251,15 +142,15 @@
       "ModuleHash": "dfa8f84df4ac3a42a674244326abe591",
       "LinkName": "1201E5F6D1E4EC5F",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
+        4,
+        5,
+        6,
         7,
         8,
-        5,
-        9,
-        10
+        9
       ]
     },
     {
@@ -268,15 +159,15 @@
       "ModuleHash": "c635645ddb9ea5a615506246b9592037",
       "LinkName": "DC0186A7DDED51F2",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        7,
+        4,
         5,
+        7,
+        6,
         8,
-        9,
-        10
+        9
       ]
     },
     {
@@ -285,15 +176,15 @@
       "ModuleHash": "2fc57010c4af832a5c9d6000473c60b4",
       "LinkName": "048DA67685B13057",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        7,
-        3,
-        8,
         5,
-        9,
-        10
+        4,
+        6,
+        7,
+        8,
+        9
       ]
     },
     {
@@ -302,15 +193,15 @@
       "ModuleHash": "1d037bf10e50d6233eb2145d8bcfdf81",
       "LinkName": "542EB605C3747C68",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        7,
+        4,
         5,
+        7,
+        6,
         8,
-        9,
-        10
+        9
       ]
     },
     {
@@ -319,15 +210,15 @@
       "ModuleHash": "c2b9fe77c99b789fadb1e4027d8c4e72",
       "LinkName": "137AC5B4BEBD1009",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
+        4,
+        5,
+        6,
         7,
         8,
-        5,
-        9,
-        10
+        9
       ]
     },
     {
@@ -336,12 +227,12 @@
       "ModuleHash": "57127014108f1b541ca408380993170d",
       "LinkName": "5AE063EC50B48E9E",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        7,
-        5
+        4,
+        5,
+        7
       ]
     },
     {
@@ -350,15 +241,15 @@
       "ModuleHash": "cb1a154df10d7acf35c1edf9e031fadb",
       "LinkName": "61885968DA53AEE3",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        7,
+        4,
         5,
+        7,
+        6,
         8,
-        9,
-        10
+        9
       ]
     },
     {
@@ -367,17 +258,17 @@
       "ModuleHash": "a46bae0995354fef1988ab8244c0314a",
       "LinkName": "CF0FF7D3146132D5",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        7,
+        4,
         5,
-        8,
+        7,
+        6,
         0,
-        11,
         10,
-        9
+        9,
+        8
       ]
     },
     {
@@ -386,17 +277,17 @@
       "ModuleHash": "f0fa57d3920e20e5997481c911fd6563",
       "LinkName": "EB836A6B00385FD7",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        7,
+        4,
         5,
-        8,
+        7,
+        6,
         0,
-        11,
         10,
-        9
+        9,
+        8
       ]
     },
     {
@@ -405,17 +296,17 @@
       "ModuleHash": "0d56ea9e93eaa3f962dbcf4efecdc3c8",
       "LinkName": "33E44A453770E635",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        7,
-        3,
         5,
-        8,
+        4,
+        7,
+        6,
         0,
-        11,
         10,
-        9
+        9,
+        8
       ]
     },
     {
@@ -424,11 +315,11 @@
       "ModuleHash": "c7ad712303c1a721bba8b97c7ec3976b",
       "LinkName": "A97758B627ED3037",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        7,
-        3
+        5,
+        4
       ]
     },
     {
@@ -437,11 +328,11 @@
       "ModuleHash": "ad639ec35e777c9e1c4e2aef2a4fe5f8",
       "LinkName": "9FD4D34EBF439837",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        7,
-        3
+        5,
+        4
       ]
     },
     {
@@ -450,12 +341,12 @@
       "ModuleHash": "4725d6a04b8f80ea656a2d5a25699c1c",
       "LinkName": "B7F499C5E5D5B233",
       "AssemblyDependencyIndices": [
+        4,
         3,
-        6,
-        5,
+        7,
         1,
         2,
-        7
+        5
       ]
     },
     {
@@ -464,13 +355,13 @@
       "ModuleHash": "7e0ef51593e1e31da98201bdc936d459",
       "LinkName": "6814E1854C175BF0",
       "AssemblyDependencyIndices": [
-        6,
+        3,
         1,
         2,
-        3,
-        5,
-        8,
-        7
+        4,
+        7,
+        6,
+        5
       ]
     },
     {
@@ -479,14 +370,14 @@
       "ModuleHash": "dc88ae82d282653271cbd143fd61779b",
       "LinkName": "4745C97FB7218263",
       "AssemblyDependencyIndices": [
-        6,
-        12,
+        3,
+        11,
         1,
         2,
-        3,
-        5,
-        8,
-        7
+        4,
+        7,
+        6,
+        5
       ]
     }
   ]

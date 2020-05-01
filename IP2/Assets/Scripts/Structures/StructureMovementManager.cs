@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fundamentals;
 
 public class StructureMovementManager : MonoBehaviour {
     // Movement
@@ -19,8 +20,8 @@ public class StructureMovementManager : MonoBehaviour {
     // Selected
     Vector3 t;
     // Rigidbody and ConstantForce of structure
-    Rigidbody rigidbody;
-    ConstantForce constantForce;
+    new Rigidbody rigidbody;
+    new ConstantForce constantForce;
 
     // Has this component been initialized?
     bool initialized = false;
@@ -99,17 +100,17 @@ public class StructureMovementManager : MonoBehaviour {
     }
 
     void CalculateTargets() {
-        targetTranslationPercentage.x = Clamp(targetTranslationPercentage.x, -1.0f, 1.0f);
+        targetTranslationPercentage.x = MathUtils.Clamp(targetTranslationPercentage.x, -1.0f, 1.0f);
         targetTranslation.x = speed * targetTranslationPercentage.x;
-        targetTranslationPercentage.y = Clamp(targetTranslationPercentage.y, -1.0f, 1.0f);
+        targetTranslationPercentage.y = MathUtils.Clamp(targetTranslationPercentage.y, -1.0f, 1.0f);
         targetTranslation.y = speed * targetTranslationPercentage.y;
-        targetTranslationPercentage.z = Clamp(targetTranslationPercentage.z, -1.0f, 1.0f);
+        targetTranslationPercentage.z = MathUtils.Clamp(targetTranslationPercentage.z, -1.0f, 1.0f);
         targetTranslation.z = speed * targetTranslationPercentage.z;
-        targetRotationPercentage.x = Clamp(targetRotationPercentage.x, -1.0f, 1.0f);
+        targetRotationPercentage.x = MathUtils.Clamp(targetRotationPercentage.x, -1.0f, 1.0f);
         targetRotation.x = turnSpeed * targetRotationPercentage.x;
-        targetRotationPercentage.y = Clamp(targetRotationPercentage.y, -1.0f, 1.0f);
+        targetRotationPercentage.y = MathUtils.Clamp(targetRotationPercentage.y, -1.0f, 1.0f);
         targetRotation.y = turnSpeed * targetRotationPercentage.y;
-        targetRotationPercentage.z = Clamp(targetRotationPercentage.z, -1.0f, 1.0f);
+        targetRotationPercentage.z = MathUtils.Clamp(targetRotationPercentage.z, -1.0f, 1.0f);
         targetRotation.z = turnSpeed * targetRotationPercentage.z;
     }
 
@@ -155,22 +156,5 @@ public class StructureMovementManager : MonoBehaviour {
         } else {
             targetRotationPercentage.y += percent;
         }
-    }
-
-    float LinearInterpolate(float current, float target, float interpolationValue) {
-        if(current == target) return target;
-        float dt = Time.deltaTime;
-        if(Mathf.Abs(target - current) <= interpolationValue * dt) return target;
-        if (current > target) {
-            return current - interpolationValue * dt;
-        } else {
-            return current + interpolationValue * dt;
-        }
-    }
-    
-    float Clamp(float current, float lower, float upper) {
-        if(current < lower) current = lower;
-        else if (current > upper) current = upper;
-        return current;
     }
 }
