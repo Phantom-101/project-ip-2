@@ -21,7 +21,7 @@ public class SavesHandler : MonoBehaviour {
         string saveString = "";
         // Setup needed components
         ItemsHandler itemsHandler = FindObjectOfType<ItemsHandler> ();
-        UIHandler uIHandler = FindObjectOfType<UIHandler> ();
+        PlayerController playerController = FindObjectOfType<PlayerController> ();
         // Save data of each structure
         StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
         foreach (StructureBehaviours structure in structures) {
@@ -40,7 +40,7 @@ public class SavesHandler : MonoBehaviour {
             data.equipmentIds[structure.profile.turretSlots + 3] = (structure.engine.engine == null ? "Invalid" : structure.engine.engine.name);
             data.equipmentIds[structure.profile.turretSlots + 4] = (structure.electronics.electronics == null ? "Invalid" : structure.electronics.electronics.name);
             data.equipmentIds[structure.profile.turretSlots + 5] = (structure.tractorBeam.tractorBeam == null ? "Invalid" : structure.tractorBeam.tractorBeam.name);
-            data.isPlayer = (uIHandler.source == structure);
+            data.isPlayer = (playerController.structureBehaviours == structure);
             saveString += JsonUtility.ToJson (data, true) + "\nNext Structure\n";
         }
         File.WriteAllText (GetSavePath (), saveString);
@@ -50,7 +50,7 @@ public class SavesHandler : MonoBehaviour {
         if (File.Exists (GetSavePath ())) {
             // Setup needed components
             ItemsHandler itemsHandler = FindObjectOfType<ItemsHandler> ();
-            UIHandler uIHandler = FindObjectOfType<UIHandler> ();
+            PlayerController playerController = FindObjectOfType<PlayerController> ();
             // Get all structures and destroy them
             StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
             foreach (StructureBehaviours structure in structures) Destroy (structure.gameObject);
@@ -74,9 +74,8 @@ public class SavesHandler : MonoBehaviour {
                     if (structureBehaviours == null) structureBehaviours = instantiated.AddComponent<StructureBehaviours> ();
                     structureBehaviours.profile = profile;
                     structureBehaviours.savedEquipment = equipment;
-                    if (data.isPlayer) structureBehaviours.InitializePlayerController ();
                     structureBehaviours.Initialize ();
-                    if (data.isPlayer) uIHandler.source = structureBehaviours;
+                    if (data.isPlayer) playerController.structureBehaviours = structureBehaviours;
                 }
             }
         }

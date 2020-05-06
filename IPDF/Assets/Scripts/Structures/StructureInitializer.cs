@@ -6,7 +6,5 @@ public class StructureInitializer : MonoBehaviour {
     void Awake () {
         StructureBehaviours structureBehaviours = GetComponent<StructureBehaviours> ();
         if (structureBehaviours != null) structureBehaviours.Initialize ();
-        UIHandler uIHandler = FindObjectOfType<UIHandler> ();
-        if (uIHandler.source == structureBehaviours) structureBehaviours.InitializePlayerController ();
     }
 }

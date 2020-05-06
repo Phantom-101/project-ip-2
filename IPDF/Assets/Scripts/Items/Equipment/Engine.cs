@@ -75,5 +75,7 @@ public class EngineHandler {
         if (!online || engine == null) return;
         target.relativeForce = new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower);
         target.torque = new Vector3 (0.0f, turnSetting * engine.turnPower, 0.0f);
+        float targetZRot = -target.GetComponent<Rigidbody> ().angularVelocity.y * 10.0f;
+        target.transform.localEulerAngles = new Vector3 (0.0f, target.transform.localEulerAngles.y, targetZRot);
     }
 }

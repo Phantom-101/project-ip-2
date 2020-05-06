@@ -8,23 +8,35 @@ public class PlayerController : MonoBehaviour {
     [Header ("Basics")]
     public StructureBehaviours structureBehaviours;
     [Header ("UI Elements")]
+    public UIHandler uIHandler;
     public Slider forwardPowerSlider;
     public Button turnLeftButton;
     public Button turnRightButton;
     public float turnValue;
-    [Header ("Misc")]
-    public bool initialized;
 
-    public void Initialize (StructureBehaviours initializer) {
-        structureBehaviours = initializer;
-        initialized = true;
+    void Awake () {
+        uIHandler = FindObjectOfType<UIHandler> ();
     }
 
     void Update () {
-        if (!initialized) return;
+        if (!structureBehaviours) return;
+        uIHandler.source = structureBehaviours;
         if (structureBehaviours.engine.engine != null) {
             structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
             structureBehaviours.engine.turnSetting = turnValue;
+        }
+        if (Input.GetMouseButton (0)) {
+            Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast (ray, out hit, 1000.0f)) {
+                GameObject hitGameObject = hit.transform.gameObject;
+                if (hitGameObject != gameObject) {
+                    StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
+                    if (hitStructureBehaviours != null) {
+                        structureBehaviours.targetted = hitStructureBehaviours;
+                    }
+                }
+            }
         }
     }
 

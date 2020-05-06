@@ -22,10 +22,14 @@ public class StructureBehaviours : MonoBehaviour {
     public new Rigidbody rigidbody;
     public new ConstantForce constantForce;
     [Header ("Misc")]
-    public GameObject targetted;
+    public StructureBehaviours targetted;
     public bool initialized;
 
     public void Initialize () {
+        GetComponent<MeshCollider> ().sharedMesh = profile.mesh;
+        GetComponent<MeshCollider> ().convex = true;
+        GetComponent<MeshFilter> ().mesh = profile.mesh;
+        GetComponent<Renderer> ().material = profile.material;
         hull = profile.hull;
         if (savedEquipment == null || savedEquipment.Length != profile.turretSlots + 6) {
             for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler ());
@@ -48,19 +52,19 @@ public class StructureBehaviours : MonoBehaviour {
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.drag = profile.drag;
         rigidbody.angularDrag = profile.angularDrag;
+        // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
         constantForce = GetComponent<ConstantForce> ();
         if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
         initialized = true;
     }
 
-    public void InitializePlayerController () {
-        PlayerController playerController = FindObjectOfType<PlayerController> ();
-        if (playerController != null) playerController.Initialize (this);
-    }
-
     void Update () {
         if (!initialized) return;
         if (hull == 0.0f) Destroy (gameObject);
+        transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
+        rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
+        transform.localEulerAngles = new Vector3 (0.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
+        rigidbody.angularVelocity = new Vector3 (0.0f, rigidbody.angularVelocity.y, rigidbody.angularVelocity.z);
         if (turrets.Count != profile.turretSlots) turrets = new List<TurretHandler> (profile.turretSlots);
         generator.GenerateEnergy (capacitor);
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
