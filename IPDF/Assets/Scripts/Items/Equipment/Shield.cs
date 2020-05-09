@@ -24,17 +24,13 @@ public class Shield : Item {
 }
 
 public class ShieldHandler {
+    public StructureBehaviours equipper;
     public Shield shield;
     public bool online;
     public float[] strengths;
 
-    public ShieldHandler () {
-        this.shield = null;
-        this.online = false;
-        this.strengths = new float[6];
-    }
-
-    public ShieldHandler (Shield shield) {
+    public ShieldHandler (StructureBehaviours equipper, Shield shield = null) {
+        this.equipper = equipper;
         if (shield == null) {
             this.shield = null;
             this.online = false;

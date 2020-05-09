@@ -26,21 +26,15 @@ public class Electronics : Item {
 }
 
 public class ElectronicsHandler {
+    public StructureBehaviours equipper;
     public Electronics electronics;
     public bool online;
     public bool activated;
     public float storedEnergy;
     public float timeSinceToggled;
 
-    public ElectronicsHandler () {
-        this.electronics = null;
-        this.online = false;
-        this.activated = false;
-        this.storedEnergy = 0.0f;
-        this.timeSinceToggled = 0.0f;
-    }
-
-    public ElectronicsHandler (Electronics electronics) {
+    public ElectronicsHandler (StructureBehaviours equipper, Electronics electronics = null) {
+        this.equipper = equipper;
         if (electronics == null) {
             this.electronics = null;
             this.online = false;

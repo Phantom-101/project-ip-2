@@ -25,19 +25,14 @@ public class Engine : Item {
 }
 
 public class EngineHandler {
+    public StructureBehaviours equipper;
     public Engine engine;
     public bool online;
     public float forwardSetting;
     public float turnSetting;
 
-    public EngineHandler () {
-        this.engine = null;
-        this.online = false;
-        this.forwardSetting = 0.0f;
-        this.turnSetting = 0.0f;
-    }
-
-    public EngineHandler (Engine engine) {
+    public EngineHandler (StructureBehaviours equipper, Engine engine = null) {
+        this.equipper = equipper;
         if (engine == null) {
             this.engine = null;
             this.online = false;

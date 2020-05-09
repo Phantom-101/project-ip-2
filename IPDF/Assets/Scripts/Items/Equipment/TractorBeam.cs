@@ -27,21 +27,15 @@ public class TractorBeam : Item {
 }
 
 public class TractorBeamHandler {
+    public StructureBehaviours equipper;
     public TractorBeam tractorBeam;
     public bool online;
     public bool activated;
     public float storedEnergy;
     public GameObject target;
-
-    public TractorBeamHandler () {
-        this.tractorBeam = null;
-        this.online = false;
-        this.activated = false;
-        this.storedEnergy = 0.0f;
-        this.target = null;
-    }
-
-    public TractorBeamHandler (TractorBeam tractorBeam) {
+    
+    public TractorBeamHandler (StructureBehaviours equipper, TractorBeam tractorBeam = null) {
+        this.equipper = equipper;
         if (tractorBeam == null) {
             this.tractorBeam = null;
             this.online = false;

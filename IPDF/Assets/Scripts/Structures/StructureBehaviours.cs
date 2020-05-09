@@ -10,7 +10,14 @@ public class StructureBehaviours : MonoBehaviour {
     public float hull;
     public bool cloaked;
     [Header ("Equipment")]
-    public Item[] savedEquipment;
+    public bool initializeAccordingToSaveData;
+    public List<Turret> savedTurrets = new List<Turret> ();
+    public Shield savedShield;
+    public Capacitor savedCapacitor;
+    public Generator savedGenerator;
+    public Engine savedEngine;
+    public Electronics savedElectronics;
+    public TractorBeam savedTractorBeam;
     public List<TurretHandler> turrets = new List<TurretHandler> ();
     public ShieldHandler shield;
     public CapacitorHandler capacitor;
@@ -21,6 +28,8 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("Physics")]
     public new Rigidbody rigidbody;
     public new ConstantForce constantForce;
+    [Header ("AI")]
+    public bool AIActivated;
     [Header ("Misc")]
     public StructureBehaviours targetted;
     public bool initialized;
@@ -31,22 +40,22 @@ public class StructureBehaviours : MonoBehaviour {
         GetComponent<MeshFilter> ().mesh = profile.mesh;
         GetComponent<Renderer> ().material = profile.material;
         hull = profile.hull;
-        if (savedEquipment == null || savedEquipment.Length != profile.turretSlots + 6) {
-            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler ());
-            shield = new ShieldHandler ();
-            capacitor = new CapacitorHandler ();
-            generator = new GeneratorHandler ();
-            engine = new EngineHandler ();
-            electronics = new ElectronicsHandler ();
-            tractorBeam = new TractorBeamHandler ();
+        if (initializeAccordingToSaveData) {
+            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (i < savedTurrets.Count ? new TurretHandler (this, savedTurrets[i]) : new TurretHandler (this, null));
+            shield = new ShieldHandler (this, savedShield);
+            capacitor = new CapacitorHandler (this, savedCapacitor);
+            generator = new GeneratorHandler (this, savedGenerator);
+            engine = new EngineHandler (this, savedEngine);
+            electronics = new ElectronicsHandler (this, savedElectronics);
+            tractorBeam = new TractorBeamHandler (this, savedTractorBeam);
         } else {
-            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (savedEquipment[i] as Turret));
-            shield = new ShieldHandler (savedEquipment[profile.turretSlots] as Shield);
-            capacitor = new CapacitorHandler (savedEquipment[profile.turretSlots + 1] as Capacitor);
-            generator = new GeneratorHandler (savedEquipment[profile.turretSlots + 2] as Generator);
-            engine = new EngineHandler (savedEquipment[profile.turretSlots + 3] as Engine);
-            electronics = new ElectronicsHandler (savedEquipment[profile.turretSlots + 4] as Electronics);
-            tractorBeam = new TractorBeamHandler (savedEquipment[profile.turretSlots + 5] as TractorBeam);
+            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (this));
+            shield = new ShieldHandler (this);
+            capacitor = new CapacitorHandler (this);
+            generator = new GeneratorHandler (this);
+            engine = new EngineHandler (this);
+            electronics = new ElectronicsHandler (this);
+            tractorBeam = new TractorBeamHandler (this);
         }
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
@@ -61,7 +70,7 @@ public class StructureBehaviours : MonoBehaviour {
     void Update () {
         if (!initialized) return;
         if (hull == 0.0f) Destroy (gameObject);
-        transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
+        transform.position = new Vector3 (transform.position.x, profile.yOffset, transform.position.z);
         rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
         transform.localEulerAngles = new Vector3 (0.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
         rigidbody.angularVelocity = new Vector3 (0.0f, rigidbody.angularVelocity.y, rigidbody.angularVelocity.z);
@@ -71,6 +80,22 @@ public class StructureBehaviours : MonoBehaviour {
         engine.ApplySettings (GetComponent<ConstantForce> ());
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
+        if (AIActivated) {
+            // TODO Do AI stuff
+            /*
+
+            $$\      $$\                 $$$$$$$\                      $$\       
+            $$$\    $$$ |                $$  __$$\                     $$ |      
+            $$$$\  $$$$ | $$$$$$\        $$ |  $$ | $$$$$$\   $$$$$$\  $$ |  $$\ 
+            $$\$$\$$ $$ |$$  __$$\       $$$$$$$  |$$  __$$\ $$  __$$\ $$ | $$  |
+            $$ \$$$  $$ |$$ |  \__|      $$  ____/ $$ /  $$ |$$ |  \__|$$$$$$  / 
+            $$ |\$  /$$ |$$ |            $$ |      $$ |  $$ |$$ |      $$  _$$<  
+            $$ | \_/ $$ |$$ |$$\         $$ |      \$$$$$$  |$$ |      $$ | \$$\ 
+            \__|     \__|\__|\__|        \__|       \______/ \__|      \__|  \__|
+
+            */
+            engine.forwardSetting = 1.0f;
+        }
     }
 
     public void TakeDamage (float amount, Vector3 from) {
@@ -86,8 +111,12 @@ public class StructureBehaviours : MonoBehaviour {
         else if (angle >= 30.0f && angle < 90.0f) directionalSector = 1;
         else if (angle >= 90.0f && angle < 150.0f) directionalSector = 2;
         else directionalSector = 3;
-        if (shield.strengths[directionalSector] > 0.0f)
+        if (shield.strengths[directionalSector] >= amount)
             shield.strengths[directionalSector] = MathUtils.Clamp (shield.strengths[directionalSector] - amount, 0.0f, shield.shield.strength);
-        else hull = MathUtils.Clamp (hull - amount, 0.0f, profile.hull);
+        else if (shield.strengths[directionalSector] < amount) {
+            amount -= shield.strengths[directionalSector];
+            shield.strengths[directionalSector] = 0.0f;
+            hull = MathUtils.Clamp (hull - amount, 0.0f, profile.hull);
+        }
     }
 }

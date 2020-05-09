@@ -9,11 +9,17 @@ public class StructureSaveData {
     public float[] position;
     public float[] rotation;
     public string profileId;
-    public string[] inventoryIds;
+    public Dictionary<Item, int> inventory;
+    public List<Turret> turrets;
+    public Shield shield;
+    public Capacitor capacitor;
+    public Generator generator;
+    public Engine engine;
+    public Electronics electronics;
+    public TractorBeam tractorBeam;
     public string[] equipmentIds;
     public bool isPlayer;
 }
-
 public class SavesHandler : MonoBehaviour {
     public GameObject basicStructure;
 
@@ -31,15 +37,15 @@ public class SavesHandler : MonoBehaviour {
             data.rotation = new float[] {structure.transform.rotation.eulerAngles.x, structure.transform.rotation.eulerAngles.y, structure.transform.rotation.eulerAngles.z};
             data.profileId = structure.profile.name;
             // TODO Add inventory saves later
-            data.inventoryIds = new string[] {""};
-            data.equipmentIds = new string[structure.profile.turretSlots + 6];
-            for (int i = 0; i < structure.profile.turretSlots; i++) data.equipmentIds[i] = (structure.turrets[i].turret == null ? "Invalid" : structure.turrets[i].turret.name);
-            data.equipmentIds[structure.profile.turretSlots] = (structure.shield.shield == null ? "Invalid" : structure.shield.shield.name);
-            data.equipmentIds[structure.profile.turretSlots + 1] = (structure.capacitor.capacitor == null ? "Invalid" : structure.capacitor.capacitor.name);
-            data.equipmentIds[structure.profile.turretSlots + 2] = (structure.generator.generator == null ? "Invalid" : structure.generator.generator.name);
-            data.equipmentIds[structure.profile.turretSlots + 3] = (structure.engine.engine == null ? "Invalid" : structure.engine.engine.name);
-            data.equipmentIds[structure.profile.turretSlots + 4] = (structure.electronics.electronics == null ? "Invalid" : structure.electronics.electronics.name);
-            data.equipmentIds[structure.profile.turretSlots + 5] = (structure.tractorBeam.tractorBeam == null ? "Invalid" : structure.tractorBeam.tractorBeam.name);
+            data.inventory = new Dictionary<Item, int> ();
+            data.turrets = new List<Turret> ();
+            for (int i = 0; i < structure.profile.turretSlots; i++) data.turrets.Add (structure.turrets[i].turret);
+            data.shield = structure.shield.shield;
+            data.capacitor = structure.capacitor.capacitor;
+            data.generator = structure.generator.generator;
+            data.engine = structure.engine.engine;
+            data.electronics = structure.electronics.electronics;
+            data.tractorBeam = structure.tractorBeam.tractorBeam;
             data.isPlayer = (playerController.structureBehaviours == structure);
             saveString += JsonUtility.ToJson (data, true) + "\nNext Structure\n";
         }
@@ -67,17 +73,24 @@ public class SavesHandler : MonoBehaviour {
                     ) as GameObject;
                     instantiated.name = data.name;
                     StructureProfile profile = itemsHandler.GetItemById (data.profileId) as StructureProfile;
-                    int totalEquipment = profile.turretSlots + 6;
-                    Item[] equipment = new Item[totalEquipment];
-                    for (int i = 0; i < totalEquipment; i++) equipment[i] = itemsHandler.GetItemById (data.equipmentIds[i]);
                     StructureBehaviours structureBehaviours = instantiated.GetComponent<StructureBehaviours> ();
                     if (structureBehaviours == null) structureBehaviours = instantiated.AddComponent<StructureBehaviours> ();
+                    structureBehaviours.initializeAccordingToSaveData = true;
                     structureBehaviours.profile = profile;
-                    structureBehaviours.savedEquipment = equipment;
+                    structureBehaviours.savedTurrets = data.turrets;
+                    structureBehaviours.savedShield = data.shield;
+                    structureBehaviours.savedCapacitor = data.capacitor;
+                    structureBehaviours.savedGenerator = data.generator;
+                    structureBehaviours.savedEngine = data.engine;
+                    structureBehaviours.savedElectronics = data.electronics;
+                    structureBehaviours.savedTractorBeam = data.tractorBeam;
                     structureBehaviours.Initialize ();
                     if (data.isPlayer) playerController.structureBehaviours = structureBehaviours;
                 }
             }
+            // Reset camera position
+            CameraFollowPlayer cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
+            cameraFollowPlayer.ResetPosition ();
         }
     }
 

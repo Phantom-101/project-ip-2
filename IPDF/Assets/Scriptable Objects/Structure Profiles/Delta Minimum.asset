@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basePrice: 0
   size: 0
+  icon: {fileID: 0}
   mesh: {fileID: -5495902117074765545, guid: ec81fa44c38b37942ad6dd8c4bb908de, type: 3}
   material: {fileID: 2100000, guid: fb63eed81644ef245bb076584c8134f5, type: 2}
   hull: 100
-  turretSlots: 5
-  drag: 1
+  turretSlots: 3
+  drag: 0.5
   angularDrag: 2
+  yOffset: 0.25

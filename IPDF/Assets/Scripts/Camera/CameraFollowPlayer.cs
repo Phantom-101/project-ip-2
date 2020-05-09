@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour {
-    [Header ("Player & UI")]
-    public UIHandler uIHandler;
+    [Header ("Player")]
+    public PlayerController playerController;
     public StructureBehaviours playerStructure;
     [Header ("Configurations")]
     public Vector3 startPositionOffset = new Vector3 (0.0f, 5.0f, -10.0f);
@@ -20,9 +20,9 @@ public class CameraFollowPlayer : MonoBehaviour {
     public new ConstantForce constantForce;
 
     void Awake () {
-        uIHandler = FindObjectOfType<UIHandler> ();
-        playerStructure = uIHandler.source;
-        transform.position = playerStructure.transform.rotation * startPositionOffset + playerStructure.transform.position;
+        playerController = FindObjectOfType<PlayerController> ();
+        playerStructure = playerController.structureBehaviours;
+        ResetPosition ();
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.drag = 2.5f;
@@ -32,8 +32,13 @@ public class CameraFollowPlayer : MonoBehaviour {
         if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
     }
 
+    public void ResetPosition () {
+        playerStructure = playerController.structureBehaviours;
+        transform.position = playerStructure.transform.rotation * startPositionOffset + playerStructure.transform.position;
+    }
+
     void Update () {
-        playerStructure = uIHandler.source;
+        playerStructure = playerController.structureBehaviours;
         if (playerStructure != null) {
             Vector3 playerPosition = playerStructure.transform.position;
             transform.LookAt (playerPosition + new Vector3 (0.0f, lookAtOffset, 0.0f));

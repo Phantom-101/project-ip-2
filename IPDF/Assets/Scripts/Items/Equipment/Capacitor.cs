@@ -25,15 +25,12 @@ public class Capacitor : Item {
 }
 
 public class CapacitorHandler {
+    public StructureBehaviours equipper;
     public Capacitor capacitor;
     public float storedEnergy;
 
-    public CapacitorHandler () {
-        this.capacitor = null;
-        this.storedEnergy = 0.0f;
-    }
-
-    public CapacitorHandler (Capacitor capacitor) {
+    public CapacitorHandler (StructureBehaviours equipper, Capacitor capacitor = null) {
+        this.equipper = equipper;
         if (capacitor == null) {
             this.capacitor = null;
             this.storedEnergy = 0.0f;

@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIHandler : MonoBehaviour {
+    [Header ("Source")]
     public StructureBehaviours source;
+    [Header ("Prefabs")]
+    public GameObject equipmentButton;
+    [Header ("Gradients")]
     public Gradient hullGradient;
     public Gradient shieldGradient;
+    public Gradient energyGradient;
 
     GameObject canvas;
     Image hullUI;
@@ -14,6 +20,11 @@ public class UIHandler : MonoBehaviour {
     GameObject targetInformationPanel;
     Image targetHullUI;
     Image[] targetShieldUI = new Image[6];
+    TextMeshProUGUI targetName;
+    TextMeshProUGUI targetFaction;
+    TextMeshProUGUI targetDistance;
+    Transform equipmentButtonsParent;
+    List<GameObject> equipmentButtons = new List<GameObject> ();
 
     void Awake () {
         canvas = GameObject.Find ("Canvas");
@@ -22,6 +33,10 @@ public class UIHandler : MonoBehaviour {
         targetInformationPanel = canvas.transform.Find ("Target Information Panel").gameObject;
         targetHullUI = targetInformationPanel.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) targetShieldUI[i] = targetInformationPanel.transform.Find ("Health Indicators/Hull/Shield " + i).GetComponent<Image> ();
+        targetName = targetInformationPanel.transform.Find ("Name").GetComponent<TextMeshProUGUI> ();
+        targetFaction = targetInformationPanel.transform.Find ("Faction").GetComponent<TextMeshProUGUI> ();
+        targetDistance = targetInformationPanel.transform.Find ("Distance").GetComponent<TextMeshProUGUI> ();
+        equipmentButtonsParent = canvas.transform.Find ("Equipment Buttons Parent");
     }
 
     void Update () {
@@ -40,13 +55,48 @@ public class UIHandler : MonoBehaviour {
             targetInformationPanel.SetActive (true);
             targetHullUI.color = hullGradient.Evaluate (targetStructureBehaviour.hull / targetStructureBehaviour.profile.hull);
             if (targetStructureBehaviour.shield.shield != null) {
-                if (targetStructureBehaviour.shield.online)
-                    for (int i = 0; i < 6; i++)
+                if (targetStructureBehaviour.shield.online) for (int i = 0; i < 6; i++)
                         targetShieldUI[i].color = shieldGradient.Evaluate (targetStructureBehaviour.shield.strengths[i] / targetStructureBehaviour.shield.shield.strength);
-                else
-                    for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
+                else for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
             }
-            
+            targetName.text = targetStructureBehaviour.gameObject.name;
+            targetFaction.text = "";
+            targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
         }
+        if (equipmentButtons.Count != source.turrets.Count + 2) {
+            equipmentButtons = new List<GameObject> ();
+            for (int i = 0; i < source.turrets.Count + 2; i++)
+                equipmentButtons.Add (null);
+        }
+        int turretButtonsShift = 0;
+        // TODO do the same for the electronics and tractor beam
+        for (int i = 0; i < source.turrets.Count; i++) {
+            Turret referencedTurret = null;
+            GameObject button = equipmentButtons[i];
+            if (button != null) {
+                ContainerComponent containerComponent = button.GetComponent<ContainerComponent> ();
+                if (containerComponent == null) Destroy (button);
+                else referencedTurret = containerComponent.containers[0].value as Turret;
+                if (referencedTurret != source.turrets[i].turret) Destroy (button);
+            }
+            if (button == null) {
+                button = Instantiate (equipmentButton);
+                button.transform.SetParent (equipmentButtonsParent, false);
+                ContainerComponent equipmentContainer = button.GetComponent<ContainerComponent> ();
+                if (equipmentContainer == null) equipmentContainer = button.AddComponent<ContainerComponent> ();
+                equipmentContainer.containers.Add (new Container<Object> (source.turrets[i].turret));
+            }
+            button.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0.0f, (turretButtonsShift + i) * 40.0f);
+            button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
+            button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
+            button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
+            SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.gameObject, source.targetted.gameObject), button.GetComponent<Button> ());
+            equipmentButtons[i] = button;
+        }
+    }
+
+    void SelectableButtonFunction(UnityEngine.Events.UnityAction action, Button button) {
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(action);
     }
 }

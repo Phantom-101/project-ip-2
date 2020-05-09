@@ -13,4 +13,6 @@ public class StructureProfile : Item {
     [Header ("Physics")]
     public float drag;
     public float angularDrag;
+    [Header ("Correction")]
+    public float yOffset;
 }

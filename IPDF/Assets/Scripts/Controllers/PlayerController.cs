@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast (ray, out hit, 1000.0f)) {
                 GameObject hitGameObject = hit.transform.gameObject;
-                if (hitGameObject != gameObject) {
+                if (hitGameObject != structureBehaviours.gameObject) {
                     StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                     if (hitStructureBehaviours != null) {
                         structureBehaviours.targetted = hitStructureBehaviours;

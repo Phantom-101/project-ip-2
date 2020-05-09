@@ -19,8 +19,10 @@ using Essentials;
 [CreateAssetMenu (fileName = "New Turret", menuName = "Equipment/Turret")]
 public class Turret : Item {
     public GameObject projectile;
+    public Ammunition[] acceptedAmmunitions;
     public float projectileVelocity;
     public bool projectileSticky;
+    public float projectileTracking;
     public float projectileInaccuracy;
     public bool leadProjectile;
     public float damage;
@@ -31,17 +33,14 @@ public class Turret : Item {
 }
 
 public class TurretHandler {
+    public StructureBehaviours equipper;
     public Turret turret;
+    public Ammunition usingAmmunition;
     public bool online;
     public float storedEnergy;
 
-    public TurretHandler () {
-        this.turret = null;
-        this.online = false;
-        this.storedEnergy = 0.0f;
-    }
-
-    public TurretHandler (Turret turret) {
+    public TurretHandler (StructureBehaviours equipper, Turret turret = null) {
+        this.equipper = equipper;
         if (turret == null) {
             this.turret = null;
             this.online = false;
@@ -63,6 +62,10 @@ public class TurretHandler {
         if (!online) storedEnergy = 0.0f;
     }
 
+    public void UseAmmunition (Ammunition ammunition) {
+        usingAmmunition = ammunition;
+    }
+
     public float TransferEnergy (float available) {
         if (!online) return available;
         float transferred = MathUtils.Clamp (MathUtils.Clamp (turret.rechargeRate * Time.deltaTime, 0.0f, turret.maxStoredEnergy - storedEnergy), 0.0f, available);
@@ -72,20 +75,22 @@ public class TurretHandler {
 
     public void Activate (GameObject activator, GameObject target) {
         if (!online || turret == null || activator == null || target == null) return;
-        if (storedEnergy >= turret.activationThreshold) {
-            GameObject projectile = MonoBehaviour.Instantiate (turret.projectile,
-                activator.transform.position,
-                Quaternion.LookRotation (
-                    CalculateLeadPosition (
-                        activator.transform.position,
-                        target.transform.position,
-                        target.GetComponent<Rigidbody> ().velocity,
-                        turret.projectileVelocity,
-                        turret.leadProjectile
-                    )
-                ) * RandomQuaternion (turret.projectileInaccuracy)
-            ) as GameObject;
-            projectile.GetComponent<Projectile> ().Initialize (turret, activator, target, storedEnergy / turret.maxStoredEnergy);
+        if (storedEnergy >= turret.activationThreshold * turret.maxStoredEnergy) {
+            if (turret.projectile != null) {
+                GameObject projectile = MonoBehaviour.Instantiate (turret.projectile,
+                    activator.transform.position,
+                    Quaternion.LookRotation (
+                        CalculateLeadPosition (
+                            activator.transform.position,
+                            target.transform.position,
+                            target.GetComponent<Rigidbody> ().velocity,
+                            turret.projectileVelocity,
+                            turret.leadProjectile
+                        )
+                    ) * RandomQuaternion (turret.projectileInaccuracy)
+                ) as GameObject;
+                projectile.GetComponent<Projectile> ().Initialize (turret, activator, target, storedEnergy / turret.maxStoredEnergy);
+            }
             storedEnergy = 0.0f;
         }
     }

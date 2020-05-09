@@ -21,15 +21,12 @@ public class Generator : Item {
 }
 
 public class GeneratorHandler {
+    public StructureBehaviours equipper;
     public Generator generator;
     public bool online;
 
-    public GeneratorHandler () {
-        this.generator = null;
-        this.online = false;
-    }
-
-    public GeneratorHandler (Generator generator) {
+    public GeneratorHandler (StructureBehaviours equipper, Generator generator = null) {
+        this.equipper = equipper;
         if (generator == null) {
             this.generator = null;
             this.online = false;
