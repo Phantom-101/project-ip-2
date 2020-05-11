@@ -25,6 +25,7 @@ public class UIHandler : MonoBehaviour {
     TextMeshProUGUI targetDistance;
     Transform equipmentButtonsParent;
     List<GameObject> equipmentButtons = new List<GameObject> ();
+    RectTransform capacitorTransform;
 
     void Awake () {
         canvas = GameObject.Find ("Canvas");
@@ -37,11 +38,14 @@ public class UIHandler : MonoBehaviour {
         targetFaction = targetInformationPanel.transform.Find ("Faction").GetComponent<TextMeshProUGUI> ();
         targetDistance = targetInformationPanel.transform.Find ("Distance").GetComponent<TextMeshProUGUI> ();
         equipmentButtonsParent = canvas.transform.Find ("Equipment Buttons Parent");
+        capacitorTransform = canvas.transform.Find ("Capacitor Background/Capacitor").GetComponent<RectTransform> ();
     }
 
     void Update () {
         if (source == null) return;
+        // Hull
         hullUI.color = hullGradient.Evaluate (source.hull / source.profile.hull);
+        // Shields
         if (source.shield.shield != null) {
             if (source.shield.online)
                 for (int i = 0; i < 6; i++)
@@ -49,6 +53,9 @@ public class UIHandler : MonoBehaviour {
             else
                 for (int i = 0; i < 6; i++) shieldUI[i].color = Color.grey;
         }
+        // Capacitor
+        capacitorTransform.sizeDelta = new Vector2 (source.capacitor.capacitor == null ? 0.0f : source.capacitor.storedEnergy / source.capacitor.capacitor.capacitance * 150.0f, 20.0f);
+        // Target information
         StructureBehaviours targetStructureBehaviour = source.targetted;
         if (targetStructureBehaviour == null) targetInformationPanel.SetActive (false);
         else {
@@ -63,6 +70,7 @@ public class UIHandler : MonoBehaviour {
             targetFaction.text = "";
             targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
         }
+        // Equipment
         if (equipmentButtons.Count != source.turrets.Count + 2) {
             equipmentButtons = new List<GameObject> ();
             for (int i = 0; i < source.turrets.Count + 2; i++)
@@ -70,6 +78,7 @@ public class UIHandler : MonoBehaviour {
         }
         int turretButtonsShift = 0;
         // TODO do the same for the electronics and tractor beam
+        // Turrets
         for (int i = 0; i < source.turrets.Count; i++) {
             Turret referencedTurret = null;
             GameObject button = equipmentButtons[i];

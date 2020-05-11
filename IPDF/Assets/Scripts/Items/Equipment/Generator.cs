@@ -11,6 +11,7 @@ $$ |  $$ |$$   ____|$$ |  $$ |$$   ____|$$ |      $$  __$$ |  $$ |$$\ $$ |  $$ |
 
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,7 @@ public class Generator : Item {
     public float generation;
 }
 
+[Serializable]
 public class GeneratorHandler {
     public StructureBehaviours equipper;
     public Generator generator;
@@ -34,6 +36,12 @@ public class GeneratorHandler {
             this.generator = generator;
             this.online = true;
         }
+    }
+
+    public GeneratorHandler (GeneratorHandler generatorHandler, StructureBehaviours equipper) {
+        this.equipper = equipper;
+        this.generator = generatorHandler.generator;
+        this.online = generatorHandler.online;
     }
 
     public void SetOnline (bool target) {

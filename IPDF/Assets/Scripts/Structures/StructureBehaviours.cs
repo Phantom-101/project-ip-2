@@ -9,15 +9,16 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("Stats")]
     public float hull;
     public bool cloaked;
-    [Header ("Equipment")]
+    [Header ("Saved Equipment States")]
     public bool initializeAccordingToSaveData;
-    public List<Turret> savedTurrets = new List<Turret> ();
-    public Shield savedShield;
-    public Capacitor savedCapacitor;
-    public Generator savedGenerator;
-    public Engine savedEngine;
-    public Electronics savedElectronics;
-    public TractorBeam savedTractorBeam;
+    public List<TurretHandler> savedTurrets = new List<TurretHandler> ();
+    public ShieldHandler savedShield;
+    public CapacitorHandler savedCapacitor;
+    public GeneratorHandler savedGenerator;
+    public EngineHandler savedEngine;
+    public ElectronicsHandler savedElectronics;
+    public TractorBeamHandler savedTractorBeam;
+    [Header ("Equipment Handlers")]
     public List<TurretHandler> turrets = new List<TurretHandler> ();
     public ShieldHandler shield;
     public CapacitorHandler capacitor;
@@ -41,13 +42,16 @@ public class StructureBehaviours : MonoBehaviour {
         GetComponent<Renderer> ().material = profile.material;
         hull = profile.hull;
         if (initializeAccordingToSaveData) {
-            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (i < savedTurrets.Count ? new TurretHandler (this, savedTurrets[i]) : new TurretHandler (this, null));
-            shield = new ShieldHandler (this, savedShield);
-            capacitor = new CapacitorHandler (this, savedCapacitor);
-            generator = new GeneratorHandler (this, savedGenerator);
-            engine = new EngineHandler (this, savedEngine);
-            electronics = new ElectronicsHandler (this, savedElectronics);
-            tractorBeam = new TractorBeamHandler (this, savedTractorBeam);
+            for (int i = 0; i < profile.turretSlots; i++) {
+                turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], this) : new TurretHandler (null, this));
+                turrets[i].equipper = this;
+            }
+            shield = new ShieldHandler (savedShield, this);
+            capacitor = new CapacitorHandler (savedCapacitor, this);
+            generator = new GeneratorHandler (savedGenerator, this);
+            engine = new EngineHandler (savedEngine, this);
+            electronics = new ElectronicsHandler (savedElectronics, this);
+            tractorBeam = new TractorBeamHandler (savedTractorBeam, this);
         } else {
             for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (this));
             shield = new ShieldHandler (this);

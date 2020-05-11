@@ -231,6 +231,80 @@ RectTransform:
   m_AnchoredPosition: {x: -250, y: 50}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 1, y: 0}
+--- !u!1 &24480878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24480879}
+  - component: {fileID: 24480881}
+  - component: {fileID: 24480880}
+  m_Layer: 5
+  m_Name: Capacitor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &24480879
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24480878}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1049116130}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 50, y: 20}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &24480880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24480878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &24480881
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24480878}
+  m_CullTransparentMesh: 0
 --- !u!1 &52786537
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +644,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1879217982}
-  - {fileID: 1450687699}
   m_Father: {fileID: 931340791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -897,20 +970,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
+  profile: {fileID: 11400000, guid: 6aa3c4e8165363344aac4f188aa7ea9f, type: 2}
   hull: 0
   cloaked: 0
   initializeAccordingToSaveData: 1
   savedTurrets:
-  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-  savedShield: {fileID: 11400000, guid: 322023c85710b174d8e2b7b71b424e39, type: 2}
-  savedCapacitor: {fileID: 11400000, guid: 38f4ed1698aaa5c479fdf8baa06f760e, type: 2}
-  savedGenerator: {fileID: 11400000, guid: 10449ce3251089d4e8093e78a61d8abf, type: 2}
-  savedEngine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-  savedElectronics: {fileID: 0}
-  savedTractorBeam: {fileID: 0}
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  savedShield:
+    equipper: {fileID: 235251622}
+    shield: {fileID: 11400000, guid: 322023c85710b174d8e2b7b71b424e39, type: 2}
+    online: 1
+    strengths:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  savedCapacitor:
+    equipper: {fileID: 235251622}
+    capacitor: {fileID: 11400000, guid: 38f4ed1698aaa5c479fdf8baa06f760e, type: 2}
+    storedEnergy: 1000
+  savedGenerator:
+    equipper: {fileID: 0}
+    generator: {fileID: 11400000, guid: 617e74926984aff4cb3bd1e6e160a78f, type: 2}
+    online: 1
+  savedEngine:
+    equipper: {fileID: 0}
+    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  savedElectronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  savedTractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    shield: {fileID: 0}
+    online: 0
+    strengths: []
+  capacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 0}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    generator: {fileID: 0}
+    online: 0
+  engine:
+    equipper: {fileID: 0}
+    engine: {fileID: 0}
+    online: 0
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
@@ -1428,15 +1590,94 @@ MonoBehaviour:
   cloaked: 0
   initializeAccordingToSaveData: 1
   savedTurrets:
-  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-  savedShield: {fileID: 11400000, guid: 322023c85710b174d8e2b7b71b424e39, type: 2}
-  savedCapacitor: {fileID: 11400000, guid: 38f4ed1698aaa5c479fdf8baa06f760e, type: 2}
-  savedGenerator: {fileID: 11400000, guid: 10449ce3251089d4e8093e78a61d8abf, type: 2}
-  savedEngine: {fileID: 11400000, guid: a9fc2e8a9b4d2234ab74f64435e1a017, type: 2}
-  savedElectronics: {fileID: 0}
-  savedTractorBeam: {fileID: 0}
+  - equipper: {fileID: 0}
+    turret: {fileID: 0}
+    usingAmmunition: {fileID: 0}
+    online: 0
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 0}
+    usingAmmunition: {fileID: 0}
+    online: 0
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 0}
+    usingAmmunition: {fileID: 0}
+    online: 0
+    storedEnergy: 0
+  savedShield:
+    equipper: {fileID: 0}
+    shield: {fileID: 11400000, guid: 322023c85710b174d8e2b7b71b424e39, type: 2}
+    online: 1
+    strengths:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  savedCapacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 11400000, guid: 38f4ed1698aaa5c479fdf8baa06f760e, type: 2}
+    storedEnergy: 1000
+  savedGenerator:
+    equipper: {fileID: 0}
+    generator: {fileID: 11400000, guid: 10449ce3251089d4e8093e78a61d8abf, type: 2}
+    online: 1
+  savedEngine:
+    equipper: {fileID: 0}
+    engine: {fileID: 11400000, guid: a9fc2e8a9b4d2234ab74f64435e1a017, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  savedElectronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  savedTractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    shield: {fileID: 0}
+    online: 0
+    strengths: []
+  capacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 0}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    generator: {fileID: 0}
+    online: 0
+  engine:
+    equipper: {fileID: 0}
+    engine: {fileID: 0}
+    online: 0
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
@@ -2836,6 +3077,7 @@ RectTransform:
   - {fileID: 960613344}
   - {fileID: 931340791}
   - {fileID: 91824310}
+  - {fileID: 1049116130}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2956,6 +3198,81 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: 50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
+--- !u!1 &1049116129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049116130}
+  - component: {fileID: 1049116132}
+  - component: {fileID: 1049116131}
+  m_Layer: 5
+  m_Name: Capacitor Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1049116130
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049116129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 24480879}
+  m_Father: {fileID: 883703276}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: 150, y: 20}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1049116131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049116129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1049116132
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049116129}
+  m_CullTransparentMesh: 0
 --- !u!1 &1090326255
 GameObject:
   m_ObjectHideFlags: 0
@@ -8467,162 +8784,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448481656}
   m_CullTransparentMesh: 0
---- !u!1 &1450687698
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1450687699}
-  - component: {fileID: 1450687701}
-  - component: {fileID: 1450687700}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1450687699
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450687698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 145640894}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2}
-  m_SizeDelta: {x: 50, y: 48}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1450687700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450687698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: '| |'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 258
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
-  m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
-  m_isTextTruncated: 0
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_ignoreRectMaskCulling: 0
-  m_ignoreCulling: 1
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 1450687700}
-    characterCount: 3
-    spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
-    linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 1
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1450687701
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450687698}
-  m_CullTransparentMesh: 0
 --- !u!1 &1491404419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9164,7 +9325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1879217982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9182,7 +9343,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879217983
 MonoBehaviour:
@@ -9197,13 +9358,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6abf769ac36cdc340af8c66a9e8dbea7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f55475f004865f64aae99d462aec9816, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

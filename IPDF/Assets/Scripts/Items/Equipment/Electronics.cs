@@ -11,6 +11,7 @@ $$$$$$$$\ $$ |\$$$$$$$\ \$$$$$$$\   \$$$$  |$$ |      \$$$$$$  |$$ |  $$ |$$ |\$
 
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class Electronics : Item {
     public float activationThreshold;
 }
 
+[Serializable]
 public class ElectronicsHandler {
     public StructureBehaviours equipper;
     public Electronics electronics;
@@ -48,6 +50,15 @@ public class ElectronicsHandler {
             this.storedEnergy = 0.0f;
             this.timeSinceToggled = 0.0f;
         }
+    }
+
+    public ElectronicsHandler (ElectronicsHandler electronicsHandler, StructureBehaviours equipper) {
+        this.equipper = equipper;
+        this.electronics = electronicsHandler.electronics;
+        this.online = electronicsHandler.online;
+        this.activated = electronicsHandler.activated;
+        this.storedEnergy = electronicsHandler.storedEnergy;
+        this.timeSinceToggled = electronicsHandler.timeSinceToggled;
     }
 
     public void SetOnline (bool target) {

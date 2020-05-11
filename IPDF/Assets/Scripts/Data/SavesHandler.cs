@@ -10,16 +10,16 @@ public class StructureSaveData {
     public float[] rotation;
     public string profileId;
     public Dictionary<Item, int> inventory;
-    public List<Turret> turrets;
-    public Shield shield;
-    public Capacitor capacitor;
-    public Generator generator;
-    public Engine engine;
-    public Electronics electronics;
-    public TractorBeam tractorBeam;
-    public string[] equipmentIds;
+    public List<TurretHandler> turrets;
+    public ShieldHandler shield;
+    public CapacitorHandler capacitor;
+    public GeneratorHandler generator;
+    public EngineHandler engine;
+    public ElectronicsHandler electronics;
+    public TractorBeamHandler tractorBeam;
     public bool isPlayer;
 }
+
 public class SavesHandler : MonoBehaviour {
     public GameObject basicStructure;
 
@@ -38,14 +38,14 @@ public class SavesHandler : MonoBehaviour {
             data.profileId = structure.profile.name;
             // TODO Add inventory saves later
             data.inventory = new Dictionary<Item, int> ();
-            data.turrets = new List<Turret> ();
-            for (int i = 0; i < structure.profile.turretSlots; i++) data.turrets.Add (structure.turrets[i].turret);
-            data.shield = structure.shield.shield;
-            data.capacitor = structure.capacitor.capacitor;
-            data.generator = structure.generator.generator;
-            data.engine = structure.engine.engine;
-            data.electronics = structure.electronics.electronics;
-            data.tractorBeam = structure.tractorBeam.tractorBeam;
+            data.turrets = new List<TurretHandler> ();
+            for (int i = 0; i < structure.profile.turretSlots; i++) data.turrets.Add (structure.turrets[i]);
+            data.shield = structure.shield;
+            data.capacitor = structure.capacitor;
+            data.generator = structure.generator;
+            data.engine = structure.engine;
+            data.electronics = structure.electronics;
+            data.tractorBeam = structure.tractorBeam;
             data.isPlayer = (playerController.structureBehaviours == structure);
             saveString += JsonUtility.ToJson (data, true) + "\nNext Structure\n";
         }

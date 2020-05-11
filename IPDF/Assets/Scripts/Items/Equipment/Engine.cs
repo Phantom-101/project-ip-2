@@ -14,6 +14,7 @@ $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ $$$$$$$  |
 
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class Engine : Item {
     public float turnPower;
 }
 
+[Serializable]
 public class EngineHandler {
     public StructureBehaviours equipper;
     public Engine engine;
@@ -44,6 +46,14 @@ public class EngineHandler {
             this.forwardSetting = 0.0f;
             this.turnSetting = 0.0f;
         }
+    }
+
+    public EngineHandler (EngineHandler engineHandler, StructureBehaviours equipper) {
+        this.equipper = equipper;
+        this.engine = engineHandler.engine;
+        this.online = engineHandler.online;
+        this.forwardSetting = engineHandler.forwardSetting;
+        this.turnSetting = engineHandler.turnSetting;
     }
 
     public void SetOnline (bool target) {

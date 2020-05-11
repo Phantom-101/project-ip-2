@@ -11,6 +11,7 @@ $$\   $$ |$$ |  $$ |$$ |$$   ____|$$ |$$ |  $$ | \____$$\
 
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,7 @@ public class Shield : Item {
     public float shieldRechargeEfficiency;
 }
 
+[Serializable]
 public class ShieldHandler {
     public StructureBehaviours equipper;
     public Shield shield;
@@ -41,6 +43,13 @@ public class ShieldHandler {
             this.strengths = new float[6];
             for (int i = 0; i < strengths.Length; i++) strengths[i] = this.shield.strength;
         }
+    }
+
+    public ShieldHandler (ShieldHandler shieldHandler, StructureBehaviours equipper) {
+        this.equipper = equipper;
+        this.shield = shieldHandler.shield;
+        this.online = shieldHandler.online;
+        this.strengths = shieldHandler.strengths;
     }
 
     public void SetOnline (bool target) {

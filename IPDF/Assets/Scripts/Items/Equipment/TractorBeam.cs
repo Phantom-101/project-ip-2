@@ -11,6 +11,7 @@ $$$$$$$$\                                 $$\                               $$$$
 
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,7 @@ public class TractorBeam : Item {
     public float rechargeRate;
 }
 
+[Serializable]
 public class TractorBeamHandler {
     public StructureBehaviours equipper;
     public TractorBeam tractorBeam;
@@ -49,6 +51,15 @@ public class TractorBeamHandler {
             this.storedEnergy = 0.0f;
             this.target = null;
         }
+    }
+
+    public TractorBeamHandler (TractorBeamHandler tractorBeamHandler, StructureBehaviours equipper) {
+        this.equipper = equipper;
+        this.tractorBeam = tractorBeamHandler.tractorBeam;
+        this.online = tractorBeamHandler.online;
+        this.activated = tractorBeamHandler.activated;
+        this.storedEnergy = tractorBeamHandler.storedEnergy;
+        this.target = tractorBeamHandler.target;
     }
 
     public float TransferEnergy (float available) {

@@ -11,6 +11,7 @@ $$$$$$$$\                                           $$\
 
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,20 +19,33 @@ using Essentials;
 
 [CreateAssetMenu (fileName = "New Turret", menuName = "Equipment/Turret")]
 public class Turret : Item {
+    [Header ("Appearance")]
     public GameObject projectile;
+    public Material projectileMat;
+    public Color trailColor;
+    [Header ("Turret Stats")]
+    public float maxStoredEnergy;
+    public float rechargeRate;
+    [Header ("Activation Requirements")]
     public Ammunition[] acceptedAmmunitions;
+    public float range;
+    public float activationThreshold;
+    [Header ("Projectile Movement")]
     public float projectileVelocity;
     public bool projectileSticky;
     public float projectileTracking;
+    [Header ("Projectile Initial Rotation")]
+    public bool projectileInitializeRotation;
     public float projectileInaccuracy;
     public bool leadProjectile;
+    [Header ("Projectile Stats")]
+    public float fuelRange;
     public float damage;
-    public float range;
-    public float maxStoredEnergy;
-    public float rechargeRate;
-    public float activationThreshold;
+    public float explosiveDamage;
+    public float explosionRange;
 }
 
+[Serializable]
 public class TurretHandler {
     public StructureBehaviours equipper;
     public Turret turret;
@@ -50,6 +64,14 @@ public class TurretHandler {
             this.online = true;
             this.storedEnergy = 0.0f;
         }
+    }
+
+    public TurretHandler (TurretHandler turretHandler, StructureBehaviours equipper) {
+        this.equipper = equipper;
+        this.turret = turretHandler.turret;
+        this.usingAmmunition = turretHandler.usingAmmunition;
+        this.online = turretHandler.online;
+        this.storedEnergy = turretHandler.storedEnergy;
     }
 
     public void SetOnline (bool target) {
@@ -79,7 +101,7 @@ public class TurretHandler {
             if (turret.projectile != null) {
                 GameObject projectile = MonoBehaviour.Instantiate (turret.projectile,
                     activator.transform.position,
-                    Quaternion.LookRotation (
+                    (turret.projectileInitializeRotation ? Quaternion.LookRotation (
                         CalculateLeadPosition (
                             activator.transform.position,
                             target.transform.position,
@@ -87,7 +109,7 @@ public class TurretHandler {
                             turret.projectileVelocity,
                             turret.leadProjectile
                         )
-                    ) * RandomQuaternion (turret.projectileInaccuracy)
+                    ) : equipper.transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
                 ) as GameObject;
                 projectile.GetComponent<Projectile> ().Initialize (turret, activator, target, storedEnergy / turret.maxStoredEnergy);
             }
@@ -104,9 +126,9 @@ public class TurretHandler {
 
     public Quaternion RandomQuaternion (float maxRandom) {
         return Quaternion.Euler (
-            Random.Range(-maxRandom, maxRandom),
-            Random.Range(-maxRandom, maxRandom),
-            Random.Range(-maxRandom, maxRandom)
+            UnityEngine.Random.Range(-maxRandom, maxRandom),
+            UnityEngine.Random.Range(-maxRandom, maxRandom),
+            UnityEngine.Random.Range(-maxRandom, maxRandom)
         );
     }
 }

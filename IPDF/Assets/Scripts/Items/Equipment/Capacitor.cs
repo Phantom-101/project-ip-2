@@ -14,6 +14,7 @@ $$ |  $$\ $$  __$$ |$$ |  $$ |$$  __$$ |$$ |      $$ |  $$ |$$\ $$ |  $$ |$$ |  
 
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class Capacitor : Item {
     public float capacitance;
 }
 
+[Serializable]
 public class CapacitorHandler {
     public StructureBehaviours equipper;
     public Capacitor capacitor;
@@ -38,6 +40,12 @@ public class CapacitorHandler {
             this.capacitor = capacitor;
             this.storedEnergy = this.capacitor.capacitance;
         }
+    }
+
+    public CapacitorHandler (CapacitorHandler capacitorHandler, StructureBehaviours equipper) {
+        this.equipper = equipper;
+        this.capacitor = capacitorHandler.capacitor;
+        this.storedEnergy = capacitorHandler.storedEnergy;
     }
 
     public void Recharge (float available) {

@@ -21,4 +21,4 @@ MonoBehaviour:
   turretSlots: 3
   drag: 0.5
   angularDrag: 2
-  yOffset: 0.25
+  yOffset: 0.175
