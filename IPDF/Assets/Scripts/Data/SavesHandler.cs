@@ -17,6 +17,7 @@ public class StructureSaveData {
     public EngineHandler engine;
     public ElectronicsHandler electronics;
     public TractorBeamHandler tractorBeam;
+    public bool AIActivated;
     public bool isPlayer;
 }
 
@@ -46,6 +47,7 @@ public class SavesHandler : MonoBehaviour {
             data.engine = structure.engine;
             data.electronics = structure.electronics;
             data.tractorBeam = structure.tractorBeam;
+            data.AIActivated = structure.AIActivated;
             data.isPlayer = (playerController.structureBehaviours == structure);
             saveString += JsonUtility.ToJson (data, true) + "\nNext Structure\n";
         }
@@ -85,6 +87,7 @@ public class SavesHandler : MonoBehaviour {
                     structureBehaviours.savedElectronics = data.electronics;
                     structureBehaviours.savedTractorBeam = data.tractorBeam;
                     structureBehaviours.Initialize ();
+                    structureBehaviours.AIActivated = data.AIActivated;
                     if (data.isPlayer) playerController.structureBehaviours = structureBehaviours;
                 }
             }

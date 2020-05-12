@@ -7,12 +7,15 @@ public class StructureProfile : Item {
     [Header ("Appearance")]
     public Mesh mesh;
     public Material material;
+    public float apparentSize;
     [Header ("Stats")]
     public float hull;
     public int turretSlots;
     [Header ("Physics")]
+    public float mass;
     public float drag;
     public float angularDrag;
     [Header ("Correction")]
-    public float yOffset;
+    public Vector3 offset;
+    public Vector3 rotate;
 }

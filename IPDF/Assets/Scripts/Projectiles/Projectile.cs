@@ -52,6 +52,7 @@ public class Projectile : MonoBehaviour {
             StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
             if (hitStructureBehaviours != null) {
                 hitStructureBehaviours.TakeDamage (turret.damage * storedEnergyRatio, transform.position);
+                transform.position = hit.point;
                 Disable ();
             }
         }

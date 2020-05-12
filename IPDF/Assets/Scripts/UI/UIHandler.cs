@@ -26,6 +26,7 @@ public class UIHandler : MonoBehaviour {
     Transform equipmentButtonsParent;
     List<GameObject> equipmentButtons = new List<GameObject> ();
     RectTransform capacitorTransform;
+    GameObject AIInfo;
 
     void Awake () {
         canvas = GameObject.Find ("Canvas");
@@ -39,6 +40,7 @@ public class UIHandler : MonoBehaviour {
         targetDistance = targetInformationPanel.transform.Find ("Distance").GetComponent<TextMeshProUGUI> ();
         equipmentButtonsParent = canvas.transform.Find ("Equipment Buttons Parent");
         capacitorTransform = canvas.transform.Find ("Capacitor Background/Capacitor").GetComponent<RectTransform> ();
+        AIInfo = canvas.transform.Find ("AI Indicators").gameObject;
     }
 
     void Update () {
@@ -55,6 +57,9 @@ public class UIHandler : MonoBehaviour {
         }
         // Capacitor
         capacitorTransform.sizeDelta = new Vector2 (source.capacitor.capacitor == null ? 0.0f : source.capacitor.storedEnergy / source.capacitor.capacitor.capacitance * 150.0f, 20.0f);
+        // AI indicators
+        if (source.AIActivated) AIInfo.SetActive (true);
+        else AIInfo.SetActive (false);
         // Target information
         StructureBehaviours targetStructureBehaviour = source.targetted;
         if (targetStructureBehaviour == null) targetInformationPanel.SetActive (false);
@@ -99,7 +104,7 @@ public class UIHandler : MonoBehaviour {
             button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
             button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
             button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
-            SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.gameObject, source.targetted.gameObject), button.GetComponent<Button> ());
+            SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.gameObject, source.targetted == null ? null : source.targetted.gameObject), button.GetComponent<Button> ());
             equipmentButtons[i] = button;
         }
     }

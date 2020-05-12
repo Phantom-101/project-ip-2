@@ -7,7 +7,7 @@ public class CameraFollowPlayer : MonoBehaviour {
     public PlayerController playerController;
     public StructureBehaviours playerStructure;
     [Header ("Configurations")]
-    public Vector3 startPositionOffset = new Vector3 (0.0f, 5.0f, -10.0f);
+    public Vector3 startPositionOffset = new Vector3 (0.0f, 5.0f, -15.0f);
     public Vector3 positionOffset = new Vector3 (0.0f, 3.0f, -5.0f);
     [Range (2.5f, 10.0f)]
     public float positionInterpolationStrength = 5.0f;
@@ -34,21 +34,21 @@ public class CameraFollowPlayer : MonoBehaviour {
 
     public void ResetPosition () {
         playerStructure = playerController.structureBehaviours;
-        transform.position = playerStructure.transform.rotation * startPositionOffset + playerStructure.transform.position;
+        transform.position = playerStructure.transform.rotation * (startPositionOffset * playerStructure.profile.apparentSize) + playerStructure.transform.position;
     }
 
     void Update () {
         playerStructure = playerController.structureBehaviours;
         if (playerStructure != null) {
             Vector3 playerPosition = playerStructure.transform.position;
-            transform.LookAt (playerPosition + new Vector3 (0.0f, lookAtOffset, 0.0f));
+            transform.LookAt (playerPosition + new Vector3 (0.0f, lookAtOffset * playerStructure.profile.apparentSize, 0.0f));
             //Vector3 targetDir = playerPosition - transform.position;
             //Vector3 forward = transform.forward;
             //Vector3 localTarget = transform.InverseTransformPoint (playerPosition);
             //float angle = Mathf.Atan2 (localTarget.x, localTarget.z) * Mathf.Rad2Deg;
             //Vector3 eulerAngleVelocity = new Vector3 (0.0f, angle, 0.0f);
             //constantForce.torque = eulerAngleVelocity * lookAtInterpolationStrength;
-            Vector3 targetPosition = playerPosition + playerStructure.transform.rotation * positionOffset;
+            Vector3 targetPosition = playerPosition + playerStructure.transform.rotation * (positionOffset * playerStructure.profile.apparentSize);
             constantForce.force = (targetPosition - transform.position) * positionInterpolationStrength;
         }
     }

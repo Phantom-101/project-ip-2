@@ -21,19 +21,23 @@ public class PlayerController : MonoBehaviour {
     void Update () {
         if (!structureBehaviours) return;
         uIHandler.source = structureBehaviours;
-        if (structureBehaviours.engine.engine != null) {
-            structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
-            structureBehaviours.engine.turnSetting = turnValue;
-        }
-        if (Input.GetMouseButton (0)) {
-            Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast (ray, out hit, 1000.0f)) {
-                GameObject hitGameObject = hit.transform.gameObject;
-                if (hitGameObject != structureBehaviours.gameObject) {
-                    StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
-                    if (hitStructureBehaviours != null) {
-                        structureBehaviours.targetted = hitStructureBehaviours;
+        if (structureBehaviours.AIActivated) {
+            // Do not act according to player inputs
+        } else {
+            if (structureBehaviours.engine.engine != null) {
+                structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
+                structureBehaviours.engine.turnSetting = turnValue;
+            }
+            if (Input.GetMouseButton (0)) {
+                Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast (ray, out hit, 1000.0f)) {
+                    GameObject hitGameObject = hit.transform.gameObject;
+                    if (hitGameObject != structureBehaviours.gameObject) {
+                        StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
+                        if (hitStructureBehaviours != null) {
+                            structureBehaviours.targetted = hitStructureBehaviours;
+                        }
                     }
                 }
             }

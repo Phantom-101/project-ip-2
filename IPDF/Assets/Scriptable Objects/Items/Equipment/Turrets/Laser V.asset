@@ -24,7 +24,7 @@ MonoBehaviour:
   acceptedAmmunitions: []
   range: 300
   activationThreshold: 0.4
-  projectileVelocity: 150
+  projectileVelocity: 250
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1

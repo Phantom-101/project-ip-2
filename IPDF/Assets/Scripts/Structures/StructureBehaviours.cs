@@ -36,10 +36,18 @@ public class StructureBehaviours : MonoBehaviour {
     public bool initialized;
 
     public void Initialize () {
-        GetComponent<MeshCollider> ().sharedMesh = profile.mesh;
-        GetComponent<MeshCollider> ().convex = true;
-        GetComponent<MeshFilter> ().mesh = profile.mesh;
-        GetComponent<Renderer> ().material = profile.material;
+        GameObject meshGameObject = new GameObject ();
+        meshGameObject.name = "Mesh and Collider";
+        meshGameObject.transform.parent = transform;
+        MeshFilter meshFilter = meshGameObject.AddComponent<MeshFilter> ();
+        MeshCollider meshCollider = meshGameObject.AddComponent<MeshCollider> ();
+        Renderer renderer = meshGameObject.AddComponent<MeshRenderer> ();
+        meshCollider.sharedMesh = profile.mesh;
+        meshCollider.convex = true;
+        meshFilter.mesh = profile.mesh;
+        renderer.material = profile.material;
+        meshGameObject.transform.localPosition = profile.offset;
+        meshGameObject.transform.localEulerAngles = profile.rotate;
         hull = profile.hull;
         if (initializeAccordingToSaveData) {
             for (int i = 0; i < profile.turretSlots; i++) {
@@ -63,6 +71,7 @@ public class StructureBehaviours : MonoBehaviour {
         }
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
+        rigidbody.mass = profile.mass;
         rigidbody.drag = profile.drag;
         rigidbody.angularDrag = profile.angularDrag;
         // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
@@ -74,7 +83,7 @@ public class StructureBehaviours : MonoBehaviour {
     void Update () {
         if (!initialized) return;
         if (hull == 0.0f) Destroy (gameObject);
-        transform.position = new Vector3 (transform.position.x, profile.yOffset, transform.position.z);
+        transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
         rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
         transform.localEulerAngles = new Vector3 (0.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
         rigidbody.angularVelocity = new Vector3 (0.0f, rigidbody.angularVelocity.y, rigidbody.angularVelocity.z);
@@ -85,19 +94,6 @@ public class StructureBehaviours : MonoBehaviour {
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
         if (AIActivated) {
-            // TODO Do AI stuff
-            /*
-
-            $$\      $$\                 $$$$$$$\                      $$\       
-            $$$\    $$$ |                $$  __$$\                     $$ |      
-            $$$$\  $$$$ | $$$$$$\        $$ |  $$ | $$$$$$\   $$$$$$\  $$ |  $$\ 
-            $$\$$\$$ $$ |$$  __$$\       $$$$$$$  |$$  __$$\ $$  __$$\ $$ | $$  |
-            $$ \$$$  $$ |$$ |  \__|      $$  ____/ $$ /  $$ |$$ |  \__|$$$$$$  / 
-            $$ |\$  /$$ |$$ |            $$ |      $$ |  $$ |$$ |      $$  _$$<  
-            $$ | \_/ $$ |$$ |$$\         $$ |      \$$$$$$  |$$ |      $$ | \$$\ 
-            \__|     \__|\__|\__|        \__|       \______/ \__|      \__|  \__|
-
-            */
             engine.forwardSetting = 1.0f;
         }
     }
