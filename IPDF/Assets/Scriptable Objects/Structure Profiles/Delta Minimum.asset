@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basePrice: 0
   size: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0d972ddab9368ed419cbf171a8c21c1f, type: 3}
   mesh: {fileID: -5495902117074765545, guid: ec81fa44c38b37942ad6dd8c4bb908de, type: 3}
   material: {fileID: 2100000, guid: fb63eed81644ef245bb076584c8134f5, type: 2}
   apparentSize: 1
   hull: 100
-  turretSlots: 3
+  turretSlots: 4
   mass: 1
   drag: 0.5
   angularDrag: 2

@@ -104,7 +104,7 @@ public class TurretHandler {
                     (turret.projectileInitializeRotation ? Quaternion.LookRotation (
                         CalculateLeadPosition (
                             activator.transform.position,
-                            target.transform.position,
+                            target.transform.position + target.GetComponent<StructureBehaviours> ().profile.offset,
                             target.GetComponent<Rigidbody> ().velocity,
                             turret.projectileVelocity,
                             turret.leadProjectile

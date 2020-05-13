@@ -8,6 +8,7 @@ public class StructureBehaviours : MonoBehaviour {
     public StructureProfile profile;
     [Header ("Stats")]
     public float hull;
+    public float hullTimeSinceLastDamaged;
     public bool cloaked;
     [Header ("Saved Equipment States")]
     public bool initializeAccordingToSaveData;
@@ -82,26 +83,55 @@ public class StructureBehaviours : MonoBehaviour {
 
     void Update () {
         if (!initialized) return;
+        // Check if should be destroyed
         if (hull == 0.0f) Destroy (gameObject);
+        // Position and physics stuff
         transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
         rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
         transform.localEulerAngles = new Vector3 (0.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
         rigidbody.angularVelocity = new Vector3 (0.0f, rigidbody.angularVelocity.y, rigidbody.angularVelocity.z);
+        // Hull damage timer
+        if (hullTimeSinceLastDamaged > 1.5f) hullTimeSinceLastDamaged = 0.0f;
+        else if (hullTimeSinceLastDamaged >= 0.3f) hullTimeSinceLastDamaged += Time.deltaTime;
+        // Equipment
         if (turrets.Count != profile.turretSlots) turrets = new List<TurretHandler> (profile.turretSlots);
+        shield.Process ();
         generator.GenerateEnergy (capacitor);
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
         engine.ApplySettings (GetComponent<ConstantForce> ());
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
+        // AI stuff
         if (AIActivated) {
-            engine.forwardSetting = 1.0f;
+            StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
+            StructureBehaviours closest = null;
+            float closestDis = float.MaxValue;
+            foreach (StructureBehaviours structure in structures)
+                if (structure != this && (transform.position - structure.transform.position).sqrMagnitude < closestDis) {
+                    closestDis = (transform.position - structure.transform.position).sqrMagnitude;
+                    closest = structure;
+                }
+            if (closest != null) {
+                engine.forwardSetting = 1.0f;
+                Vector3 heading = closest.transform.position - transform.position;
+                Vector3 perp = Vector3.Cross (transform.forward, heading);
+                float leftRight = Vector3.Dot (perp, transform.up);
+                float angle = (closest.transform.position + closest.transform.rotation * closest.profile.offset) - (transform.position + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation ((closest.transform.position + closest.transform.rotation * closest.profile.offset) - (transform.position + transform.rotation * profile.offset)));
+                angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
+                if (angle > 90.0f) engine.turnSetting = 1.0f;
+                else if (angle < -90.0f) engine.turnSetting = -1.0f;
+                else engine.turnSetting = 0.0f;
+            } else {
+                engine.forwardSetting = 0.0f;
+                engine.turnSetting = 0.0f;
+            }
         }
     }
 
     public void TakeDamage (float amount, Vector3 from) {
         if (!initialized) return;
-        float angle = from - transform.position == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation (from - transform.position));
-        Vector3 perp = Vector3.Cross(transform.forward, from - transform.position);
+        float angle = from - (transform.position + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation (from - (transform.position + transform.rotation * profile.offset)));
+        Vector3 perp = Vector3.Cross(transform.forward, from - (transform.position + profile.offset));
         float leftRight = Vector3.Dot(perp, transform.up);
         angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
         int directionalSector = 0;
@@ -111,12 +141,10 @@ public class StructureBehaviours : MonoBehaviour {
         else if (angle >= 30.0f && angle < 90.0f) directionalSector = 1;
         else if (angle >= 90.0f && angle < 150.0f) directionalSector = 2;
         else directionalSector = 3;
-        if (shield.strengths[directionalSector] >= amount)
-            shield.strengths[directionalSector] = MathUtils.Clamp (shield.strengths[directionalSector] - amount, 0.0f, shield.shield.strength);
-        else if (shield.strengths[directionalSector] < amount) {
-            amount -= shield.strengths[directionalSector];
-            shield.strengths[directionalSector] = 0.0f;
-            hull = MathUtils.Clamp (hull - amount, 0.0f, profile.hull);
+        float residual = shield.TakeDamage (directionalSector, amount);
+        if (residual > 0.0f) {
+            hull = MathUtils.Clamp (hull - residual, 0.0f, profile.hull);
+            hullTimeSinceLastDamaged = 0.3f;
         }
     }
 }

@@ -45,7 +45,6 @@ public class Projectile : MonoBehaviour {
             transform.Translate (new Vector3 (0.0f, 0.0f, step));
             fuelExpended += step;
         } else Disable ();
-        transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
         RaycastHit hit;
         if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
             GameObject hitGameObject = hit.transform.gameObject;

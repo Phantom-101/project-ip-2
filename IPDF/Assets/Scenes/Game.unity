@@ -982,11 +982,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6aa3c4e8165363344aac4f188aa7ea9f, type: 2}
   hull: 0
+  hullTimeSinceLastDamaged: 0
   cloaked: 0
   initializeAccordingToSaveData: 1
   savedTurrets:
   - equipper: {fileID: 235251622}
-    turret: {fileID: 11400000, guid: 7231ad0b2e1dadd4f9a8d91039a74790, type: 2}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    usingAmmunition: {fileID: 0}
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 235251622}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     online: 1
     storedEnergy: 0
@@ -1015,19 +1041,20 @@ MonoBehaviour:
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 1
     strengths:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 1500
+    - 1500
+    - 1500
+    - 1500
+    - 1500
+    - 1500
+    shieldTimesSinceLastDamaged: []
   savedCapacitor:
     equipper: {fileID: 235251622}
-    capacitor: {fileID: 11400000, guid: 3fc78a44b2c40dc4c8979fc375876c6c, type: 2}
-    storedEnergy: 3000
+    capacitor: {fileID: 11400000, guid: b781b98389c323a49a620fdc0ac96556, type: 2}
+    storedEnergy: 10000
   savedGenerator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     online: 1
   savedEngine:
     equipper: {fileID: 0}
@@ -1055,6 +1082,7 @@ MonoBehaviour:
     shield: {fileID: 0}
     online: 0
     strengths: []
+    shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 0}
@@ -1670,9 +1698,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6aa3c4e8165363344aac4f188aa7ea9f, type: 2}
   hull: 0
+  hullTimeSinceLastDamaged: 0
   cloaked: 0
   initializeAccordingToSaveData: 1
   savedTurrets:
+  - equipper: {fileID: 0}
+    turret: {fileID: 0}
+    usingAmmunition: {fileID: 0}
+    online: 0
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 0}
+    usingAmmunition: {fileID: 0}
+    online: 0
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 0}
+    usingAmmunition: {fileID: 0}
+    online: 0
+    storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     usingAmmunition: {fileID: 0}
@@ -1703,12 +1747,13 @@ MonoBehaviour:
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 1
     strengths:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 1500
+    - 1500
+    - 1500
+    - 1500
+    - 1500
+    - 1500
+    shieldTimesSinceLastDamaged: []
   savedCapacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: 91ea114fe45a5f4488436f0e9e47992b, type: 2}
@@ -1743,6 +1788,7 @@ MonoBehaviour:
     shield: {fileID: 0}
     online: 0
     strengths: []
+    shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 0}
@@ -1784,11 +1830,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467703997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.19, y: 0, z: 12.64}
+  m_LocalPosition: {x: -3.1, y: 0, z: 83.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479728388
 GameObject:
@@ -3268,7 +3314,7 @@ RectTransform:
   - {fileID: 1049116130}
   - {fileID: 325664443}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3384,7 +3430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: 50}
+  m_AnchoredPosition: {x: -50, y: 25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &1049116129
@@ -3958,7 +4004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1303944488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3984,7 +4030,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &1378114350
 ParticleSystem:
@@ -8745,7 +8791,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393096944
 GameObject:

@@ -46,12 +46,16 @@ public class UIHandler : MonoBehaviour {
     void Update () {
         if (source == null) return;
         // Hull
-        hullUI.color = hullGradient.Evaluate (source.hull / source.profile.hull);
+        hullUI.color = Mathf.Floor (source.hullTimeSinceLastDamaged / 0.3f) % 2 == 1 && source.hullTimeSinceLastDamaged < 1.5f ?
+            Color.white :
+            hullGradient.Evaluate (source.hull / source.profile.hull);
         // Shields
         if (source.shield.shield != null) {
             if (source.shield.online)
                 for (int i = 0; i < 6; i++)
-                    shieldUI[i].color = shieldGradient.Evaluate (source.shield.strengths[i] / source.shield.shield.strength);
+                    shieldUI[i].color = Mathf.Floor (source.shield.shieldTimesSinceLastDamaged[i] / 0.3f) % 2 == 1 && source.shield.shieldTimesSinceLastDamaged[i] < 1.5f ?
+                        Color.white :
+                        shieldGradient.Evaluate (source.shield.strengths[i] / source.shield.shield.strength);
             else
                 for (int i = 0; i < 6; i++) shieldUI[i].color = Color.grey;
         }
@@ -65,10 +69,15 @@ public class UIHandler : MonoBehaviour {
         if (targetStructureBehaviour == null) targetInformationPanel.SetActive (false);
         else {
             targetInformationPanel.SetActive (true);
-            targetHullUI.color = hullGradient.Evaluate (targetStructureBehaviour.hull / targetStructureBehaviour.profile.hull);
+            targetHullUI.color = Mathf.Floor (targetStructureBehaviour.hullTimeSinceLastDamaged / 0.3f) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < 1.5f ?
+                Color.white :
+                hullGradient.Evaluate (targetStructureBehaviour.hull / targetStructureBehaviour.profile.hull);
             if (targetStructureBehaviour.shield.shield != null) {
-                if (targetStructureBehaviour.shield.online) for (int i = 0; i < 6; i++)
-                        targetShieldUI[i].color = shieldGradient.Evaluate (targetStructureBehaviour.shield.strengths[i] / targetStructureBehaviour.shield.shield.strength);
+                if (targetStructureBehaviour.shield.online)
+                    for (int i = 0; i < 6; i++)
+                        targetShieldUI[i].color = Mathf.Floor (targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] / 0.3f) % 2 == 1 && targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] < 1.5f ?
+                            Color.white :
+                            shieldGradient.Evaluate (targetStructureBehaviour.shield.strengths[i] / targetStructureBehaviour.shield.shield.strength);
                 else for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
             }
             targetName.text = targetStructureBehaviour.gameObject.name;

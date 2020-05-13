@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: Odyssey
+  m_EditorClassIdentifier: 
+  basePrice: 0
+  size: 0
+  icon: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: ca8a871e9e7b4a44a8c9144d0409eb01, type: 3}
+  material: {fileID: 2100000, guid: 15d051e125c5e4c46b42e6fccd421739, type: 2}
+  apparentSize: 8
+  hull: 700
+  turretSlots: 10
+  mass: 25
+  drag: 0.5
+  angularDrag: 2
+  offset: {x: 0, y: 0, z: 10}
+  rotate: {x: 0, y: 90, z: 0}
