@@ -9,7 +9,7 @@ public class StructureSaveData {
     public float[] position;
     public float[] rotation;
     public string profileId;
-    public Dictionary<Item, int> inventory;
+    public InventoryHandler inventory;
     public List<TurretHandler> turrets;
     public ShieldHandler shield;
     public CapacitorHandler capacitor;
@@ -38,7 +38,7 @@ public class SavesHandler : MonoBehaviour {
             data.rotation = new float[] {structure.transform.rotation.eulerAngles.x, structure.transform.rotation.eulerAngles.y, structure.transform.rotation.eulerAngles.z};
             data.profileId = structure.profile.name;
             // TODO Add inventory saves later
-            data.inventory = new Dictionary<Item, int> ();
+            data.inventory = structure.inventory;
             data.turrets = new List<TurretHandler> ();
             for (int i = 0; i < structure.profile.turretSlots; i++) data.turrets.Add (structure.turrets[i]);
             data.shield = structure.shield;
@@ -79,6 +79,7 @@ public class SavesHandler : MonoBehaviour {
                     if (structureBehaviours == null) structureBehaviours = instantiated.AddComponent<StructureBehaviours> ();
                     structureBehaviours.initializeAccordingToSaveData = true;
                     structureBehaviours.profile = profile;
+                    structureBehaviours.savedInventory = data.inventory;
                     structureBehaviours.savedTurrets = data.turrets;
                     structureBehaviours.savedShield = data.shield;
                     structureBehaviours.savedCapacitor = data.capacitor;

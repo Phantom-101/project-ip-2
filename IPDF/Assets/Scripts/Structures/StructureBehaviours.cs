@@ -10,8 +10,9 @@ public class StructureBehaviours : MonoBehaviour {
     public float hull;
     public float hullTimeSinceLastDamaged;
     public bool cloaked;
-    [Header ("Saved Equipment States")]
+    [Header ("Saved Data")]
     public bool initializeAccordingToSaveData;
+    public InventoryHandler savedInventory;
     public List<TurretHandler> savedTurrets = new List<TurretHandler> ();
     public ShieldHandler savedShield;
     public CapacitorHandler savedCapacitor;
@@ -19,6 +20,8 @@ public class StructureBehaviours : MonoBehaviour {
     public EngineHandler savedEngine;
     public ElectronicsHandler savedElectronics;
     public TractorBeamHandler savedTractorBeam;
+    [Header ("Inventory")]
+    public InventoryHandler inventory;
     [Header ("Equipment Handlers")]
     public List<TurretHandler> turrets = new List<TurretHandler> ();
     public ShieldHandler shield;
@@ -51,6 +54,7 @@ public class StructureBehaviours : MonoBehaviour {
         meshGameObject.transform.localEulerAngles = profile.rotate;
         hull = profile.hull;
         if (initializeAccordingToSaveData) {
+            inventory = new InventoryHandler (savedInventory, this);
             for (int i = 0; i < profile.turretSlots; i++) {
                 turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], this) : new TurretHandler (null, this));
                 turrets[i].equipper = this;
@@ -62,6 +66,7 @@ public class StructureBehaviours : MonoBehaviour {
             electronics = new ElectronicsHandler (savedElectronics, this);
             tractorBeam = new TractorBeamHandler (savedTractorBeam, this);
         } else {
+            inventory = new InventoryHandler (this, null, profile.inventorySize);
             for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (this));
             shield = new ShieldHandler (this);
             capacitor = new CapacitorHandler (this);

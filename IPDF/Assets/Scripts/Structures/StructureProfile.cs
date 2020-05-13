@@ -10,6 +10,7 @@ public class StructureProfile : Item {
     public float apparentSize;
     [Header ("Stats")]
     public float hull;
+    public float inventorySize;
     public int turretSlots;
     [Header ("Physics")]
     public float mass;
