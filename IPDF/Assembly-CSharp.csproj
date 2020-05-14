@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Items\Equipment\Shield.cs" />
      <Compile Include="Assets\Scripts\Items\Equipment\TractorBeam.cs" />
      <Compile Include="Assets\Scripts\Items\Equipment\Turret.cs" />
+     <Compile Include="Assets\Scripts\Items\InventoryHandler.cs" />
      <Compile Include="Assets\Scripts\Items\Item.cs" />
      <Compile Include="Assets\Scripts\Items\ItemsHandler.cs" />
      <Compile Include="Assets\Scripts\Misc\Essentials.cs" />

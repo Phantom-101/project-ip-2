@@ -10,6 +10,7 @@ public class StructureBehaviours : MonoBehaviour {
     public float hull;
     public float hullTimeSinceLastDamaged;
     public bool cloaked;
+    public string faction;
     [Header ("Saved Data")]
     public bool initializeAccordingToSaveData;
     public InventoryHandler savedInventory;
@@ -112,19 +113,39 @@ public class StructureBehaviours : MonoBehaviour {
             StructureBehaviours closest = null;
             float closestDis = float.MaxValue;
             foreach (StructureBehaviours structure in structures)
-                if (structure != this && (transform.position - structure.transform.position).sqrMagnitude < closestDis) {
+                if (structure != this && structure.faction != faction && (transform.position - structure.transform.position).sqrMagnitude < closestDis) {
                     closestDis = (transform.position - structure.transform.position).sqrMagnitude;
                     closest = structure;
                 }
             if (closest != null) {
+                targetted = closest;
+                float totalRange = 0.0f;
+                int effectiveTurrets = 0;
+                foreach (TurretHandler turretHandler in turrets) {
+                    turretHandler.Activate (targetted.gameObject);
+                    Turret turret = turretHandler.turret;
+                    if (turret != null) {
+                        totalRange += turret.range;
+                        effectiveTurrets ++;
+                    }
+                }
+                float optimalRange = totalRange / effectiveTurrets;
                 engine.forwardSetting = 1.0f;
-                Vector3 heading = closest.transform.position - transform.position;
+                Vector3 heading = targetted.transform.position - transform.position;
                 Vector3 perp = Vector3.Cross (transform.forward, heading);
                 float leftRight = Vector3.Dot (perp, transform.up);
-                float angle = (closest.transform.position + closest.transform.rotation * closest.profile.offset) - (transform.position + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation ((closest.transform.position + closest.transform.rotation * closest.profile.offset) - (transform.position + transform.rotation * profile.offset)));
-                angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
-                if (angle > 90.0f) engine.turnSetting = 1.0f;
-                else if (angle < -90.0f) engine.turnSetting = -1.0f;
+                float angle = (targetted.transform.position + targetted.transform.rotation * targetted.profile.offset)
+                    - (transform.position + transform.rotation * profile.offset) == Vector3.zero ?
+                        0.0f :
+                        Quaternion.Angle (transform.rotation, Quaternion.LookRotation ((targetted.transform.position + targetted.transform.rotation * targetted.profile.offset)
+                    - (transform.position + transform.rotation * profile.offset)));
+                float lrMult = leftRight >= 0.0f ? 1.0f : -1.0f;
+                angle *= lrMult;
+                float approachAngle = 90.0f * lrMult;
+                approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? 45.0f * lrMult : 0.0f;
+                approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.8f ? 45.0f * lrMult : 0.0f;
+                if (angle > approachAngle) engine.turnSetting = 1.0f;
+                else if (angle < -approachAngle) engine.turnSetting = -1.0f;
                 else engine.turnSetting = 0.0f;
             } else {
                 engine.forwardSetting = 0.0f;

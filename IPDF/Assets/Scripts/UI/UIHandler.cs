@@ -81,7 +81,7 @@ public class UIHandler : MonoBehaviour {
                 else for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
             }
             targetName.text = targetStructureBehaviour.gameObject.name;
-            targetFaction.text = "";
+            targetFaction.text = targetStructureBehaviour.faction;
             targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
         }
         // Equipment
@@ -113,7 +113,7 @@ public class UIHandler : MonoBehaviour {
             button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
             button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
             button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
-            SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.gameObject, source.targetted == null ? null : source.targetted.gameObject), button.GetComponent<Button> ());
+            SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.targetted == null ? null : source.targetted.gameObject), button.GetComponent<Button> ());
             equipmentButtons[i] = button;
         }
     }

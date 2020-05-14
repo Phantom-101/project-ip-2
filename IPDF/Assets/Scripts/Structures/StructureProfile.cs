@@ -12,6 +12,7 @@ public class StructureProfile : Item {
     public float hull;
     public float inventorySize;
     public int turretSlots;
+    public Vector3[] turretPositions;
     [Header ("Physics")]
     public float mass;
     public float drag;

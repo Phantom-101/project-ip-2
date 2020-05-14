@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
   m_Name: Laser V
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
   basePrice: 47500
   size: 0
-  icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
+  partialSize: 0
   projectile: {fileID: 9166618057121596802, guid: 7a7a56c0e6d2b154abff4ab2db065849,
     type: 3}
   projectileMat: {fileID: 2100000, guid: 24d45ef617577db4bbac3541cb3b60b1, type: 2}
@@ -28,7 +29,7 @@ MonoBehaviour:
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1
-  projectileInaccuracy: 0
+  projectileInaccuracy: 1
   leadProjectile: 1
   fuelRange: 300
   damage: 125

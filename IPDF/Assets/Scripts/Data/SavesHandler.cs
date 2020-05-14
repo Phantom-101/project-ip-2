@@ -8,7 +8,8 @@ public class StructureSaveData {
     public string name;
     public float[] position;
     public float[] rotation;
-    public string profileId;
+    public StructureProfile profile;
+    public string faction;
     public InventoryHandler inventory;
     public List<TurretHandler> turrets;
     public ShieldHandler shield;
@@ -36,8 +37,9 @@ public class SavesHandler : MonoBehaviour {
             data.name = structure.gameObject.name;
             data.position = new float[] {structure.transform.position.x, structure.transform.position.y, structure.transform.position.z};
             data.rotation = new float[] {structure.transform.rotation.eulerAngles.x, structure.transform.rotation.eulerAngles.y, structure.transform.rotation.eulerAngles.z};
-            data.profileId = structure.profile.name;
+            data.profile = structure.profile;
             // TODO Add inventory saves later
+            data.faction = structure.faction;
             data.inventory = structure.inventory;
             data.turrets = new List<TurretHandler> ();
             for (int i = 0; i < structure.profile.turretSlots; i++) data.turrets.Add (structure.turrets[i]);
@@ -74,11 +76,11 @@ public class SavesHandler : MonoBehaviour {
                         Quaternion.Euler(data.rotation[0], data.rotation[1], data.rotation[2])
                     ) as GameObject;
                     instantiated.name = data.name;
-                    StructureProfile profile = itemsHandler.GetItemById (data.profileId) as StructureProfile;
                     StructureBehaviours structureBehaviours = instantiated.GetComponent<StructureBehaviours> ();
                     if (structureBehaviours == null) structureBehaviours = instantiated.AddComponent<StructureBehaviours> ();
                     structureBehaviours.initializeAccordingToSaveData = true;
-                    structureBehaviours.profile = profile;
+                    structureBehaviours.profile = data.profile;
+                    structureBehaviours.faction = data.faction;
                     structureBehaviours.savedInventory = data.inventory;
                     structureBehaviours.savedTurrets = data.turrets;
                     structureBehaviours.savedShield = data.shield;

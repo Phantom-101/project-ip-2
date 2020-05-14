@@ -12,14 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Odyssey
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
   basePrice: 0
   size: 0
-  icon: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
+  partialSize: 0
   mesh: {fileID: -5495902117074765545, guid: ca8a871e9e7b4a44a8c9144d0409eb01, type: 3}
   material: {fileID: 2100000, guid: 15d051e125c5e4c46b42e6fccd421739, type: 2}
   apparentSize: 8
   hull: 700
+  inventorySize: 0
   turretSlots: 10
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   mass: 25
   drag: 0.5
   angularDrag: 2

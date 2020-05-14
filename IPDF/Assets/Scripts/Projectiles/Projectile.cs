@@ -47,14 +47,30 @@ public class Projectile : MonoBehaviour {
         } else Disable ();
         RaycastHit hit;
         if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
+            Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.green);
             GameObject hitGameObject = hit.transform.gameObject;
             StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
             if (hitStructureBehaviours != null) {
                 hitStructureBehaviours.TakeDamage (turret.damage * storedEnergyRatio, transform.position);
+                for (int i = 0; i < turret.explosionDetail; i++) {
+                    float angle = 360.0f / turret.explosionDetail * i;
+                    Vector3 dir = new Vector3 (Mathf.Sin (angle * Mathf.Deg2Rad), 0.0f, Mathf.Cos (angle * Mathf.Deg2Rad));
+                    RaycastHit explosionHit;
+                    if (Physics.Raycast (transform.position, transform.rotation * dir, out explosionHit, turret.explosionRange)) {
+                        GameObject explosionHitGameObject = explosionHit.transform.gameObject;
+                        StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
+                        if (explosionHitStructureBehaviours != null) {
+                            Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.green, 1.0f);
+                            Debug.Log (turret.name + "'s explosion hit " + explosionHitGameObject.name + " and dealt " +
+                                (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio) + " points of damage.");
+                            explosionHitStructureBehaviours.TakeDamage (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio, transform.position);
+                        } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.red, 1.0f);
+                    } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.red, 1.0f);
+                }
                 transform.position = hit.point;
                 Disable ();
-            }
-        }
+            } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
+        } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
     }
 
     void Disable () {

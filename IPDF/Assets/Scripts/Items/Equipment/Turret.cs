@@ -43,6 +43,7 @@ public class Turret : Item {
     public float damage;
     public float explosiveDamage;
     public float explosionRange;
+    public int explosionDetail;
 }
 
 [Serializable]
@@ -95,23 +96,28 @@ public class TurretHandler {
         return available - transferred;
     }
 
-    public void Activate (GameObject activator, GameObject target) {
-        if (!online || turret == null || activator == null || target == null) return;
+    public void Activate (GameObject target) {
+        if (!online || turret == null || equipper == null || target == null) return;
+        if ((target.transform.position - equipper.transform.position).sqrMagnitude > turret.range * turret.range) return;
         if (storedEnergy >= turret.activationThreshold * turret.maxStoredEnergy) {
+            Vector3 offset = Vector3.zero;
+            for (int i = 0; i < equipper.turrets.Count; i++)
+                if (equipper.turrets[i] == this)
+                    offset = equipper.profile.turretPositions[i];
             if (turret.projectile != null) {
                 GameObject projectile = MonoBehaviour.Instantiate (turret.projectile,
-                    activator.transform.position,
+                    equipper.transform.position + equipper.transform.rotation * offset,
                     (turret.projectileInitializeRotation ? Quaternion.LookRotation (
                         CalculateLeadPosition (
-                            activator.transform.position,
-                            target.transform.position + target.GetComponent<StructureBehaviours> ().profile.offset,
+                            equipper.transform.position,
+                            target.transform.position + target.transform.rotation * target.GetComponent<StructureBehaviours> ().profile.offset,
                             target.GetComponent<Rigidbody> ().velocity,
                             turret.projectileVelocity,
                             turret.leadProjectile
                         )
                     ) : equipper.transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
                 ) as GameObject;
-                projectile.GetComponent<Projectile> ().Initialize (turret, activator, target, storedEnergy / turret.maxStoredEnergy);
+                projectile.GetComponent<Projectile> ().Initialize (turret, equipper.gameObject, target, storedEnergy / turret.maxStoredEnergy);
             }
             storedEnergy = 0.0f;
         }
