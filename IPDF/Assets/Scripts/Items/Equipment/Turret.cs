@@ -21,7 +21,6 @@ using Essentials;
 public class Turret : Item {
     [Header ("Appearance")]
     public GameObject projectile;
-    public Material projectileMat;
     public Color trailColor;
     [Header ("Turret Stats")]
     public float maxStoredEnergy;

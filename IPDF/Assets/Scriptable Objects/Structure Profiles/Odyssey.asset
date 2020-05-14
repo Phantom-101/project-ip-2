@@ -35,5 +35,5 @@ MonoBehaviour:
   mass: 25
   drag: 0.5
   angularDrag: 2
-  offset: {x: 0, y: 0, z: 10}
+  offset: {x: 0, y: 0, z: 5}
   rotate: {x: 0, y: 90, z: 0}

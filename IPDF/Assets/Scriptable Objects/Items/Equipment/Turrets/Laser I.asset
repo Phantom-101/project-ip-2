@@ -21,7 +21,7 @@ MonoBehaviour:
   projectileMat: {fileID: 2100000, guid: 24d45ef617577db4bbac3541cb3b60b1, type: 2}
   trailColor: {r: 1, g: 0, b: 0, a: 1}
   maxStoredEnergy: 100
-  rechargeRate: 20
+  rechargeRate: 40
   acceptedAmmunitions: []
   range: 20
   activationThreshold: 0.4
@@ -29,9 +29,10 @@ MonoBehaviour:
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1
-  projectileInaccuracy: 0.1
+  projectileInaccuracy: 0.25
   leadProjectile: 1
   fuelRange: 40
   damage: 20
   explosiveDamage: 0
   explosionRange: 0
+  explosionDetail: 0

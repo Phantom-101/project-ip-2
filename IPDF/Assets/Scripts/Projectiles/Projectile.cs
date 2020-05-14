@@ -24,7 +24,6 @@ public class Projectile : MonoBehaviour {
         disabled = false;
         waitDestroy = 0.0f;
         waitDestroyTimer = 0.0f;
-        GetComponent<Renderer> ().material = turret.projectileMat;
         GetComponent<TrailRenderer> ().startColor = turret.trailColor;
         GetComponent<TrailRenderer> ().endColor = turret.trailColor;
     }
@@ -75,7 +74,6 @@ public class Projectile : MonoBehaviour {
 
     void Disable () {
         disabled = true;
-        GetComponent<MeshRenderer> ().enabled = false;
         TrailRenderer trail = GetComponent<TrailRenderer> ();
         if (trail != null) waitDestroy = trail.time;
     }
