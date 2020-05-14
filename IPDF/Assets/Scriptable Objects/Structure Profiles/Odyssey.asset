@@ -21,9 +21,8 @@ MonoBehaviour:
   apparentSize: 8
   hull: 700
   inventorySize: 0
-  turretSlots: 10
+  turretSlots: 9
   turretPositions:
-  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

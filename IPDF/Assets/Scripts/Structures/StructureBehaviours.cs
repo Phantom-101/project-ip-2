@@ -119,6 +119,7 @@ public class StructureBehaviours : MonoBehaviour {
                 }
             if (closest != null) {
                 targetted = closest;
+                Debug.DrawRay (transform.position, targetted.transform.position - transform.position, Color.red);
                 float totalRange = 0.0f;
                 int effectiveTurrets = 0;
                 foreach (TurretHandler turretHandler in turrets) {
@@ -144,6 +145,7 @@ public class StructureBehaviours : MonoBehaviour {
                 float approachAngle = 90.0f * lrMult;
                 approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? 45.0f * lrMult : 0.0f;
                 approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.8f ? 45.0f * lrMult : 0.0f;
+                Debug.DrawRay (transform.position, transform.rotation * Quaternion.Euler (0.0f, angle - approachAngle, 0.0f) * Vector3.forward * 10.0f * profile.apparentSize, Color.yellow);
                 if (angle > approachAngle) engine.turnSetting = 1.0f;
                 else if (angle > 0.0f && angle < approachAngle * 0.9) engine.turnSetting = -1.0f;
                 else if (angle < -approachAngle) engine.turnSetting = -1.0f;
@@ -158,8 +160,17 @@ public class StructureBehaviours : MonoBehaviour {
 
     public void TakeDamage (float amount, Vector3 from) {
         if (!initialized) return;
-        float angle = from - (transform.position + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation (from - (transform.position + transform.rotation * profile.offset)));
-        Vector3 perp = Vector3.Cross(transform.forward, from - (transform.position + profile.offset));
+        int directionalSector = GetSector (from);
+        float residual = shield.TakeDamage (directionalSector, amount);
+        if (residual > 0.0f) {
+            hull = MathUtils.Clamp (hull - residual, 0.0f, profile.hull);
+            hullTimeSinceLastDamaged = 0.3f;
+        }
+    }
+
+    public int GetSector (Vector3 to) {
+        float angle = to - (transform.position + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation (to - (transform.position + transform.rotation * profile.offset)));
+        Vector3 perp = Vector3.Cross(transform.forward, to - (transform.position + profile.offset));
         float leftRight = Vector3.Dot(perp, transform.up);
         angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
         int directionalSector = 0;
@@ -169,10 +180,6 @@ public class StructureBehaviours : MonoBehaviour {
         else if (angle >= 30.0f && angle < 90.0f) directionalSector = 1;
         else if (angle >= 90.0f && angle < 150.0f) directionalSector = 2;
         else directionalSector = 3;
-        float residual = shield.TakeDamage (directionalSector, amount);
-        if (residual > 0.0f) {
-            hull = MathUtils.Clamp (hull - residual, 0.0f, profile.hull);
-            hullTimeSinceLastDamaged = 0.3f;
-        }
+        return directionalSector;
     }
 }

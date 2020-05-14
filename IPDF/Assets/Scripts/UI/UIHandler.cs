@@ -17,12 +17,14 @@ public class UIHandler : MonoBehaviour {
     GameObject canvas;
     Image hullUI;
     Image[] shieldUI = new Image[6];
+    RectTransform sourceTo;
     GameObject targetInformationPanel;
     Image targetHullUI;
     Image[] targetShieldUI = new Image[6];
     TextMeshProUGUI targetName;
     TextMeshProUGUI targetFaction;
     TextMeshProUGUI targetDistance;
+    RectTransform toSource;
     Transform equipmentButtonsParent;
     List<GameObject> equipmentButtons = new List<GameObject> ();
     RectTransform capacitorTransform;
@@ -31,13 +33,15 @@ public class UIHandler : MonoBehaviour {
     void Awake () {
         canvas = GameObject.Find ("Canvas");
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
-        for (int i = 0; i < 6; i++) shieldUI[i] = canvas.transform.Find ("Health Indicators/Hull/Shield " + i).GetComponent<Image> ();
+        for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
+        sourceTo = hullUI.transform.Find ("Angle Arrow").GetComponent<RectTransform> ();
         targetInformationPanel = canvas.transform.Find ("Target Information Panel").gameObject;
         targetHullUI = targetInformationPanel.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
-        for (int i = 0; i < 6; i++) targetShieldUI[i] = targetInformationPanel.transform.Find ("Health Indicators/Hull/Shield " + i).GetComponent<Image> ();
+        for (int i = 0; i < 6; i++) targetShieldUI[i] = targetHullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
         targetName = targetInformationPanel.transform.Find ("Name").GetComponent<TextMeshProUGUI> ();
         targetFaction = targetInformationPanel.transform.Find ("Faction").GetComponent<TextMeshProUGUI> ();
         targetDistance = targetInformationPanel.transform.Find ("Distance").GetComponent<TextMeshProUGUI> ();
+        toSource = targetHullUI.transform.Find ("Angle Arrow").GetComponent<RectTransform> ();
         equipmentButtonsParent = canvas.transform.Find ("Equipment Buttons Parent");
         capacitorTransform = canvas.transform.Find ("Capacitor Background/Capacitor").GetComponent<RectTransform> ();
         AIInfo = canvas.transform.Find ("AI Indicators").gameObject;
@@ -58,6 +62,14 @@ public class UIHandler : MonoBehaviour {
                         shieldGradient.Evaluate (source.shield.strengths[i] / source.shield.shield.strength);
             else
                 for (int i = 0; i < 6; i++) shieldUI[i].color = Color.grey;
+        }
+        // Angle arrow
+        if (source.targetted == null) sourceTo.gameObject.SetActive (false);
+        else {
+            sourceTo.gameObject.SetActive (true);
+            float rot = source.GetSector (source.targetted.transform.position) * 60.0f;
+            sourceTo.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 75.0f, Mathf.Cos (rot * Mathf.Deg2Rad) * 75.0f);
+            sourceTo.eulerAngles = new Vector3 (0.0f, 0.0f, -rot);
         }
         // Capacitor
         capacitorTransform.sizeDelta = new Vector2 (source.capacitor.capacitor == null ? 0.0f : source.capacitor.storedEnergy / source.capacitor.capacitor.capacitance * 150.0f, 20.0f);
@@ -83,6 +95,9 @@ public class UIHandler : MonoBehaviour {
             targetName.text = targetStructureBehaviour.gameObject.name;
             targetFaction.text = targetStructureBehaviour.faction;
             targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
+            float rot = targetStructureBehaviour.GetSector (source.transform.position) * 60.0f;
+            toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55.0f, Mathf.Cos (rot * Mathf.Deg2Rad) * 55.0f);
+            toSource.eulerAngles = new Vector3 (0.0f, 0.0f, -rot);
         }
         // Equipment
         if (equipmentButtons.Count != source.turrets.Count + 2) {
