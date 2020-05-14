@@ -7,12 +7,12 @@ using Essentials;
 [Serializable]
 public class InventoryHandler {
     public StructureBehaviours storage;
-    public Dictionary<Item, float> inventory;
+    public Dictionary<Item, int> inventory;
     public float inventorySize;
     
-    public InventoryHandler (StructureBehaviours storage, Dictionary<Item, float> inventory = null, float inventorySize = 0.0f) {
+    public InventoryHandler (StructureBehaviours storage, Dictionary<Item, int> inventory = null, float inventorySize = 0.0f) {
         this.storage = storage;
-        if (inventory == null) this.inventory = new Dictionary<Item, float> ();
+        if (inventory == null) this.inventory = new Dictionary<Item, int> ();
         else this.inventory = inventory;
         if (inventorySize >= 0.0f) this.inventorySize = inventorySize;
         else this.inventorySize = -inventorySize;
@@ -21,6 +21,8 @@ public class InventoryHandler {
     public InventoryHandler (InventoryHandler inventoryHandler, StructureBehaviours storage) {
         this.storage = storage;
         this.inventory = inventoryHandler.inventory;
+        if (this.inventory == null) this.inventory = new Dictionary<Item, int> ();
+        if (this.inventorySize != storage.profile.inventorySize) this.inventorySize = storage.profile.inventorySize;
     }
 
     public float GetStoredSize () {
@@ -33,31 +35,36 @@ public class InventoryHandler {
         return inventorySize - GetStoredSize ();
     }
 
-    public float GetItemCount (Item item) {
-        return inventory.ContainsKey (item) ? inventory[item] : 0.0f;
+    public int GetItemCount (Item item) {
+        return inventory.ContainsKey (item) ? inventory[item] : 0;
     }
 
-    public bool AddItem (Item item, float amount) {
-        amount -= amount % item.partialSize;
-        float sizeAvailableFor = GetAvailableSize () / item.size;
-        sizeAvailableFor -= sizeAvailableFor % item.partialSize;
-        if (sizeAvailableFor < amount) return false;
-        inventory.Add (item, GetItemCount (item) + amount);
+    public bool AddItem (Item item, int amount) {
+        float sizeRequired = amount * item.size;
+        float availableSize = GetAvailableSize ();
+        if (sizeRequired <= availableSize) {
+            SetValue (item, GetItemCount (item) + amount);
+            return true;
+        }
         return true;
     }
 
-    public bool HasItemCount (Item item, float amount) {
+    public bool HasItemCount (Item item, int amount) {
         float trueAmount = GetItemCount (item);
         if (trueAmount >= amount) return true;
         return false;
     }
 
-    public bool RemoveItem (Item item, float amount) {
-        amount -= amount % item.partialSize;
+    public bool RemoveItem (Item item, int amount) {
         if (HasItemCount (item, amount)) {
-            inventory.Add (item, GetItemCount (item) - amount);
+            SetValue (item, GetItemCount (item) - amount);
             return true;
         }
         return false;
+    }
+
+    public void SetValue (Item item, int target) {
+        if (inventory.ContainsKey (item)) inventory[item] = target;
+        else inventory.Add (item, target);
     }
 }

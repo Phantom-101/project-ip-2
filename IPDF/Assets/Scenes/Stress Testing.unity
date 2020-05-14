@@ -2214,12 +2214,12 @@ MonoBehaviour:
     inventorySize: 0
   savedTurrets:
   - equipper: {fileID: 235251622}
-    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    turret: {fileID: 11400000, guid: 00ebe7b25cff7c64abd33ad7f6b529cf, type: 2}
     usingAmmunition: {fileID: 0}
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 235251622}
-    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    turret: {fileID: 11400000, guid: 00ebe7b25cff7c64abd33ad7f6b529cf, type: 2}
     usingAmmunition: {fileID: 0}
     online: 1
     storedEnergy: 0

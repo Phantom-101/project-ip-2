@@ -18,11 +18,13 @@ MonoBehaviour:
   partialSize: 0
   projectile: {fileID: 9166618057121596802, guid: 01e0305bd7e64a04789c83bdf3b908d3,
     type: 3}
-  projectileMat: {fileID: 2100000, guid: 24d45ef617577db4bbac3541cb3b60b1, type: 2}
   trailColor: {r: 0.5882353, g: 0, b: 1, a: 1}
   maxStoredEnergy: 750
   rechargeRate: 110
+  requireAmmunition: 0
   acceptedAmmunitions: []
+  activations: 1
+  activationDelay: 0
   range: 500
   activationThreshold: 0.4
   projectileVelocity: 250

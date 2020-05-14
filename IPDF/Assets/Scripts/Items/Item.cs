@@ -9,5 +9,4 @@ public class Item : ScriptableObject {
     [Header ("Item Stats")]
     public float basePrice;
     public float size;
-    public float partialSize;
 }

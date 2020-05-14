@@ -26,17 +26,22 @@ public class Projectile : MonoBehaviour {
         disabled = false;
         waitDestroy = 0.0f;
         waitDestroyTimer = 0.0f;
-        GetComponent<TrailRenderer> ().startColor = turret.trailColor;
-        GetComponent<TrailRenderer> ().endColor = turret.trailColor;
+        if (ammunition == null) {
+            GetComponent<TrailRenderer> ().startColor = turret.trailColor;
+            GetComponent<TrailRenderer> ().endColor = turret.trailColor;
+        } else {
+            GetComponent<TrailRenderer> ().startColor = ammunition.trailColor;
+            GetComponent<TrailRenderer> ().endColor = ammunition.trailColor;
+        }
     }
 
     void Update () {
+        if (!initialized) return;
         if (disabled) {
             waitDestroyTimer += Time.deltaTime;
             if (waitDestroyTimer >= waitDestroy) Destroy (gameObject);
             return;
         }
-        if (!initialized) return;
         if (ammunition == null) {
             if (turret.projectileSticky && target != null) endPosition = target.transform.position;
             float step = turret.projectileVelocity * Time.deltaTime;
@@ -74,6 +79,7 @@ public class Projectile : MonoBehaviour {
                 } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
             } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
         } else {
+            Debug.Log ("This projectile is using an ammunition.");
             if (ammunition.projectileSticky && target != null) endPosition = target.transform.position;
             float step = ammunition.projectileVelocity * Time.deltaTime;
             if (fuelExpended < ammunition.fuelRange) {

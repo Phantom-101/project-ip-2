@@ -20,7 +20,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: fb63eed81644ef245bb076584c8134f5, type: 2}
   apparentSize: 1
   hull: 100
-  inventorySize: 0
+  inventorySize: 30
   turretSlots: 4
   turretPositions:
   - {x: 0, y: 0, z: 0}

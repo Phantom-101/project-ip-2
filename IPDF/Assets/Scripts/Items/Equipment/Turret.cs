@@ -113,46 +113,7 @@ public class TurretHandler {
             for (int i = 0; i < equipper.turrets.Count; i++)
                 if (equipper.turrets[i] == this)
                     offset = equipper.profile.turretPositions[i];
-            
-            storedEnergy = 0.0f;
+            equipper.InstantiateProjectiles (this, target, offset);
         }
-    }
-
-    IEnumerator Fire (GameObject target, Vector3 offset) {
-        for (int i = 0; i < turret.activations; i++) {
-            if (!turret.requireAmmunition || equipper.inventory.HasItemCount (usingAmmunition, usingAmmunition.partialSize)) {
-                equipper.inventory.RemoveItem (usingAmmunition, usingAmmunition.partialSize);
-                if (turret.projectile != null) {
-                    GameObject projectile = MonoBehaviour.Instantiate (turret.projectile,
-                        equipper.transform.position + equipper.transform.rotation * offset,
-                        (turret.projectileInitializeRotation ? Quaternion.LookRotation (
-                            CalculateLeadPosition (
-                                equipper.transform.position,
-                                target.transform.position + target.transform.rotation * target.GetComponent<StructureBehaviours> ().profile.offset,
-                                target.GetComponent<Rigidbody> ().velocity,
-                                turret.projectileVelocity,
-                                turret.leadProjectile
-                            )
-                        ) : equipper.transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
-                    ) as GameObject;
-                    projectile.GetComponent<Projectile> ().Initialize (turret, usingAmmunition, equipper.gameObject, target, storedEnergy / turret.maxStoredEnergy);
-                }
-            }
-        }
-    }
-
-    public Vector3 CalculateLeadPosition (Vector3 currentPosition, Vector3 targetPosition, Vector3 targetVelocity, float projectileVelocity, bool lead) {
-        if (!lead) return targetPosition - currentPosition;
-        float distance = Vector3.Distance(currentPosition, targetPosition);
-        float travelTime = distance / projectileVelocity;
-        return targetPosition + targetVelocity * travelTime - currentPosition;
-    }
-
-    public Quaternion RandomQuaternion (float maxRandom) {
-        return Quaternion.Euler (
-            UnityEngine.Random.Range(-maxRandom, maxRandom),
-            UnityEngine.Random.Range(-maxRandom, maxRandom),
-            UnityEngine.Random.Range(-maxRandom, maxRandom)
-        );
     }
 }

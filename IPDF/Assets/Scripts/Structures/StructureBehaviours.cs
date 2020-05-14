@@ -60,8 +60,8 @@ public class StructureBehaviours : MonoBehaviour {
                 turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], this) : new TurretHandler (null, this));
                 // Temporary
                 if (turrets[i].turret.requireAmmunition) {
+                    inventory.AddItem (turrets[i].turret.acceptedAmmunitions[0], 25);
                     turrets[i].UseAmmunition (turrets[i].turret.acceptedAmmunitions[0]);
-                    inventory.AddItem (turrets[i].turret.acceptedAmmunitions[0], 25.0f);
                 }
             }
             shield = new ShieldHandler (savedShield, this);
@@ -160,6 +160,52 @@ public class StructureBehaviours : MonoBehaviour {
                 engine.turnSetting = 0.0f;
             }
         }
+    }
+
+    public void InstantiateProjectiles (TurretHandler turretHandler, GameObject target, Vector3 offset) {
+        StartCoroutine (Fire (turretHandler, target, offset));
+    }
+
+    IEnumerator Fire (TurretHandler turretHandler, GameObject target, Vector3 offset) {
+        Turret turret = turretHandler.turret;
+        for (int i = 0; i < turret.activations; i++) {
+            if (!turret.requireAmmunition || inventory.HasItemCount (turretHandler.usingAmmunition, 1)) {
+                if (turret.requireAmmunition) inventory.RemoveItem (turretHandler.usingAmmunition, 1);
+                if (turret.projectile != null || turretHandler.usingAmmunition.projectile != null) {
+                    GameObject projectile = MonoBehaviour.Instantiate (
+                        turretHandler.usingAmmunition == null ? turret.projectile : turretHandler.usingAmmunition.projectile,
+                        transform.position + transform.rotation * offset,
+                        (turret.projectileInitializeRotation || (turretHandler.usingAmmunition == null ? false : turretHandler.usingAmmunition.projectileInitializeRotation) ? Quaternion.LookRotation (
+                            CalculateLeadPosition (
+                                transform.position,
+                                target.transform.position + target.transform.rotation * target.GetComponent<StructureBehaviours> ().profile.offset,
+                                target.GetComponent<Rigidbody> ().velocity,
+                                turret.projectileVelocity,
+                                turret.leadProjectile
+                            )
+                        ) : transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
+                    ) as GameObject;
+                    projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy);
+                }
+                turretHandler.storedEnergy = 0.0f;
+            }
+            yield return new WaitForSeconds (turret.activationDelay);
+        }
+    }
+
+    public Vector3 CalculateLeadPosition (Vector3 currentPosition, Vector3 targetPosition, Vector3 targetVelocity, float projectileVelocity, bool lead) {
+        if (!lead) return targetPosition - currentPosition;
+        float distance = Vector3.Distance(currentPosition, targetPosition);
+        float travelTime = distance / projectileVelocity;
+        return targetPosition + targetVelocity * travelTime - currentPosition;
+    }
+
+    public Quaternion RandomQuaternion (float maxRandom) {
+        return Quaternion.Euler (
+            UnityEngine.Random.Range(-maxRandom, maxRandom),
+            UnityEngine.Random.Range(-maxRandom, maxRandom),
+            UnityEngine.Random.Range(-maxRandom, maxRandom)
+        );
     }
 
     public void TakeDamage (float amount, Vector3 from) {

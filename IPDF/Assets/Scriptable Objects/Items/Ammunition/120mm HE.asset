@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dd990f856238d479dec511502f847a, type: 3}
+  m_Name: 120mm HE
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0.1
+  partialSize: 0.1
+  projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
+    type: 3}
+  trailColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  projectileVelocity: 250
+  projectileSticky: 0
+  projectileTracking: 0
+  projectileInitializeRotation: 1
+  projectileInaccuracy: 0
+  leadProjectile: 1
+  fuelRange: 288
+  damage: 54
+  explosiveDamage: 0
+  explosionRange: 0
+  explosionDetail: 0

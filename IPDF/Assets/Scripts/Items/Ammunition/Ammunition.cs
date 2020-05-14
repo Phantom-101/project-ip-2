@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (fileName = "New Ammunition", menuName = "Equipment/Ammunition")]
+[CreateAssetMenu (fileName = "New Ammunition", menuName = "Ammunition")]
 public class Ammunition : Item {
     [Header ("Appearance")]
     public GameObject projectile;
-    public Material projectileMat;
     public Color trailColor;
     [Header ("Projectile Movement")]
     public float projectileVelocity;

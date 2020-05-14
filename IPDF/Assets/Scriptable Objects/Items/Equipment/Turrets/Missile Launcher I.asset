@@ -21,7 +21,10 @@ MonoBehaviour:
   trailColor: {r: 0, g: 0.00002193451, b: 1, a: 1}
   maxStoredEnergy: 25
   rechargeRate: 2
+  requireAmmunition: 0
   acceptedAmmunitions: []
+  activations: 1
+  activationDelay: 0
   range: 30
   activationThreshold: 1
   projectileVelocity: 30
