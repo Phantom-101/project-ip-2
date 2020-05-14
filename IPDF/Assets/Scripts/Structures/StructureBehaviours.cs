@@ -145,7 +145,9 @@ public class StructureBehaviours : MonoBehaviour {
                 approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? 45.0f * lrMult : 0.0f;
                 approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.8f ? 45.0f * lrMult : 0.0f;
                 if (angle > approachAngle) engine.turnSetting = 1.0f;
+                else if (angle > 0.0f && angle < approachAngle * 0.9) engine.turnSetting = -1.0f;
                 else if (angle < -approachAngle) engine.turnSetting = -1.0f;
+                else if (angle < 0.0f && angle > -approachAngle * 0.9) engine.turnSetting = 1.0f;
                 else engine.turnSetting = 0.0f;
             } else {
                 engine.forwardSetting = 0.0f;
