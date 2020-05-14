@@ -58,7 +58,11 @@ public class StructureBehaviours : MonoBehaviour {
             inventory = new InventoryHandler (savedInventory, this);
             for (int i = 0; i < profile.turretSlots; i++) {
                 turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], this) : new TurretHandler (null, this));
-                turrets[i].equipper = this;
+                // Temporary
+                if (turrets[i].turret.requireAmmunition) {
+                    turrets[i].UseAmmunition (turrets[i].turret.acceptedAmmunitions[0]);
+                    inventory.AddItem (turrets[i].turret.acceptedAmmunitions[0], 25.0f);
+                }
             }
             shield = new ShieldHandler (savedShield, this);
             capacitor = new CapacitorHandler (savedCapacitor, this);
