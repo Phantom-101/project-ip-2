@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: thunder
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
+  mesh: {fileID: -5495902117074765545, guid: cd2e154a8765bbf409b6de469ae32c50, type: 3}
+  material: {fileID: 2100000, guid: a92f3d5f759bce74eb346dbabb72c528, type: 2}
+  apparentSize: 2
+  hull: 450
+  inventorySize: 0
+  turretSlots: 5
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  mass: 3
+  drag: 0.5
+  angularDrag: 5
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 0, y: 90, z: 0}
