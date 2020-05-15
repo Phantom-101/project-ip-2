@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\Structures\StructureBehaviours.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureInitializer.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureProfile.cs" />
+     <Compile Include="Assets\Scripts\Structures\StructureVisualizer.cs" />
      <Compile Include="Assets\Scripts\Structures\TestDamager.cs" />
      <Compile Include="Assets\Scripts\UI\UIHandler.cs" />
      <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
