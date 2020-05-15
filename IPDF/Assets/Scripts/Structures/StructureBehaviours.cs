@@ -49,6 +49,7 @@ public class StructureBehaviours : MonoBehaviour {
         Renderer renderer = meshGameObject.AddComponent<MeshRenderer> ();
         meshCollider.sharedMesh = profile.mesh;
         meshCollider.convex = true;
+        meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
         renderer.material = profile.material;
         meshGameObject.transform.localPosition = profile.offset;
@@ -57,7 +58,8 @@ public class StructureBehaviours : MonoBehaviour {
         if (initializeAccordingToSaveData) {
             inventory = new InventoryHandler (savedInventory, this);
             for (int i = 0; i < profile.turretSlots; i++) {
-                turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], this) : new TurretHandler (null, this));
+                turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], profile.turretPositions[i], profile.turretAlignments[i], this) :
+                    new TurretHandler (null, profile.turretPositions[i], profile.turretAlignments[i], this));
                 // Temporary
                 if (turrets[i].turret.requireAmmunition) {
                     inventory.AddItem (turrets[i].turret.acceptedAmmunitions[0], 25);
@@ -72,7 +74,7 @@ public class StructureBehaviours : MonoBehaviour {
             tractorBeam = new TractorBeamHandler (savedTractorBeam, this);
         } else {
             inventory = new InventoryHandler (this, null, profile.inventorySize);
-            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (this));
+            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (this, profile.turretPositions[i], profile.turretAlignments[i]));
             shield = new ShieldHandler (this);
             capacitor = new CapacitorHandler (this);
             generator = new GeneratorHandler (this);
@@ -115,12 +117,16 @@ public class StructureBehaviours : MonoBehaviour {
         if (AIActivated) {
             StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
             StructureBehaviours closest = null;
-            float closestDis = float.MaxValue;
-            foreach (StructureBehaviours structure in structures)
-                if (structure != this && structure.faction != faction && (transform.position - structure.transform.position).sqrMagnitude < closestDis) {
-                    closestDis = (transform.position - structure.transform.position).sqrMagnitude;
+            float leastWeight = float.MaxValue;
+            foreach (StructureBehaviours structure in structures) {
+                float sizeDif = Mathf.Abs (profile.apparentSize - structure.profile.apparentSize);
+                float distance = Vector3.Distance (transform.position, structure.transform.position);
+                float weight = distance * sizeDif * sizeDif;
+                if (structure != this && structure.faction != faction && !structure.cloaked && weight < leastWeight) {
+                    leastWeight = weight;
                     closest = structure;
                 }
+            }
             if (closest != null) {
                 targetted = closest;
                 Debug.DrawRay (transform.position, targetted.transform.position - transform.position, Color.red);
@@ -139,16 +145,16 @@ public class StructureBehaviours : MonoBehaviour {
                 Vector3 heading = targetted.transform.position - transform.position;
                 Vector3 perp = Vector3.Cross (transform.forward, heading);
                 float leftRight = Vector3.Dot (perp, transform.up);
-                float angle = (targetted.transform.position + targetted.transform.rotation * targetted.profile.offset)
-                    - (transform.position + transform.rotation * profile.offset) == Vector3.zero ?
+                float angle = targetted.transform.position - transform.position == Vector3.zero ?
                         0.0f :
-                        Quaternion.Angle (transform.rotation, Quaternion.LookRotation ((targetted.transform.position + targetted.transform.rotation * targetted.profile.offset)
-                    - (transform.position + transform.rotation * profile.offset)));
+                        Quaternion.Angle (transform.rotation, Quaternion.LookRotation (targetted.transform.position
+                    - transform.position)
+                );
                 float lrMult = leftRight >= 0.0f ? 1.0f : -1.0f;
                 angle *= lrMult;
                 float approachAngle = 90.0f * lrMult;
-                approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? 45.0f * lrMult : 0.0f;
-                approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.8f ? 45.0f * lrMult : 0.0f;
+                approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? 60.0f * lrMult : 0.0f;
+                approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.9f ? 60.0f * lrMult : 0.0f;
                 Debug.DrawRay (transform.position, transform.rotation * Quaternion.Euler (0.0f, angle - approachAngle, 0.0f) * Vector3.forward * 10.0f * profile.apparentSize, Color.yellow);
                 if (angle > approachAngle) engine.turnSetting = 1.0f;
                 else if (angle > 0.0f && angle < approachAngle * 0.9) engine.turnSetting = -1.0f;
@@ -177,8 +183,8 @@ public class StructureBehaviours : MonoBehaviour {
                         transform.position + transform.rotation * offset,
                         (turret.projectileInitializeRotation || (turretHandler.usingAmmunition == null ? false : turretHandler.usingAmmunition.projectileInitializeRotation) ? Quaternion.LookRotation (
                             CalculateLeadPosition (
-                                transform.position,
-                                target.transform.position + target.transform.rotation * target.GetComponent<StructureBehaviours> ().profile.offset,
+                                transform.position + transform.rotation * offset,
+                                target.transform.position,
                                 target.GetComponent<Rigidbody> ().velocity,
                                 turret.projectileVelocity,
                                 turret.leadProjectile

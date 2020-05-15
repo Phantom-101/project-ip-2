@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour {
     public Slider forwardPowerSlider;
     public Button turnLeftButton;
     public Button turnRightButton;
-    public float turnValue;
+    public bool leftPressed;
+    public bool rightPressed;
 
     void Awake () {
         uIHandler = FindObjectOfType<UIHandler> ();
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour {
         } else {
             if (structureBehaviours.engine.engine != null) {
                 structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
-                structureBehaviours.engine.turnSetting = turnValue;
+                structureBehaviours.engine.turnSetting = (leftPressed ? -1.0f : 0.0f) + (rightPressed ? 1.0f : 0.0f);
             }
             if (Input.GetMouseButton (0)) {
                 Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -45,18 +46,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void TurnLeftButtonDown () {
-        turnValue -= 1.0f;
+        leftPressed = true;
     }
 
     public void TurnLeftButtonUp () {
-        turnValue += 1.0f;
+        leftPressed = false;
     }
 
     public void TurnRightButtonDown () {
-        turnValue += 1.0f;
+        rightPressed = true;
     }
 
     public void TurnRightButtonUp () {
-        turnValue -= 1.0f;
+        rightPressed = false;
     }
 }

@@ -53,10 +53,12 @@ public class TurretHandler {
     public StructureBehaviours equipper;
     public Turret turret;
     public Ammunition usingAmmunition;
+    public Vector3 position;
+    public TurretAlignment turretAlignment;
     public bool online;
     public float storedEnergy;
 
-    public TurretHandler (StructureBehaviours equipper, Turret turret = null) {
+    public TurretHandler (StructureBehaviours equipper, Vector3 position, TurretAlignment turretAlignment, Turret turret = null) {
         this.equipper = equipper;
         if (turret == null) {
             this.turret = null;
@@ -67,12 +69,16 @@ public class TurretHandler {
             this.online = true;
             this.storedEnergy = 0.0f;
         }
+        this.position = position;
+        this.turretAlignment = turretAlignment;
     }
 
-    public TurretHandler (TurretHandler turretHandler, StructureBehaviours equipper) {
+    public TurretHandler (TurretHandler turretHandler, Vector3 position, TurretAlignment turretAlignment, StructureBehaviours equipper) {
         this.equipper = equipper;
         this.turret = turretHandler.turret;
         this.usingAmmunition = turretHandler.usingAmmunition;
+        this.position = position;
+        this.turretAlignment = turretAlignment;
         this.online = turretHandler.online;
         this.storedEnergy = turretHandler.storedEnergy;
     }
@@ -106,14 +112,54 @@ public class TurretHandler {
     }
 
     public void Activate (GameObject target) {
-        if (!online || turret == null || equipper == null || target == null) return;
-        if ((target.transform.position - equipper.transform.position).sqrMagnitude > turret.range * turret.range) return;
-        if (storedEnergy >= turret.activationThreshold * turret.maxStoredEnergy) {
-            Vector3 offset = Vector3.zero;
-            for (int i = 0; i < equipper.turrets.Count; i++)
-                if (equipper.turrets[i] == this)
-                    offset = equipper.profile.turretPositions[i];
-            equipper.InstantiateProjectiles (this, target, offset);
-        }
+        if (CanActivate (target)) equipper.InstantiateProjectiles (this, target, position);
     }
+
+    public bool CanActivate (GameObject target) {
+        if (!online || turret == null || equipper == null || target == null) return false;
+        if ((target.transform.position - equipper.transform.position).sqrMagnitude > turret.range * turret.range) return false;
+        if (!(storedEnergy >= turret.activationThreshold * turret.maxStoredEnergy)) return false;
+        if (!AlignmentIsValid (target)) return false;
+        return true;
+    }
+
+    public bool AlignmentIsValid (GameObject target) {
+        Vector3 targetPos = target.transform.position;
+        float angle = targetPos - (equipper.transform.position + equipper.transform.rotation * position) == Vector3.zero ?
+            0.0f :
+            Quaternion.Angle (equipper.transform.rotation, Quaternion.LookRotation (targetPos - (equipper.transform.position + equipper.transform.rotation * position)));
+        Vector3 perp = Vector3.Cross(equipper.transform.forward, targetPos - (equipper.transform.position + equipper.transform.rotation * position));
+        float leftRight = Vector3.Dot(perp, equipper.transform.up);
+        angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
+        if (turretAlignment == TurretAlignment.All) return true;
+        if (turretAlignment == TurretAlignment.ForwardQuadrant && angle >= -45.0f && angle <= 45.0f) return true;
+        if (turretAlignment == TurretAlignment.LeftQuadrant && angle >= -135.0f && angle <= -45.0f) return true;
+        if (turretAlignment == TurretAlignment.RightQuadrant && angle >= 45.0f && angle <= 135.0f) return true;
+        if (turretAlignment == TurretAlignment.BackQuadrant && ((angle >= -180.0f && angle <= -135.0f) || (angle >= 135.0f && angle <= 180.0f))) return true;
+        if (turretAlignment == TurretAlignment.ForwardHalf && angle >= -90.0f && angle <= 90.0f) return true;
+        if (turretAlignment == TurretAlignment.LeftHalf && angle >= -180.0f && angle <= 0.0f) return true;
+        if (turretAlignment == TurretAlignment.RightHalf && angle >= 0.0f && angle <= 180.0f) return true;
+        if (turretAlignment == TurretAlignment.BackHalf && ((angle >= -180.0f && angle <= -90.0f) || (angle >= 90.0f && angle <= 180.0f))) return true;
+        if (turretAlignment == TurretAlignment.ForwardLeft && angle >= -90.0f && angle <= 0.0f) return true;
+        if (turretAlignment == TurretAlignment.BackLeft && angle >= -180.0f && angle <= -90.0f) return true;
+        if (turretAlignment == TurretAlignment.ForwardRight && angle >= 0.0f && angle <= 90.0f) return true;
+        if (turretAlignment == TurretAlignment.BackRight && angle >= 90.0f && angle <= 180.0f) return true;
+        return false;
+    }
+}
+
+public enum TurretAlignment {
+    ForwardQuadrant,
+    LeftQuadrant,
+    RightQuadrant,
+    BackQuadrant,
+    ForwardHalf,
+    LeftHalf,
+    RightHalf,
+    BackHalf,
+    ForwardLeft,
+    BackLeft,
+    ForwardRight,
+    BackRight,
+    All
 }

@@ -128,6 +128,7 @@ public class UIHandler : MonoBehaviour {
             button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
             button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
             button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
+            button.GetComponent<Button> ().interactable = source.turrets[i].CanActivate (source.targetted == null ? null : source.targetted.gameObject);
             SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.targetted == null ? null : source.targetted.gameObject), button.GetComponent<Button> ());
             equipmentButtons[i] = button;
         }

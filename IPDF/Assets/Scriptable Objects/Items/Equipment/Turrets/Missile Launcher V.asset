@@ -15,26 +15,25 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 78f5065891b11c7438071de2c37b4716, type: 3}
   basePrice: 0
   size: 0
-  partialSize: 0
   projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
   trailColor: {r: 0, g: 1, b: 1, a: 1}
   maxStoredEnergy: 250
-  rechargeRate: 20
+  rechargeRate: 25
   requireAmmunition: 0
   acceptedAmmunitions: []
   activations: 1
   activationDelay: 0
   range: 500
   activationThreshold: 1
-  projectileVelocity: 100
+  projectileVelocity: 150
   projectileSticky: 1
   projectileTracking: 150
   projectileInitializeRotation: 0
   projectileInaccuracy: 5
   leadProjectile: 0
   fuelRange: 1500
-  damage: 50
-  explosiveDamage: 250
-  explosionRange: 50
+  damage: 20
+  explosiveDamage: 500
+  explosionRange: 25
   explosionDetail: 30
