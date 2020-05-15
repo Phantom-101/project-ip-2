@@ -120,8 +120,9 @@ public class StructureBehaviours : MonoBehaviour {
             float leastWeight = float.MaxValue;
             foreach (StructureBehaviours structure in structures) {
                 float sizeDif = Mathf.Abs (profile.apparentSize - structure.profile.apparentSize);
+                sizeDif -= 2.0f;
                 float distance = Vector3.Distance (transform.position, structure.transform.position);
-                float weight = distance * sizeDif * sizeDif;
+                float weight = distance + distance * sizeDif / 5.0f;
                 if (structure != this && structure.faction != faction && !structure.cloaked && weight < leastWeight) {
                     leastWeight = weight;
                     closest = structure;

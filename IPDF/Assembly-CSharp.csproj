@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Items\InventoryHandler.cs" />
      <Compile Include="Assets\Scripts\Items\Item.cs" />
      <Compile Include="Assets\Scripts\Items\ItemsHandler.cs" />
+     <Compile Include="Assets\Scripts\Misc\DestroyAfterT.cs" />
      <Compile Include="Assets\Scripts\Misc\Essentials.cs" />
      <Compile Include="Assets\Scripts\Position\Position.cs" />
      <Compile Include="Assets\Scripts\Position\PositionsManager.cs" />
@@ -70,6 +71,7 @@
      <Compile Include="Assets\Scripts\Scenes\ScenesManager.cs" />
      <Compile Include="Assets\Scripts\Spawner\CustomizableSpawner.cs" />
      <Compile Include="Assets\Scripts\Spawner\SphereSpawner.cs" />
+     <Compile Include="Assets\Scripts\Spawner\WaveSpawner.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureBehaviours.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureInitializer.cs" />
      <Compile Include="Assets\Scripts\Structures\StructureProfile.cs" />

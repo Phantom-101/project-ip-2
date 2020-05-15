@@ -58,41 +58,57 @@ MonoBehaviour:
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 7218308573696321740}
     turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
     usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
     online: 1
     storedEnergy: 0
   savedShield:
@@ -117,7 +133,7 @@ MonoBehaviour:
     online: 1
   savedEngine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    engine: {fileID: 11400000, guid: 20360508037d82c43957942da1f8e8a4, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
