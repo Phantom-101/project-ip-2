@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8667098400243419432}
   - component: {fileID: 5852721978069997999}
   m_Layer: 0
-  m_Name: Big Missile
+  m_Name: Projectile 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.5
@@ -80,7 +80,7 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
+        time: 0.022266388
         value: 1
         inSlope: 0
         outSlope: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 0}
+  ammunition: {fileID: 0}
   activator: {fileID: 0}
   target: {fileID: 0}
   storedEnergyRatio: 0

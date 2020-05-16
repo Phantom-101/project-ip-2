@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: Eros
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
+  mesh: {fileID: 4711208715938537054, guid: b9a6df060ce18af48ae020174aad4003, type: 3}
+  material: {fileID: 2100000, guid: 04abeab4e2c3161418de61f1d515e98a, type: 2}
+  apparentSize: 7
+  hull: 600
+  inventorySize: 600
+  turretSlots: 4
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretAlignments: 05000000040000000400000006000000
+  mass: 20
+  drag: 0.3
+  angularDrag: 0.9
+  physicMaterial: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 0, y: -90, z: 0}
