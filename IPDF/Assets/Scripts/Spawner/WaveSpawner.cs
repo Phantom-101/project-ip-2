@@ -18,7 +18,7 @@ public class WaveSpawner : MonoBehaviour {
     float timeElapsed;
 
     void Update() {
-        foreach (GameObject go in instantiated) if (go == null) instantiated.Remove (go);
+        foreach (GameObject go in instantiated.ToArray ()) if (go == null) instantiated.Remove (go);
         if (instantiated.Count == 0) {
             if (wavesSpawned >= waves.Length) Destroy (gameObject);
             GameObject[] wave = waves[wavesSpawned].wave;
