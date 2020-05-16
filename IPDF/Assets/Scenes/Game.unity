@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 04452abe126a43e4b8eea2d03f560f6e, type: 2}
+  profile: {fileID: 11400000, guid: 9ebe96ec1e781b4499a27f61a81bce7d, type: 2}
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -1703,7 +1703,7 @@ MonoBehaviour:
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 235251622}
+  - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: dad57f1f16c1d8a45b637b98d3b6289b, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -1818,8 +1818,8 @@ MonoBehaviour:
     generator: {fileID: 0}
     online: 0
   engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 0}
+    equipper: {fileID: 235251622}
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
     online: 0
     forwardSetting: 0
     turnSetting: 0

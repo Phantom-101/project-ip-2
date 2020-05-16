@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: Noctus
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
+  mesh: {fileID: -5495902117074765545, guid: fcbf132e6d93f5b42b358d46e0c46545, type: 3}
+  material: {fileID: 2100000, guid: b8e0740f03dcb2b4ca4de3be7e4be61f, type: 2}
+  apparentSize: 3
+  hull: 650
+  inventorySize: 100
+  turretSlots: 6
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretAlignments: 00000000040000000a000000080000000c00000007000000
+  mass: 6
+  drag: 0.5
+  angularDrag: 2
+  physicMaterial: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 0, y: 90, z: 0}
