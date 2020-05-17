@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020abdd48621ae4429a821eb67a6d27e, type: 3}
   m_Name: Engine 100
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
   basePrice: 0
   size: 0
+  icon: {fileID: 0}
   forwardPower: 100
-  turnPower: 100
+  turnPower: 1000

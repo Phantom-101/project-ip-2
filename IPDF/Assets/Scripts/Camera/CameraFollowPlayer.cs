@@ -7,7 +7,7 @@ public class CameraFollowPlayer : MonoBehaviour {
     public PlayerController playerController;
     public StructureBehaviours playerStructure;
     [Header ("Configurations")]
-    public Vector3 startPositionOffset = new Vector3 (0.0f, 5.0f, -15.0f);
+    public Vector3 startPositionOffset = new Vector3 (0.0f, 5.0f, -25.0f);
     public Vector3 positionOffset = new Vector3 (0.0f, 3.0f, -5.0f);
     [Range (2.5f, 10.0f)]
     public float positionInterpolationStrength = 5.0f;

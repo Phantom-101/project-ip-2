@@ -17,26 +17,22 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: ca8a871e9e7b4a44a8c9144d0409eb01, type: 3}
   material: {fileID: 2100000, guid: 15d051e125c5e4c46b42e6fccd421739, type: 2}
-  apparentSize: 0.8
-  structureClass: 7
-  manufacturer: 3
-  description: 
+  apparentSize: 8
   hull: 700
   inventorySize: 500
   turretSlots: 9
   turretPositions:
-  - {x: 0, y: 0.73, z: 0.33}
-  - {x: 0, y: 0.34, z: 1.78}
-  - {x: 0, y: 0.39, z: 1.29}
-  - {x: -0.67, y: 0.47, z: -0.08}
-  - {x: 0.67, y: 0.47, z: -0.08}
-  - {x: -0.95, y: 0.15, z: -0.23}
-  - {x: 0.95, y: 0.15, z: -0.23}
-  - {x: 0, y: 0.51, z: -1.116}
-  - {x: 0, y: -0.31, z: 0.06}
+  - {x: 0, y: 7.3, z: 3.3}
+  - {x: 0, y: 3.4, z: 17.8}
+  - {x: 0, y: 3.9, z: 12.9}
+  - {x: -6.7, y: 4.7, z: -0.8}
+  - {x: 6.7, y: 4.7, z: -0.8}
+  - {x: -9.5, y: 1.5, z: -2.3}
+  - {x: 9.5, y: 1.5, z: -2.3}
+  - {x: 0, y: 5.1, z: -11.16}
+  - {x: 0, y: -3.1, z: 0.6}
   turretAlignments: 040000000000000000000000080000000a0000000500000006000000070000000c000000
-  electronicsCapable: 0
-  mass: 125
+  mass: 25
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}

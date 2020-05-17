@@ -15,6 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a272e16a41b63cd4da2b285080283c6e, type: 3}
   basePrice: 30000
   size: 1
+  partialSize: 1
   projectile: {fileID: 0}
   trailColor: {r: 0, g: 0, b: 0, a: 0}
   maxStoredEnergy: 46
@@ -24,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5ef4eeae2c4f4e44784eff562223105c, type: 2}
   activations: 1
   activationDelay: 0
-  range: 28.8
+  range: 288
   activationThreshold: 1
   projectileVelocity: 0
   projectileSticky: 0
