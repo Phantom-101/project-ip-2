@@ -119,6 +119,7 @@ public class TurretHandler {
         if (!online || turret == null || equipper == null || target == null) return false;
         if ((target.transform.position - equipper.transform.position).sqrMagnitude > turret.range * turret.range) return false;
         if (!(storedEnergy >= turret.activationThreshold * turret.maxStoredEnergy)) return false;
+        if (equipper.electronics.activated) return false;
         if (!AlignmentIsValid (target)) return false;
         return true;
     }

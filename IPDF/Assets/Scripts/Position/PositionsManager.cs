@@ -5,11 +5,8 @@ using UnityEngine;
 public class PositionsManager : MonoBehaviour {
     Position[] positions;
 
-    void Awake() {
-        positions = FindObjectsOfType<Position>();
-    }
-
     public void ShiftOrigin(Vector3 playerLocation) {
+        positions = FindObjectsOfType<Position>();
         foreach(Position position in positions) position.ShiftOrigin(playerLocation);
     }
 }
