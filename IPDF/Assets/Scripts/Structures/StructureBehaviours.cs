@@ -40,7 +40,13 @@ public class StructureBehaviours : MonoBehaviour {
     public StructureBehaviours targetted;
     public bool initialized;
 
+    StructuresManager structuresManager;
+    DiplomacyManager diplomacyManager;
+
     public void Initialize () {
+        structuresManager = FindObjectOfType<StructuresManager> ();
+        diplomacyManager = FindObjectOfType<DiplomacyManager> ();
+        structuresManager.AddStructure (this);
         GameObject meshGameObject = new GameObject ();
         meshGameObject.name = "Mesh and Collider";
         meshGameObject.transform.parent = transform;
@@ -70,7 +76,7 @@ public class StructureBehaviours : MonoBehaviour {
             capacitor = new CapacitorHandler (savedCapacitor, this);
             generator = new GeneratorHandler (savedGenerator, this);
             engine = new EngineHandler (savedEngine, this);
-            electronics = new ElectronicsHandler (savedElectronics, this);
+            electronics = profile.electronicsCapable ? new ElectronicsHandler (savedElectronics, this) : new ElectronicsHandler (this);
             tractorBeam = new TractorBeamHandler (savedTractorBeam, this);
         } else {
             inventory = new InventoryHandler (this, null, profile.inventorySize);
@@ -96,7 +102,10 @@ public class StructureBehaviours : MonoBehaviour {
     void Update () {
         if (!initialized) return;
         // Check if should be destroyed
-        if (hull == 0.0f) Destroy (gameObject);
+        if (hull == 0.0f) {
+            structuresManager.RemoveStructure (this);
+            Destroy (gameObject);
+        }
         // Position and physics stuff
         transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
         rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
@@ -115,15 +124,14 @@ public class StructureBehaviours : MonoBehaviour {
         tractorBeam.Process (gameObject);
         // AI stuff
         if (AIActivated) {
-            StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
             StructureBehaviours closest = null;
             float leastWeight = float.MaxValue;
-            foreach (StructureBehaviours structure in structures) {
+            foreach (StructureBehaviours structure in structuresManager.structures) {
                 float sizeDif = Mathf.Abs (profile.apparentSize - structure.profile.apparentSize);
-                sizeDif -= 2.0f;
+                sizeDif = MathUtils.Clamp (sizeDif - 0.2f, 0.01f, 100.0f);
                 float distance = Vector3.Distance (transform.position, structure.transform.position);
                 float weight = distance + distance * sizeDif / 5.0f;
-                if (structure != this && structure.faction != faction && !structure.cloaked && weight < leastWeight) {
+                if (structure != this && structure.faction != faction && diplomacyManager.GetRelations (faction, structure.faction) < -0.5f && !structure.cloaked && weight < leastWeight) {
                     leastWeight = weight;
                     closest = structure;
                 }
@@ -192,7 +200,7 @@ public class StructureBehaviours : MonoBehaviour {
                             )
                         ) : transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
                     ) as GameObject;
-                    projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy);
+                    projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy, faction);
                 }
                 turretHandler.storedEnergy = 0.0f;
             }

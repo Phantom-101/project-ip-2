@@ -17,7 +17,10 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: ee68b75a49c3cf84b90fd75c539583da, type: 3}
   material: {fileID: 2100000, guid: 5e88404a95272bd4db9b3505228077cb, type: 2}
-  apparentSize: 2
+  apparentSize: 0.2
+  structureClass: 2
+  manufacturer: 0
+  description: 
   hull: 400
   inventorySize: 65
   turretSlots: 5
@@ -28,9 +31,10 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   turretAlignments: 04000000040000000c0000000b00000009000000
-  mass: 0.9
+  electronicsCapable: 0
+  mass: 45
   drag: 0.5
   angularDrag: 0.7
   physicMaterial: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  rotate: {x: 0, y: 90, z: 0}
+  offset: {x: 0, y: 1.5, z: 0}
+  rotate: {x: 0, y: 0, z: 0}

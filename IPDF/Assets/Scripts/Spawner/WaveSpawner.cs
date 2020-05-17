@@ -21,19 +21,22 @@ public class WaveSpawner : MonoBehaviour {
         foreach (GameObject go in instantiated.ToArray ()) if (go == null) instantiated.Remove (go);
         if (instantiated.Count == 0) {
             if (wavesSpawned >= waves.Length) Destroy (gameObject);
-            GameObject[] wave = waves[wavesSpawned].wave;
-            foreach (GameObject waveObject in wave) {
-                Vector3 randomPos = new Vector3 (
-                    UnityEngine.Random.Range(-spawnRadius, spawnRadius),
-                    0.0f,
-                    UnityEngine.Random.Range(-spawnRadius, spawnRadius)
-                );
-                GameObject go = Instantiate (waveObject, transform.position + randomPos, Quaternion.identity) as GameObject;
-                instantiated.Add (go);
-                GameObject spawnedEffect = Instantiate (spawnEffect, transform.position + randomPos, Quaternion.identity) as GameObject;
-                spawnedEffect.transform.localScale = Vector3.one * (go.GetComponent<StructureBehaviours> () ? go.GetComponent<StructureBehaviours> ().profile.apparentSize : 1.0f) * 10.0f;
+            else {
+                GameObject[] wave = waves[wavesSpawned].wave;
+                foreach (GameObject waveObject in wave) {
+                    Vector3 randomPos = new Vector3 (
+                        UnityEngine.Random.Range(-spawnRadius, spawnRadius),
+                        0.0f,
+                        UnityEngine.Random.Range(-spawnRadius, spawnRadius)
+                    );
+                    GameObject go = Instantiate (waveObject, transform.position + randomPos, Quaternion.identity) as GameObject;
+                    go.name = waveObject.name;
+                    instantiated.Add (go);
+                    GameObject spawnedEffect = Instantiate (spawnEffect, transform.position + randomPos, Quaternion.identity) as GameObject;
+                    spawnedEffect.transform.localScale = Vector3.one * (go.GetComponent<StructureBehaviours> () ? go.GetComponent<StructureBehaviours> ().profile.apparentSize * 10.0f : 1.0f);
+                }
+                wavesSpawned ++;
             }
-            wavesSpawned ++;
         }
     }
 }

@@ -15,11 +15,10 @@ MonoBehaviour:
   icon: {fileID: 0}
   basePrice: 0
   size: 0.1
-  partialSize: 0.1
   projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
   trailColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  projectileVelocity: 250
+  projectileVelocity: 25
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1

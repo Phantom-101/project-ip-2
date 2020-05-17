@@ -24,15 +24,15 @@ MonoBehaviour:
   acceptedAmmunitions: []
   activations: 1
   activationDelay: 0
-  range: 500
+  range: 50
   activationThreshold: 0.5
-  projectileVelocity: 250
+  projectileVelocity: 75
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1
   projectileInaccuracy: 0.25
   leadProjectile: 1
-  fuelRange: 500
+  fuelRange: 50
   damage: 175
   explosiveDamage: 0
   explosionRange: 0
