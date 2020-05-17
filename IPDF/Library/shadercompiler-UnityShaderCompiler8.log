@@ -1,8 +1,0 @@
-Base path: '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data', plugins path '/home/woyu/Unity/Hub/Editor/2019.3.11f1/Editor/Data/PlaybackEngines'
-Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=4 insize=1372 outsize=620 ok=1
-Cmd: compileComputeKernel
-  api=15 insize=9103 outsize=6239 ok=1
-
-Quitting shader compiler process

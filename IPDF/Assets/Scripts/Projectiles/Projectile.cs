@@ -8,21 +8,24 @@ public class Projectile : MonoBehaviour {
     public GameObject activator;
     public GameObject target;
     public float storedEnergyRatio;
+    public string fromFaction;
     public Vector3 endPosition;
 
+    DiplomacyManager diplomacyManager;
     bool initialized = false;
     bool disabled = false;
     float waitDestroy = 0.0f;
     float waitDestroyTimer = 0.0f;
     float fuelExpended = 0.0f;
 
-    public void Initialize (Turret turret, Ammunition ammunition, GameObject activator, GameObject target, float storedEnergyRatio) {
+    public void Initialize (Turret turret, Ammunition ammunition, GameObject activator, GameObject target, float storedEnergyRatio, string fromFaction) {
+        diplomacyManager = FindObjectOfType<DiplomacyManager> ();
         this.turret = turret;
         this.ammunition = ammunition;
         this.activator = activator;
         this.target = target;
         this.storedEnergyRatio = storedEnergyRatio;
-        initialized = true;
+        this.fromFaction = fromFaction;
         disabled = false;
         waitDestroy = 0.0f;
         waitDestroyTimer = 0.0f;
@@ -33,6 +36,7 @@ public class Projectile : MonoBehaviour {
             GetComponent<TrailRenderer> ().startColor = ammunition.trailColor;
             GetComponent<TrailRenderer> ().endColor = ammunition.trailColor;
         }
+        initialized = true;
     }
 
     void Update () {
@@ -58,6 +62,7 @@ public class Projectile : MonoBehaviour {
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
+                    diplomacyManager.RelationsChanged (fromFaction, hitStructureBehaviours.faction, -0.1f);
                     hitStructureBehaviours.TakeDamage (turret.damage * storedEnergyRatio, transform.position);
                     for (int i = 0; i < turret.explosionDetail; i++) {
                         float angle = 360.0f / turret.explosionDetail * i;
@@ -70,6 +75,7 @@ public class Projectile : MonoBehaviour {
                                 Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.green, 1.0f);
                                 Debug.Log (turret.name + "'s explosion hit " + explosionHitGameObject.name + " and dealt " +
                                     (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio) + " points of damage.");
+                                diplomacyManager.RelationsChanged (fromFaction, explosionHitStructureBehaviours.faction, -0.1f);
                                 explosionHitStructureBehaviours.TakeDamage (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio, transform.position);
                             } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.red, 1.0f);
                         } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.red, 1.0f);
@@ -95,6 +101,7 @@ public class Projectile : MonoBehaviour {
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
+                    diplomacyManager.RelationsChanged (fromFaction, hitStructureBehaviours.faction, -0.1f);
                     hitStructureBehaviours.TakeDamage (ammunition.damage * storedEnergyRatio, transform.position);
                     for (int i = 0; i < ammunition.explosionDetail; i++) {
                         float angle = 360.0f / ammunition.explosionDetail * i;
@@ -107,6 +114,7 @@ public class Projectile : MonoBehaviour {
                                 Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * ammunition.explosionRange), Color.green, 1.0f);
                                 Debug.Log (ammunition.name + "'s explosion hit " + explosionHitGameObject.name + " and dealt " +
                                     (ammunition.explosiveDamage / ammunition.explosionDetail * storedEnergyRatio) + " points of damage.");
+                                diplomacyManager.RelationsChanged (fromFaction, explosionHitStructureBehaviours.faction, -0.1f);
                                 explosionHitStructureBehaviours.TakeDamage (ammunition.explosiveDamage / ammunition.explosionDetail * storedEnergyRatio, transform.position);
                             } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * ammunition.explosionRange), Color.red, 1.0f);
                         } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * ammunition.explosionRange), Color.red, 1.0f);
