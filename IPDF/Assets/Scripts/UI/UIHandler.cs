@@ -18,6 +18,7 @@ public class UIHandler : MonoBehaviour {
     Image hullUI;
     Image[] shieldUI = new Image[6];
     RectTransform sourceTo;
+    TextMeshProUGUI speedCounter;
     GameObject targetInformationPanel;
     Image targetHullUI;
     Image[] targetShieldUI = new Image[6];
@@ -35,6 +36,7 @@ public class UIHandler : MonoBehaviour {
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
         sourceTo = hullUI.transform.Find ("Angle Arrow").GetComponent<RectTransform> ();
+        speedCounter = canvas.transform.Find ("Forward Speed/Speed Counter").GetComponent<TextMeshProUGUI> ();
         targetInformationPanel = canvas.transform.Find ("Target Information Panel").gameObject;
         targetHullUI = targetInformationPanel.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) targetShieldUI[i] = targetHullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
@@ -71,6 +73,8 @@ public class UIHandler : MonoBehaviour {
             sourceTo.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 75.0f, Mathf.Cos (rot * Mathf.Deg2Rad) * 75.0f);
             sourceTo.eulerAngles = new Vector3 (0.0f, 0.0f, -rot);
         }
+        // Speed counter
+        speedCounter.text = Mathf.Round (source.GetComponent<Rigidbody> ().velocity.magnitude).ToString ();
         // Capacitor
         capacitorTransform.sizeDelta = new Vector2 (source.capacitor.capacitor == null ? 0.0f : source.capacitor.storedEnergy / source.capacitor.capacitor.capacitance * 150.0f, 20.0f);
         // AI indicators

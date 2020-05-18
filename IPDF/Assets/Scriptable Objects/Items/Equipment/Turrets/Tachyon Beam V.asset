@@ -13,27 +13,28 @@ MonoBehaviour:
   m_Name: Tachyon Beam V
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
-  basePrice: 47500
+  basePrice: 120000
   size: 0
   projectile: {fileID: 9166618057121596802, guid: 01e0305bd7e64a04789c83bdf3b908d3,
     type: 3}
   trailColor: {r: 0.5882353, g: 0, b: 1, a: 1}
-  maxStoredEnergy: 750
-  rechargeRate: 110
+  trailTime: 1
+  maxStoredEnergy: 1300
+  rechargeRate: 550
   requireAmmunition: 0
   acceptedAmmunitions: []
   activations: 1
   activationDelay: 0
-  range: 50
+  range: 408
   activationThreshold: 0.5
-  projectileVelocity: 75
+  projectileVelocity: 300
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1
   projectileInaccuracy: 0.25
   leadProjectile: 1
-  fuelRange: 50
-  damage: 175
+  fuelRange: 408
+  damage: 550
   explosiveDamage: 0
   explosionRange: 0
   explosionDetail: 0

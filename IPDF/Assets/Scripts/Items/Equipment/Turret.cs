@@ -22,6 +22,7 @@ public class Turret : Item {
     [Header ("Appearance")]
     public GameObject projectile;
     public Color trailColor;
+    public float trailTime;
     [Header ("Turret Stats")]
     public float maxStoredEnergy;
     public float rechargeRate;

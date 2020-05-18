@@ -25,15 +25,15 @@ MonoBehaviour:
   inventorySize: 25
   turretSlots: 4
   turretPositions:
-  - {x: 4, y: 0, z: 0}
+  - {x: 0, y: 0, z: 4}
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: -1}
   - {x: 0, y: 0, z: 0}
   turretAlignments: 00000000000000000000000000000000
   electronicsCapable: 0
-  mass: 0.5
+  mass: 1
   drag: 0.5
-  angularDrag: 0.5
-  physicMaterial: {fileID: 0}
+  angularDrag: 3
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 0, z: 0}

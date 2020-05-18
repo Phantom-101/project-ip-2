@@ -26,8 +26,8 @@ public class CameraFollowPlayer : MonoBehaviour {
         ResetPosition ();
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
-        rigidbody.drag = 2.5f;
-        rigidbody.angularDrag = 5.0f;
+        rigidbody.drag = 7.5f;
+        rigidbody.angularDrag = 7.5f;
         rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
         constantForce = GetComponent<ConstantForce> ();
         if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
@@ -64,7 +64,7 @@ public class CameraFollowPlayer : MonoBehaviour {
             }
             Vector3 targetPositionOffset = new Vector3 (positionOffset.z * Mathf.Sin (angle * Mathf.Deg2Rad), positionOffset.y, positionOffset.z * Mathf.Cos (angle * Mathf.Deg2Rad));
             Vector3 targetPosition = playerPosition + playerStructure.transform.rotation * (targetPositionOffset * playerStructure.profile.apparentSize);
-            constantForce.force = (targetPosition - transform.position) * positionInterpolationStrength / Mathf.Sqrt (playerStructure.profile.apparentSize);
+            constantForce.force = (targetPosition - transform.position) * positionInterpolationStrength * 5.0f;
         }
     }
 

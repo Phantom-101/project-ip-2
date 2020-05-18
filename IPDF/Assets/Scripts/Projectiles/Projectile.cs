@@ -32,9 +32,11 @@ public class Projectile : MonoBehaviour {
         if (ammunition == null) {
             GetComponent<TrailRenderer> ().startColor = turret.trailColor;
             GetComponent<TrailRenderer> ().endColor = turret.trailColor;
+            GetComponent<TrailRenderer> ().time = turret.trailTime;
         } else {
             GetComponent<TrailRenderer> ().startColor = ammunition.trailColor;
             GetComponent<TrailRenderer> ().endColor = ammunition.trailColor;
+            GetComponent<TrailRenderer> ().time = ammunition.trailTime;
         }
         initialized = true;
     }
@@ -128,7 +130,7 @@ public class Projectile : MonoBehaviour {
 
     void Disable () {
         disabled = true;
-        TrailRenderer trail = GetComponent<TrailRenderer> ();
-        if (trail != null) waitDestroy = trail.time;
+        if (ammunition == null) waitDestroy = turret.trailTime;
+        else waitDestroy = ammunition.trailTime;
     }
 }

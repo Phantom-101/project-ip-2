@@ -7,6 +7,7 @@ public class Ammunition : Item {
     [Header ("Appearance")]
     public GameObject projectile;
     public Color trailColor;
+    public float trailTime;
     [Header ("Projectile Movement")]
     public float projectileVelocity;
     public bool projectileSticky;

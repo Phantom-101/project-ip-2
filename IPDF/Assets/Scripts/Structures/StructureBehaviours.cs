@@ -184,27 +184,29 @@ public class StructureBehaviours : MonoBehaviour {
     IEnumerator Fire (TurretHandler turretHandler, GameObject target, Vector3 offset) {
         Turret turret = turretHandler.turret;
         for (int i = 0; i < turret.activations; i++) {
-            if (!turret.requireAmmunition || inventory.HasItemCount (turretHandler.usingAmmunition, 1)) {
-                if (turret.requireAmmunition) inventory.RemoveItem (turretHandler.usingAmmunition, 1);
-                if (turret.projectile != null || turretHandler.usingAmmunition.projectile != null) {
-                    GameObject projectile = MonoBehaviour.Instantiate (
-                        turretHandler.usingAmmunition == null ? turret.projectile : turretHandler.usingAmmunition.projectile,
-                        transform.position + transform.rotation * offset,
-                        (turret.projectileInitializeRotation || (turretHandler.usingAmmunition == null ? false : turretHandler.usingAmmunition.projectileInitializeRotation) ? Quaternion.LookRotation (
-                            CalculateLeadPosition (
-                                transform.position + transform.rotation * offset,
-                                target.transform.position,
-                                target.GetComponent<Rigidbody> ().velocity,
-                                turret.projectileVelocity,
-                                turret.leadProjectile
-                            )
-                        ) : transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
-                    ) as GameObject;
-                    projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy, faction);
+            if (target != null) {
+                if (!turret.requireAmmunition || inventory.HasItemCount (turretHandler.usingAmmunition, 1)) {
+                    if (turret.requireAmmunition) inventory.RemoveItem (turretHandler.usingAmmunition, 1);
+                    if (turret.projectile != null || turretHandler.usingAmmunition.projectile != null) {
+                        GameObject projectile = MonoBehaviour.Instantiate (
+                            turretHandler.usingAmmunition == null ? turret.projectile : turretHandler.usingAmmunition.projectile,
+                            transform.position + transform.rotation * offset,
+                            (turret.projectileInitializeRotation || (turretHandler.usingAmmunition == null ? false : turretHandler.usingAmmunition.projectileInitializeRotation) ? Quaternion.LookRotation (
+                                CalculateLeadPosition (
+                                    transform.position + transform.rotation * offset,
+                                    target.transform.position,
+                                    target.GetComponent<Rigidbody> ().velocity,
+                                    turret.projectileVelocity,
+                                    turret.leadProjectile
+                                )
+                            ) : transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
+                        ) as GameObject;
+                        projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy, faction);
+                    }
+                    turretHandler.storedEnergy = 0.0f;
                 }
-                turretHandler.storedEnergy = 0.0f;
+                yield return new WaitForSeconds (turret.activationDelay);
             }
-            yield return new WaitForSeconds (turret.activationDelay);
         }
     }
 

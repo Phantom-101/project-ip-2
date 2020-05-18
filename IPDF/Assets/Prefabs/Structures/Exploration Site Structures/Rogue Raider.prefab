@@ -190,4 +190,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentFaction: Rogue Entities
-  range: 100
+  range: 500

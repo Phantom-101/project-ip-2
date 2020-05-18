@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5582133695706433325, guid: d49907ec3bd5f314b997e4c93aeed53b, type: 3}
   material: {fileID: 2100000, guid: 94c251576adaf4e49a062a6f9dd3928a, type: 2}
-  apparentSize: 3
+  apparentSize: 5
   structureClass: 2
   manufacturer: 0
   description: 
@@ -34,6 +34,6 @@ MonoBehaviour:
   mass: 0.3
   drag: 0.5
   angularDrag: 1
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   offset: {x: 0, y: 1, z: 0}
   rotate: {x: 0, y: -90, z: 0}

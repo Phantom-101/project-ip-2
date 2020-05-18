@@ -75,4 +75,4 @@ MonoBehaviour:
   spawnEffect: {fileID: 5407371536695277013, guid: 9513b44f39783e54091524deaf37b930,
     type: 3}
   instantiated: []
-  spawnRadius: 10
+  spawnRadius: 100

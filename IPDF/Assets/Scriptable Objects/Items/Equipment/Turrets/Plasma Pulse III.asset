@@ -10,30 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
-  m_Name: Photon repeater III
+  m_Name: Plasma Pulse III
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 8d3343399c3b4f9408cbdcf42758c1b5, type: 3}
+  icon: {fileID: 21300000, guid: fb4475b834b2ccb49a08bbdf17b320c8, type: 3}
   basePrice: 0
   size: 0
-  projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
+  projectile: {fileID: 9166618057121596802, guid: 01e0305bd7e64a04789c83bdf3b908d3,
     type: 3}
-  trailColor: {r: 0.9700252, g: 0.7529412, b: 0.40392157, a: 1}
-  maxStoredEnergy: 180
-  rechargeRate: 20
+  trailColor: {r: 0, g: 1, b: 0.08247161, a: 1}
+  trailTime: 0.1
+  maxStoredEnergy: 450
+  rechargeRate: 55
   requireAmmunition: 0
   acceptedAmmunitions: []
-  activations: 3
-  activationDelay: 0.1
-  range: 400
-  activationThreshold: 0.8
-  projectileVelocity: 800
+  activations: 10
+  activationDelay: 0.01
+  range: 96
+  activationThreshold: 0.7
+  projectileVelocity: 150
   projectileSticky: 0
-  projectileTracking: 0
+  projectileTracking: 1
   projectileInitializeRotation: 1
-  projectileInaccuracy: 0.25
+  projectileInaccuracy: 7
   leadProjectile: 1
-  fuelRange: 600
-  damage: 50
+  fuelRange: 96
+  damage: 10
   explosiveDamage: 0
   explosionRange: 0
   explosionDetail: 0

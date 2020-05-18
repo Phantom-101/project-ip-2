@@ -33,7 +33,7 @@ public class WaveSpawner : MonoBehaviour {
                     go.name = waveObject.name;
                     instantiated.Add (go);
                     GameObject spawnedEffect = Instantiate (spawnEffect, transform.position + randomPos, Quaternion.identity) as GameObject;
-                    spawnedEffect.transform.localScale = Vector3.one * (go.GetComponent<StructureBehaviours> () ? go.GetComponent<StructureBehaviours> ().profile.apparentSize * 10.0f : 1.0f);
+                    spawnedEffect.transform.localScale = Vector3.one * (go.GetComponent<StructureBehaviours> () ? go.GetComponent<StructureBehaviours> ().profile.apparentSize : 1.0f) * 10.0f;
                 }
                 wavesSpawned ++;
             }
