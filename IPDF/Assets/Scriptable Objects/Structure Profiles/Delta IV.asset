@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: Delta IV
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
+  mesh: {fileID: -5495902117074765545, guid: 6faf6537b632e054a950f85f3bb4359b, type: 3}
+  material: {fileID: 2100000, guid: 1e911f7be096a184abda12e46d14d129, type: 2}
+  apparentSize: 4
+  structureClass: 0
+  manufacturer: 0
+  description: 
+  hull: 600
+  inventorySize: 140
+  turretSlots: 6
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretAlignments: 000000000000000000000000000000000000000000000000
+  electronicsCapable: 0
+  mass: 2
+  drag: 1
+  angularDrag: 1
+  physicMaterial: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 0, y: 90, z: 0}

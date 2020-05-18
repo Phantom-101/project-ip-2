@@ -52,6 +52,10 @@ TrailRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 803271dfaac8e0a439336a8c5cb1325d, type: 2}
+  - {fileID: 2100000, guid: 803271dfaac8e0a439336a8c5cb1325d, type: 2}
+  - {fileID: 2100000, guid: 803271dfaac8e0a439336a8c5cb1325d, type: 2}
+  - {fileID: 2100000, guid: 803271dfaac8e0a439336a8c5cb1325d, type: 2}
+  - {fileID: 2100000, guid: 803271dfaac8e0a439336a8c5cb1325d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +76,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.2
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.05
@@ -155,4 +159,5 @@ MonoBehaviour:
   activator: {fileID: 0}
   target: {fileID: 0}
   storedEnergyRatio: 0
+  fromFaction: 
   endPosition: {x: 0, y: 0, z: 0}

@@ -17,8 +17,8 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: cd122a7a97478da4d82c9bd12f5ed087, type: 3}
   material: {fileID: 2100000, guid: afc867ef7bac30342a3a61518d1da6e8, type: 2}
-  apparentSize: 0.2
-  structureClass: 1
+  apparentSize: 1
+  structureClass: 2
   manufacturer: 0
   description: 
   hull: 150
@@ -31,7 +31,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 07000000080000000a00000000000000
   electronicsCapable: 0
-  mass: 10
+  mass: 0.3
   drag: 0.4
   angularDrag: 1
   physicMaterial: {fileID: 0}

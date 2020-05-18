@@ -35,9 +35,9 @@ MonoBehaviour:
   - {x: 0.46, y: 0, z: -0.43}
   turretAlignments: 04000000070000000000000000000000080000000a0000000500000006000000
   electronicsCapable: 0
-  mass: 50
+  mass: 1.5
   drag: 0.5
-  angularDrag: 2
+  angularDrag: 1
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   offset: {x: 0, y: 0, z: 0.3}
   rotate: {x: 0, y: 90, z: 0}

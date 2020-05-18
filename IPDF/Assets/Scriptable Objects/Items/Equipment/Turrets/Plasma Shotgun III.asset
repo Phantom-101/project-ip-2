@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
+  m_Name: Plasma Shotgun III
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: fb4475b834b2ccb49a08bbdf17b320c8, type: 3}
+  basePrice: 0
+  size: 0
+  projectile: {fileID: 9166618057121596802, guid: 01e0305bd7e64a04789c83bdf3b908d3,
+    type: 3}
+  trailColor: {r: 0, g: 1, b: 0.08247161, a: 1}
+  maxStoredEnergy: 235
+  rechargeRate: 35
+  requireAmmunition: 0
+  acceptedAmmunitions: []
+  activations: 10
+  activationDelay: 0.01
+  range: 200
+  activationThreshold: 0.2
+  projectileVelocity: 150
+  projectileSticky: 0
+  projectileTracking: 1
+  projectileInitializeRotation: 1
+  projectileInaccuracy: 7
+  leadProjectile: 1
+  fuelRange: 300
+  damage: 200
+  explosiveDamage: 0
+  explosionRange: 0
+  explosionDetail: 0
