@@ -31,5 +31,5 @@ MonoBehaviour:
   drag: 1000000
   angularDrag: 100
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  offset: {x: 0, y: -1, z: 0}
+  offset: {x: 0, y: -10, z: 0}
   rotate: {x: 180, y: 0, z: 0}
