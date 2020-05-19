@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 27505
+  controlID: 14310
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 27470
+  controlID: 14311
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 27471
+  controlID: 14312
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -241,14 +241,14 @@ MonoBehaviour:
     height: 280
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
-  m_Selected: 2
+  m_Selected: 4
   m_LastSelected: 3
 --- !u!114 &11
 MonoBehaviour:
@@ -395,10 +395,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 45}
-      m_SelectedIDs: 3ce70000
+      scrollPos: {x: 0, y: 205}
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 44fbffff4efbffff70fbffff1241000078420000
+      m_ExpandedIDs: 02ecffff6e47000074470000e0470000be480000d2480000204900003c49000076490000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -458,9 +458,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 463.49258, y: -233.34367, z: -177.88907}
+    m_Target: {x: -215.6, y: 0, z: 29.1}
     speed: 2
-    m_Value: {x: 463.49258, y: -233.34367, z: -177.88907}
+    m_Value: {x: -215.6, y: 0, z: 29.1}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -506,13 +506,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.12366514, y: 0.8053067, z: -0.18076782, w: 0.55092406}
+    m_Target: {x: -0.1422463, y: 0.8487004, z: -0.28673303, w: -0.42103037}
     speed: 2
-    m_Value: {x: 0.12366514, y: 0.8053067, z: -0.18076783, w: 0.55092406}
+    m_Value: {x: -0.14224568, y: 0.84869665, z: -0.28673178, w: -0.42102852}
   m_Size:
-    m_Target: 289.71753
+    m_Target: 174.5441
     speed: 2
-    m_Value: 289.71753
+    m_Value: 167.02785
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -615,7 +615,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 175}
     m_SelectedIDs: f0460000
     m_LastClickedID: 18160
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -643,7 +643,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -764,20 +764,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Structure Models & Textures/Flyer
+    - Assets/Scriptable Objects/Structure Profiles
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Structure Models & Textures/Flyer
+  - Assets/Scriptable Objects/Structure Profiles
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\jades\OneDrive\Desktop\Ipdf(2)\hmub\project-ip-2\IPDF
+  m_LastProjectPath: C:\Users\jades\OneDrive\Desktop\Ipdf(2)\NEW\project-ip-2\IPDF
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 417}
-    m_SelectedIDs: 2ce70000
-    m_LastClickedID: 59180
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    scrollPos: {x: 0, y: 201}
+    m_SelectedIDs: c24b0000
+    m_LastClickedID: 19394
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -805,7 +805,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -830,10 +830,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: e66a0000d46a0000d4df0000
+    m_SelectedInstanceIDs: ec81ffff
+    m_LastClickedInstanceID: -32276
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: e66a0000d46a0000d4df000044520000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -849,7 +849,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -900,20 +900,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scriptable Objects/Items/Equipment/Engines
+    - Assets/Structure Models & Textures/Jupiter
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scriptable Objects/Items/Equipment/Engines
+  - Assets/Structure Models & Textures/Jupiter
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\jades\OneDrive\Desktop\Ipdf(2)\hmub\project-ip-2\IPDF
+  m_LastProjectPath: C:\Users\jades\OneDrive\Desktop\Ipdf(2)\NEW\project-ip-2\IPDF
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 113}
-    m_SelectedIDs: 04470000
-    m_LastClickedID: 18180
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    scrollPos: {x: 0, y: 449}
+    m_SelectedIDs: 24740000
+    m_LastClickedID: 29732
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -941,7 +941,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -966,10 +966,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1a33feff
-    m_LastClickedInstanceID: -117990
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 3c140200c06a0000d46a0000
+    m_SelectedInstanceIDs: 34740000
+    m_LastClickedInstanceID: 29748
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 3c140200c06a0000d46a00000000000034740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1036,20 +1036,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Structure Models & Textures/Flyer
+    - Assets/Structure Models & Textures/Ares
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Structure Models & Textures/Flyer
+  - Assets/Structure Models & Textures/Ares
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\jades\OneDrive\Desktop\Ipdf(2)\hmub\project-ip-2\IPDF
+  m_LastProjectPath: C:\Users\jades\OneDrive\Desktop\Ipdf(2)\NEW\project-ip-2\IPDF
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 417}
-    m_SelectedIDs: 2ce70000
-    m_LastClickedID: 59180
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    scrollPos: {x: 0, y: 399}
+    m_SelectedIDs: 468c0000
+    m_LastClickedID: 35910
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1077,7 +1077,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc3f0000f6450000f8450000fa450000fc450000fe450000f046000000ca9a3b
+    m_ExpandedIDs: 00000000064200006e4b0000704b0000724b0000744b0000764b0000784b0000244c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1102,8 +1102,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1a33feff
-    m_LastClickedInstanceID: -117990
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 3ce70000
     m_RenameOverlay:
@@ -1121,7 +1121,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
