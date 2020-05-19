@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
-  m_Name: Plasma Pulse III
+  m_Name: Laser IX
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: bf84f19036701f04980efcbd2e2d2d50, type: 3}
+  icon: {fileID: 21300000, guid: ffa27c4b1c2c97c4a9575faaf69012cb, type: 3}
   basePrice: 0
   size: 0
-  projectile: {fileID: 9166618057121596802, guid: 01e0305bd7e64a04789c83bdf3b908d3,
+  projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
-  trailColor: {r: 0, g: 1, b: 0.08247161, a: 1}
-  trailTime: 0.4
-  maxStoredEnergy: 450
-  rechargeRate: 55
+  trailColor: {r: 0, g: 0.55550647, b: 1, a: 1}
+  trailTime: 3
+  maxStoredEnergy: 3000
+  rechargeRate: 500
   requireAmmunition: 0
   acceptedAmmunitions: []
-  activations: 10
-  activationDelay: 0.01
-  range: 200
-  activationThreshold: 0.7
-  projectileVelocity: 200
+  activations: 1
+  activationDelay: 0
+  range: 1000
+  activationThreshold: 0.4
+  projectileVelocity: 1000
   projectileSticky: 0
-  projectileTracking: 1
+  projectileTracking: 0
   projectileInitializeRotation: 1
-  projectileInaccuracy: 4
+  projectileInaccuracy: 0
   leadProjectile: 1
-  fuelRange: 300
-  damage: 700
+  fuelRange: 1200
+  damage: 500
   explosiveDamage: 0
   explosionRange: 0
   explosionDetail: 0

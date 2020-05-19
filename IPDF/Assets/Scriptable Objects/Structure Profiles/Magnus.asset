@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Jupiter
+  m_Name: Magnus
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
   size: 0
-  mesh: {fileID: -5495902117074765545, guid: 5d8af20d57982c440ad14c97b6c66110, type: 3}
-  material: {fileID: 2100000, guid: 42a5bdd1c5a5f1f41bf3b5f8de5d0c5d, type: 2}
-  apparentSize: 100
+  mesh: {fileID: -5495902117074765545, guid: a2dff1e4cd76cfd4a924efc75e5d4af8, type: 3}
+  material: {fileID: 2100000, guid: 0c2daaef9ed27274daf1ddb3713a0dec, type: 2}
+  apparentSize: 150
   structureClass: 8
-  manufacturer: 3
-  description: Large TEF capital ship
-  hull: 3000
-  inventorySize: 1200
+  manufacturer: 5
+  description: 
+  hull: 3400
+  inventorySize: 1000
   turretSlots: 10
   turretPositions:
   - {x: 0, y: 0, z: 0}
@@ -40,16 +40,11 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
+  turretAlignments: 
   electronicsCapable: 0
   mass: 100
   drag: 1
   angularDrag: 4
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  offset: {x: 0, y: 0, z: 35}
-  rotate: {x: 0, y: 90, z: 0}
+  offset: {x: 0, y: 4, z: 0}
+  rotate: {x: 0, y: -90, z: 0}
