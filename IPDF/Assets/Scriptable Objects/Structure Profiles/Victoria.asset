@@ -36,6 +36,6 @@ MonoBehaviour:
   mass: 10
   drag: 1
   angularDrag: 0.7
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 90, z: 0}

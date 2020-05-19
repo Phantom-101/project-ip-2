@@ -37,8 +37,6 @@ public class DiplomacyManager : MonoBehaviour {
         if (factionA == factionB) return;
         StringPair involved = new StringPair (factionA, factionB);
         if (!relations.ContainsKey (involved)) relations.Add(involved, 0.0f);
-        float originalValue = relations[involved];
-        float newValue = originalValue;
-        relations[involved] = newValue;
+        relations[involved] += change;
     }
 }

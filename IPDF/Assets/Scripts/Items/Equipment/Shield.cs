@@ -80,6 +80,8 @@ public class ShieldHandler {
     }
 
     public float TakeDamage (int sector, float amount) {
+        if (strengths.Length != 6) strengths = new float[6];
+        if (shieldTimesSinceLastDamaged.Length != 6) shieldTimesSinceLastDamaged = new float[6];
         if (strengths[sector] >= amount) {
             strengths[sector] -= amount;
             shieldTimesSinceLastDamaged[sector] = 0.3f;

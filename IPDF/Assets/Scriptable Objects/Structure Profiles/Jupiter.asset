@@ -17,13 +17,13 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 5d8af20d57982c440ad14c97b6c66110, type: 3}
   material: {fileID: 2100000, guid: 42a5bdd1c5a5f1f41bf3b5f8de5d0c5d, type: 2}
-  apparentSize: 0
+  apparentSize: 100
   structureClass: 8
   manufacturer: 3
   description: Large TEF capital ship
   hull: 3000
   inventorySize: 1200
-  turretSlots: 20
+  turretSlots: 10
   turretPositions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -45,11 +45,11 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  turretAlignments: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
   electronicsCapable: 0
-  mass: 10
+  mass: 100
   drag: 1
-  angularDrag: 0.5
-  physicMaterial: {fileID: 0}
-  offset: {x: 0, y: -15, z: 0}
+  angularDrag: 2
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  offset: {x: 0, y: 0, z: 35}
   rotate: {x: 0, y: 90, z: 0}

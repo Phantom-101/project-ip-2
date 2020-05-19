@@ -131,7 +131,9 @@ public class StructureBehaviours : MonoBehaviour {
                 sizeDif = MathUtils.Clamp (sizeDif - 0.2f, 0.01f, 100.0f);
                 float distance = Vector3.Distance (transform.position, structure.transform.position);
                 float weight = distance + distance * sizeDif / 5.0f;
-                if (structure != this && structure.faction != faction && diplomacyManager.GetRelations (faction, structure.faction) < -0.5f && !structure.cloaked && weight < leastWeight) {
+                if (structure != this && structure.faction != faction &&
+                    diplomacyManager.GetRelations (faction, structure.faction) <= -0.5f && !structure.cloaked && weight < leastWeight &&
+                    structure.transform.parent == transform.parent) {
                     leastWeight = weight;
                     closest = structure;
                 }
@@ -149,7 +151,7 @@ public class StructureBehaviours : MonoBehaviour {
                         effectiveTurrets ++;
                     }
                 }
-                float optimalRange = totalRange / effectiveTurrets;
+                float optimalRange = totalRange / effectiveTurrets * 0.75f;
                 engine.forwardSetting = 1.0f;
                 Vector3 heading = targetted.transform.position - transform.position;
                 Vector3 perp = Vector3.Cross (transform.forward, heading);

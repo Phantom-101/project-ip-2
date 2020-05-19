@@ -22,9 +22,9 @@ public class Teleporter : MonoBehaviour {
             if ((transform.position - structure.transform.position).sqrMagnitude <= triggerRange * triggerRange) {
                 structure.transform.position = other.position + other.forward * forwardDistance * 2.0f;
                 structure.transform.rotation = other.rotation;
-                if (cam.playerStructure == structure) {
-                    cam.ResetPosition ();
-                }
+                structure.targetted = null;
+                structure.transform.parent = other.parent;
+                if (cam.playerStructure == structure) cam.ResetPosition ();
             }
     }
 }
