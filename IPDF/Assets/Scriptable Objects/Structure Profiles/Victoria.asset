@@ -18,6 +18,8 @@ MonoBehaviour:
   mesh: {fileID: -7754318969949236687, guid: 2eaf89cd088669e4ea52900192510361, type: 3}
   material: {fileID: 2100000, guid: 62ad9e2812390aa488b0f260edf74180, type: 2}
   apparentSize: 4
+  isStation: 0
+  enforceHeight: 1
   structureClass: 4
   manufacturer: 8
   description: Pirate ship, prusumed to be manufactured in a captured Delta Shipyard.

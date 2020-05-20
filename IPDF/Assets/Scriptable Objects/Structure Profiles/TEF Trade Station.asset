@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Tef station
+  m_Name: TEF Trade Station
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -18,6 +18,8 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: 3f74945d214ee4e45914e3866fcce593, type: 3}
   material: {fileID: 2100000, guid: 3fa01f9bd2cbf8a4db3d33d03430553a, type: 2}
   apparentSize: 200
+  isStation: 1
+  enforceHeight: 1
   structureClass: 0
   manufacturer: 3
   description: 
@@ -27,6 +29,13 @@ MonoBehaviour:
   turretPositions: []
   turretAlignments: 
   electronicsCapable: 0
+  dockingPoints: 4
+  dockingLocations:
+  - {x: 200, y: 0, z: 0}
+  - {x: -200, y: 0, z: 0}
+  - {x: 0, y: 0, z: 200}
+  - {x: 0, y: 0, z: -200}
+  dockingRange: 250
   mass: 100000
   drag: 1000000
   angularDrag: 100

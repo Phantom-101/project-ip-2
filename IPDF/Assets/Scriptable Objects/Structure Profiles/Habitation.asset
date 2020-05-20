@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Hab sub station
+  m_Name: Habitation
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -21,6 +21,7 @@ MonoBehaviour:
   structureClass: 0
   manufacturer: 0
   description: 
+  isStation: 1
   hull: 1000
   inventorySize: 0
   turretSlots: 0
@@ -31,5 +32,5 @@ MonoBehaviour:
   drag: 1000
   angularDrag: 1000
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  offset: {x: 0, y: 40, z: 0}
+  offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 0, z: 0}

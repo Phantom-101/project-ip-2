@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Trade Station (TEF)
+  m_Name: Refinery
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -18,6 +18,8 @@ MonoBehaviour:
   mesh: {fileID: 995598639654306925, guid: ece266a5b3a26d642a252450b835a970, type: 3}
   material: {fileID: 2100000, guid: 52c1a74757b29d8498553657f0d0ca88, type: 2}
   apparentSize: 0
+  isStation: 1
+  enforceHeight: 1
   structureClass: 0
   manufacturer: 3
   description: 
@@ -40,6 +42,6 @@ MonoBehaviour:
   mass: 10000
   drag: 1000
   angularDrag: 1000
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   offset: {x: 0, y: 27, z: 0}
   rotate: {x: 0, y: 0, z: 0}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Essentials;
 
@@ -29,20 +30,27 @@ public class PlayerController : MonoBehaviour {
                 structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
                 structureBehaviours.engine.turnSetting = (leftPressed ? -1.0f : 0.0f) + (rightPressed ? 1.0f : 0.0f);
             }
-            if (Input.GetMouseButton (0)) {
+            if (Input.GetMouseButtonDown (0) && !PointerOverUIObject ()) {
                 Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast (ray, out hit, 1000.0f)) {
+                if (Physics.Raycast (ray, out hit, 5000.0f)) {
                     GameObject hitGameObject = hit.transform.gameObject;
-                    if (hitGameObject != structureBehaviours.gameObject) {
+                    if (hitGameObject != structureBehaviours.gameObject && hitGameObject.transform.parent == structureBehaviours.transform.parent) {
                         StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
-                        if (hitStructureBehaviours != null) {
-                            structureBehaviours.targetted = hitStructureBehaviours;
-                        }
+                        if (hitStructureBehaviours != null && hitStructureBehaviours != structureBehaviours.targetted) structureBehaviours.targetted = hitStructureBehaviours;
+                        else structureBehaviours.targetted = null;
                     }
                 }
             }
         }
+    }
+
+    public bool PointerOverUIObject () {
+        PointerEventData eventDataCurrentPosition = new PointerEventData (EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult> ();
+        EventSystem.current.RaycastAll (eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 
     public void TurnLeftButtonDown () {
@@ -59,5 +67,22 @@ public class PlayerController : MonoBehaviour {
 
     public void TurnRightButtonUp () {
         rightPressed = false;
+    }
+
+    public void Reset () {
+        forwardPowerSlider.value = 0.0f;
+        leftPressed = false;
+        rightPressed = false;
+    }
+
+    public void Dock () {
+        if (structureBehaviours.targetted == null) return;
+        structureBehaviours.targetted.Dock (structureBehaviours);
+    }
+
+    public void Undock () {
+        StructureBehaviours stationStructureBehaviours = structureBehaviours.transform.parent.GetComponent<StructureBehaviours> ();
+        if (stationStructureBehaviours == null) return;
+        stationStructureBehaviours.Undock (structureBehaviours);
     }
 }

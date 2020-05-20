@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7218308573696321713
+--- !u!1 &6355110525696986322
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7218308573696321741}
-  - component: {fileID: 7218308573696321740}
-  - component: {fileID: 7218308573696321715}
-  - component: {fileID: 7218308573696321714}
-  - component: {fileID: 4801963262657937283}
+  - component: {fileID: 6355110525696986286}
+  - component: {fileID: 6355110525696986287}
+  - component: {fileID: 6355110525696986320}
+  - component: {fileID: 6355110525696986321}
+  - component: {fileID: 198908296407400041}
   m_Layer: 0
-  m_Name: Rogue Assailer
+  m_Name: Rogue Slasher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7218308573696321741
+--- !u!4 &6355110525696986286
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7218308573696321713}
+  m_GameObject: {fileID: 6355110525696986322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.45, y: 0, z: 101.47}
+  m_LocalPosition: {x: -2.1, y: 0, z: 108.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7218308573696321740
+--- !u!114 &6355110525696986287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7218308573696321713}
+  m_GameObject: {fileID: 6355110525696986322}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
@@ -56,64 +56,64 @@ MonoBehaviour:
     storage: {fileID: 0}
     inventorySize: 0
   savedTurrets:
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
+  - equipper: {fileID: 6355110525696986287}
+    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
   savedShield:
-    equipper: {fileID: 7218308573696321740}
+    equipper: {fileID: 6355110525696986287}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 1
     strengths:
@@ -125,7 +125,7 @@ MonoBehaviour:
     - 1500
     shieldTimesSinceLastDamaged: []
   savedCapacitor:
-    equipper: {fileID: 7218308573696321740}
+    equipper: {fileID: 6355110525696986287}
     capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
     storedEnergy: 20000
   savedGenerator:
@@ -134,7 +134,7 @@ MonoBehaviour:
     online: 1
   savedEngine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 20360508037d82c43957942da1f8e8a4, type: 2}
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
@@ -190,46 +190,47 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  docked: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
   targetted: {fileID: 0}
   initialized: 0
---- !u!114 &7218308573696321715
+--- !u!114 &6355110525696986320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7218308573696321713}
+  m_GameObject: {fileID: 6355110525696986322}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7218308573696321714
+--- !u!114 &6355110525696986321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7218308573696321713}
+  m_GameObject: {fileID: 6355110525696986322}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4801963262657937283
+--- !u!114 &198908296407400041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7218308573696321713}
+  m_GameObject: {fileID: 6355110525696986322}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bee69b4b67b8654e8b0871f38ba4d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentFaction: Rogue Entities
-  range: 500
+  range: 1000

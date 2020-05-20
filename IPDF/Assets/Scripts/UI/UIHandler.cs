@@ -13,23 +13,25 @@ public class UIHandler : MonoBehaviour {
     public Gradient hullGradient;
     public Gradient shieldGradient;
     public Gradient energyGradient;
-
-    GameObject canvas;
-    Image hullUI;
-    Image[] shieldUI = new Image[6];
-    RectTransform sourceTo;
-    TextMeshProUGUI speedCounter;
-    GameObject targetInformationPanel;
-    Image targetHullUI;
-    Image[] targetShieldUI = new Image[6];
-    TextMeshProUGUI targetName;
-    TextMeshProUGUI targetFaction;
-    TextMeshProUGUI targetDistance;
-    RectTransform toSource;
-    Transform equipmentButtonsParent;
-    List<GameObject> equipmentButtons = new List<GameObject> ();
-    RectTransform capacitorTransform;
-    GameObject AIInfo;
+    [Header ("UI Elements")]
+    public GameObject canvas;
+    public Image hullUI;
+    public Image[] shieldUI = new Image[6];
+    public RectTransform sourceTo;
+    public TextMeshProUGUI speedCounter;
+    public GameObject targetInformationPanel;
+    public Image targetHullUI;
+    public Image[] targetShieldUI = new Image[6];
+    public TextMeshProUGUI targetName;
+    public TextMeshProUGUI targetFaction;
+    public TextMeshProUGUI targetDistance;
+    public RectTransform toSource;
+    public Transform equipmentButtonsParent;
+    public List<GameObject> equipmentButtons = new List<GameObject> ();
+    public RectTransform capacitorTransform;
+    public GameObject AIInfo;
+    public GameObject dockButton;
+    public GameObject undockButton;
 
     void Awake () {
         canvas = GameObject.Find ("Canvas");
@@ -47,6 +49,8 @@ public class UIHandler : MonoBehaviour {
         equipmentButtonsParent = canvas.transform.Find ("Equipment Buttons Parent");
         capacitorTransform = canvas.transform.Find ("Capacitor Background/Capacitor").GetComponent<RectTransform> ();
         AIInfo = canvas.transform.Find ("AI Indicators").gameObject;
+        dockButton = canvas.transform.Find ("Dock Button").gameObject;
+        undockButton = canvas.transform.Find ("Undock Button").gameObject;
     }
 
     void Update () {
@@ -135,6 +139,21 @@ public class UIHandler : MonoBehaviour {
             button.GetComponent<Button> ().interactable = source.turrets[i].CanActivate (source.targetted == null ? null : source.targetted.gameObject);
             SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.targetted == null ? null : source.targetted.gameObject), button.GetComponent<Button> ());
             equipmentButtons[i] = button;
+        }
+        StructureBehaviours stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
+        // Docking
+        if (source.targetted == null || source.targetted.profile.dockingPoints == 0 ||
+            (source.transform.position - source.targetted.transform.position).sqrMagnitude > source.targetted.profile.dockingRange * source.targetted.profile.dockingRange ||
+            stationStructureBehaviours != null) {
+            dockButton.SetActive (false);
+        } else {
+            dockButton.SetActive (true);
+        }
+        // Undocking
+        if (stationStructureBehaviours == null) {
+            undockButton.SetActive (false);
+        } else {
+            undockButton.SetActive (true);
         }
     }
 

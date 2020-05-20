@@ -18,6 +18,8 @@ MonoBehaviour:
   mesh: {fileID: 4711208715938537054, guid: b9a6df060ce18af48ae020174aad4003, type: 3}
   material: {fileID: 2100000, guid: 04abeab4e2c3161418de61f1d515e98a, type: 2}
   apparentSize: 10
+  isStation: 0
+  enforceHeight: 1
   structureClass: 6
   manufacturer: 4
   description: 

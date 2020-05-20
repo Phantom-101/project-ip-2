@@ -8,17 +8,25 @@ public class StructureProfile : Item {
     public Mesh mesh;
     public Material material;
     public float apparentSize;
-    [Header ("Attributes")]
+    [Header ("Adjustables")]
+    public bool isStation;
+    public bool enforceHeight;
+    [Header ("Lore Attributes")]
     public StructureClass structureClass;
     public Manufacturer manufacturer;
     public string description;
     [Header ("Stats")]
     public float hull;
     public float inventorySize;
+    [Header ("Fitting")]
     public int turretSlots;
     public Vector3[] turretPositions;
     public TurretAlignment[] turretAlignments;
     public bool electronicsCapable;
+    [Header ("Docking")]
+    public int dockingPoints;
+    public Vector3[] dockingLocations;
+    public float dockingRange;
     [Header ("Physics")]
     public float mass;
     public float drag;

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Landing pad
+  m_Name: Landing Pad
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -18,6 +18,8 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: afd3d49cfa916bd449ac1b74ee6927d8, type: 3}
   material: {fileID: 2100000, guid: e19b934b0e04bc943b413418659e0926, type: 2}
   apparentSize: 1
+  isStation: 1
+  enforceHeight: 1
   structureClass: 0
   manufacturer: 8
   description: 
@@ -31,5 +33,5 @@ MonoBehaviour:
   drag: 10000000
   angularDrag: 0
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  offset: {x: 0, y: -10, z: -50}
+  offset: {x: 0, y: 0, z: -20}
   rotate: {x: 0, y: 0, z: 0}

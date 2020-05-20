@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Adr Defence Platform
+  m_Name: ADR Defence Platform
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -18,6 +18,8 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: 91c57ba3ee0c44c40bb6787f3dc958f8, type: 3}
   material: {fileID: 2100000, guid: 5aa47bd91276777469f6b02ede536eab, type: 2}
   apparentSize: 0
+  isStation: 0
+  enforceHeight: 1
   structureClass: 2
   manufacturer: 1
   description: 

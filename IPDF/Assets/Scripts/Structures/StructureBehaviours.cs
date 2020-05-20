@@ -31,6 +31,8 @@ public class StructureBehaviours : MonoBehaviour {
     public EngineHandler engine;
     public ElectronicsHandler electronics;
     public TractorBeamHandler tractorBeam;
+    [Header ("Docking")]
+    public GameObject[] docked;
     [Header ("Physics")]
     public new Rigidbody rigidbody;
     public new ConstantForce constantForce;
@@ -42,10 +44,12 @@ public class StructureBehaviours : MonoBehaviour {
 
     StructuresManager structuresManager;
     DiplomacyManager diplomacyManager;
+    PlayerController playerController;
 
     public void Initialize () {
         structuresManager = FindObjectOfType<StructuresManager> ();
         diplomacyManager = FindObjectOfType<DiplomacyManager> ();
+        playerController = FindObjectOfType<PlayerController> ();
         structuresManager.AddStructure (this);
         GameObject meshGameObject = new GameObject ();
         meshGameObject.name = "Mesh and Collider";
@@ -54,7 +58,7 @@ public class StructureBehaviours : MonoBehaviour {
         MeshCollider meshCollider = meshGameObject.AddComponent<MeshCollider> ();
         Renderer renderer = meshGameObject.AddComponent<MeshRenderer> ();
         meshCollider.sharedMesh = profile.mesh;
-        meshCollider.convex = true;
+        if (!profile.isStation) meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
         renderer.material = profile.material;
@@ -88,11 +92,13 @@ public class StructureBehaviours : MonoBehaviour {
             electronics = new ElectronicsHandler (this);
             tractorBeam = new TractorBeamHandler (this);
         }
+        if (docked.Length != profile.dockingPoints) docked = new GameObject[profile.dockingPoints];
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.mass = profile.mass;
         rigidbody.drag = profile.drag;
         rigidbody.angularDrag = profile.angularDrag;
+        if (profile.isStation) rigidbody.isKinematic = true;
         // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
         constantForce = GetComponent<ConstantForce> ();
         if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
@@ -107,8 +113,10 @@ public class StructureBehaviours : MonoBehaviour {
             Destroy (gameObject);
         }
         // Position and physics stuff
-        transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
-        rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
+        if (profile.enforceHeight) {
+            transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
+            rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
+        }
         transform.localEulerAngles = new Vector3 (0.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
         rigidbody.angularVelocity = new Vector3 (0.0f, rigidbody.angularVelocity.y, rigidbody.angularVelocity.z);
         // Hull damage timer
@@ -119,6 +127,7 @@ public class StructureBehaviours : MonoBehaviour {
         shield.Process ();
         generator.GenerateEnergy (capacitor);
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
+        if (transform.parent.GetComponent<StructureBehaviours> ()) engine.forwardSetting = 0.0f;
         engine.ApplySettings (GetComponent<ConstantForce> ());
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
@@ -250,5 +259,38 @@ public class StructureBehaviours : MonoBehaviour {
         else if (angle >= 90.0f && angle < 150.0f) directionalSector = 2;
         else directionalSector = 3;
         return directionalSector;
+    }
+
+    public void Dock (StructureBehaviours docker) {
+        if ((docker.transform.position - transform.position).sqrMagnitude > profile.dockingRange * profile.dockingRange) return;
+        for (int i = 0; i < profile.dockingPoints; i++) {
+            if (docked[i] == null) {
+                docker.transform.parent = transform;
+                docked[i] = docker.gameObject;
+                docker.transform.localPosition = profile.dockingLocations[i];
+                if (playerController.structureBehaviours == docker) {
+                    playerController.Reset ();
+                    FindObjectOfType<CameraFollowPlayer> ().ResetPosition ();
+                }
+                docker.engine.forwardSetting = 0.0f;
+                docker.engine.turnSetting = 0.0f;
+                docker.electronics.Deactivate ();
+                docker.tractorBeam.Deactivate ();
+                Rigidbody dockerRigidbody = docker.GetComponent<Rigidbody> ();
+                dockerRigidbody.velocity = Vector3.zero;
+                dockerRigidbody.angularVelocity = Vector3.zero;
+                break;
+            }
+        }
+    }
+
+    public void Undock (StructureBehaviours undocker) {
+        for (int i = 0; i < profile.dockingPoints; i++) {
+            if (docked[i] == undocker.gameObject) {
+                undocker.transform.parent = transform.parent;
+                docked[i] = null;
+                break;
+            }
+        }
     }
 }
