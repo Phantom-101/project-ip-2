@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7218308573696321713, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
         type: 3}
       propertyPath: m_Name
-      value: Missile Spam Noctis
+      value: Rogue Bombarder
       objectReference: {fileID: 0}
     - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
         type: 3}
@@ -18,6 +18,53 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: aaf0c94d204ef9047a8d72f926ff1d7f,
         type: 2}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedEngine.engine
+      value: 
+      objectReference: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b,
+        type: 2}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedShield.shield
+      value: 
+      objectReference: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64,
+        type: 2}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedShield.strengths.Array.data[0]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedShield.strengths.Array.data[1]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedShield.strengths.Array.data[2]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedShield.strengths.Array.data[3]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedShield.strengths.Array.data[4]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: savedShield.strengths.Array.data[5]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218308573696321740, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
+        type: 3}
+      propertyPath: faction
+      value: Rogue Entities
+      objectReference: {fileID: 0}
     - target: {fileID: 7218308573696321741, guid: 6d05ed6f8ef8dc24ca0de969c85adb99,
         type: 3}
       propertyPath: m_LocalPosition.x

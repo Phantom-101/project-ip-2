@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: ADR Defence Platform
+  m_Name: Adr DP
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 91c57ba3ee0c44c40bb6787f3dc958f8, type: 3}
   material: {fileID: 2100000, guid: 5aa47bd91276777469f6b02ede536eab, type: 2}
-  apparentSize: 0
+  apparentSize: 4
   isStation: 0
-  enforceHeight: 1
-  structureClass: 2
+  enforceHeight: 0
+  structureClass: 0
   manufacturer: 1
   description: 
   hull: 2000
@@ -32,11 +32,14 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  turretAlignments: 
+  turretAlignments: 0000000000000000000000000000000000000000
   electronicsCapable: 0
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRange: 0
   mass: 1
-  drag: 2
-  angularDrag: 0.5
-  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  offset: {x: 0, y: 0, z: 0}
+  drag: 100
+  angularDrag: 1
+  physicMaterial: {fileID: 0}
+  offset: {x: 0, y: 0, z: -3}
   rotate: {x: 0, y: 0, z: 0}

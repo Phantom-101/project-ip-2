@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
-  m_Name: Rapid Launcher I
+  m_Name: Plasma Pulse I
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 6abf769ac36cdc340af8c66a9e8dbea7, type: 3}
+  icon: {fileID: 0}
   basePrice: 0
   size: 0
   projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
-  trailColor: {r: 1, g: 0.6505918, b: 0, a: 1}
-  trailTime: 0.05
-  maxStoredEnergy: 250
-  rechargeRate: 15
+  trailColor: {r: 0, g: 1, b: 0, a: 1}
+  trailTime: 0.1
+  maxStoredEnergy: 200
+  rechargeRate: 10
   requireAmmunition: 0
   acceptedAmmunitions: []
-  activations: 4
-  activationDelay: 0.25
-  range: 300
-  activationThreshold: 1
-  projectileVelocity: 60
-  projectileSticky: 1
-  projectileTracking: 4
+  activations: 3
+  activationDelay: 0.2
+  range: 400
+  activationThreshold: 0.8
+  projectileVelocity: 150
+  projectileSticky: 0
+  projectileTracking: 0
   projectileInitializeRotation: 1
   projectileInaccuracy: 0
   leadProjectile: 1
   fuelRange: 500
-  damage: 100
-  explosiveDamage: 10
-  explosionRange: 25
-  explosionDetail: 18
+  damage: 50
+  explosiveDamage: 0
+  explosionRange: 0
+  explosionDetail: 0

@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
-  m_Name: Rapid Launcher I
+  m_Name: Lancer Launcher I
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 6abf769ac36cdc340af8c66a9e8dbea7, type: 3}
+  icon: {fileID: 21300000, guid: 78f5065891b11c7438071de2c37b4716, type: 3}
   basePrice: 0
   size: 0
   projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
-  trailColor: {r: 1, g: 0.6505918, b: 0, a: 1}
-  trailTime: 0.05
-  maxStoredEnergy: 250
-  rechargeRate: 15
+  trailColor: {r: 1, g: 0.30588236, b: 0, a: 0.70980394}
+  trailTime: 0.03
+  maxStoredEnergy: 150
+  rechargeRate: 20
   requireAmmunition: 0
   acceptedAmmunitions: []
-  activations: 4
-  activationDelay: 0.25
-  range: 300
+  activations: 1
+  activationDelay: 0
+  range: 500
   activationThreshold: 1
-  projectileVelocity: 60
+  projectileVelocity: 200
   projectileSticky: 1
-  projectileTracking: 4
-  projectileInitializeRotation: 1
+  projectileTracking: 80
+  projectileInitializeRotation: 0
   projectileInaccuracy: 0
-  leadProjectile: 1
-  fuelRange: 500
-  damage: 100
-  explosiveDamage: 10
-  explosionRange: 25
-  explosionDetail: 18
+  leadProjectile: 0
+  fuelRange: 600
+  damage: 50
+  explosiveDamage: 0
+  explosionRange: 0
+  explosionDetail: 0

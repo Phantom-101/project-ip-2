@@ -33,7 +33,10 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 00000000000000000400000004000000
   electronicsCapable: 0
-  mass: 0.3
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRange: 0
+  mass: 1.2
   drag: 0.5
   angularDrag: 1
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
