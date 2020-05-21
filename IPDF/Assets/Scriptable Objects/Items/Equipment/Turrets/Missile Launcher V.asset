@@ -18,7 +18,7 @@ MonoBehaviour:
   projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
   trailColor: {r: 1, g: 0.056822382, b: 0, a: 1}
-  trailTime: 0.1
+  trailTime: 0.25
   maxStoredEnergy: 250
   rechargeRate: 25
   requireAmmunition: 0

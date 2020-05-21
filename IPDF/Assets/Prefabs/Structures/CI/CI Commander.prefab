@@ -118,13 +118,6 @@ MonoBehaviour:
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 464219059500026786}
-    turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
   savedShield:
     equipper: {fileID: 464219059500026786}
     shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
@@ -203,6 +196,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  docked: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1

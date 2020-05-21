@@ -20,6 +20,8 @@ MonoBehaviour:
   apparentSize: 10
   isStation: 0
   enforceHeight: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
   structureClass: 4
   manufacturer: 3
   description: 
@@ -35,6 +37,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 00000000040000000a000000080000000c00000007000000
   electronicsCapable: 1
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRange: 0
   mass: 18
   drag: 0.5
   angularDrag: 2

@@ -160,7 +160,7 @@ public class StructureBehaviours : MonoBehaviour {
                         effectiveTurrets ++;
                     }
                 }
-                float optimalRange = totalRange / effectiveTurrets * 0.75f;
+                float optimalRange = totalRange / effectiveTurrets * profile.engagementRangeMultiplier;
                 engine.forwardSetting = 1.0f;
                 Vector3 heading = targetted.transform.position - transform.position;
                 Vector3 perp = Vector3.Cross (transform.forward, heading);
@@ -173,8 +173,8 @@ public class StructureBehaviours : MonoBehaviour {
                 float lrMult = leftRight >= 0.0f ? 1.0f : -1.0f;
                 angle *= lrMult;
                 float approachAngle = 90.0f * lrMult;
-                approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? 60.0f * lrMult : 0.0f;
-                approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.9f ? 60.0f * lrMult : 0.0f;
+                approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? profile.rangeChangeAngle * lrMult : 0.0f;
+                approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.75f ? profile.rangeChangeAngle * lrMult : 0.0f;
                 Debug.DrawRay (transform.position, transform.rotation * Quaternion.Euler (0.0f, angle - approachAngle, 0.0f) * Vector3.forward * 10.0f * profile.apparentSize, Color.yellow);
                 if (angle > approachAngle) engine.turnSetting = 1.0f;
                 else if (angle > 0.0f && angle < approachAngle * 0.9) engine.turnSetting = -1.0f;

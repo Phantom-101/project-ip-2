@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Adr DP
+  m_Name: ADR DP
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -19,25 +19,26 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 5aa47bd91276777469f6b02ede536eab, type: 2}
   apparentSize: 4
   isStation: 0
-  enforceHeight: 0
+  enforceHeight: 1
+  engagementRangeMultiplier: 0.01
+  rangeChangeAngle: 180
   structureClass: 0
   manufacturer: 1
   description: 
   hull: 2000
   inventorySize: 0
-  turretSlots: 5
+  turretSlots: 4
   turretPositions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  turretAlignments: 0000000000000000000000000000000000000000
+  turretAlignments: 00000000000000000000000000000000
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
   dockingRange: 0
-  mass: 1
+  mass: 3
   drag: 100
   angularDrag: 1
   physicMaterial: {fileID: 0}

@@ -18,16 +18,22 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: 6558588a5e008af4fbd1e34dae3d66d4, type: 3}
   material: {fileID: 2100000, guid: 0e3b7ba8f66b5ff4dabbc6ee74ef19cf, type: 2}
   apparentSize: 1
+  isStation: 1
+  enforceHeight: 0
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
   structureClass: 0
   manufacturer: 0
   description: 
-  isStation: 1
   hull: 1000
   inventorySize: 0
   turretSlots: 0
   turretPositions: []
   turretAlignments: 
   electronicsCapable: 0
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRange: 0
   mass: 1000
   drag: 1000
   angularDrag: 1000

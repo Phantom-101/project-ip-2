@@ -20,6 +20,8 @@ MonoBehaviour:
   apparentSize: 5
   isStation: 0
   enforceHeight: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
   structureClass: 4
   manufacturer: 2
   description: 
@@ -36,9 +38,12 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 00000000000000000000000000000000000000000000000000000000
   electronicsCapable: 0
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRange: 0
   mass: 5
-  drag: 1
-  angularDrag: 0.5
+  drag: 0.5
+  angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 90, z: 0}

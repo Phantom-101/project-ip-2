@@ -20,6 +20,8 @@ MonoBehaviour:
   apparentSize: 5
   isStation: 0
   enforceHeight: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
   structureClass: 3
   manufacturer: 0
   description: 

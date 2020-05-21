@@ -11,6 +11,9 @@ public class StructureProfile : Item {
     [Header ("Adjustables")]
     public bool isStation;
     public bool enforceHeight;
+    [Header ("AI")]
+    public float engagementRangeMultiplier;
+    public float rangeChangeAngle;
     [Header ("Lore Attributes")]
     public StructureClass structureClass;
     public Manufacturer manufacturer;

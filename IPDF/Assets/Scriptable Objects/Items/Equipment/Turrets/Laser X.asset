@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
-  m_Name: Laser IX
+  m_Name: Laser X
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: ffa27c4b1c2c97c4a9575faaf69012cb, type: 3}
   basePrice: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
   projectileInitializeRotation: 1
   projectileInaccuracy: 0
   leadProjectile: 1
-  fuelRange: 1200
+  fuelRange: 1000
   damage: 500
   explosiveDamage: 0
   explosionRange: 0

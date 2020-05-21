@@ -20,6 +20,8 @@ MonoBehaviour:
   apparentSize: 4
   isStation: 0
   enforceHeight: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
   structureClass: 4
   manufacturer: 8
   description: Pirate ship, prusumed to be manufactured in a captured Delta Shipyard.
@@ -35,6 +37,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 000000000000000000000000000000000000000000000000
   electronicsCapable: 0
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRange: 0
   mass: 10
   drag: 1
   angularDrag: 0.7
