@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour {
     float waitDestroy = 0.0f;
     float waitDestroyTimer = 0.0f;
     float fuelExpended = 0.0f;
+    float timeElapsed = 0.0f;
 
     public void Initialize (Turret turret, Ammunition ammunition, GameObject activator, GameObject target, float storedEnergyRatio, string fromFaction) {
         diplomacyManager = FindObjectOfType<DiplomacyManager> ();
@@ -48,8 +49,9 @@ public class Projectile : MonoBehaviour {
             if (waitDestroyTimer >= waitDestroy) Destroy (gameObject);
             return;
         }
+        timeElapsed += Time.deltaTime;
         if (ammunition == null) {
-            if (turret.projectileSticky && target != null) endPosition = target.transform.position;
+            if (turret.projectileSticky && target != null && timeElapsed >= turret.trackingTime) endPosition = target.transform.position;
             float step = turret.projectileVelocity * Time.deltaTime;
             if (fuelExpended < turret.fuelRange) {
                 Vector3 heading = endPosition - transform.position;
@@ -64,6 +66,7 @@ public class Projectile : MonoBehaviour {
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
+                    if (activator != null && hitStructureBehaviours == activator.GetComponent<StructureBehaviours> ()) return;
                     diplomacyManager.RelationsChanged (fromFaction, hitStructureBehaviours.faction, -0.1f);
                     hitStructureBehaviours.TakeDamage (turret.damage * storedEnergyRatio, transform.position);
                     for (int i = 0; i < turret.explosionDetail; i++) {
@@ -88,7 +91,7 @@ public class Projectile : MonoBehaviour {
             } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
         } else {
             Debug.Log ("This projectile is using an ammunition.");
-            if (ammunition.projectileSticky && target != null) endPosition = target.transform.position;
+            if (ammunition.projectileSticky && target != null && timeElapsed >= turret.trackingTime) endPosition = target.transform.position;
             float step = ammunition.projectileVelocity * Time.deltaTime;
             if (fuelExpended < ammunition.fuelRange) {
                 Vector3 heading = endPosition - transform.position;
@@ -103,6 +106,7 @@ public class Projectile : MonoBehaviour {
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
+                    if (activator != null && hitStructureBehaviours == activator.GetComponent<StructureBehaviours> ()) return;
                     diplomacyManager.RelationsChanged (fromFaction, hitStructureBehaviours.faction, -0.1f);
                     hitStructureBehaviours.TakeDamage (ammunition.damage * storedEnergyRatio, transform.position);
                     for (int i = 0; i < ammunition.explosionDetail; i++) {

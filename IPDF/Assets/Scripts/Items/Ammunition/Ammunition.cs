@@ -9,6 +9,7 @@ public class Ammunition : Item {
     public Color trailColor;
     public float trailTime;
     [Header ("Projectile Movement")]
+    public float trackingTime;
     public float projectileVelocity;
     public bool projectileSticky;
     public float projectileTracking;

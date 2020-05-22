@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: TEF Trade Station
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
+  mesh: {fileID: -5495902117074765545, guid: 3f74945d214ee4e45914e3866fcce593, type: 3}
+  material: {fileID: 2100000, guid: 3fa01f9bd2cbf8a4db3d33d03430553a, type: 2}
+  apparentSize: 50
+  isStation: 1
+  enforceHeight: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
+  structureClass: 0
+  manufacturer: 3
+  description: 
+  hull: 50000
+  inventorySize: 0
+  turretSlots: 5
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
+  electronicsCapable: 0
+  dockingPoints: 4
+  dockingLocations:
+  - {x: 200, y: 0, z: 0}
+  - {x: -200, y: 0, z: 0}
+  - {x: 0, y: 0, z: 200}
+  - {x: 0, y: 0, z: -200}
+  dockingRange: 300
+  mass: 1000
+  drag: 1000
+  angularDrag: 1000
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 180, y: 0, z: 0}

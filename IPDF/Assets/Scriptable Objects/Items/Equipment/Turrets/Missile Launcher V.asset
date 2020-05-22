@@ -27,14 +27,15 @@ MonoBehaviour:
   activationDelay: 0
   range: 500
   activationThreshold: 1
-  projectileVelocity: 100
+  trackingTime: 0.5
+  projectileVelocity: 200
   projectileSticky: 1
-  projectileTracking: 150
+  projectileTracking: 250
   projectileInitializeRotation: 0
-  projectileInaccuracy: 2
+  projectileInaccuracy: 180
   leadProjectile: 0
   fuelRange: 500
-  damage: 20
-  explosiveDamage: 500
+  damage: 25
+  explosiveDamage: 125
   explosionRange: 25
   explosionDetail: 30

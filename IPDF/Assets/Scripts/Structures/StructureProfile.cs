@@ -35,6 +35,12 @@ public class StructureProfile : Item {
     public float drag;
     public float angularDrag;
     public PhysicMaterial physicMaterial;
+    [Header ("Engine Trail")]
+    public GameObject trailObject;
+    public int trails;
+    public Vector3[] trailPositions;
+    public Gradient trailGradient;
+    public float trailLength;
     [Header ("Correction")]
     public Vector3 offset;
     public Vector3 rotate;

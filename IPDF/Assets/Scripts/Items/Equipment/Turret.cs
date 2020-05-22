@@ -34,6 +34,7 @@ public class Turret : Item {
     public float range;
     public float activationThreshold;
     [Header ("Projectile Movement")]
+    public float trackingTime;
     public float projectileVelocity;
     public bool projectileSticky;
     public float projectileTracking;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using Essentials;
 
 public class StructureBehaviours : MonoBehaviour {
@@ -38,6 +39,8 @@ public class StructureBehaviours : MonoBehaviour {
     public new ConstantForce constantForce;
     [Header ("AI")]
     public bool AIActivated;
+    [Header ("Trails")]
+    public List<VisualEffect> trailVisualEffects = new List<VisualEffect> ();
     [Header ("Misc")]
     public StructureBehaviours targetted;
     public bool initialized;
@@ -67,6 +70,7 @@ public class StructureBehaviours : MonoBehaviour {
         hull = profile.hull;
         if (initializeAccordingToSaveData) {
             inventory = new InventoryHandler (savedInventory, this);
+            turrets = new List<TurretHandler> ();
             for (int i = 0; i < profile.turretSlots; i++) {
                 turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], profile.turretPositions[i], profile.turretAlignments[i], this) :
                     new TurretHandler (null, profile.turretPositions[i], profile.turretAlignments[i], this));
@@ -102,6 +106,17 @@ public class StructureBehaviours : MonoBehaviour {
         // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
         constantForce = GetComponent<ConstantForce> ();
         if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
+        for (int i = 0; i < profile.trails; i++) {
+            GameObject trail = Instantiate (profile.trailObject) as GameObject;
+            trail.transform.parent = transform;
+            trail.transform.localPosition = profile.trailPositions[i] + profile.offset;
+            trail.transform.localEulerAngles = Vector3.zero;
+            VisualEffect visualEffect = trail.GetComponent<VisualEffect> ();
+            visualEffect.SetFloat ("apparentSize", profile.apparentSize);
+            visualEffect.SetFloat ("length", profile.trailLength);
+            visualEffect.SetGradient ("gradient", profile.trailGradient);
+            trailVisualEffects.Add (visualEffect);
+        }
         initialized = true;
     }
 
@@ -129,6 +144,7 @@ public class StructureBehaviours : MonoBehaviour {
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
         if (transform.parent.GetComponent<StructureBehaviours> ()) engine.forwardSetting = 0.0f;
         engine.ApplySettings (GetComponent<ConstantForce> ());
+        foreach (VisualEffect trailVisualEffect in trailVisualEffects) trailVisualEffect.SetFloat ("power", engine.forwardSetting);
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
         // AI stuff
@@ -160,7 +176,7 @@ public class StructureBehaviours : MonoBehaviour {
                         effectiveTurrets ++;
                     }
                 }
-                float optimalRange = totalRange / effectiveTurrets * profile.engagementRangeMultiplier;
+                float optimalRange = effectiveTurrets == 0 ? 1000.0f : totalRange / effectiveTurrets * profile.engagementRangeMultiplier;
                 engine.forwardSetting = 1.0f;
                 Vector3 heading = targetted.transform.position - transform.position;
                 Vector3 perp = Vector3.Cross (transform.forward, heading);
@@ -173,8 +189,9 @@ public class StructureBehaviours : MonoBehaviour {
                 float lrMult = leftRight >= 0.0f ? 1.0f : -1.0f;
                 angle *= lrMult;
                 float approachAngle = 90.0f * lrMult;
-                approachAngle -= (targetted.transform.position - transform.position).sqrMagnitude > optimalRange * optimalRange ? profile.rangeChangeAngle * lrMult : 0.0f;
-                approachAngle += (targetted.transform.position - transform.position).sqrMagnitude < optimalRange * optimalRange * 0.75f ? profile.rangeChangeAngle * lrMult : 0.0f;
+                float sqrDis = (targetted.transform.position - transform.position).sqrMagnitude;
+                approachAngle -= sqrDis > optimalRange * optimalRange ? profile.rangeChangeAngle * lrMult : 0.0f;
+                approachAngle += sqrDis < optimalRange * optimalRange * 0.75f ? profile.rangeChangeAngle * lrMult : 0.0f;
                 Debug.DrawRay (transform.position, transform.rotation * Quaternion.Euler (0.0f, angle - approachAngle, 0.0f) * Vector3.forward * 10.0f * profile.apparentSize, Color.yellow);
                 if (angle > approachAngle) engine.turnSetting = 1.0f;
                 else if (angle > 0.0f && angle < approachAngle * 0.9) engine.turnSetting = -1.0f;

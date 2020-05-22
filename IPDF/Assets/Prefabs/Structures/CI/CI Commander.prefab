@@ -136,7 +136,7 @@ MonoBehaviour:
     storedEnergy: 20000
   savedGenerator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    generator: {fileID: 11400000, guid: 2b55879e013940d4fbaa679c70e01270, type: 2}
     online: 1
   savedEngine:
     equipper: {fileID: 0}

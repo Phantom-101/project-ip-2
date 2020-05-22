@@ -19,14 +19,15 @@ MonoBehaviour:
     type: 3}
   trailColor: {r: 0, g: 0.55550647, b: 1, a: 1}
   trailTime: 3
-  maxStoredEnergy: 3000
-  rechargeRate: 500
+  maxStoredEnergy: 2000
+  rechargeRate: 250
   requireAmmunition: 0
   acceptedAmmunitions: []
   activations: 1
   activationDelay: 0
   range: 1000
   activationThreshold: 0.4
+  trackingTime: 0
   projectileVelocity: 1000
   projectileSticky: 0
   projectileTracking: 0
