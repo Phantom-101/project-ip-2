@@ -54,7 +54,7 @@ MonoBehaviour:
   dockingPoints: 0
   dockingLocations: []
   dockingRange: 0
-  mass: 100
+  mass: 120
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
