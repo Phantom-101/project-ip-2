@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Magnus
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 0
+  basePrice: 4800000
   size: 0
   mesh: {fileID: -5495902117074765545, guid: a2dff1e4cd76cfd4a924efc75e5d4af8, type: 3}
   material: {fileID: 2100000, guid: 0c2daaef9ed27274daf1ddb3713a0dec, type: 2}

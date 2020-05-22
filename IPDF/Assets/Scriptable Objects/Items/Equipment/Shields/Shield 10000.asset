@@ -16,5 +16,5 @@ MonoBehaviour:
   basePrice: 1000000
   size: 0
   strength: 10000
-  rechargeRate: 50
+  rechargeRate: 8
   shieldRechargeEfficiency: 2

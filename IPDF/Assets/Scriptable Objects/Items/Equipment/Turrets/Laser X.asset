@@ -18,7 +18,7 @@ MonoBehaviour:
   projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
   trailColor: {r: 0, g: 0.55550647, b: 1, a: 1}
-  trailTime: 3
+  trailTime: 0.4
   maxStoredEnergy: 2000
   rechargeRate: 250
   requireAmmunition: 0
@@ -28,14 +28,14 @@ MonoBehaviour:
   range: 1000
   activationThreshold: 0.4
   trackingTime: 0
-  projectileVelocity: 1000
+  projectileVelocity: 4000
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1
-  projectileInaccuracy: 0
+  projectileInaccuracy: 0.8
   leadProjectile: 1
   fuelRange: 1000
-  damage: 500
+  damage: 250
   explosiveDamage: 0
   explosionRange: 0
   explosionDetail: 0

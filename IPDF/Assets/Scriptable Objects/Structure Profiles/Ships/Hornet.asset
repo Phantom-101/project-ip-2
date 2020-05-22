@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hornet
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 0
+  basePrice: 50000
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 71aeec00603cece43a6209a75dd5b5dd, type: 3}
   material: {fileID: 2100000, guid: 7267bc99e5fd336449fce5da09b3a1e6, type: 2}

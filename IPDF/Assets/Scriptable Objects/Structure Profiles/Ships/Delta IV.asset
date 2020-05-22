@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Delta IV
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 0
+  basePrice: 250000
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 6faf6537b632e054a950f85f3bb4359b, type: 3}
   material: {fileID: 2100000, guid: 1e911f7be096a184abda12e46d14d129, type: 2}

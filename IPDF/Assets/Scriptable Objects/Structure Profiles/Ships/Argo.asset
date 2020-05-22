@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Argo
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 0
+  basePrice: 170000
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 03c08be53e1fa9643b21c9b39ac08b8f, type: 3}
   material: {fileID: 2100000, guid: 88025af8a1e745e45b7db30d397b1492, type: 2}

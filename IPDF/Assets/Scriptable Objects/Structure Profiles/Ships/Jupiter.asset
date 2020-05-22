@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jupiter
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 0
+  basePrice: 4000000
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 5d8af20d57982c440ad14c97b6c66110, type: 3}
   material: {fileID: 2100000, guid: 42a5bdd1c5a5f1f41bf3b5f8de5d0c5d, type: 2}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Victoria
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  basePrice: 0
+  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  basePrice: 230000
   size: 4
   mesh: {fileID: -7754318969949236687, guid: 2eaf89cd088669e4ea52900192510361, type: 3}
   material: {fileID: 2100000, guid: 62ad9e2812390aa488b0f260edf74180, type: 2}
@@ -47,7 +47,11 @@ MonoBehaviour:
   trailObject: {fileID: 1676672398485976431, guid: 7ff07bbb83eda5b4f86c449b87193ba3,
     type: 3}
   trails: 0
-  trailPositions: []
+  trailPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   trailGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}

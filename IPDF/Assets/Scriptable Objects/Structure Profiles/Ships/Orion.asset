@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Orion
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  basePrice: 0
+  icon: {fileID: 21300000, guid: b51cf6240800392488dd7d0c265ef2fa, type: 3}
+  basePrice: 100000
   size: 0
   mesh: {fileID: -5582133695706433325, guid: d49907ec3bd5f314b997e4c93aeed53b, type: 3}
   material: {fileID: 2100000, guid: 94c251576adaf4e49a062a6f9dd3928a, type: 2}

@@ -24,7 +24,7 @@ MonoBehaviour:
   rangeChangeAngle: 45
   structureClass: 3
   manufacturer: 8
-  description: 
+  description: Borealis class light corvette.
   hull: 2000
   inventorySize: 0
   turretSlots: 10

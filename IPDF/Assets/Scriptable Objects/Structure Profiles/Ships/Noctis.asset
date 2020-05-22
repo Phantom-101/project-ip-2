@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Noctis
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  basePrice: 0
+  icon: {fileID: 21300000, guid: 1b5e9b4c0bd599a40a53a7ff0802e45d, type: 3}
+  basePrice: 300000
   size: 0
   mesh: {fileID: -5495902117074765545, guid: fcbf132e6d93f5b42b358d46e0c46545, type: 3}
   material: {fileID: 2100000, guid: b8e0740f03dcb2b4ca4de3be7e4be61f, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Thunder
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 0
+  basePrice: 180000
   size: 0
   mesh: {fileID: -5495902117074765545, guid: ee68b75a49c3cf84b90fd75c539583da, type: 3}
   material: {fileID: 2100000, guid: 5e88404a95272bd4db9b3505228077cb, type: 2}
