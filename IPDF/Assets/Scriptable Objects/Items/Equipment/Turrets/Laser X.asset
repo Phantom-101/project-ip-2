@@ -32,7 +32,7 @@ MonoBehaviour:
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1
-  projectileInaccuracy: 0.8
+  projectileInaccuracy: 0.5
   leadProjectile: 1
   fuelRange: 1000
   damage: 250
