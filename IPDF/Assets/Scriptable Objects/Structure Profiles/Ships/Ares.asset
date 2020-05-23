@@ -40,7 +40,7 @@ MonoBehaviour:
   mass: 4
   drag: 2
   angularDrag: 1
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   trailObject: {fileID: 0}
   trails: 0
   trailPositions: []

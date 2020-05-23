@@ -17,12 +17,12 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: e699a3d12d662a64c92aa08d7db60f66, type: 3}
   material: {fileID: 2100000, guid: c8b69393ff024e44e8e48e283048cd89, type: 2}
-  apparentSize: 5
+  apparentSize: 3
   isStation: 0
   enforceHeight: 1
   engagementRangeMultiplier: 0
   rangeChangeAngle: 0
-  structureClass: 3
+  structureClass: 1
   manufacturer: 8
   description: 
   hull: 700
@@ -39,9 +39,9 @@ MonoBehaviour:
   dockingLocations: []
   dockingRange: 0
   mass: 4
-  drag: 2
+  drag: 0.5
   angularDrag: 1
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   trailObject: {fileID: 1676672398485976431, guid: 7ff07bbb83eda5b4f86c449b87193ba3,
     type: 3}
   trails: 1
