@@ -60,12 +60,18 @@ MonoBehaviour:
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   trailObject: {fileID: 1676672398485976431, guid: 7ff07bbb83eda5b4f86c449b87193ba3,
     type: 3}
-  trails: 0
-  trailPositions: []
+  trails: 18
+  trailPositions:
+  - {x: -1, y: 5, z: -10}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   trailGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0, g: 0.1551485, b: 1, a: 1}
+    key1: {r: 0, g: 0.952054, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -91,6 +97,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  trailLength: 0
+  trailLength: 7
   offset: {x: 0, y: 0, z: 50}
   rotate: {x: 0, y: 90, z: 0}
