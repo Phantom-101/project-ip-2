@@ -15,7 +15,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
   basePrice: 0
   size: 0
-  projectile: {fileID: 0}
+  projectile: {fileID: 5241045304247881585, guid: 4cbf6708bfac8a341913e7fdf66011f1,
+    type: 3}
   trailColor: {r: 1, g: 0.31514084, b: 0, a: 1}
   trailTime: 0.1
   maxStoredEnergy: 220

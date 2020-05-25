@@ -17,8 +17,8 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: a2dff1e4cd76cfd4a924efc75e5d4af8, type: 3}
   material: {fileID: 2100000, guid: 0c2daaef9ed27274daf1ddb3713a0dec, type: 2}
-  apparentSize: 150
-  isStation: 0
+  apparentSize: 80
+  isStation: 1
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
@@ -29,11 +29,6 @@ MonoBehaviour:
   inventorySize: 1000
   turretSlots: 10
   turretPositions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
