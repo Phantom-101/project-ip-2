@@ -60,7 +60,7 @@ public class StructureBehaviours : MonoBehaviour {
         MeshFilter meshFilter = meshGameObject.AddComponent<MeshFilter> ();
         MeshCollider meshCollider = meshGameObject.AddComponent<MeshCollider> ();
         Renderer renderer = meshGameObject.AddComponent<MeshRenderer> ();
-        meshCollider.sharedMesh = profile.mesh;
+        meshCollider.sharedMesh = profile.collisionMesh == null ? profile.mesh : profile.collisionMesh;
         if (!profile.isStation) meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;

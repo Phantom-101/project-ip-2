@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: bb5eedb63ae7d634e84a897b136667fc
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Korthane.unity
     guid: 41215069a72a328478b21a3913e94083
   m_configObjects: {}

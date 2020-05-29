@@ -31,6 +31,7 @@ public class StructureProfile : Item {
     public Vector3[] dockingLocations;
     public float dockingRange;
     [Header ("Physics")]
+    public Mesh collisionMesh;
     public float mass;
     public float drag;
     public float angularDrag;
