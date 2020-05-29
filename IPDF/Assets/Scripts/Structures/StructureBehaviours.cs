@@ -55,18 +55,23 @@ public class StructureBehaviours : MonoBehaviour {
         playerController = FindObjectOfType<PlayerController> ();
         structuresManager.AddStructure (this);
         GameObject meshGameObject = new GameObject ();
-        meshGameObject.name = "Mesh and Collider";
+        meshGameObject.name = "Mesh";
         meshGameObject.transform.parent = transform;
         MeshFilter meshFilter = meshGameObject.AddComponent<MeshFilter> ();
-        MeshCollider meshCollider = meshGameObject.AddComponent<MeshCollider> ();
         Renderer renderer = meshGameObject.AddComponent<MeshRenderer> ();
-        meshCollider.sharedMesh = profile.collisionMesh == null ? profile.mesh : profile.collisionMesh;
+        GameObject colliderGameObject = new GameObject ();
+        colliderGameObject.name = "Collider";
+        colliderGameObject.transform.parent = transform;
+        MeshCollider meshCollider = meshGameObject.AddComponent<MeshCollider> ();
+        meshCollider.sharedMesh = (profile.collisionMesh == null ? profile.mesh : profile.collisionMesh);
         if (!profile.isStation) meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
         renderer.material = profile.material;
         meshGameObject.transform.localPosition = profile.offset;
         meshGameObject.transform.localEulerAngles = profile.rotate;
+        colliderGameObject.transform.localPosition = (profile.collisionMesh == null ? profile.offset : profile.colliderOffset);
+        colliderGameObject.transform.localEulerAngles = (profile.collisionMesh == null ? profile.rotate : profile.colliderRotate);
         hull = profile.hull;
         if (initializeAccordingToSaveData) {
             inventory = new InventoryHandler (savedInventory, this);

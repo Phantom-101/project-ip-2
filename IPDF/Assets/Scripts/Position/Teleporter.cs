@@ -19,7 +19,7 @@ public class Teleporter : MonoBehaviour {
 
     void Update () {
         foreach (StructureBehaviours structure in structuresManager.structures)
-            if ((transform.position - structure.transform.position).sqrMagnitude <= triggerRange * triggerRange) {
+            if ((transform.position - structure.transform.position).sqrMagnitude <= triggerRange * triggerRange && !structure.profile.isStation) {
                 structure.transform.position = other.position + other.forward * forwardDistance * 2.0f;
                 structure.transform.rotation = other.rotation;
                 structure.targetted = null;

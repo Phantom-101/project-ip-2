@@ -45,6 +45,8 @@ public class StructureProfile : Item {
     [Header ("Correction")]
     public Vector3 offset;
     public Vector3 rotate;
+    public Vector3 colliderOffset;
+    public Vector3 colliderRotate;
 }
 
 public enum StructureClass {
