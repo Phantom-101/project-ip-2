@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: 6e7cea8738e82b548866daf458e75a98, type: 2}
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -670,6 +670,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -709,10 +710,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!114 &235251623
@@ -1585,6 +1586,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -1659,10 +1661,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &405851600
@@ -3577,6 +3579,11 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories:
+  - structure: {fileID: 0}
+    factory: {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
+    online: 1
+    timer: 0
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -3651,10 +3658,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!4 &831469441 stripped
@@ -5128,6 +5135,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -5167,10 +5175,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!4 &971463893 stripped
@@ -5386,6 +5394,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -5460,10 +5469,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1046819691
@@ -5761,6 +5770,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -5835,10 +5845,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1100768932
@@ -5995,6 +6005,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -6069,10 +6080,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1117563861
@@ -8010,6 +8021,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -8084,10 +8096,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1559590828
@@ -8585,6 +8597,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -8659,10 +8672,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1626496949
@@ -9577,6 +9590,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -9616,10 +9630,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1776245418
@@ -9776,6 +9790,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -9850,10 +9865,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1776885018
@@ -10509,6 +10524,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -10583,10 +10599,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!1 &1981136097
@@ -15664,6 +15680,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -15738,10 +15755,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!4 &2057681951 stripped
@@ -16871,6 +16888,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -16945,10 +16963,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!4 &6355110525750044497
@@ -17071,6 +17089,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17110,10 +17129,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!4 &6355110526056126129
@@ -17332,6 +17351,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17371,10 +17391,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!114 &6750740652291305464
@@ -17497,6 +17517,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17536,10 +17557,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!114 &6750740652291305469
@@ -17657,6 +17678,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17696,10 +17718,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!114 &6750740652450203001
@@ -17952,6 +17974,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17991,10 +18014,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  trailVisualEffects: []
   targetted: {fileID: 0}
   initialized: 0
 --- !u!4 &7218308574373969049

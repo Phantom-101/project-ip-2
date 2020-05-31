@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Jump Station
+  m_Name: Jump Gate
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -18,7 +18,6 @@ MonoBehaviour:
   mesh: {fileID: 2534964839176971238, guid: 4694a5228ece3cd4faf4e304e23bdbca, type: 3}
   material: {fileID: 2100000, guid: fb395ca6ea2f8fa4993b85a4d7fcd7e1, type: 2}
   apparentSize: 20
-  isStation: 1
   enforceHeight: 1
   engagementRangeMultiplier: 0
   rangeChangeAngle: 0
@@ -38,6 +37,8 @@ MonoBehaviour:
   - {x: -180, y: 0, z: 40}
   - {x: -148, y: 0, z: -40}
   dockingRange: 80
+  factories: []
+  collisionMesh: {fileID: 0}
   mass: 100000
   drag: 1000
   angularDrag: 1
@@ -77,3 +78,5 @@ MonoBehaviour:
   trailLength: 0
   offset: {x: 0, y: -121, z: 0}
   rotate: {x: 0, y: 0, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}

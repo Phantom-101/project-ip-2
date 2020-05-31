@@ -18,7 +18,6 @@ MonoBehaviour:
   mesh: {fileID: 4370537360113272507, guid: db6d827c221cf374a96b5e58d3e8dc22, type: 3}
   material: {fileID: 2100000, guid: 97bc6ab965316174284d4c4c9eb91ce8, type: 2}
   apparentSize: 0
-  isStation: 1
   enforceHeight: 1
   engagementRangeMultiplier: 0
   rangeChangeAngle: 0
@@ -34,6 +33,9 @@ MonoBehaviour:
   dockingPoints: 0
   dockingLocations: []
   dockingRange: 0
+  factories:
+  - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
+  collisionMesh: {fileID: 0}
   mass: 1000
   drag: 1000
   angularDrag: 1000
@@ -73,3 +75,5 @@ MonoBehaviour:
   trailLength: 0
   offset: {x: 0, y: -15, z: 0}
   rotate: {x: 0, y: 0, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}

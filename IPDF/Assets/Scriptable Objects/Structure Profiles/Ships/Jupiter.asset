@@ -18,7 +18,6 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: 5d8af20d57982c440ad14c97b6c66110, type: 3}
   material: {fileID: 2100000, guid: 42a5bdd1c5a5f1f41bf3b5f8de5d0c5d, type: 2}
   apparentSize: 50
-  isStation: 0
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
@@ -54,20 +53,23 @@ MonoBehaviour:
   dockingPoints: 0
   dockingLocations: []
   dockingRange: 0
+  factories: []
+  collisionMesh: {fileID: 0}
   mass: 120
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  trailObject: {fileID: 1676672398485976431, guid: 7ff07bbb83eda5b4f86c449b87193ba3,
+  decals: {fileID: 5692779531312244140, guid: 6ee881f40887ad7468f4197966f50513, type: 3}
+  trailObject: {fileID: 2783378142975289976, guid: e9755f19a24ec8441ad0f6a7f7e02f48,
     type: 3}
-  trails: 18
+  trails: 0
   trailPositions:
-  - {x: -1, y: 5, z: -10}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -22, y: 10, z: -150}
+  - {x: 0, y: 0, z: -140}
+  - {x: 0, y: 0, z: -140}
+  - {x: 0, y: 0, z: -140}
+  - {x: 0, y: 0, z: -140}
+  - {x: 0, y: 0, z: -140}
   trailGradient:
     serializedVersion: 2
     key0: {r: 0, g: 0.1551485, b: 1, a: 1}
@@ -97,6 +99,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  trailLength: 7
-  offset: {x: 0, y: 0, z: 50}
+  trailLength: 0.1
+  offset: {x: 0, y: 0, z: 75}
   rotate: {x: 0, y: 90, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}

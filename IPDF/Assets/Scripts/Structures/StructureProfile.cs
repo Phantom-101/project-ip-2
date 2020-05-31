@@ -9,7 +9,6 @@ public class StructureProfile : Item {
     public Material material;
     public float apparentSize;
     [Header ("Adjustables")]
-    public bool isStation;
     public bool enforceHeight;
     [Header ("AI")]
     public float engagementRangeMultiplier;
@@ -30,18 +29,16 @@ public class StructureProfile : Item {
     public int dockingPoints;
     public Vector3[] dockingLocations;
     public float dockingRange;
+    [Header ("Production")]
+    public Factory[] factories;
     [Header ("Physics")]
     public Mesh collisionMesh;
     public float mass;
     public float drag;
     public float angularDrag;
     public PhysicMaterial physicMaterial;
-    [Header ("Engine Trail")]
-    public GameObject trailObject;
-    public int trails;
-    public Vector3[] trailPositions;
-    public Gradient trailGradient;
-    public float trailLength;
+    [Header ("Decals")]
+    public GameObject decals;
     [Header ("Correction")]
     public Vector3 offset;
     public Vector3 rotate;

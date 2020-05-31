@@ -22,6 +22,7 @@ public class StructureBehaviours : MonoBehaviour {
     public EngineHandler savedEngine;
     public ElectronicsHandler savedElectronics;
     public TractorBeamHandler savedTractorBeam;
+    public List<FactoryHandler> savedFactories = new List<FactoryHandler> ();
     [Header ("Inventory")]
     public InventoryHandler inventory;
     [Header ("Equipment Handlers")]
@@ -34,13 +35,13 @@ public class StructureBehaviours : MonoBehaviour {
     public TractorBeamHandler tractorBeam;
     [Header ("Docking")]
     public GameObject[] docked;
+    [Header ("Production")]
+    public List<FactoryHandler> factories;
     [Header ("Physics")]
     public new Rigidbody rigidbody;
     public new ConstantForce constantForce;
     [Header ("AI")]
     public bool AIActivated;
-    [Header ("Trails")]
-    public List<VisualEffect> trailVisualEffects = new List<VisualEffect> ();
     [Header ("Misc")]
     public StructureBehaviours targetted;
     public bool initialized;
@@ -64,7 +65,7 @@ public class StructureBehaviours : MonoBehaviour {
         colliderGameObject.transform.parent = transform;
         MeshCollider meshCollider = meshGameObject.AddComponent<MeshCollider> ();
         meshCollider.sharedMesh = (profile.collisionMesh == null ? profile.mesh : profile.collisionMesh);
-        if (!profile.isStation) meshCollider.convex = true;
+        if (profile.structureClass != StructureClass.Station) meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
         renderer.material = profile.material;
@@ -91,6 +92,12 @@ public class StructureBehaviours : MonoBehaviour {
             engine = new EngineHandler (savedEngine, this);
             electronics = profile.electronicsCapable ? new ElectronicsHandler (savedElectronics, this) : new ElectronicsHandler (this);
             tractorBeam = new TractorBeamHandler (savedTractorBeam, this);
+            for (int i = 0; i < profile.factories.Length; i++) {
+                factories.Add (i < savedFactories.Count ? new FactoryHandler (savedFactories[i], this) : new FactoryHandler (null, this));
+                // Temporary
+                foreach (Item input in savedFactories[i].factory.inputs)
+                    inventory.AddItem (input, 100);
+            }
         } else {
             inventory = new InventoryHandler (this, null, profile.inventorySize);
             for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (this, profile.turretPositions[i], profile.turretAlignments[i]));
@@ -100,6 +107,12 @@ public class StructureBehaviours : MonoBehaviour {
             engine = new EngineHandler (this);
             electronics = new ElectronicsHandler (this);
             tractorBeam = new TractorBeamHandler (this);
+            for (int i = 0; i < profile.factories.Length; i++) {
+                factories.Add (new FactoryHandler (this, profile.factories[i]));
+                // Temporary
+                foreach (Item input in profile.factories[i].inputs)
+                    inventory.AddItem (input, 100);
+            }
         }
         if (docked.Length != profile.dockingPoints) docked = new GameObject[profile.dockingPoints];
         rigidbody = GetComponent<Rigidbody> ();
@@ -107,20 +120,15 @@ public class StructureBehaviours : MonoBehaviour {
         rigidbody.mass = profile.mass;
         rigidbody.drag = profile.drag;
         rigidbody.angularDrag = profile.angularDrag;
-        if (profile.isStation) rigidbody.isKinematic = true;
+        if (profile.structureClass == StructureClass.Station) rigidbody.isKinematic = true;
         // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
         constantForce = GetComponent<ConstantForce> ();
         if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
-        for (int i = 0; i < profile.trails; i++) {
-            GameObject trail = Instantiate (profile.trailObject) as GameObject;
-            trail.transform.parent = transform;
-            trail.transform.localPosition = profile.trailPositions[i] + profile.offset;
-            trail.transform.localEulerAngles = Vector3.zero;
-            VisualEffect visualEffect = trail.GetComponent<VisualEffect> ();
-            visualEffect.SetFloat ("apparentSize", profile.apparentSize);
-            visualEffect.SetFloat ("length", profile.trailLength);
-            visualEffect.SetGradient ("gradient", profile.trailGradient);
-            trailVisualEffects.Add (visualEffect);
+        if (profile.decals != null) {
+            GameObject decals = Instantiate (profile.decals) as GameObject;
+            decals.transform.parent = transform;
+            decals.transform.localPosition = Vector3.zero;
+            decals.transform.localEulerAngles = Vector3.zero;
         }
         initialized = true;
     }
@@ -149,9 +157,11 @@ public class StructureBehaviours : MonoBehaviour {
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
         if (transform.parent.GetComponent<StructureBehaviours> ()) engine.forwardSetting = 0.0f;
         engine.ApplySettings (GetComponent<ConstantForce> ());
-        foreach (VisualEffect trailVisualEffect in trailVisualEffects) trailVisualEffect.SetFloat ("power", engine.forwardSetting);
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
+        // Production
+        if (factories.Count != profile.factories.Length) factories = new List<FactoryHandler> (profile.factories.Length);
+        foreach (FactoryHandler factory in factories) factory.Process ();
         // AI stuff
         if (AIActivated) {
             StructureBehaviours closest = null;
