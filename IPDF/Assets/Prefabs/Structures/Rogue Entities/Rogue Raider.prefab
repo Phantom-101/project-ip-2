@@ -57,7 +57,7 @@ MonoBehaviour:
     inventorySize: 0
   savedTurrets:
   - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+    turret: {fileID: 11400000, guid: c4393910ac63a914d853698809c1f34b, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -149,6 +150,7 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1

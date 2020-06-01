@@ -20,7 +20,7 @@ MonoBehaviour:
   apparentSize: 7.5
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 45
+  rangeChangeAngle: 60
   structureClass: 4
   manufacturer: 3
   description: 
@@ -48,40 +48,6 @@ MonoBehaviour:
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
-  trailObject: {fileID: 2783378142975289976, guid: e9755f19a24ec8441ad0f6a7f7e02f48,
-    type: 3}
-  trails: 0
-  trailPositions: []
-  trailGradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  trailLength: 0
   offset: {x: 0, y: -1, z: 5}
   rotate: {x: 0, y: 90, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}

@@ -20,7 +20,7 @@ MonoBehaviour:
   apparentSize: 10
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 45
+  rangeChangeAngle: 60
   structureClass: 7
   manufacturer: 3
   description: 

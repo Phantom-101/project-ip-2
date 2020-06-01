@@ -35,44 +35,14 @@ MonoBehaviour:
   dockingRange: 0
   factories:
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
+  - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
+  - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
   collisionMesh: {fileID: 0}
   mass: 1000
   drag: 1000
   angularDrag: 1000
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  trailObject: {fileID: 0}
-  trails: 0
-  trailPositions: []
-  trailGradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  trailLength: 0
+  decals: {fileID: 0}
   offset: {x: 0, y: -15, z: 0}
   rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}

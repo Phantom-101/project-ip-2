@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
+  m_Name: Alloy Plates
+  m_EditorClassIdentifier: 
+  inputs:
+  - {fileID: 11400000, guid: 35876c885c53a754db1e1a27faa0bd39, type: 2}
+  inputQuantities: 01000000
+  outputs:
+  - {fileID: 11400000, guid: 822611605703b65498201b30693165c3, type: 2}
+  outputQuantities: 01000000
+  time: 2

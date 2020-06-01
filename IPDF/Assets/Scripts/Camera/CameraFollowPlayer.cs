@@ -50,15 +50,15 @@ public class CameraFollowPlayer : MonoBehaviour {
             //Vector3 eulerAngleVelocity = new Vector3 (0.0f, angle, 0.0f);
             //constantForce.torque = eulerAngleVelocity * lookAtInterpolationStrength;
             float angle = 0.0f;
-            if (lookAtTarget && playerStructure.targetted != null) {
-                Vector3 heading = playerStructure.targetted.transform.position - playerStructure.transform.position;
+            if (lookAtTarget && playerStructure.targeted != null) {
+                Vector3 heading = playerStructure.targeted.transform.position - playerStructure.transform.position;
                 Vector3 perp = Vector3.Cross (playerStructure.transform.forward, heading);
                 float leftRight = Vector3.Dot (perp, playerStructure.transform.up);
-                angle = (playerStructure.targetted.transform.position + playerStructure.targetted.transform.rotation * playerStructure.targetted.profile.offset)
+                angle = (playerStructure.targeted.transform.position + playerStructure.targeted.transform.rotation * playerStructure.targeted.profile.offset)
                     - (playerStructure.transform.position + playerStructure.transform.rotation * playerStructure.profile.offset) == Vector3.zero ?
                         0.0f :
                         Quaternion.Angle (playerStructure.transform.rotation,
-                            Quaternion.LookRotation ((playerStructure.targetted.transform.position + playerStructure.targetted.transform.rotation * playerStructure.targetted.profile.offset)
+                            Quaternion.LookRotation ((playerStructure.targeted.transform.position + playerStructure.targeted.transform.rotation * playerStructure.targeted.profile.offset)
                     - (playerStructure.transform.position + playerStructure.transform.rotation * playerStructure.profile.offset)));
                 angle *= leftRight > 0.0f ? 1.0f : -1.0f;
             }

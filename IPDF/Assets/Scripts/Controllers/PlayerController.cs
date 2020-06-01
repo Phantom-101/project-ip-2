@@ -37,8 +37,8 @@ public class PlayerController : MonoBehaviour {
                     GameObject hitGameObject = hit.transform.gameObject;
                     if (hitGameObject != structureBehaviours.gameObject && hitGameObject.transform.parent == structureBehaviours.transform.parent) {
                         StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
-                        if (hitStructureBehaviours != null && hitStructureBehaviours != structureBehaviours.targetted) structureBehaviours.targetted = hitStructureBehaviours;
-                        else structureBehaviours.targetted = null;
+                        if (hitStructureBehaviours != null && hitStructureBehaviours != structureBehaviours.targeted) structureBehaviours.targeted = hitStructureBehaviours;
+                        else structureBehaviours.targeted = null;
                     }
                 }
             }
@@ -76,8 +76,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void Dock () {
-        if (structureBehaviours.targetted == null) return;
-        structureBehaviours.targetted.Dock (structureBehaviours);
+        if (structureBehaviours.targeted == null) return;
+        structureBehaviours.targeted.Dock (structureBehaviours);
     }
 
     public void Undock () {

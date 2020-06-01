@@ -70,10 +70,10 @@ public class UIHandler : MonoBehaviour {
                 for (int i = 0; i < 6; i++) shieldUI[i].color = Color.grey;
         }
         // Angle arrow
-        if (source.targetted == null) sourceTo.gameObject.SetActive (false);
+        if (source.targeted == null) sourceTo.gameObject.SetActive (false);
         else {
             sourceTo.gameObject.SetActive (true);
-            float rot = source.GetSector (source.targetted.transform.position) * 60.0f;
+            float rot = source.GetSector (source.targeted.transform.position) * 60.0f;
             sourceTo.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 75.0f, Mathf.Cos (rot * Mathf.Deg2Rad) * 75.0f);
             sourceTo.eulerAngles = new Vector3 (0.0f, 0.0f, -rot);
         }
@@ -85,7 +85,7 @@ public class UIHandler : MonoBehaviour {
         if (source.AIActivated) AIInfo.SetActive (true);
         else AIInfo.SetActive (false);
         // Target information
-        StructureBehaviours targetStructureBehaviour = source.targetted;
+        StructureBehaviours targetStructureBehaviour = source.targeted;
         if (targetStructureBehaviour == null) targetInformationPanel.SetActive (false);
         else {
             targetInformationPanel.SetActive (true);
@@ -136,14 +136,14 @@ public class UIHandler : MonoBehaviour {
             button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
             button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
             button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
-            button.GetComponent<Button> ().interactable = source.turrets[i].CanActivate (source.targetted == null ? null : source.targetted.gameObject);
-            SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.targetted == null ? null : source.targetted.gameObject), button.GetComponent<Button> ());
+            button.GetComponent<Button> ().interactable = source.turrets[i].CanActivate (source.targeted == null ? null : source.targeted.gameObject);
+            SelectableButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
             equipmentButtons[i] = button;
         }
         StructureBehaviours stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         // Docking
-        if (source.targetted == null || source.targetted.profile.dockingPoints == 0 ||
-            (source.transform.position - source.targetted.transform.position).sqrMagnitude > source.targetted.profile.dockingRange * source.targetted.profile.dockingRange ||
+        if (source.targeted == null || source.targeted.profile.dockingPoints == 0 ||
+            (source.transform.position - source.targeted.transform.position).sqrMagnitude > source.targeted.profile.dockingRange * source.targeted.profile.dockingRange ||
             stationStructureBehaviours != null) {
             dockButton.SetActive (false);
         } else {

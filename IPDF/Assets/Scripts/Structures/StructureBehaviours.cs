@@ -43,16 +43,16 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("AI")]
     public bool AIActivated;
     [Header ("Misc")]
-    public StructureBehaviours targetted;
+    public StructureBehaviours targeted;
     public bool initialized;
 
     StructuresManager structuresManager;
-    DiplomacyManager diplomacyManager;
+    FactionsManager factionsManager;
     PlayerController playerController;
 
     public void Initialize () {
         structuresManager = FindObjectOfType<StructuresManager> ();
-        diplomacyManager = FindObjectOfType<DiplomacyManager> ();
+        factionsManager = FindObjectOfType<FactionsManager> ();
         playerController = FindObjectOfType<PlayerController> ();
         structuresManager.AddStructure (this);
         GameObject meshGameObject = new GameObject ();
@@ -172,19 +172,19 @@ public class StructureBehaviours : MonoBehaviour {
                 float distance = Vector3.Distance (transform.position, structure.transform.position);
                 float weight = distance + distance * sizeDif / 5.0f;
                 if (structure != this && structure.faction != faction &&
-                    diplomacyManager.GetRelations (faction, structure.faction) <= -0.5f && !structure.cloaked && weight < leastWeight &&
+                    factionsManager.GetRelations (faction, structure.faction) <= -0.5f && !structure.cloaked && weight < leastWeight &&
                     structure.transform.parent == transform.parent) {
                     leastWeight = weight;
                     closest = structure;
                 }
             }
             if (closest != null) {
-                targetted = closest;
-                Debug.DrawRay (transform.position, targetted.transform.position - transform.position, Color.red);
+                targeted = closest;
+                Debug.DrawRay (transform.position, targeted.transform.position - transform.position, Color.red);
                 float totalRange = 0.0f;
                 int effectiveTurrets = 0;
                 foreach (TurretHandler turretHandler in turrets) {
-                    turretHandler.Activate (targetted.gameObject);
+                    turretHandler.Activate (targeted.gameObject);
                     Turret turret = turretHandler.turret;
                     if (turret != null) {
                         totalRange += turret.range;
@@ -193,18 +193,18 @@ public class StructureBehaviours : MonoBehaviour {
                 }
                 float optimalRange = effectiveTurrets == 0 ? 1000.0f : totalRange / effectiveTurrets * profile.engagementRangeMultiplier;
                 engine.forwardSetting = 1.0f;
-                Vector3 heading = targetted.transform.position - transform.position;
+                Vector3 heading = targeted.transform.position - transform.position;
                 Vector3 perp = Vector3.Cross (transform.forward, heading);
                 float leftRight = Vector3.Dot (perp, transform.up);
-                float angle = targetted.transform.position - transform.position == Vector3.zero ?
+                float angle = targeted.transform.position - transform.position == Vector3.zero ?
                         0.0f :
-                        Quaternion.Angle (transform.rotation, Quaternion.LookRotation (targetted.transform.position
+                        Quaternion.Angle (transform.rotation, Quaternion.LookRotation (targeted.transform.position
                     - transform.position)
                 );
                 float lrMult = leftRight >= 0.0f ? 1.0f : -1.0f;
                 angle *= lrMult;
                 float approachAngle = 90.0f * lrMult;
-                float sqrDis = (targetted.transform.position - transform.position).sqrMagnitude;
+                float sqrDis = (targeted.transform.position - transform.position).sqrMagnitude;
                 approachAngle -= sqrDis > optimalRange * optimalRange ? profile.rangeChangeAngle * lrMult : 0.0f;
                 approachAngle += sqrDis < optimalRange * optimalRange * 0.75f ? profile.rangeChangeAngle * lrMult : 0.0f;
                 Debug.DrawRay (transform.position, transform.rotation * Quaternion.Euler (0.0f, angle - approachAngle, 0.0f) * Vector3.forward * 10.0f * profile.apparentSize, Color.yellow);

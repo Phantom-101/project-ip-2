@@ -652,7 +652,7 @@ MonoBehaviour:
     online: 1
   savedEngine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 20360508037d82c43957942da1f8e8a4, type: 2}
+    engine: {fileID: 11400000, guid: 26645ee0cdbf24d46a5d52a282c0a218, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
@@ -714,7 +714,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!114 &235251623
 MonoBehaviour:
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &405851600
 GameObject:
@@ -3584,6 +3584,14 @@ MonoBehaviour:
     factory: {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
     online: 1
     timer: 0
+  - structure: {fileID: 0}
+    factory: {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
+    online: 1
+    timer: 0
+  - structure: {fileID: 0}
+    factory: {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
+    online: 1
+    timer: 0
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -3662,7 +3670,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!4 &831469441 stripped
 Transform:
@@ -5179,7 +5187,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!4 &971463893 stripped
 Transform:
@@ -5235,8 +5243,6 @@ Transform:
   - {fileID: 6750740652291305471}
   - {fileID: 6750740651958262900}
   - {fileID: 970305064}
-  - {fileID: 1764725280}
-  - {fileID: 1737995628}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5473,7 +5479,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &1046819691
 GameObject:
@@ -5849,7 +5855,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &1100768932
 GameObject:
@@ -6084,7 +6090,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &1117563861
 GameObject:
@@ -6555,7 +6561,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233134386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6594,7 +6600,7 @@ VisualEffect:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233134386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: cb1088f5128dc09429f73c063e10accf, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
@@ -8100,7 +8106,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &1559590828
 GameObject:
@@ -8676,7 +8682,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &1626496949
 GameObject:
@@ -9360,282 +9366,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737441782}
   m_CullTransparentMesh: 0
---- !u!1 &1737995627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1737995628}
-  - component: {fileID: 1737995630}
-  - component: {fileID: 1737995629}
-  m_Layer: 0
-  m_Name: Jump Gate (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1737995628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737995627}
-  m_LocalRotation: {x: -0, y: 0.9015203, z: -0.43273693, w: -0.000000012896566}
-  m_LocalPosition: {x: -3.8, y: -58.6, z: 2511.2}
-  m_LocalScale: {x: 1, y: 1, z: 1.0680497}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 51.283, y: 179.99998, z: 0}
---- !u!73398921 &1737995629
-VFXRenderer:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737995627}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!2083052967 &1737995630
-VisualEffect:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737995627}
-  m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: c68b14732b63a9746864c61b63945f8f, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
-  m_StartSeed: 0
-  m_ResetSeedOnPlay: 1
-  m_PropertySheet:
-    m_Float:
-      m_Array: []
-    m_Vector2f:
-      m_Array:
-      - m_Value: {x: 25, y: 25}
-        m_Name: dimensions
-        m_Overridden: 1
-    m_Vector3f:
-      m_Array: []
-    m_Vector4f:
-      m_Array: []
-    m_Uint:
-      m_Array: []
-    m_Int:
-      m_Array: []
-    m_Matrix4x4f:
-      m_Array: []
-    m_AnimationCurve:
-      m_Array: []
-    m_Gradient:
-      m_Array: []
-    m_NamedObject:
-      m_Array: []
-    m_Bool:
-      m_Array: []
---- !u!1 &1764725279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1764725280}
-  - component: {fileID: 1764725283}
-  - component: {fileID: 1764725282}
-  - component: {fileID: 1764725281}
-  m_Layer: 0
-  m_Name: Player (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1764725280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764725279}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3, y: -0, z: 2510.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1764725281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764725279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1764725282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764725279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1764725283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764725279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 0416f65ddd2346143b44e75d55c25d45, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  faction: Lambda
-  initializeAccordingToSaveData: 1
-  savedInventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  savedTurrets: []
-  savedShield:
-    equipper: {fileID: 1764725283}
-    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
-    online: 1
-    strengths:
-    - 800
-    - 800
-    - 800
-    - 800
-    - 800
-    - 800
-    shieldTimesSinceLastDamaged: []
-  savedCapacitor:
-    equipper: {fileID: 1764725283}
-    capacitor: {fileID: 11400000, guid: 91ea114fe45a5f4488436f0e9e47992b, type: 2}
-    storedEnergy: 20000
-  savedGenerator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 617e74926984aff4cb3bd1e6e160a78f, type: 2}
-    online: 1
-  savedEngine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: ac2b8671acc2ed44ab7a1c8b65f22f93, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  savedElectronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  savedTractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  savedFactories: []
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets: []
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 0}
-    online: 0
-    strengths: []
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 0}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 0}
-    online: 0
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 0}
-    online: 0
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  constantForce: {fileID: 0}
-  AIActivated: 1
-  targetted: {fileID: 0}
-  initialized: 0
 --- !u!1 &1776245418
 GameObject:
   m_ObjectHideFlags: 0
@@ -9869,7 +9599,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &1776885018
 GameObject:
@@ -10603,7 +10333,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!1 &1981136097
 GameObject:
@@ -15759,7 +15489,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!4 &2057681951 stripped
 Transform:
@@ -16967,7 +16697,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 0
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!4 &6355110525750044497
 Transform:
@@ -17133,7 +16863,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!4 &6355110526056126129
 Transform:
@@ -17395,7 +17125,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!114 &6750740652291305464
 MonoBehaviour:
@@ -17561,7 +17291,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!114 &6750740652291305469
 MonoBehaviour:
@@ -17722,7 +17452,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!114 &6750740652450203001
 MonoBehaviour:
@@ -18018,7 +17748,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!4 &7218308574373969049
 Transform:

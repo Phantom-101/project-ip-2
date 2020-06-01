@@ -48,11 +48,14 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 25
+      - m_Value: 20
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.03
+      - m_Value: 200
         m_Name: pushback
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: lifetime
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -195,10 +198,10 @@ VisualEffect:
       - m_Value: 15
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.05
+      - m_Value: 100
         m_Name: pushback
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 3
         m_Name: lifetime
         m_Overridden: 1
     m_Vector2f:
@@ -317,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5692779530591331483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80.5, y: -20.1, z: -54.2}
+  m_LocalPosition: {x: -80, y: -20.2, z: -54.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5692779531312244147}
@@ -339,13 +342,13 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 20
+      - m_Value: 15
         m_Name: size
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 2
         m_Name: lifetime
         m_Overridden: 1
-      - m_Value: 0.05
+      - m_Value: 100
         m_Name: pushback
         m_Overridden: 1
     m_Vector2f:
@@ -486,11 +489,14 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 25
+      - m_Value: 20
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.03
+      - m_Value: 200
         m_Name: pushback
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: lifetime
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -633,10 +639,10 @@ VisualEffect:
       - m_Value: 15
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.05
+      - m_Value: 100
         m_Name: pushback
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 3
         m_Name: lifetime
         m_Overridden: 1
     m_Vector2f:
@@ -755,7 +761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5692779531300602167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.5, y: -20.1, z: -54.2}
+  m_LocalPosition: {x: 80, y: -20.2, z: -54.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5692779531312244147}
@@ -777,13 +783,13 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 20
+      - m_Value: 15
         m_Name: size
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 2
         m_Name: lifetime
         m_Overridden: 1
-      - m_Value: 0.05
+      - m_Value: 100
         m_Name: pushback
         m_Overridden: 1
     m_Vector2f:
