@@ -30,6 +30,7 @@ public class StructureProfile : Item {
     [Header ("Docking")]
     public int dockingPoints;
     public Vector3[] dockingLocations;
+    public Vector3[] dockingRotations;
     public float dockingRange;
     [Header ("Production")]
     public Factory[] factories;

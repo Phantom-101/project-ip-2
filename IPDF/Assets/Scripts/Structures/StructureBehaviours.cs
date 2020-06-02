@@ -155,7 +155,10 @@ public class StructureBehaviours : MonoBehaviour {
         shield.Process ();
         generator.GenerateEnergy (capacitor);
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
-        if (transform.parent.GetComponent<StructureBehaviours> ()) engine.forwardSetting = 0.0f;
+        if (transform.parent.GetComponent<StructureBehaviours> ()) {
+            engine.forwardSetting = 0.0f;
+            engine.turnSetting = 0.0f;
+        }
         engine.ApplySettings (GetComponent<ConstantForce> ());
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
@@ -300,6 +303,7 @@ public class StructureBehaviours : MonoBehaviour {
                 docker.transform.parent = transform;
                 docked[i] = docker.gameObject;
                 docker.transform.localPosition = profile.dockingLocations[i];
+                docker.transform.localEulerAngles = profile.dockingRotations[i];
                 if (playerController.structureBehaviours == docker) {
                     playerController.Reset ();
                     FindObjectOfType<CameraFollowPlayer> ().ResetPosition ();
@@ -311,7 +315,7 @@ public class StructureBehaviours : MonoBehaviour {
                 Rigidbody dockerRigidbody = docker.GetComponent<Rigidbody> ();
                 dockerRigidbody.velocity = Vector3.zero;
                 dockerRigidbody.angularVelocity = Vector3.zero;
-                break;
+                return;
             }
         }
     }
@@ -321,7 +325,7 @@ public class StructureBehaviours : MonoBehaviour {
             if (docked[i] == undocker.gameObject) {
                 undocker.transform.parent = transform.parent;
                 docked[i] = null;
-                break;
+                return;
             }
         }
     }

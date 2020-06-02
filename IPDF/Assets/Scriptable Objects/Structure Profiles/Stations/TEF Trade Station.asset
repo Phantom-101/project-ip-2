@@ -52,6 +52,11 @@ MonoBehaviour:
   - {x: -200, y: 0, z: 0}
   - {x: 0, y: 0, z: 200}
   - {x: 0, y: 0, z: -200}
+  dockingRotations:
+  - {x: 0, y: 90, z: 0}
+  - {x: 0, y: -90, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 180, z: 0}
   dockingRange: 300
   factories: []
   collisionMesh: {fileID: 0}
@@ -59,7 +64,7 @@ MonoBehaviour:
   drag: 1000
   angularDrag: 1000
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  decals: {fileID: 0}
+  decals: {fileID: 5538536859951622833, guid: a41494461bc7bbc4dabf570524f059d3, type: 3}
   offset: {x: 0, y: 0, z: 0}
   rotate: {x: 180, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
