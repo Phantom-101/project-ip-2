@@ -171,9 +171,9 @@ public class StructureBehaviours : MonoBehaviour {
             float leastWeight = float.MaxValue;
             foreach (StructureBehaviours structure in structuresManager.structures) {
                 float sizeDif = Mathf.Abs (profile.apparentSize - structure.profile.apparentSize);
-                sizeDif = MathUtils.Clamp (sizeDif - 0.2f, 0.01f, 100.0f);
+                sizeDif = MathUtils.Clamp (sizeDif - 2, 1, 100);
                 float distance = Vector3.Distance (transform.position, structure.transform.position);
-                float weight = distance + distance * sizeDif / 5.0f;
+                float weight = distance;
                 if (structure != this && structure.faction != faction &&
                     factionsManager.GetRelations (faction, structure.faction) <= -0.5f && !structure.cloaked && weight < leastWeight &&
                     structure.transform.parent == transform.parent) {
@@ -328,5 +328,21 @@ public class StructureBehaviours : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    public float GetBuyPrice (Item item) {
+        foreach (FactoryHandler factoryHandler in factories)
+            foreach (Item output in factoryHandler.factory.outputs)
+                if (output == item)
+                    return -1;
+        return item.basePrice * Mathf.Sqrt (25.0f / (inventory.GetItemCount (item) + 1)) * 1.5f;
+    }
+
+    public float GetSellPrice (Item item) {
+        foreach (FactoryHandler factoryHandler in factories)
+            foreach (Item input in factoryHandler.factory.inputs)
+                if (input == item)
+                    return -1;
+        return item.basePrice * Mathf.Sqrt (25.0f / (inventory.GetItemCount (item) + 1));
     }
 }

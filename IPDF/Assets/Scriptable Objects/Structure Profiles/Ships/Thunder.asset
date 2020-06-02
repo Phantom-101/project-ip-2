@@ -18,9 +18,10 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: ee68b75a49c3cf84b90fd75c539583da, type: 3}
   material: {fileID: 2100000, guid: 5e88404a95272bd4db9b3505228077cb, type: 2}
   apparentSize: 2
+  hullUI: {fileID: 0}
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 60
+  rangeChangeAngle: 90
   structureClass: 3
   manufacturer: 0
   description: 
@@ -37,6 +38,7 @@ MonoBehaviour:
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
+  dockingRotations: []
   dockingRange: 0
   factories: []
   collisionMesh: {fileID: 0}

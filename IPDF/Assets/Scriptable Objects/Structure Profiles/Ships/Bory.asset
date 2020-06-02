@@ -18,9 +18,10 @@ MonoBehaviour:
   mesh: {fileID: 1573024560784159267, guid: 8cbda229daf51dd4b912d5d631f848df, type: 3}
   material: {fileID: 2100000, guid: bdf6d26c859dc3640bff31faa52e44c6, type: 2}
   apparentSize: 100
+  hullUI: {fileID: 0}
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 60
+  rangeChangeAngle: 90
   structureClass: 3
   manufacturer: 8
   description: Borealis class light corvette.
@@ -42,6 +43,7 @@ MonoBehaviour:
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
+  dockingRotations: []
   dockingRange: 0
   factories: []
   collisionMesh: {fileID: 0}

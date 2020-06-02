@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 3f74945d214ee4e45914e3866fcce593, type: 3}
   material: {fileID: 2100000, guid: 3fa01f9bd2cbf8a4db3d33d03430553a, type: 2}
-  apparentSize: 50
+  apparentSize: 100
   hullUI: {fileID: 21300000, guid: 8df26ae6b4484a644935ac5bfbb6ef24, type: 3}
   enforceHeight: 1
   engagementRangeMultiplier: 0.75

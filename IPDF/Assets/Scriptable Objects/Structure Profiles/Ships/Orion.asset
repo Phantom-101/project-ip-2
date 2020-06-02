@@ -21,7 +21,7 @@ MonoBehaviour:
   hullUI: {fileID: 21300000, guid: b51cf6240800392488dd7d0c265ef2fa, type: 3}
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 60
+  rangeChangeAngle: 90
   structureClass: 2
   manufacturer: 0
   description: 
@@ -37,6 +37,7 @@ MonoBehaviour:
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
+  dockingRotations: []
   dockingRange: 0
   factories: []
   collisionMesh: {fileID: 0}

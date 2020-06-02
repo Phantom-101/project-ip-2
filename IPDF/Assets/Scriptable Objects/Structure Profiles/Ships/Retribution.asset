@@ -18,9 +18,10 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: f5aeae62c9551264cb14d31e5b59b19e, type: 3}
   material: {fileID: 2100000, guid: 2a212d815f19bff469a49e060e2c65a3, type: 2}
   apparentSize: 50
+  hullUI: {fileID: 0}
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 60
+  rangeChangeAngle: 90
   structureClass: 8
   manufacturer: 8
   description: Phys' dev ship.
@@ -52,6 +53,7 @@ MonoBehaviour:
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
+  dockingRotations: []
   dockingRange: 0
   factories: []
   collisionMesh: {fileID: 0}
