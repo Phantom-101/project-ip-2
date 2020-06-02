@@ -8,6 +8,8 @@ public class StructureProfile : Item {
     public Mesh mesh;
     public Material material;
     public float apparentSize;
+    [Header ("UI")]
+    public Sprite hullUI;
     [Header ("Adjustables")]
     public bool enforceHeight;
     [Header ("AI")]

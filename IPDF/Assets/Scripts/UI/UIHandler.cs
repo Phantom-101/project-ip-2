@@ -56,6 +56,7 @@ public class UIHandler : MonoBehaviour {
     void Update () {
         if (source == null) return;
         // Hull
+        hullUI.sprite = source.profile.hullUI;
         hullUI.color = Mathf.Floor (source.hullTimeSinceLastDamaged / 0.3f) % 2 == 1 && source.hullTimeSinceLastDamaged < 1.5f ?
             Color.white :
             hullGradient.Evaluate (source.hull / source.profile.hull);
@@ -89,6 +90,7 @@ public class UIHandler : MonoBehaviour {
         if (targetStructureBehaviour == null) targetInformationPanel.SetActive (false);
         else {
             targetInformationPanel.SetActive (true);
+            targetHullUI.sprite = targetStructureBehaviour.profile.hullUI;
             targetHullUI.color = Mathf.Floor (targetStructureBehaviour.hullTimeSinceLastDamaged / 0.3f) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < 1.5f ?
                 Color.white :
                 hullGradient.Evaluate (targetStructureBehaviour.hull / targetStructureBehaviour.profile.hull);
