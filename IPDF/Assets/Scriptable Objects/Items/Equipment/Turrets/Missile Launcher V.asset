@@ -34,7 +34,7 @@ MonoBehaviour:
   projectileInitializeRotation: 0
   projectileInaccuracy: 180
   leadProjectile: 0
-  fuelRange: 500
+  fuelRange: 700
   damage: 25
   explosiveDamage: 125
   explosionRange: 25

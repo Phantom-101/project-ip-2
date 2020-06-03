@@ -53,13 +53,6 @@ public class Projectile : MonoBehaviour {
         if (ammunition == null) {
             if (turret.projectileSticky && target != null && timeElapsed >= turret.trackingTime) endPosition = target.transform.position;
             float step = turret.projectileVelocity * Time.deltaTime;
-            if (fuelExpended < turret.fuelRange) {
-                Vector3 heading = endPosition - transform.position;
-                Vector3 newDirection = Vector3.RotateTowards (transform.forward, heading, turret.projectileTracking * Mathf.Deg2Rad * Time.deltaTime, 0.0f);
-                transform.rotation = Quaternion.LookRotation (newDirection);
-                transform.Translate (new Vector3 (0.0f, 0.0f, step));
-                fuelExpended += step;
-            } else Disable ();
             RaycastHit hit;
             if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
                 Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.green);
@@ -77,29 +70,25 @@ public class Projectile : MonoBehaviour {
                             GameObject explosionHitGameObject = explosionHit.transform.gameObject;
                             StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
                             if (explosionHitStructureBehaviours != null) {
-                                Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.green, 1.0f);
-                                Debug.Log (turret.name + "'s explosion hit " + explosionHitGameObject.name + " and dealt " +
-                                    (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio) + " points of damage.");
                                 factionsManager.RelationsChanged (fromFaction, explosionHitStructureBehaviours.faction, -0.1f);
                                 explosionHitStructureBehaviours.TakeDamage (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio, transform.position);
-                            } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.red, 1.0f);
-                        } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * turret.explosionRange), Color.red, 1.0f);
+                            }
+                        }
                     }
                     transform.position = hit.point;
                     Disable ();
-                } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
-            } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
-        } else {
-            Debug.Log ("This projectile is using an ammunition.");
-            if (ammunition.projectileSticky && target != null && timeElapsed >= turret.trackingTime) endPosition = target.transform.position;
-            float step = ammunition.projectileVelocity * Time.deltaTime;
-            if (fuelExpended < ammunition.fuelRange) {
+                }
+            }
+            if (fuelExpended < turret.fuelRange) {
                 Vector3 heading = endPosition - transform.position;
-                Vector3 newDirection = Vector3.RotateTowards (transform.forward, heading, ammunition.projectileTracking * Mathf.Deg2Rad * Time.deltaTime, 0.0f);
+                Vector3 newDirection = Vector3.RotateTowards (transform.forward, heading, turret.projectileTracking * Mathf.Deg2Rad * Time.deltaTime, 0.0f);
                 transform.rotation = Quaternion.LookRotation (newDirection);
                 transform.Translate (new Vector3 (0.0f, 0.0f, step));
                 fuelExpended += step;
             } else Disable ();
+        } else {
+            if (ammunition.projectileSticky && target != null && timeElapsed >= turret.trackingTime) endPosition = target.transform.position;
+            float step = ammunition.projectileVelocity * Time.deltaTime;
             RaycastHit hit;
             if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
                 Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.green);
@@ -117,18 +106,22 @@ public class Projectile : MonoBehaviour {
                             GameObject explosionHitGameObject = explosionHit.transform.gameObject;
                             StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
                             if (explosionHitStructureBehaviours != null) {
-                                Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * ammunition.explosionRange), Color.green, 1.0f);
-                                Debug.Log (ammunition.name + "'s explosion hit " + explosionHitGameObject.name + " and dealt " +
-                                    (ammunition.explosiveDamage / ammunition.explosionDetail * storedEnergyRatio) + " points of damage.");
                                 factionsManager.RelationsChanged (fromFaction, explosionHitStructureBehaviours.faction, -0.1f);
                                 explosionHitStructureBehaviours.TakeDamage (ammunition.explosiveDamage / ammunition.explosionDetail * storedEnergyRatio, transform.position);
-                            } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * ammunition.explosionRange), Color.red, 1.0f);
-                        } else Debug.DrawRay (transform.position, transform.rotation * (dir.normalized * ammunition.explosionRange), Color.red, 1.0f);
+                            }
+                        }
                     }
                     transform.position = hit.point;
                     Disable ();
-                } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
-            } else Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.red);
+                }
+            }
+            if (fuelExpended < ammunition.fuelRange) {
+                Vector3 heading = endPosition - transform.position;
+                Vector3 newDirection = Vector3.RotateTowards (transform.forward, heading, ammunition.projectileTracking * Mathf.Deg2Rad * Time.deltaTime, 0.0f);
+                transform.rotation = Quaternion.LookRotation (newDirection);
+                transform.Translate (new Vector3 (0.0f, 0.0f, step));
+                fuelExpended += step;
+            } else Disable ();
         }
     }
 

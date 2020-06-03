@@ -21,7 +21,7 @@ MonoBehaviour:
   hullUI: {fileID: 0}
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 90
+  rangeChangeAngle: 45
   structureClass: 2
   manufacturer: 3
   description: 

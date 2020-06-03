@@ -21,7 +21,7 @@ MonoBehaviour:
   hullUI: {fileID: 21300000, guid: b8a883e61b5f3b04bb2eb07a55f41c4f, type: 3}
   enforceHeight: 1
   engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 90
+  rangeChangeAngle: 45
   structureClass: 4
   manufacturer: 8
   description: Pirate ship, prusumed to be manufactured in a captured Delta Shipyard.
@@ -43,7 +43,7 @@ MonoBehaviour:
   dockingRange: 0
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 10
+  mass: 25
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}

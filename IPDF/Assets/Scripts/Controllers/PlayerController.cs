@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour {
     void Update () {
         if (!structureBehaviours) return;
         uIHandler.source = structureBehaviours;
+        // Skybox stuff
+        Sector inSector = structureBehaviours.transform.parent.GetComponent<Sector> ();
+        if (inSector != null) RenderSettings.skybox = inSector.skybox;
         if (structureBehaviours.AIActivated) {
             // Do not act according to player inputs
         } else {

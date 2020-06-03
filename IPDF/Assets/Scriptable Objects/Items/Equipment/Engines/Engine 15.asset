@@ -16,4 +16,4 @@ MonoBehaviour:
   basePrice: 0
   size: 0
   forwardPower: 15
-  turnPower: 25
+  turnPower: 1

@@ -134,7 +134,7 @@ MonoBehaviour:
     online: 1
   savedEngine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -191,10 +192,10 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
-  constantForce: {fileID: 0}
   AIActivated: 1
-  targetted: {fileID: 0}
+  targeted: {fileID: 0}
   initialized: 0
 --- !u!114 &6355110525696986320
 MonoBehaviour:

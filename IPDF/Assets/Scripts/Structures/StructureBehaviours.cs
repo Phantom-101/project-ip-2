@@ -39,7 +39,6 @@ public class StructureBehaviours : MonoBehaviour {
     public List<FactoryHandler> factories;
     [Header ("Physics")]
     public new Rigidbody rigidbody;
-    public new ConstantForce constantForce;
     [Header ("AI")]
     public bool AIActivated;
     [Header ("Misc")]
@@ -63,7 +62,7 @@ public class StructureBehaviours : MonoBehaviour {
         GameObject colliderGameObject = new GameObject ();
         colliderGameObject.name = "Collider";
         colliderGameObject.transform.parent = transform;
-        MeshCollider meshCollider = meshGameObject.AddComponent<MeshCollider> ();
+        MeshCollider meshCollider = colliderGameObject.AddComponent<MeshCollider> ();
         meshCollider.sharedMesh = (profile.collisionMesh == null ? profile.mesh : profile.collisionMesh);
         if (profile.structureClass != StructureClass.Station) meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
@@ -122,8 +121,6 @@ public class StructureBehaviours : MonoBehaviour {
         rigidbody.angularDrag = profile.angularDrag;
         if (profile.structureClass == StructureClass.Station) rigidbody.isKinematic = true;
         // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
-        constantForce = GetComponent<ConstantForce> ();
-        if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
         if (profile.decals != null) {
             GameObject decals = Instantiate (profile.decals) as GameObject;
             decals.transform.parent = transform;
@@ -159,7 +156,7 @@ public class StructureBehaviours : MonoBehaviour {
             engine.forwardSetting = 0.0f;
             engine.turnSetting = 0.0f;
         }
-        engine.ApplySettings (GetComponent<ConstantForce> ());
+        engine.ApplySettings (rigidbody);
         electronics.Process (gameObject);
         tractorBeam.Process (gameObject);
         // Production

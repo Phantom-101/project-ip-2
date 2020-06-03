@@ -25,7 +25,7 @@ MonoBehaviour:
   structureClass: 0
   manufacturer: 5
   description: 
-  hull: 30000
+  hull: 10000
   inventorySize: 10000
   turretSlots: 0
   turretPositions: []
@@ -33,6 +33,7 @@ MonoBehaviour:
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
+  dockingRotations: []
   dockingRange: 0
   factories:
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}

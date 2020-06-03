@@ -76,10 +76,10 @@ public class EngineHandler {
         turnSetting = target;
     }
 
-    public void ApplySettings (ConstantForce target) {
+    public void ApplySettings (Rigidbody target) {
         if (!online || engine == null) return;
-        target.relativeForce = new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower);
-        target.torque = new Vector3 (0.0f, turnSetting * engine.turnPower, 0.0f);
+        target.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower / target.mass), ForceMode.Acceleration);
+        target.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower / target.mass, 0.0f), ForceMode.Acceleration);
         float targetZRot = -target.GetComponent<Rigidbody> ().angularVelocity.y * 10.0f;
         target.transform.localEulerAngles = new Vector3 (0.0f, target.transform.localEulerAngles.y, targetZRot);
     }
