@@ -40,14 +40,14 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("Physics")]
     public new Rigidbody rigidbody;
     [Header ("AI")]
-    public bool AIActivated;
+    public StructureAI AI;
     [Header ("Misc")]
     public StructureBehaviours targeted;
     public bool initialized;
-
-    StructuresManager structuresManager;
-    FactionsManager factionsManager;
-    PlayerController playerController;
+    [Header ("Component Cache")]
+    public StructuresManager structuresManager;
+    public FactionsManager factionsManager;
+    public PlayerController playerController;
 
     public void Initialize () {
         structuresManager = FindObjectOfType<StructuresManager> ();
@@ -163,61 +163,7 @@ public class StructureBehaviours : MonoBehaviour {
         if (factories.Count != profile.factories.Length) factories = new List<FactoryHandler> (profile.factories.Length);
         foreach (FactoryHandler factory in factories) factory.Process ();
         // AI stuff
-        if (AIActivated) {
-            StructureBehaviours closest = null;
-            float leastWeight = float.MaxValue;
-            foreach (StructureBehaviours structure in structuresManager.structures) {
-                float sizeDif = Mathf.Abs (profile.apparentSize - structure.profile.apparentSize);
-                sizeDif = MathUtils.Clamp (sizeDif - 2, 1, 100);
-                float distance = Vector3.Distance (transform.position, structure.transform.position);
-                float weight = distance;
-                if (structure != this && structure.faction != faction &&
-                    factionsManager.GetRelations (faction, structure.faction) <= -0.5f && !structure.cloaked && weight < leastWeight &&
-                    structure.transform.parent == transform.parent) {
-                    leastWeight = weight;
-                    closest = structure;
-                }
-            }
-            if (closest != null) {
-                targeted = closest;
-                Debug.DrawRay (transform.position, targeted.transform.position - transform.position, Color.red);
-                float totalRange = 0.0f;
-                int effectiveTurrets = 0;
-                foreach (TurretHandler turretHandler in turrets) {
-                    turretHandler.Activate (targeted.gameObject);
-                    Turret turret = turretHandler.turret;
-                    if (turret != null) {
-                        totalRange += turret.range;
-                        effectiveTurrets ++;
-                    }
-                }
-                float optimalRange = effectiveTurrets == 0 ? 1000.0f : totalRange / effectiveTurrets * profile.engagementRangeMultiplier;
-                engine.forwardSetting = 1.0f;
-                Vector3 heading = targeted.transform.position - transform.position;
-                Vector3 perp = Vector3.Cross (transform.forward, heading);
-                float leftRight = Vector3.Dot (perp, transform.up);
-                float angle = targeted.transform.position - transform.position == Vector3.zero ?
-                        0.0f :
-                        Quaternion.Angle (transform.rotation, Quaternion.LookRotation (targeted.transform.position
-                    - transform.position)
-                );
-                float lrMult = leftRight >= 0.0f ? 1.0f : -1.0f;
-                angle *= lrMult;
-                float approachAngle = 90.0f * lrMult;
-                float sqrDis = (targeted.transform.position - transform.position).sqrMagnitude;
-                approachAngle -= sqrDis > optimalRange * optimalRange ? profile.rangeChangeAngle * lrMult : 0.0f;
-                approachAngle += sqrDis < optimalRange * optimalRange * 0.75f ? profile.rangeChangeAngle * lrMult : 0.0f;
-                Debug.DrawRay (transform.position, transform.rotation * Quaternion.Euler (0.0f, angle - approachAngle, 0.0f) * Vector3.forward * 10.0f * profile.apparentSize, Color.yellow);
-                if (angle > approachAngle) engine.turnSetting = 1.0f;
-                else if (angle > 0.0f && angle < approachAngle * 0.9) engine.turnSetting = -1.0f;
-                else if (angle < -approachAngle) engine.turnSetting = -1.0f;
-                else if (angle < 0.0f && angle > -approachAngle * 0.9) engine.turnSetting = 1.0f;
-                else engine.turnSetting = 0.0f;
-            } else {
-                engine.forwardSetting = 0.0f;
-                engine.turnSetting = 0.0f;
-            }
-        }
+        if (AI != null) AI.Process (this);
     }
 
     public void InstantiateProjectiles (TurretHandler turretHandler, GameObject target, Vector3 offset) {

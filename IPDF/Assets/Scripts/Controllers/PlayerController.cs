@@ -26,9 +26,7 @@ public class PlayerController : MonoBehaviour {
         // Skybox stuff
         Sector inSector = structureBehaviours.transform.parent.GetComponent<Sector> ();
         if (inSector != null) RenderSettings.skybox = inSector.skybox;
-        if (structureBehaviours.AIActivated) {
-            // Do not act according to player inputs
-        } else {
+        if (structureBehaviours.AI == null) {
             if (structureBehaviours.engine.engine != null) {
                 structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
                 structureBehaviours.engine.turnSetting = (leftPressed ? -1.0f : 0.0f) + (rightPressed ? 1.0f : 0.0f);

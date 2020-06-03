@@ -83,8 +83,8 @@ public class UIHandler : MonoBehaviour {
         // Capacitor
         capacitorTransform.sizeDelta = new Vector2 (source.capacitor.capacitor == null ? 0.0f : source.capacitor.storedEnergy / source.capacitor.capacitor.capacitance * 150.0f, 20.0f);
         // AI indicators
-        if (source.AIActivated) AIInfo.SetActive (true);
-        else AIInfo.SetActive (false);
+        if (source.AI == null) AIInfo.SetActive (false);
+        else AIInfo.SetActive (true);
         // Target information
         StructureBehaviours targetStructureBehaviour = source.targeted;
         if (targetStructureBehaviour == null) targetInformationPanel.SetActive (false);

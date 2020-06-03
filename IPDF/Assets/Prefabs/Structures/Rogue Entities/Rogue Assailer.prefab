@@ -152,6 +152,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
+  savedFactories: []
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -191,11 +192,14 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   docked: []
+  factories: []
   rigidbody: {fileID: 0}
-  constantForce: {fileID: 0}
-  AIActivated: 1
-  targetted: {fileID: 0}
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
+  targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &7218308573696321715
 MonoBehaviour:
   m_ObjectHideFlags: 0

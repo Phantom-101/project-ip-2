@@ -466,9 +466,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &56236615
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,9 +696,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &58253578
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,9 +926,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &60135115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,9 +1114,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &111356484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,9 +1344,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &125275853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,9 +1574,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &175717943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,9 +1980,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 0}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &235251623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2751,9 +2772,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &345264175
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,9 +3041,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &375639058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,9 +3278,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 0}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &415125335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,9 +3905,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &452615546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,9 +4402,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &533238710
 GameObject:
   m_ObjectHideFlags: 0
@@ -4596,9 +4632,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &587025812
 GameObject:
   m_ObjectHideFlags: 0
@@ -5357,9 +5396,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &651335961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6042,9 +6084,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &772424029
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,9 +6314,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &831469441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
@@ -6556,9 +6604,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1001 &853653266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7901,9 +7952,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &971463893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
@@ -8134,9 +8188,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1021984742
 GameObject:
   m_ObjectHideFlags: 0
@@ -8361,9 +8418,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1033050175
 GameObject:
   m_ObjectHideFlags: 0
@@ -8698,9 +8758,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 0}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1046819691
 GameObject:
   m_ObjectHideFlags: 0
@@ -9073,9 +9136,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1099295939
 GameObject:
   m_ObjectHideFlags: 0
@@ -9300,9 +9366,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1100768932
 GameObject:
   m_ObjectHideFlags: 0
@@ -9534,9 +9603,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 0}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1106030979
 GameObject:
   m_ObjectHideFlags: 0
@@ -9761,9 +9833,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1117563861
 GameObject:
   m_ObjectHideFlags: 0
@@ -10524,9 +10599,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1317781128
 GameObject:
   m_ObjectHideFlags: 0
@@ -10947,9 +11025,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1338523142
 GameObject:
   m_ObjectHideFlags: 0
@@ -11297,9 +11378,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1374690144
 GameObject:
   m_ObjectHideFlags: 0
@@ -11699,9 +11783,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1447570936
 GameObject:
   m_ObjectHideFlags: 0
@@ -12000,9 +12087,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1458824943
 GameObject:
   m_ObjectHideFlags: 0
@@ -12503,9 +12593,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1491093807
 GameObject:
   m_ObjectHideFlags: 0
@@ -13021,9 +13114,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1551932583
 GameObject:
   m_ObjectHideFlags: 0
@@ -13248,9 +13344,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1559590828
 GameObject:
   m_ObjectHideFlags: 0
@@ -13586,9 +13685,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1595662325
 GameObject:
   m_ObjectHideFlags: 0
@@ -14050,9 +14152,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 0}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1626496949
 GameObject:
   m_ObjectHideFlags: 0
@@ -14388,9 +14493,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1001 &1655489927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15193,9 +15301,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 0}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1776885018
 GameObject:
   m_ObjectHideFlags: 0
@@ -15650,9 +15761,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1001 &1827403999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16153,9 +16267,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 0}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1869460564
 GameObject:
   m_ObjectHideFlags: 0
@@ -16380,9 +16497,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1911529961
 GameObject:
   m_ObjectHideFlags: 0
@@ -16607,9 +16727,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1940269482
 GameObject:
   m_ObjectHideFlags: 0
@@ -16834,9 +16957,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1981136097
 GameObject:
   m_ObjectHideFlags: 0
@@ -21788,9 +21914,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &1992285521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3980009413977360240, guid: f6248344aa7e50b44939341d0078334a,
@@ -22216,9 +22345,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &2057681951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3980009413977360240, guid: f6248344aa7e50b44939341d0078334a,
@@ -22523,9 +22655,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &2097901957
 GameObject:
   m_ObjectHideFlags: 0
@@ -23319,9 +23454,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &2134506513
 GameObject:
   m_ObjectHideFlags: 0
@@ -23693,9 +23831,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 0
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &6355110525750044497
 Transform:
   m_ObjectHideFlags: 0
@@ -23849,9 +23990,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &6355110526056126129
 Transform:
   m_ObjectHideFlags: 0
@@ -24104,9 +24248,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &6750740652291305464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24269,9 +24416,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &6750740652291305469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24429,9 +24579,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &6750740652450203001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24649,9 +24802,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &7218308574373969049
 Transform:
   m_ObjectHideFlags: 0
@@ -24724,17 +24880,17 @@ PrefabInstance:
     - target: {fileID: 2324582867928547035, guid: a81d16b0722679341a490989bb38281d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 33.7
       objectReference: {fileID: 0}
     - target: {fileID: 2324582867928547035, guid: a81d16b0722679341a490989bb38281d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2324582867928547035, guid: a81d16b0722679341a490989bb38281d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 64.3
       objectReference: {fileID: 0}
     - target: {fileID: 2324582867928547035, guid: a81d16b0722679341a490989bb38281d,
         type: 3}

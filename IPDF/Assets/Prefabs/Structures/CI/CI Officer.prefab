@@ -200,10 +200,12 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  constantForce: {fileID: 0}
-  AIActivated: 1
+  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &8730564311083946547
 MonoBehaviour:
   m_ObjectHideFlags: 0
