@@ -272,20 +272,4 @@ public class StructureBehaviours : MonoBehaviour {
             }
         }
     }
-
-    public float GetBuyPrice (Item item) {
-        foreach (FactoryHandler factoryHandler in factories)
-            foreach (Item output in factoryHandler.factory.outputs)
-                if (output == item)
-                    return -1;
-        return item.basePrice * Mathf.Sqrt (25.0f / (inventory.GetItemCount (item) + 1)) * 1.5f;
-    }
-
-    public float GetSellPrice (Item item) {
-        foreach (FactoryHandler factoryHandler in factories)
-            foreach (Item input in factoryHandler.factory.inputs)
-                if (input == item)
-                    return -1;
-        return item.basePrice * Mathf.Sqrt (25.0f / (inventory.GetItemCount (item) + 1));
-    }
 }

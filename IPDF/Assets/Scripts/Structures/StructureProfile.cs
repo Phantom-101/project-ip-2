@@ -32,7 +32,8 @@ public class StructureProfile : Item {
     public Vector3[] dockingLocations;
     public Vector3[] dockingRotations;
     public float dockingRange;
-    [Header ("Production")]
+    [Header ("Economy")]
+    public StructureMarket market;
     public Factory[] factories;
     [Header ("Physics")]
     public Mesh collisionMesh;

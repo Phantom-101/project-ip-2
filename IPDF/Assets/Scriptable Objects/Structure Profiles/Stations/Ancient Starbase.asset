@@ -45,6 +45,7 @@ MonoBehaviour:
   dockingLocations: []
   dockingRotations: []
   dockingRange: 0
+  market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
   factories: []
   collisionMesh: {fileID: 0}
   mass: 1000

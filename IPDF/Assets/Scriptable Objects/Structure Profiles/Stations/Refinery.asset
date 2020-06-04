@@ -31,10 +31,19 @@ MonoBehaviour:
   turretPositions: []
   turretAlignments: 
   electronicsCapable: 0
-  dockingPoints: 0
-  dockingLocations: []
-  dockingRotations: []
-  dockingRange: 0
+  dockingPoints: 4
+  dockingLocations:
+  - {x: 225, y: 0, z: 225}
+  - {x: -225, y: 0, z: 225}
+  - {x: 225, y: 0, z: -225}
+  - {x: -225, y: 0, z: -225}
+  dockingRotations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  dockingRange: 500
+  market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
   factories:
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
