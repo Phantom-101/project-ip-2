@@ -3,40 +3,57 @@ using System.Collections.Generic;
 using UnityEngine;
 using Essentials;
 
-public struct StringPair {
-    string a;
-    string b;
-
-    public StringPair (string a, string b) {
-        if (a.CompareTo (b) < 0.0f) {
-            this.a = a;
-            this.b = b;
-        } else {
-            this.b = a;
-            this.a = b;
-        }
-    }
-}
-
 public class FactionsManager : MonoBehaviour {
-    public Dictionary<StringPair, float> relations = new Dictionary<StringPair, float> ();
+    public List<Faction> factions = new List<Faction> ();
 
-    public float GetRelations (string factionA, string factionB) {
-        StringPair involved = new StringPair (factionA, factionB);
-        if (!relations.ContainsKey (involved)) relations.Add(involved, 0.0f);
-        return relations[involved];
+    public Faction GetFaction (int id) {
+        if (id >= factions.Count) return null;
+        return factions[id];
     }
 
-    public void SetRelations (string factionA, string factionB, float value) {
-        StringPair involved = new StringPair (factionA, factionB);
-        if (!relations.ContainsKey (involved)) relations.Add(involved, value);
-        else relations[involved] = value;
+    public long GetWealth (int id) {
+        return GetFaction (id) == null ? -1 : GetFaction (id).wealth;
     }
 
-    public void RelationsChanged (string factionA, string factionB, float change) {
-        if (factionA == factionB) return;
-        StringPair involved = new StringPair (factionA, factionB);
-        if (!relations.ContainsKey (involved)) relations.Add(involved, 0.0f);
-        relations[involved] += change;
+    public bool SetWealth (int id, long value) {
+        if (value < 0) return false;
+        if (GetFaction (id) == null) return false;
+        GetFaction (id).wealth = value;
+        return true;
+    }
+
+    public bool ChangeWealth (int id, long value) {
+        if (GetFaction (id) == null) return false;
+        if (GetFaction (id).wealth + value < 0) return false;
+        GetFaction (id).wealth += value;
+        return true;
+    }
+
+    public float GetRelations (int a, int b) {
+        if (GetFaction (a) == null || GetFaction (b) == null) return 0;
+        foreach (FactionRelation relation in GetFaction (a).relations)
+            if (relation.factionID == b)
+                return relation.relation;
+        return 0;
+    }
+
+    public void SetRelations (int a, int b, float value) {
+        if (GetFaction (a) == null || GetFaction (b) == null) return;
+        foreach (FactionRelation relation in GetFaction (a).relations)
+            if (relation.factionID == b) {
+                relation.relation = value;
+                return;
+            }
+        GetFaction (a).relations.Add (new FactionRelation (b, value));
+    }
+
+    public void ChangeRelations (int a, int b, float change) {
+        if (GetFaction (a) == null || GetFaction (b) == null) return;
+        foreach (FactionRelation relation in GetFaction (a).relations)
+            if (relation.factionID == b) {
+                relation.relation += change;
+                return;
+            }
+        GetFaction (a).relations.Add (new FactionRelation (b, change));
     }
 }

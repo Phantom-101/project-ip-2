@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Electronics
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 6d76f2f3ebc819d449d63b24b6ee34a0, type: 3}
-  basePrice: 6
+  basePrice: 60
   size: 0.1

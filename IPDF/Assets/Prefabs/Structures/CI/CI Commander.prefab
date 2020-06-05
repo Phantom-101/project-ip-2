@@ -49,7 +49,7 @@ MonoBehaviour:
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
-  faction: Crime Prevention
+  factionID: 1
   initializeAccordingToSaveData: 1
   savedInventory:
     storage: {fileID: 0}

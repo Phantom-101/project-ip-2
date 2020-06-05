@@ -11,7 +11,7 @@ public class StructureBehaviours : MonoBehaviour {
     public float hull;
     public float hullTimeSinceLastDamaged;
     public bool cloaked;
-    public string faction;
+    public int factionID;
     [Header ("Saved Data")]
     public bool initializeAccordingToSaveData;
     public InventoryHandler savedInventory;
@@ -190,7 +190,7 @@ public class StructureBehaviours : MonoBehaviour {
                                 )
                             ) : transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
                         ) as GameObject;
-                        projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy, faction);
+                        projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy, factionID);
                     }
                     turretHandler.storedEnergy = 0.0f;
                 }

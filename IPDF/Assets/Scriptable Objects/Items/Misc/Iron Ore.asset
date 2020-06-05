@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Iron Ore
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 3537f254e3711184199d3431f899c44b, type: 3}
-  basePrice: 5
+  basePrice: 50
   size: 0.2

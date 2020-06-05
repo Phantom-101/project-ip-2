@@ -14,8 +14,8 @@ public class StructureAI : ScriptableObject {
                 sizeDif = MathUtils.Clamp (sizeDif - 2, 1, 100);
                 float distance = Vector3.Distance (structureBehaviours.transform.position, structure.transform.position);
                 float weight = distance;
-                if (structure != structureBehaviours && structure.faction != structureBehaviours.faction &&
-                    structureBehaviours.factionsManager.GetRelations (structureBehaviours.faction, structure.faction) <= -0.5f && !structure.cloaked && weight < leastWeight &&
+                if (structure != structureBehaviours && structure.factionID != structureBehaviours.factionID &&
+                    structureBehaviours.factionsManager.GetRelations (structureBehaviours.factionID, structure.factionID) <= -0.5f && !structure.cloaked && weight < leastWeight &&
                     structure.transform.parent == structureBehaviours.transform.parent) {
                     leastWeight = weight;
                     closest = structure;

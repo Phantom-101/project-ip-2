@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gold Ore
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 33d81df6b2e9e2947b9f5e9a9ddd44ac, type: 3}
-  basePrice: 25
+  basePrice: 250
   size: 0.2

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Diamond
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 120
+  basePrice: 1200
   size: 0.1

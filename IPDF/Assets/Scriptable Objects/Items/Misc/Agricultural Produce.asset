@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Agricultural Produce
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 2fe59c2fb91177b4da04f87449d3cc44, type: 3}
-  basePrice: 7
+  basePrice: 70
   size: 1

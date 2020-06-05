@@ -6,8 +6,9 @@ using UnityEngine.UI;
 using TMPro;
 
 public class UIHandler : MonoBehaviour {
-    [Header ("Source")]
+    [Header ("Source Info")]
     public StructureBehaviours source;
+    public StructureBehaviours stationStructureBehaviours;
     [Header ("Prefabs")]
     public GameObject equipmentButton;
     public GameObject itemSmallInfoPanel;
@@ -15,6 +16,8 @@ public class UIHandler : MonoBehaviour {
     public Gradient hullGradient;
     public Gradient shieldGradient;
     public Gradient energyGradient;
+    [Header ("Managers")]
+    public FactionsManager factionsManager;
     [Header ("UI Elements")]
     public GameObject canvas;
     public Image hullUI;
@@ -39,19 +42,20 @@ public class UIHandler : MonoBehaviour {
     public GameObject itemsPanelContent;
     public Item selectedMarketItem;
     public GameObject itemInfoPanel;
-    public GameObject itemIcon;
+    public Image itemIcon;
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI itemQuantity;
     public TextMeshProUGUI stationBuyPrice;
     public TextMeshProUGUI stationSellPrice;
-    public GameObject buy1;
-    public GameObject sell1;
-    public GameObject buy10;
-    public GameObject sell10;
-    public GameObject buy100;
-    public GameObject sell100;
+    public Button buy1;
+    public Button sell1;
+    public Button buy10;
+    public Button sell10;
+    public Button buy100;
+    public Button sell100;
 
     void Awake () {
+        factionsManager = FindObjectOfType<FactionsManager> ();
         canvas = GameObject.Find ("Canvas");
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
@@ -73,17 +77,23 @@ public class UIHandler : MonoBehaviour {
         itemsPanel = marketPanel.transform.Find ("Items Panel").gameObject;
         itemsPanelContent = itemsPanel.transform.Find ("Viewport/Content").gameObject;
         itemInfoPanel = marketPanel.transform.Find ("Item Info Panel").gameObject;
-        itemIcon = itemInfoPanel.transform.Find ("Item Icon").gameObject;
+        itemIcon = itemInfoPanel.transform.Find ("Item Icon").GetComponent<Image> ();
         itemName = itemIcon.transform.Find ("Item Name").GetComponent<TextMeshProUGUI> ();
         itemQuantity = itemIcon.transform.Find ("Item Quantity").GetComponent<TextMeshProUGUI> ();
         stationBuyPrice = itemInfoPanel.transform.Find ("Station Buy Price").GetComponent<TextMeshProUGUI> ();
         stationSellPrice = itemInfoPanel.transform.Find ("Station Sell Price").GetComponent<TextMeshProUGUI> ();
-        buy1 = marketPanel.transform.Find ("Buy 1 Button").gameObject;
-        sell1 = marketPanel.transform.Find ("Sell 1 Button").gameObject;
-        buy10 = marketPanel.transform.Find ("Buy 10 Button").gameObject;
-        sell10 = marketPanel.transform.Find ("Sell 10 Button").gameObject;
-        buy100 = marketPanel.transform.Find ("Buy 100 Button").gameObject;
-        sell100 = marketPanel.transform.Find ("Sell 100 Button").gameObject;
+        buy1 = marketPanel.transform.Find ("Buy 1 Button").GetComponent<Button> ();
+        ButtonFunction (() => BuySelectedMarketItem (1), buy1);
+        sell1 = marketPanel.transform.Find ("Sell 1 Button").GetComponent<Button> ();
+        ButtonFunction (() => SellSelectedMarketItem (1), sell1);
+        buy10 = marketPanel.transform.Find ("Buy 10 Button").GetComponent<Button> ();
+        ButtonFunction (() => BuySelectedMarketItem (10), buy10);
+        sell10 = marketPanel.transform.Find ("Sell 10 Button").GetComponent<Button> ();
+        ButtonFunction (() => SellSelectedMarketItem (10), sell10);
+        buy100 = marketPanel.transform.Find ("Buy 100 Button").GetComponent<Button> ();
+        ButtonFunction (() => BuySelectedMarketItem (100), buy100);
+        sell100 = marketPanel.transform.Find ("Sell 100 Button").GetComponent<Button> ();
+        ButtonFunction (() => SellSelectedMarketItem (100), sell100);
     }
 
     void Update () {
@@ -136,7 +146,7 @@ public class UIHandler : MonoBehaviour {
                 else for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
             }
             targetName.text = targetStructureBehaviour.gameObject.name;
-            targetFaction.text = targetStructureBehaviour.faction;
+            targetFaction.text = factionsManager.GetFaction(targetStructureBehaviour.factionID).abbreviated;
             targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
             float rot = targetStructureBehaviour.GetSector (source.transform.position) * 60.0f;
             toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55.0f, Mathf.Cos (rot * Mathf.Deg2Rad) * 55.0f);
@@ -175,7 +185,7 @@ public class UIHandler : MonoBehaviour {
             ButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
             equipmentButtons[i] = button;
         }
-        StructureBehaviours stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
+        stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         // Docking
         if (source.targeted == null || source.targeted.profile.dockingPoints == 0 ||
             (source.transform.position - source.targeted.transform.position).sqrMagnitude > source.targeted.profile.dockingRange * source.targeted.profile.dockingRange ||
@@ -223,19 +233,79 @@ public class UIHandler : MonoBehaviour {
             }
             itemsPanelContent.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, -height);
         }
-        if (stationStructureBehaviours == null || selectedMarketItem == null) itemInfoPanel.SetActive (false);
+        if (stationStructureBehaviours == null || selectedMarketItem == null) {
+            itemInfoPanel.SetActive (false);
+            buy1.gameObject.SetActive (false);
+            sell1.gameObject.SetActive (false);
+            buy10.gameObject.SetActive (false);
+            sell10.gameObject.SetActive (false);
+            buy100.gameObject.SetActive (false);
+            sell100.gameObject.SetActive (false);
+        }
         else {
             itemInfoPanel.SetActive (true);
-            itemIcon.GetComponent<Image> ().sprite = selectedMarketItem.icon;
+            buy1.gameObject.SetActive (true);
+            sell1.gameObject.SetActive (true);
+            buy10.gameObject.SetActive (true);
+            sell10.gameObject.SetActive (true);
+            buy100.gameObject.SetActive (true);
+            sell100.gameObject.SetActive (true);
+            buy1.interactable = CanBuySelectedMarketItem (1);
+            sell1.interactable = CanSellSelectedMarketItem (1);
+            buy10.interactable = CanBuySelectedMarketItem (10);
+            sell10.interactable = CanSellSelectedMarketItem (10);
+            buy100.interactable = CanBuySelectedMarketItem (100);
+            sell100.interactable = CanSellSelectedMarketItem (100);
+            itemIcon.sprite = selectedMarketItem.icon;
             itemName.text = selectedMarketItem.name;
             itemQuantity.text = stationStructureBehaviours.inventory.GetItemCount (selectedMarketItem).ToString ();
-            stationBuyPrice.text = stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem).ToString ();
-            stationSellPrice.text = stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem).ToString ();
+            stationBuyPrice.text = ((long) stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
+            stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
         }
     }
 
     void ButtonFunction (UnityEngine.Events.UnityAction action, Button button) {
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(action);
+    }
+
+    void BuySelectedMarketItem (int amount) {
+        if (!CanBuySelectedMarketItem (amount)) return;
+        long price = (long) stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem) * amount;
+        factionsManager.ChangeWealth (stationStructureBehaviours.factionID, price);
+        factionsManager.ChangeWealth (source.factionID, -price);
+        source.inventory.AddItem (selectedMarketItem, amount);
+        stationStructureBehaviours.inventory.RemoveItem (selectedMarketItem, amount);
+    }
+
+    bool CanBuySelectedMarketItem (int amount) {
+        if (selectedMarketItem == null) return false;
+        if (stationStructureBehaviours == null) return false;
+        if (stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem) == -1) return false;
+        if (stationStructureBehaviours.inventory.GetItemCount (selectedMarketItem) < amount) return false;
+        if (selectedMarketItem.size * amount > source.inventory.GetAvailableSize ()) return false;
+        long price = (long) stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem) * amount;
+        if (price > factionsManager.GetWealth (source.factionID)) return false;
+        return true;
+    }
+
+    void SellSelectedMarketItem (int amount) {
+        if (!CanSellSelectedMarketItem (amount)) return;
+        long price = (long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem) * amount;
+        factionsManager.ChangeWealth (source.factionID, price);
+        factionsManager.ChangeWealth (stationStructureBehaviours.factionID, -price);
+        stationStructureBehaviours.inventory.AddItem (selectedMarketItem, amount);
+        source.inventory.RemoveItem (selectedMarketItem, amount);
+    }
+
+    bool CanSellSelectedMarketItem (int amount) {
+        if (selectedMarketItem == null) return false;
+        if (stationStructureBehaviours == null) return false;
+        if (stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem) == -1) return false;
+        if (source.inventory.GetItemCount (selectedMarketItem) < amount) return false;
+        if (selectedMarketItem.size * amount > stationStructureBehaviours.inventory.GetAvailableSize ()) return false;
+        long price = (long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem) * amount;
+        if (price > factionsManager.GetWealth (stationStructureBehaviours.factionID)) return false;
+        return true;
     }
 }

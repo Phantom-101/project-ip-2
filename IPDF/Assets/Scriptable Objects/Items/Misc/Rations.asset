@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Rations
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 091c7bed941bc484bbc56b081ad8e7ed, type: 3}
-  basePrice: 8
+  basePrice: 80
   size: 1

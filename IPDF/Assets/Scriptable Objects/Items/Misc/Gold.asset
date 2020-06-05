@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 30
+  basePrice: 300
   size: 0.1

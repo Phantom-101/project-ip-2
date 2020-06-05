@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
     public GameObject activator;
     public GameObject target;
     public float storedEnergyRatio;
-    public string fromFaction;
+    public int fromFaction;
     public Vector3 endPosition;
 
     FactionsManager factionsManager;
@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour {
     float fuelExpended = 0.0f;
     float timeElapsed = 0.0f;
 
-    public void Initialize (Turret turret, Ammunition ammunition, GameObject activator, GameObject target, float storedEnergyRatio, string fromFaction) {
+    public void Initialize (Turret turret, Ammunition ammunition, GameObject activator, GameObject target, float storedEnergyRatio, int fromFaction) {
         factionsManager = FindObjectOfType<FactionsManager> ();
         this.turret = turret;
         this.ammunition = ammunition;
@@ -60,7 +60,7 @@ public class Projectile : MonoBehaviour {
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
                     if (activator != null && hitStructureBehaviours == activator.GetComponent<StructureBehaviours> ()) return;
-                    factionsManager.RelationsChanged (fromFaction, hitStructureBehaviours.faction, -0.1f);
+                    factionsManager.ChangeRelations (hitStructureBehaviours.factionID, fromFaction, -0.1f);
                     hitStructureBehaviours.TakeDamage (turret.damage * storedEnergyRatio, transform.position);
                     for (int i = 0; i < turret.explosionDetail; i++) {
                         float angle = 360.0f / turret.explosionDetail * i;
@@ -70,7 +70,7 @@ public class Projectile : MonoBehaviour {
                             GameObject explosionHitGameObject = explosionHit.transform.gameObject;
                             StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
                             if (explosionHitStructureBehaviours != null) {
-                                factionsManager.RelationsChanged (fromFaction, explosionHitStructureBehaviours.faction, -0.1f);
+                                factionsManager.ChangeRelations (explosionHitStructureBehaviours.factionID, fromFaction, -0.05f);
                                 explosionHitStructureBehaviours.TakeDamage (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio, transform.position);
                             }
                         }
@@ -96,7 +96,7 @@ public class Projectile : MonoBehaviour {
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
                     if (activator != null && hitStructureBehaviours == activator.GetComponent<StructureBehaviours> ()) return;
-                    factionsManager.RelationsChanged (fromFaction, hitStructureBehaviours.faction, -0.1f);
+                    factionsManager.ChangeRelations (hitStructureBehaviours.factionID, fromFaction, -0.1f);
                     hitStructureBehaviours.TakeDamage (ammunition.damage * storedEnergyRatio, transform.position);
                     for (int i = 0; i < ammunition.explosionDetail; i++) {
                         float angle = 360.0f / ammunition.explosionDetail * i;
@@ -106,7 +106,7 @@ public class Projectile : MonoBehaviour {
                             GameObject explosionHitGameObject = explosionHit.transform.gameObject;
                             StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
                             if (explosionHitStructureBehaviours != null) {
-                                factionsManager.RelationsChanged (fromFaction, explosionHitStructureBehaviours.faction, -0.1f);
+                                factionsManager.ChangeRelations (explosionHitStructureBehaviours.factionID, fromFaction, -0.05f);
                                 explosionHitStructureBehaviours.TakeDamage (ammunition.explosiveDamage / ammunition.explosionDetail * storedEnergyRatio, transform.position);
                             }
                         }

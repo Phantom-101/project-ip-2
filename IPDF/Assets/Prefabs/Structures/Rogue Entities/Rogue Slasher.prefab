@@ -50,7 +50,7 @@ MonoBehaviour:
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
-  faction: Rogue Entities
+  factionID: 2
   initializeAccordingToSaveData: 1
   savedInventory:
     storage: {fileID: 0}
@@ -236,5 +236,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bee69b4b67b8654e8b0871f38ba4d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFaction: Rogue Entities
+  currentFactionID: 2
   range: 1000

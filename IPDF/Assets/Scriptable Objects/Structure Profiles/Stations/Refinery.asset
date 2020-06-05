@@ -53,7 +53,7 @@ MonoBehaviour:
   drag: 1000
   angularDrag: 1000
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  decals: {fileID: 0}
+  decals: {fileID: 2057204892864582552, guid: 893902a3031b8d0489869305606985d7, type: 3}
   offset: {x: 0, y: -15, z: 0}
   rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
