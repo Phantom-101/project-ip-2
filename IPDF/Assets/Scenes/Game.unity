@@ -1217,15 +1217,15 @@ MonoBehaviour:
     turnSetting: 0
   savedElectronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
+    electronics: {fileID: 11400000, guid: 96c66f6ffcf957b49a6cd96a455bd6cc, type: 2}
+    online: 1
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   savedTractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}

@@ -55,7 +55,6 @@ public class Projectile : MonoBehaviour {
             float step = turret.projectileVelocity * Time.deltaTime;
             RaycastHit hit;
             if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
-                Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.green);
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
@@ -79,7 +78,7 @@ public class Projectile : MonoBehaviour {
                     Disable ();
                 }
             }
-            if (fuelExpended < turret.fuelRange) {
+            if (fuelExpended < turret.fuelRange && !disabled) {
                 Vector3 heading = endPosition - transform.position;
                 Vector3 newDirection = Vector3.RotateTowards (transform.forward, heading, turret.projectileTracking * Mathf.Deg2Rad * Time.deltaTime, 0.0f);
                 transform.rotation = Quaternion.LookRotation (newDirection);
@@ -91,7 +90,6 @@ public class Projectile : MonoBehaviour {
             float step = ammunition.projectileVelocity * Time.deltaTime;
             RaycastHit hit;
             if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
-                Debug.DrawRay (transform.position, transform.rotation * new Vector3 (0.0f, 0.0f, step), Color.green);
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
@@ -115,7 +113,7 @@ public class Projectile : MonoBehaviour {
                     Disable ();
                 }
             }
-            if (fuelExpended < ammunition.fuelRange) {
+            if (fuelExpended < ammunition.fuelRange && !disabled) {
                 Vector3 heading = endPosition - transform.position;
                 Vector3 newDirection = Vector3.RotateTowards (transform.forward, heading, ammunition.projectileTracking * Mathf.Deg2Rad * Time.deltaTime, 0.0f);
                 transform.rotation = Quaternion.LookRotation (newDirection);

@@ -159,11 +159,68 @@ public class UIHandler : MonoBehaviour {
                 equipmentButtons.Add (null);
         }
         int turretButtonsShift = 0;
-        // TODO do the same for the electronics and tractor beam
+        // Tractor beam
+        TractorBeam referencedTractorBeam = null;
+        GameObject tractorBeamButton = equipmentButtons[0];
+        if (tractorBeamButton != null) {
+            ContainerComponent containerComponent = tractorBeamButton.GetComponent<ContainerComponent> ();
+            if (containerComponent == null) Destroy (tractorBeamButton);
+            else referencedTractorBeam = containerComponent.containers[0].value as TractorBeam;
+            if (referencedTractorBeam != source.tractorBeam.tractorBeam) Destroy (tractorBeamButton);
+        }
+        if (tractorBeamButton == null) {
+            tractorBeamButton = Instantiate (equipmentButton) as GameObject;
+            tractorBeamButton.transform.SetParent (equipmentButtonsParent, false);
+            ContainerComponent equipmentContainer = tractorBeamButton.GetComponent<ContainerComponent> ();
+            if (equipmentContainer == null) equipmentContainer = tractorBeamButton.AddComponent<ContainerComponent> ();
+            equipmentContainer.containers.Add (new Container<Object> (source.tractorBeam.tractorBeam));
+            referencedTractorBeam = equipmentContainer.containers[0].value as TractorBeam;
+        }
+        tractorBeamButton.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, turretButtonsShift * 40);
+        tractorBeamButton.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTractorBeam == null ? null : referencedTractorBeam.icon;
+        tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy * 30, 3);
+        tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy);
+        //tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
+        ButtonFunction (() => source.tractorBeam.Activate (source.gameObject, source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
+        equipmentButtons[0] = tractorBeamButton;
+        if (referencedTractorBeam != null) {
+            equipmentButtons[0].gameObject.SetActive (true);
+            turretButtonsShift ++;
+        }
+        else equipmentButtons[0].gameObject.SetActive (false);
+        // Electronics
+        Electronics referencedElectronics = null;
+        GameObject electronicsButton = equipmentButtons[1];
+        if (electronicsButton != null) {
+            ContainerComponent containerComponent = electronicsButton.GetComponent<ContainerComponent> ();
+            if (containerComponent == null) Destroy (electronicsButton);
+            else referencedElectronics = containerComponent.containers[0].value as Electronics;
+            if (referencedElectronics != source.electronics.electronics) Destroy (electronicsButton);
+        }
+        if (electronicsButton == null) {
+            electronicsButton = Instantiate (equipmentButton) as GameObject;
+            electronicsButton.transform.SetParent (equipmentButtonsParent, false);
+            ContainerComponent equipmentContainer = electronicsButton.GetComponent<ContainerComponent> ();
+            if (equipmentContainer == null) equipmentContainer = electronicsButton.AddComponent<ContainerComponent> ();
+            equipmentContainer.containers.Add (new Container<Object> (source.electronics.electronics));
+            referencedElectronics = equipmentContainer.containers[0].value as Electronics;
+        }
+        electronicsButton.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, turretButtonsShift * 40);
+        electronicsButton.transform.GetChild (0).GetComponent<Image> ().sprite = referencedElectronics == null ? null : referencedElectronics.icon;
+        electronicsButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedElectronics == null ? 0 : source.electronics.storedEnergy / referencedElectronics.maxStoredEnergy * 30, 3);
+        electronicsButton.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedElectronics == null ? 0 : source.electronics.storedEnergy / referencedElectronics.maxStoredEnergy);
+        //tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
+        ButtonFunction (() => source.electronics.Activate (), electronicsButton.GetComponent<Button> ());
+        equipmentButtons[1] = electronicsButton;
+        if (referencedElectronics != null) {
+            equipmentButtons[1].gameObject.SetActive (true);
+            turretButtonsShift ++;
+        }
+        else equipmentButtons[1].gameObject.SetActive (false);
         // Turrets
         for (int i = 0; i < source.turrets.Count; i++) {
             Turret referencedTurret = null;
-            GameObject button = equipmentButtons[i];
+            GameObject button = equipmentButtons[i + 2];
             if (button != null) {
                 ContainerComponent containerComponent = button.GetComponent<ContainerComponent> ();
                 if (containerComponent == null) Destroy (button);
@@ -171,19 +228,22 @@ public class UIHandler : MonoBehaviour {
                 if (referencedTurret != source.turrets[i].turret) Destroy (button);
             }
             if (button == null) {
-                button = Instantiate (equipmentButton);
+                button = Instantiate (equipmentButton) as GameObject;
                 button.transform.SetParent (equipmentButtonsParent, false);
                 ContainerComponent equipmentContainer = button.GetComponent<ContainerComponent> ();
                 if (equipmentContainer == null) equipmentContainer = button.AddComponent<ContainerComponent> ();
                 equipmentContainer.containers.Add (new Container<Object> (source.turrets[i].turret));
+                referencedTurret = equipmentContainer.containers[0].value as Turret;
             }
-            button.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0.0f, (turretButtonsShift + i) * 40.0f);
+            button.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0.0f, (i + turretButtonsShift) * 40.0f);
             button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
             button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
             button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
             button.GetComponent<Button> ().interactable = source.turrets[i].CanActivate (source.targeted == null ? null : source.targeted.gameObject);
-            ButtonFunction (() => source.turrets[button.transform.GetSiblingIndex ()].Activate (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
-            equipmentButtons[i] = button;
+            ButtonFunction (() => source.turrets[button.transform.GetSiblingIndex () - 2].Activate (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
+            equipmentButtons[i + 2] = button;
+            if (referencedTurret != null) equipmentButtons[i + 2].gameObject.SetActive (true);
+            else equipmentButtons[i + 2].gameObject.SetActive (false);
         }
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         // Docking
