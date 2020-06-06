@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Aurora
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d3972f2f464b84e4f86fd0c18bdf4891, type: 3}
   basePrice: 25000
   size: 1
   mesh: {fileID: -5495902117074765545, guid: 20defc66089d5c3438effeda9a7dcb07, type: 3}
   material: {fileID: 2100000, guid: 767e105f29b5e224891ea7c7b27213d1, type: 2}
   apparentSize: 1
-  hullUI: {fileID: 0}
+  hullUI: {fileID: 21300000, guid: d3972f2f464b84e4f86fd0c18bdf4891, type: 3}
   enforceHeight: 1
   engagementRangeMultiplier: 0.3
   rangeChangeAngle: 45
