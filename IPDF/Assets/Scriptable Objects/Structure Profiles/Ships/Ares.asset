@@ -19,7 +19,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 5bcedcb7f36dbef449f59a371081b289, type: 2}
   apparentSize: 8
   hullUI: {fileID: 0}
-  enforceHeight: 0
+  enforceHeight: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 6
@@ -42,8 +42,8 @@ MonoBehaviour:
   factories: []
   collisionMesh: {fileID: 0}
   mass: 16
-  drag: 2
-  angularDrag: 1
+  drag: 0.5
+  angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}

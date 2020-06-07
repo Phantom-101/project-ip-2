@@ -10,31 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
-  m_Name: Torpedo Launcher
+  m_Name: Plasma Pulse I
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 61cb65ca2cb176a43bb05443ef11f278, type: 3}
+  icon: {fileID: 21300000, guid: fb4475b834b2ccb49a08bbdf17b320c8, type: 3}
   basePrice: 0
   size: 0
   projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
     type: 3}
-  trailColor: {r: 0, g: 0.9003706, b: 1, a: 1}
-  trailTime: 0.07
-  maxStoredEnergy: 400
-  rechargeRate: 20
+  trailColor: {r: 0, g: 1, b: 0, a: 1}
+  trailTime: 0.1
+  maxStoredEnergy: 200
+  rechargeRate: 10
   requireAmmunition: 0
   acceptedAmmunitions: []
-  activations: 1
-  activationDelay: 0
+  activations: 3
+  activationDelay: 0.2
   range: 400
-  activationThreshold: 1
-  projectileVelocity: 50
-  projectileSticky: 1
-  projectileTracking: 150
-  projectileInitializeRotation: 0
-  projectileInaccuracy: 4
+  activationThreshold: 0.8
+  trackingTime: 0
+  projectileVelocity: 150
+  projectileSticky: 0
+  projectileTracking: 0
+  projectileInitializeRotation: 1
+  projectileInaccuracy: 0
   leadProjectile: 1
-  fuelRange: 700
-  damage: 20
-  explosiveDamage: 200
-  explosionRange: 100
-  explosionDetail: 12
+  fuelRange: 500
+  damage: 50
+  explosiveDamage: 0
+  explosionRange: 0
+  explosionDetail: 0

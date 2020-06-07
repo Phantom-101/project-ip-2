@@ -31,12 +31,10 @@ public class Projectile : MonoBehaviour {
         waitDestroy = 0.0f;
         waitDestroyTimer = 0.0f;
         if (ammunition == null) {
-            GetComponent<TrailRenderer> ().startColor = turret.trailColor;
-            GetComponent<TrailRenderer> ().endColor = turret.trailColor;
+            GetComponent<TrailRenderer> ().colorGradient = turret.trailGradient;
             GetComponent<TrailRenderer> ().time = turret.trailTime;
         } else {
-            GetComponent<TrailRenderer> ().startColor = ammunition.trailColor;
-            GetComponent<TrailRenderer> ().endColor = ammunition.trailColor;
+            GetComponent<TrailRenderer> ().colorGradient = ammunition.trailGradient;
             GetComponent<TrailRenderer> ().time = ammunition.trailTime;
         }
         initialized = true;
@@ -51,7 +49,9 @@ public class Projectile : MonoBehaviour {
         }
         timeElapsed += Time.deltaTime;
         if (ammunition == null) {
+            if (target == null && turret.projectileSticky) Disable ();
             if (turret.projectileSticky && target != null && timeElapsed >= turret.trackingTime) endPosition = target.transform.position;
+            else endPosition = transform.position + transform.forward;
             float step = turret.projectileVelocity * Time.deltaTime;
             RaycastHit hit;
             if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
@@ -86,7 +86,9 @@ public class Projectile : MonoBehaviour {
                 fuelExpended += step;
             } else Disable ();
         } else {
+            if (target == null && ammunition.projectileSticky) Disable ();
             if (ammunition.projectileSticky && target != null && timeElapsed >= turret.trackingTime) endPosition = target.transform.position;
+            else endPosition = transform.position + transform.forward;
             float step = ammunition.projectileVelocity * Time.deltaTime;
             RaycastHit hit;
             if (Physics.Raycast (transform.position, transform.forward, out hit, step)) {
@@ -125,7 +127,18 @@ public class Projectile : MonoBehaviour {
 
     void Disable () {
         disabled = true;
-        if (ammunition == null) waitDestroy = turret.trailTime;
-        else waitDestroy = ammunition.trailTime;
+        if (ammunition == null) {
+            waitDestroy = turret.trailTime;
+            if (turret.explosion != null) {
+                GameObject explosion = Instantiate (turret.explosion, transform.position, Quaternion.identity) as GameObject;
+                explosion.transform.localScale = Vector3.one * turret.explosionSize;
+            }
+        } else {
+            waitDestroy = ammunition.trailTime;
+            if (ammunition.explosion != null) {
+                GameObject explosion = Instantiate (ammunition.explosion, transform.position, Quaternion.identity) as GameObject;
+                explosion.transform.localScale = Vector3.one * ammunition.explosionSize;
+            }
+        }
     }
 }

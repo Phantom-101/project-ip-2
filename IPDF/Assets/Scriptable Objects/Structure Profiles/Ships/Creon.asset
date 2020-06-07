@@ -43,9 +43,9 @@ MonoBehaviour:
   factories: []
   collisionMesh: {fileID: 0}
   mass: 25
-  drag: 1
-  angularDrag: 1
-  physicMaterial: {fileID: 0}
+  drag: 0.5
+  angularDrag: 2
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   offset: {x: 0, y: 6, z: 0}
   rotate: {x: 0, y: 90, z: 0}

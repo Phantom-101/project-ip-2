@@ -18,7 +18,7 @@ MonoBehaviour:
   mesh: {fileID: -5495902117074765545, guid: 91c57ba3ee0c44c40bb6787f3dc958f8, type: 3}
   material: {fileID: 2100000, guid: 5aa47bd91276777469f6b02ede536eab, type: 2}
   apparentSize: 4
-  isStation: 0
+  hullUI: {fileID: 0}
   enforceHeight: 1
   engagementRangeMultiplier: 0
   rangeChangeAngle: 90
@@ -37,10 +37,17 @@ MonoBehaviour:
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
+  dockingRotations: []
   dockingRange: 0
+  market: {fileID: 0}
+  factories: []
+  collisionMesh: {fileID: 0}
   mass: 3
   drag: 100
   angularDrag: 1
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  decals: {fileID: 0}
   offset: {x: 0, y: 0, z: -3}
   rotate: {x: 0, y: 0, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}

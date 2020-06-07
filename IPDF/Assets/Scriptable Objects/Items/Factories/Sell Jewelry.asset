@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1209ea0244e9ab4e8f0c736d04286f0, type: 3}
-  m_Name: Tractor Beam I
+  m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
+  m_Name: Sell Jewelry
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  basePrice: 0
-  size: 0
-  consumptionRate: 11
-  activationThreshold: 0
-  range: 100
-  power: 100
-  maxStoredEnergy: 50
-  rechargeRate: 10
+  inputs:
+  - {fileID: 11400000, guid: 9a334185c4166a5498fb258218df22a9, type: 2}
+  inputQuantities: 00000000
+  outputs: []
+  outputQuantities: 
+  time: 5
+  wealthChange: 3000

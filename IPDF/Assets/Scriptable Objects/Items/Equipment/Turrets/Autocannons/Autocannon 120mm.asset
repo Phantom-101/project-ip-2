@@ -27,6 +27,7 @@ MonoBehaviour:
   activationDelay: 0
   range: 28.8
   activationThreshold: 1
+  trackingTime: 0
   projectileVelocity: 0
   projectileSticky: 0
   projectileTracking: 0

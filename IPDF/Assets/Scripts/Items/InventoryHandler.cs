@@ -67,4 +67,8 @@ public class InventoryHandler {
         if (inventory.ContainsKey (item)) inventory[item] = target;
         else inventory.Add (item, target);
     }
+
+    public int RoomFor (Item item) {
+        return (int) Mathf.Floor (GetAvailableSize () / item.size);
+    }
 }

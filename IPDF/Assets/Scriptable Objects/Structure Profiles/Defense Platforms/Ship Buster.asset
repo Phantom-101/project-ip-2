@@ -19,7 +19,7 @@ MonoBehaviour:
   material: {fileID: 0}
   apparentSize: 0
   hullUI: {fileID: 0}
-  enforceHeight: 0
+  enforceHeight: 1
   engagementRangeMultiplier: 0
   rangeChangeAngle: 0
   structureClass: 0

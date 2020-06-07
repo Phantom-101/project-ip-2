@@ -81,7 +81,7 @@ public class StructureBehaviours : MonoBehaviour {
                     new TurretHandler (null, profile.turretPositions[i], profile.turretAlignments[i], this));
                 // Temporary
                 if (turrets[i].turret.requireAmmunition) {
-                    inventory.AddItem (turrets[i].turret.acceptedAmmunitions[0], 25);
+                    inventory.AddItem (turrets[i].turret.acceptedAmmunitions[0], 25 * turrets[i].turret.activations);
                     turrets[i].UseAmmunition (turrets[i].turret.acceptedAmmunitions[0]);
                 }
             }
@@ -133,10 +133,7 @@ public class StructureBehaviours : MonoBehaviour {
     void Update () {
         if (!initialized) return;
         // Check if should be destroyed
-        if (hull == 0.0f) {
-            structuresManager.RemoveStructure (this);
-            Destroy (gameObject);
-        }
+        if (hull == 0.0f) structuresManager.RemoveStructure (this);
         // Position and physics stuff
         if (profile.enforceHeight) {
             transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);

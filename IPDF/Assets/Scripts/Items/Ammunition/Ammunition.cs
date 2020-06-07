@@ -6,8 +6,10 @@ using UnityEngine;
 public class Ammunition : Item {
     [Header ("Appearance")]
     public GameObject projectile;
-    public Color trailColor;
+    public Gradient trailGradient;
     public float trailTime;
+    public GameObject explosion;
+    public float explosionSize;
     [Header ("Projectile Movement")]
     public float trackingTime;
     public float projectileVelocity;
