@@ -79,6 +79,11 @@ public class TractorBeamHandler {
         if (!online) storedEnergy = 0.0f;
     }
 
+    public void Toggle (GameObject activator, GameObject target) {
+        if (!activated) Activate (activator, target);
+        else Deactivate ();
+    }
+
     public void Activate (GameObject activator, GameObject target) {
         if (!online) return;
         if (tractorBeam == null || storedEnergy < tractorBeam.activationThreshold) return;

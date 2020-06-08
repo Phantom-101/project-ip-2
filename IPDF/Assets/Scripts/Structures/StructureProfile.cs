@@ -8,10 +8,12 @@ public class StructureProfile : Item {
     public Mesh mesh;
     public Material material;
     public float apparentSize;
+    public GameObject explosion;
     [Header ("UI")]
     public Sprite hullUI;
     [Header ("Adjustables")]
     public bool enforceHeight;
+    public bool canFireAt;
     [Header ("AI")]
     public float engagementRangeMultiplier;
     public float rangeChangeAngle;
@@ -60,7 +62,8 @@ public enum StructureClass {
     Cruiser,
     Battlecruiser,
     Battleship,
-    Carrier
+    Carrier,
+    Other
 }
 
 public enum Manufacturer {

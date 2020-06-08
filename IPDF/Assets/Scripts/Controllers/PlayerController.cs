@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     public Slider forwardPowerSlider;
     public Button turnLeftButton;
     public Button turnRightButton;
+    public Slider dampenerSlider;
     public bool leftPressed;
     public bool rightPressed;
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour {
         Sector inSector = structureBehaviours.transform.parent.GetComponent<Sector> ();
         if (inSector != null) RenderSettings.skybox = inSector.skybox;
         if (structureBehaviours.AI == null) {
+            structureBehaviours.dampening = dampenerSlider.value;
             if (structureBehaviours.engine.engine != null) {
                 structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
                 structureBehaviours.engine.turnSetting = (leftPressed ? -1.0f : 0.0f) + (rightPressed ? 1.0f : 0.0f);

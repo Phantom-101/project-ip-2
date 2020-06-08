@@ -120,15 +120,15 @@ MonoBehaviour:
     storedEnergy: 0
   savedShield:
     equipper: {fileID: 8730564311083946572}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
     online: 1
     strengths:
-    - 1500
-    - 1500
-    - 1500
-    - 1500
-    - 1500
-    - 1500
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
     shieldTimesSinceLastDamaged: []
   savedCapacitor:
     equipper: {fileID: 8730564311083946572}
@@ -167,7 +167,13 @@ MonoBehaviour:
     equipper: {fileID: 0}
     shield: {fileID: 0}
     online: 0
-    strengths: []
+    strengths:
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
@@ -200,6 +206,7 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
+  dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   initialized: 0

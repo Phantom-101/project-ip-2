@@ -18,8 +18,11 @@ MonoBehaviour:
   mesh: {fileID: -5582133695706433325, guid: d49907ec3bd5f314b997e4c93aeed53b, type: 3}
   material: {fileID: 2100000, guid: 94c251576adaf4e49a062a6f9dd3928a, type: 2}
   apparentSize: 5
+  explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
+    type: 3}
   hullUI: {fileID: 21300000, guid: b51cf6240800392488dd7d0c265ef2fa, type: 3}
   enforceHeight: 1
+  canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 2

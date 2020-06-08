@@ -125,6 +125,10 @@ public class TurretHandler {
         if (!(storedEnergy >= turret.activationThreshold * turret.maxStoredEnergy)) return false;
         if (equipper.electronics.activated) return false;
         if (!AlignmentIsValid (target)) return false;
+        StructureBehaviours targetStructureBehaviours = target.GetComponent<StructureBehaviours> ();
+        if (targetStructureBehaviours == null || targetStructureBehaviours.profile == null) return false;
+        if (!targetStructureBehaviours.initialized) return false;
+        if (!targetStructureBehaviours.profile.canFireAt) return false;
         return true;
     }
 

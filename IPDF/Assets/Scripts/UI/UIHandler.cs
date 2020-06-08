@@ -181,7 +181,7 @@ public class UIHandler : MonoBehaviour {
         tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy * 30, 3);
         tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy);
         //tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
-        ButtonFunction (() => source.tractorBeam.Activate (source.gameObject, source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
+        ButtonFunction (() => source.tractorBeam.Toggle (source.gameObject, source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
         equipmentButtons[0] = tractorBeamButton;
         if (referencedTractorBeam != null) {
             equipmentButtons[0].gameObject.SetActive (true);

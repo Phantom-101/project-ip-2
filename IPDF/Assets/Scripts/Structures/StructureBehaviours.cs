@@ -39,6 +39,7 @@ public class StructureBehaviours : MonoBehaviour {
     public List<FactoryHandler> factories;
     [Header ("Physics")]
     public new Rigidbody rigidbody;
+    public float dampening = 1;
     [Header ("AI")]
     public StructureAI AI;
     [Header ("Misc")]
@@ -117,8 +118,6 @@ public class StructureBehaviours : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.mass = profile.mass;
-        rigidbody.drag = profile.drag;
-        rigidbody.angularDrag = profile.angularDrag;
         if (profile.structureClass == StructureClass.Station) rigidbody.isKinematic = true;
         // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
         if (profile.decals != null) {
@@ -133,12 +132,20 @@ public class StructureBehaviours : MonoBehaviour {
     void Update () {
         if (!initialized) return;
         // Check if should be destroyed
-        if (hull == 0.0f) structuresManager.RemoveStructure (this);
+        if (hull == 0.0f) {
+            if (profile.explosion != null) {
+                GameObject explosion = Instantiate (profile.explosion, transform.position, RandomQuaternion (180)) as GameObject;
+                explosion.transform.localScale = Vector3.one * profile.apparentSize * 5;
+            }
+            structuresManager.RemoveStructure (this);
+        }
         // Position and physics stuff
         if (profile.enforceHeight) {
             transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);
             rigidbody.velocity = new Vector3 (rigidbody.velocity.x, 0.0f, rigidbody.velocity.z);
         }
+        rigidbody.drag = profile.drag * dampening;
+        rigidbody.angularDrag = profile.angularDrag * dampening;
         transform.localEulerAngles = new Vector3 (0.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
         rigidbody.angularVelocity = new Vector3 (0.0f, rigidbody.angularVelocity.y, rigidbody.angularVelocity.z);
         // Hull damage timer
