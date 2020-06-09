@@ -16,17 +16,20 @@ public class PlayerController : MonoBehaviour {
     public Slider dampenerSlider;
     public bool leftPressed;
     public bool rightPressed;
+    [Header ("Materials")]
+    public MaterialsManager materialsManager;
 
     void Awake () {
         uIHandler = FindObjectOfType<UIHandler> ();
+        materialsManager = FindObjectOfType<MaterialsManager> ();
     }
 
     void Update () {
-        if (!structureBehaviours) return;
+        if (structureBehaviours == null) return;
         uIHandler.source = structureBehaviours;
         // Skybox stuff
         Sector inSector = structureBehaviours.transform.parent.GetComponent<Sector> ();
-        if (inSector != null) RenderSettings.skybox = inSector.skybox;
+        if (inSector != null) RenderSettings.skybox = materialsManager.skyboxes[inSector.sectorData.skyboxID];
         if (structureBehaviours.AI == null) {
             structureBehaviours.dampening = dampenerSlider.value;
             if (structureBehaviours.engine.engine != null) {

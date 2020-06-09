@@ -73,7 +73,7 @@ public class StructureBehaviours : MonoBehaviour {
         meshGameObject.transform.localEulerAngles = profile.rotate;
         colliderGameObject.transform.localPosition = (profile.collisionMesh == null ? profile.offset : profile.colliderOffset);
         colliderGameObject.transform.localEulerAngles = (profile.collisionMesh == null ? profile.rotate : profile.colliderRotate);
-        hull = profile.hull;
+        if (hull == 0) hull = profile.hull;
         if (initializeAccordingToSaveData) {
             inventory = new InventoryHandler (savedInventory, this);
             turrets = new List<TurretHandler> ();
@@ -95,8 +95,9 @@ public class StructureBehaviours : MonoBehaviour {
             for (int i = 0; i < profile.factories.Length; i++) {
                 factories.Add (i < savedFactories.Count ? new FactoryHandler (savedFactories[i], this) : new FactoryHandler (null, this));
                 // Temporary
-                foreach (Item input in savedFactories[i].factory.inputs)
-                    inventory.AddItem (input, 100);
+                if (factories[i].factory != null)
+                    foreach (Item input in factories[i].factory.inputs)
+                        inventory.AddItem (input, 100);
             }
         } else {
             inventory = new InventoryHandler (this, null, profile.inventorySize);
@@ -114,6 +115,7 @@ public class StructureBehaviours : MonoBehaviour {
                     inventory.AddItem (input, 100);
             }
         }
+        if (docked == null) docked = new GameObject[profile.dockingPoints];
         if (docked.Length != profile.dockingPoints) docked = new GameObject[profile.dockingPoints];
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
@@ -175,6 +177,8 @@ public class StructureBehaviours : MonoBehaviour {
     }
 
     IEnumerator Fire (TurretHandler turretHandler, GameObject target, Vector3 offset) {
+        float cachedRatio = turretHandler.storedEnergy / turretHandler.turret.maxStoredEnergy;
+        turretHandler.storedEnergy = 0.0f;
         Turret turret = turretHandler.turret;
         for (int i = 0; i < turret.activations; i++) {
             if (target != null) {
@@ -194,9 +198,8 @@ public class StructureBehaviours : MonoBehaviour {
                                 )
                             ) : transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
                         ) as GameObject;
-                        projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, turretHandler.storedEnergy / turret.maxStoredEnergy, factionID);
+                        projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, cachedRatio, factionID);
                     }
-                    turretHandler.storedEnergy = 0.0f;
                 }
                 yield return new WaitForSeconds (turret.activationDelay);
             }

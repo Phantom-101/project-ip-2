@@ -9,7 +9,7 @@ public class StructureAI : ScriptableObject {
         StructureBehaviours closest = null;
         float leastWeight = float.MaxValue;
         foreach (StructureBehaviours structure in structureBehaviours.structuresManager.structures) {
-            if (structure != null) {
+            if (structure != null && structure.profile != null && structure.profile.canFireAt) {
                 float sizeDif = Mathf.Abs (structureBehaviours.profile.apparentSize - structure.profile.apparentSize);
                 sizeDif = MathUtils.Clamp (sizeDif - 2, 1, 100);
                 float distance = Vector3.Distance (structureBehaviours.transform.position, structure.transform.position);

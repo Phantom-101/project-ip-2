@@ -49,7 +49,7 @@ MonoBehaviour:
   trailTime: 0.03
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
-  explosionSize: 4
+  explosionSize: 2
   maxStoredEnergy: 200
   rechargeRate: 50
   requireAmmunition: 0

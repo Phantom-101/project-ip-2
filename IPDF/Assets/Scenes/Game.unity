@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14989707, g: 0.06513681, b: 0.02587587, a: 1}
+  m_IndirectSpecularColor: {r: 0.15208137, g: 0.06523386, b: 0.026425164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -166,9 +166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf7aeee1ec962b44bf94369f44e2be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 7500
-  protectionStatus: 0.5
-  skybox: {fileID: 2100000, guid: 02fb18a431bb80a4eac0432876a8d530, type: 2}
+  sectorData:
+    id: 1
+    radius: 7500
+    alignment: 0
+    skyboxID: 1
 --- !u!1 &16047801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4732,7 +4734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741498921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1142, y: -0, z: -723}
+  m_LocalPosition: {x: -1193, y: 0, z: 619}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -5574,7 +5576,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1084581258}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.77666676
+  m_Size: 0.77666664
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6583,7 +6585,7 @@ GameObject:
   - component: {fileID: 1033050176}
   - component: {fileID: 1033050177}
   m_Layer: 0
-  m_Name: Korthane
+  m_Name: Terra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6638,9 +6640,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf7aeee1ec962b44bf94369f44e2be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 7500
-  protectionStatus: 1
-  skybox: {fileID: 2100000, guid: 3a3da98bb7b186c46b9be3eece7e68d4, type: 2}
+  sectorData:
+    id: 0
+    radius: 7500
+    alignment: 0
+    skyboxID: 0
 --- !u!1 &1046819691
 GameObject:
   m_ObjectHideFlags: 0
@@ -8222,6 +8226,7 @@ GameObject:
   - component: {fileID: 1338523146}
   - component: {fileID: 1338523147}
   - component: {fileID: 1338523148}
+  - component: {fileID: 1338523149}
   m_Layer: 0
   m_Name: Handlers & Managers
   m_TagString: Untagged
@@ -8241,6 +8246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558cf650b3a4a9344b2dc3549e9e8665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveName: default
+  basicSector: {fileID: 100033927953387467, guid: e0103abb593a1f14bbae5d0b749050fb,
+    type: 3}
   basicStructure: {fileID: 271317433889583109, guid: c36a599ae7461834ba610a5d02c235c2,
     type: 3}
 --- !u!114 &1338523144
@@ -8343,6 +8351,22 @@ MonoBehaviour:
   dampenerSlider: {fileID: 1646076873}
   leftPressed: 0
   rightPressed: 0
+  materialsManager: {fileID: 0}
+--- !u!114 &1338523149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338523142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005867d5a0821b141b0e19e2928f67f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skyboxes:
+  - {fileID: 2100000, guid: d037d8db09e0994468d9dea0aa5e11a4, type: 2}
+  - {fileID: 2100000, guid: 02fb18a431bb80a4eac0432876a8d530, type: 2}
 --- !u!4 &1348572285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
@@ -11556,7 +11580,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 492536353}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18913,7 +18937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6355110525750044461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2161, y: -31, z: 215}
+  m_LocalPosition: {x: -18, y: -31, z: -495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}

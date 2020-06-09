@@ -47,7 +47,9 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   trailTime: 0.4
-  maxStoredEnergy: 2000
+  explosion: {fileID: 0}
+  explosionSize: 0
+  maxStoredEnergy: 1000
   rechargeRate: 250
   requireAmmunition: 0
   acceptedAmmunitions: []
@@ -63,7 +65,7 @@ MonoBehaviour:
   projectileInaccuracy: 0.5
   leadProjectile: 1
   fuelRange: 1000
-  damage: 750
+  damage: 1000
   explosiveDamage: 0
   explosionRange: 0
   explosionDetail: 0

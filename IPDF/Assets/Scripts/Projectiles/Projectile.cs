@@ -58,24 +58,25 @@ public class Projectile : MonoBehaviour {
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
-                    if (activator != null && hitStructureBehaviours == activator.GetComponent<StructureBehaviours> ()) return;
-                    factionsManager.ChangeRelations (hitStructureBehaviours.factionID, fromFaction, -0.1f);
-                    hitStructureBehaviours.TakeDamage (turret.damage * storedEnergyRatio, transform.position);
-                    for (int i = 0; i < turret.explosionDetail; i++) {
-                        float angle = 360.0f / turret.explosionDetail * i;
-                        Vector3 dir = new Vector3 (Mathf.Sin (angle * Mathf.Deg2Rad), 0.0f, Mathf.Cos (angle * Mathf.Deg2Rad));
-                        RaycastHit explosionHit;
-                        if (Physics.Raycast (transform.position, transform.rotation * dir, out explosionHit, turret.explosionRange)) {
-                            GameObject explosionHitGameObject = explosionHit.transform.gameObject;
-                            StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
-                            if (explosionHitStructureBehaviours != null) {
-                                factionsManager.ChangeRelations (explosionHitStructureBehaviours.factionID, fromFaction, -0.05f);
-                                explosionHitStructureBehaviours.TakeDamage (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio, transform.position);
+                    if (!(hitStructureBehaviours.factionID == fromFaction)) {
+                        factionsManager.ChangeRelations (hitStructureBehaviours.factionID, fromFaction, -0.1f);
+                        hitStructureBehaviours.TakeDamage (turret.damage * storedEnergyRatio, transform.position);
+                        for (int i = 0; i < turret.explosionDetail; i++) {
+                            float angle = 360.0f / turret.explosionDetail * i;
+                            Vector3 dir = new Vector3 (Mathf.Sin (angle * Mathf.Deg2Rad), 0.0f, Mathf.Cos (angle * Mathf.Deg2Rad));
+                            RaycastHit explosionHit;
+                            if (Physics.Raycast (transform.position, transform.rotation * dir, out explosionHit, turret.explosionRange)) {
+                                GameObject explosionHitGameObject = explosionHit.transform.gameObject;
+                                StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
+                                if (explosionHitStructureBehaviours != null) {
+                                    factionsManager.ChangeRelations (explosionHitStructureBehaviours.factionID, fromFaction, -0.05f);
+                                    explosionHitStructureBehaviours.TakeDamage (turret.explosiveDamage / turret.explosionDetail * storedEnergyRatio, transform.position);
+                                }
                             }
                         }
+                        transform.position = hit.point;
+                        Disable ();
                     }
-                    transform.position = hit.point;
-                    Disable ();
                 }
             }
             if (fuelExpended < turret.fuelRange && !disabled) {
@@ -95,24 +96,25 @@ public class Projectile : MonoBehaviour {
                 GameObject hitGameObject = hit.transform.gameObject;
                 StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
                 if (hitStructureBehaviours != null) {
-                    if (activator != null && hitStructureBehaviours == activator.GetComponent<StructureBehaviours> ()) return;
-                    factionsManager.ChangeRelations (hitStructureBehaviours.factionID, fromFaction, -0.1f);
-                    hitStructureBehaviours.TakeDamage (ammunition.damage * storedEnergyRatio, transform.position);
-                    for (int i = 0; i < ammunition.explosionDetail; i++) {
-                        float angle = 360.0f / ammunition.explosionDetail * i;
-                        Vector3 dir = new Vector3 (Mathf.Sin (angle * Mathf.Deg2Rad), 0.0f, Mathf.Cos (angle * Mathf.Deg2Rad));
-                        RaycastHit explosionHit;
-                        if (Physics.Raycast (transform.position, transform.rotation * dir, out explosionHit, ammunition.explosionRange)) {
-                            GameObject explosionHitGameObject = explosionHit.transform.gameObject;
-                            StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
-                            if (explosionHitStructureBehaviours != null) {
-                                factionsManager.ChangeRelations (explosionHitStructureBehaviours.factionID, fromFaction, -0.05f);
-                                explosionHitStructureBehaviours.TakeDamage (ammunition.explosiveDamage / ammunition.explosionDetail * storedEnergyRatio, transform.position);
+                    if (!(hitStructureBehaviours.factionID == fromFaction)) {
+                        factionsManager.ChangeRelations (hitStructureBehaviours.factionID, fromFaction, -0.1f);
+                        hitStructureBehaviours.TakeDamage (ammunition.damage * storedEnergyRatio, transform.position);
+                        for (int i = 0; i < ammunition.explosionDetail; i++) {
+                            float angle = 360.0f / ammunition.explosionDetail * i;
+                            Vector3 dir = new Vector3 (Mathf.Sin (angle * Mathf.Deg2Rad), 0.0f, Mathf.Cos (angle * Mathf.Deg2Rad));
+                            RaycastHit explosionHit;
+                            if (Physics.Raycast (transform.position, transform.rotation * dir, out explosionHit, ammunition.explosionRange)) {
+                                GameObject explosionHitGameObject = explosionHit.transform.gameObject;
+                                StructureBehaviours explosionHitStructureBehaviours = explosionHitGameObject.GetComponent<StructureBehaviours> ();
+                                if (explosionHitStructureBehaviours != null) {
+                                    factionsManager.ChangeRelations (explosionHitStructureBehaviours.factionID, fromFaction, -0.05f);
+                                    explosionHitStructureBehaviours.TakeDamage (ammunition.explosiveDamage / ammunition.explosionDetail * storedEnergyRatio, transform.position);
+                                }
                             }
                         }
+                        transform.position = hit.point;
+                        Disable ();
                     }
-                    transform.position = hit.point;
-                    Disable ();
                 }
             }
             if (fuelExpended < ammunition.fuelRange && !disabled) {

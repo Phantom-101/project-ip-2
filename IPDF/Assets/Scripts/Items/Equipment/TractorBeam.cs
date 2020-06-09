@@ -105,7 +105,7 @@ public class TractorBeamHandler {
         if (activated) {
             storedEnergy = MathUtils.Clamp (storedEnergy - tractorBeam.consumptionRate * Time.deltaTime, 0.0f, tractorBeam.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();
-            else target.GetComponent<Rigidbody> ().AddForce ((processor.transform.position - target.transform.position).normalized * tractorBeam.power, ForceMode.Acceleration);
+            else target.GetComponent<Rigidbody> ().AddForce ((processor.transform.position - target.transform.position).normalized * tractorBeam.power / target.GetComponent<Rigidbody> ().mass, ForceMode.Acceleration);
         }
     }
 }

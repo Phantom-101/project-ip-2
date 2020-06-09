@@ -75,8 +75,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 2066
     y: -7
-    width: 1145
-    height: 2259
+    width: 488
+    height: 2084
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: Plasma weapon hit
+  m_Name: Plasma Hit
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 0}
   m_Children:
@@ -111,7 +111,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Plasma weapon hit
+  m_Name: Plasma Hit
   m_Graph: {fileID: 114350483966674976}
   m_ShaderSources:
   - compute: 1
@@ -197,7 +197,7 @@ VisualEffectResource:
       (float)0.200000003, (float)6.28318548, (float)1);\n        }\n        {\n           
       SetAttribute_E629755( /*inout */attributes.velocity, float3(0, 0, 0));\n       
       }\n        {\n            SetAttribute_3278B22F( /*inout */attributes.size,
-      (float)1);\n        }\n        \n\r\n\t\t\r\n#if VFX_USE_ALIVE_CURRENT\r\n       
+      (float)0.200000003);\n        }\n        \n\r\n\t\t\r\n#if VFX_USE_ALIVE_CURRENT\r\n       
       if (attributes.alive)\r\n#endif       \r\n        {\r\n#if USE_DEAD_LIST\r\n\t       
       uint deadIndex = deadListIn.DecrementCounter();\r\n            uint index =
       deadListIn[deadIndex];\r\n#else\r\n            uint index = particleIndex;\r\n#endif\r\n           
@@ -299,7 +299,7 @@ VisualEffectResource:
       = index;\r\n#endif\r\n#endif\r\n\t}\r\n}\r\n"
   - compute: 0
     name: '[Sparkles]Output Particle Quad'
-    source: "Shader \"Hidden/VFX/Laser Weapon hit/Sparkles/Output Particle Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
+    source: "Shader \"Hidden/VFX/Plasma Hit/Sparkles/Output Particle Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
       Off\r\n\t\t\r\n\t\tTags { \"Queue\"=\"Transparent\" \"IgnoreProjector\"=\"True\"
       \"RenderType\"=\"Transparent\" }\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tBlend
       SrcAlpha One\n\t\tZTest LEqual\n\t\tZWrite Off\n\t\tCull Off\n\t\t\n\t\n\t\t\t\n\t\tHLSLINCLUDE\n\t\t\n\t\t#define
@@ -892,7 +892,7 @@ VisualEffectResource:
       m_Vector2f:
         m_Array:
         - m_ExpressionIndex: 1
-          m_Value: {x: 1, y: 1}
+          m_Value: {x: 250, y: 250}
         - m_ExpressionIndex: 14
           m_Value: {x: 0, y: 0}
       m_Vector3f:
@@ -936,8 +936,8 @@ VisualEffectResource:
         - m_ExpressionIndex: 0
           m_Value:
             serializedVersion: 2
-            key0: {r: 4.3350787, g: 3.9971, b: 0, a: 0}
-            key1: {r: 1, g: 0.06152262, b: 0, a: 1}
+            key0: {r: 0, g: 4.3350787, b: 1.9738653, a: 0}
+            key1: {r: 0, g: 0.76030993, b: 1, a: 1}
             key2: {r: 0, g: 0.5386493, b: 1, a: 0.39215687}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615077}
-  m_UIPosition: {x: 2783, y: 390}
+  m_UIPosition: {x: 2128, y: 207}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615095}
   - {fileID: 8926484042661615115}
   - {fileID: 8926484042661615179}
-  m_UIPosition: {x: 2785, y: 754}
+  m_UIPosition: {x: 2128, y: 579}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1738,7 +1738,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615150}
-  m_UIPosition: {x: 2785, y: 1447}
+  m_UIPosition: {x: 2128, y: 1272}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661615071}
   - {fileID: 8926484042661615075}
-  m_UIPosition: {x: 2787, y: 1820}
+  m_UIPosition: {x: 2130, y: 1645}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1921,7 +1921,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":4.335078716278076,"g":3.9971001148223879,"b":0.0,"a":1.0},"time":0.20000000298023225},{"color":{"r":1.0,"g":0.06152262166142464,"b":0.0,"a":1.0},"time":0.7882353067398071},{"color":{"r":0.0,"g":0.538649320602417,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.3921568691730499,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":4.335078716278076,"b":1.973865270614624,"a":1.0},"time":0.20000000298023225},{"color":{"r":0.0,"g":0.7603099346160889,"b":1.0,"a":1.0},"time":0.7882353067398071},{"color":{"r":0.0,"g":0.538649320602417,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.3921568691730499,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -1980,7 +1980,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 250
     m_Space: 2147483647
   m_Property:
     name: Count
@@ -3373,7 +3373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 8926484042661615041}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 383}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3409,7 +3409,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.2
     m_Space: 2147483647
   m_Property:
     name: Size

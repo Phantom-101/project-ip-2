@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   consumptionRate: 11
   activationThreshold: 0
-  range: 100
+  range: 300
   power: 15
   maxStoredEnergy: 50
   rechargeRate: 10

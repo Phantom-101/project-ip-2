@@ -18,8 +18,10 @@ MonoBehaviour:
   mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: 5aa47bd91276777469f6b02ede536eab, type: 2}
   apparentSize: 0
+  explosion: {fileID: 0}
   hullUI: {fileID: 21300000, guid: 2fe59c2fb91177b4da04f87449d3cc44, type: 3}
   enforceHeight: 0
+  canFireAt: 0
   engagementRangeMultiplier: 0
   rangeChangeAngle: 0
   structureClass: 1
@@ -38,10 +40,10 @@ MonoBehaviour:
   market: {fileID: 0}
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 1
+  mass: 0.1
   drag: 0.5
   angularDrag: 2
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 0, z: 0}

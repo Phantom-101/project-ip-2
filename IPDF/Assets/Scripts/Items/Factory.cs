@@ -25,14 +25,20 @@ public class FactoryHandler {
         this.factory = factory;
         if (factory == null) this.online = false;
         else this.online = true;
-        this.timer = 0.0f;
+        this.timer = 0;
     }
 
     public FactoryHandler (FactoryHandler factoryHandler, StructureBehaviours structure) {
         this.structure = structure;
-        this.factory = factoryHandler.factory;
-        this.online = factoryHandler.online;
-        this.timer = factoryHandler.timer;
+        if (factoryHandler == null) {
+            this.factory = null;
+            this.online = false;
+            this.timer = 0;
+        } else {
+            this.factory = factoryHandler.factory;
+            this.online = factoryHandler.online;
+            this.timer = factoryHandler.timer;
+        }
     }
 
     public void SetOnline (bool target) {
