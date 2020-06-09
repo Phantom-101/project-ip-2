@@ -12,13 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb66964177ec754c8ada0cbd7d243a7, type: 3}
   m_Name: Laser III
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
+  icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 0
   size: 0
   projectile: {fileID: 5241045304247881585, guid: 4cbf6708bfac8a341913e7fdf66011f1,
     type: 3}
-  trailColor: {r: 1, g: 0.31514084, b: 0, a: 1}
+  trailGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.8873409, b: 0.6273585, a: 0}
+    key1: {r: 1, g: 0.74597037, b: 0.15686274, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 1}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 26985
+    ctime1: 64957
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 32960
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
   trailTime: 0.1
+  explosion: {fileID: 0}
+  explosionSize: 0
   maxStoredEnergy: 220
   rechargeRate: 40
   requireAmmunition: 0

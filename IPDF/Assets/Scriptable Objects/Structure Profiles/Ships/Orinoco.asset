@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: Orinoco
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
+  basePrice: 700000
+  size: 0
+  mesh: {fileID: -5495902117074765545, guid: ca8a871e9e7b4a44a8c9144d0409eb01, type: 3}
+  material: {fileID: 2100000, guid: 15d051e125c5e4c46b42e6fccd421739, type: 2}
+  apparentSize: 10
+  explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
+    type: 3}
+  hullUI: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
+  enforceHeight: 1
+  canFireAt: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
+  structureClass: 7
+  manufacturer: 3
+  description: 
+  hull: 700
+  inventorySize: 500
+  turretSlots: 9
+  turretPositions:
+  - {x: 0, y: 0.73, z: 0.33}
+  - {x: 0, y: 0.34, z: 1.78}
+  - {x: 0, y: 0.39, z: 1.29}
+  - {x: -0.67, y: 0.47, z: -0.08}
+  - {x: 0.67, y: 0.47, z: -0.08}
+  - {x: -0.95, y: 0.15, z: -0.23}
+  - {x: 0.95, y: 0.15, z: -0.23}
+  - {x: 0, y: 0.51, z: -1.116}
+  - {x: 0, y: -0.31, z: 0.06}
+  turretAlignments: 040000000000000000000000080000000a0000000500000006000000070000000c000000
+  electronicsCapable: 0
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRotations: []
+  dockingRange: 0
+  market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
+  factories: []
+  collisionMesh: {fileID: 0}
+  mass: 100
+  drag: 0.5
+  angularDrag: 2
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  decals: {fileID: 8785760418023590756, guid: 1b2d0d5224496d84b977c11358797cc1, type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 0, y: 90, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}

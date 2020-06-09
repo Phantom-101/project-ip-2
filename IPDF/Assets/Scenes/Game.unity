@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15208137, g: 0.06523386, b: 0.026425164, a: 1}
+  m_IndirectSpecularColor: {r: 0.14989707, g: 0.06513681, b: 0.02587587, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1289,7 +1289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235251617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1875.5, y: -0, z: 98.4}
+  m_LocalPosition: {x: -1199, y: 0, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -2849,7 +2849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431661540}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -5.199993, y: 0, z: 2544}
+  m_LocalPosition: {x: 330, y: -0, z: 3335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -4732,7 +4732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741498921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1836, y: -0, z: 2431}
+  m_LocalPosition: {x: -1142, y: -0, z: -723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -5574,7 +5574,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1084581258}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.77666664
+  m_Size: 0.77666676
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6306,7 +6306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970305063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3, y: -0, z: 2555.4}
+  m_LocalPosition: {x: 332, y: -0, z: 3346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -6583,7 +6583,7 @@ GameObject:
   - component: {fileID: 1033050176}
   - component: {fileID: 1033050177}
   m_Layer: 0
-  m_Name: Terra
+  m_Name: Korthane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6640,7 +6640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 7500
   protectionStatus: 1
-  skybox: {fileID: 2100000, guid: d037d8db09e0994468d9dea0aa5e11a4, type: 2}
+  skybox: {fileID: 2100000, guid: 3a3da98bb7b186c46b9be3eece7e68d4, type: 2}
 --- !u!1 &1046819691
 GameObject:
   m_ObjectHideFlags: 0
@@ -11555,7 +11555,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 492536354}
   m_HandleRect: {fileID: 492536353}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -19161,7 +19161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6750740651958262896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1599, y: 0, z: 2059}
+  m_LocalPosition: {x: -1227, y: -0, z: -176}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -19513,7 +19513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6750740652291305467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1411.6, y: -0, z: 2136.7}
+  m_LocalPosition: {x: -1039, y: -0, z: -98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -19677,7 +19677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6750740652450203007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1494.3, y: -0, z: 2127.5}
+  m_LocalPosition: {x: -1122, y: -0, z: -107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -19889,7 +19889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7218308574373969125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1460, y: 0, z: 2172}
+  m_LocalPosition: {x: -1088, y: -0, z: -63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}

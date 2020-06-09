@@ -15,10 +15,40 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 61cb65ca2cb176a43bb05443ef11f278, type: 3}
   basePrice: 0
   size: 0
-  projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
+  projectile: {fileID: 5241045304247881585, guid: 4cbf6708bfac8a341913e7fdf66011f1,
     type: 3}
-  trailColor: {r: 0, g: 0.9003706, b: 1, a: 1}
+  trailGradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0.9248903, b: 1, a: 1}
+    key1: {r: 0, g: 0.2976898, b: 0.7075472, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
   trailTime: 0.07
+  explosion: {fileID: 100002, guid: 5d0cd99dda746cd4b857f2df1031679e, type: 3}
+  explosionSize: 15
   maxStoredEnergy: 400
   rechargeRate: 20
   requireAmmunition: 0
@@ -28,7 +58,7 @@ MonoBehaviour:
   range: 400
   activationThreshold: 1
   trackingTime: 0
-  projectileVelocity: 50
+  projectileVelocity: 75
   projectileSticky: 1
   projectileTracking: 150
   projectileInitializeRotation: 0
