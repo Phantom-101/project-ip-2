@@ -44,6 +44,7 @@ public class StructureBehaviours : MonoBehaviour {
     public StructureAI AI;
     [Header ("Misc")]
     public StructureBehaviours targeted;
+    public GameObject billboard;
     public bool initialized;
     [Header ("Component Cache")]
     public StructuresManager structuresManager;
@@ -128,6 +129,14 @@ public class StructureBehaviours : MonoBehaviour {
             decals.transform.localPosition = Vector3.zero;
             decals.transform.localEulerAngles = Vector3.zero;
         }
+        GameObject billboardSprite = new GameObject ("Billboard");
+        billboardSprite.transform.parent = transform;
+        billboardSprite.AddComponent<Billboard> ();
+        billboardSprite.transform.localPosition = Vector3.zero;
+        billboard = new GameObject ("Sprite");
+        billboard.transform.parent = billboardSprite.transform;
+        billboard.AddComponent<SpriteRenderer> ();
+        billboard.transform.localPosition = Vector3.zero;
         initialized = true;
     }
 
@@ -170,6 +179,20 @@ public class StructureBehaviours : MonoBehaviour {
         foreach (FactoryHandler factory in factories) factory.Process ();
         // AI stuff
         if (AI != null) AI.Process (this);
+        // UI
+        StructureBehaviours playerStructureBehaviours = playerController.structureBehaviours;
+        if (playerStructureBehaviours != this) {
+            billboard.SetActive (true);
+            if (playerStructureBehaviours.targeted == this) {
+                billboard.transform.localEulerAngles = new Vector3 (0.0f, 0.0f, billboard.transform.localEulerAngles.z + 30 * Time.deltaTime);
+                billboard.transform.localScale = Vector3.one * profile.apparentSize * 1.25f;
+                billboard.GetComponent<SpriteRenderer> ().sprite = profile.targetBillboard;
+            } else {
+                billboard.transform.localEulerAngles = Vector3.zero;
+                billboard.transform.localScale = Vector3.one * profile.apparentSize;
+                billboard.GetComponent<SpriteRenderer> ().sprite = profile.selectableBillboard;
+            }
+        } else billboard.SetActive (false);
     }
 
     public void InstantiateProjectiles (TurretHandler turretHandler, GameObject target, Vector3 offset) {

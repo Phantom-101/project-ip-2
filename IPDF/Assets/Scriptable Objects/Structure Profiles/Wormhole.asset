@@ -10,48 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Flyer
+  m_Name: Wormhole
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  basePrice: 70000
+  basePrice: 0
   size: 0
-  mesh: {fileID: -5495902117074765545, guid: 083715b63e1580f4ba8c95bcabd3e21a, type: 3}
-  material: {fileID: 2100000, guid: 20f3d0d8dbf5db74ba049566b16ffadc, type: 2}
-  apparentSize: 1
-  explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
-    type: 3}
+  mesh: {fileID: 0}
+  material: {fileID: 0}
+  apparentSize: 0
+  explosion: {fileID: 0}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
   targetBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692, type: 3}
   hullUI: {fileID: 0}
   enforceHeight: 1
-  canFireAt: 1
-  engagementRangeMultiplier: 0.75
-  rangeChangeAngle: 45
-  structureClass: 2
-  manufacturer: 3
-  description: 
-  hull: 100
-  inventorySize: 25
-  turretSlots: 4
-  turretPositions:
-  - {x: 0, y: 0, z: 4}
-  - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 0, z: -1}
-  - {x: 0, y: 0, z: 0}
-  turretAlignments: 00000000000000000000000000000000
+  canFireAt: 0
+  engagementRangeMultiplier: 0
+  rangeChangeAngle: 0
+  structureClass: 10
+  manufacturer: 8
+  description: A portal through which another sector of space can be found.
+  hull: 10000
+  inventorySize: 0
+  turretSlots: 0
+  turretPositions: []
+  turretAlignments: 
   electronicsCapable: 0
   dockingPoints: 0
   dockingLocations: []
   dockingRotations: []
   dockingRange: 0
-  market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
+  market: {fileID: 0}
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 1
-  drag: 0.5
-  angularDrag: 2
-  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  mass: 0
+  drag: 0
+  angularDrag: 0
+  physicMaterial: {fileID: 0}
   decals: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 0, z: 0}

@@ -20,6 +20,9 @@ MonoBehaviour:
   apparentSize: 1
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
+  selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
+    type: 3}
+  targetBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692, type: 3}
   hullUI: {fileID: 21300000, guid: d3972f2f464b84e4f86fd0c18bdf4891, type: 3}
   enforceHeight: 1
   canFireAt: 1

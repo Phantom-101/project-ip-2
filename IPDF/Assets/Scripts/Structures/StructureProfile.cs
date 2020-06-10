@@ -9,6 +9,8 @@ public class StructureProfile : Item {
     public Material material;
     public float apparentSize;
     public GameObject explosion;
+    public Sprite selectableBillboard;
+    public Sprite targetBillboard;
     [Header ("UI")]
     public Sprite hullUI;
     [Header ("Adjustables")]

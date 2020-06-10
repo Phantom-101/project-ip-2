@@ -1432,6 +1432,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 0}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -2309,6 +2310,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 0}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -2836,6 +2838,8 @@ GameObject:
   - component: {fileID: 431661543}
   - component: {fileID: 431661542}
   - component: {fileID: 431661544}
+  - component: {fileID: 431661545}
+  - component: {fileID: 431661546}
   m_Layer: 0
   m_Name: Jump Gate
   m_TagString: Untagged
@@ -2951,6 +2955,152 @@ MonoBehaviour:
   triggerRange: 25
   forwardDistance: 30
   other: {fileID: 935539178}
+--- !u!114 &431661545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431661540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: c3d683ddcec6b074a8ca52b706555804, type: 2}
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  cloaked: 0
+  factionID: 0
+  initializeAccordingToSaveData: 0
+  savedInventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  savedTurrets: []
+  savedShield:
+    equipper: {fileID: 0}
+    shield: {fileID: 0}
+    online: 0
+    strengths: []
+    shieldTimesSinceLastDamaged: []
+  savedCapacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 0}
+    storedEnergy: 0
+  savedGenerator:
+    equipper: {fileID: 0}
+    generator: {fileID: 0}
+    online: 0
+  savedEngine:
+    equipper: {fileID: 0}
+    engine: {fileID: 0}
+    online: 0
+    forwardSetting: 0
+    turnSetting: 0
+  savedElectronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  savedTractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  savedFactories: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    shield: {fileID: 0}
+    online: 0
+    strengths: []
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 0}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    generator: {fileID: 0}
+    online: 0
+  engine:
+    equipper: {fileID: 0}
+    engine: {fileID: 0}
+    online: 0
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  AI: {fileID: 0}
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+--- !u!227 &431661546
+BillboardRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431661540}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Billboard: {fileID: 0}
 --- !u!1 &437844175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4988,6 +5138,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -6445,6 +6596,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -7094,6 +7246,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -10016,6 +10169,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -12515,6 +12669,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 0}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -17703,6 +17858,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -18925,6 +19081,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -19085,6 +19242,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -19344,6 +19502,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -19513,6 +19672,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -19677,6 +19837,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -19901,6 +20062,7 @@ MonoBehaviour:
   dampening: 1
   AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
