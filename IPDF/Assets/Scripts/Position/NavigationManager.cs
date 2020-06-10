@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NavigationManager : MonoBehaviour {
@@ -8,6 +9,7 @@ public class NavigationManager : MonoBehaviour {
     public List<SectorLink> sectorLinks = new List<SectorLink> ();
 
     public Route GetRoute (Vector3 from, Vector3 to) {
+        sectors = FindObjectsOfType<Sector> ().ToList ();
         Sector fromSector = sectors[0], toSector = sectors[0];
         foreach (Sector sector in sectors) {
             float fromDis = (from - sector.transform.position).sqrMagnitude, toDis = (to - sector.transform.position).sqrMagnitude;
@@ -21,6 +23,7 @@ public class NavigationManager : MonoBehaviour {
             if (link.a == current) waypoints.Add (link.bPos);
             else waypoints.Add (link.aPos);
         }
+        waypoints.Add (to);
         return new Route (waypoints);
     }
 

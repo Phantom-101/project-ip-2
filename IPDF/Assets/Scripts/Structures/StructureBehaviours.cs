@@ -23,6 +23,9 @@ public class StructureBehaviours : MonoBehaviour {
     public ElectronicsHandler savedElectronics;
     public TractorBeamHandler savedTractorBeam;
     public List<FactoryHandler> savedFactories = new List<FactoryHandler> ();
+    [Header ("Navigation")]
+    public Route route;
+    public StructureBehaviours target;
     [Header ("Inventory")]
     public InventoryHandler inventory;
     [Header ("Equipment Handlers")]
@@ -50,11 +53,13 @@ public class StructureBehaviours : MonoBehaviour {
     public StructuresManager structuresManager;
     public FactionsManager factionsManager;
     public PlayerController playerController;
+    public NavigationManager navigationManager;
 
     public void Initialize () {
         structuresManager = FindObjectOfType<StructuresManager> ();
         factionsManager = FindObjectOfType<FactionsManager> ();
         playerController = FindObjectOfType<PlayerController> ();
+        navigationManager = FindObjectOfType<NavigationManager> ();
         structuresManager.AddStructure (this);
         GameObject meshGameObject = new GameObject ();
         meshGameObject.name = "Mesh";
@@ -137,6 +142,7 @@ public class StructureBehaviours : MonoBehaviour {
         billboard.transform.parent = billboardSprite.transform;
         billboard.AddComponent<SpriteRenderer> ();
         billboard.transform.localPosition = Vector3.zero;
+        if (target != null) route = navigationManager.GetRoute (transform.position, target.transform.position);
         initialized = true;
     }
 
@@ -150,6 +156,9 @@ public class StructureBehaviours : MonoBehaviour {
             }
             structuresManager.RemoveStructure (this);
         }
+        if (playerController.structureBehaviours != this)
+            if (AI == null)
+                AI = new StructureAI ();
         // Position and physics stuff
         if (profile.enforceHeight) {
             transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);

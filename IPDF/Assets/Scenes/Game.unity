@@ -151,6 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 935539178}
+  - {fileID: 995647629}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1265,7 +1266,7 @@ GameObject:
   - component: {fileID: 235251623}
   - component: {fileID: 235251618}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Gang Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,6 +1389,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -1430,13 +1434,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 0}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &235251623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2231,6 +2235,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -2308,13 +2315,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 0}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &391808571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +2961,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerRange: 25
   forwardDistance: 30
-  other: {fileID: 935539178}
+  other: {fileID: 935539179}
+  structuresManager: {fileID: 0}
+  cameraFollowPlayer: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &431661545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3012,6 +3022,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -3054,13 +3067,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 0}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!227 &431661546
 BillboardRenderer:
   m_ObjectHideFlags: 0
@@ -5059,6 +5072,9 @@ MonoBehaviour:
     factory: {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
     online: 1
     timer: 0
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -5136,13 +5152,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!4 &831469441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
@@ -6127,7 +6143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerRange: 25
   forwardDistance: 30
-  other: {fileID: 431661541}
+  other: {fileID: 431661544}
+  structuresManager: {fileID: 0}
+  cameraFollowPlayer: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &957694595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6552,6 +6571,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -6594,13 +6616,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!4 &971463893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
@@ -6726,6 +6748,206 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971635324}
   m_CullTransparentMesh: 0
+--- !u!1 &995647628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995647629}
+  - component: {fileID: 995647632}
+  - component: {fileID: 995647631}
+  - component: {fileID: 995647630}
+  m_Layer: 0
+  m_Name: Gang Star (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995647629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995647628}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4039050}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995647630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995647628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &995647631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995647628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &995647632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995647628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 37f3f16c1089a264395d95aa01250842, type: 2}
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  cloaked: 0
+  factionID: 0
+  initializeAccordingToSaveData: 1
+  savedInventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  savedTurrets:
+  - equipper: {fileID: 995647632}
+    turret: {fileID: 11400000, guid: 049e0fd9497872146a5884e31c87a094, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 995647632}
+    turret: {fileID: 11400000, guid: 049e0fd9497872146a5884e31c87a094, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 995647632}
+    turret: {fileID: 11400000, guid: 049e0fd9497872146a5884e31c87a094, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 995647632}
+    turret: {fileID: 11400000, guid: 049e0fd9497872146a5884e31c87a094, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  savedShield:
+    equipper: {fileID: 995647632}
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 800
+    - 800
+    - 800
+    - 800
+    - 800
+    - 800
+    shieldTimesSinceLastDamaged: []
+  savedCapacitor:
+    equipper: {fileID: 995647632}
+    capacitor: {fileID: 11400000, guid: 91ea114fe45a5f4488436f0e9e47992b, type: 2}
+    storedEnergy: 20000
+  savedGenerator:
+    equipper: {fileID: 0}
+    generator: {fileID: 11400000, guid: 617e74926984aff4cb3bd1e6e160a78f, type: 2}
+    online: 1
+  savedEngine:
+    equipper: {fileID: 0}
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  savedElectronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 11400000, guid: 96c66f6ffcf957b49a6cd96a455bd6cc, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  savedTractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    shield: {fileID: 0}
+    online: 0
+    strengths: []
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 0}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    generator: {fileID: 0}
+    online: 0
+  engine:
+    equipper: {fileID: 0}
+    engine: {fileID: 0}
+    online: 0
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1033050175
 GameObject:
   m_ObjectHideFlags: 0
@@ -7167,6 +7389,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -7244,13 +7469,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1117563861
 GameObject:
   m_ObjectHideFlags: 0
@@ -8380,6 +8605,7 @@ GameObject:
   - component: {fileID: 1338523147}
   - component: {fileID: 1338523148}
   - component: {fileID: 1338523149}
+  - component: {fileID: 1338523150}
   m_Layer: 0
   m_Name: Handlers & Managers
   m_TagString: Untagged
@@ -8520,6 +8746,20 @@ MonoBehaviour:
   skyboxes:
   - {fileID: 2100000, guid: d037d8db09e0994468d9dea0aa5e11a4, type: 2}
   - {fileID: 2100000, guid: 02fb18a431bb80a4eac0432876a8d530, type: 2}
+--- !u!114 &1338523150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338523142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0832343f3bbc1428e460ec8d771acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sectors: []
+  sectorLinks: []
 --- !u!4 &1348572285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
@@ -10090,6 +10330,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -10167,13 +10410,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1552703332
 GameObject:
   m_ObjectHideFlags: 0
@@ -12590,6 +12833,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -12667,13 +12913,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 0}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1958031497
 GameObject:
   m_ObjectHideFlags: 0
@@ -17779,6 +18025,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17856,13 +18105,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &2066058214
 GameObject:
   m_ObjectHideFlags: 0
@@ -19002,6 +19251,9 @@ MonoBehaviour:
     factory: {fileID: 11400000, guid: 37fe734d2a0475a4289c5e1a8b5a209a, type: 2}
     online: 1
     timer: 0
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -19079,13 +19331,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!4 &6355110525750044497
 Transform:
   m_ObjectHideFlags: 0
@@ -19198,6 +19450,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -19240,13 +19495,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!4 &6355110526056126129
 Transform:
   m_ObjectHideFlags: 0
@@ -19458,6 +19713,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -19500,13 +19758,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &6750740652291305464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19628,6 +19886,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -19670,13 +19931,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &6750740652291305469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19793,6 +20054,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -19835,13 +20099,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &6750740652450203001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20018,6 +20282,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -20060,13 +20327,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!4 &7218308574373969049
 Transform:
   m_ObjectHideFlags: 0
