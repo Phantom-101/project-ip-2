@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NavigationManager : MonoBehaviour {
     public List<Sector> sectors = new List<Sector> ();
-    public List<SectorLink> sectorLinks = new List<SectorLink> ();
+    public Dictionary<Sector, List<SectorLink>> adjacentSectors = new Dictionary<Sector, List<SectorLink>> ();
 
     public Route GetRoute (Vector3 from, Vector3 to) {
         sectors = FindObjectsOfType<Sector> ().ToList ();
@@ -16,60 +16,59 @@ public class NavigationManager : MonoBehaviour {
             if (fromDis < (from - fromSector.transform.position).sqrMagnitude) fromSector = sector;
             if (toDis < (to - toSector.transform.position).sqrMagnitude) toSector = sector;
         }
-        List<SectorLink> jumps = GetJumps (fromSector, toSector, new List<Sector> (), new List<SectorLink> ());
-        Sector current = fromSector;
+        List<Sector> jumps = GetJumps (fromSector, toSector, new List<Sector> (), new List<Sector> ());
         List<Vector3> waypoints = new List<Vector3> ();
-        foreach (SectorLink link in jumps) {
-            if (link.a == current) waypoints.Add (link.bPos);
-            else waypoints.Add (link.aPos);
-        }
+        for (int i = 1; i < jumps.Count; i++)
+            waypoints.Add (GetAdjacentPosition (jumps[i - 1], jumps[i]));
         waypoints.Add (to);
         return new Route (waypoints);
     }
 
-    public List<SectorLink> GetJumps (Sector current, Sector to, List<Sector> visited, List<SectorLink> chain) {
+    public List<Sector> GetJumps (Sector current, Sector to, List<Sector> visited, List<Sector> chain) {
+        if (visited.Contains (current)) return null;
         visited.Add (current);
+        chain.Add (current);
         if (current == to) return chain;
-        List<List<SectorLink>> results = new List<List<SectorLink>> ();
-        foreach (SectorLink sectorLink in sectorLinks) {
-            if (sectorLink.a == current) {
-                if (!visited.Contains (sectorLink.b)) {
-                    chain.Add (sectorLink);
-                    results.Add (GetJumps (sectorLink.b, to, visited, chain));
-                    chain.Remove (sectorLink);
-                }
-            } else if (sectorLink.b == current) {
-                if (!visited.Contains (sectorLink.a)) {
-                    chain.Add (sectorLink);
-                    results.Add (GetJumps (sectorLink.a, to, visited, chain));
-                    chain.Remove (sectorLink);
-                }
-            }
-        }
-        int index = -1;
-        int leastLength = int.MaxValue;
-        for (int i = 0; i < results.Count; i++)
-            if (results != null && results[i].Count < leastLength) {
-                index = i;
-                leastLength = results[i].Count;
-            }
-        if (index != -1) return results[index];
+        List<List<Sector>> results = new List<List<Sector>> ();
+        foreach (Sector adjacent in GetAdjacentSectors (current))
+            results.Add (GetJumps (adjacent, to, visited, chain));
+        foreach (List<Sector> result in results)
+            if (result != null)
+                return result;
         return null;
+    }
+
+    public List<Sector> GetAdjacentSectors (Sector sector) {
+        if (!adjacentSectors.ContainsKey (sector)) adjacentSectors.Add (sector, new List<SectorLink> ());
+        List<SectorLink> links = adjacentSectors[sector];
+        List<Sector> adjacents = new List<Sector> ();
+        foreach (SectorLink link in links) adjacents.Add (link.destination);
+        return adjacents;
+    }
+
+    public Vector3 GetAdjacentPosition (Sector from, Sector to) {
+        if (!adjacentSectors.ContainsKey (from)) adjacentSectors.Add (from, new List<SectorLink> ());
+        List<SectorLink> links = adjacentSectors[from];
+        foreach (SectorLink link in links)
+            if (link.destination == to)
+                return link.position;
+        return Vector3.zero;
+    }
+
+    public void AddAdjacency (Sector from, Sector to, Vector3 position) {
+        if (!adjacentSectors.ContainsKey (from)) adjacentSectors.Add (from, new List<SectorLink> ());
+        adjacentSectors[from].Add (new SectorLink (to, position));
     }
 }
 
 [Serializable]
 public struct SectorLink {
-    public Sector a;
-    public Vector3 aPos;
-    public Sector b;
-    public Vector3 bPos;
+    public Sector destination;
+    public Vector3 position;
 
-    public SectorLink (Sector a, Vector3 aPos, Sector b, Vector3 bPos) {
-        this.a = a;
-        this.aPos = aPos;
-        this.b = b;
-        this.bPos = bPos;
+    public SectorLink (Sector destination, Vector3 position) {
+        this.destination = destination;
+        this.position = position;
     }
 }
 

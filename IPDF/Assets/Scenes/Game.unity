@@ -2961,7 +2961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerRange: 25
   forwardDistance: 30
-  other: {fileID: 935539179}
+  other: {fileID: 935539178}
   structuresManager: {fileID: 0}
   cameraFollowPlayer: {fileID: 0}
   navigationManager: {fileID: 0}
@@ -6143,7 +6143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerRange: 25
   forwardDistance: 30
-  other: {fileID: 431661544}
+  other: {fileID: 431661541}
   structuresManager: {fileID: 0}
   cameraFollowPlayer: {fileID: 0}
   navigationManager: {fileID: 0}
@@ -8759,7 +8759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectors: []
-  sectorLinks: []
 --- !u!4 &1348572285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,

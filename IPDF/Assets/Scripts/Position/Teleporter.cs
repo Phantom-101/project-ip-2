@@ -7,7 +7,7 @@ public class Teleporter : MonoBehaviour {
     public float triggerRange;
     public float forwardDistance;
     [Header ("Link")]
-    public Teleporter other;
+    public Transform other;
 
     public StructuresManager structuresManager;
     public CameraFollowPlayer cameraFollowPlayer;
@@ -17,11 +17,10 @@ public class Teleporter : MonoBehaviour {
         structuresManager = FindObjectOfType<StructuresManager> ();
         cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
         navigationManager = FindObjectOfType<NavigationManager> ();
-        if (other.navigationManager == null) navigationManager.sectorLinks.Add (new SectorLink (transform.parent.GetComponent<Sector> (),
-            transform.position,
-            other.transform.parent.GetComponent<Sector> (),
-            other.transform.position
-        ));
+        navigationManager.AddAdjacency (transform.parent.GetComponent<Sector> (),
+            other.parent.GetComponent <Sector> (),
+            transform.position
+        );
     }
 
     void Update () {
