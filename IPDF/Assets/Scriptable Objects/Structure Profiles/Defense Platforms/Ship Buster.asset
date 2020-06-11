@@ -43,7 +43,7 @@ MonoBehaviour:
   market: {fileID: 0}
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 0
+  mass: 50
   drag: 0
   angularDrag: 0
   physicMaterial: {fileID: 0}

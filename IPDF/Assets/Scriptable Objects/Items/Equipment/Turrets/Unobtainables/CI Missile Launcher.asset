@@ -49,7 +49,7 @@ MonoBehaviour:
   trailTime: 0.25
   explosion: {fileID: 0}
   explosionSize: 0
-  maxStoredEnergy: 150
+  maxStoredEnergy: 350
   rechargeRate: 50
   requireAmmunition: 1
   acceptedAmmunitions:
@@ -59,7 +59,7 @@ MonoBehaviour:
   range: 3000
   activationThreshold: 1
   trackingTime: 0.5
-  projectileVelocity: 200
+  projectileVelocity: 250
   projectileSticky: 1
   projectileTracking: 250
   projectileInitializeRotation: 1

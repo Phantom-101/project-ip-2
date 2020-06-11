@@ -19,8 +19,8 @@ MonoBehaviour:
     type: 3}
   trailGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0.91642296, b: 0.5424528, a: 0}
-    key1: {r: 1, g: 0.12835719, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 0.78431374, a: 1}
+    key1: {r: 1, g: 1, b: 0.78431374, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}

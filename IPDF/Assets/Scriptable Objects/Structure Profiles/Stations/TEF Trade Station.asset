@@ -31,8 +31,8 @@ MonoBehaviour:
   structureClass: 0
   manufacturer: 3
   description: 
-  hull: 10000
-  inventorySize: 0
+  hull: 100000
+  inventorySize: 10000
   turretSlots: 5
   turretPositions:
   - {x: 0, y: 0, z: 0}

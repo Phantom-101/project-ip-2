@@ -17,17 +17,18 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 91c57ba3ee0c44c40bb6787f3dc958f8, type: 3}
   material: {fileID: 2100000, guid: 5aa47bd91276777469f6b02ede536eab, type: 2}
-  apparentSize: 4
-  explosion: {fileID: 0}
+  apparentSize: 2
+  explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
+    type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
   targetBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692, type: 3}
-  hullUI: {fileID: 0}
+  hullUI: {fileID: 21300000, guid: eee2292a11a73ae4ba8bce7798c70dc8, type: 3}
   enforceHeight: 1
   canFireAt: 1
   engagementRangeMultiplier: 0
   rangeChangeAngle: 90
-  structureClass: 0
+  structureClass: 10
   manufacturer: 1
   description: 
   hull: 2000
@@ -47,9 +48,9 @@ MonoBehaviour:
   market: {fileID: 0}
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 3
-  drag: 100
-  angularDrag: 1
+  mass: 15
+  drag: 0.5
+  angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   offset: {x: 0, y: 0, z: -3}

@@ -92,7 +92,7 @@ MonoBehaviour:
     x: -1077
     y: -69
     width: 5593
-    height: 2434
+    height: 2433
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3952,7 +3952,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 117
           m_Value: 1
         - m_ExpressionIndex: 118
-          m_Value: 5
+          m_Value: 2
         - m_ExpressionIndex: 120
           m_Value: 5
         - m_ExpressionIndex: 122
@@ -11164,7 +11164,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 5
+      m_SerializableObject: 2
     m_Space: 2147483647
   m_Property:
     name: dragCoefficient
@@ -13252,7 +13252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78581a96eae8bf4398c282eb0b098bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1

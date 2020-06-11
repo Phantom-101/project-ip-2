@@ -63,8 +63,10 @@ public class StructureAI {
             }
         }
         if (structureBehaviours.route != null)
-            if (structureBehaviours.route.waypoints.Count == 0)
-                structureBehaviours.route = null;
+            if (structureBehaviours.route.waypoints != null) {
+                if (structureBehaviours.route.waypoints.Count == 0)
+                    structureBehaviours.route = null;
+            } else structureBehaviours.route = null;
         if (structureBehaviours.route != null) {
             Vector3 heading = structureBehaviours.route.waypoints[0] - structureBehaviours.transform.position;
             Vector3 perp = Vector3.Cross (structureBehaviours.transform.forward, heading);
