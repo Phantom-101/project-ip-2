@@ -10,50 +10,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Jump Gate
+  m_Name: Jump Station
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 54f48a7237845e14cbeeb13502985f88, type: 3}
   basePrice: 0
   size: 0
   mesh: {fileID: 2534964839176971238, guid: 4694a5228ece3cd4faf4e304e23bdbca, type: 3}
   material: {fileID: 2100000, guid: fb395ca6ea2f8fa4993b85a4d7fcd7e1, type: 2}
-  apparentSize: 20
-  explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
-    type: 3}
+  apparentSize: 0
+  explosion: {fileID: 0}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
   targetBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692, type: 3}
   hullUI: {fileID: 21300000, guid: 54f48a7237845e14cbeeb13502985f88, type: 3}
   enforceHeight: 1
-  canFireAt: 1
+  canFireAt: 0
   engagementRangeMultiplier: 0
   rangeChangeAngle: 0
   structureClass: 0
-  manufacturer: 5
-  description: Lamda's design for an artificial wormhole stabilizer
-  hull: 1500
-  inventorySize: 499
+  manufacturer: 8
+  description: A portal through which another sector of space can be found.
+  hull: 10000
+  inventorySize: 0
   turretSlots: 0
   turretPositions: []
   turretAlignments: 
   electronicsCapable: 0
-  dockingPoints: 4
+  dockingPoints: 1
   dockingLocations:
-  - {x: -180, y: 0, z: 40}
-  - {x: -148, y: 0, z: -40}
-  - {x: -180, y: 0, z: 40}
-  - {x: -148, y: 0, z: -40}
-  dockingRotations: []
-  dockingRange: 80
-  market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
+  - {x: -165, y: 0, z: 0}
+  dockingRotations:
+  - {x: 0, y: 0, z: 0}
+  dockingRange: 200
+  market: {fileID: 0}
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 100000
-  drag: 1000
-  angularDrag: 1
-  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  mass: 0
+  drag: 0
+  angularDrag: 0
+  physicMaterial: {fileID: 0}
   decals: {fileID: 0}
-  offset: {x: 0, y: -121, z: 0}
+  offset: {x: 0, y: -125, z: 0}
   rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}

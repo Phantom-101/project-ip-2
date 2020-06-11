@@ -2847,6 +2847,8 @@ GameObject:
   - component: {fileID: 431661544}
   - component: {fileID: 431661545}
   - component: {fileID: 431661546}
+  - component: {fileID: 431661548}
+  - component: {fileID: 431661547}
   m_Layer: 0
   m_Name: Jump Gate
   m_TagString: Untagged
@@ -2926,7 +2928,7 @@ VisualEffect:
       m_Array: []
     m_Vector2f:
       m_Array:
-      - m_Value: {x: 25, y: 25}
+      - m_Value: {x: 50, y: 50}
         m_Name: dimensions
         m_Overridden: 1
     m_Vector3f:
@@ -3114,6 +3116,30 @@ BillboardRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Billboard: {fileID: 0}
+--- !u!114 &431661547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431661540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &431661548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431661540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &437844175
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,6 +6055,9 @@ GameObject:
   - component: {fileID: 935539177}
   - component: {fileID: 935539176}
   - component: {fileID: 935539179}
+  - component: {fileID: 935539180}
+  - component: {fileID: 935539182}
+  - component: {fileID: 935539181}
   m_Layer: 0
   m_Name: Jump Gate (1)
   m_TagString: Untagged
@@ -6094,7 +6123,7 @@ VisualEffect:
       m_Array: []
     m_Vector2f:
       m_Array:
-      - m_Value: {x: 25, y: 25}
+      - m_Value: {x: 50, y: 50}
         m_Name: dimensions
         m_Overridden: 1
     m_Vector3f:
@@ -6147,6 +6176,139 @@ MonoBehaviour:
   structuresManager: {fileID: 0}
   cameraFollowPlayer: {fileID: 0}
   navigationManager: {fileID: 0}
+--- !u!114 &935539180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935539175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: c3d683ddcec6b074a8ca52b706555804, type: 2}
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  cloaked: 0
+  factionID: 0
+  initializeAccordingToSaveData: 0
+  savedInventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  savedTurrets: []
+  savedShield:
+    equipper: {fileID: 0}
+    shield: {fileID: 0}
+    online: 0
+    strengths: []
+    shieldTimesSinceLastDamaged: []
+  savedCapacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 0}
+    storedEnergy: 0
+  savedGenerator:
+    equipper: {fileID: 0}
+    generator: {fileID: 0}
+    online: 0
+  savedEngine:
+    equipper: {fileID: 0}
+    engine: {fileID: 0}
+    online: 0
+    forwardSetting: 0
+    turnSetting: 0
+  savedElectronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  savedTractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    shield: {fileID: 0}
+    online: 0
+    strengths: []
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    capacitor: {fileID: 0}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    generator: {fileID: 0}
+    online: 0
+  engine:
+    equipper: {fileID: 0}
+    engine: {fileID: 0}
+    online: 0
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    tractorBeam: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
+--- !u!114 &935539181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935539175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &935539182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935539175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &957694595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6451,178 +6613,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969112973}
   m_CullTransparentMesh: 0
---- !u!1 &970305063
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 970305064}
-  - component: {fileID: 970305067}
-  - component: {fileID: 970305066}
-  - component: {fileID: 970305065}
-  m_Layer: 0
-  m_Name: Jump station
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &970305064
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970305063}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 332, y: -0, z: 3346}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &970305065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970305063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &970305066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970305063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &970305067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970305063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 0416f65ddd2346143b44e75d55c25d45, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 0
-  initializeAccordingToSaveData: 1
-  savedInventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  savedTurrets: []
-  savedShield:
-    equipper: {fileID: 970305067}
-    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
-    online: 1
-    strengths:
-    - 800
-    - 800
-    - 800
-    - 800
-    - 800
-    - 800
-    shieldTimesSinceLastDamaged: []
-  savedCapacitor:
-    equipper: {fileID: 970305067}
-    capacitor: {fileID: 11400000, guid: 91ea114fe45a5f4488436f0e9e47992b, type: 2}
-    storedEnergy: 20000
-  savedGenerator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 617e74926984aff4cb3bd1e6e160a78f, type: 2}
-    online: 1
-  savedEngine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: ac2b8671acc2ed44ab7a1c8b65f22f93, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  savedElectronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  savedTractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  savedFactories: []
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets: []
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 0}
-    online: 0
-    strengths: []
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 0}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 0}
-    online: 0
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 0}
-    online: 0
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!4 &971463893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
@@ -6997,7 +6987,6 @@ Transform:
   - {fileID: 7218308574373969049}
   - {fileID: 6750740652291305471}
   - {fileID: 6750740651958262900}
-  - {fileID: 970305064}
   - {fileID: 6014294777800669112}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -20440,7 +20429,7 @@ PrefabInstance:
     - target: {fileID: 2324582867928547035, guid: a81d16b0722679341a490989bb38281d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2324582867928547035, guid: a81d16b0722679341a490989bb38281d,
         type: 3}

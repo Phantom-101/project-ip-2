@@ -54,7 +54,7 @@ MonoBehaviour:
   requireAmmunition: 1
   acceptedAmmunitions:
   - {fileID: 11400000, guid: 8f46a6650ea93984e9a3ea922de1197b, type: 2}
-  activations: 5
+  activations: 25
   activationDelay: 0.1
   range: 3000
   activationThreshold: 1

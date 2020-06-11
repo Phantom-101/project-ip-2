@@ -84,35 +84,35 @@ MonoBehaviour:
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 8730564311083946572}
-    turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
+    turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 8730564311083946572}
-    turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
+    turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 8730564311083946572}
-    turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
+    turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 8730564311083946572}
-    turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
+    turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
   - equipper: {fileID: 8730564311083946572}
-    turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
+    turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
@@ -159,6 +159,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -207,12 +210,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &8730564311083946547
 MonoBehaviour:
   m_ObjectHideFlags: 0

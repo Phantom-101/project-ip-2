@@ -47,8 +47,9 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   trailTime: 0.4
-  explosion: {fileID: 0}
-  explosionSize: 0
+  explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
+    type: 3}
+  explosionSize: 10
   maxStoredEnergy: 1000
   rechargeRate: 250
   requireAmmunition: 0

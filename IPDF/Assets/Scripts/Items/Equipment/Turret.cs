@@ -134,10 +134,10 @@ public class TurretHandler {
 
     public bool AlignmentIsValid (GameObject target) {
         Vector3 targetPos = target.transform.position;
-        float angle = targetPos - (equipper.transform.position + equipper.transform.rotation * position) == Vector3.zero ?
+        float angle = targetPos - equipper.transform.position == Vector3.zero ?
             0.0f :
-            Quaternion.Angle (equipper.transform.rotation, Quaternion.LookRotation (targetPos - (equipper.transform.position + equipper.transform.rotation * position)));
-        Vector3 perp = Vector3.Cross(equipper.transform.forward, targetPos - (equipper.transform.position + equipper.transform.rotation * position));
+            Quaternion.Angle (equipper.transform.rotation, Quaternion.LookRotation (targetPos - equipper.transform.position));
+        Vector3 perp = Vector3.Cross(equipper.transform.forward, targetPos - equipper.transform.position);
         float leftRight = Vector3.Dot(perp, equipper.transform.up);
         angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
         if (turretAlignment == TurretAlignment.All) return true;

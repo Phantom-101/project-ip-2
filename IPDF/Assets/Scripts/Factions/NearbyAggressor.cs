@@ -12,6 +12,9 @@ public class NearbyAggressor : MonoBehaviour {
     void Awake () {
         structuresManager = FindObjectOfType<StructuresManager> ();
         factionsManager = FindObjectOfType<FactionsManager> ();
+    }
+
+    void Update () {
         foreach (StructureBehaviours structure in structuresManager.structures)
             if (structure != null && (transform.position - structure.transform.position).sqrMagnitude <= range * range)
                 factionsManager.SetRelations (currentFactionID, structure.factionID, -1.0f);

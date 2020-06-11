@@ -15,12 +15,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 21cae58d6d12f6d40be90500113929b6, type: 3}
   basePrice: 0
   size: 0.1
-  projectile: {fileID: 9166618057121596802, guid: 01e0305bd7e64a04789c83bdf3b908d3,
+  projectile: {fileID: 5241045304247881585, guid: 4cbf6708bfac8a341913e7fdf66011f1,
     type: 3}
   trailGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 1, a: 0}
-    key1: {r: 0, g: 0, b: 1, a: 0.5882353}
+    key0: {r: 0, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 0, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 1, a: 0.5882353}
     key4: {r: 0, g: 0, b: 1, a: 0.19607843}
@@ -36,7 +36,7 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 16384
+    atime1: 65535
     atime2: 65535
     atime3: 52428
     atime4: 65535
@@ -45,7 +45,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_NumColorKeys: 2
-    m_NumAlphaKeys: 3
+    m_NumAlphaKeys: 2
   trailTime: 2
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
