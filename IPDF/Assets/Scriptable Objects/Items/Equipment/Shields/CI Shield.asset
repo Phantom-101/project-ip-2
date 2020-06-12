@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 020abdd48621ae4429a821eb67a6d27e, type: 3}
-  m_Name: Platform Manuevering thrusters
+  m_Script: {fileID: 11500000, guid: cb012ea4381c3cd47b8b0fe125ea5274, type: 3}
+  m_Name: CI Shield
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
   size: 0
-  meta: 2
-  forwardPower: 0
-  turnPower: 10
+  strength: 1000000
+  rechargeRate: 100
+  shieldRechargeEfficiency: 100

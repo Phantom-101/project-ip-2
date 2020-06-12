@@ -120,7 +120,7 @@ MonoBehaviour:
     storedEnergy: 0
   savedShield:
     equipper: {fileID: 464219059500026786}
-    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    shield: {fileID: 11400000, guid: 0170e8c9d5f4e5943965f53f95da307d, type: 2}
     online: 1
     strengths:
     - 10000
@@ -159,6 +159,9 @@ MonoBehaviour:
     storedEnergy: 0
     target: {fileID: 0}
   savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -200,12 +203,14 @@ MonoBehaviour:
   docked: []
   factories: []
   rigidbody: {fileID: 0}
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
+  dampening: 1
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &464219059500026845
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ MonoBehaviour:
   mesh: {fileID: -6228955713468777133, guid: 4ec7f004f9bd06542849f01127c4b9b5, type: 3}
   material: {fileID: -2310514774154243031, guid: 4ec7f004f9bd06542849f01127c4b9b5,
     type: 3}
-  apparentSize: 5
+  apparentSize: 7
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -34,6 +34,7 @@ MonoBehaviour:
   description: Heavy Forward Attack Corvette
   hull: 500
   inventorySize: 120
+  maxEquipmentMeta: 6
   turretSlots: 4
   turretPositions:
   - {x: 0, y: 12, z: 0}

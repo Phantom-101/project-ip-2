@@ -15,6 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6d76f2f3ebc819d449d63b24b6ee34a0, type: 3}
   basePrice: 1000000
   size: 0
+  meta: 10
   projectile: {fileID: 9166618057121596802, guid: 01e0305bd7e64a04789c83bdf3b908d3,
     type: 3}
   trailGradient:
@@ -47,7 +48,8 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   trailTime: 0.02
-  explosion: {fileID: 188362, guid: 353ea8c94d5d326498d52ebd3d487967, type: 3}
+  explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
+    type: 3}
   explosionSize: 4
   maxStoredEnergy: 30
   rechargeRate: 1000
@@ -55,17 +57,17 @@ MonoBehaviour:
   acceptedAmmunitions: []
   activations: 1
   activationDelay: 0.02
-  range: 500
+  range: 2500
   activationThreshold: 1
   trackingTime: 0
-  projectileVelocity: 100000
+  projectileVelocity: 1000
   projectileSticky: 0
   projectileTracking: 0
   projectileInitializeRotation: 1
-  projectileInaccuracy: 0
+  projectileInaccuracy: 0.05
   leadProjectile: 1
-  fuelRange: 500
+  fuelRange: 3000
   damage: 500
-  explosiveDamage: 1
+  explosiveDamage: 10000
   explosionRange: 30
-  explosionDetail: 6
+  explosionDetail: 15

@@ -33,6 +33,7 @@ MonoBehaviour:
   description: Borealis class light corvette.
   hull: 2000
   inventorySize: 0
+  maxEquipmentMeta: 4
   turretSlots: 10
   turretPositions:
   - {x: 0, y: 0, z: 0}

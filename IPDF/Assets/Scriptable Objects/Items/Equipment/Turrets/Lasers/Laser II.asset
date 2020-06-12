@@ -15,6 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 3200
   size: 0
+  meta: 2
   projectile: {fileID: 5241045304247881585, guid: 4cbf6708bfac8a341913e7fdf66011f1,
     type: 3}
   trailGradient:

@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "New Generator", menuName = "Equipment/Generator")]
-public class Generator : Item {
+public class Generator : Equipment {
     public float generation;
 }
 
@@ -54,6 +54,10 @@ public class GeneratorHandler {
 
     public void GenerateEnergy (CapacitorHandler capacitor) {
         if (!online || generator == null) return;
+        if (generator.meta > equipper.profile.maxEquipmentMeta) {
+            generator = null;
+            return;
+        }
         capacitor.Recharge (generator.generation * Time.deltaTime);
     }
 }

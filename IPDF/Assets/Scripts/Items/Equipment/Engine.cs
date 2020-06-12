@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "New Engine", menuName = "Equipment/Engine")]
-public class Engine : Item {
+public class Engine : Equipment {
     public float forwardPower;
     public float turnPower;
 }
@@ -78,6 +78,10 @@ public class EngineHandler {
 
     public void ApplySettings (Rigidbody target) {
         if (!online || engine == null) return;
+        if (engine.meta > equipper.profile.maxEquipmentMeta) {
+            engine = null;
+            return;
+        }
         target.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower / target.mass), ForceMode.Acceleration);
         target.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower / target.mass, 0.0f), ForceMode.Acceleration);
         float targetZRot = -target.GetComponent<Rigidbody> ().angularVelocity.y * 10.0f;
