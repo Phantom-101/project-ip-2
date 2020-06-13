@@ -21,7 +21,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Capacitor", menuName = "Equipment/Capacitor")]
-public class Capacitor : Item {
+public class Capacitor : Equipment {
     public float capacitance;
 }
 
@@ -31,8 +31,7 @@ public class CapacitorHandler {
     public Capacitor capacitor;
     public float storedEnergy;
 
-    public CapacitorHandler (StructureBehaviours equipper, Capacitor capacitor = null) {
-        this.equipper = equipper;
+    public CapacitorHandler (Capacitor capacitor = null) {
         if (capacitor == null) {
             this.capacitor = null;
             this.storedEnergy = 0.0f;
@@ -42,18 +41,22 @@ public class CapacitorHandler {
         }
     }
 
-    public CapacitorHandler (CapacitorHandler capacitorHandler, StructureBehaviours equipper) {
-        this.equipper = equipper;
+    public CapacitorHandler (CapacitorHandler capacitorHandler) {
         this.capacitor = capacitorHandler.capacitor;
         this.storedEnergy = capacitorHandler.storedEnergy;
     }
 
     public void Recharge (float available) {
+        if (capacitor == null) return;
         storedEnergy = MathUtils.Clamp (storedEnergy + available, 0.0f, capacitor.capacitance);
     }
 
     public void DistributeEnergy (List<TurretHandler> turrets, ShieldHandler shield, ElectronicsHandler electronics, TractorBeamHandler tractorBeam) {
         if (capacitor == null) return;
+        if (capacitor.meta > equipper.profile.maxEquipmentMeta) {
+            capacitor = null;
+            return;
+        }
         DistributeToTurrets (turrets);
         DistributeToShield (shield);
         DistributeToElectronics (electronics);

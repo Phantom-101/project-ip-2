@@ -84,6 +84,11 @@ public class SavesHandler : MonoBehaviour {
             saveString += JsonUtility.ToJson (data, true) + "\nNext Structure\n";
         }
         File.WriteAllText (GetStructureSavePath (saveName), saveString);
+        saveString = "";
+        FactionsManager factionsManager = FindObjectOfType<FactionsManager> ();
+        foreach (Faction faction in factionsManager.factions)
+            saveString += JsonUtility.ToJson (faction, true) + "\nNext Faction\n";
+        File.WriteAllText (GetFactionsSavePath (saveName), saveString);
     }
 
     public void Load () {
@@ -131,19 +136,18 @@ public class SavesHandler : MonoBehaviour {
                     instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
                     instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
                     StructureBehaviours structureBehaviours = instantiated.GetComponent<StructureBehaviours> ();
-                    structureBehaviours.initializeAccordingToSaveData = true;
                     structureBehaviours.profile = data.profile;
                     structureBehaviours.hull = data.hull;
                     structureBehaviours.factionID = data.factionID;
-                    structureBehaviours.savedInventory = data.inventory;
-                    structureBehaviours.savedTurrets = data.turrets;
-                    structureBehaviours.savedShield = data.shield;
-                    structureBehaviours.savedCapacitor = data.capacitor;
-                    structureBehaviours.savedGenerator = data.generator;
-                    structureBehaviours.savedEngine = data.engine;
-                    structureBehaviours.savedElectronics = data.electronics;
-                    structureBehaviours.savedTractorBeam = data.tractorBeam;
-                    structureBehaviours.savedFactories = data.factories;
+                    structureBehaviours.inventory = data.inventory;
+                    structureBehaviours.turrets = data.turrets;
+                    structureBehaviours.shield = data.shield;
+                    structureBehaviours.capacitor = data.capacitor;
+                    structureBehaviours.generator = data.generator;
+                    structureBehaviours.engine = data.engine;
+                    structureBehaviours.electronics = data.electronics;
+                    structureBehaviours.tractorBeam = data.tractorBeam;
+                    structureBehaviours.factories = data.factories;
                     structureBehaviours.AI = data.AI;
                     loaded.Add (structureBehaviours);
                     if (data.isPlayer) playerController.structureBehaviours = structureBehaviours;
@@ -154,6 +158,18 @@ public class SavesHandler : MonoBehaviour {
             // Reset camera position
             CameraFollowPlayer cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
             cameraFollowPlayer.ResetPosition ();
+        }
+        if (File.Exists (GetFactionsSavePath (saveName))) {
+            FactionsManager factionsManager = FindObjectOfType<FactionsManager> ();
+            List<Faction> factions = new List<Faction> ();
+            string saveString = File.ReadAllText (GetFactionsSavePath (saveName));
+            string[] factionsData = saveString.Split (new string[] {"\nNext Faction\n"}, System.StringSplitOptions.None);
+            foreach (string factionData in factionsData) {
+                Faction parsedFaction = JsonUtility.FromJson<Faction> (factionData);
+                if (parsedFaction != null)
+                    factions.Add (parsedFaction);
+            }
+            factionsManager.factions = factions;
         }
     }
 
@@ -167,6 +183,10 @@ public class SavesHandler : MonoBehaviour {
 
     public string GetStructureSavePath (string saveName) {
         return GetSavePath (saveName) + "/structures.txt";
+    }
+
+    public string GetFactionsSavePath (string saveName) {
+        return GetSavePath (saveName) + "/factions.txt";
     }
 
     public void LogStructureSavePath (string saveName) {

@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: 1573024560784159267, guid: 8cbda229daf51dd4b912d5d631f848df, type: 3}
   material: {fileID: 2100000, guid: bdf6d26c859dc3640bff31faa52e44c6, type: 2}
-  apparentSize: 100
+  apparentSize: 50
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -33,6 +33,7 @@ MonoBehaviour:
   description: Borealis class light corvette.
   hull: 2000
   inventorySize: 0
+  maxEquipmentMeta: 4
   turretSlots: 10
   turretPositions:
   - {x: 0, y: 0, z: 0}

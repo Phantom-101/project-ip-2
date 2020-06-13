@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class Faction {
     public string name;
+    public int id;
     public string abbreviated;
     public long wealth;
     public List<FactionRelation> relations = new List<FactionRelation> ();
@@ -20,11 +21,11 @@ public class Faction {
 
 [Serializable]
 public class FactionRelation {
-    public int factionID;
+    public int id;
     public float relation;
 
-    public FactionRelation (int factionID, float relation) {
-        this.factionID = factionID;
+    public FactionRelation (int id, float relation) {
+        this.id = id;
         this.relation = relation;
     }
 }

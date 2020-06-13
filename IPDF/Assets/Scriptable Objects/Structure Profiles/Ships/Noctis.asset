@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: fcbf132e6d93f5b42b358d46e0c46545, type: 3}
   material: {fileID: 2100000, guid: b8e0740f03dcb2b4ca4de3be7e4be61f, type: 2}
-  apparentSize: 10
+  apparentSize: 5
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -33,6 +33,7 @@ MonoBehaviour:
   description: 
   hull: 650
   inventorySize: 100
+  maxEquipmentMeta: 5
   turretSlots: 6
   turretPositions:
   - {x: 0, y: 0, z: 0}
@@ -43,6 +44,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 00000000040000000a000000080000000c00000007000000
   electronicsCapable: 1
+  maxDockingSize: 0
   dockingPoints: 0
   dockingLocations: []
   dockingRotations: []
@@ -50,7 +52,7 @@ MonoBehaviour:
   market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 75
+  mass: 35
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}

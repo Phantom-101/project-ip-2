@@ -18,7 +18,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Tractor Beam", menuName = "Equipment/Tractor Beam")]
-public class TractorBeam : Item {
+public class TractorBeam : Equipment {
     public float consumptionRate;
     public float activationThreshold;
     public float range;
@@ -36,8 +36,7 @@ public class TractorBeamHandler {
     public float storedEnergy;
     public GameObject target;
     
-    public TractorBeamHandler (StructureBehaviours equipper, TractorBeam tractorBeam = null) {
-        this.equipper = equipper;
+    public TractorBeamHandler (TractorBeam tractorBeam = null) {
         if (tractorBeam == null) {
             this.tractorBeam = null;
             this.online = false;
@@ -53,8 +52,7 @@ public class TractorBeamHandler {
         }
     }
 
-    public TractorBeamHandler (TractorBeamHandler tractorBeamHandler, StructureBehaviours equipper) {
-        this.equipper = equipper;
+    public TractorBeamHandler (TractorBeamHandler tractorBeamHandler) {
         this.tractorBeam = tractorBeamHandler.tractorBeam;
         this.online = tractorBeamHandler.online;
         this.activated = tractorBeamHandler.activated;
@@ -102,6 +100,13 @@ public class TractorBeamHandler {
             Deactivate ();
             return;
         }
+        if (tractorBeam.meta > processor.GetComponent<StructureBehaviours> ().profile.maxEquipmentMeta) {
+            tractorBeam = null;
+            return;
+        }
+        float minSqrMagnitude = processor.GetComponent<StructureBehaviours> ().profile.apparentSize + target.GetComponent<StructureBehaviours> ().profile.apparentSize;
+        minSqrMagnitude *= minSqrMagnitude;
+        if ((processor.transform.position - target.transform.position).sqrMagnitude <= minSqrMagnitude) Deactivate ();
         if (activated) {
             storedEnergy = MathUtils.Clamp (storedEnergy - tractorBeam.consumptionRate * Time.deltaTime, 0.0f, tractorBeam.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();

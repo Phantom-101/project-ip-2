@@ -18,7 +18,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Electronics", menuName = "Equipment/Electronics")]
-public class Electronics : Item {
+public class Electronics : Equipment {
     public float cloakTime;
     public float maxStoredEnergy;
     public float rechargeRate;
@@ -35,8 +35,7 @@ public class ElectronicsHandler {
     public float storedEnergy;
     public float timeSinceToggled;
 
-    public ElectronicsHandler (StructureBehaviours equipper, Electronics electronics = null) {
-        this.equipper = equipper;
+    public ElectronicsHandler (Electronics electronics = null) {
         if (electronics == null) {
             this.electronics = null;
             this.online = false;
@@ -52,8 +51,7 @@ public class ElectronicsHandler {
         }
     }
 
-    public ElectronicsHandler (ElectronicsHandler electronicsHandler, StructureBehaviours equipper) {
-        this.equipper = equipper;
+    public ElectronicsHandler (ElectronicsHandler electronicsHandler) {
         this.electronics = electronicsHandler.electronics;
         this.online = electronicsHandler.online;
         this.activated = electronicsHandler.activated;
@@ -94,6 +92,10 @@ public class ElectronicsHandler {
 
     public void Process (GameObject processor) {
         if (!online) return;
+        if (electronics.meta > equipper.profile.maxEquipmentMeta) {
+            electronics = null;
+            return;
+        }
         timeSinceToggled += Time.deltaTime;
         if (activated) {
             storedEnergy = MathUtils.Clamp (storedEnergy - electronics.consumptionRate * Time.deltaTime, 0.0f, electronics.maxStoredEnergy);

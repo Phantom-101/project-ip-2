@@ -12,17 +12,6 @@ public class StructureBehaviours : MonoBehaviour {
     public float hullTimeSinceLastDamaged;
     public bool cloaked;
     public int factionID;
-    [Header ("Saved Data")]
-    public bool initializeAccordingToSaveData;
-    public InventoryHandler savedInventory;
-    public List<TurretHandler> savedTurrets = new List<TurretHandler> ();
-    public ShieldHandler savedShield;
-    public CapacitorHandler savedCapacitor;
-    public GeneratorHandler savedGenerator;
-    public EngineHandler savedEngine;
-    public ElectronicsHandler savedElectronics;
-    public TractorBeamHandler savedTractorBeam;
-    public List<FactoryHandler> savedFactories = new List<FactoryHandler> ();
     [Header ("Navigation")]
     public Route route;
     public StructureBehaviours target;
@@ -80,54 +69,36 @@ public class StructureBehaviours : MonoBehaviour {
         colliderGameObject.transform.localPosition = (profile.collisionMesh == null ? profile.offset : profile.colliderOffset);
         colliderGameObject.transform.localEulerAngles = (profile.collisionMesh == null ? profile.rotate : profile.colliderRotate);
         if (hull == 0) hull = profile.hull;
-        if (initializeAccordingToSaveData) {
-            inventory = new InventoryHandler (savedInventory, this);
+        if (inventory == null) inventory = new InventoryHandler (null, profile.inventorySize);
+        if (inventory.inventory == null) inventory.inventory = new Dictionary<Item, int> ();
+        if (turrets.Count != profile.turretSlots) {
             turrets = new List<TurretHandler> ();
-            for (int i = 0; i < profile.turretSlots; i++) {
-                turrets.Add (i < savedTurrets.Count ? new TurretHandler (savedTurrets[i], profile.turretPositions[i], profile.turretAlignments[i], this) :
-                    new TurretHandler (null, profile.turretPositions[i], profile.turretAlignments[i], this));
-                // Temporary
-                if (turrets[i].turret.requireAmmunition) {
-                    inventory.AddItem (turrets[i].turret.acceptedAmmunitions[0], 25 * turrets[i].turret.activations);
-                    turrets[i].UseAmmunition (turrets[i].turret.acceptedAmmunitions[0]);
-                }
-            }
-            shield = new ShieldHandler (savedShield, this);
-            capacitor = new CapacitorHandler (savedCapacitor, this);
-            generator = new GeneratorHandler (savedGenerator, this);
-            engine = new EngineHandler (savedEngine, this);
-            electronics = profile.electronicsCapable ? new ElectronicsHandler (savedElectronics, this) : new ElectronicsHandler (this);
-            tractorBeam = new TractorBeamHandler (savedTractorBeam, this);
-            for (int i = 0; i < profile.factories.Length; i++) {
-                factories.Add (i < savedFactories.Count ? new FactoryHandler (savedFactories[i], this) : new FactoryHandler (null, this));
-                // Temporary
-                if (factories[i].factory != null)
-                    foreach (Item input in factories[i].factory.inputs)
-                        inventory.AddItem (input, 100);
-            }
-        } else {
-            inventory = new InventoryHandler (this, null, profile.inventorySize);
-            for (int i = 0; i < profile.turretSlots; i++) turrets.Add (new TurretHandler (this, profile.turretPositions[i], profile.turretAlignments[i]));
-            shield = new ShieldHandler (this);
-            capacitor = new CapacitorHandler (this);
-            generator = new GeneratorHandler (this);
-            engine = new EngineHandler (this);
-            electronics = new ElectronicsHandler (this);
-            tractorBeam = new TractorBeamHandler (this);
-            for (int i = 0; i < profile.factories.Length; i++) {
-                factories.Add (new FactoryHandler (this, profile.factories[i]));
-                // Temporary
-                foreach (Item input in profile.factories[i].inputs)
-                    inventory.AddItem (input, 100);
-            }
+            for (int i = 0; i < profile.turretSlots; i++)
+                turrets.Add (new TurretHandler ());
         }
+        for (int i = 0; i < profile.turretSlots; i++)
+            if (turrets[i] == null) 
+                turrets.Add (new TurretHandler ());
+        if (shield == null) shield = new ShieldHandler ();
+        if (capacitor == null) capacitor = new CapacitorHandler ();
+        if (generator == null) generator = new GeneratorHandler ();
+        if (engine == null) engine = new EngineHandler ();
+        if (electronics == null) electronics = new ElectronicsHandler ();
+        if (tractorBeam == null) tractorBeam = new TractorBeamHandler ();
+        if (factories.Count != profile.factories.Length) {
+            factories = new List<FactoryHandler> ();
+            for (int i = 0; i < profile.factories.Length; i++)
+                factories.Add (new FactoryHandler (profile.factories[i]));
+        }
+        for (int i = 0; i < profile.factories.Length; i++)
+            if (factories[i] == null)
+                factories.Add (new FactoryHandler (profile.factories[i]));
         if (docked == null) docked = new GameObject[profile.dockingPoints];
         if (docked.Length != profile.dockingPoints) docked = new GameObject[profile.dockingPoints];
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.mass = profile.mass;
         if (profile.structureClass == StructureClass.Station) rigidbody.isKinematic = true;
-        // rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX;
         if (profile.decals != null) {
             GameObject decals = Instantiate (profile.decals) as GameObject;
             decals.transform.parent = transform;
@@ -173,19 +144,35 @@ public class StructureBehaviours : MonoBehaviour {
         else if (hullTimeSinceLastDamaged >= 0.3f) hullTimeSinceLastDamaged += Time.deltaTime;
         // Equipment
         if (turrets.Count != profile.turretSlots) turrets = new List<TurretHandler> (profile.turretSlots);
+        for (int i = 0; i < profile.turretSlots; i++) {
+            turrets[i].equipper = this;
+            turrets[i].position = profile.turretPositions[i];
+            turrets[i].turretAlignment = profile.turretAlignments[i];
+            turrets[i].Process ();
+        }
+        shield.equipper = this;
         shield.Process ();
+        generator.equipper = this;
         generator.GenerateEnergy (capacitor);
+        capacitor.equipper = this;
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
         if (transform.parent.GetComponent<StructureBehaviours> ()) {
             engine.forwardSetting = 0.0f;
             engine.turnSetting = 0.0f;
         }
+        engine.equipper = this;
         engine.ApplySettings (rigidbody);
+        electronics.equipper = this;
         electronics.Process (gameObject);
+        tractorBeam.equipper = this;
         tractorBeam.Process (gameObject);
         // Production
+        inventory.storage = this;
         if (factories.Count != profile.factories.Length) factories = new List<FactoryHandler> (profile.factories.Length);
-        foreach (FactoryHandler factory in factories) factory.Process ();
+        foreach (FactoryHandler factory in factories) {
+            factory.structure = this;
+            factory.Process ();
+        }
         // AI stuff
         if (AI != null) AI.Process (this);
         // UI
@@ -280,6 +267,7 @@ public class StructureBehaviours : MonoBehaviour {
 
     public void Dock (StructureBehaviours docker) {
         if ((docker.transform.position - transform.position).sqrMagnitude > profile.dockingRange * profile.dockingRange) return;
+        if (docker.profile.apparentSize > profile.maxDockingSize) return;
         for (int i = 0; i < profile.dockingPoints; i++) {
             if (docked[i] == null) {
                 docker.transform.parent = transform;

@@ -33,6 +33,7 @@ MonoBehaviour:
   description: Large Cydia capital ship.
   hull: 3000
   inventorySize: 1200
+  maxEquipmentMeta: 0
   turretSlots: 9
   turretPositions:
   - {x: 0, y: 0, z: 0}

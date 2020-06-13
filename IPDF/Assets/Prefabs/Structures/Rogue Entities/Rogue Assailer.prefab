@@ -51,130 +51,93 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   cloaked: 0
   factionID: 2
-  initializeAccordingToSaveData: 1
-  savedInventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  savedTurrets:
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 7218308573696321740}
-    turret: {fileID: 11400000, guid: 8435f095074de794087c3518e52ba685, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  savedShield:
-    equipper: {fileID: 7218308573696321740}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
-    online: 1
-    strengths:
-    - 1500
-    - 1500
-    - 1500
-    - 1500
-    - 1500
-    - 1500
-    shieldTimesSinceLastDamaged: []
-  savedCapacitor:
-    equipper: {fileID: 7218308573696321740}
-    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
-    storedEnergy: 20000
-  savedGenerator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
-    online: 1
-  savedEngine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  savedElectronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  savedTractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  savedFactories: []
+  route:
+    waypoints: []
+  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
-  turrets: []
+  turrets:
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 54448d1c5d4af6f47b78301a597d9af5, type: 2}
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    turretAlignment: 0
+    online: 1
+    storedEnergy: 0
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 0}
-    online: 0
-    strengths: []
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 800
+    - 800
+    - 800
+    - 800
+    - 800
+    - 800
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 0}
+    capacitor: {fileID: 11400000, guid: 3fc78a44b2c40dc4c8979fc375876c6c, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 0}
-    online: 0
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 0}
-    online: 0
+    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
+    online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
@@ -195,12 +158,13 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
-  AI: {fileID: 11400000, guid: 91ed71d4b0665bc40a5acae70ec215f4, type: 2}
   targeted: {fileID: 0}
+  billboard: {fileID: 0}
   initialized: 0
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!114 &7218308573696321715
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: f5aeae62c9551264cb14d31e5b59b19e, type: 3}
   material: {fileID: 2100000, guid: 2a212d815f19bff469a49e060e2c65a3, type: 2}
-  apparentSize: 50
+  apparentSize: 15
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -31,8 +31,9 @@ MonoBehaviour:
   structureClass: 8
   manufacturer: 8
   description: Phys' dev ship.
-  hull: 10000
+  hull: 1000000
   inventorySize: 1000
+  maxEquipmentMeta: 10
   turretSlots: 9
   turretPositions:
   - {x: 0, y: 0, z: 0}
@@ -44,19 +45,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
-  electronicsCapable: 0
+  turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
+  electronicsCapable: 1
   dockingPoints: 0
   dockingLocations: []
   dockingRotations: []
@@ -64,12 +54,12 @@ MonoBehaviour:
   market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
   factories: []
   collisionMesh: {fileID: 0}
-  mass: 250
+  mass: 75
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
-  offset: {x: 0, y: 0, z: 50}
+  offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 90, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}

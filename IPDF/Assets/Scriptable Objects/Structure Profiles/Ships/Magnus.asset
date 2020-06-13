@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: a2dff1e4cd76cfd4a924efc75e5d4af8, type: 3}
   material: {fileID: 2100000, guid: 0c2daaef9ed27274daf1ddb3713a0dec, type: 2}
-  apparentSize: 80
+  apparentSize: 40
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -33,7 +33,8 @@ MonoBehaviour:
   description: 
   hull: 3400
   inventorySize: 1000
-  turretSlots: 10
+  maxEquipmentMeta: 7
+  turretSlots: 9
   turretPositions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

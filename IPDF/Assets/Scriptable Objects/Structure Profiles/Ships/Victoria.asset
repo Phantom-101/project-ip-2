@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 4
   mesh: {fileID: -7754318969949236687, guid: 2eaf89cd088669e4ea52900192510361, type: 3}
   material: {fileID: 2100000, guid: 62ad9e2812390aa488b0f260edf74180, type: 2}
-  apparentSize: 4
+  apparentSize: 8
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -33,6 +33,7 @@ MonoBehaviour:
   description: Pirate ship, prusumed to be manufactured in a captured Delta Shipyard.
   hull: 750
   inventorySize: 300
+  maxEquipmentMeta: 5
   turretSlots: 6
   turretPositions:
   - {x: 0, y: 0, z: 0}

@@ -27,11 +27,13 @@ public class StructureProfile : Item {
     public float hull;
     public float inventorySize;
     [Header ("Fitting")]
+    public int maxEquipmentMeta;
     public int turretSlots;
     public Vector3[] turretPositions;
     public TurretAlignment[] turretAlignments;
     public bool electronicsCapable;
     [Header ("Docking")]
+    public int maxDockingSize;
     public int dockingPoints;
     public Vector3[] dockingLocations;
     public Vector3[] dockingRotations;

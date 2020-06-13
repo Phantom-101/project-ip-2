@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "New Generator", menuName = "Equipment/Generator")]
-public class Generator : Item {
+public class Generator : Equipment {
     public float generation;
 }
 
@@ -27,8 +27,7 @@ public class GeneratorHandler {
     public Generator generator;
     public bool online;
 
-    public GeneratorHandler (StructureBehaviours equipper, Generator generator = null) {
-        this.equipper = equipper;
+    public GeneratorHandler (Generator generator = null) {
         if (generator == null) {
             this.generator = null;
             this.online = false;
@@ -38,8 +37,7 @@ public class GeneratorHandler {
         }
     }
 
-    public GeneratorHandler (GeneratorHandler generatorHandler, StructureBehaviours equipper) {
-        this.equipper = equipper;
+    public GeneratorHandler (GeneratorHandler generatorHandler) {
         this.generator = generatorHandler.generator;
         this.online = generatorHandler.online;
     }
@@ -54,6 +52,10 @@ public class GeneratorHandler {
 
     public void GenerateEnergy (CapacitorHandler capacitor) {
         if (!online || generator == null) return;
+        if (generator.meta > equipper.profile.maxEquipmentMeta) {
+            generator = null;
+            return;
+        }
         capacitor.Recharge (generator.generation * Time.deltaTime);
     }
 }

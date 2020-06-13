@@ -21,3 +21,7 @@ $$$$$$$$\ $$$$$$$$\ $$$$$$$$\  $$$$$$\
 5. TractorBeamHandler.Process (GameObject processor);
 
 */
+
+public class Equipment : Item {
+   public int meta;
+}

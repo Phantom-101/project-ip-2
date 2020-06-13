@@ -188,6 +188,7 @@ public class UIHandler : MonoBehaviour {
             turretButtonsShift ++;
         }
         else equipmentButtons[0].gameObject.SetActive (false);
+        equipmentButtons[0].transform.SetSiblingIndex(0);
         // Electronics
         Electronics referencedElectronics = null;
         GameObject electronicsButton = equipmentButtons[1];
@@ -217,6 +218,7 @@ public class UIHandler : MonoBehaviour {
             turretButtonsShift ++;
         }
         else equipmentButtons[1].gameObject.SetActive (false);
+        equipmentButtons[1].transform.SetSiblingIndex(1);
         // Turrets
         for (int i = 0; i < source.turrets.Count; i++) {
             Turret referencedTurret = null;
@@ -244,6 +246,7 @@ public class UIHandler : MonoBehaviour {
             equipmentButtons[i + 2] = button;
             if (referencedTurret != null) equipmentButtons[i + 2].gameObject.SetActive (true);
             else equipmentButtons[i + 2].gameObject.SetActive (false);
+            equipmentButtons[i + 2].transform.SetSiblingIndex(i + 2);
         }
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         // Docking

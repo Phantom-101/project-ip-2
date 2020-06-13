@@ -7,8 +7,10 @@ public class FactionsManager : MonoBehaviour {
     public List<Faction> factions = new List<Faction> ();
 
     public Faction GetFaction (int id) {
-        if (id >= factions.Count) return null;
-        return factions[id];
+        foreach (Faction faction in factions)
+            if (faction.id == id)
+                return faction;
+        return null;
     }
 
     public long GetWealth (int id) {
@@ -32,7 +34,7 @@ public class FactionsManager : MonoBehaviour {
     public float GetRelations (int a, int b) {
         if (GetFaction (a) == null || GetFaction (b) == null) return 0;
         foreach (FactionRelation relation in GetFaction (a).relations)
-            if (relation.factionID == b)
+            if (relation.id == b)
                 return relation.relation;
         return 0;
     }
@@ -40,7 +42,7 @@ public class FactionsManager : MonoBehaviour {
     public void SetRelations (int a, int b, float value) {
         if (GetFaction (a) == null || GetFaction (b) == null) return;
         foreach (FactionRelation relation in GetFaction (a).relations)
-            if (relation.factionID == b) {
+            if (relation.id == b) {
                 relation.relation = value;
                 return;
             }
@@ -50,7 +52,7 @@ public class FactionsManager : MonoBehaviour {
     public void ChangeRelations (int a, int b, float change) {
         if (GetFaction (a) == null || GetFaction (b) == null) return;
         foreach (FactionRelation relation in GetFaction (a).relations)
-            if (relation.factionID == b) {
+            if (relation.id == b) {
                 relation.relation += change;
                 return;
             }

@@ -85,7 +85,7 @@ public class StructureAI {
             else if (angle < 0 && angle > -approachAngle * 0.9) structureBehaviours.engine.turnSetting = 1;
             else structureBehaviours.engine.turnSetting = 0;
             structureBehaviours.engine.forwardSetting = 1;
-            if ((structureBehaviours.route.waypoints[0] - structureBehaviours.transform.position).sqrMagnitude <= 650) structureBehaviours.route.ReachedWaypoint ();
+            if ((structureBehaviours.route.waypoints[0] - structureBehaviours.transform.position).sqrMagnitude <= 2750) structureBehaviours.route.ReachedWaypoint ();
         }
     }
 }

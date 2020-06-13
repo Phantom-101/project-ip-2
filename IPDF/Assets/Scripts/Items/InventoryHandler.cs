@@ -10,16 +10,14 @@ public class InventoryHandler {
     public Dictionary<Item, int> inventory;
     public float inventorySize;
     
-    public InventoryHandler (StructureBehaviours storage, Dictionary<Item, int> inventory = null, float inventorySize = 0.0f) {
-        this.storage = storage;
+    public InventoryHandler (Dictionary<Item, int> inventory = null, float inventorySize = 0.0f) {
         if (inventory == null) this.inventory = new Dictionary<Item, int> ();
         else this.inventory = inventory;
         if (inventorySize >= 0.0f) this.inventorySize = inventorySize;
         else this.inventorySize = -inventorySize;
     }
 
-    public InventoryHandler (InventoryHandler inventoryHandler, StructureBehaviours storage) {
-        this.storage = storage;
+    public InventoryHandler (InventoryHandler inventoryHandler) {
         this.inventory = inventoryHandler.inventory;
         if (this.inventory == null) this.inventory = new Dictionary<Item, int> ();
         if (this.inventorySize != storage.profile.inventorySize) this.inventorySize = storage.profile.inventorySize;

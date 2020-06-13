@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Repair station
+  m_Name: Repair Station
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   basePrice: 0
@@ -34,6 +34,7 @@ MonoBehaviour:
   description: 
   hull: 100000
   inventorySize: 10000
+  maxEquipmentMeta: 0
   turretSlots: 5
   turretPositions:
   - {x: -50, y: 200, z: -200}
@@ -53,6 +54,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
   electronicsCapable: 0
+  maxDockingSize: 0
   dockingPoints: 4
   dockingLocations:
   - {x: 200, y: 0, z: 0}

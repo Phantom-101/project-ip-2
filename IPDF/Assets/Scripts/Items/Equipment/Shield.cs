@@ -18,7 +18,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Shield", menuName = "Equipment/Shield")]
-public class Shield : Item {
+public class Shield : Equipment {
     public float strength;
     public float rechargeRate;
     public float shieldRechargeEfficiency;
@@ -32,8 +32,7 @@ public class ShieldHandler {
     public float[] strengths;
     public float[] shieldTimesSinceLastDamaged;
 
-    public ShieldHandler (StructureBehaviours equipper, Shield shield = null) {
-        this.equipper = equipper;
+    public ShieldHandler (Shield shield = null) {
         if (shield == null) {
             this.shield = null;
             this.online = false;
@@ -48,8 +47,7 @@ public class ShieldHandler {
         }
     }
 
-    public ShieldHandler (ShieldHandler shieldHandler, StructureBehaviours equipper) {
-        this.equipper = equipper;
+    public ShieldHandler (ShieldHandler shieldHandler) {
         this.shield = shieldHandler.shield;
         this.online = shieldHandler.online;
         this.strengths = shieldHandler.strengths;
@@ -95,6 +93,11 @@ public class ShieldHandler {
     }
 
     public void Process () {
+        if (!online || shield == null) return;
+        if (shield.meta > equipper.profile.maxEquipmentMeta) {
+            shield = null;
+            return;
+        }
         if (strengths.Length != 6) strengths = new float[6];
         if (shieldTimesSinceLastDamaged.Length != 6) shieldTimesSinceLastDamaged = new float[6];
         for (int i = 0; i < shieldTimesSinceLastDamaged.Length; i++) {
