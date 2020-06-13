@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: Maya
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 4000000
+  size: 0
+  mesh: {fileID: 4370537360113272507, guid: 44ebadcffcaaf024f90778ea4ca08848, type: 3}
+  material: {fileID: 2100000, guid: 13c4c3efb12070e4db63fbc66dc98832, type: 2}
+  apparentSize: 20
+  explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
+    type: 3}
+  selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
+    type: 3}
+  targetBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692, type: 3}
+  hullUI: {fileID: 0}
+  enforceHeight: 1
+  canFireAt: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
+  structureClass: 8
+  manufacturer: 7
+  description: Large Cydia capital ship.
+  hull: 3000
+  inventorySize: 1200
+  turretSlots: 9
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
+  electronicsCapable: 0
+  dockingPoints: 0
+  dockingLocations: []
+  dockingRotations: []
+  dockingRange: 0
+  market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
+  factories: []
+  collisionMesh: {fileID: 0}
+  mass: 250
+  drag: 0.5
+  angularDrag: 2
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  decals: {fileID: 0}
+  offset: {x: 0, y: 0, z: 75}
+  rotate: {x: 0, y: 90, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}
