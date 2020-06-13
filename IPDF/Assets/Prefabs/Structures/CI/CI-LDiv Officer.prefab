@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8730564311083946545
+--- !u!1 &7580489442006709246
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8730564311083946573}
-  - component: {fileID: 8730564311083946572}
-  - component: {fileID: 8730564311083946547}
-  - component: {fileID: 8730564311083946546}
+  - component: {fileID: 7580489442006709122}
+  - component: {fileID: 7580489442006709123}
+  - component: {fileID: 7580489442006709244}
+  - component: {fileID: 7580489442006709245}
+  - component: {fileID: 7580489442006709241}
+  - component: {fileID: 8497459341130985077}
   m_Layer: 0
-  m_Name: CI Officer
+  m_Name: CI-LDiv Officer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8730564311083946573
+--- !u!4 &7580489442006709122
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8730564311083946545}
+  m_GameObject: {fileID: 7580489442006709246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8730564311083946572
+--- !u!114 &7580489442006709123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8730564311083946545}
+  m_GameObject: {fileID: 7580489442006709246}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
@@ -55,63 +57,63 @@ MonoBehaviour:
     storage: {fileID: 0}
     inventorySize: 0
   savedTurrets:
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 82a8ee892cdb8a7409416b22cf112086, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     turretAlignment: 0
     online: 1
     storedEnergy: 0
-  - equipper: {fileID: 8730564311083946572}
+  - equipper: {fileID: 7580489442006709123}
     turret: {fileID: 11400000, guid: 35fbafd98e22e0241bec96247bd8c95e, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -119,7 +121,7 @@ MonoBehaviour:
     online: 1
     storedEnergy: 0
   savedShield:
-    equipper: {fileID: 8730564311083946572}
+    equipper: {fileID: 7580489442006709123}
     shield: {fileID: 11400000, guid: 0170e8c9d5f4e5943965f53f95da307d, type: 2}
     online: 1
     strengths:
@@ -131,7 +133,7 @@ MonoBehaviour:
     - 10000
     shieldTimesSinceLastDamaged: []
   savedCapacitor:
-    equipper: {fileID: 8730564311083946572}
+    equipper: {fileID: 7580489442006709123}
     capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
     storedEnergy: 20000
   savedGenerator:
@@ -217,27 +219,54 @@ MonoBehaviour:
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
   navigationManager: {fileID: 0}
---- !u!114 &8730564311083946547
+--- !u!114 &7580489442006709244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8730564311083946545}
+  m_GameObject: {fileID: 7580489442006709246}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8730564311083946546
+--- !u!114 &7580489442006709245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8730564311083946545}
+  m_GameObject: {fileID: 7580489442006709246}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7580489442006709241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580489442006709246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bee69b4b67b8654e8b0871f38ba4d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFactionID: 1
+  range: 1000
+--- !u!114 &8497459341130985077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580489442006709246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c71562e04698341bc6683d7b4a8fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  T: 250

@@ -27,6 +27,7 @@ public class StructureProfile : Item {
     public float hull;
     public float inventorySize;
     [Header ("Fitting")]
+    public int maxEquipmentMeta;
     public int turretSlots;
     public Vector3[] turretPositions;
     public TurretAlignment[] turretAlignments;

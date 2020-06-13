@@ -18,7 +18,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Turret", menuName = "Equipment/Turret")]
-public class Turret : Item {
+public class Turret : Equipment {
     [Header ("Appearance")]
     public GameObject projectile;
     public Gradient trailGradient;
@@ -110,9 +110,18 @@ public class TurretHandler {
 
     public float TransferEnergy (float available) {
         if (!online) return available;
+        if (turret == null) return available;
         float transferred = MathUtils.Clamp (MathUtils.Clamp (turret.rechargeRate * Time.deltaTime, 0.0f, turret.maxStoredEnergy - storedEnergy), 0.0f, available);
         storedEnergy += transferred;
         return available - transferred;
+    }
+
+    public void Process () {
+        if (turret == null) return;
+        if (turret.meta > equipper.profile.maxEquipmentMeta) {
+            turret = null;
+            return;
+        }
     }
 
     public void Activate (GameObject target) {

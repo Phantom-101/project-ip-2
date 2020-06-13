@@ -18,7 +18,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Shield", menuName = "Equipment/Shield")]
-public class Shield : Item {
+public class Shield : Equipment {
     public float strength;
     public float rechargeRate;
     public float shieldRechargeEfficiency;
@@ -95,6 +95,11 @@ public class ShieldHandler {
     }
 
     public void Process () {
+        if (!online || shield == null) return;
+        if (shield.meta > equipper.profile.maxEquipmentMeta) {
+            shield = null;
+            return;
+        }
         if (strengths.Length != 6) strengths = new float[6];
         if (shieldTimesSinceLastDamaged.Length != 6) shieldTimesSinceLastDamaged = new float[6];
         for (int i = 0; i < shieldTimesSinceLastDamaged.Length; i++) {
