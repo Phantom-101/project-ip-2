@@ -173,8 +173,6 @@ public class StructureBehaviours : MonoBehaviour {
         else if (hullTimeSinceLastDamaged >= 0.3f) hullTimeSinceLastDamaged += Time.deltaTime;
         // Equipment
         if (turrets.Count != profile.turretSlots) turrets = new List<TurretHandler> (profile.turretSlots);
-        foreach (TurretHandler turret in turrets)
-            turret.Process ();
         shield.Process ();
         generator.GenerateEnergy (capacitor);
         capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);

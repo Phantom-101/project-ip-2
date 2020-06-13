@@ -15,6 +15,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   basePrice: 0
   size: 0
-  meta: 9
   forwardPower: 2500
   turnPower: 35

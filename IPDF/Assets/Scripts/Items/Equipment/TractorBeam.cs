@@ -18,7 +18,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Tractor Beam", menuName = "Equipment/Tractor Beam")]
-public class TractorBeam : Equipment {
+public class TractorBeam : Item {
     public float consumptionRate;
     public float activationThreshold;
     public float range;
@@ -102,13 +102,6 @@ public class TractorBeamHandler {
             Deactivate ();
             return;
         }
-        if (tractorBeam.meta > processor.GetComponent<StructureBehaviours> ().profile.maxEquipmentMeta) {
-            tractorBeam = null;
-            return;
-        }
-        float minSqrMagnitude = processor.GetComponent<StructureBehaviours> ().profile.apparentSize + target.GetComponent<StructureBehaviours> ().profile.apparentSize;
-        minSqrMagnitude *= minSqrMagnitude;
-        if ((processor.transform.position - target.transform.position).sqrMagnitude <= minSqrMagnitude) Deactivate ();
         if (activated) {
             storedEnergy = MathUtils.Clamp (storedEnergy - tractorBeam.consumptionRate * Time.deltaTime, 0.0f, tractorBeam.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();

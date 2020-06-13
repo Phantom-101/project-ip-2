@@ -33,7 +33,6 @@ MonoBehaviour:
   description: Pirate ship, prusumed to be manufactured in a captured Delta Shipyard.
   hull: 750
   inventorySize: 300
-  maxEquipmentMeta: 5
   turretSlots: 6
   turretPositions:
   - {x: 0, y: 0, z: 0}

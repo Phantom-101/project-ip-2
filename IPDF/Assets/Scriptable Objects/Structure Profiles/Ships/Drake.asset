@@ -33,7 +33,6 @@ MonoBehaviour:
   description: 
   hull: 150
   inventorySize: 40
-  maxEquipmentMeta: 2
   turretSlots: 4
   turretPositions:
   - {x: 0, y: 0, z: 0}

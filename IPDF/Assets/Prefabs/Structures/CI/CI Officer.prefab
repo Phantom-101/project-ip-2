@@ -120,7 +120,7 @@ MonoBehaviour:
     storedEnergy: 0
   savedShield:
     equipper: {fileID: 8730564311083946572}
-    shield: {fileID: 11400000, guid: 0170e8c9d5f4e5943965f53f95da307d, type: 2}
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
     online: 1
     strengths:
     - 10000

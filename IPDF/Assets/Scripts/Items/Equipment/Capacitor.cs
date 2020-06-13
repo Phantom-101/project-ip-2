@@ -21,7 +21,7 @@ using UnityEngine;
 using Essentials;
 
 [CreateAssetMenu (fileName = "New Capacitor", menuName = "Equipment/Capacitor")]
-public class Capacitor : Equipment {
+public class Capacitor : Item {
     public float capacitance;
 }
 
@@ -54,10 +54,6 @@ public class CapacitorHandler {
 
     public void DistributeEnergy (List<TurretHandler> turrets, ShieldHandler shield, ElectronicsHandler electronics, TractorBeamHandler tractorBeam) {
         if (capacitor == null) return;
-        if (capacitor.meta > equipper.profile.maxEquipmentMeta) {
-            capacitor = null;
-            return;
-        }
         DistributeToTurrets (turrets);
         DistributeToShield (shield);
         DistributeToElectronics (electronics);
