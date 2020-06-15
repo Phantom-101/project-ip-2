@@ -23,7 +23,7 @@ MonoBehaviour:
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
   targetBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692, type: 3}
-  hullUI: {fileID: 0}
+  hullUI: {fileID: 21300000, guid: 1bd9a74212ded0f458bd23d3d87a73f1, type: 3}
   enforceHeight: 1
   canFireAt: 1
   engagementRangeMultiplier: 0.75

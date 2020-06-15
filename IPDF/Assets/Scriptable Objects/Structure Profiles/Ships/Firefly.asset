@@ -23,7 +23,7 @@ MonoBehaviour:
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
   targetBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692, type: 3}
-  hullUI: {fileID: 0}
+  hullUI: {fileID: 21300000, guid: eee2292a11a73ae4ba8bce7798c70dc8, type: 3}
   enforceHeight: 1
   canFireAt: 1
   engagementRangeMultiplier: 0.75
@@ -33,10 +33,12 @@ MonoBehaviour:
   description: 
   hull: 0
   inventorySize: 0
+  maxEquipmentMeta: 0
   turretSlots: 0
   turretPositions: []
   turretAlignments: 
   electronicsCapable: 0
+  maxDockingSize: 0
   dockingPoints: 0
   dockingLocations: []
   dockingRotations: []

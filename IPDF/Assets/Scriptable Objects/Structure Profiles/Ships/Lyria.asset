@@ -27,8 +27,8 @@ MonoBehaviour:
   hullUI: {fileID: 21300000, guid: eee2292a11a73ae4ba8bce7798c70dc8, type: 3}
   enforceHeight: 1
   canFireAt: 1
-  engagementRangeMultiplier: 0
-  rangeChangeAngle: 0
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
   structureClass: 3
   manufacturer: 7
   description: Heavy Forward Attack Corvette
@@ -43,6 +43,7 @@ MonoBehaviour:
   - {x: 5, y: 0, z: 0}
   turretAlignments: 00000000000000000000000000000000
   electronicsCapable: 0
+  maxDockingSize: 0
   dockingPoints: 0
   dockingLocations: []
   dockingRotations: []
