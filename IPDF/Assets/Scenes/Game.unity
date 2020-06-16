@@ -3638,6 +3638,8 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   factionsManager: {fileID: 0}
+  structuresManager: {fileID: 0}
+  camera: {fileID: 0}
   canvas: {fileID: 0}
   hullUI: {fileID: 0}
   shieldUI:
@@ -3684,6 +3686,7 @@ MonoBehaviour:
   sell10: {fileID: 0}
   buy100: {fileID: 0}
   sell100: {fileID: 0}
+  selectableBillboards: []
 --- !u!114 &587025815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9019,7 +9022,7 @@ PrefabInstance:
     - target: {fileID: 4589102706028341338, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
         type: 3}
       propertyPath: m_Name
-      value: Rogue Outpost Spawner (4)
+      value: Rogue Outpost Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ab3a3a3ac08444d9580260b8fc9b2b, type: 3}
@@ -9165,7 +9168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404937109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1171.7, y: 0, z: -152.4}
+  m_LocalPosition: {x: -1131.6, y: -0, z: -163.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -9791,7 +9794,7 @@ PrefabInstance:
     - target: {fileID: 4589102706028341338, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
         type: 3}
       propertyPath: m_Name
-      value: Rogue Outpost Spawner (3)
+      value: Rogue Outpost Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ab3a3a3ac08444d9580260b8fc9b2b, type: 3}
@@ -13509,7 +13512,7 @@ PrefabInstance:
     - target: {fileID: 4589102706028341338, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
         type: 3}
       propertyPath: m_Name
-      value: Rogue Outpost Spawner (2)
+      value: Rogue Outpost Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ab3a3a3ac08444d9580260b8fc9b2b, type: 3}
@@ -19340,7 +19343,7 @@ PrefabInstance:
     - target: {fileID: 4589102706028341338, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
         type: 3}
       propertyPath: m_Name
-      value: Rogue Outpost Spawner (1)
+      value: Rogue Outpost Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ab3a3a3ac08444d9580260b8fc9b2b, type: 3}
@@ -20727,7 +20730,7 @@ MonoBehaviour:
     online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: ac2b8671acc2ed44ab7a1c8b65f22f93, type: 2}
+    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour {
     public CameraFollowPlayer cameraFollowPlayer;
-    public Camera camera;
+    public new Camera camera;
 
     void Update () {
         cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();

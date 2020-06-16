@@ -20,6 +20,10 @@ public class StructuresManager : MonoBehaviour {
             pod.transform.parent = structure.transform.parent;
             pod.GetComponent<StructureBehaviours> ().inventory.AddItem (item, structure.inventory.inventory[item]);
         }
+        if (structure.profile.debris != null) {
+            GameObject debris = Instantiate (structure.profile.debris, structure.transform.position, Quaternion.identity) as GameObject;
+            debris.transform.localScale = Vector3.one * structure.profile.apparentSize;
+        }
         structures.Remove (structure);
         Destroy (structure.gameObject);
     }

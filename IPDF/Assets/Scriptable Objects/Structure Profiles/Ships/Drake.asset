@@ -55,6 +55,7 @@ MonoBehaviour:
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
+  debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: 0, z: 0}
   rotate: {x: 0, y: 180, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}

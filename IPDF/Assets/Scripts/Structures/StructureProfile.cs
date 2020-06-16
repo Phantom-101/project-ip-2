@@ -10,7 +10,6 @@ public class StructureProfile : Item {
     public float apparentSize;
     public GameObject explosion;
     public Sprite selectableBillboard;
-    public Sprite targetBillboard;
     [Header ("UI")]
     public Sprite hullUI;
     [Header ("Adjustables")]
@@ -49,6 +48,7 @@ public class StructureProfile : Item {
     public PhysicMaterial physicMaterial;
     [Header ("Decals")]
     public GameObject decals;
+    public GameObject debris;
     [Header ("Correction")]
     public Vector3 offset;
     public Vector3 rotate;

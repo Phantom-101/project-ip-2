@@ -18,6 +18,8 @@ public class UIHandler : MonoBehaviour {
     public Gradient energyGradient;
     [Header ("Managers")]
     public FactionsManager factionsManager;
+    public StructuresManager structuresManager;
+    public new Camera camera;
     [Header ("UI Elements")]
     public GameObject canvas;
     public Image hullUI;
@@ -53,9 +55,12 @@ public class UIHandler : MonoBehaviour {
     public Button sell10;
     public Button buy100;
     public Button sell100;
+    public List<GameObject> selectableBillboards = new List<GameObject> ();
 
     void Awake () {
         factionsManager = FindObjectOfType<FactionsManager> ();
+        structuresManager = FindObjectOfType<StructuresManager> ();
+        camera = FindObjectOfType<Camera> ();
         canvas = GameObject.Find ("Canvas");
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
@@ -324,6 +329,43 @@ public class UIHandler : MonoBehaviour {
             itemQuantity.text = stationStructureBehaviours.inventory.GetItemCount (selectedMarketItem).ToString ();
             stationBuyPrice.text = ((long) stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
             stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
+        }
+        // Selectable UI
+        List<StructureBehaviours> referenced = new List<StructureBehaviours> ();
+        foreach (GameObject selectableBillboard in selectableBillboards.ToArray ()) {
+            ContainerComponent billboardTarget = selectableBillboard.GetComponent<ContainerComponent> ();
+            StructureBehaviours reference = billboardTarget.containers[0].value as StructureBehaviours;
+            if (reference == null || reference.transform.parent != source.transform.parent) {
+                selectableBillboards.Remove (selectableBillboard);
+                Destroy (selectableBillboard);
+            } else {
+                Vector3 screenPosition = camera.WorldToScreenPoint (reference.transform.position);
+                if (screenPosition.z > 0) {
+                    selectableBillboard.SetActive (true);
+                    selectableBillboard.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (screenPosition.x, screenPosition.y);
+                    float scaler = Vector3.Distance (reference.transform.position, source.transform.position) / 5;
+                    float size = Mathf.Clamp (100 - scaler, 25, 100);
+                    selectableBillboard.GetComponent<RectTransform> ().sizeDelta = new Vector2 (size, size);
+                } else selectableBillboard.SetActive (false);
+                referenced.Add (reference);
+            }
+        }
+        List<StructureBehaviours> structures = structuresManager.structures;
+        foreach (StructureBehaviours structure in structures) {
+            if (!referenced.Contains (structure) && structure != source) {
+                GameObject billboard = new GameObject ("Billboard UI Element");
+                RectTransform billboardRectTransform = billboard.AddComponent<RectTransform> ();
+                billboardRectTransform.SetParent (canvas.transform);
+                billboardRectTransform.anchorMin = new Vector2 (0, 0);
+                billboardRectTransform.anchorMax = new Vector2 (0, 0);
+                Image billboardImage = billboard.AddComponent<Image> ();
+                billboardImage.sprite = structure.profile.selectableBillboard;
+                ContainerComponent billboardContainerComponent = billboard.AddComponent<ContainerComponent> ();
+                billboardContainerComponent.containers.Add (new Container<Object> (structure as Object));
+                selectableBillboards.Add (billboard);
+                Button billboardButton = billboard.AddComponent<Button> ();
+                ButtonFunction (() => source.targeted = billboard.GetComponent<ContainerComponent> ().containers[0].value as StructureBehaviours, billboardButton);
+            }
         }
     }
 

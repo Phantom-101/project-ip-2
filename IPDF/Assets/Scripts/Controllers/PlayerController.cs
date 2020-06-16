@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour {
                 structureBehaviours.engine.forwardSetting = forwardPowerSlider.value;
                 structureBehaviours.engine.turnSetting = (leftPressed ? -1.0f : 0.0f) + (rightPressed ? 1.0f : 0.0f);
             }
+            /*
             if (Input.GetMouseButtonDown (0) && !PointerOverUIObject ()) {
                 Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
                 RaycastHit hit;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour {
                     }
                 }
             }
+            */
         }
     }
 

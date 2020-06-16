@@ -175,20 +175,6 @@ public class StructureBehaviours : MonoBehaviour {
         }
         // AI stuff
         if (AI != null) AI.Process (this);
-        // UI
-        StructureBehaviours playerStructureBehaviours = playerController.structureBehaviours;
-        if (playerStructureBehaviours != this) {
-            billboard.SetActive (true);
-            if (playerStructureBehaviours.targeted == this) {
-                billboard.transform.localEulerAngles = new Vector3 (0.0f, 0.0f, billboard.transform.localEulerAngles.z + 30 * Time.deltaTime);
-                billboard.transform.localScale = Vector3.one * profile.apparentSize * 1.25f;
-                billboard.GetComponent<SpriteRenderer> ().sprite = profile.targetBillboard;
-            } else {
-                billboard.transform.localEulerAngles = Vector3.zero;
-                billboard.transform.localScale = Vector3.one * profile.apparentSize;
-                billboard.GetComponent<SpriteRenderer> ().sprite = profile.selectableBillboard;
-            }
-        } else billboard.SetActive (false);
     }
 
     public void InstantiateProjectiles (TurretHandler turretHandler, GameObject target, Vector3 offset) {

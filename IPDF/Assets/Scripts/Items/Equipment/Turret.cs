@@ -72,15 +72,11 @@ public class TurretHandler {
             this.online = true;
             this.storedEnergy = 0.0f;
         }
-        this.position = position;
-        this.turretAlignment = turretAlignment;
     }
 
     public TurretHandler (TurretHandler turretHandler) {
         this.turret = turretHandler.turret;
         this.usingAmmunition = turretHandler.usingAmmunition;
-        this.position = position;
-        this.turretAlignment = turretAlignment;
         this.online = turretHandler.online;
         this.storedEnergy = turretHandler.storedEnergy;
     }
