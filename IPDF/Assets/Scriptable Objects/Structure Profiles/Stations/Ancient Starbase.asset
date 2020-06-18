@@ -47,9 +47,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 010000000200000000000000000000000000000000000000030000000b0000000600000005000000
   electronicsCapable: 0
-  maxDockingSize: 0
-  dockingPoints: 0
   dockingLocations: []
+  dockingSizes: []
   dockingRotations: []
   dockingRange: 0
   market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}

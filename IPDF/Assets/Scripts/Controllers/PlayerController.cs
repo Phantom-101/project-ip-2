@@ -17,11 +17,11 @@ public class PlayerController : MonoBehaviour {
     public bool leftPressed;
     public bool rightPressed;
     [Header ("Materials")]
-    public MaterialsManager materialsManager;
+    public GraphicsManager graphicsManager;
 
     void Awake () {
         uIHandler = FindObjectOfType<UIHandler> ();
-        materialsManager = FindObjectOfType<MaterialsManager> ();
+        graphicsManager = FindObjectOfType<GraphicsManager> ();
     }
 
     void Update () {
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
         uIHandler.source = structureBehaviours;
         // Skybox stuff
         Sector inSector = structureBehaviours.transform.parent.GetComponent<Sector> ();
-        if (inSector != null) RenderSettings.skybox = materialsManager.skyboxes[inSector.sectorData.skyboxID];
+        if (inSector != null) RenderSettings.skybox = graphicsManager.skyboxes[inSector.sectorData.skyboxID];
         if (structureBehaviours.AI == null) {
             structureBehaviours.dampening = dampenerSlider.value;
             if (structureBehaviours.engine.engine != null) {

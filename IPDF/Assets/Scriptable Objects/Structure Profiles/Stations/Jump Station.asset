@@ -36,10 +36,9 @@ MonoBehaviour:
   turretPositions: []
   turretAlignments: 
   electronicsCapable: 0
-  maxDockingSize: 0
-  dockingPoints: 1
   dockingLocations:
   - {x: -165, y: 0, z: 0}
+  dockingSizes: []
   dockingRotations:
   - {x: 0, y: 0, z: 0}
   dockingRange: 200

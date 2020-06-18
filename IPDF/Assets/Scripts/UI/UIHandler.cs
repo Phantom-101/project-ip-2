@@ -157,7 +157,7 @@ public class UIHandler : MonoBehaviour {
         if (source.AI == null) AIInfo.SetActive (false);
         else AIInfo.SetActive (true);
         // Docking
-        if (source.targeted == null || source.targeted.profile.dockingPoints == 0 ||
+        if (source.targeted == null || source.targeted.profile.dockingLocations.Length == 0 ||
             (source.transform.position - source.targeted.transform.position).sqrMagnitude > source.targeted.profile.dockingRange * source.targeted.profile.dockingRange ||
             stationStructureBehaviours != null) {
             dockButton.gameObject.SetActive (false);
@@ -319,7 +319,7 @@ public class UIHandler : MonoBehaviour {
                             selectableBillboard.SetActive (true);
                             selectableBillboard.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (screenPosition.x, screenPosition.y);
                             float scaler = Mathf.Sqrt (Vector3.Distance (reference.transform.position, source.transform.position)) * 10;
-                            float size = Mathf.Clamp (250 - scaler, 25, 250);
+                            float size = Mathf.Clamp (250 - scaler, 50, 250);
                             selectableBillboard.GetComponent<RectTransform> ().sizeDelta = new Vector2 (size, size);
                         } else selectableBillboard.SetActive (false);
                         referenced.Add (reference);

@@ -8,6 +8,7 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("Profile")]
     public StructureProfile profile;
     [Header ("Stats")]
+    public int id;
     public float hull;
     public float hullTimeSinceLastDamaged;
     public bool cloaked;
@@ -26,7 +27,7 @@ public class StructureBehaviours : MonoBehaviour {
     public ElectronicsHandler electronics;
     public TractorBeamHandler tractorBeam;
     [Header ("Docking")]
-    public GameObject[] docked;
+    public int[] docked;
     [Header ("Production")]
     public List<FactoryHandler> factories;
     [Header ("Physics")]
@@ -93,8 +94,8 @@ public class StructureBehaviours : MonoBehaviour {
         for (int i = 0; i < profile.factories.Length; i++)
             if (factories[i] == null)
                 factories.Add (new FactoryHandler (profile.factories[i]));
-        if (docked == null) docked = new GameObject[profile.dockingPoints];
-        if (docked.Length != profile.dockingPoints) docked = new GameObject[profile.dockingPoints];
+        if (docked == null) docked = new int[profile.dockingLocations.Length];
+        if (docked.Length != profile.dockingLocations.Length) docked = new int[profile.dockingLocations.Length];
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.mass = profile.mass;
@@ -253,11 +254,10 @@ public class StructureBehaviours : MonoBehaviour {
 
     public void Dock (StructureBehaviours docker) {
         if ((docker.transform.position - transform.position).sqrMagnitude > profile.dockingRange * profile.dockingRange) return;
-        if (docker.profile.apparentSize > profile.maxDockingSize) return;
-        for (int i = 0; i < profile.dockingPoints; i++) {
-            if (docked[i] == null) {
+        for (int i = 0; i < profile.dockingLocations.Length; i++) {
+            if (docked[i] == 0 && profile.dockingSizes[i] >= docker.profile.apparentSize) {
                 docker.transform.parent = transform;
-                docked[i] = docker.gameObject;
+                docked[i] = docker.id;
                 docker.transform.localPosition = profile.dockingLocations[i];
                 docker.transform.localEulerAngles = profile.dockingRotations[i];
                 if (playerController.structureBehaviours == docker) {
@@ -277,10 +277,10 @@ public class StructureBehaviours : MonoBehaviour {
     }
 
     public void Undock (StructureBehaviours undocker) {
-        for (int i = 0; i < profile.dockingPoints; i++) {
-            if (docked[i] == undocker.gameObject) {
+        for (int i = 0; i < profile.dockingLocations.Length; i++) {
+            if (docked[i] == undocker.id) {
                 undocker.transform.parent = transform.parent;
-                docked[i] = null;
+                docked[i] = 0;
                 return;
             }
         }

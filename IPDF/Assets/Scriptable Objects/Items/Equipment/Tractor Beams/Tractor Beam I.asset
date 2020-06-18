@@ -15,7 +15,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 9653f20250ba8fc4a8789520be84dd96, type: 3}
   basePrice: 0
   size: 0
-  consumptionRate: 11
+  meta: 0
+  consumptionRate: 12.5
   activationThreshold: 0
   range: 300
   power: 15

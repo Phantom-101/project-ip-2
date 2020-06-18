@@ -36,9 +36,8 @@ MonoBehaviour:
   turretPositions: []
   turretAlignments: 
   electronicsCapable: 0
-  maxDockingSize: 0
-  dockingPoints: 0
   dockingLocations: []
+  dockingSizes: []
   dockingRotations: []
   dockingRange: 0
   market: {fileID: 0}

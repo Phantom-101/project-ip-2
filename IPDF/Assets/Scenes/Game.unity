@@ -1311,6 +1311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: aaf0c94d204ef9047a8d72f926ff1d7f, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -1404,7 +1405,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -2096,6 +2097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 8315f35462a05d044a3a31e2a88ea133, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -2176,7 +2178,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -2845,6 +2847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: c3d683ddcec6b074a8ca52b706555804, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -2890,7 +2893,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -4024,166 +4027,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &618275948
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 618275949}
-  - component: {fileID: 618275952}
-  - component: {fileID: 618275951}
-  - component: {fileID: 618275950}
-  m_Layer: 0
-  m_Name: Stardust Delta (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &618275949
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618275948}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1064, y: -0, z: 30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &618275950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618275948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &618275951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618275948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &618275952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618275948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!1 &619887459
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,6 +5278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -5515,7 +5359,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -5526,102 +5370,6 @@ MonoBehaviour:
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
   navigationManager: {fileID: 0}
---- !u!4 &831469441 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-    type: 3}
-  m_PrefabInstance: {fileID: 853653266}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &835079181
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1033050176}
-    m_Modifications:
-    - target: {fileID: 751419958480612410, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_Name
-      value: Asteroid Field 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3125
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -585
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -460
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.33675385
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.856546
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.35011518
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.1741988
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 28.846
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 217.582
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -307.073
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6566
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6566
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.6565998
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df08faaa5ab214c4a99ec5e52afd5b46, type: 3}
---- !u!4 &842750695 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-    type: 3}
-  m_PrefabInstance: {fileID: 1655489927}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &849547762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,90 +5526,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849547762}
   m_CullTransparentMesh: 0
---- !u!1001 &853653266
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1033050176}
-    m_Modifications:
-    - target: {fileID: 751419958480612410, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_Name
-      value: Asteroid Field 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3195.9824
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 530.16315
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -231.01309
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.92121863
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.09432708
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.37355053
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.05402493
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -9.788
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 223.47699
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -172.218
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6566
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6566
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.6566001
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df08faaa5ab214c4a99ec5e52afd5b46, type: 3}
 --- !u!1 &872419769
 GameObject:
   m_ObjectHideFlags: 0
@@ -6530,6 +6194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: c3d683ddcec6b074a8ca52b706555804, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -6575,7 +6240,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -6914,12 +6579,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969112973}
   m_CullTransparentMesh: 0
---- !u!4 &971463893 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-    type: 3}
-  m_PrefabInstance: {fileID: 835079181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &971635324
 GameObject:
   m_ObjectHideFlags: 0
@@ -7109,6 +6768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 37f3f16c1089a264395d95aa01250842, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -7154,167 +6814,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
---- !u!1 &1030744281
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1030744282}
-  - component: {fileID: 1030744285}
-  - component: {fileID: 1030744284}
-  - component: {fileID: 1030744283}
-  m_Layer: 0
-  m_Name: Stardust Delta (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1030744282
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030744281}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1025, y: -0, z: 49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 28
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1030744283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030744281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1030744284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030744281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1030744285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030744281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -7359,10 +6859,10 @@ Transform:
   - {fileID: 600640821}
   - {fileID: 431661541}
   - {fileID: 741498922}
-  - {fileID: 2092657018}
-  - {fileID: 842750695}
-  - {fileID: 831469441}
-  - {fileID: 971463893}
+  - {fileID: 751419959203801692}
+  - {fileID: 751419960064797114}
+  - {fileID: 751419958717684527}
+  - {fileID: 751419958770425904}
   - {fileID: 6355110525750044497}
   - {fileID: 375639059}
   - {fileID: 1833002252}
@@ -7373,15 +6873,6 @@ Transform:
   - {fileID: 6750740652450203003}
   - {fileID: 7218308574373969049}
   - {fileID: 1404937110}
-  - {fileID: 2082300477}
-  - {fileID: 2080699608}
-  - {fileID: 1287753279}
-  - {fileID: 1555354887}
-  - {fileID: 1967624981}
-  - {fileID: 1864347949}
-  - {fileID: 618275949}
-  - {fileID: 2013161444}
-  - {fileID: 1030744282}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7694,6 +7185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 52e239fb58600b14ebf8a26bc918d0f6, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -7774,7 +7266,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -8859,173 +8351,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265730853}
   m_CullTransparentMesh: 0
---- !u!1 &1287753278
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1287753279}
-  - component: {fileID: 1287753282}
-  - component: {fileID: 1287753281}
-  - component: {fileID: 1287753280}
-  m_Layer: 0
-  m_Name: Stardust Thunder (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1287753279
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287753278}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1042, y: -0, z: -105}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1287753280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287753278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1287753281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287753278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1287753282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287753278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: c409a40cf00eb03429926b7c63b51aa0, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!1 &1317781128
 GameObject:
   m_ObjectHideFlags: 0
@@ -9338,7 +8663,7 @@ MonoBehaviour:
   dampenerSlider: {fileID: 1646076873}
   leftPressed: 0
   rightPressed: 0
-  materialsManager: {fileID: 0}
+  graphicsManager: {fileID: 0}
 --- !u!114 &1338523149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9348,12 +8673,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1338523142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005867d5a0821b141b0e19e2928f67f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b4220e92af7f6d4982b73a4fc23e8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skyboxes:
   - {fileID: 2100000, guid: d037d8db09e0994468d9dea0aa5e11a4, type: 2}
   - {fileID: 2100000, guid: 02fb18a431bb80a4eac0432876a8d530, type: 2}
+  celestialObjects:
+  - {fileID: 751419958480612410, guid: df08faaa5ab214c4a99ec5e52afd5b46, type: 3}
+  - {fileID: 3980009413977360241, guid: f6248344aa7e50b44939341d0078334a, type: 3}
 --- !u!114 &1338523150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9708,6 +9036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: c409a40cf00eb03429926b7c63b51aa0, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -9794,7 +9123,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -10256,90 +9585,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1461388897
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1033050176}
-    m_Modifications:
-    - target: {fileID: 751419958480612410, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_Name
-      value: Asteroid Field 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2326
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -31
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -266
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000024012659
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.8057311
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5922815
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 107.36201
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6565998
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6566
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.6565998
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df08faaa5ab214c4a99ec5e52afd5b46, type: 3}
 --- !u!1 &1491093807
 GameObject:
   m_ObjectHideFlags: 0
@@ -11301,6 +10546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 52e239fb58600b14ebf8a26bc918d0f6, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -11381,7 +10627,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -11511,166 +10757,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552703332}
   m_CullTransparentMesh: 0
---- !u!1 &1555354886
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1555354887}
-  - component: {fileID: 1555354890}
-  - component: {fileID: 1555354889}
-  - component: {fileID: 1555354888}
-  m_Layer: 0
-  m_Name: Stardust Delta (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1555354887
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555354886}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1116, y: 0, z: 59}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1555354888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555354886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1555354889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555354886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1555354890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555354886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!1 &1559590828
 GameObject:
   m_ObjectHideFlags: 0
@@ -12607,90 +11693,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654477656}
   m_CullTransparentMesh: 0
---- !u!1001 &1655489927
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1033050176}
-    m_Modifications:
-    - target: {fileID: 751419958480612410, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_Name
-      value: Asteroid Field 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3126
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -31
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 408
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000029500852
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.9898843
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.14187737
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 196.31299
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6566005
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6566
-      objectReference: {fileID: 0}
-    - target: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.6566005
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df08faaa5ab214c4a99ec5e52afd5b46, type: 3}
 --- !u!1 &1660600507
 GameObject:
   m_ObjectHideFlags: 0
@@ -14002,6 +13004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 8315f35462a05d044a3a31e2a88ea133, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -14082,167 +13085,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
---- !u!1 &1864347948
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1864347949}
-  - component: {fileID: 1864347952}
-  - component: {fileID: 1864347951}
-  - component: {fileID: 1864347950}
-  m_Layer: 0
-  m_Name: Stardust Delta (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1864347949
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864347948}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -940, y: -0, z: -89}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1864347950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864347948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1864347951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864347948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1864347952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864347948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -14327,173 +13170,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958031497}
   m_CullTransparentMesh: 0
---- !u!1 &1967624980
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1967624981}
-  - component: {fileID: 1967624984}
-  - component: {fileID: 1967624983}
-  - component: {fileID: 1967624982}
-  m_Layer: 0
-  m_Name: Stardust Thunder (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1967624981
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967624980}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1166, y: 0, z: 14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1967624982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967624980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1967624983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967624980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1967624984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967624980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: c409a40cf00eb03429926b7c63b51aa0, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!1 &1981136097
 GameObject:
   m_ObjectHideFlags: 0
@@ -19377,166 +18053,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982768364}
   m_CullTransparentMesh: 0
---- !u!1 &2013161443
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2013161444}
-  - component: {fileID: 2013161447}
-  - component: {fileID: 2013161446}
-  - component: {fileID: 2013161445}
-  m_Layer: 0
-  m_Name: Stardust Delta (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2013161444
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013161443}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -901, y: -0, z: -70}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2013161445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013161443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2013161446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013161443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2013161447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013161443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!1 &2047384822
 GameObject:
   m_ObjectHideFlags: 0
@@ -19607,6 +18123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 52e239fb58600b14ebf8a26bc918d0f6, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -19687,7 +18204,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -19844,252 +18361,6 @@ RectTransform:
   m_AnchoredPosition: {x: 40, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
---- !u!1 &2080699607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2080699608}
-  - component: {fileID: 2080699611}
-  - component: {fileID: 2080699610}
-  - component: {fileID: 2080699609}
-  m_Layer: 0
-  m_Name: Stardust Delta (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2080699608
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080699607}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -992, y: -0, z: -60}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2080699609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080699607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2080699610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080699607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2080699611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080699607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  cloaked: 0
-  factionID: 3
-  route:
-    waypoints: []
-  target: {fileID: 0}
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
-    usingAmmunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
-    online: 1
-    storedEnergy: 0
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
-    online: 1
-    strengths:
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    - 200
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
-    online: 1
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
-    online: 1
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
---- !u!1001 &2082300476
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1033050176}
-    m_Modifications:
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -669
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4589102706028341338, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-        type: 3}
-      propertyPath: m_Name
-      value: Rogue Outpost Spawner
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 04ab3a3a3ac08444d9580260b8fc9b2b, type: 3}
---- !u!4 &2082300477 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4589102706028341316, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2082300476}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2092657018 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 751419958480612413, guid: df08faaa5ab214c4a99ec5e52afd5b46,
-    type: 3}
-  m_PrefabInstance: {fileID: 1461388897}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2097901957
 GameObject:
   m_ObjectHideFlags: 0
@@ -21008,6 +19279,242 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134506513}
   m_CullTransparentMesh: 0
+--- !u!1 &751419958717684520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751419958717684527}
+  - component: {fileID: 751419958717684521}
+  - component: {fileID: 751419958717684522}
+  m_Layer: 0
+  m_Name: Asteroid Field 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &751419958717684521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419958717684520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ab3a86b236a584696de0487200963a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  celestialID: 0
+  initialized: 0
+  graphicsManager: {fileID: 0}
+--- !u!114 &751419958717684522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419958717684520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d579caa774e3f46bc8c0b1b4c612fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &751419958717684527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419958717684520}
+  m_LocalRotation: {x: -0.92121863, y: 0.09432708, z: 0.37355053, w: 0.05402493}
+  m_LocalPosition: {x: 3195.9824, y: 530.16315, z: -231.01309}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: -9.788, y: 223.47699, z: -172.218}
+--- !u!4 &751419958770425904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419958770425911}
+  m_LocalRotation: {x: -0.33675385, y: -0.856546, z: 0.35011518, w: 0.1741988}
+  m_LocalPosition: {x: 3125, y: -585, z: -460}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 28.846, y: 217.582, z: -307.073}
+--- !u!1 &751419958770425911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751419958770425904}
+  - component: {fileID: 751419958770425912}
+  - component: {fileID: 751419958770425913}
+  m_Layer: 0
+  m_Name: Asteroid Field 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &751419958770425912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419958770425911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ab3a86b236a584696de0487200963a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  celestialID: 0
+  initialized: 0
+  graphicsManager: {fileID: 0}
+--- !u!114 &751419958770425913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419958770425911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d579caa774e3f46bc8c0b1b4c612fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &751419959203801691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751419959203801692}
+  - component: {fileID: 751419959203801693}
+  - component: {fileID: 751419959203801694}
+  m_Layer: 0
+  m_Name: Asteroid Field 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751419959203801692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419959203801691}
+  m_LocalRotation: {x: 0.000000024012659, y: 0.8057311, z: -0, w: 0.5922815}
+  m_LocalPosition: {x: 2326, y: -31, z: -266}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 107.36201, z: 0}
+--- !u!114 &751419959203801693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419959203801691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ab3a86b236a584696de0487200963a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  celestialID: 0
+  initialized: 0
+  graphicsManager: {fileID: 0}
+--- !u!114 &751419959203801694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419959203801691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d579caa774e3f46bc8c0b1b4c612fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &751419960064797114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419960064797117}
+  m_LocalRotation: {x: 0.000000029500852, y: 0.9898843, z: -0, w: -0.14187737}
+  m_LocalPosition: {x: 3126, y: -31, z: 408}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 196.31299, z: 0}
+--- !u!1 &751419960064797117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751419960064797114}
+  - component: {fileID: 751419960064797118}
+  - component: {fileID: 751419960064797119}
+  m_Layer: 0
+  m_Name: Asteroid Field 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &751419960064797118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419960064797117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ab3a86b236a584696de0487200963a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  celestialID: 0
+  initialized: 0
+  graphicsManager: {fileID: 0}
+--- !u!114 &751419960064797119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751419960064797117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d579caa774e3f46bc8c0b1b4c612fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4589102706241311733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21138,6 +19645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 52ae3ffca57ab3c43a7edeefc1a6faa4, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -21218,7 +19726,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -21256,6 +19764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 2f8d756d3f56d794fb975cb39879a258, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -21301,7 +19810,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -21382,6 +19891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: f7e99c2bb7a12cc4bb4631807d357b3b, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -21461,7 +19971,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
@@ -21542,6 +20052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6d4d6991b852691408bde50239230038, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -21635,7 +20146,7 @@ MonoBehaviour:
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1

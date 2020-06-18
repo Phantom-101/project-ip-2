@@ -52,13 +52,12 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
   electronicsCapable: 0
-  maxDockingSize: 0
-  dockingPoints: 4
   dockingLocations:
   - {x: 200, y: 0, z: 0}
   - {x: -200, y: 0, z: 0}
   - {x: 0, y: 0, z: 200}
   - {x: 0, y: 0, z: -200}
+  dockingSizes: []
   dockingRotations:
   - {x: 0, y: 90, z: 0}
   - {x: 0, y: -90, z: 0}

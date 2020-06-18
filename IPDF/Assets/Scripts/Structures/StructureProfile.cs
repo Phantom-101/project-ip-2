@@ -32,9 +32,8 @@ public class StructureProfile : Item {
     public TurretAlignment[] turretAlignments;
     public bool electronicsCapable;
     [Header ("Docking")]
-    public int maxDockingSize;
-    public int dockingPoints;
     public Vector3[] dockingLocations;
+    public float[] dockingSizes;
     public Vector3[] dockingRotations;
     public float dockingRange;
     [Header ("Economy")]
