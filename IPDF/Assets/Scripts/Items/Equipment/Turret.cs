@@ -17,49 +17,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using Essentials;
 
-[CreateAssetMenu (fileName = "New Turret", menuName = "Equipment/Turret")]
 public class Turret : Equipment {
     [Header ("Appearance")]
-    public GameObject projectile;
-    public Gradient trailGradient;
-    public float trailTime;
-    public GameObject explosion;
-    public float explosionSize;
+    public GameObject impactEffect;
+    public float impactEffectSize;
     [Header ("Turret Stats")]
     public float maxStoredEnergy;
     public float rechargeRate;
     [Header ("Activation Requirements")]
-    public bool requireAmmunition;
-    public Ammunition[] acceptedAmmunitions;
-    public int activations;
-    public float activationDelay;
     public float range;
     public float activationThreshold;
-    [Header ("Projectile Movement")]
-    public float trackingTime;
-    public float projectileVelocity;
-    public bool projectileSticky;
-    public float projectileTracking;
-    [Header ("Projectile Initial Rotation")]
-    public bool projectileInitializeRotation;
-    public float projectileInaccuracy;
-    public bool leadProjectile;
     [Header ("Projectile Stats")]
-    public float fuelRange;
     public float damage;
-    public float explosiveDamage;
-    public float explosionRange;
-    public int explosionDetail;
+
+    public virtual void AlterStats (TurretHandler caller) {}
+
+    public virtual void InitializeProjectile (TurretHandler caller, GameObject projectile) {}
+
+    public virtual bool CanFireAt (TurretHandler caller, GameObject target) {
+        return false;
+    }
+
+    public virtual bool CanUseAmmunition (TurretHandler caller, Ammunition ammunition) {
+        return false;
+    }
 }
 
 [Serializable]
 public class TurretHandler {
+    [Header ("Essential Information")]
     public StructureBehaviours equipper;
     public Turret turret;
     public Ammunition usingAmmunition;
+    [Header ("Transforms")]
     public Vector3 position;
-    public TurretAlignment turretAlignment;
+    public Vector3 rotation;
+    public float angle;
+    [Header ("Stats")]
+    public GameObject target;
     public bool online;
+    public bool activated;
+    public float cooldown;
     public float storedEnergy;
 
     public TurretHandler (Turret turret = null) {
@@ -72,12 +70,14 @@ public class TurretHandler {
             this.online = true;
             this.storedEnergy = 0.0f;
         }
+        this.activated = false;
     }
 
     public TurretHandler (TurretHandler turretHandler) {
         this.turret = turretHandler.turret;
         this.usingAmmunition = turretHandler.usingAmmunition;
         this.online = turretHandler.online;
+        this.activated = turretHandler.activated;
         this.storedEnergy = turretHandler.storedEnergy;
     }
 
@@ -92,14 +92,11 @@ public class TurretHandler {
     }
 
     public bool UseAmmunition (Ammunition ammunition) {
-        bool isAccepted = false;
-        foreach (Ammunition accepted in turret.acceptedAmmunitions)
-            if (ammunition == accepted) {
-                isAccepted = true;
-                break;
-            }
-        if (isAccepted) usingAmmunition = ammunition;
-        return isAccepted;
+        if (turret.CanUseAmmunition (this, ammunition)) {
+            usingAmmunition = ammunition;
+            return true;
+        }
+        return false;
     }
 
     public float TransferEnergy (float available) {
@@ -116,47 +113,32 @@ public class TurretHandler {
             turret = null;
             return;
         }
+        if (turret != null) turret.AlterStats (this);
+    }
+
+    public void Interacted (GameObject target) {
+        if (activated) Deactivate ();
+        else Activate (target);
     }
 
     public void Activate (GameObject target) {
-        if (CanActivate (target)) equipper.InstantiateProjectiles (this, target, position);
+        if (turret.CanFireAt (this, target)) {
+            this.target = target;
+            this.activated = true;
+            GameObject projectile = new GameObject (turret.name);
+            turret.InitializeProjectile (this, projectile);
+        }
     }
 
-    public bool CanActivate (GameObject target) {
-        if (!online || turret == null || equipper == null || target == null) return false;
-        if ((target.transform.position - equipper.transform.position).sqrMagnitude > turret.range * turret.range) return false;
-        if (!(storedEnergy >= turret.activationThreshold * turret.maxStoredEnergy)) return false;
-        if (equipper.electronics.activated) return false;
-        if (!AlignmentIsValid (target)) return false;
-        StructureBehaviours targetStructureBehaviours = target.GetComponent<StructureBehaviours> ();
-        if (targetStructureBehaviours == null || targetStructureBehaviours.profile == null) return false;
-        if (!targetStructureBehaviours.initialized) return false;
-        if (!targetStructureBehaviours.profile.canFireAt) return false;
+    public void Deactivate () {
+        activated = false;
+    }
+
+    public bool CanPress () {
+        if (turret == null) return false;
+        if (!turret.CanFireAt (this, equipper.targeted == null ? null : equipper.targeted.gameObject)) return false;
+        if (!activated && storedEnergy / turret.maxStoredEnergy < turret.activationThreshold) return false;
         return true;
-    }
-
-    public bool AlignmentIsValid (GameObject target) {
-        Vector3 targetPos = target.transform.position;
-        float angle = targetPos - equipper.transform.position == Vector3.zero ?
-            0.0f :
-            Quaternion.Angle (equipper.transform.rotation, Quaternion.LookRotation (targetPos - equipper.transform.position));
-        Vector3 perp = Vector3.Cross(equipper.transform.forward, targetPos - equipper.transform.position);
-        float leftRight = Vector3.Dot(perp, equipper.transform.up);
-        angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
-        if (turretAlignment == TurretAlignment.All) return true;
-        if (turretAlignment == TurretAlignment.ForwardQuadrant && angle >= -45.0f && angle <= 45.0f) return true;
-        if (turretAlignment == TurretAlignment.LeftQuadrant && angle >= -135.0f && angle <= -45.0f) return true;
-        if (turretAlignment == TurretAlignment.RightQuadrant && angle >= 45.0f && angle <= 135.0f) return true;
-        if (turretAlignment == TurretAlignment.BackQuadrant && ((angle >= -180.0f && angle <= -135.0f) || (angle >= 135.0f && angle <= 180.0f))) return true;
-        if (turretAlignment == TurretAlignment.ForwardHalf && angle >= -90.0f && angle <= 90.0f) return true;
-        if (turretAlignment == TurretAlignment.LeftHalf && angle >= -180.0f && angle <= 0.0f) return true;
-        if (turretAlignment == TurretAlignment.RightHalf && angle >= 0.0f && angle <= 180.0f) return true;
-        if (turretAlignment == TurretAlignment.BackHalf && ((angle >= -180.0f && angle <= -90.0f) || (angle >= 90.0f && angle <= 180.0f))) return true;
-        if (turretAlignment == TurretAlignment.ForwardLeft && angle >= -90.0f && angle <= 0.0f) return true;
-        if (turretAlignment == TurretAlignment.BackLeft && angle >= -180.0f && angle <= -90.0f) return true;
-        if (turretAlignment == TurretAlignment.ForwardRight && angle >= 0.0f && angle <= 90.0f) return true;
-        if (turretAlignment == TurretAlignment.BackRight && angle >= 90.0f && angle <= 180.0f) return true;
-        return false;
     }
 }
 

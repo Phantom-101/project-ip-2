@@ -77,7 +77,7 @@ public class TractorBeamHandler {
         if (!online) storedEnergy = 0.0f;
     }
 
-    public void Toggle (GameObject activator, GameObject target) {
+    public void Interacted (GameObject activator, GameObject target) {
         if (!activated) Activate (activator, target);
         else Deactivate ();
     }

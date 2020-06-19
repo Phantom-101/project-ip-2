@@ -29,7 +29,8 @@ public class StructureProfile : Item {
     public int maxEquipmentMeta;
     public int turretSlots;
     public Vector3[] turretPositions;
-    public TurretAlignment[] turretAlignments;
+    public Vector3[] turretRotations;
+    public float[] turretAngles;
     public bool electronicsCapable;
     [Header ("Docking")]
     public Vector3[] dockingLocations;

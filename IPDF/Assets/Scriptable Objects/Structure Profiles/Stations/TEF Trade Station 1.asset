@@ -33,24 +33,10 @@ MonoBehaviour:
   hull: 100000
   inventorySize: 10000
   maxEquipmentMeta: 0
-  turretSlots: 5
-  turretPositions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  turretAlignments: 0c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000
+  turretSlots: 0
+  turretPositions: []
+  turretRotations: []
+  turretAngles: []
   electronicsCapable: 0
   dockingLocations:
   - {x: 200, y: 0, z: 0}

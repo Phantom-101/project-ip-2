@@ -35,7 +35,8 @@ MonoBehaviour:
   maxEquipmentMeta: 0
   turretSlots: 0
   turretPositions: []
-  turretAlignments: 
+  turretRotations: []
+  turretAngles: []
   electronicsCapable: 0
   dockingLocations:
   - {x: 225, y: 0, z: 225}

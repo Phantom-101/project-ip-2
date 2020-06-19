@@ -148,7 +148,8 @@ public class StructureBehaviours : MonoBehaviour {
         for (int i = 0; i < profile.turretSlots; i++) {
             turrets[i].equipper = this;
             turrets[i].position = profile.turretPositions[i];
-            turrets[i].turretAlignment = profile.turretAlignments[i];
+            turrets[i].rotation = profile.turretRotations[i];
+            turrets[i].angle = profile.turretAngles[i];
             turrets[i].Process ();
         }
         shield.equipper = this;
@@ -176,40 +177,6 @@ public class StructureBehaviours : MonoBehaviour {
         }
         // AI stuff
         if (AI != null) AI.Process (this);
-    }
-
-    public void InstantiateProjectiles (TurretHandler turretHandler, GameObject target, Vector3 offset) {
-        StartCoroutine (Fire (turretHandler, target, offset));
-    }
-
-    IEnumerator Fire (TurretHandler turretHandler, GameObject target, Vector3 offset) {
-        float cachedRatio = turretHandler.storedEnergy / turretHandler.turret.maxStoredEnergy;
-        turretHandler.storedEnergy = 0.0f;
-        Turret turret = turretHandler.turret;
-        for (int i = 0; i < turret.activations; i++) {
-            if (target != null) {
-                if (!turret.requireAmmunition || inventory.HasItemCount (turretHandler.usingAmmunition, 1)) {
-                    if (turret.requireAmmunition) inventory.RemoveItem (turretHandler.usingAmmunition, 1);
-                    if (turret.projectile != null || turretHandler.usingAmmunition.projectile != null) {
-                        GameObject projectile = MonoBehaviour.Instantiate (
-                            turretHandler.usingAmmunition == null ? turret.projectile : turretHandler.usingAmmunition.projectile,
-                            transform.position + transform.rotation * offset,
-                            (turret.projectileInitializeRotation || (turretHandler.usingAmmunition == null ? false : turretHandler.usingAmmunition.projectileInitializeRotation) ? Quaternion.LookRotation (
-                                CalculateLeadPosition (
-                                    transform.position + transform.rotation * offset,
-                                    target.transform.position,
-                                    target.GetComponent<Rigidbody> ().velocity,
-                                    turret.projectileVelocity,
-                                    turret.leadProjectile
-                                )
-                            ) : transform.rotation) * RandomQuaternion (turret.projectileInaccuracy)
-                        ) as GameObject;
-                        projectile.GetComponent<Projectile> ().Initialize (turret, turretHandler.usingAmmunition, gameObject, target, cachedRatio, factionID);
-                    }
-                }
-                yield return new WaitForSeconds (turret.activationDelay);
-            }
-        }
     }
 
     public Vector3 CalculateLeadPosition (Vector3 currentPosition, Vector3 targetPosition, Vector3 targetVelocity, float projectileVelocity, bool lead) {

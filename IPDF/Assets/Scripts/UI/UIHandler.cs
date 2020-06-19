@@ -236,7 +236,7 @@ public class UIHandler : MonoBehaviour {
             tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy * 30, 3);
             tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy);
             //tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
-            ButtonFunction (() => source.tractorBeam.Toggle (source.gameObject, source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
+            ButtonFunction (() => source.tractorBeam.Interacted (source.gameObject, source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
             equipmentButtons[0] = tractorBeamButton;
             if (referencedTractorBeam != null) {
                 equipmentButtons[0].gameObject.SetActive (true);
@@ -296,8 +296,8 @@ public class UIHandler : MonoBehaviour {
                 button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
                 button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
                 button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
-                button.GetComponent<Button> ().interactable = source.turrets[i].CanActivate (source.targeted == null ? null : source.targeted.gameObject);
-                ButtonFunction (() => source.turrets[button.transform.GetSiblingIndex () - 2].Activate (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
+                button.GetComponent<Button> ().interactable = source.turrets[i].CanPress ();
+                ButtonFunction (() => source.turrets[button.transform.GetSiblingIndex () - 2].Interacted (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
                 equipmentButtons[i + 2] = button;
                 if (referencedTurret != null) equipmentButtons[i + 2].gameObject.SetActive (true);
                 else equipmentButtons[i + 2].gameObject.SetActive (false);
