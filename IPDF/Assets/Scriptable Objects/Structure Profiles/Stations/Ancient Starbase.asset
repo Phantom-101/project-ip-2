@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: 995598639654306925, guid: ece266a5b3a26d642a252450b835a970, type: 3}
   material: {fileID: 2100000, guid: 52c1a74757b29d8498553657f0d0ca88, type: 2}
-  apparentSize: 0
+  apparentSize: 35
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -30,7 +30,7 @@ MonoBehaviour:
   structureClass: 0
   manufacturer: 3
   description: 
-  hull: 3500
+  hull: 12000
   inventorySize: 1000
   maxEquipmentMeta: 0
   turretSlots: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   angularDrag: 1000
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
-  debris: {fileID: 0}
+  debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: 27, z: 0}
   rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}

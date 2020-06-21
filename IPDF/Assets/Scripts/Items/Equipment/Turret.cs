@@ -146,19 +146,3 @@ public class TurretHandler {
         return true;
     }
 }
-
-public enum TurretAlignment {
-    ForwardQuadrant,
-    LeftQuadrant,
-    RightQuadrant,
-    BackQuadrant,
-    ForwardHalf,
-    LeftHalf,
-    RightHalf,
-    BackHalf,
-    ForwardLeft,
-    BackLeft,
-    ForwardRight,
-    BackRight,
-    All
-}

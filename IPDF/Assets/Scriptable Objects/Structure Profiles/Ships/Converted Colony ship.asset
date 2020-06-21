@@ -37,7 +37,8 @@ MonoBehaviour:
   turretPositions:
   - {x: 0, y: 0.73, z: 0.33}
   - {x: 0, y: 0.34, z: 1.78}
-  turretAlignments: 0400000000000000
+  turretRotations: []
+  turretAngles: []
   electronicsCapable: 0
   dockingLocations: []
   dockingSizes: []

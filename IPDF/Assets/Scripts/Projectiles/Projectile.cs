@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour {
     }
 
     void Update () {
-        if (!initialized) return;
+        if (!initialized || disabled) return;
         Process ();
     }
 

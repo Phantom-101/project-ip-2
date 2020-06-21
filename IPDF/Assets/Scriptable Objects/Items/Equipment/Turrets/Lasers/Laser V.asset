@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974fb226ce878f4498f98f30bd95f643, type: 3}
-  m_Name: Laser I
+  m_Name: Laser V
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 0
   size: 0
-  meta: 1
+  meta: 5
   impactEffect: {fileID: 0}
   impactEffectSize: 0
-  maxStoredEnergy: 100
-  rechargeRate: 20
-  range: 80
+  maxStoredEnergy: 750
+  rechargeRate: 110
+  range: 600
   activationThreshold: 0.4
-  damage: 20
+  damage: 125
   asset: {fileID: 8926484042661614526, guid: 15b17211511db9b41aa80ee50ba8a18e, type: 3}
   beamGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 0.78431374, a: 1}
+    key1: {r: 1, g: 1, b: 0.78431374, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -53,5 +53,5 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  beamWidth: 1
-  depletionRate: 25
+  beamWidth: 5
+  depletionRate: 115

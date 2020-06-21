@@ -31,9 +31,12 @@ public class StructuresManager : MonoBehaviour {
     public void RemoveStructure (StructureBehaviours structure) {
         if (structure == null) return;
         foreach (Item item in structure.inventory.inventory.Keys.ToArray ()) {
-            GameObject pod = Instantiate (cargoPod, structure.transform.position, Quaternion.identity) as GameObject;
-            pod.transform.parent = structure.transform.parent;
-            pod.GetComponent<StructureBehaviours> ().inventory.AddItem (item, structure.inventory.inventory[item]);
+            if (structure.inventory.GetItemCount (item) > 0) {
+                GameObject pod = Instantiate (cargoPod, structure.transform.position, Quaternion.identity) as GameObject;
+                pod.transform.parent = structure.transform.parent;
+                pod.GetComponent<StructureBehaviours> ().inventory.AddItem (item, structure.inventory.inventory[item]);
+                pod.AddComponent<CargoPod> ();
+            }
         }
         if (structure.profile.debris != null) {
             GameObject debris = Instantiate (structure.profile.debris,

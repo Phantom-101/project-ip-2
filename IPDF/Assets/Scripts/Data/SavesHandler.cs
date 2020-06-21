@@ -4,6 +4,16 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 
+[System.Serializable]
+public class UniverseSaveData {
+    public string saveName;
+    public List<StructureSaveData> structures = new List<StructureSaveData> ();
+    public List<SectorSaveData> sectors = new List<SectorSaveData> ();
+    public List<CelestialObjectSaveData> celestialObjects = new List<CelestialObjectSaveData> ();
+    public List<Faction> factions = new List<Faction> ();
+}
+
+[System.Serializable]
 public class BaseSaveData {
     public string name;
     public float[] position;
@@ -11,6 +21,7 @@ public class BaseSaveData {
     public float[] scale;
 }
 
+[System.Serializable]
 public class StructureSaveData : BaseSaveData {
     public int id;
     public int sectorID;
@@ -31,21 +42,19 @@ public class StructureSaveData : BaseSaveData {
     public bool isPlayer;
 }
 
+[System.Serializable]
 public class SectorSaveData : BaseSaveData {
     public SectorData sectorData;
 }
 
+[System.Serializable]
 public class CelestialObjectSaveData : BaseSaveData {
     public int celestialObjectID;
 }
 
 public class SavesHandler : MonoBehaviour {
     [Header ("Save Settings")]
-    public string saveName = "default";
-    public string sectorsSeparator = "\nNext Sector\n";
-    public string structuresSeparator = "\nNext Structure\n";
-    public string factionsSeparator = "\nNext Faction\n";
-    public string celestialObjectsSeparator = "\nNext Celestial Object\n";
+    public string universeName = "default";
     [Header ("Prefabs")]
     public GameObject basicSector;
     public GameObject basicStructure;
@@ -65,8 +74,13 @@ public class SavesHandler : MonoBehaviour {
     }
 
     public void Save () {
-        if (!Directory.Exists (GetSavePath (saveName))) Directory.CreateDirectory (GetSavePath (saveName));
-        string saveString = "";
+        System.DateTime epochStart = new System.DateTime (1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+        int curTime = (int) (System.DateTime.UtcNow - epochStart).TotalSeconds;
+        string nowString = curTime.ToString ();
+        UniverseSaveData universe = new UniverseSaveData ();
+
+        universe.saveName = universeName;
+
         // Save sectors
         Sector[] sectors = FindObjectsOfType<Sector> ();
         foreach (Sector sector in sectors) {
@@ -77,11 +91,9 @@ public class SavesHandler : MonoBehaviour {
             sectorData.rotation = new float[] { transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z };
             sectorData.scale = new float[] { transform.localScale.x, transform.localScale.y, transform.localScale.z };
             sectorData.sectorData = sector.sectorData;
-            saveString += JsonUtility.ToJson (sectorData, true) + sectorsSeparator;
+            universe.sectors.Add (sectorData);
         }
-        File.WriteAllText (GetSectorsSavePath (saveName), saveString);
 
-        saveString = "";
         // Save data of each structure
         StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
         foreach (StructureBehaviours structure in structures) {
@@ -111,16 +123,11 @@ public class SavesHandler : MonoBehaviour {
             data.AI = structure.AI;
             data.docked = structure.docked;
             data.isPlayer = (playerController.structureBehaviours == structure);
-            saveString += JsonUtility.ToJson (data, true) + structuresSeparator;
+            universe.structures.Add (data);
         }
-        File.WriteAllText (GetStructuresSavePath (saveName), saveString);
 
-        saveString = "";
-        foreach (Faction faction in factionsManager.factions)
-            saveString += JsonUtility.ToJson (faction, true) + factionsSeparator;
-        File.WriteAllText (GetFactionsSavePath (saveName), saveString);
+        universe.factions = factionsManager.factions;
 
-        saveString = "";
         CelestialObject[] celestialObjects = FindObjectsOfType<CelestialObject> ();
         foreach (CelestialObject celestialObject in celestialObjects) {
             CelestialObjectSaveData data = new CelestialObjectSaveData ();
@@ -130,155 +137,99 @@ public class SavesHandler : MonoBehaviour {
             data.rotation = new float[] { transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z };
             data.scale = new float[] { transform.localScale.x, transform.localScale.y, transform.localScale.z };
             data.celestialObjectID = celestialObject.celestialObjectID;
-            saveString += JsonUtility.ToJson (data, true) + celestialObjectsSeparator;
+            universe.celestialObjects.Add (data);
         }
-        File.WriteAllText (GetCelestialObjectsSavePath (saveName), saveString);
+        File.WriteAllText (GetSavePath (universeName + "-" + nowString), JsonUtility.ToJson (universe, true));
     }
 
-    public void Load () {
-        if (!Directory.Exists (GetSavePath (saveName))) return;
+    public void Load (string saveName) {
+        if (!File.Exists (GetSavePath (saveName))) return;
+
+        UniverseSaveData universe = JsonUtility.FromJson<UniverseSaveData> (File.ReadAllText (GetSavePath (saveName)));
+
+        universeName = universe.saveName;
+
         WaveSpawner[] waveSpawners = FindObjectsOfType<WaveSpawner> ();
         foreach (WaveSpawner waveSpawner in waveSpawners) Destroy (waveSpawner.gameObject);
 
         List<Sector> sectors = new List<Sector> ();
-        if (File.Exists (GetSectorsSavePath (saveName))) {
-            Sector[] oldSectors = FindObjectsOfType<Sector> ();
-            foreach (Sector sector in oldSectors) Destroy (sector.gameObject);
-            string saveString = File.ReadAllText (GetSectorsSavePath (saveName));
-            string[] sectorsData = saveString.Split (new string[] { sectorsSeparator }, System.StringSplitOptions.None);
-            foreach (string sectorData in sectorsData) {
-                SectorSaveData data = JsonUtility.FromJson<SectorSaveData> (sectorData);
-                if (data != null) {
-                    GameObject instantiated = new GameObject ();
-                    instantiated.name = data.name;
-                    instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
-                    instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
-                    instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
-                    Sector s = instantiated.AddComponent<Sector> ();
-                    s.sectorData = data.sectorData;
-                    sectors.Add (s);
-                }
-            }
+        foreach (SectorSaveData data in universe.sectors) {
+            GameObject instantiated = new GameObject ();
+            instantiated.name = data.name;
+            instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
+            instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
+            instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
+            Sector s = instantiated.AddComponent<Sector> ();
+            s.sectorData = data.sectorData;
+            sectors.Add (s);
         }
 
-        if (File.Exists (GetStructuresSavePath (saveName))) {
-            // Get all structures and destroy them
-            StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
-            structuresManager.structures = new List<StructureBehaviours> ();
-            foreach (StructureBehaviours structure in structures) Destroy (structure.gameObject);
-            // Load structures
-            List<StructureBehaviours> loaded = new List<StructureBehaviours> ();
-            string saveString = File.ReadAllText (GetStructuresSavePath (saveName));
-            string[] structuresData = saveString.Split (new string[] { structuresSeparator }, System.StringSplitOptions.None);
-            foreach (string structureData in structuresData) {
-                StructureSaveData data = JsonUtility.FromJson<StructureSaveData> (structureData);
-                if (data != null) {
-                    GameObject instantiated = new GameObject ();
-                    StructureBehaviours structureBehaviours = instantiated.AddComponent<StructureBehaviours> ();
-                    structureBehaviours.id = data.id;
-                    foreach (Sector sector in sectors)
-                        if (sector.sectorData.id == data.sectorID)
-                            instantiated.transform.parent = sector.transform;
-                    instantiated.name = data.name;
-                    instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
-                    instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
-                    instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
-                    structureBehaviours.profile = data.profile;
-                    structureBehaviours.hull = data.hull;
-                    structureBehaviours.factionID = data.factionID;
-                    structureBehaviours.inventory = data.inventory;
-                    structureBehaviours.turrets = data.turrets;
-                    structureBehaviours.shield = data.shield;
-                    structureBehaviours.capacitor = data.capacitor;
-                    structureBehaviours.generator = data.generator;
-                    structureBehaviours.engine = data.engine;
-                    structureBehaviours.electronics = data.electronics;
-                    structureBehaviours.tractorBeam = data.tractorBeam;
-                    structureBehaviours.factories = data.factories;
-                    structureBehaviours.AI = data.AI;
-                    structureBehaviours.docked = data.docked;
-                    loaded.Add (structureBehaviours);
-                    if (data.isPlayer) playerController.structureBehaviours = structureBehaviours;
-                }
-            }
-            foreach (StructureBehaviours structureBehaviours in loaded) {
-                foreach (int dockedID in structureBehaviours.docked)
-                    foreach (StructureBehaviours possibleDocker in loaded)
-                        if (possibleDocker.id == dockedID) {
-                            possibleDocker.transform.parent = structureBehaviours.transform;
-                            possibleDocker.transform.localPosition = possibleDocker.transform.position;
-                        }
-                structureBehaviours.Initialize ();
-            }
-            // Reset camera position
-            cameraFollowPlayer.ResetPosition ();
+        // Get all structures and destroy them
+        StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
+        structuresManager.structures = new List<StructureBehaviours> ();
+        foreach (StructureBehaviours structure in structures) Destroy (structure.gameObject);
+        // Load structures
+        List<StructureBehaviours> loaded = new List<StructureBehaviours> ();
+        foreach (StructureSaveData data in universe.structures) {
+            GameObject instantiated = new GameObject ();
+            StructureBehaviours structureBehaviours = instantiated.AddComponent<StructureBehaviours> ();
+            structureBehaviours.id = data.id;
+            foreach (Sector sector in sectors)
+                if (sector.sectorData.id == data.sectorID)
+                    instantiated.transform.parent = sector.transform;
+            instantiated.name = data.name;
+            instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
+            instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
+            instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
+            structureBehaviours.profile = data.profile;
+            structureBehaviours.hull = data.hull;
+            structureBehaviours.factionID = data.factionID;
+            structureBehaviours.inventory = data.inventory;
+            structureBehaviours.turrets = data.turrets;
+            structureBehaviours.shield = data.shield;
+            structureBehaviours.capacitor = data.capacitor;
+            structureBehaviours.generator = data.generator;
+            structureBehaviours.engine = data.engine;
+            structureBehaviours.electronics = data.electronics;
+            structureBehaviours.tractorBeam = data.tractorBeam;
+            structureBehaviours.factories = data.factories;
+            structureBehaviours.AI = data.AI;
+            structureBehaviours.docked = data.docked;
+            loaded.Add (structureBehaviours);
+            if (data.isPlayer) playerController.structureBehaviours = structureBehaviours;
         }
-        if (File.Exists (GetFactionsSavePath (saveName))) {
-            FactionsManager factionsManager = FindObjectOfType<FactionsManager> ();
-            List<Faction> factions = new List<Faction> ();
-            string saveString = File.ReadAllText (GetFactionsSavePath (saveName));
-            string[] factionsData = saveString.Split (new string[] { factionsSeparator }, System.StringSplitOptions.None);
-            foreach (string factionData in factionsData) {
-                Faction parsedFaction = JsonUtility.FromJson<Faction> (factionData);
-                if (parsedFaction != null)
-                    factions.Add (parsedFaction);
-            }
-            factionsManager.factions = factions;
+        foreach (StructureBehaviours structureBehaviours in loaded) {
+            foreach (int dockedID in structureBehaviours.docked)
+                foreach (StructureBehaviours possibleDocker in loaded)
+                    if (possibleDocker.id == dockedID) {
+                        possibleDocker.transform.parent = structureBehaviours.transform;
+                        possibleDocker.transform.localPosition = possibleDocker.transform.position;
+                    }
+            structureBehaviours.Initialize ();
         }
-        if (File.Exists (GetCelestialObjectsSavePath (saveName))) {
-            string saveString = File.ReadAllText (GetCelestialObjectsSavePath (saveName));
-            string[] celestialObjectsData = saveString.Split (new string[] { celestialObjectsSeparator }, System.StringSplitOptions.None);
-            foreach (string celestialObjectData in celestialObjectsData) {
-                CelestialObjectSaveData data = JsonUtility.FromJson<CelestialObjectSaveData> (celestialObjectData);
-                if (data != null) {
-                    GameObject instantiated = new GameObject ("Celestial Object");
-                    instantiated.name = data.name;
-                    instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
-                    instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
-                    instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
-                    CelestialObject co = instantiated.AddComponent<CelestialObject> ();
-                    co.celestialObjectID = data.celestialObjectID;
-                    co.Initialize ();
-                }
-            }
+        // Reset camera position
+        cameraFollowPlayer.ResetPosition ();
+
+        FactionsManager factionsManager = FindObjectOfType<FactionsManager> ();
+        factionsManager.factions = universe.factions;
+
+        foreach (CelestialObjectSaveData data in universe.celestialObjects) {
+            GameObject instantiated = new GameObject ("Celestial Object");
+            instantiated.name = data.name;
+            instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
+            instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
+            instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
+            CelestialObject co = instantiated.AddComponent<CelestialObject> ();
+            co.celestialObjectID = data.celestialObjectID;
+            co.Initialize ();
         }
     }
 
     public string GetSavePath (string saveName) {
-        return Application.persistentDataPath + "/" + saveName;
+        return Application.persistentDataPath + "/" + saveName + ".txt";
     }
 
-    public string GetSectorsSavePath (string saveName) {
-        return GetSavePath (saveName) + "/sectors.txt";
-    }
-
-    public string GetStructuresSavePath (string saveName) {
-        return GetSavePath (saveName) + "/structures.txt";
-    }
-
-    public string GetFactionsSavePath (string saveName) {
-        return GetSavePath (saveName) + "/factions.txt";
-    }
-
-    public string GetCelestialObjectsSavePath (string saveName) {
-        return GetSavePath (saveName) + "/celestialObjects.txt";
-    }
-
-    public void LogStructuresSavePath (string saveName) {
-        Debug.Log (GetStructuresSavePath (saveName));
-    }
-}
-
-[CustomEditor (typeof (SavesHandler))]
-class SavesHandlerEditor : Editor {
-    public override void OnInspectorGUI () {
-        base.OnInspectorGUI ();
-        SavesHandler savesHandler = (SavesHandler) target;
-        if (GUILayout.Button ("Get Saves Path")) {
-            savesHandler.LogStructuresSavePath (savesHandler.saveName);
-        }
-        if (GUILayout.Button ("Load")) {
-            savesHandler.Load ();
-        }
+    public void LogSavePath (string saveName) {
+        Debug.Log (GetSavePath (saveName));
     }
 }

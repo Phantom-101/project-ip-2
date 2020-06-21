@@ -15,6 +15,7 @@ public class CargoPod : MonoBehaviour {
 
     void Update () {
         if (structure == null || !structure.initialized || structuresManager == null) return;
+        gameObject.name = structure.inventory.inventory.Keys.ToArray ()[0].name + " (" + structure.inventory.GetItemCount (structure.inventory.inventory.Keys.ToArray ()[0]) + ")";
         foreach (StructureBehaviours structureBehaviours in structuresManager.structures) {
             if (structureBehaviours != structure) {
                 if (structureBehaviours.tractorBeam != null && structureBehaviours.tractorBeam.activated) {

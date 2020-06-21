@@ -34,7 +34,8 @@ MonoBehaviour:
   maxEquipmentMeta: 0
   turretSlots: 0
   turretPositions: []
-  turretAlignments: 
+  turretRotations: []
+  turretAngles: []
   electronicsCapable: 0
   dockingLocations: []
   dockingSizes: []
@@ -46,7 +47,7 @@ MonoBehaviour:
   mass: 50
   drag: 0
   angularDrag: 0
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   debris: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}

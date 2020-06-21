@@ -16,6 +16,10 @@ public class UIHandler : MonoBehaviour {
     public Gradient hullGradient;
     public Gradient shieldGradient;
     public Gradient energyGradient;
+    [Header ("Settings")]
+    public float flashTime = 0.3f;
+    public float flashOffset = -0.1f;
+    public int flashes = 5;
     [Header ("Managers")]
     public PlayerController playerController;
     public FactionsManager factionsManager;
@@ -24,6 +28,7 @@ public class UIHandler : MonoBehaviour {
     [Header ("UI Elements")]
     public string activeUI = "Self";
     public Canvas canvas;
+    public GameObject billboards;
     public Image hullUI;
     public Image[] shieldUI = new Image[6];
     public RectTransform sourceTo;
@@ -74,6 +79,7 @@ public class UIHandler : MonoBehaviour {
         camera = FindObjectOfType<Camera> ();
         if (activeUI == "") activeUI = "Self";
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
+        billboards = canvas.transform.Find ("Billboards").gameObject;
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
         sourceTo = hullUI.transform.Find ("Angle Arrow").GetComponent<RectTransform> ();
@@ -131,7 +137,7 @@ public class UIHandler : MonoBehaviour {
             // Hull
             hullUI.gameObject.SetActive (true);
             hullUI.sprite = source.profile.hullUI;
-            hullUI.color = Mathf.Floor (source.hullTimeSinceLastDamaged / 0.3f) % 2 == 1 && source.hullTimeSinceLastDamaged < 1.5f ?
+            hullUI.color = Mathf.Floor ((source.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && source.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
                 Color.white :
                 hullGradient.Evaluate (source.hull / source.profile.hull);
             // Shields
@@ -139,7 +145,7 @@ public class UIHandler : MonoBehaviour {
             if (source.shield.shield != null) {
                 if (source.shield.online)
                     for (int i = 0; i < 6; i++)
-                        shieldUI[i].color = Mathf.Floor (source.shield.shieldTimesSinceLastDamaged[i] / 0.3f) % 2 == 1 && source.shield.shieldTimesSinceLastDamaged[i] < 1.5f ?
+                        shieldUI[i].color = Mathf.Floor ((source.shield.shieldTimesSinceLastDamaged[i] + flashOffset) / flashTime) % 2 == 1 && source.shield.shieldTimesSinceLastDamaged[i] < flashOffset + flashTime * 2 * flashes - flashTime ?
                             Color.white :
                             shieldGradient.Evaluate (source.shield.strengths[i] / source.shield.shield.strength);
                 else
@@ -189,13 +195,13 @@ public class UIHandler : MonoBehaviour {
             else {
                 targetInformationPanel.SetActive (true);
                 targetHullUI.sprite = targetStructureBehaviour.profile.hullUI;
-                targetHullUI.color = Mathf.Floor (targetStructureBehaviour.hullTimeSinceLastDamaged / 0.3f) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < 1.5f ?
+                targetHullUI.color = Mathf.Floor ((targetStructureBehaviour.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
                     Color.white :
                     hullGradient.Evaluate (targetStructureBehaviour.hull / targetStructureBehaviour.profile.hull);
                 if (targetStructureBehaviour.shield.shield != null) {
                     if (targetStructureBehaviour.shield.online)
                         for (int i = 0; i < 6; i++)
-                            targetShieldUI[i].color = Mathf.Floor (targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] / 0.3f) % 2 == 1 && targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] < 1.5f ?
+                            targetShieldUI[i].color = Mathf.Floor ((targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] < flashOffset + flashTime * 2 * flashes - flashTime ?
                                 Color.white :
                                 shieldGradient.Evaluate (targetStructureBehaviour.shield.strengths[i] / targetStructureBehaviour.shield.shield.strength);
                     else for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
@@ -334,7 +340,7 @@ public class UIHandler : MonoBehaviour {
                 if (!referenced.Contains (structure) && structure != source && structure.transform.parent == source.transform.parent) {
                     GameObject billboard = new GameObject ("Billboard UI Element (" + structure.gameObject.name + ")");
                     RectTransform billboardRectTransform = billboard.AddComponent<RectTransform> ();
-                    billboardRectTransform.SetParent (canvas.transform);
+                    billboardRectTransform.SetParent (billboards.transform);
                     billboardRectTransform.anchorMin = new Vector2 (0, 0);
                     billboardRectTransform.anchorMax = new Vector2 (0, 0);
                     billboard.transform.localPosition = new Vector3 (0, 0, 0.1f);
