@@ -14,7 +14,7 @@ public class BeamTurret : Turret {
     public float depletionRate;
 
     public override void AlterStats (TurretHandler caller) {
-        if (!CanFireAt (caller, caller.target)) caller.Deactivate ();
+        if (!CanFire (caller, caller.target)) caller.Deactivate ();
         if (caller.storedEnergy < depletionRate * Time.deltaTime) caller.Deactivate ();
         if (caller.activated) {
             caller.storedEnergy -= depletionRate * Time.deltaTime;
@@ -29,16 +29,20 @@ public class BeamTurret : Turret {
         beamProjectile.Initialize ();
     }
 
-    public override bool CanFireAt (TurretHandler caller, GameObject target) {
-        if (caller.activated) return true;
+    public override bool CanFire (TurretHandler caller, GameObject target) {
         if (target == null) return false;
         if (!caller.equipper.transform.parent.gameObject.GetComponent<Sector> ()) return false;
         float angle = target.transform.position - caller.equipper.transform.position == Vector3.zero ?
             0.0f :
-            Quaternion.Angle (caller.equipper.transform.rotation, Quaternion.LookRotation (target.transform.position - caller.equipper.transform.position)
+            Quaternion.Angle (caller.equipper.transform.rotation * Quaternion.Euler (caller.rotation), Quaternion.LookRotation (target.transform.position - caller.equipper.transform.position)
         );
         if (angle > caller.angle) return false;
         return true;
+    }
+
+    public override bool CanInteract (TurretHandler caller, GameObject target) {
+        if (caller.activated) return true;
+        return CanFire (caller, target);
     }
 
     public override bool CanUseAmmunition (TurretHandler caller, Ammunition ammunition) {

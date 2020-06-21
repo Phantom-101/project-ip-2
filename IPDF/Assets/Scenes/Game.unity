@@ -1335,57 +1335,57 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
     target: {fileID: 0}
-    online: 0
+    online: 1
     activated: 0
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
     target: {fileID: 0}
-    online: 0
+    online: 1
     activated: 0
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
     target: {fileID: 0}
-    online: 0
+    online: 1
     activated: 0
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
     target: {fileID: 0}
-    online: 0
+    online: 1
     activated: 0
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
     target: {fileID: 0}
-    online: 0
+    online: 1
     activated: 0
     cooldown: 0
     storedEnergy: 0
@@ -1914,8 +1914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScaleFactor: 1.5
+  m_ReferenceResolution: {x: 1600, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2011,7 +2011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 30}
   m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &345264177
@@ -3818,15 +3818,15 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 20000
-  field of view: 70
+  near clip plane: 0.3
+  far clip plane: 10000
+  field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3834,7 +3834,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 1
+  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -7400,7 +7400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.7999878}
+  m_AnchoredPosition: {x: 0, y: -0.80078125}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1117563863
@@ -7632,7 +7632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -258.3, y: 0}
+  m_AnchoredPosition: {x: -258.29688, y: 0}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1144431474
@@ -11017,7 +11017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -42.69995, y: -0.10000038}
+  m_AnchoredPosition: {x: -42.703125, y: -0.10000038}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1571136739
@@ -11134,7 +11134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 175, y: 50}
+  m_AnchoredPosition: {x: 125, y: 75}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1595662325
@@ -11401,7 +11401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -250, y: 50}
+  m_AnchoredPosition: {x: -250, y: 70}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &1627278469
@@ -11633,7 +11633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 15}
+  m_AnchoredPosition: {x: -200, y: 35}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1646076873
@@ -11875,7 +11875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -150, y: 30}
+  m_AnchoredPosition: {x: -150, y: 50}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1666575472
@@ -18586,7 +18586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -360, y: 5}
+  m_AnchoredPosition: {x: -360, y: 25}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2097901959

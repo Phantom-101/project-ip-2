@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BeamProjectile : Projectile {
-    [Header ("Stats")]
-    public float timeExistedFor;
     [Header ("Components")]
     public LineRenderer lineRenderer;
 
@@ -12,18 +10,25 @@ public class BeamProjectile : Projectile {
         base.Initialize ();
         turret = handler.turret;
         lineRenderer = gameObject.AddComponent<LineRenderer> ();
-        lineRenderer.materials[0] = (turret as BeamTurret).beamMaterial;
+        lineRenderer.material = (turret as BeamTurret).beamMaterial;
         lineRenderer.colorGradient = (turret as BeamTurret).beamGradient;
         lineRenderer.widthCurve = (turret as BeamTurret).beamWidth;
+        transform.parent = from.transform.parent;
     }
 
     protected override void Process () {
         if (turret != handler.turret) Disable ();
         if (!handler.activated) Disable ();
         if (from == null || to == null) Disable ();
-        lineRenderer.SetPosition (0, from.transform.position);
-        lineRenderer.SetPosition (1, to.transform.position);
-        to.TakeDamage (turret.damage * Time.deltaTime, from.transform.position);
+        transform.localPosition = from.transform.localPosition;
+        Vector3 beamFrom = from.transform.position + from.transform.rotation * handler.position;
+        lineRenderer.SetPosition (0, beamFrom);
+        RaycastHit hit;
+        if (Physics.Raycast (beamFrom, to.transform.position - beamFrom, out hit, turret.range)) {
+            lineRenderer.SetPosition (1, hit.point);
+            StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
+            if (hitStructure != null) hitStructure.TakeDamage (turret.damage * Time.deltaTime, beamFrom);
+        }
     }
 
     protected override void Disable () {

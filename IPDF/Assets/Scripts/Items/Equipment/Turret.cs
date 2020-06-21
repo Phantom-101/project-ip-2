@@ -34,7 +34,11 @@ public class Turret : Equipment {
 
     public virtual void InitializeProjectile (TurretHandler caller, GameObject projectile) {}
 
-    public virtual bool CanFireAt (TurretHandler caller, GameObject target) {
+    public virtual bool CanFire (TurretHandler caller, GameObject target) {
+        return false;
+    }
+
+    public virtual bool CanInteract (TurretHandler caller, GameObject target) {
         return false;
     }
 
@@ -114,6 +118,7 @@ public class TurretHandler {
             return;
         }
         if (turret != null) turret.AlterStats (this);
+        if (activated && !turret.CanFire (this, target)) Deactivate ();
     }
 
     public void Interacted (GameObject target) {
@@ -122,7 +127,7 @@ public class TurretHandler {
     }
 
     public void Activate (GameObject target) {
-        if (turret.CanFireAt (this, target)) {
+        if (turret.CanFire (this, target)) {
             this.target = target;
             this.activated = true;
             GameObject projectile = new GameObject (turret.name);
@@ -136,7 +141,7 @@ public class TurretHandler {
 
     public bool CanPress () {
         if (turret == null) return false;
-        if (!turret.CanFireAt (this, equipper.targeted == null ? null : equipper.targeted.gameObject)) return false;
+        if (!turret.CanInteract (this, equipper.targeted == null ? null : equipper.targeted.gameObject)) return false;
         if (!activated && storedEnergy / turret.maxStoredEnergy < turret.activationThreshold) return false;
         return true;
     }

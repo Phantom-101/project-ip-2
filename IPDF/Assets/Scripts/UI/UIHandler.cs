@@ -23,7 +23,7 @@ public class UIHandler : MonoBehaviour {
     public new Camera camera;
     [Header ("UI Elements")]
     public string activeUI = "Self";
-    public GameObject canvas;
+    public Canvas canvas;
     public Image hullUI;
     public Image[] shieldUI = new Image[6];
     public RectTransform sourceTo;
@@ -73,7 +73,7 @@ public class UIHandler : MonoBehaviour {
         structuresManager = FindObjectOfType<StructuresManager> ();
         camera = FindObjectOfType<Camera> ();
         if (activeUI == "") activeUI = "Self";
-        canvas = GameObject.Find ("Canvas");
+        canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
         sourceTo = hullUI.transform.Find ("Angle Arrow").GetComponent<RectTransform> ();
@@ -317,10 +317,13 @@ public class UIHandler : MonoBehaviour {
                         Vector3 screenPosition = camera.WorldToScreenPoint (reference.transform.position);
                         if (screenPosition.z > 0) {
                             selectableBillboard.SetActive (true);
-                            selectableBillboard.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (screenPosition.x, screenPosition.y);
-                            float scaler = Mathf.Sqrt (Vector3.Distance (reference.transform.position, source.transform.position)) * 10;
+                            float canvasScaler = canvas.GetComponent<CanvasScaler> ().scaleFactor;
+                            RectTransform selectableRectTransform = selectableBillboard.GetComponent<RectTransform> ();
+                            selectableRectTransform.anchoredPosition = new Vector2 (screenPosition.x / canvasScaler, screenPosition.y / canvasScaler);
+                            float scaler = Mathf.Sqrt (Vector3.Distance (reference.transform.position, source.transform.position)) * 5;
                             float size = Mathf.Clamp (250 - scaler, 50, 250);
-                            selectableBillboard.GetComponent<RectTransform> ().sizeDelta = new Vector2 (size, size);
+                            selectableRectTransform.sizeDelta = new Vector2 (size, size) * (reference == source.targeted ? 1.5f : 1);
+                            selectableRectTransform.eulerAngles = reference == source.targeted ? new Vector3 (0, 0, selectableRectTransform.eulerAngles.z - 30 * Time.deltaTime) : Vector3.zero;
                         } else selectableBillboard.SetActive (false);
                         referenced.Add (reference);
                     }

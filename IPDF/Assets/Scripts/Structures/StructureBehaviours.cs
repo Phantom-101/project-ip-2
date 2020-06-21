@@ -106,14 +106,6 @@ public class StructureBehaviours : MonoBehaviour {
             decals.transform.localPosition = Vector3.zero;
             decals.transform.localEulerAngles = Vector3.zero;
         }
-        GameObject billboardSprite = new GameObject ("Billboard");
-        billboardSprite.transform.parent = transform;
-        billboardSprite.AddComponent<Billboard> ();
-        billboardSprite.transform.localPosition = Vector3.zero;
-        billboard = new GameObject ("Sprite");
-        billboard.transform.parent = billboardSprite.transform;
-        billboard.AddComponent<SpriteRenderer> ();
-        billboard.transform.localPosition = Vector3.zero;
         if (target != null) route = navigationManager.GetRoute (transform.position, target.transform.position);
         initialized = true;
     }

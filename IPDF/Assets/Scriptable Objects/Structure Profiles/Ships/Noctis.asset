@@ -35,24 +35,24 @@ MonoBehaviour:
   maxEquipmentMeta: 5
   turretSlots: 6
   turretPositions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 16, y: 7, z: -11}
+  - {x: -16, y: 7, z: -11}
+  - {x: 0, y: 7, z: 19}
+  - {x: 0, y: 7, z: 35}
+  - {x: 0, y: 13, z: -4}
+  - {x: 0, y: 13, z: -15}
   turretRotations:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 90, z: 0}
+  - {x: 0, y: -90, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   turretAngles:
-  - 180
-  - 180
-  - 180
-  - 180
+  - 90
+  - 90
+  - 90
+  - 90
   - 180
   - 180
   electronicsCapable: 1
