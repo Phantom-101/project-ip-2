@@ -55,9 +55,6 @@ public class CelestialObjectSaveData : BaseSaveData {
 public class SavesHandler : MonoBehaviour {
     [Header ("Save Settings")]
     public string universeName = "default";
-    [Header ("Prefabs")]
-    public GameObject basicSector;
-    public GameObject basicStructure;
     [Header ("Components")]
     public FactionsManager factionsManager;
     public StructuresManager structuresManager;
@@ -65,15 +62,17 @@ public class SavesHandler : MonoBehaviour {
     public ItemsHandler itemsHandler;
     public CameraFollowPlayer cameraFollowPlayer;
 
-    public void Awake () {
+    void Awake () {
+        DontDestroyOnLoad (gameObject);
+    }
+
+    public void Save () {
         factionsManager = FindObjectOfType<FactionsManager> ();
         structuresManager = FindObjectOfType<StructuresManager> ();
         playerController = FindObjectOfType<PlayerController> ();
         itemsHandler = FindObjectOfType<ItemsHandler> ();
         cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
-    }
 
-    public void Save () {
         System.DateTime epochStart = new System.DateTime (1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
         int curTime = (int) (System.DateTime.UtcNow - epochStart).TotalSeconds;
         string nowString = curTime.ToString ();
@@ -143,6 +142,12 @@ public class SavesHandler : MonoBehaviour {
     }
 
     public void Load (string saveName) {
+        factionsManager = FindObjectOfType<FactionsManager> ();
+        structuresManager = FindObjectOfType<StructuresManager> ();
+        playerController = FindObjectOfType<PlayerController> ();
+        itemsHandler = FindObjectOfType<ItemsHandler> ();
+        cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
+
         if (!File.Exists (GetSavePath (saveName))) return;
 
         UniverseSaveData universe = JsonUtility.FromJson<UniverseSaveData> (File.ReadAllText (GetSavePath (saveName)));
@@ -210,7 +215,6 @@ public class SavesHandler : MonoBehaviour {
         // Reset camera position
         cameraFollowPlayer.ResetPosition ();
 
-        FactionsManager factionsManager = FindObjectOfType<FactionsManager> ();
         factionsManager.factions = universe.factions;
 
         foreach (CelestialObjectSaveData data in universe.celestialObjects) {
