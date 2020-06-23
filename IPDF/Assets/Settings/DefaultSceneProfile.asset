@@ -16,11 +16,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.5
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 1
     min: 0
   scatter:
     m_OverrideState: 1
@@ -72,12 +72,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.1
     min: 0
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 1
     min: 0.01
     max: 1
   rounded:
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: SampleSceneProfile
+  m_Name: DefaultSceneProfile
   m_EditorClassIdentifier: 
   components:
   - {fileID: 849379129802519247}
@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: 6.492837e-10}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.062695816}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.11973003}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.1880878}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.0020262403}

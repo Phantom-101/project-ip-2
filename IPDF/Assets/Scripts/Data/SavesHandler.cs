@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEditor;
 
 [System.Serializable]
 public class UniverseSaveData {
@@ -63,16 +62,15 @@ public class SavesHandler : MonoBehaviour {
     public CameraFollowPlayer cameraFollowPlayer;
 
     void Awake () {
-        DontDestroyOnLoad (gameObject);
-    }
-
-    public void Save () {
         factionsManager = FindObjectOfType<FactionsManager> ();
         structuresManager = FindObjectOfType<StructuresManager> ();
         playerController = FindObjectOfType<PlayerController> ();
         itemsHandler = FindObjectOfType<ItemsHandler> ();
         cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
+        if (!Directory.Exists (Application.persistentDataPath + "/saves/")) Directory.CreateDirectory (Application.persistentDataPath + "/saves/");
+    }
 
+    public void Save () {
         System.DateTime epochStart = new System.DateTime (1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
         int curTime = (int) (System.DateTime.UtcNow - epochStart).TotalSeconds;
         string nowString = curTime.ToString ();
@@ -142,12 +140,6 @@ public class SavesHandler : MonoBehaviour {
     }
 
     public void Load (string saveName) {
-        factionsManager = FindObjectOfType<FactionsManager> ();
-        structuresManager = FindObjectOfType<StructuresManager> ();
-        playerController = FindObjectOfType<PlayerController> ();
-        itemsHandler = FindObjectOfType<ItemsHandler> ();
-        cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
-
         if (!File.Exists (GetSavePath (saveName))) return;
 
         UniverseSaveData universe = JsonUtility.FromJson<UniverseSaveData> (File.ReadAllText (GetSavePath (saveName)));
@@ -230,7 +222,7 @@ public class SavesHandler : MonoBehaviour {
     }
 
     public string GetSavePath (string saveName) {
-        return Application.persistentDataPath + "/" + saveName + ".txt";
+        return Application.persistentDataPath + "/saves/" + saveName + ".txt";
     }
 
     public void LogSavePath (string saveName) {

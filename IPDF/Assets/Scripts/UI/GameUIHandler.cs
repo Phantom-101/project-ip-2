@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UIHandler : MonoBehaviour {
+public class GameUIHandler : MonoBehaviour {
     [Header ("Source Info")]
     public StructureBehaviours source;
     public StructureBehaviours stationStructureBehaviours;

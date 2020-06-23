@@ -6,6 +6,26 @@ using Essentials;
 public class FactionsManager : MonoBehaviour {
     public List<Faction> factions = new List<Faction> ();
 
+    public void AddFaction (Faction faction) {
+        if (faction == null) return;
+        factions.Add (faction);
+        if (faction.id == 0) {
+            while (true) {
+                int randomizedID = (int) Random.Range (int.MinValue, int.MaxValue);
+                if (randomizedID != 0) {
+                    bool idValid = true;
+                    foreach (Faction f in factions)
+                        if (f.id == randomizedID)
+                            idValid = false;
+                    if (idValid) {
+                        faction.id = randomizedID;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
     public Faction GetFaction (int id) {
         foreach (Faction faction in factions)
             if (faction.id == id)

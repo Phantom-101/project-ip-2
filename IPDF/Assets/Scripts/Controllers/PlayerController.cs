@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     [Header ("Basics")]
     public StructureBehaviours structureBehaviours;
     [Header ("UI Elements")]
-    public UIHandler uIHandler;
+    public GameUIHandler uIHandler;
     public Slider forwardPowerSlider;
     public Button turnLeftButton;
     public Button turnRightButton;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     public GraphicsManager graphicsManager;
 
     void Awake () {
-        uIHandler = FindObjectOfType<UIHandler> ();
+        uIHandler = FindObjectOfType<GameUIHandler> ();
         graphicsManager = FindObjectOfType<GraphicsManager> ();
     }
 
