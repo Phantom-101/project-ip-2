@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7344208108433017514}
   - component: {fileID: 7344208108433017512}
   m_Layer: 0
-  m_Name: Save
+  m_Name: Save Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 100}
+  m_SizeDelta: {x: 680, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7344208108433017515
 CanvasRenderer:

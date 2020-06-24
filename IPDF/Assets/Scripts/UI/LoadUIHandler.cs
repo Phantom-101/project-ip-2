@@ -17,7 +17,7 @@ public class LoadUIHandler : MonoBehaviour {
         DontDestroyOnLoad (gameObject);
         if (!Directory.Exists (GetSavePath ())) Directory.CreateDirectory (GetSavePath ());
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
-        savesPanel = canvas.transform.Find ("Saves Selection/Outline/Panel").gameObject;
+        savesPanel = canvas.transform.Find ("Saves Selection/Outline/Panel/Viewport/Content").gameObject;
         FileInfo[] saves = new DirectoryInfo (Application.persistentDataPath + "/saves/").GetFiles ("*.txt");
         for (int i = 0; i < saves.Length; i++) {
             FileInfo save = saves[i];
@@ -38,13 +38,14 @@ public class LoadUIHandler : MonoBehaviour {
                 }
             ButtonFunction (() => SaveSelected (save.Name), instantiated.GetComponent<Button> ());
         }
+        savesPanel.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, saves.Length * 100);
     }
 
     void Update () {
         if (needToLoad != "") {
             SavesHandler savesHandler = FindObjectOfType<SavesHandler> ();
             if (savesHandler != null) {
-                FindObjectOfType<SavesHandler> ().Load (GetSavePath () + needToLoad);
+                savesHandler.Load (GetSavePath () + needToLoad);
                 Destroy (gameObject);
             }
         }

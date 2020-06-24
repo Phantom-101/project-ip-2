@@ -43,12 +43,14 @@ public class CameraFollowPlayer : MonoBehaviour {
         if (playerStructure != null) {
             Vector3 playerPosition = playerStructure.transform.position;
             transform.LookAt (playerPosition + new Vector3 (0.0f, lookAtOffset * playerStructure.profile.apparentSize, 0.0f));
-            //Vector3 targetDir = playerPosition - transform.position;
-            //Vector3 forward = transform.forward;
-            //Vector3 localTarget = transform.InverseTransformPoint (playerPosition);
-            //float angle = Mathf.Atan2 (localTarget.x, localTarget.z) * Mathf.Rad2Deg;
-            //Vector3 eulerAngleVelocity = new Vector3 (0.0f, angle, 0.0f);
-            //constantForce.torque = eulerAngleVelocity * lookAtInterpolationStrength;
+            /*
+            Vector3 targetDir = playerPosition - transform.position;
+            Vector3 forward = transform.forward;
+            Vector3 localTarget = transform.InverseTransformPoint (playerPosition);
+            float angle = Mathf.Atan2 (localTarget.x, localTarget.z) * Mathf.Rad2Deg;
+            Vector3 eulerAngleVelocity = new Vector3 (0.0f, angle, 0.0f);
+            constantForce.torque = eulerAngleVelocity * lookAtInterpolationStrength;
+            */
             float angle = 0.0f;
             if (lookAtTarget && playerStructure.targeted != null) {
                 Vector3 heading = playerStructure.targeted.transform.position - playerStructure.transform.position;

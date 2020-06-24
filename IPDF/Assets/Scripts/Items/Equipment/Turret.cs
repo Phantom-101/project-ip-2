@@ -141,6 +141,7 @@ public class TurretHandler {
 
     public bool CanPress () {
         if (turret == null) return false;
+        if (equipper == null) return false;
         if (!turret.CanInteract (this, equipper.targeted == null ? null : equipper.targeted.gameObject)) return false;
         if (!activated && storedEnergy / turret.maxStoredEnergy < turret.activationThreshold) return false;
         return true;

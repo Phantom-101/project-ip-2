@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,6 +13,7 @@ public class GameUIHandler : MonoBehaviour {
     [Header ("Prefabs")]
     public GameObject equipmentButton;
     public GameObject itemSmallInfoPanel;
+    public GameObject saveItem;
     [Header ("Gradients")]
     public Gradient hullGradient;
     public Gradient shieldGradient;
@@ -24,9 +26,10 @@ public class GameUIHandler : MonoBehaviour {
     public PlayerController playerController;
     public FactionsManager factionsManager;
     public StructuresManager structuresManager;
+    public SavesHandler savesHandler;
     public new Camera camera;
     [Header ("UI Elements")]
-    public string activeUI = "Self";
+    public Stack<string> activeUI = new Stack<string> ();
     public Canvas canvas;
     public GameObject billboards;
     public Image hullUI;
@@ -71,13 +74,18 @@ public class GameUIHandler : MonoBehaviour {
     public Button buy100;
     public Button sell100;
     public List<GameObject> selectableBillboards = new List<GameObject> ();
+    public GameObject savesSelection;
+    public GameObject savesPanel;
+    [Header ("Initialization")]
+    public bool initialized;
 
-    void Awake () {
+    public void Initialize () {
         playerController = FindObjectOfType<PlayerController> ();
         factionsManager = FindObjectOfType<FactionsManager> ();
         structuresManager = FindObjectOfType<StructuresManager> ();
+        savesHandler = FindObjectOfType<SavesHandler> ();
         camera = FindObjectOfType<Camera> ();
-        if (activeUI == "") activeUI = "Self";
+        if (activeUI.Count == 0) activeUI.Push ("Self");
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         billboards = canvas.transform.Find ("Billboards").gameObject;
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
@@ -97,17 +105,17 @@ public class GameUIHandler : MonoBehaviour {
         capacitorTransform = capacitorBackground.transform.Find ("Capacitor").GetComponent<RectTransform> ();
         AIInfo = canvas.transform.Find ("AI Indicators").gameObject;
         dockButton = canvas.transform.Find ("Dock Button").GetComponent<Button> ();
-        ButtonFunction (() => { activeUI = "Station"; playerController.Dock (); }, dockButton);
+        ButtonFunction (() => { activeUI.Pop (); activeUI.Push ("Station"); playerController.Dock (); }, dockButton);
         undockButton = canvas.transform.Find ("Undock Button").GetComponent<Button> ();
-        ButtonFunction (() => { activeUI = "Self"; playerController.Undock (); }, undockButton);
+        ButtonFunction (() => { activeUI.Pop (); activeUI.Push ("Self"); playerController.Undock (); }, undockButton);
         stationPanel = canvas.transform.Find ("Station Panel").gameObject;
         stationMarket = stationPanel.transform.Find ("Market").GetComponent<Button> ();
-        ButtonFunction (() => activeUI = "Station Market", stationMarket);
+        ButtonFunction (() => { activeUI.Pop (); activeUI.Push ("Station Market"); }, stationMarket);
         stationRepair = stationPanel.transform.Find ("Repair").GetComponent<Button> ();
         stationEquipment = stationPanel.transform.Find ("Equipment").GetComponent<Button> ();
         marketPanel = canvas.transform.Find ("Market Panel").gameObject;
         marketExit = marketPanel.transform.Find ("Exit Button").GetComponent<Button> ();
-        ButtonFunction (() => activeUI = "Station", marketExit);
+        ButtonFunction (() => { activeUI.Pop (); activeUI.Push ("Station"); }, marketExit);
         itemsPanel = marketPanel.transform.Find ("Items Panel").gameObject;
         itemsPanelContent = itemsPanel.transform.Find ("Viewport/Content").gameObject;
         itemInfoPanel = marketPanel.transform.Find ("Item Info Panel").gameObject;
@@ -128,12 +136,15 @@ public class GameUIHandler : MonoBehaviour {
         ButtonFunction (() => BuySelectedMarketItem (100), buy100);
         sell100 = marketPanel.transform.Find ("Sell 100 Button").GetComponent<Button> ();
         ButtonFunction (() => SellSelectedMarketItem (100), sell100);
+        savesSelection = canvas.transform.Find ("Saves Selection").gameObject;
+        savesPanel = savesSelection.transform.Find ("Outline/Panel/Viewport/Content").gameObject;
+        initialized = true;
     }
 
     void Update () {
-        if (source == null) return;
+        if (!initialized || source == null) return;
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
-        if (activeUI == "Self" || activeUI == "Station" || activeUI == "Station Repair") {
+        if (activeUI.Peek () == "Self" || activeUI.Peek () == "Station" || activeUI.Peek () == "Station Repair") {
             // Hull
             hullUI.gameObject.SetActive (true);
             hullUI.sprite = source.profile.hullUI;
@@ -171,7 +182,7 @@ public class GameUIHandler : MonoBehaviour {
         // Undocking
         if (stationStructureBehaviours == null) undockButton.gameObject.SetActive (false);
         else undockButton.gameObject.SetActive (true);
-        if (activeUI == "Self") {
+        if (activeUI.Peek () == "Self") {
             // Control
             playerController.forwardPowerSlider.gameObject.SetActive (true);
             playerController.turnLeftButton.gameObject.SetActive (true);
@@ -365,9 +376,9 @@ public class GameUIHandler : MonoBehaviour {
             for (int i = 0; i < equipmentButtons.Count; i++) equipmentButtons[i].SetActive (false);
             foreach (GameObject selectableBillboard in selectableBillboards) selectableBillboard.SetActive (false);
         }
-        if (activeUI == "Station") stationPanel.SetActive (true);
+        if (activeUI.Peek () == "Station") stationPanel.SetActive (true);
         else stationPanel.SetActive (false);
-        if (activeUI == "Station Market") {
+        if (activeUI.Peek () == "Station Market") {
             // Market UI
             if (stationStructureBehaviours == null) {
                 marketPanel.SetActive (false);
@@ -436,6 +447,32 @@ public class GameUIHandler : MonoBehaviour {
                 stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
             }
         } else marketPanel.SetActive (false);
+        if (activeUI.Peek () == "Load") {
+            savesSelection.SetActive (true);
+            if (!Directory.Exists (GetSavePath ())) Directory.CreateDirectory (GetSavePath ());
+            foreach (Transform child in savesPanel.transform) Destroy (child.gameObject);
+            FileInfo[] saves = new DirectoryInfo (Application.persistentDataPath + "/saves/").GetFiles ("*.txt");
+            for (int i = 0; i < saves.Length; i++) {
+                FileInfo save = saves[i];
+                GameObject instantiated = Instantiate (saveItem, savesPanel.transform) as GameObject;
+                RectTransform rectTransform = instantiated.GetComponent<RectTransform> ();
+                rectTransform.anchoredPosition = new Vector2 (0, -i * 100);
+                UniverseSaveData universe = JsonUtility.FromJson<UniverseSaveData> (File.ReadAllText (GetSavePath () + save.Name));
+                instantiated.transform.GetChild (0).GetComponent<Text> ().text = universe.saveName;
+                instantiated.transform.GetChild (1).GetComponent<Text> ().text = save.LastWriteTime.ToString ();
+                int playerFactionID = 0;
+                foreach (StructureSaveData structure in universe.structures)
+                    if (structure.isPlayer)
+                        playerFactionID = structure.factionID;
+                foreach (Faction faction in universe.factions)
+                    if (faction.id == playerFactionID) {
+                        instantiated.transform.GetChild (2).GetComponent<Text> ().text = faction.name;
+                        instantiated.transform.GetChild (3).GetComponent<Text> ().text = faction.wealth.ToString () + " Credits";
+                    }
+                ButtonFunction (() => SaveSelected (save.Name), instantiated.GetComponent<Button> ());
+            }
+            savesPanel.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, saves.Length * 100);
+        } else savesSelection.SetActive (false);
     }
 
     void ButtonFunction (UnityEngine.Events.UnityAction action, Button button) {
@@ -481,5 +518,26 @@ public class GameUIHandler : MonoBehaviour {
         long price = (long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem) * amount;
         if (price > factionsManager.GetWealth (stationStructureBehaviours.factionID)) return false;
         return true;
+    }
+
+    public void SaveSelected (string saveName) {
+        initialized = false;
+        savesHandler.Load (GetSavePath () + saveName);
+    }
+
+    public string GetSavePath () {
+        return Application.persistentDataPath + "/saves/";
+    }
+
+    public string GetSavePath (string saveName) {
+        return Application.persistentDataPath + "/saves/" + saveName + ".txt";
+    }
+
+    public void AddOverlay (string target) {
+        activeUI.Push (target);
+    }
+
+    public void RemoveOverlay () {
+        activeUI.Pop ();
     }
 }

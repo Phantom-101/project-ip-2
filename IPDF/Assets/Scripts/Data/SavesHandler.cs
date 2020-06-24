@@ -60,6 +60,7 @@ public class SavesHandler : MonoBehaviour {
     public PlayerController playerController;
     public ItemsHandler itemsHandler;
     public CameraFollowPlayer cameraFollowPlayer;
+    public GameUIHandler gameUIHandler;
 
     void Awake () {
         factionsManager = FindObjectOfType<FactionsManager> ();
@@ -67,6 +68,7 @@ public class SavesHandler : MonoBehaviour {
         playerController = FindObjectOfType<PlayerController> ();
         itemsHandler = FindObjectOfType<ItemsHandler> ();
         cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
+        gameUIHandler = FindObjectOfType<GameUIHandler> ();
         if (!Directory.Exists (Application.persistentDataPath + "/saves/")) Directory.CreateDirectory (Application.persistentDataPath + "/saves/");
     }
 
@@ -139,10 +141,12 @@ public class SavesHandler : MonoBehaviour {
         File.WriteAllText (GetSavePath (universeName + "-" + nowString), JsonUtility.ToJson (universe, true));
     }
 
-    public void Load (string saveName) {
-        if (!File.Exists (GetSavePath (saveName))) return;
+    public void Load (string savePath) {
+        if (!File.Exists (savePath)) return;
 
-        UniverseSaveData universe = JsonUtility.FromJson<UniverseSaveData> (File.ReadAllText (GetSavePath (saveName)));
+        gameUIHandler.initialized = false;
+
+        UniverseSaveData universe = JsonUtility.FromJson<UniverseSaveData> (File.ReadAllText (savePath));
 
         universeName = universe.saveName;
 
@@ -219,6 +223,8 @@ public class SavesHandler : MonoBehaviour {
             co.celestialObjectID = data.celestialObjectID;
             co.Initialize ();
         }
+
+        gameUIHandler.Initialize ();
     }
 
     public string GetSavePath (string saveName) {
