@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using UnityEngine;
 
@@ -24,10 +25,10 @@ public class BaseSaveData {
 public class StructureSaveData : BaseSaveData {
     public int id;
     public int sectorID;
-    public StructureProfile profile;
+    public string profile;
     public float hull;
     public int factionID;
-    public InventoryHandler inventory;
+    public List<StructureInventoryPair> inventory;
     public List<TurretHandler> turrets;
     public ShieldHandler shield;
     public CapacitorHandler capacitor;
@@ -39,6 +40,17 @@ public class StructureSaveData : BaseSaveData {
     public StructureAI AI;
     public int[] docked;
     public bool isPlayer;
+}
+
+[System.Serializable]
+public class StructureInventoryPair {
+    public string item;
+    public int amount;
+
+    public StructureInventoryPair (string item, int amount) {
+        this.item = item;
+        this.amount = amount;
+    }
 }
 
 [System.Serializable]
@@ -106,10 +118,13 @@ public class SavesHandler : MonoBehaviour {
             data.position = new float[] { structure.transform.localPosition.x, structure.transform.localPosition.y, structure.transform.localPosition.z };
             data.rotation = new float[] { structure.transform.localEulerAngles.x, structure.transform.localEulerAngles.y, structure.transform.localEulerAngles.z };
             data.scale = new float[] { structure.transform.localScale.x, structure.transform.localScale.y, structure.transform.localScale.z };
-            data.profile = structure.profile;
+            data.profile = itemsHandler.GetItemId (structure.profile);
             data.hull = structure.hull;
             data.factionID = structure.factionID;
-            data.inventory = structure.inventory;
+            data.inventory = new List<StructureInventoryPair> ();
+            foreach (Item item in structure.inventory.inventory.Keys.ToArray ())
+                if (structure.inventory.GetItemCount (item) > 0)
+                    data.inventory.Add (new StructureInventoryPair (itemsHandler.GetItemId (item), structure.inventory.GetItemCount (item)));
             data.turrets = new List<TurretHandler> ();
             for (int i = 0; i < structure.profile.turretSlots; i++) data.turrets.Add (structure.turrets[i]);
             data.shield = structure.shield;
@@ -182,10 +197,12 @@ public class SavesHandler : MonoBehaviour {
             instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
             instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
             instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
-            structureBehaviours.profile = data.profile;
+            structureBehaviours.profile = itemsHandler.GetItemById (data.profile) as StructureProfile;
             structureBehaviours.hull = data.hull;
             structureBehaviours.factionID = data.factionID;
-            structureBehaviours.inventory = data.inventory;
+            structureBehaviours.inventory = new InventoryHandler ();
+            foreach (StructureInventoryPair pair in data.inventory)
+                structureBehaviours.inventory.inventory.Add (itemsHandler.GetItemById (pair.item), pair.amount);
             structureBehaviours.turrets = data.turrets;
             structureBehaviours.shield = data.shield;
             structureBehaviours.capacitor = data.capacitor;

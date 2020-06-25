@@ -40,6 +40,9 @@ public class StructureProfile : Item {
     [Header ("Economy")]
     public StructureMarket market;
     public Factory[] factories;
+    [Header ("Facilities")]
+    public Equipment[] offeredEquipment;
+    public float repairCostMultiplier;
     [Header ("Physics")]
     public Mesh collisionMesh;
     public float mass;

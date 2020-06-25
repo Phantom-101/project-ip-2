@@ -19,10 +19,10 @@ public class BeamProjectile : Projectile {
     }
 
     protected override void Process () {
-        if (turret != handler.turret) Disable ();
-        if (!handler.activated) Disable ();
-        if (!turret.CanFire (handler, to.gameObject)) Disable ();
-        if (from == null || to == null) Disable ();
+        if (turret != handler.turret) { Disable (); return; }
+        if (!handler.activated) { Disable (); return; }
+        if (from == null || to == null) { Disable (); return; }
+        if (!turret.CanFire (handler, to.gameObject)) { Disable (); return; }
         Vector3 beamFrom = from.transform.position + from.transform.rotation * handler.position;
         transform.localPosition = beamFrom;
         RaycastHit hit;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,7 @@ public class LoadUIHandler : MonoBehaviour {
         if (!Directory.Exists (GetSavePath ())) Directory.CreateDirectory (GetSavePath ());
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         savesPanel = canvas.transform.Find ("Saves Selection/Outline/Panel/Viewport/Content").gameObject;
-        FileInfo[] saves = new DirectoryInfo (Application.persistentDataPath + "/saves/").GetFiles ("*.txt");
+        FileInfo[] saves = new DirectoryInfo (Application.persistentDataPath + "/saves/").GetFiles ("*.txt").OrderBy (f => f.LastWriteTime).Reverse ().ToArray ();
         for (int i = 0; i < saves.Length; i++) {
             FileInfo save = saves[i];
             GameObject instantiated = Instantiate (saveItem, savesPanel.transform) as GameObject;
