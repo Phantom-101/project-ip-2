@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
-  m_Name: Diamond
+  m_Name: Iron Factory
   m_EditorClassIdentifier: 
   inputs:
-  - {fileID: 11400000, guid: b3018e9aa9b12794a988478ead8e2eef, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
   inputQuantities: 01000000
   outputs:
-  - {fileID: 11400000, guid: 6dc5e03bc2fc88340ba67b49a3b42e05, type: 2}
+  - {fileID: 11400000, guid: 35876c885c53a754db1e1a27faa0bd39, type: 2}
   outputQuantities: 01000000
-  time: 5
+  time: 1
+  wealthChange: 0

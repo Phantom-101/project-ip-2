@@ -53,5 +53,5 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  beamWidth: 5
+  beamWidth: 2.5
   depletionRate: 115

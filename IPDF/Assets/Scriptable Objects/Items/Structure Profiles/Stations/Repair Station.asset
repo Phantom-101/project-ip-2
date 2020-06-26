@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 2ef43463f0bf6034a81341f261eb2f87, type: 3}
   material: {fileID: 2100000, guid: 08b2f7add9806c74ca1b020818e77ce9, type: 2}
-  apparentSize: 35
+  apparentSize: 20
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
@@ -48,6 +48,13 @@ MonoBehaviour:
   market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
   factories:
   - {fileID: 11400000, guid: 37fe734d2a0475a4289c5e1a8b5a209a, type: 2}
+  offeredEquipment:
+  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+  - {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
+  - {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+  - {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
+  - {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+  repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 1000
   drag: 1000

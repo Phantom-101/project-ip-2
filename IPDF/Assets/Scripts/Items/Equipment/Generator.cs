@@ -25,6 +25,7 @@ public class Generator : Equipment {
 public class GeneratorHandler {
     public StructureBehaviours equipper;
     public Generator generator;
+    public string generatorName;
     public bool online;
 
     public GeneratorHandler (Generator generator = null) {

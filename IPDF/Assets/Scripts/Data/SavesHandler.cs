@@ -126,13 +126,22 @@ public class SavesHandler : MonoBehaviour {
                 if (structure.inventory.GetItemCount (item) > 0)
                     data.inventory.Add (new StructureInventoryPair (itemsHandler.GetItemId (item), structure.inventory.GetItemCount (item)));
             data.turrets = new List<TurretHandler> ();
-            for (int i = 0; i < structure.profile.turretSlots; i++) data.turrets.Add (structure.turrets[i]);
+            for (int i = 0; i < structure.profile.turretSlots; i++) {
+                data.turrets.Add (structure.turrets[i]);
+                data.turrets[i].turretName = structure.turrets[i].turret == null ? "" : structure.turrets[i].turret.name;
+            }
             data.shield = structure.shield;
+            data.shield.shieldName = structure.shield.shield == null ? "" : structure.shield.shield.name;
             data.capacitor = structure.capacitor;
+            data.capacitor.capacitorName = structure.capacitor.capacitor == null ? "" : structure.capacitor.capacitor.name;
             data.generator = structure.generator;
+            data.generator.generatorName = structure.generator.generator == null ? "" : structure.generator.generator.name;
             data.engine = structure.engine;
+            data.engine.engineName = structure.engine.engine == null ? "" : structure.engine.engine.name;
             data.electronics = structure.electronics;
+            data.electronics.electronicsName = structure.electronics.electronics == null ? "" : structure.electronics.electronics.name;
             data.tractorBeam = structure.tractorBeam;
+            data.tractorBeam.tractorBeamName = structure.tractorBeam.tractorBeam == null ? "" : structure.tractorBeam.tractorBeam.name;
             data.factories = structure.factories;
             data.AI = structure.AI;
             data.docked = structure.docked;
@@ -203,13 +212,22 @@ public class SavesHandler : MonoBehaviour {
             structureBehaviours.inventory = new InventoryHandler ();
             foreach (StructureInventoryPair pair in data.inventory)
                 structureBehaviours.inventory.inventory.Add (itemsHandler.GetItemById (pair.item), pair.amount);
-            structureBehaviours.turrets = data.turrets;
+            for (int i = 0; i < data.turrets.Count; i++) {
+                structureBehaviours.turrets.Add (data.turrets[i]);
+                structureBehaviours.turrets[i].turret = itemsHandler.GetItemById (data.turrets[i].turretName) as Turret;
+            }
             structureBehaviours.shield = data.shield;
+            structureBehaviours.shield.shield = itemsHandler.GetItemById (data.shield.shieldName) as Shield;
             structureBehaviours.capacitor = data.capacitor;
+            structureBehaviours.capacitor.capacitor = itemsHandler.GetItemById (data.capacitor.capacitorName) as Capacitor;
             structureBehaviours.generator = data.generator;
+            structureBehaviours.generator.generator = itemsHandler.GetItemById (data.generator.generatorName) as Generator;
             structureBehaviours.engine = data.engine;
+            structureBehaviours.engine.engine = itemsHandler.GetItemById (data.engine.engineName) as Engine;
             structureBehaviours.electronics = data.electronics;
+            structureBehaviours.electronics.electronics = itemsHandler.GetItemById (data.electronics.electronicsName) as Electronics;
             structureBehaviours.tractorBeam = data.tractorBeam;
+            structureBehaviours.tractorBeam.tractorBeam = itemsHandler.GetItemById (data.tractorBeam.tractorBeamName) as TractorBeam;
             structureBehaviours.factories = data.factories;
             structureBehaviours.AI = data.AI;
             structureBehaviours.docked = data.docked;

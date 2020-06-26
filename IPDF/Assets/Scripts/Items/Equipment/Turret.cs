@@ -52,6 +52,7 @@ public class TurretHandler {
     [Header ("Essential Information")]
     public StructureBehaviours equipper;
     public Turret turret;
+    public string turretName;
     public Ammunition usingAmmunition;
     [Header ("Transforms")]
     public Vector3 position;

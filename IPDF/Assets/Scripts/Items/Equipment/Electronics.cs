@@ -30,6 +30,7 @@ public class Electronics : Equipment {
 public class ElectronicsHandler {
     public StructureBehaviours equipper;
     public Electronics electronics;
+    public string electronicsName;
     public bool online;
     public bool activated;
     public float storedEnergy;

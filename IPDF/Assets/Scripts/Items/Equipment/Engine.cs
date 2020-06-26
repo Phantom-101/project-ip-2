@@ -29,6 +29,7 @@ public class Engine : Equipment {
 public class EngineHandler {
     public StructureBehaviours equipper;
     public Engine engine;
+    public string engineName;
     public bool online;
     public float forwardSetting;
     public float turnSetting;

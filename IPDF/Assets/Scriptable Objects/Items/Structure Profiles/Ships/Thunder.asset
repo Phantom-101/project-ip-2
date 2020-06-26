@@ -40,8 +40,18 @@ MonoBehaviour:
   - {x: -4, y: -2, z: 0}
   - {x: 4, y: 2, z: 0}
   - {x: -2, y: 0, z: 0}
-  turretRotations: []
-  turretAngles: []
+  turretRotations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretAngles:
+  - 180
+  - 180
+  - 180
+  - 180
+  - 180
   electronicsCapable: 0
   dockingLocations: []
   dockingSizes: []
@@ -49,6 +59,8 @@ MonoBehaviour:
   dockingRange: 0
   market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
   factories: []
+  offeredEquipment: []
+  repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 7.5
   drag: 0.5

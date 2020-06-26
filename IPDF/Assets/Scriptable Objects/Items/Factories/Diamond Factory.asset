@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
-  m_Name: Jewelry
+  m_Name: Diamond Factory
   m_EditorClassIdentifier: 
   inputs:
-  - {fileID: 11400000, guid: 6dc5e03bc2fc88340ba67b49a3b42e05, type: 2}
-  - {fileID: 11400000, guid: f10257b31b7ab654c9ef366af262342f, type: 2}
-  inputQuantities: 0100000003000000
+  - {fileID: 11400000, guid: b3018e9aa9b12794a988478ead8e2eef, type: 2}
+  inputQuantities: 01000000
   outputs:
-  - {fileID: 11400000, guid: 822611605703b65498201b30693165c3, type: 2}
+  - {fileID: 11400000, guid: 6dc5e03bc2fc88340ba67b49a3b42e05, type: 2}
   outputQuantities: 01000000
-  time: 30
+  time: 5
+  wealthChange: 0

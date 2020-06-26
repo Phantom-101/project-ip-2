@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
-  m_Name: Water
+  m_Name: Agricultural Produce Factory
   m_EditorClassIdentifier: 
   inputs:
-  - {fileID: 11400000, guid: 7eb16c7b8fbc4e243be94690f8028648, type: 2}
+  - {fileID: 11400000, guid: f23243b527db0c6488ab80557863e16f, type: 2}
   inputQuantities: 01000000
   outputs:
-  - {fileID: 11400000, guid: f23243b527db0c6488ab80557863e16f, type: 2}
+  - {fileID: 11400000, guid: b599fc8366feae545a13970c9104dccb, type: 2}
   outputQuantities: 01000000
-  time: 1
+  time: 10
+  wealthChange: 0

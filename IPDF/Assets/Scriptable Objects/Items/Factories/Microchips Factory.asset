@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
-  m_Name: Alloy Plates
+  m_Name: Microchips Factory
   m_EditorClassIdentifier: 
   inputs:
-  - {fileID: 11400000, guid: 35876c885c53a754db1e1a27faa0bd39, type: 2}
-  inputQuantities: 01000000
+  - {fileID: 11400000, guid: 3b5fbdc106539cf43bef3c78264abbf0, type: 2}
+  inputQuantities: 02000000
   outputs:
-  - {fileID: 11400000, guid: 822611605703b65498201b30693165c3, type: 2}
-  outputQuantities: 01000000
-  time: 2
+  - {fileID: 11400000, guid: 18f33438c95409c4f9dbb37699b88208, type: 2}
+  outputQuantities: 05000000
+  time: 5
+  wealthChange: 0

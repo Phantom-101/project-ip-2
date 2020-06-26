@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 913125437}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999949
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1665,8 +1665,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.39215687, g: 0.49019608, b: 0.5882353, a: 1}
+    m_PressedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1686,18 +1686,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 223646876}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1725539989}
-        m_MethodName: RemoveOverlay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &223646876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,6 +1796,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -1818,6 +1808,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -1829,6 +1820,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -1840,6 +1832,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -1851,6 +1844,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -1862,6 +1856,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -1874,6 +1869,7 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 1
     strengths:
     - 1500
@@ -1886,20 +1882,24 @@ MonoBehaviour:
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    generatorName: 
     online: 1
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
+    engineName: 
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -1907,6 +1907,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -2015,18 +2016,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 238738448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1725539989}
-        m_MethodName: RemoveOverlay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &238738448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,6 +2053,86 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238738445}
+  m_CullTransparentMesh: 0
+--- !u!1 &284791046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284791047}
+  - component: {fileID: 284791049}
+  - component: {fileID: 284791048}
+  m_Layer: 5
+  m_Name: No Equipment Available
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &284791047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284791046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 466430203}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &284791048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284791046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4edddbbdca619a04bacb56cb90325fc8, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'No Equipment
+
+    Available'
+--- !u!222 &284791049
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284791046}
   m_CullTransparentMesh: 0
 --- !u!1 &292876688
 GameObject:
@@ -2259,8 +2329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
-  m_RaycastTarget: 1
-  m_Maskable: 1
+  m_RaycastTarget: 0
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2750,6 +2820,7 @@ RectTransform:
   - {fileID: 315201922}
   - {fileID: 1317781129}
   - {fileID: 458253312}
+  - {fileID: 923653920}
   - {fileID: 1041844104}
   - {fileID: 673662676}
   - {fileID: 2061755501}
@@ -2994,6 +3065,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3005,6 +3077,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3016,6 +3089,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3027,6 +3101,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3038,6 +3113,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3050,26 +3126,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -3077,6 +3158,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -3844,26 +3926,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 0}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 0}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 0}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 0}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -3871,6 +3958,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -4348,6 +4436,7 @@ RectTransform:
   - {fileID: 415612117}
   - {fileID: 1488072081}
   - {fileID: 818993629}
+  - {fileID: 284791047}
   m_Father: {fileID: 1041844104}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4642,6 +4731,84 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492536352}
+  m_CullTransparentMesh: 0
+--- !u!1 &503323442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503323443}
+  - component: {fileID: 503323445}
+  - component: {fileID: 503323444}
+  m_Layer: 0
+  m_Name: Repair Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &503323443
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503323442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 871394523}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: 250, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &503323444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503323442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4edddbbdca619a04bacb56cb90325fc8, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'The repair will cost:'
+--- !u!222 &503323445
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503323442}
   m_CullTransparentMesh: 0
 --- !u!1 &587025812
 GameObject:
@@ -5970,7 +6137,7 @@ RectTransform:
   - {fileID: 729409833}
   - {fileID: 704287763}
   m_Father: {fileID: 320446063}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -6739,6 +6906,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -6750,6 +6918,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -6761,6 +6930,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -6772,6 +6942,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -6783,6 +6954,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -6795,26 +6967,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -6822,6 +6999,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -7427,6 +7605,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859301239}
   m_CullTransparentMesh: 0
+--- !u!1 &871394522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 871394523}
+  - component: {fileID: 871394525}
+  - component: {fileID: 871394524}
+  m_Layer: 0
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &871394523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871394522}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 503323443}
+  - {fileID: 1766909853}
+  - {fileID: 1229430100}
+  - {fileID: 1472215624}
+  m_Father: {fileID: 1172246203}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 450, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &871394524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871394522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_RaycastTarget: 0
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &871394525
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871394522}
+  m_CullTransparentMesh: 0
 --- !u!1 &872419769
 GameObject:
   m_ObjectHideFlags: 0
@@ -7572,8 +7828,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
+  m_RaycastTarget: 0
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7826,7 +8082,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.9999946}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8101,6 +8357,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917551137}
   m_CullTransparentMesh: 0
+--- !u!1 &923653919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923653920}
+  m_Layer: 5
+  m_Name: Repair Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &923653920
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923653919}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1172246203}
+  m_Father: {fileID: 320446063}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &926846192
 GameObject:
   m_ObjectHideFlags: 0
@@ -8462,26 +8754,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 0}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 0}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 0}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 0}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -8489,6 +8786,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -9338,26 +9636,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 0}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 0}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 0}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 0}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -9365,6 +9668,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -9521,7 +9825,7 @@ RectTransform:
   - {fileID: 808924784}
   - {fileID: 238738446}
   m_Father: {fileID: 320446063}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9840,7 +10144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1099295940
 Transform:
   m_ObjectHideFlags: 0
@@ -9906,6 +10210,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -9917,6 +10222,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -9928,6 +10234,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -9939,6 +10246,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -9950,6 +10258,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -9962,26 +10271,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -9989,6 +10303,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -10675,6 +10990,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166614382}
   m_CullTransparentMesh: 0
+--- !u!1 &1172246202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172246203}
+  - component: {fileID: 1172246205}
+  - component: {fileID: 1172246204}
+  m_Layer: 0
+  m_Name: Outline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1172246203
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172246202}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 871394523}
+  m_Father: {fileID: 923653920}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1172246204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172246202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: be8f7cce241e398409ee039277ddd010, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 4
+--- !u!222 &1172246205
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172246202}
+  m_CullTransparentMesh: 0
 --- !u!1 &1184226287
 GameObject:
   m_ObjectHideFlags: 0
@@ -11052,6 +11442,125 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204527612}
+  m_CullTransparentMesh: 0
+--- !u!1 &1229430099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1229430100}
+  - component: {fileID: 1229430103}
+  - component: {fileID: 1229430102}
+  - component: {fileID: 1229430101}
+  m_Layer: 5
+  m_Name: Confirm Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1229430100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229430099}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_Children:
+  - {fileID: 1754265232}
+  m_Father: {fileID: 871394523}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -50, y: -40}
+  m_SizeDelta: {x: 65, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1229430101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229430099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.39215687, g: 0.49019608, b: 0.5882353, a: 1}
+    m_PressedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1229430102}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1229430102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229430099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: be8f7cce241e398409ee039277ddd010, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 10
+--- !u!222 &1229430103
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229430099}
   m_CullTransparentMesh: 0
 --- !u!1 &1233134386
 GameObject:
@@ -11659,6 +12168,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d593615bc1825a24c924fe7052e8851c, type: 2}
   - {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
   - {fileID: 11400000, guid: 75dff6f3cbcb95046a48a6a6e581fd47, type: 2}
+  - {fileID: 11400000, guid: ce3784af2900be54eb8438b92ddf3eb0, type: 2}
+  - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+  - {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
+  - {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+  - {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
+  - {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
   - {fileID: 11400000, guid: b599fc8366feae545a13970c9104dccb, type: 2}
   - {fileID: 11400000, guid: 822611605703b65498201b30693165c3, type: 2}
   - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
@@ -11835,6 +12350,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectors: []
+--- !u!1 &1342192272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342192273}
+  - component: {fileID: 1342192275}
+  - component: {fileID: 1342192274}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1342192273
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342192272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1472215624}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1342192274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342192272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4edddbbdca619a04bacb56cb90325fc8, type: 3}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Cancel
+--- !u!222 &1342192275
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342192272}
+  m_CullTransparentMesh: 0
 --- !u!1 &1342621817
 GameObject:
   m_ObjectHideFlags: 0
@@ -11901,8 +12494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
+  m_RaycastTarget: 0
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12287,7 +12880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1404937110
 Transform:
   m_ObjectHideFlags: 0
@@ -12353,6 +12946,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -12364,6 +12958,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -12375,6 +12970,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -12386,6 +12982,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -12397,6 +12994,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -12409,6 +13007,7 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
+    shieldName: 
     online: 1
     strengths:
     - 200
@@ -12421,20 +13020,24 @@ MonoBehaviour:
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
+    generatorName: 
     online: 1
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
+    engineName: 
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -12442,6 +13045,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -12538,18 +13142,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1405771945}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1725539989}
-        m_MethodName: RemoveOverlay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1405771945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13009,6 +13602,125 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1472215623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472215624}
+  - component: {fileID: 1472215627}
+  - component: {fileID: 1472215626}
+  - component: {fileID: 1472215625}
+  m_Layer: 5
+  m_Name: Cancel Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1472215624
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472215623}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_Children:
+  - {fileID: 1342192273}
+  m_Father: {fileID: 871394523}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 50, y: -40}
+  m_SizeDelta: {x: 65, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1472215625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472215623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.39215687, g: 0.49019608, b: 0.5882353, a: 1}
+    m_PressedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1472215626}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1472215626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472215623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: be8f7cce241e398409ee039277ddd010, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 10
+--- !u!222 &1472215627
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472215623}
+  m_CullTransparentMesh: 0
 --- !u!1 &1488072080
 GameObject:
   m_ObjectHideFlags: 0
@@ -14120,7 +14832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1551932584
 Transform:
   m_ObjectHideFlags: 0
@@ -14186,6 +14898,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -14197,6 +14910,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -14208,6 +14922,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -14219,6 +14934,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -14230,6 +14946,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -14242,26 +14959,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -14269,6 +14991,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -15885,6 +16608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725539988}
   - component: {fileID: 1725539989}
+  - component: {fileID: 1725539990}
   m_Layer: 0
   m_Name: UI Handler
   m_TagString: Untagged
@@ -16081,6 +16805,8 @@ MonoBehaviour:
   equipmentPanel: {fileID: 0}
   selectedBay: 0
   selectedEquipment: {fileID: 0}
+  bayItems: []
+  equipmentItems: []
   equipmentIcon: {fileID: 0}
   equipmentInformationPanel: {fileID: 0}
   equipmentName: {fileID: 0}
@@ -16092,10 +16818,28 @@ MonoBehaviour:
   baysPanelContent: {fileID: 0}
   availableEquipmentPanel: {fileID: 0}
   availableEquipmentPanelContent: {fileID: 0}
+  noEquipmentAvailable: {fileID: 0}
   selectableBillboards: []
   savesSelection: {fileID: 0}
   savesPanel: {fileID: 0}
+  saveExitButton: {fileID: 0}
+  repairPanel: {fileID: 0}
+  repairCostText: {fileID: 0}
+  repairConfirmButton: {fileID: 0}
+  repairCancelButton: {fileID: 0}
   initialized: 0
+--- !u!114 &1725539990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725539987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e1e4cb9382fac409c92b8a662efce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1726394527
 GameObject:
   m_ObjectHideFlags: 0
@@ -16635,6 +17379,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737825967}
   m_CullTransparentMesh: 0
+--- !u!1 &1754265231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1754265232}
+  - component: {fileID: 1754265234}
+  - component: {fileID: 1754265233}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1754265232
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754265231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1229430100}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1754265233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754265231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4edddbbdca619a04bacb56cb90325fc8, type: 3}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Confirm
+--- !u!222 &1754265234
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754265231}
+  m_CullTransparentMesh: 0
 --- !u!1 &1764206707
 GameObject:
   m_ObjectHideFlags: 0
@@ -16712,6 +17534,84 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764206707}
+  m_CullTransparentMesh: 0
+--- !u!1 &1766909852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766909853}
+  - component: {fileID: 1766909855}
+  - component: {fileID: 1766909854}
+  m_Layer: 0
+  m_Name: Repair Cost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1766909853
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766909852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 871394523}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1766909854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766909852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4edddbbdca619a04bacb56cb90325fc8, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 65686 Credits
+--- !u!222 &1766909855
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766909852}
   m_CullTransparentMesh: 0
 --- !u!1 &1776885018
 GameObject:
@@ -17063,6 +17963,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -17074,6 +17975,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -17085,6 +17987,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -17096,6 +17999,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -17107,6 +18011,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -17119,26 +18024,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -17146,6 +18056,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -17586,8 +18497,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
+      minMaxState: 3
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -17639,7 +18550,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -17692,7 +18603,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -18049,7 +18960,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 30
+      value: 50
       mode: 0
       spread: 0
       speed:
@@ -22104,7 +23015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2047384823
 Transform:
   m_ObjectHideFlags: 0
@@ -22170,6 +23081,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22181,6 +23093,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22192,6 +23105,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22203,6 +23117,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22214,6 +23129,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22226,26 +23142,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -22253,6 +23174,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -22297,7 +23219,7 @@ RectTransform:
   m_Children:
   - {fileID: 874018141}
   m_Father: {fileID: 320446063}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22446,7 +23368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0009024414}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &2068910070
@@ -23944,6 +24866,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -23955,6 +24878,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -23966,6 +24890,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -23977,6 +24902,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -23988,6 +24914,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24000,26 +24927,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24027,6 +24959,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24084,26 +25017,31 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 0}
+    shieldName: 
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 0}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 0}
+    generatorName: 
     online: 0
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 0}
+    engineName: 
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24111,6 +25049,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24158,7 +25097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &6355110526056126158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24210,6 +25149,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24221,6 +25161,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24232,6 +25173,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24243,6 +25185,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24255,6 +25198,7 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
+    shieldName: 
     online: 1
     strengths:
     - 200
@@ -24267,20 +25211,24 @@ MonoBehaviour:
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: cf2784fd88d8018419b28d13670fdada, type: 2}
+    generatorName: 
     online: 1
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
+    engineName: 
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24288,6 +25236,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24359,7 +25308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7218308574373969048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24387,6 +25336,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24398,6 +25348,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24409,6 +25360,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24420,6 +25372,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24431,6 +25384,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24442,6 +25396,7 @@ MonoBehaviour:
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 0}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -24454,6 +25409,7 @@ MonoBehaviour:
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    shieldName: 
     online: 1
     strengths:
     - 10000
@@ -24466,20 +25422,24 @@ MonoBehaviour:
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    generatorName: 
     online: 1
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
+    engineName: 
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24487,6 +25447,7 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -24534,7 +25495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7218308574373969126
 MonoBehaviour:
   m_ObjectHideFlags: 0

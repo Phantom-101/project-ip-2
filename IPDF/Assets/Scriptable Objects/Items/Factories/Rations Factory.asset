@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
-  m_Name: Gold
+  m_Name: Rations Factory
   m_EditorClassIdentifier: 
   inputs:
-  - {fileID: 11400000, guid: 0837c1d103ec2e143b8aa8a23a7bf683, type: 2}
+  - {fileID: 11400000, guid: b599fc8366feae545a13970c9104dccb, type: 2}
   inputQuantities: 01000000
   outputs:
-  - {fileID: 11400000, guid: f10257b31b7ab654c9ef366af262342f, type: 2}
+  - {fileID: 11400000, guid: e41d62b30f13ef04d859a904066e96db, type: 2}
   outputQuantities: 01000000
-  time: 3
+  time: 5
+  wealthChange: 0

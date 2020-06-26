@@ -32,10 +32,13 @@ MonoBehaviour:
   hull: 0
   inventorySize: 0
   maxEquipmentMeta: 0
-  turretSlots: 0
-  turretPositions: []
-  turretRotations: []
-  turretAngles: []
+  turretSlots: 1
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  turretRotations:
+  - {x: 0, y: 0, z: 0}
+  turretAngles:
+  - 10
   electronicsCapable: 0
   dockingLocations: []
   dockingSizes: []
@@ -43,6 +46,8 @@ MonoBehaviour:
   dockingRange: 0
   market: {fileID: 0}
   factories: []
+  offeredEquipment: []
+  repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 50
   drag: 0
