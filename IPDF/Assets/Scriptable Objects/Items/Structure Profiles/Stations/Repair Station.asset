@@ -30,7 +30,7 @@ MonoBehaviour:
   structureClass: 0
   manufacturer: 1
   description: 
-  hull: 25000
+  hull: 10000
   inventorySize: 10000
   maxEquipmentMeta: 0
   turretSlots: 0

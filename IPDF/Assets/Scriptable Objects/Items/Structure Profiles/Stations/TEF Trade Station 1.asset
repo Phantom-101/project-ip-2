@@ -30,7 +30,7 @@ MonoBehaviour:
   structureClass: 0
   manufacturer: 3
   description: 
-  hull: 50000
+  hull: 20000
   inventorySize: 10000
   maxEquipmentMeta: 0
   turretSlots: 0
@@ -53,6 +53,8 @@ MonoBehaviour:
   market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
   factories:
   - {fileID: 11400000, guid: 37fe734d2a0475a4289c5e1a8b5a209a, type: 2}
+  offeredEquipment: []
+  repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 1000
   drag: 1000

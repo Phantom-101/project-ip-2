@@ -28,7 +28,7 @@ MonoBehaviour:
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 0
-  manufacturer: 0
+  manufacturer: 12
   description: 
   hull: 0
   inventorySize: 0
@@ -44,6 +44,8 @@ MonoBehaviour:
   dockingRange: 0
   market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
   factories: []
+  offeredEquipment: []
+  repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 0
   drag: 0.5

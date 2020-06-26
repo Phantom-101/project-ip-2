@@ -28,7 +28,7 @@ MonoBehaviour:
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 0
-  manufacturer: 3
+  manufacturer: 12
   description: 
   hull: 2000
   inventorySize: 500

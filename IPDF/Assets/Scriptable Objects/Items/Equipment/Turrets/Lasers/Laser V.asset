@@ -22,7 +22,7 @@ MonoBehaviour:
   rechargeRate: 110
   range: 600
   activationThreshold: 0.4
-  damage: 125
+  damage: 12.5
   asset: {fileID: 8926484042661614526, guid: 15b17211511db9b41aa80ee50ba8a18e, type: 3}
   beamGradient:
     serializedVersion: 2
@@ -53,5 +53,5 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  beamWidth: 2.5
+  beamWidth: 2
   depletionRate: 115

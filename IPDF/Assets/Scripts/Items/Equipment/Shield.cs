@@ -94,13 +94,20 @@ public class ShieldHandler {
     }
 
     public void Process () {
-        if (!online || shield == null) return;
+        if (!online || shield == null) {
+            strengths = new float[6];
+            shieldTimesSinceLastDamaged = new float[6];
+            return;
+        }
         if (shield.meta > equipper.profile.maxEquipmentMeta) {
             shield = null;
             return;
         }
         if (strengths.Length != 6) strengths = new float[6];
         if (shieldTimesSinceLastDamaged.Length != 6) shieldTimesSinceLastDamaged = new float[6];
+        for (int i = 0; i < strengths.Length; i++)
+            if (strengths[i] > shield.strength)
+                strengths[i] = shield.strength;
         for (int i = 0; i < shieldTimesSinceLastDamaged.Length; i++) {
             if (shieldTimesSinceLastDamaged[i] > 1.5f) shieldTimesSinceLastDamaged[i] = 0.0f;
             else if (shieldTimesSinceLastDamaged[i] >= 0.3f) shieldTimesSinceLastDamaged[i] += Time.deltaTime;

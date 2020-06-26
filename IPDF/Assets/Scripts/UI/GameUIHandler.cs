@@ -183,7 +183,9 @@ public class GameUIHandler : MonoBehaviour {
         repairPanel = canvas.transform.Find ("Repair Panel").gameObject;
         repairCostText = repairPanel.transform.Find ("Outline/Panel/Repair Cost").GetComponent<Text> ();
         repairConfirmButton = repairPanel.transform.Find ("Outline/Panel/Confirm Button").GetComponent<Button> ();
+        ButtonFunction (() => { RemoveOverlay (); RepairShip (); }, repairConfirmButton);
         repairCancelButton = repairPanel.transform.Find ("Outline/Panel/Cancel Button").GetComponent<Button> ();
+        ButtonFunction (() => RemoveOverlay (), repairCancelButton);
         initialized = true;
     }
 
@@ -574,6 +576,13 @@ public class GameUIHandler : MonoBehaviour {
                 } else equipmentInformationPanel.SetActive (false);
             }
         } else equipmentPanel.SetActive (false);
+        if (activeUI.Peek () == "Station Repair") {
+            if (stationStructureBehaviours == null) repairPanel.SetActive (false);
+            else {
+                repairPanel.SetActive (true);
+                repairCostText.text = "Not Implemented";
+            }
+        } else repairPanel.SetActive (false);
         if (activeUI.Peek () == "Load") {
             savesSelection.SetActive (true);
             if (!Directory.Exists (GetSavePath ())) Directory.CreateDirectory (GetSavePath ());
@@ -607,6 +616,10 @@ public class GameUIHandler : MonoBehaviour {
     void ButtonFunction (UnityEngine.Events.UnityAction action, Button button) {
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(action);
+    }
+
+    void RepairShip () {
+        source.hull = source.profile.hull;
     }
 
     public void SetSelectedBay (int i) {

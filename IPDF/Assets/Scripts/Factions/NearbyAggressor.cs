@@ -16,7 +16,9 @@ public class NearbyAggressor : MonoBehaviour {
 
     void Update () {
         foreach (StructureBehaviours structure in structuresManager.structures)
-            if (structure != null && (transform.position - structure.transform.position).sqrMagnitude <= range * range)
+            if (structure != null && structure.factionID != currentFactionID && (transform.position - structure.transform.position).sqrMagnitude <= range * range) {
                 factionsManager.SetRelations (currentFactionID, structure.factionID, -1.0f);
+                factionsManager.SetRelations (structure.factionID, currentFactionID, -1.0f);
+            }
     }
 }

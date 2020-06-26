@@ -62,6 +62,7 @@ public class TurretHandler {
     public GameObject target;
     public bool online;
     public bool activated;
+    public GameObject beam;
     public float cooldown;
     public float storedEnergy;
 
@@ -128,10 +129,11 @@ public class TurretHandler {
     }
 
     public void Activate (GameObject target) {
-        if (turret.CanFire (this, target)) {
+        if (beam == null && turret != null && turret.CanFire (this, target)) {
             this.target = target;
             this.activated = true;
             GameObject projectile = new GameObject (turret.name);
+            beam = projectile;
             turret.InitializeProjectile (this, projectile);
         }
     }

@@ -28,7 +28,7 @@ MonoBehaviour:
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 8
-  manufacturer: 8
+  manufacturer: 12
   description: Phys' dev ship.
   hull: 1000000
   inventorySize: 1000

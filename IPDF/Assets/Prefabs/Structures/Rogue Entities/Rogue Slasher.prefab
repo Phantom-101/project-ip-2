@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6355110525696986322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0, z: 108.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6aa3c4e8165363344aac4f188aa7ea9f, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -59,64 +60,105 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: b4826cc11febfbd4ca27176e4adccb22, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3cf1c887bb5e8a41a1090e923c06ea3, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3cf1c887bb5e8a41a1090e923c06ea3, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3cf1c887bb5e8a41a1090e923c06ea3, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3cf1c887bb5e8a41a1090e923c06ea3, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3cf1c887bb5e8a41a1090e923c06ea3, type: 2}
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    shieldName: 
     online: 1
     strengths:
     - 800
@@ -129,20 +171,24 @@ MonoBehaviour:
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: 3fc78a44b2c40dc4c8979fc375876c6c, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    generatorName: 
     online: 1
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
+    engineName: 
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -150,11 +196,12 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1

@@ -28,7 +28,7 @@ MonoBehaviour:
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 4
-  manufacturer: 8
+  manufacturer: 12
   description: Pirate ship, prusumed to be manufactured in a captured Delta Shipyard.
   hull: 750
   inventorySize: 300

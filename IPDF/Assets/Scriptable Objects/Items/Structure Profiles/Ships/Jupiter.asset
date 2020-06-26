@@ -28,7 +28,7 @@ MonoBehaviour:
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 8
-  manufacturer: 3
+  manufacturer: 12
   description: Large TEF capital ship.
   hull: 1000000
   inventorySize: 1200

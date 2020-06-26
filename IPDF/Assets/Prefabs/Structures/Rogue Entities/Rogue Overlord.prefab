@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7218308573696321714}
   - component: {fileID: 4801963262657937283}
   m_Layer: 0
-  m_Name: Rogue Assailer
+  m_Name: Rogue Overlord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 6aa3c4e8165363344aac4f188aa7ea9f, type: 2}
+  profile: {fileID: 11400000, guid: 791d07f62d929c84fb4fba047655f9bc, type: 2}
   id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -84,7 +84,7 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -144,7 +144,19 @@ MonoBehaviour:
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+    turretName: 
+    usingAmmunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    cooldown: 0
+    storedEnergy: 0
+  - equipper: {fileID: 0}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -157,30 +169,30 @@ MonoBehaviour:
     storedEnergy: 0
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
     shieldName: 
     online: 1
     strengths:
-    - 800
-    - 800
-    - 800
-    - 800
-    - 800
-    - 800
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: 3fc78a44b2c40dc4c8979fc375876c6c, type: 2}
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
     capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    generator: {fileID: 11400000, guid: 2b55879e013940d4fbaa679c70e01270, type: 2}
     generatorName: 
     online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
     engineName: 
     online: 1
     forwardSetting: 0

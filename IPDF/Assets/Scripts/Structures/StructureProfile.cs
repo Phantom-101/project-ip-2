@@ -77,10 +77,14 @@ public enum Manufacturer {
     CLL,
     ADR,
     Delta,
+    VeraGalactic,
     TEF,
     NTE,
     Lambda,
     Omega,
     Cydia,
+    CTrans,
+    Silver,
+    Ascendancy,
     Unknown
 }

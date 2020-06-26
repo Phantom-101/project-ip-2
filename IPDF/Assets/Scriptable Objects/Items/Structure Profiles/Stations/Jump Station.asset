@@ -45,6 +45,8 @@ MonoBehaviour:
   dockingRange: 200
   market: {fileID: 0}
   factories: []
+  offeredEquipment: []
+  repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 0
   drag: 0

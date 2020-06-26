@@ -29,7 +29,7 @@ MonoBehaviour:
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 3
-  manufacturer: 7
+  manufacturer: 12
   description: Heavy Forward Attack Corvette
   hull: 500
   inventorySize: 120

@@ -1763,7 +1763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235251617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -172, y: -0, z: -504}
+  m_LocalPosition: {x: -1115, y: 0, z: -319}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -1804,6 +1804,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -1816,6 +1817,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -1828,6 +1830,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -1840,6 +1843,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -1852,6 +1856,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -1864,6 +1869,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -3073,6 +3079,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -3085,6 +3092,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -3097,6 +3105,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -3109,6 +3118,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -3121,6 +3131,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -6914,6 +6925,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -6926,6 +6938,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -6938,6 +6951,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -6950,6 +6964,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -6962,6 +6977,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -10218,6 +10234,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -10230,6 +10247,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -10242,6 +10260,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -10254,6 +10273,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -10266,6 +10286,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -12945,7 +12966,7 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -12954,10 +12975,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -12966,10 +12988,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -12978,10 +13001,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -12990,10 +13014,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -13002,6 +13027,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -13029,7 +13055,7 @@ MonoBehaviour:
     online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
+    engine: {fileID: 11400000, guid: f2e45a929b556ea40b615bf0c2e1cbd2, type: 2}
     engineName: 
     online: 1
     forwardSetting: 0
@@ -14906,6 +14932,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -14918,6 +14945,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -14930,6 +14958,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -14942,6 +14971,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -14954,6 +14984,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -17971,6 +18002,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -17983,6 +18015,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -17995,6 +18028,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -18007,6 +18041,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -18019,6 +18054,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -23089,6 +23125,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -23101,6 +23138,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -23113,6 +23151,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -23125,6 +23164,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -23137,6 +23177,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -24792,7 +24833,7 @@ PrefabInstance:
     - target: {fileID: 4589102706028341338, guid: 04ab3a3a3ac08444d9580260b8fc9b2b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ab3a3a3ac08444d9580260b8fc9b2b, type: 3}
@@ -24874,6 +24915,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -24886,6 +24928,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -24898,6 +24941,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -24910,6 +24954,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
@@ -24922,6 +24967,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 0
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -25148,7 +25194,7 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25157,10 +25203,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25169,10 +25216,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25181,10 +25229,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25193,6 +25242,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:
@@ -25335,7 +25385,7 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25344,10 +25394,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25356,10 +25407,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25368,10 +25420,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25380,10 +25433,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25392,10 +25446,11 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
+    turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
@@ -25404,6 +25459,7 @@ MonoBehaviour:
     target: {fileID: 0}
     online: 1
     activated: 0
+    beam: {fileID: 0}
     cooldown: 0
     storedEnergy: 0
   shield:

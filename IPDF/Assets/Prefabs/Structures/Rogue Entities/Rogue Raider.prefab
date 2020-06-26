@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7218308573696321713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.45, y: 0, z: 101.47}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 23621a9e9e3073f4db8277cf3afa9005, type: 2}
+  id: 0
   hull: 0
   hullTimeSinceLastDamaged: 0
   cloaked: 0
@@ -60,21 +61,32 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
+    turretName: 
     usingAmmunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
-    turretAlignment: 0
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
     online: 1
+    activated: 0
+    cooldown: 0
     storedEnergy: 0
   shield:
     equipper: {fileID: 0}
     shield: {fileID: 11400000, guid: 322023c85710b174d8e2b7b71b424e39, type: 2}
+    shieldName: 
     online: 1
     strengths:
     - 100
@@ -87,20 +99,24 @@ MonoBehaviour:
   capacitor:
     equipper: {fileID: 0}
     capacitor: {fileID: 11400000, guid: 38f4ed1698aaa5c479fdf8baa06f760e, type: 2}
+    capacitorName: 
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
     generator: {fileID: 11400000, guid: 617e74926984aff4cb3bd1e6e160a78f, type: 2}
+    generatorName: 
     online: 1
   engine:
     equipper: {fileID: 0}
     engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
+    engineName: 
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
     electronics: {fileID: 0}
+    electronicsName: 
     online: 0
     activated: 0
     storedEnergy: 0
@@ -108,11 +124,12 @@ MonoBehaviour:
   tractorBeam:
     equipper: {fileID: 0}
     tractorBeam: {fileID: 0}
+    tractorBeamName: 
     online: 0
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
-  docked: []
+  docked: 
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1

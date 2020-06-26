@@ -26,7 +26,8 @@ public class StructureAI {
             float totalRange = 0.0f;
             int effectiveTurrets = 0;
             foreach (TurretHandler turretHandler in structureBehaviours.turrets) {
-                turretHandler.Activate (structureBehaviours.targeted.gameObject);
+                if (!turretHandler.activated)
+                    turretHandler.Activate (structureBehaviours.targeted.gameObject);
                 Turret turret = turretHandler.turret;
                 if (turret != null) {
                     totalRange += turret.range;
