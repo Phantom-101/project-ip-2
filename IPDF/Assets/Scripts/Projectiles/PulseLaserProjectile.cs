@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class BeamProjectile : Projectile {
+public class PulseLaserProjectile : Projectile {
     [Header ("Components")]
     public VisualEffect beam;
-    public FactionsManager factionsManager;
 
     public override void Initialize () {
         base.Initialize ();
         turret = handler.turret;
         beam = gameObject.AddComponent<VisualEffect> ();
-        beam.visualEffectAsset = (turret as BeamTurret).asset;
-        beam.SetGradient ("gradient", (turret as BeamTurret).beamGradient);
-        beam.SetFloat ("size", (turret as BeamTurret).beamWidth);
+        beam.visualEffectAsset = (turret as PulseLaserTurret).asset;
+        beam.SetGradient ("gradient", (turret as PulseLaserTurret).beamGradient);
+        beam.SetFloat ("size", (turret as PulseLaserTurret).beamWidth);
         beam.SetFloat ("lifetime", 0.05f);
-        factionsManager = FindObjectOfType<FactionsManager> ();
         transform.parent = from.transform.parent;
     }
 
@@ -31,11 +29,12 @@ public class BeamProjectile : Projectile {
         if (Physics.Raycast (beamFrom, to.transform.position - beamFrom, out hit, turret.range)) {
             transform.localRotation = Quaternion.LookRotation (to.transform.position - beamFrom);
             beam.SetFloat ("forward", hit.distance);
-            beam.SetFloat ("count", hit.distance * 2000 / (turret as BeamTurret).beamWidth);
+            beam.SetFloat ("count", hit.distance * 2000 / (turret as PulseLaserTurret).beamWidth);
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
-                hitStructure.TakeDamage (turret.damage * Time.deltaTime, beamFrom);
-                factionsManager.ChangeRelations (hitStructure.factionID, from.factionID, -0.01f);
+                hitStructure.TakeDamage (turret.damage, beamFrom);
+                factionsManager.ChangeRelations (hitStructure.factionID, from.factionID, -turret.damage);
+                Disable ();
             }
         }
     }

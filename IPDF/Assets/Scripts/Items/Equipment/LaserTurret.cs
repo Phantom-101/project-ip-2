@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.VFX;
 using Essentials;
 
-[CreateAssetMenu (fileName = "New Beam Turret", menuName = "Equipment/Turrets/Beam Turret")]
-public class BeamTurret : Turret {
+[CreateAssetMenu (fileName = "New Laser Turret", menuName = "Equipment/Turrets/Laser Turret")]
+public class LaserTurret : Turret {
     [Header ("Appearance")]
     public VisualEffectAsset asset;
     public Gradient beamGradient;
@@ -23,11 +23,11 @@ public class BeamTurret : Turret {
     }
 
     public override void InitializeProjectile (TurretHandler caller, GameObject projectile) {
-        BeamProjectile beamProjectile = projectile.AddComponent<BeamProjectile> ();
-        beamProjectile.handler = caller;
-        beamProjectile.from = caller.equipper;
-        beamProjectile.to = caller.equipper.targeted;
-        beamProjectile.Initialize ();
+        LaserProjectile laserProjectile = projectile.AddComponent<LaserProjectile> ();
+        laserProjectile.handler = caller;
+        laserProjectile.from = caller.equipper;
+        laserProjectile.to = caller.equipper.targeted;
+        laserProjectile.Initialize ();
     }
 
     public override bool CanFire (TurretHandler caller, GameObject target) {

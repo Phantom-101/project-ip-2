@@ -197,7 +197,7 @@ public class GameUIHandler : MonoBehaviour {
             hullUI.gameObject.SetActive (true);
             hullUI.sprite = source.profile.hullUI;
             hullUI.color = Mathf.Floor ((source.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && source.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
-                Color.white :
+                hullGradient.Evaluate (0) :
                 hullGradient.Evaluate (source.hull / source.profile.hull);
             // Shields
             for (int i = 0; i < 6; i++) shieldUI[i].gameObject.SetActive (true);
@@ -205,7 +205,7 @@ public class GameUIHandler : MonoBehaviour {
                 if (source.shield.online)
                     for (int i = 0; i < 6; i++)
                         shieldUI[i].color = Mathf.Floor ((source.shield.shieldTimesSinceLastDamaged[i] + flashOffset) / flashTime) % 2 == 1 && source.shield.shieldTimesSinceLastDamaged[i] < flashOffset + flashTime * 2 * flashes - flashTime ?
-                            Color.white :
+                            shieldGradient.Evaluate (0) :
                             shieldGradient.Evaluate (source.shield.strengths[i] / source.shield.shield.strength);
                 else
                     for (int i = 0; i < 6; i++) shieldUI[i].color = shieldGradient.Evaluate (0);
@@ -255,13 +255,13 @@ public class GameUIHandler : MonoBehaviour {
                 targetInformationPanel.SetActive (true);
                 targetHullUI.sprite = targetStructureBehaviour.profile.hullUI;
                 targetHullUI.color = Mathf.Floor ((targetStructureBehaviour.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
-                    Color.white :
+                    hullGradient.Evaluate (0) :
                     hullGradient.Evaluate (targetStructureBehaviour.hull / targetStructureBehaviour.profile.hull);
                 if (targetStructureBehaviour.shield.shield != null) {
                     if (targetStructureBehaviour.shield.online)
                         for (int i = 0; i < 6; i++)
                             targetShieldUI[i].color = Mathf.Floor ((targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] < flashOffset + flashTime * 2 * flashes - flashTime ?
-                                Color.white :
+                                shieldGradient.Evaluate (0) :
                                 shieldGradient.Evaluate (targetStructureBehaviour.shield.strengths[i] / targetStructureBehaviour.shield.shield.strength);
                     else for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
                 }

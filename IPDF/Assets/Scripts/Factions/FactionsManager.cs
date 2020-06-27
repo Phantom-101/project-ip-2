@@ -51,7 +51,18 @@ public class FactionsManager : MonoBehaviour {
         return true;
     }
 
+    public bool TransferWealth (int a, int b, long value) {
+        if (a == b) return true;
+        if (value < 0) return false;
+        if (GetFaction (a) == null || GetFaction (b) == null) return false;
+        if (GetFaction (a).wealth - value < 0) return false;
+        GetFaction (a).wealth -= value;
+        GetFaction (b).wealth += value;
+        return true;
+    }
+
     public float GetRelations (int a, int b) {
+        if (a == b) return 0;
         if (GetFaction (a) == null || GetFaction (b) == null) return 0;
         foreach (FactionRelation relation in GetFaction (a).relations)
             if (relation.id == b)
@@ -60,6 +71,7 @@ public class FactionsManager : MonoBehaviour {
     }
 
     public void SetRelations (int a, int b, float value) {
+        if (a == b) return;
         if (GetFaction (a) == null || GetFaction (b) == null) return;
         foreach (FactionRelation relation in GetFaction (a).relations)
             if (relation.id == b) {
@@ -70,6 +82,7 @@ public class FactionsManager : MonoBehaviour {
     }
 
     public void ChangeRelations (int a, int b, float change) {
+        if (a == b) return;
         if (GetFaction (a) == null || GetFaction (b) == null) return;
         foreach (FactionRelation relation in GetFaction (a).relations)
             if (relation.id == b) {
@@ -77,5 +90,53 @@ public class FactionsManager : MonoBehaviour {
                 return;
             }
         GetFaction (a).relations.Add (new FactionRelation (b, change));
+    }
+
+    public float GetWarThreshold (int id) {
+        Faction faction = GetFaction (id);
+        if (faction == null) return 0;
+        return faction.warThreshold;
+    }
+
+    public void SetWarThreshold (int id, float value) {
+        Faction faction = GetFaction (id);
+        if (faction == null) return;
+        faction.warThreshold = value;
+    }
+
+    public void ChangeWarThreshold (int id, float change) {
+        Faction faction = GetFaction (id);
+        if (faction == null) return;
+        faction.warThreshold += change;
+    }
+
+    public float GetAllyThreshold (int id) {
+        Faction faction = GetFaction (id);
+        if (faction == null) return 0;
+        return faction.allyThreshold;
+    }
+
+    public void SetAllyThreshold (int id, float value) {
+        Faction faction = GetFaction (id);
+        if (faction == null) return;
+        faction.allyThreshold = value;
+    }
+
+    public void ChangeAllyThreshold (int id, float change) {
+        Faction faction = GetFaction (id);
+        if (faction == null) return;
+        faction.allyThreshold += change;
+    }
+
+    public bool Hostile (int a, int b) {
+        if (a == b) return false;
+        if (GetFaction (a) == null || GetFaction (b) == null) return false;
+        return GetRelations (a, b) <= GetWarThreshold (a);
+    }
+
+    public bool Ally (int a, int b) {
+        if (a == b) return false;
+        if (GetFaction (a) == null || GetFaction (b) == null) return false;
+        return GetRelations (a, b) >= GetAllyThreshold (a);
     }
 }
