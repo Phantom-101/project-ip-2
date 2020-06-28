@@ -61,7 +61,8 @@ public class StructureBehaviours : MonoBehaviour {
         colliderGameObject.transform.parent = transform;
         MeshCollider meshCollider = colliderGameObject.AddComponent<MeshCollider> ();
         meshCollider.sharedMesh = (profile.collisionMesh == null ? profile.mesh : profile.collisionMesh);
-        if (profile.structureClass != StructureClass.Station) meshCollider.convex = true;
+        //if (profile.structureClass != StructureClass.Station)
+            meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
         renderer.material = profile.material;

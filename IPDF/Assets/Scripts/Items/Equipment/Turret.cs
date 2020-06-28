@@ -26,7 +26,6 @@ public class Turret : Equipment {
     public float rechargeRate;
     [Header ("Activation Requirements")]
     public float range;
-    public float activationThreshold;
     [Header ("Projectile Stats")]
     public float damage;
 
@@ -34,7 +33,11 @@ public class Turret : Equipment {
 
     public virtual void InitializeProjectile (TurretHandler caller, GameObject projectile) {}
 
-    public virtual bool CanFire (TurretHandler caller, GameObject target) {
+    public virtual bool CanActivate (TurretHandler caller, GameObject target) {
+        return false;
+    }
+
+    public virtual bool CanSustain (TurretHandler caller, GameObject target) {
         return false;
     }
 
@@ -62,7 +65,7 @@ public class TurretHandler {
     public GameObject target;
     public bool online;
     public bool activated;
-    public float cooldown;
+    public GameObject projectile;
     public float storedEnergy;
 
     public TurretHandler (Turret turret = null) {
@@ -119,7 +122,7 @@ public class TurretHandler {
             return;
         }
         if (turret != null) turret.AlterStats (this);
-        if (activated && !turret.CanFire (this, target)) Deactivate ();
+        if (activated && !turret.CanSustain (this, target)) Deactivate ();
     }
 
     public void Interacted (GameObject target) {
@@ -128,10 +131,10 @@ public class TurretHandler {
     }
 
     public void Activate (GameObject target) {
-        if (!activated && turret != null && turret.CanFire (this, target)) {
+        if (turret != null && turret.CanActivate (this, target)) {
             this.target = target;
             activated = true;
-            GameObject projectile = new GameObject (turret.name);
+            projectile = new GameObject (turret.name);
             turret.InitializeProjectile (this, projectile);
         }
     }
@@ -144,7 +147,6 @@ public class TurretHandler {
         if (turret == null) return false;
         if (equipper == null) return false;
         if (!turret.CanInteract (this, equipper.targeted == null ? null : equipper.targeted.gameObject)) return false;
-        if (!activated && storedEnergy / turret.maxStoredEnergy < turret.activationThreshold) return false;
         return true;
     }
 }
