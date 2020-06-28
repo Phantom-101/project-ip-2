@@ -81,8 +81,8 @@ public class EngineHandler {
             engine = null;
             return;
         }
-        target.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower / target.mass), ForceMode.Acceleration);
-        target.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower / target.mass, 0.0f), ForceMode.Acceleration);
+        target.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower * Time.deltaTime / target.mass), ForceMode.Acceleration);
+        target.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower * Time.deltaTime / target.mass, 0.0f), ForceMode.Acceleration);
         float targetZRot = -target.GetComponent<Rigidbody> ().angularVelocity.y * 10.0f;
         target.transform.localEulerAngles = new Vector3 (0.0f, target.transform.localEulerAngles.y, targetZRot);
     }

@@ -22,7 +22,7 @@ MonoBehaviour:
   rechargeRate: 20
   range: 144
   damage: 35
-  asset: {fileID: 8926484042661614526, guid: 834a75f134b8d0d41988c8c8a48970f0, type: 3}
+  asset: {fileID: 8926484042661614526, guid: 255ebd449d258c74ebd9b4b8645417fd, type: 3}
   beamGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.39215687, b: 0, a: 0}

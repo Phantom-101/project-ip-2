@@ -197,7 +197,7 @@ public class GameUIHandler : MonoBehaviour {
             hullUI.gameObject.SetActive (true);
             hullUI.sprite = source.profile.hullUI;
             hullUI.color = Mathf.Floor ((source.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && source.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
-                hullGradient.Evaluate (0) :
+                Color.white :
                 hullGradient.Evaluate (source.hull / source.profile.hull);
             // Shields
             for (int i = 0; i < 6; i++) shieldUI[i].gameObject.SetActive (true);
@@ -205,11 +205,10 @@ public class GameUIHandler : MonoBehaviour {
                 if (source.shield.online)
                     for (int i = 0; i < 6; i++)
                         shieldUI[i].color = Mathf.Floor ((source.shield.shieldTimesSinceLastDamaged[i] + flashOffset) / flashTime) % 2 == 1 && source.shield.shieldTimesSinceLastDamaged[i] < flashOffset + flashTime * 2 * flashes - flashTime ?
-                            shieldGradient.Evaluate (0) :
+                            Color.white :
                             shieldGradient.Evaluate (source.shield.strengths[i] / source.shield.shield.strength);
-                else
-                    for (int i = 0; i < 6; i++) shieldUI[i].color = shieldGradient.Evaluate (0);
-            }
+                else for (int i = 0; i < 6; i++) shieldUI[i].color = shieldGradient.Evaluate (0);
+            } else for (int i = 0; i < 6; i++) shieldUI[i].color = shieldGradient.Evaluate (0);
             // Capacitor
             capacitorBackground.SetActive (true);
             capacitorTransform.sizeDelta = new Vector2 (source.capacitor.capacitor == null ? 0.0f : source.capacitor.storedEnergy / source.capacitor.capacitor.capacitance * 150.0f, 20.0f);
@@ -241,9 +240,9 @@ public class GameUIHandler : MonoBehaviour {
             if (source.targeted == null) sourceTo.gameObject.SetActive (false);
             else {
                 sourceTo.gameObject.SetActive (true);
-                float rot = source.GetSector (source.targeted.transform.position) * 60.0f;
-                sourceTo.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 75.0f, Mathf.Cos (rot * Mathf.Deg2Rad) * 75.0f);
-                sourceTo.eulerAngles = new Vector3 (0.0f, 0.0f, -rot);
+                float rot = source.GetSector (source.targeted.transform.position) * 60;
+                sourceTo.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 75, Mathf.Cos (rot * Mathf.Deg2Rad) * 75);
+                sourceTo.eulerAngles = new Vector3 (0, 0, -rot);
             }
             // Speed counter
             speedCounter.gameObject.SetActive (true);
@@ -255,22 +254,22 @@ public class GameUIHandler : MonoBehaviour {
                 targetInformationPanel.SetActive (true);
                 targetHullUI.sprite = targetStructureBehaviour.profile.hullUI;
                 targetHullUI.color = Mathf.Floor ((targetStructureBehaviour.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
-                    hullGradient.Evaluate (0) :
+                    Color.white :
                     hullGradient.Evaluate (targetStructureBehaviour.hull / targetStructureBehaviour.profile.hull);
                 if (targetStructureBehaviour.shield.shield != null) {
                     if (targetStructureBehaviour.shield.online)
                         for (int i = 0; i < 6; i++)
                             targetShieldUI[i].color = Mathf.Floor ((targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.shield.shieldTimesSinceLastDamaged[i] < flashOffset + flashTime * 2 * flashes - flashTime ?
-                                shieldGradient.Evaluate (0) :
+                                Color.white :
                                 shieldGradient.Evaluate (targetStructureBehaviour.shield.strengths[i] / targetStructureBehaviour.shield.shield.strength);
-                    else for (int i = 0; i < 6; i++) targetShieldUI[i].color = Color.grey;
-                }
+                    else for (int i = 0; i < 6; i++) targetShieldUI[i].color = shieldGradient.Evaluate (0);
+                } else for (int i = 0; i < 6; i++) targetShieldUI[i].color = shieldGradient.Evaluate (0);
                 targetName.text = targetStructureBehaviour.gameObject.name;
                 targetFaction.text = factionsManager.GetFaction(targetStructureBehaviour.factionID).abbreviated;
                 targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
-                float rot = targetStructureBehaviour.GetSector (source.transform.position) * 60.0f;
-                toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55.0f, Mathf.Cos (rot * Mathf.Deg2Rad) * 55.0f);
-                toSource.eulerAngles = new Vector3 (0.0f, 0.0f, -rot);
+                float rot = targetStructureBehaviour.GetSector (source.transform.position) * 6;
+                toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55, Mathf.Cos (rot * Mathf.Deg2Rad) * 55);
+                toSource.eulerAngles = new Vector3 (0, 0, -rot);
             }
             // Equipment
             if (equipmentButtons.Count != source.turrets.Count + 2) {

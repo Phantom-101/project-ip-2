@@ -14,7 +14,8 @@ public class BeamLaserProjectile : Projectile {
         beam.visualEffectAsset = (turret as BeamLaserTurret).asset;
         beam.SetGradient ("gradient", (turret as BeamLaserTurret).beamGradient);
         beam.SetFloat ("size", (turret as BeamLaserTurret).beamWidth);
-        beam.SetFloat ("lifetime", 0.05f);
+        beam.SetFloat ("lifetime", 0.1f);
+        beam.SetFloat ("count", 20);
         transform.parent = from.transform.parent;
     }
 
@@ -29,7 +30,6 @@ public class BeamLaserProjectile : Projectile {
         if (Physics.Raycast (beamFrom, to.transform.position - beamFrom, out hit, turret.range)) {
             transform.localRotation = Quaternion.LookRotation (to.transform.position - beamFrom);
             beam.SetFloat ("forward", hit.distance);
-            beam.SetFloat ("count", hit.distance * 2000 / (turret as BeamLaserTurret).beamWidth);
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
                 hitStructure.TakeDamage (turret.damage * Time.deltaTime, beamFrom);
