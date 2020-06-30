@@ -25,6 +25,7 @@ public class StructureProfile : Item {
     [Header ("Stats")]
     public float hull;
     public float inventorySize;
+    public float authority;
     [Header ("Fitting")]
     public int maxEquipmentMeta;
     public int turretSlots;

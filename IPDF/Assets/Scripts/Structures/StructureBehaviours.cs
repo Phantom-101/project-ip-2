@@ -121,6 +121,13 @@ public class StructureBehaviours : MonoBehaviour {
             }
             structuresManager.RemoveStructure (this);
         }
+        if (transform.parent.GetComponent<Sector> ()) {
+            if (!transform.parent.GetComponent<Sector> ().inSector.Contains (this))
+                transform.parent.GetComponent<Sector> ().inSector.Add (this);
+        } else {
+            if (!transform.parent.parent.GetComponent<Sector> ().inSector.Contains (this))
+                transform.parent.parent.GetComponent<Sector> ().inSector.Add (this);
+        }
         if (playerController.structureBehaviours != this)
             if (AI == null)
                 AI = new StructureAI ();

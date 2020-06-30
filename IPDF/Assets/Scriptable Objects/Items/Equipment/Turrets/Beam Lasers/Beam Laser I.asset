@@ -52,6 +52,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  beamWidth: 0.5
+  beamWidth: 0.1
   depletionRate: 30
   activationThreshold: 0.4

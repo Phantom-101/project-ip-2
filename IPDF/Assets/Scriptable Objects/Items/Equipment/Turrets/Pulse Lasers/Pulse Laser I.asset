@@ -52,5 +52,5 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 3
-  beamWidth: 0.5
-  beamDuration: 0.5
+  beamWidth: 0.1
+  beamDuration: 0.6

@@ -30,6 +30,7 @@ public class GameUIHandler : MonoBehaviour {
     public StructuresManager structuresManager;
     public SavesHandler savesHandler;
     public new Camera camera;
+    public SettingsHandler settingsHandler;
     [Header ("UI Elements")]
     public Stack<string> activeUI = new Stack<string> ();
     public Canvas canvas;
@@ -110,6 +111,7 @@ public class GameUIHandler : MonoBehaviour {
         structuresManager = FindObjectOfType<StructuresManager> ();
         savesHandler = FindObjectOfType<SavesHandler> ();
         camera = FindObjectOfType<Camera> ();
+        settingsHandler = FindObjectOfType<SettingsHandler> ();
         if (activeUI.Count == 0) activeUI.Push ("Self");
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         billboards = canvas.transform.Find ("Billboards").gameObject;
@@ -190,6 +192,7 @@ public class GameUIHandler : MonoBehaviour {
     }
 
     void Update () {
+        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
         if (!initialized || source == null) return;
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         if (activeUI.Peek () == "Self" || activeUI.Peek () == "Station" || activeUI.Peek () == "Station Repair") {
@@ -385,7 +388,7 @@ public class GameUIHandler : MonoBehaviour {
                             RectTransform selectableRectTransform = selectableBillboard.GetComponent<RectTransform> ();
                             selectableRectTransform.anchoredPosition = new Vector2 (screenPosition.x / canvasScaler, screenPosition.y / canvasScaler);
                             float scaler = Mathf.Sqrt (Vector3.Distance (reference.transform.position, source.transform.position)) * 5;
-                            float size = Mathf.Clamp (250 - scaler, 50, 250);
+                            float size = Mathf.Clamp (250 - scaler, 50, 250) * 0.75f;
                             selectableRectTransform.sizeDelta = new Vector2 (size, size) * (reference == source.targeted ? 1.5f : 1);
                             selectableRectTransform.eulerAngles = reference == source.targeted ? new Vector3 (0, 0, selectableRectTransform.eulerAngles.z - 30 * Time.deltaTime) : Vector3.zero;
                         } else selectableBillboard.SetActive (false);

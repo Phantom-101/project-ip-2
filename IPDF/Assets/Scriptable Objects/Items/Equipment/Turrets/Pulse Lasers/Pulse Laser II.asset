@@ -25,8 +25,8 @@ MonoBehaviour:
   asset: {fileID: 8926484042661614526, guid: 255ebd449d258c74ebd9b4b8645417fd, type: 3}
   beamGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0.39215687, b: 0, a: 0}
-    key1: {r: 1, g: 0.39215687, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 0, a: 0}
+    key1: {r: 1, g: 1, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -52,5 +52,5 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 3
-  beamWidth: 1
-  beamDuration: 0.75
+  beamWidth: 0.2
+  beamDuration: 0.7

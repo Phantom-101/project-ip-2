@@ -15,7 +15,7 @@ public class BeamLaserProjectile : Projectile {
         beam.SetGradient ("gradient", (turret as BeamLaserTurret).beamGradient);
         beam.SetFloat ("size", (turret as BeamLaserTurret).beamWidth);
         beam.SetFloat ("lifetime", 0.1f);
-        beam.SetFloat ("count", 20);
+        beam.SetFloat ("count", 40);
         transform.parent = from.transform.parent;
     }
 

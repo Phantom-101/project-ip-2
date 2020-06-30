@@ -28,9 +28,13 @@ public class Teleporter : MonoBehaviour {
             if (structure != null &&
                 (transform.position - structure.transform.position).sqrMagnitude <= triggerRange * triggerRange &&
                 structure.profile.structureClass != StructureClass.Station) {
-                structure.transform.position = other.transform.position + other.transform.forward * forwardDistance * 2.0f;
+                structure.transform.position = other.transform.position + other.transform.forward * forwardDistance;
                 structure.transform.rotation = other.transform.rotation;
                 structure.targeted = null;
+                structure.transform.parent.GetComponent<Sector> ().inSector.Remove (structure);
+                foreach (Transform child in structure.transform)
+                    if (child.GetComponent<StructureBehaviours> ())
+                        structure.transform.parent.GetComponent<Sector> ().inSector.Remove (child.GetComponent<StructureBehaviours> ());
                 structure.transform.parent = other.transform.parent;
                 if (cameraFollowPlayer.playerStructure == structure) cameraFollowPlayer.ResetPosition ();
             }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class LoadUIHandler : MonoBehaviour {
     [Header ("Settings")]
     public string needToLoad = "";
+    public SettingsHandler settingsHandler;
     [Header ("Prefabs")]
     public GameObject saveItem;
     [Header ("UI Elements")]
@@ -16,6 +17,7 @@ public class LoadUIHandler : MonoBehaviour {
 
     void Awake () {
         DontDestroyOnLoad (gameObject);
+        settingsHandler = FindObjectOfType<SettingsHandler> ();
         if (!Directory.Exists (GetSavePath ())) Directory.CreateDirectory (GetSavePath ());
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         savesPanel = canvas.transform.Find ("Saves Selection/Outline/Panel/Viewport/Content").gameObject;
@@ -43,6 +45,7 @@ public class LoadUIHandler : MonoBehaviour {
     }
 
     void Update () {
+        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
         if (needToLoad != "") {
             SavesHandler savesHandler = FindObjectOfType<SavesHandler> ();
             if (savesHandler != null) {

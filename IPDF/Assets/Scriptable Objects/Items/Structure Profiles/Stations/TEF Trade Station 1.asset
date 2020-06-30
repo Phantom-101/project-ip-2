@@ -32,6 +32,7 @@ MonoBehaviour:
   description: 
   hull: 20000
   inventorySize: 10000
+  authority: 500
   maxEquipmentMeta: 0
   turretSlots: 0
   turretPositions: []
