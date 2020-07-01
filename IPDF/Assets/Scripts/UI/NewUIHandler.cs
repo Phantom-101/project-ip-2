@@ -25,6 +25,7 @@ public class NewUIHandler : MonoBehaviour {
         File.WriteAllText (GetTemplatePath ("Alpha Testing"), lolz);
         File.WriteAllText (GetTemplatePath ("Alpha Battle"), chaos);
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
+        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
         savesPanel = canvas.transform.Find ("Saves Selection/Outline/Panel/Viewport/Content").gameObject;
         FileInfo[] templates = new DirectoryInfo (Application.persistentDataPath + "/templates/").GetFiles ("*.txt").OrderBy (f => f.LastWriteTime).Reverse ().ToArray ();
         for (int i = 0; i < templates.Length; i++) {

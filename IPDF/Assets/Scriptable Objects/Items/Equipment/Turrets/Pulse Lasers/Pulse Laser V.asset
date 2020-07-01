@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11b7bce5bf4553b4982b99f09d76ed41, type: 3}
-  m_Name: Pulse Laser II
+  m_Name: Pulse Laser V
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
   basePrice: 0
   size: 0
-  meta: 2
+  meta: 5
   impactEffect: {fileID: 0}
   impactEffectSize: 0
-  maxStoredEnergy: 175
-  rechargeRate: 35
-  range: 144
-  damage: 35
+  maxStoredEnergy: 750
+  rechargeRate: 110
+  range: 600
+  damage: 125
   asset: {fileID: 8926484042661614526, guid: 255ebd449d258c74ebd9b4b8645417fd, type: 3}
   beamGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 0, a: 0}
-    key1: {r: 1, g: 1, b: 0, a: 1}
+    key0: {r: 0, g: 0, b: 1, a: 0}
+    key1: {r: 0, g: 0, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -52,5 +52,5 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 3
-  beamWidth: 0.2
-  beamDuration: 0.7
+  beamWidth: 0.5
+  beamDuration: 1

@@ -20,6 +20,11 @@ public class GameUIHandler : MonoBehaviour {
     public Gradient hullGradient;
     public Gradient shieldGradient;
     public Gradient energyGradient;
+    public Color playerFactionColor;
+    public Gradient positiveFactionRelationsGradient;
+    public Color alliedFactionColor;
+    public Gradient negativeFactionRelationsGradient;
+    public Color hostileFactionColor;
     [Header ("Settings")]
     public float flashTime = 0.3f;
     public float flashOffset = -0.1f;
@@ -114,6 +119,7 @@ public class GameUIHandler : MonoBehaviour {
         settingsHandler = FindObjectOfType<SettingsHandler> ();
         if (activeUI.Count == 0) activeUI.Push ("Self");
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
+        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
         billboards = canvas.transform.Find ("Billboards").gameObject;
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
@@ -391,6 +397,18 @@ public class GameUIHandler : MonoBehaviour {
                             float size = Mathf.Clamp (250 - scaler, 50, 250) * 0.75f;
                             selectableRectTransform.sizeDelta = new Vector2 (size, size) * (reference == source.targeted ? 1.5f : 1);
                             selectableRectTransform.eulerAngles = reference == source.targeted ? new Vector3 (0, 0, selectableRectTransform.eulerAngles.z - 30 * Time.deltaTime) : Vector3.zero;
+                            Image billboardImage = selectableBillboard.GetComponent<Image> ();
+                            if (reference.factionID == source.factionID) billboardImage.color = playerFactionColor;
+                            else {
+                                float relations = factionsManager.GetRelations (reference.factionID, source.factionID);
+                                if (relations > 0) {
+                                    if (factionsManager.Ally (reference.factionID, source.factionID)) billboardImage.color = alliedFactionColor;
+                                    else billboardImage.color = positiveFactionRelationsGradient.Evaluate (relations / factionsManager.GetAllyThreshold (reference.factionID));
+                                } else {
+                                    if (factionsManager.Hostile (reference.factionID, source.factionID)) billboardImage.color = hostileFactionColor;
+                                    else billboardImage.color = negativeFactionRelationsGradient.Evaluate (relations / factionsManager.GetHostileThreshold (reference.factionID));
+                                }
+                            }
                         } else selectableBillboard.SetActive (false);
                         referenced.Add (reference);
                     }

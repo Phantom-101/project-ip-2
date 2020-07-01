@@ -17,6 +17,7 @@ public class BeamLaserProjectile : Projectile {
         beam.SetFloat ("lifetime", 0.1f);
         beam.SetFloat ("count", 40);
         transform.parent = from.transform.parent;
+        factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
     }
 
     protected override void Process () {
@@ -33,7 +34,6 @@ public class BeamLaserProjectile : Projectile {
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
                 hitStructure.TakeDamage (turret.damage * Time.deltaTime, beamFrom);
-                factionsManager.ChangeRelations (hitStructure.factionID, from.factionID, -turret.damage * Time.deltaTime);
             }
         }
     }

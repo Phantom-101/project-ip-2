@@ -14,7 +14,7 @@ public class StructureAI {
                 float distance = Vector3.Distance (structureBehaviours.transform.position, structure.transform.position);
                 float weight = distance;
                 if (structure != structureBehaviours && structure.factionID != structureBehaviours.factionID &&
-                    structureBehaviours.factionsManager.GetRelations (structureBehaviours.factionID, structure.factionID) <= -0.5f && !structure.cloaked && weight < leastWeight &&
+                    structureBehaviours.factionsManager.Hostile (structureBehaviours.factionID, structure.factionID) && !structure.cloaked && weight < leastWeight &&
                     structure.transform.parent == structureBehaviours.transform.parent) {
                     leastWeight = weight;
                     closest = structure;

@@ -92,19 +92,19 @@ public class FactionsManager : MonoBehaviour {
         GetFaction (a).relations.Add (new FactionRelation (b, change));
     }
 
-    public float GetWarThreshold (int id) {
+    public float GetHostileThreshold (int id) {
         Faction faction = GetFaction (id);
         if (faction == null) return 0;
         return faction.warThreshold;
     }
 
-    public void SetWarThreshold (int id, float value) {
+    public void SetHostileThreshold (int id, float value) {
         Faction faction = GetFaction (id);
         if (faction == null) return;
         faction.warThreshold = value;
     }
 
-    public void ChangeWarThreshold (int id, float change) {
+    public void ChangeHostileThreshold (int id, float change) {
         Faction faction = GetFaction (id);
         if (faction == null) return;
         faction.warThreshold += change;
@@ -131,12 +131,19 @@ public class FactionsManager : MonoBehaviour {
     public bool Hostile (int a, int b) {
         if (a == b) return false;
         if (GetFaction (a) == null || GetFaction (b) == null) return false;
-        return GetRelations (a, b) <= GetWarThreshold (a);
+        return GetRelations (a, b) <= GetHostileThreshold (a);
     }
 
     public bool Ally (int a, int b) {
         if (a == b) return false;
         if (GetFaction (a) == null || GetFaction (b) == null) return false;
         return GetRelations (a, b) >= GetAllyThreshold (a);
+    }
+
+    public void ChangeRelationsWithAcquiredModification (int a, int b, float change) {
+        foreach (Faction faction in factions) {
+            if (faction.id == a) ChangeRelations (a, b, change);
+            else if (faction.id != b) ChangeRelations (faction.id, b, change / 2);
+        }
     }
 }

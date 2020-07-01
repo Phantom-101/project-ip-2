@@ -20,6 +20,7 @@ public class LoadUIHandler : MonoBehaviour {
         settingsHandler = FindObjectOfType<SettingsHandler> ();
         if (!Directory.Exists (GetSavePath ())) Directory.CreateDirectory (GetSavePath ());
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
+        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
         savesPanel = canvas.transform.Find ("Saves Selection/Outline/Panel/Viewport/Content").gameObject;
         FileInfo[] saves = new DirectoryInfo (Application.persistentDataPath + "/saves/").GetFiles ("*.txt").OrderBy (f => f.LastWriteTime).Reverse ().ToArray ();
         for (int i = 0; i < saves.Length; i++) {

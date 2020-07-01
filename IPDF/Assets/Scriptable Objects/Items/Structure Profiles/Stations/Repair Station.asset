@@ -55,6 +55,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
   - {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
   - {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
+  - {fileID: 11400000, guid: e15eae11d69c7ca448b2bc57c68db7eb, type: 2}
+  - {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+  - {fileID: 11400000, guid: 9efe6c1c009311e4fbfd8f749d4975ec, type: 2}
+  - {fileID: 11400000, guid: 5edb9280577256f4eb1a819f2b486368, type: 2}
+  - {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
   repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 1000

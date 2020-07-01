@@ -16,6 +16,7 @@ public class SettingsUIHandler : MonoBehaviour {
     void Awake () {
         settingsHandler = FindObjectOfType<SettingsHandler> ();
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
+        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
         graphicsLevelDropdown = canvas.transform.Find ("Graphics Level Dropdown").GetComponent<Dropdown> ();
         uiScaleSlider = canvas.transform.Find ("UI Scaling Slider").GetComponent<Slider> ();
         uiScale = canvas.transform.Find ("Current UI Scale").GetComponent<Text> ();

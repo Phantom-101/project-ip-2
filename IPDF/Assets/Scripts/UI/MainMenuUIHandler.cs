@@ -10,6 +10,7 @@ public class MainMenuUIHandler : MonoBehaviour {
     void Awake () {
         settingsHandler = FindObjectOfType<SettingsHandler> ();
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
+        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
     }
 
     void Update () {

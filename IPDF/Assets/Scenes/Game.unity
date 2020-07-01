@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15208137, g: 0.06523386, b: 0.026425164, a: 1}
+  m_IndirectSpecularColor: {r: 0.1448611, g: 0.06276264, b: 0.034241095, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15535,6 +15535,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce3784af2900be54eb8438b92ddf3eb0, type: 2}
   - {fileID: 11400000, guid: e15eae11d69c7ca448b2bc57c68db7eb, type: 2}
   - {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+  - {fileID: 11400000, guid: 9efe6c1c009311e4fbfd8f749d4975ec, type: 2}
+  - {fileID: 11400000, guid: 5edb9280577256f4eb1a819f2b486368, type: 2}
+  - {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
   - {fileID: 11400000, guid: dd0c4a5164126d046818466df5e0af59, type: 2}
   - {fileID: 11400000, guid: 8315f35462a05d044a3a31e2a88ea133, type: 2}
   - {fileID: 11400000, guid: 98b41d6d085d1fd42b50bc3fadd76957, type: 2}
@@ -21132,6 +21135,67 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
+  playerFactionColor: {r: 0, g: 1, b: 1, a: 1}
+  positiveFactionRelationsGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 0, g: 1, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  alliedFactionColor: {r: 0, g: 0, b: 1, a: 1}
+  negativeFactionRelationsGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  hostileFactionColor: {r: 1, g: 0, b: 0, a: 1}
   flashTime: 0.3
   flashOffset: -0.1
   flashes: 5
@@ -21140,6 +21204,7 @@ MonoBehaviour:
   structuresManager: {fileID: 0}
   savesHandler: {fileID: 0}
   camera: {fileID: 0}
+  settingsHandler: {fileID: 0}
   canvas: {fileID: 0}
   billboards: {fileID: 0}
   hullUI: {fileID: 0}

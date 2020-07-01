@@ -26,10 +26,10 @@ public class PulseLaserProjectile : Projectile {
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
                 hitStructure.TakeDamage (turret.damage, beamFrom);
-                factionsManager.ChangeRelations (hitStructure.factionID, from.factionID, -turret.damage);
                 Disable ();
             }
         }
+        factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
     }
 
     protected override void Disable () {
