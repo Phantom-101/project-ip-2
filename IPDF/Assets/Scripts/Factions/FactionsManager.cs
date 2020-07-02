@@ -62,7 +62,7 @@ public class FactionsManager : MonoBehaviour {
     }
 
     public float GetRelations (int a, int b) {
-        if (a == b) return 0;
+        if (a == b) return GetAllyThreshold (a);
         if (GetFaction (a) == null || GetFaction (b) == null) return 0;
         foreach (FactionRelation relation in GetFaction (a).relations)
             if (relation.id == b)
@@ -135,7 +135,7 @@ public class FactionsManager : MonoBehaviour {
     }
 
     public bool Ally (int a, int b) {
-        if (a == b) return false;
+        if (a == b) return true;
         if (GetFaction (a) == null || GetFaction (b) == null) return false;
         return GetRelations (a, b) >= GetAllyThreshold (a);
     }
@@ -143,7 +143,10 @@ public class FactionsManager : MonoBehaviour {
     public void ChangeRelationsWithAcquiredModification (int a, int b, float change) {
         foreach (Faction faction in factions) {
             if (faction.id == a) ChangeRelations (a, b, change);
-            else if (faction.id != b) ChangeRelations (faction.id, b, change / 2);
+            else if (faction.id != b) {
+                if (GetRelations (faction.id, a) > 0) ChangeRelations (faction.id, b, change / 2);
+                else if (GetRelations (faction.id, a) < 0) ChangeRelations (faction.id, b, -change / 2);
+            }
         }
     }
 }

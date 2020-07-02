@@ -5,17 +5,13 @@ using UnityEngine.VFX;
 
 public class BeamLaserProjectile : Projectile {
     [Header ("Components")]
-    public VisualEffect beam;
+    public GameObject beam;
 
     public override void Initialize () {
         base.Initialize ();
         turret = handler.turret;
-        beam = gameObject.AddComponent<VisualEffect> ();
-        beam.visualEffectAsset = (turret as BeamLaserTurret).asset;
-        beam.SetGradient ("gradient", (turret as BeamLaserTurret).beamGradient);
-        beam.SetFloat ("size", (turret as BeamLaserTurret).beamWidth);
-        beam.SetFloat ("lifetime", 0.1f);
-        beam.SetFloat ("count", 40);
+        beam = Instantiate ((turret as BeamLaserTurret).asset, transform) as GameObject;
+        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamLaserTurret).beamColor;
         transform.parent = from.transform.parent;
         factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
     }
@@ -25,12 +21,12 @@ public class BeamLaserProjectile : Projectile {
         if (!handler.activated) { Disable (); return; }
         if (from == null || to == null) { Disable (); return; }
         if (!turret.CanSustain (handler, to.gameObject)) { Disable (); return; }
-        Vector3 beamFrom = from.transform.position + from.transform.rotation * handler.position;
+        Vector3 beamFrom = from.transform.localPosition + from.transform.rotation * handler.position;
         transform.localPosition = beamFrom;
         RaycastHit hit;
-        if (Physics.Raycast (beamFrom, to.transform.position - beamFrom, out hit, turret.range)) {
-            transform.localRotation = Quaternion.LookRotation (to.transform.position - beamFrom);
-            beam.SetFloat ("forward", hit.distance);
+        if (Physics.Raycast (beamFrom, to.transform.localPosition - beamFrom, out hit, turret.range)) {
+            transform.localRotation = Quaternion.LookRotation (to.transform.localPosition - beamFrom);
+            beam.transform.localScale = new Vector3 ((turret as BeamLaserTurret).beamWidth, (turret as BeamLaserTurret).beamWidth, hit.distance);
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
                 hitStructure.TakeDamage (turret.damage * Time.deltaTime, beamFrom);

@@ -8,8 +8,8 @@ using Essentials;
 [CreateAssetMenu (fileName = "New Beam Laser Turret", menuName = "Equipment/Turrets/Beam Laser Turret")]
 public class BeamLaserTurret : Turret {
     [Header ("Appearance")]
-    public VisualEffectAsset asset;
-    public Gradient beamGradient;
+    public GameObject asset;
+    public Color beamColor;
     public float beamWidth;
     [Header ("Turret Stats")]
     public float depletionRate;
