@@ -39,6 +39,7 @@ public class GameUIHandler : MonoBehaviour {
     [Header ("UI Elements")]
     public Stack<string> activeUI = new Stack<string> ();
     public Canvas canvas;
+    public CanvasScaler canvasScaler;
     public GameObject billboards;
     public Image hullUI;
     public Image[] shieldUI = new Image[6];
@@ -117,9 +118,9 @@ public class GameUIHandler : MonoBehaviour {
         savesHandler = FindObjectOfType<SavesHandler> ();
         camera = FindObjectOfType<Camera> ();
         settingsHandler = FindObjectOfType<SettingsHandler> ();
-        if (activeUI.Count == 0) activeUI.Push ("Self");
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
-        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
+        canvasScaler = canvas.GetComponent<CanvasScaler> ();
+        canvasScaler.scaleFactor = settingsHandler.settings.UIScale;
         billboards = canvas.transform.Find ("Billboards").gameObject;
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
@@ -138,9 +139,9 @@ public class GameUIHandler : MonoBehaviour {
         capacitorTransform = capacitorBackground.transform.Find ("Capacitor").GetComponent<RectTransform> ();
         AIInfo = canvas.transform.Find ("AI Indicators").gameObject;
         dockButton = canvas.transform.Find ("Dock Button").GetComponent<Button> ();
-        ButtonFunction (() => { activeUI.Pop (); activeUI.Push ("Station"); playerController.Dock (); }, dockButton);
+        ButtonFunction (() => { ChangeScreen ("Station"); playerController.Dock (); }, dockButton);
         undockButton = canvas.transform.Find ("Undock Button").GetComponent<Button> ();
-        ButtonFunction (() => { activeUI.Pop (); activeUI.Push ("Self"); playerController.Undock (); }, undockButton);
+        ButtonFunction (() => { ChangeScreen ("Self"); playerController.Undock (); }, undockButton);
         stationPanel = canvas.transform.Find ("Station Panel").gameObject;
         stationMarket = stationPanel.transform.Find ("Market").GetComponent<Button> ();
         stationRepair = stationPanel.transform.Find ("Repair").GetComponent<Button> ();
@@ -194,11 +195,12 @@ public class GameUIHandler : MonoBehaviour {
         ButtonFunction (() => { RemoveOverlay (); RepairShip (); }, repairConfirmButton);
         repairCancelButton = repairPanel.transform.Find ("Outline/Panel/Cancel Button").GetComponent<Button> ();
         ButtonFunction (() => RemoveOverlay (), repairCancelButton);
+        activeUI.Push ("Self");
+        UpdateCanvas ();
         initialized = true;
     }
 
-    void Update () {
-        if (canvas != null) canvas.GetComponent<CanvasScaler> ().scaleFactor = settingsHandler.settings.UIScale;
+    public void TickCanvas () {
         if (!initialized || source == null) return;
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         if (activeUI.Peek () == "Self" || activeUI.Peek () == "Station" || activeUI.Peek () == "Station Repair") {
@@ -239,12 +241,6 @@ public class GameUIHandler : MonoBehaviour {
         if (stationStructureBehaviours == null) undockButton.gameObject.SetActive (false);
         else undockButton.gameObject.SetActive (true);
         if (activeUI.Peek () == "Self") {
-            // Control
-            playerController.forwardPowerSlider.gameObject.SetActive (true);
-            playerController.turnLeftButton.gameObject.SetActive (true);
-            playerController.turnRightButton.gameObject.SetActive (true);
-            playerController.dampenerSlider.gameObject.SetActive (true);
-            lockCameraButton.gameObject.SetActive (true);
             // Angle arrow
             if (source.targeted == null) sourceTo.gameObject.SetActive (false);
             else {
@@ -432,6 +428,18 @@ public class GameUIHandler : MonoBehaviour {
                     ButtonFunction (() => source.targeted = source.targeted == structure ? null : structure, billboardButton);
                 }
             }
+        }
+    }
+
+    void UpdateCanvas () {
+        if (!initialized || source == null) return;
+        if (activeUI.Peek () == "Self") {
+            // Control
+            playerController.forwardPowerSlider.gameObject.SetActive (true);
+            playerController.turnLeftButton.gameObject.SetActive (true);
+            playerController.turnRightButton.gameObject.SetActive (true);
+            playerController.dampenerSlider.gameObject.SetActive (true);
+            lockCameraButton.gameObject.SetActive (true);
         } else {
             playerController.forwardPowerSlider.gameObject.SetActive (false);
             playerController.turnLeftButton.gameObject.SetActive (false);
@@ -752,9 +760,17 @@ public class GameUIHandler : MonoBehaviour {
 
     public void AddOverlay (string target) {
         activeUI.Push (target);
+        UpdateCanvas ();
     }
 
     public void RemoveOverlay () {
         activeUI.Pop ();
+        UpdateCanvas ();
+    }
+
+    public void ChangeScreen (string target) {
+        activeUI.Pop ();
+        activeUI.Push (target);
+        UpdateCanvas ();
     }
 }

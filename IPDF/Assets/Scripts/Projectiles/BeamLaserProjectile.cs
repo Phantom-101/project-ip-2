@@ -11,12 +11,12 @@ public class BeamLaserProjectile : Projectile {
         base.Initialize ();
         turret = handler.turret;
         beam = Instantiate ((turret as BeamLaserTurret).asset, transform) as GameObject;
-        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamLaserTurret).beamColor;
+        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamLaserTurret).beamColor;
         transform.parent = from.transform.parent;
         factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
     }
 
-    protected override void Process () {
+    protected override void Process (float deltaTime) {
         if (turret != handler.turret) { Disable (); return; }
         if (!handler.activated) { Disable (); return; }
         if (from == null || to == null) { Disable (); return; }
@@ -29,7 +29,7 @@ public class BeamLaserProjectile : Projectile {
             beam.transform.localScale = new Vector3 ((turret as BeamLaserTurret).beamWidth, (turret as BeamLaserTurret).beamWidth, hit.distance);
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
-                hitStructure.TakeDamage (turret.damage * Time.deltaTime, beamFrom);
+                hitStructure.TakeDamage (turret.damage * deltaTime, beamFrom);
             }
         }
     }

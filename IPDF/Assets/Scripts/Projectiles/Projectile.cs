@@ -12,18 +12,21 @@ public class Projectile : MonoBehaviour {
     public bool disabled;
     [Header ("Components")]
     public FactionsManager factionsManager;
+    public Ticker ticker;
 
     public virtual void Initialize () {
         factionsManager = FindObjectOfType<FactionsManager> ();
+        ticker = FindObjectOfType<Ticker> ();
+        ticker.projectiles.Add (this);
         initialized = true;
     }
 
-    void Update () {
+    public void Tick (float deltaTime) {
         if (!initialized || disabled) return;
-        Process ();
+        Process (deltaTime);
     }
 
-    protected virtual void Process () {}
+    protected virtual void Process (float deltaTime) {}
 
     protected virtual void Disable () {
         disabled = true;

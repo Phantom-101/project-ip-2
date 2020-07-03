@@ -52,31 +52,31 @@ public class CapacitorHandler {
         storedEnergy = MathUtils.Clamp (storedEnergy + available, 0.0f, capacitor.capacitance);
     }
 
-    public void DistributeEnergy (List<TurretHandler> turrets, ShieldHandler shield, ElectronicsHandler electronics, TractorBeamHandler tractorBeam) {
+    public void DistributeEnergy (float deltaTime, List<TurretHandler> turrets, ShieldHandler shield, ElectronicsHandler electronics, TractorBeamHandler tractorBeam) {
         if (capacitor == null) return;
         if (capacitor.meta > equipper.profile.maxEquipmentMeta) {
             capacitor = null;
             return;
         }
-        DistributeToTurrets (turrets);
-        DistributeToShield (shield);
-        DistributeToElectronics (electronics);
-        DistributeToTractorBeam (tractorBeam);
+        DistributeToTurrets (deltaTime, turrets);
+        DistributeToShield (deltaTime, shield);
+        DistributeToElectronics (deltaTime, electronics);
+        DistributeToTractorBeam (deltaTime, tractorBeam);
     }
 
-    public void DistributeToTurrets (List<TurretHandler> turrets) {
-        foreach (TurretHandler turret in turrets) storedEnergy = turret.TransferEnergy (storedEnergy);
+    public void DistributeToTurrets (float deltaTime, List<TurretHandler> turrets) {
+        foreach (TurretHandler turret in turrets) storedEnergy = turret.TransferEnergy (deltaTime, storedEnergy);
     }
 
-    public void DistributeToShield (ShieldHandler shield) {
-        storedEnergy = shield.TransferEnergy (storedEnergy);
+    public void DistributeToShield (float deltaTime, ShieldHandler shield) {
+        storedEnergy = shield.TransferEnergy (deltaTime, storedEnergy);
     }
 
-    public void DistributeToElectronics (ElectronicsHandler electronics) {
-        storedEnergy = electronics.TransferEnergy (storedEnergy);
+    public void DistributeToElectronics (float deltaTime, ElectronicsHandler electronics) {
+        storedEnergy = electronics.TransferEnergy (deltaTime, storedEnergy);
     }
 
-    public void DistributeToTractorBeam (TractorBeamHandler tractorBeam) {
-        storedEnergy = tractorBeam.TransferEnergy (storedEnergy);
+    public void DistributeToTractorBeam (float deltaTime, TractorBeamHandler tractorBeam) {
+        storedEnergy = tractorBeam.TransferEnergy (deltaTime, storedEnergy);
     }
 }

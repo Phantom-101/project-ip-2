@@ -61,9 +61,9 @@ public class TractorBeamHandler {
         this.target = tractorBeamHandler.target;
     }
 
-    public float TransferEnergy (float available) {
+    public float TransferEnergy (float deltaTime, float available) {
         if (!online) return available;
-        float transferred = MathUtils.Clamp (MathUtils.Clamp (tractorBeam.rechargeRate * Time.deltaTime, 0.0f, tractorBeam.maxStoredEnergy - storedEnergy), 0.0f, available);
+        float transferred = MathUtils.Clamp (MathUtils.Clamp (tractorBeam.rechargeRate * deltaTime, 0.0f, tractorBeam.maxStoredEnergy - storedEnergy), 0.0f, available);
         storedEnergy += transferred;
         return available - transferred;
     }
@@ -95,7 +95,7 @@ public class TractorBeamHandler {
         target = null;
     }
 
-    public void Process (GameObject processor) {
+    public void Process (float deltaTime, GameObject processor) {
         if (!online) return;
         if (target == null) {
             Deactivate ();
@@ -109,7 +109,7 @@ public class TractorBeamHandler {
         minSqrMagnitude *= minSqrMagnitude;
         if ((processor.transform.position - target.transform.position).sqrMagnitude <= minSqrMagnitude) Deactivate ();
         if (activated) {
-            storedEnergy = MathUtils.Clamp (storedEnergy - tractorBeam.consumptionRate * Time.deltaTime, 0.0f, tractorBeam.maxStoredEnergy);
+            storedEnergy = MathUtils.Clamp (storedEnergy - tractorBeam.consumptionRate * deltaTime, 0.0f, tractorBeam.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();
             else target.GetComponent<Rigidbody> ().AddForce ((processor.transform.position - target.transform.position).normalized * tractorBeam.power / target.GetComponent<Rigidbody> ().mass, ForceMode.Acceleration);
         }

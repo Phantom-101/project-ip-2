@@ -51,12 +51,12 @@ public class GeneratorHandler {
         online = target;
     }
 
-    public void GenerateEnergy (CapacitorHandler capacitor) {
+    public void GenerateEnergy (float deltaTime, CapacitorHandler capacitor) {
         if (!online || generator == null) return;
         if (generator.meta > equipper.profile.maxEquipmentMeta) {
             generator = null;
             return;
         }
-        capacitor.Recharge (generator.generation * Time.deltaTime);
+        capacitor.Recharge (generator.generation * deltaTime);
     }
 }

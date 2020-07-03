@@ -111,7 +111,7 @@ public class StructureBehaviours : MonoBehaviour {
         initialized = true;
     }
 
-    void Update () {
+    public void Tick (float deltaTime) {
         if (!initialized) return;
         // Check if should be destroyed
         if (hull == 0.0f) {
@@ -142,7 +142,7 @@ public class StructureBehaviours : MonoBehaviour {
         rigidbody.angularVelocity = new Vector3 (0.0f, rigidbody.angularVelocity.y, rigidbody.angularVelocity.z);
         // Hull damage timer
         if (hullTimeSinceLastDamaged > 1.5f) hullTimeSinceLastDamaged = 0.0f;
-        else if (hullTimeSinceLastDamaged >= 0.3f) hullTimeSinceLastDamaged += Time.deltaTime;
+        else if (hullTimeSinceLastDamaged >= 0.3f) hullTimeSinceLastDamaged += deltaTime;
         // Equipment
         if (turrets.Count != profile.turretSlots) turrets = new List<TurretHandler> (profile.turretSlots);
         for (int i = 0; i < profile.turretSlots; i++) {
@@ -150,24 +150,24 @@ public class StructureBehaviours : MonoBehaviour {
             turrets[i].position = profile.turretPositions[i];
             turrets[i].rotation = profile.turretRotations[i];
             turrets[i].angle = profile.turretAngles[i];
-            turrets[i].Process ();
+            turrets[i].Process (deltaTime);
         }
         shield.equipper = this;
-        shield.Process ();
+        shield.Process (deltaTime);
         generator.equipper = this;
-        generator.GenerateEnergy (capacitor);
+        generator.GenerateEnergy (deltaTime, capacitor);
         capacitor.equipper = this;
-        capacitor.DistributeEnergy (turrets, shield, electronics, tractorBeam);
+        capacitor.DistributeEnergy (deltaTime, turrets, shield, electronics, tractorBeam);
         if (transform.parent.GetComponent<StructureBehaviours> ()) {
             engine.forwardSetting = 0.0f;
             engine.turnSetting = 0.0f;
         }
         engine.equipper = this;
-        engine.ApplySettings (rigidbody);
+        engine.ApplySettings (deltaTime, rigidbody);
         electronics.equipper = this;
-        electronics.Process (gameObject);
+        electronics.Process (deltaTime, gameObject);
         tractorBeam.equipper = this;
-        tractorBeam.Process (gameObject);
+        tractorBeam.Process (deltaTime, gameObject);
         // Production
         inventory.storage = this;
         if (factories.Count != profile.factories.Length) factories = new List<FactoryHandler> (profile.factories.Length);

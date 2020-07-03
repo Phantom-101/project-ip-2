@@ -72,9 +72,9 @@ public class ElectronicsHandler {
         if (!online) Deactivate();
     }
 
-    public float TransferEnergy (float available) {
+    public float TransferEnergy (float deltaTime, float available) {
         if (!online || electronics == null) return available;
-        float transferred = MathUtils.Clamp (MathUtils.Clamp (electronics.rechargeRate * Time.deltaTime, 0.0f, electronics.maxStoredEnergy - storedEnergy), 0.0f, available);
+        float transferred = MathUtils.Clamp (MathUtils.Clamp (electronics.rechargeRate * deltaTime, 0.0f, electronics.maxStoredEnergy - storedEnergy), 0.0f, available);
         storedEnergy += transferred;
         return available - transferred;
     }
@@ -91,15 +91,15 @@ public class ElectronicsHandler {
         timeSinceToggled = 0.0f;
     }
 
-    public void Process (GameObject processor) {
+    public void Process (float deltaTime, GameObject processor) {
         if (!online) return;
         if (electronics.meta > equipper.profile.maxEquipmentMeta) {
             electronics = null;
             return;
         }
-        timeSinceToggled += Time.deltaTime;
+        timeSinceToggled += deltaTime;
         if (activated) {
-            storedEnergy = MathUtils.Clamp (storedEnergy - electronics.consumptionRate * Time.deltaTime, 0.0f, electronics.maxStoredEnergy);
+            storedEnergy = MathUtils.Clamp (storedEnergy - electronics.consumptionRate * deltaTime, 0.0f, electronics.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();
             else if (timeSinceToggled >= electronics.cloakTime) processor.GetComponent<StructureBehaviours> ().cloaked = false;
         } else if (timeSinceToggled >= electronics.cloakTime) processor.GetComponent<StructureBehaviours> ().cloaked = true;

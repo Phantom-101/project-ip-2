@@ -75,15 +75,15 @@ public class EngineHandler {
         turnSetting = target;
     }
 
-    public void ApplySettings (Rigidbody target) {
+    public void ApplySettings (float deltaTime, Rigidbody target) {
         if (!online || engine == null) return;
         if (engine.meta > equipper.profile.maxEquipmentMeta) {
             engine = null;
             return;
         }
-        target.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower * Time.deltaTime / target.mass), ForceMode.Acceleration);
-        target.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower * Time.deltaTime / target.mass, 0.0f), ForceMode.Acceleration);
-        float targetZRot = -target.GetComponent<Rigidbody> ().angularVelocity.y * 10.0f;
+        target.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower * deltaTime / target.mass), ForceMode.Acceleration);
+        target.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower * deltaTime / target.mass, 0), ForceMode.Acceleration);
+        float targetZRot = -target.GetComponent<Rigidbody> ().angularVelocity.y * 10;
         target.transform.localEulerAngles = new Vector3 (0.0f, target.transform.localEulerAngles.y, targetZRot);
     }
 }

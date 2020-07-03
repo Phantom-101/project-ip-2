@@ -4,7 +4,11 @@ using UnityEngine;
 using Essentials;
 
 public class StructureAI {
+    public float lastUpdated;
+
     public virtual void Process (StructureBehaviours structureBehaviours) {
+        lastUpdated += Time.deltaTime;
+        if (lastUpdated < 1) return;
         StructureBehaviours closest = null;
         float leastWeight = float.MaxValue;
         foreach (StructureBehaviours structure in structureBehaviours.structuresManager.structures) {

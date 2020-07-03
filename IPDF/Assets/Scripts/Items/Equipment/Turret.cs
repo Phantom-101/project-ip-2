@@ -107,15 +107,15 @@ public class TurretHandler {
         return false;
     }
 
-    public float TransferEnergy (float available) {
+    public float TransferEnergy (float deltaTime, float available) {
         if (!online) return available;
         if (turret == null) return available;
-        float transferred = MathUtils.Clamp (MathUtils.Clamp (turret.rechargeRate * Time.deltaTime, 0.0f, turret.maxStoredEnergy - storedEnergy), 0.0f, available);
+        float transferred = MathUtils.Clamp (MathUtils.Clamp (turret.rechargeRate * deltaTime, 0.0f, turret.maxStoredEnergy - storedEnergy), 0.0f, available);
         storedEnergy += transferred;
         return available - transferred;
     }
 
-    public void Process () {
+    public void Process (float deltaTime) {
         if (turret == null) return;
         if (turret.meta > equipper.profile.maxEquipmentMeta) {
             turret = null;

@@ -69,10 +69,10 @@ public class ShieldHandler {
         }
     }
 
-    public float TransferEnergy (float available) {
+    public float TransferEnergy (float deltaTime, float available) {
         if (!online || shield == null) return available;
         for (int i = 0; i < strengths.Length; i++) {
-            float transferred = MathUtils.Clamp (MathUtils.Clamp (shield.rechargeRate * shield.shieldRechargeEfficiency * Time.deltaTime, 0.0f, shield.strength - strengths[i]), 0.0f, available);
+            float transferred = MathUtils.Clamp (MathUtils.Clamp (shield.rechargeRate * shield.shieldRechargeEfficiency * deltaTime, 0.0f, shield.strength - strengths[i]), 0.0f, available);
             strengths[i] += transferred * shield.shieldRechargeEfficiency;
         }
         return available;
@@ -93,7 +93,7 @@ public class ShieldHandler {
         }
     }
 
-    public void Process () {
+    public void Process (float deltaTime) {
         if (!online || shield == null) {
             strengths = new float[6];
             shieldTimesSinceLastDamaged = new float[6];
@@ -110,7 +110,7 @@ public class ShieldHandler {
                 strengths[i] = shield.strength;
         for (int i = 0; i < shieldTimesSinceLastDamaged.Length; i++) {
             if (shieldTimesSinceLastDamaged[i] > 1.5f) shieldTimesSinceLastDamaged[i] = 0.0f;
-            else if (shieldTimesSinceLastDamaged[i] >= 0.3f) shieldTimesSinceLastDamaged[i] += Time.deltaTime;
+            else if (shieldTimesSinceLastDamaged[i] >= 0.3f) shieldTimesSinceLastDamaged[i] += deltaTime;
         }
     }
 }
