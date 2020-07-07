@@ -25,13 +25,13 @@ public class PulseLaserProjectile : Projectile {
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
                 hitStructure.TakeDamage (turret.damage, beamFrom);
-                Disable ();
             }
         }
         factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
     }
 
-    protected override void Process (float deltaTime) {
+    public override void Process (float deltaTime) {
+        if (!initialized || disabled) return;
         lifetime += deltaTime;
         for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = new Color (
             (turret as PulseLaserTurret).beamColor.r,
@@ -39,10 +39,11 @@ public class PulseLaserProjectile : Projectile {
             (turret as PulseLaserTurret).beamColor.b,
             (turret as PulseLaserTurret).beamColor.a * ((turret as PulseLaserTurret).beamDuration - lifetime) / (turret as PulseLaserTurret).beamDuration
         );
+        if (lifetime > (turret as PulseLaserTurret).beamDuration) Disable ();
     }
 
     protected override void Disable () {
-        Destroy (gameObject, (turret as PulseLaserTurret).beamDuration);
+        Destroy (gameObject);
         base.Disable ();
     }
 }

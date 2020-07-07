@@ -37,7 +37,7 @@ public class GameUIHandler : MonoBehaviour {
     public new Camera camera;
     public SettingsHandler settingsHandler;
     [Header ("UI Elements")]
-    public Stack<string> activeUI = new Stack<string> ();
+    public Stack<GameUIState> activeUI = new Stack<GameUIState> ();
     public Canvas canvas;
     public CanvasScaler canvasScaler;
     public GameObject billboards;
@@ -139,9 +139,9 @@ public class GameUIHandler : MonoBehaviour {
         capacitorTransform = capacitorBackground.transform.Find ("Capacitor").GetComponent<RectTransform> ();
         AIInfo = canvas.transform.Find ("AI Indicators").gameObject;
         dockButton = canvas.transform.Find ("Dock Button").GetComponent<Button> ();
-        ButtonFunction (() => { ChangeScreen ("Station"); playerController.Dock (); }, dockButton);
+        ButtonFunction (() => { ChangeScreen (GameUIState.Station); playerController.Dock (); }, dockButton);
         undockButton = canvas.transform.Find ("Undock Button").GetComponent<Button> ();
-        ButtonFunction (() => { ChangeScreen ("Self"); playerController.Undock (); }, undockButton);
+        ButtonFunction (() => { ChangeScreen (GameUIState.InSpace); playerController.Undock (); }, undockButton);
         stationPanel = canvas.transform.Find ("Station Panel").gameObject;
         stationMarket = stationPanel.transform.Find ("Market").GetComponent<Button> ();
         stationRepair = stationPanel.transform.Find ("Repair").GetComponent<Button> ();
@@ -195,7 +195,7 @@ public class GameUIHandler : MonoBehaviour {
         ButtonFunction (() => { RemoveOverlay (); RepairShip (); }, repairConfirmButton);
         repairCancelButton = repairPanel.transform.Find ("Outline/Panel/Cancel Button").GetComponent<Button> ();
         ButtonFunction (() => RemoveOverlay (), repairCancelButton);
-        activeUI.Push ("Self");
+        activeUI.Push (GameUIState.InSpace);
         UpdateCanvas ();
         initialized = true;
     }
@@ -203,7 +203,8 @@ public class GameUIHandler : MonoBehaviour {
     public void TickCanvas () {
         if (!initialized || source == null) return;
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
-        if (activeUI.Peek () == "Self" || activeUI.Peek () == "Station" || activeUI.Peek () == "Station Repair") {
+        if (stationStructureBehaviours != null && activeUI.Peek () == GameUIState.InSpace) AddOverlay (GameUIState.Station);
+        if (activeUI.Peek () == GameUIState.InSpace || activeUI.Peek () == GameUIState.Station || activeUI.Peek () == GameUIState.StationRepair) {
             // Hull
             hullUI.gameObject.SetActive (true);
             hullUI.sprite = source.profile.hullUI;
@@ -232,15 +233,13 @@ public class GameUIHandler : MonoBehaviour {
         if (source.AI == null) AIInfo.SetActive (false);
         else AIInfo.SetActive (true);
         // Docking
-        if (source.targeted == null || source.targeted.profile.dockingLocations.Length == 0 ||
-            (source.transform.position - source.targeted.transform.position).sqrMagnitude > source.targeted.profile.dockingRange * source.targeted.profile.dockingRange ||
-            stationStructureBehaviours != null) {
+        if (source.targeted == null || !(source.targeted.DockerCanDock (source)) || stationStructureBehaviours != null) {
             dockButton.gameObject.SetActive (false);
         } else dockButton.gameObject.SetActive (true);
         // Undocking
         if (stationStructureBehaviours == null) undockButton.gameObject.SetActive (false);
         else undockButton.gameObject.SetActive (true);
-        if (activeUI.Peek () == "Self") {
+        if (activeUI.Peek () == GameUIState.InSpace) {
             // Angle arrow
             if (source.targeted == null) sourceTo.gameObject.SetActive (false);
             else {
@@ -433,7 +432,7 @@ public class GameUIHandler : MonoBehaviour {
 
     void UpdateCanvas () {
         if (!initialized || source == null) return;
-        if (activeUI.Peek () == "Self") {
+        if (activeUI.Peek () == GameUIState.InSpace) {
             // Control
             playerController.forwardPowerSlider.gameObject.SetActive (true);
             playerController.turnLeftButton.gameObject.SetActive (true);
@@ -452,9 +451,9 @@ public class GameUIHandler : MonoBehaviour {
             for (int i = 0; i < equipmentButtons.Count; i++) equipmentButtons[i].SetActive (false);
             foreach (GameObject selectableBillboard in selectableBillboards) selectableBillboard.SetActive (false);
         }
-        if (activeUI.Peek () == "Station") stationPanel.SetActive (true);
+        if (activeUI.Peek () == GameUIState.Station) stationPanel.SetActive (true);
         else stationPanel.SetActive (false);
-        if (activeUI.Peek () == "Station Market") {
+        if (activeUI.Peek () == GameUIState.StationMarket) {
             // Market UI
             if (stationStructureBehaviours == null) {
                 marketPanel.SetActive (false);
@@ -522,7 +521,7 @@ public class GameUIHandler : MonoBehaviour {
                 stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
             }
         } else marketPanel.SetActive (false);
-        if (activeUI.Peek () == "Station Equipment") {
+        if (activeUI.Peek () == GameUIState.StationEquipment) {
             if (stationStructureBehaviours == null) {
                 equipmentPanel.SetActive (false);
             } else {
@@ -604,14 +603,14 @@ public class GameUIHandler : MonoBehaviour {
                 } else equipmentInformationPanel.SetActive (false);
             }
         } else equipmentPanel.SetActive (false);
-        if (activeUI.Peek () == "Station Repair") {
+        if (activeUI.Peek () == GameUIState.StationRepair) {
             if (stationStructureBehaviours == null) repairPanel.SetActive (false);
             else {
                 repairPanel.SetActive (true);
                 repairCostText.text = "Not Implemented";
             }
         } else repairPanel.SetActive (false);
-        if (activeUI.Peek () == "Load") {
+        if (activeUI.Peek () == GameUIState.SelectSave) {
             savesSelection.SetActive (true);
             if (!Directory.Exists (GetSavePath ())) Directory.CreateDirectory (GetSavePath ());
             if (saveItems.Count == 0) {
@@ -758,8 +757,13 @@ public class GameUIHandler : MonoBehaviour {
         return Application.persistentDataPath + "/saves/" + saveName + ".txt";
     }
 
-    public void AddOverlay (string target) {
+    public void AddOverlay (GameUIState target) {
         activeUI.Push (target);
+        UpdateCanvas ();
+    }
+
+    public void AddOverlay (int target) {
+        activeUI.Push ((GameUIState) target);
         UpdateCanvas ();
     }
 
@@ -768,9 +772,24 @@ public class GameUIHandler : MonoBehaviour {
         UpdateCanvas ();
     }
 
-    public void ChangeScreen (string target) {
+    public void ChangeScreen (GameUIState target) {
         activeUI.Pop ();
         activeUI.Push (target);
         UpdateCanvas ();
     }
+
+    public void ChangeScreen (int target) {
+        activeUI.Pop ();
+        activeUI.Push ((GameUIState) target);
+        UpdateCanvas ();
+    }
+}
+
+public enum GameUIState {
+    InSpace = 0,
+    Station = 1,
+    StationRepair = 2,
+    StationEquipment = 3,
+    StationMarket = 4,
+    SelectSave = 5
 }

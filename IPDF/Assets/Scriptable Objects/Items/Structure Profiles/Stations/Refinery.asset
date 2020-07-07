@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   basePrice: 0
   size: 0
-  mesh: {fileID: 4370537360113272507, guid: db6d827c221cf374a96b5e58d3e8dc22, type: 3}
+  mesh: {fileID: 4370537360113272507, guid: f61e240bddf43a648bf3629c66f5b515, type: 3}
   material: {fileID: 2100000, guid: 97bc6ab965316174284d4c4c9eb91ce8, type: 2}
   apparentSize: 50
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,

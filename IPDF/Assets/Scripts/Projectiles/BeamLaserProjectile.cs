@@ -16,7 +16,8 @@ public class BeamLaserProjectile : Projectile {
         factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
     }
 
-    protected override void Process (float deltaTime) {
+    public override void Process (float deltaTime) {
+        if (!initialized || disabled) return;
         if (turret != handler.turret) { Disable (); return; }
         if (!handler.activated) { Disable (); return; }
         if (from == null || to == null) { Disable (); return; }

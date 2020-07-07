@@ -38,12 +38,10 @@ MonoBehaviour:
   turretRotations: []
   turretAngles: []
   electronicsCapable: 0
-  dockingLocations:
-  - {x: -165, y: 0, z: 0}
+  dockingLocations: []
   dockingSizes: []
-  dockingRotations:
-  - {x: 0, y: 0, z: 0}
-  dockingRange: 200
+  dockingRotations: []
+  dockingRange: 0
   market: {fileID: 0}
   factories: []
   offeredEquipment: []

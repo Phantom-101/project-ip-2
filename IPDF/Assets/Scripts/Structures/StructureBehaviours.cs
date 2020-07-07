@@ -15,7 +15,6 @@ public class StructureBehaviours : MonoBehaviour {
     public int factionID;
     [Header ("Navigation")]
     public Route route;
-    public StructureBehaviours target;
     [Header ("Inventory")]
     public InventoryHandler inventory;
     [Header ("Equipment Handlers")]
@@ -61,7 +60,7 @@ public class StructureBehaviours : MonoBehaviour {
         colliderGameObject.transform.parent = transform;
         MeshCollider meshCollider = colliderGameObject.AddComponent<MeshCollider> ();
         meshCollider.sharedMesh = (profile.collisionMesh == null ? profile.mesh : profile.collisionMesh);
-        //if (profile.structureClass != StructureClass.Station)
+        if (profile.structureClass != StructureClass.Station)
             meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
@@ -107,7 +106,6 @@ public class StructureBehaviours : MonoBehaviour {
             decals.transform.localPosition = Vector3.zero;
             decals.transform.localEulerAngles = Vector3.zero;
         }
-        if (target != null) route = navigationManager.GetRoute (transform.position, target.transform.position);
         initialized = true;
     }
 
@@ -220,7 +218,7 @@ public class StructureBehaviours : MonoBehaviour {
     }
 
     public void Dock (StructureBehaviours docker) {
-        if ((docker.transform.position - transform.position).sqrMagnitude > profile.dockingRange * profile.dockingRange) return;
+        if (!DockerCanDock (docker)) return;
         for (int i = 0; i < profile.dockingLocations.Length; i++) {
             if (docked[i] == 0 && profile.dockingSizes[i] >= docker.profile.apparentSize) {
                 docker.transform.parent = transform;
@@ -251,5 +249,13 @@ public class StructureBehaviours : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    public bool DockerCanDock (StructureBehaviours docker) {
+        if ((docker.transform.position - transform.position).sqrMagnitude > profile.dockingRange * profile.dockingRange) return false;
+        for (int i = 0; i < profile.dockingLocations.Length; i++)
+            if (docked[i] == 0 && profile.dockingSizes[i] >= docker.profile.apparentSize)
+                return true;
+        return false;
     }
 }

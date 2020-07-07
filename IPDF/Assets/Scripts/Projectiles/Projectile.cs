@@ -21,12 +21,7 @@ public class Projectile : MonoBehaviour {
         initialized = true;
     }
 
-    public void Tick (float deltaTime) {
-        if (!initialized || disabled) return;
-        Process (deltaTime);
-    }
-
-    protected virtual void Process (float deltaTime) {}
+    public virtual void Process (float deltaTime) {}
 
     protected virtual void Disable () {
         disabled = true;

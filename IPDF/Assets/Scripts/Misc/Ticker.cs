@@ -8,7 +8,9 @@ public class Ticker : MonoBehaviour {
     public GameUIHandler gameUIHandler;
     public StructuresManager structuresManager;
     public List<Projectile> projectiles = new List<Projectile> ();
-    public DateTime lastTicked;
+    public float lastTicked = 0;
+    public float curTime = 0;
+    public float deltaTime = 0;
 
     void Awake () {
         gameUIHandler = FindObjectOfType<GameUIHandler> ();
@@ -16,17 +18,16 @@ public class Ticker : MonoBehaviour {
     }
 
     void Start () {
-        lastTicked = DateTime.Now;
         StartCoroutine (Tick ());
     }
 
     IEnumerator Tick () {
-        TimeSpan delta = DateTime.Now.Subtract (lastTicked);
-        float deltaTime = (float) delta.TotalSeconds;
+        curTime = Time.time;
+        deltaTime = curTime - lastTicked;
         gameUIHandler.TickCanvas ();
         structuresManager.TickStructures (deltaTime);
-        foreach (Projectile projectile in projectiles) projectile.Tick (deltaTime);
-        lastTicked = DateTime.Now;
+        foreach (Projectile projectile in projectiles) projectile.Process (deltaTime);
+        lastTicked = curTime;
         yield return new WaitForSeconds (tickLength);
         StartCoroutine (Tick ());
     }

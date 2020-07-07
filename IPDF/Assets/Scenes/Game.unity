@@ -1834,7 +1834,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -2033,7 +2032,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -3081,7 +3079,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -3655,7 +3652,6 @@ MonoBehaviour:
   factionID: 0
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -4034,7 +4030,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -5114,7 +5109,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -5715,7 +5709,6 @@ MonoBehaviour:
   factionID: 4
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -6883,7 +6876,6 @@ MonoBehaviour:
   factionID: 5
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -7870,7 +7862,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -8941,7 +8932,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -9873,7 +9863,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -11185,7 +11174,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -12090,11 +12078,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1725539989}
         m_MethodName: AddOverlay
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: Station Equipment
           m_BoolArgument: 0
@@ -12532,11 +12520,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1725539989}
         m_MethodName: AddOverlay
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Station Repair
           m_BoolArgument: 0
@@ -12655,7 +12643,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -12842,7 +12829,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -13035,7 +13021,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -13222,7 +13207,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -15788,12 +15772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be534393e020f4d4e8e7cfb0b877db4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerRange: 50
-  forwardDistance: 60
-  other: {fileID: 431661541}
-  structuresManager: {fileID: 0}
-  cameraFollowPlayer: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!114 &935539180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15814,7 +15792,6 @@ MonoBehaviour:
   factionID: 5
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17125,7 +17102,6 @@ MonoBehaviour:
   factionID: 0
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -17368,7 +17344,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -18180,7 +18155,6 @@ MonoBehaviour:
   factionID: 4
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -19015,11 +18989,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1725539989}
         m_MethodName: AddOverlay
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: Load
           m_BoolArgument: 0
@@ -19891,7 +19865,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -21068,7 +21041,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -21374,7 +21346,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -21802,10 +21773,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9392b0a49234a40b18aecb42483161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickLength: 0.05
+  tickLength: 0.02
   gameUIHandler: {fileID: 0}
   structuresManager: {fileID: 0}
   projectiles: []
+  lastTicked: 0
+  curTime: 0
+  deltaTime: 0
 --- !u!1 &1342192272
 GameObject:
   m_ObjectHideFlags: 0
@@ -22395,7 +22369,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -22713,7 +22686,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -22974,7 +22946,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -23865,7 +23836,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -25776,7 +25746,6 @@ MonoBehaviour:
   factionID: 4
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -27465,7 +27434,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -28664,7 +28632,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -29508,7 +29475,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -29714,11 +29680,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1725539989}
         m_MethodName: AddOverlay
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: Station Market
           m_BoolArgument: 0
@@ -31077,7 +31043,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -31276,7 +31241,6 @@ MonoBehaviour:
   factionID: 4
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -31787,7 +31751,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -37012,7 +36975,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -37565,7 +37527,6 @@ MonoBehaviour:
   factionID: 4
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -38508,7 +38469,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -38879,7 +38839,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -39848,80 +39807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d579caa774e3f46bc8c0b1b4c612fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &3939797603380284111
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038091, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
 --- !u!1001 &4589102706241311733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40064,7 +39949,6 @@ MonoBehaviour:
   factionID: 4
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -40214,7 +40098,6 @@ MonoBehaviour:
   factionID: 4
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -40347,7 +40230,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 0}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
@@ -40534,7 +40416,6 @@ MonoBehaviour:
   factionID: 3
   route:
     waypoints: []
-  target: {fileID: 995647632}
   inventory:
     storage: {fileID: 0}
     inventorySize: 0
