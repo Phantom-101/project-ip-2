@@ -10,6 +10,7 @@ public class StructureProfile : Item {
     public float apparentSize;
     public GameObject explosion;
     public Sprite selectableBillboard;
+    public GameObject pod;
     [Header ("UI")]
     public Sprite hullUI;
     [Header ("Adjustables")]

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: Icy Asteroid
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
+  mesh: {fileID: 4300000, guid: 33b7a805166ca804e89a557eaf8c1964, type: 2}
+  material: {fileID: 2100000, guid: 37f8210201c503b439182bab0243aa28, type: 2}
+  apparentSize: 5
+  explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
+    type: 3}
+  selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
+    type: 3}
+  hullUI: {fileID: 0}
+  enforceHeight: 1
+  canFireAt: 1
+  engagementRangeMultiplier: 0
+  rangeChangeAngle: 0
+  structureClass: 10
+  manufacturer: 12
+  description: An asteroid made up of ice. Mine this to get ice.
+  hull: 100
+  inventorySize: 100
+  authority: 0
+  maxEquipmentMeta: 0
+  turretSlots: 0
+  turretPositions: []
+  turretRotations: []
+  turretAngles: []
+  electronicsCapable: 0
+  dockingLocations: []
+  dockingSizes: []
+  dockingRotations: []
+  dockingRange: 0
+  market: {fileID: 0}
+  factories: []
+  offeredEquipment: []
+  repairCostMultiplier: 0
+  collisionMesh: {fileID: 0}
+  mass: 100
+  drag: 0.5
+  angularDrag: 2
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  decals: {fileID: 0}
+  debris: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 0, y: 0, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}

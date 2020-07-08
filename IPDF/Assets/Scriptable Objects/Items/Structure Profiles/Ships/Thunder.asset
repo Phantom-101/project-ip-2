@@ -17,11 +17,12 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: ee68b75a49c3cf84b90fd75c539583da, type: 3}
   material: {fileID: 2100000, guid: 5e88404a95272bd4db9b3505228077cb, type: 2}
-  apparentSize: 7
+  apparentSize: 30
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
+  pod: {fileID: 0}
   hullUI: {fileID: 21300000, guid: 1bd9a74212ded0f458bd23d3d87a73f1, type: 3}
   enforceHeight: 1
   canFireAt: 1
@@ -32,6 +33,7 @@ MonoBehaviour:
   description: 
   hull: 400
   inventorySize: 65
+  authority: 0
   maxEquipmentMeta: 4
   turretSlots: 5
   turretPositions:

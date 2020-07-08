@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.VFX;
 using Essentials;
@@ -11,6 +12,7 @@ public class StructureBehaviours : MonoBehaviour {
     public int id;
     public float hull;
     public float hullTimeSinceLastDamaged;
+    public bool destroyed;
     public bool cloaked;
     public int factionID;
     [Header ("Navigation")]
@@ -69,7 +71,7 @@ public class StructureBehaviours : MonoBehaviour {
         meshGameObject.transform.localEulerAngles = profile.rotate;
         colliderGameObject.transform.localPosition = (profile.collisionMesh == null ? profile.offset : profile.colliderOffset);
         colliderGameObject.transform.localEulerAngles = (profile.collisionMesh == null ? profile.rotate : profile.colliderRotate);
-        if (hull == 0) hull = profile.hull;
+        if (hull == 0 && !destroyed) hull = profile.hull;
         if (inventory == null) inventory = new InventoryHandler (null, profile.inventorySize);
         if (inventory.inventory == null) inventory.inventory = new Dictionary<Item, int> ();
         if (turrets.Count != profile.turretSlots) {
@@ -113,11 +115,9 @@ public class StructureBehaviours : MonoBehaviour {
         if (!initialized) return;
         // Check if should be destroyed
         if (hull == 0.0f) {
-            if (profile.explosion != null) {
-                GameObject explosion = Instantiate (profile.explosion, transform.position, RandomQuaternion (180)) as GameObject;
-                explosion.transform.localScale = Vector3.one * profile.apparentSize * 5;
-            }
+            destroyed = true;
             structuresManager.RemoveStructure (this);
+            StartCoroutine (DestructionSequence ());
         }
         if (transform.parent.GetComponent<Sector> ()) {
             if (!transform.parent.GetComponent<Sector> ().inSector.Contains (this))
@@ -126,6 +126,7 @@ public class StructureBehaviours : MonoBehaviour {
             if (!transform.parent.parent.GetComponent<Sector> ().inSector.Contains (this))
                 transform.parent.parent.GetComponent<Sector> ().inSector.Add (this);
         }
+        if (targeted != null && !targeted.CanBeTargeted ()) targeted = null;
         if (playerController.structureBehaviours != this)
             if (AI == null)
                 AI = new StructureAI ();
@@ -174,7 +175,7 @@ public class StructureBehaviours : MonoBehaviour {
             factory.Process ();
         }
         // AI stuff
-        if (AI != null) AI.Process (this);
+        if (AI != null) AI.Process (this, deltaTime);
     }
 
     public Vector3 CalculateLeadPosition (Vector3 currentPosition, Vector3 targetPosition, Vector3 targetVelocity, float projectileVelocity, bool lead) {
@@ -257,5 +258,59 @@ public class StructureBehaviours : MonoBehaviour {
             if (docked[i] == 0 && profile.dockingSizes[i] >= docker.profile.apparentSize)
                 return true;
         return false;
+    }
+
+    public bool CanShoot () {
+        if (destroyed || cloaked) return false;
+        return true;
+    }
+
+    public bool CanBeTargeted () {
+        if (destroyed || cloaked) return false;
+        return true;
+    }
+
+    IEnumerator DestructionSequence () {
+        GameObject explosion;
+        Vector3[] vertices = profile.mesh.vertices;
+        if (profile.explosion != null) {
+            explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
+            explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
+        }
+        yield return new WaitForSeconds (1);
+        if (profile.explosion != null) {
+            explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
+            explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
+        }
+        yield return new WaitForSeconds (2);
+        if (profile.explosion != null) {
+            explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
+            explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
+        }
+        yield return new WaitForSeconds (2);
+        if (profile.explosion != null) {
+            explosion = Instantiate (profile.explosion, transform.position, Quaternion.identity) as GameObject;
+            explosion.transform.localScale = Vector3.one * profile.apparentSize;
+        }
+        foreach (Item item in inventory.inventory.Keys.ToArray ()) {
+            if (inventory.GetItemCount (item) > 0) {
+                GameObject pod = Instantiate (profile.pod, transform.position, Quaternion.identity) as GameObject;
+                pod.transform.parent = transform.parent;
+                pod.GetComponent<StructureBehaviours> ().inventory.AddItem (item, inventory.inventory[item]);
+                pod.AddComponent<CargoPod> ();
+            }
+        }
+        if (profile.debris != null) {
+            GameObject debris = Instantiate (profile.debris,
+                transform.position,
+                Quaternion.Euler (new Vector3 (Random.Range (-180, 180), Random.Range (-180, 180), Random.Range (-180, 180)))
+            ) as GameObject;
+            debris.transform.localScale = Vector3.one * profile.apparentSize / 3;
+        }
+        Destroy (gameObject);
+    }
+    
+    Vector3 GetExplosionPosition (Vector3[] candidates) {
+        return transform.position + transform.rotation * (candidates[Random.Range (0, candidates.Length - 1)] / 2);
     }
 }

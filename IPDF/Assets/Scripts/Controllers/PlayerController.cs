@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour {
                     GameObject hitGameObject = hit.transform.gameObject;
                     if (hitGameObject != structureBehaviours.gameObject && hitGameObject.transform.parent == structureBehaviours.transform.parent) {
                         StructureBehaviours hitStructureBehaviours = hitGameObject.GetComponent<StructureBehaviours> ();
-                        if (hitStructureBehaviours != null && hitStructureBehaviours != structureBehaviours.targeted) structureBehaviours.targeted = hitStructureBehaviours;
+                        if (hitStructureBehaviours != null && hitStructureBehaviours != structureBehaviours.targeted && hitStructureBehaviours.CanBeTargeted ())
+                            structureBehaviours.targeted = hitStructureBehaviours;
                         else structureBehaviours.targeted = null;
                     }
                 }

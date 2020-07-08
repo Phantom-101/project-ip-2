@@ -34,22 +34,6 @@ public class StructuresManager : MonoBehaviour {
 
     public void RemoveStructure (StructureBehaviours structure) {
         if (structure == null) return;
-        foreach (Item item in structure.inventory.inventory.Keys.ToArray ()) {
-            if (structure.inventory.GetItemCount (item) > 0) {
-                GameObject pod = Instantiate (cargoPod, structure.transform.position, Quaternion.identity) as GameObject;
-                pod.transform.parent = structure.transform.parent;
-                pod.GetComponent<StructureBehaviours> ().inventory.AddItem (item, structure.inventory.inventory[item]);
-                pod.AddComponent<CargoPod> ();
-            }
-        }
-        if (structure.profile.debris != null) {
-            GameObject debris = Instantiate (structure.profile.debris,
-                structure.transform.position,
-                Quaternion.Euler (new Vector3 (Random.Range (-180, 180), Random.Range (-180, 180), Random.Range (-180, 180)))
-            ) as GameObject;
-            debris.transform.localScale = Vector3.one * structure.profile.apparentSize;
-        }
         structures.Remove (structure);
-        Destroy (structure.gameObject);
     }
 }

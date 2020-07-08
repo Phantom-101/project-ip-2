@@ -38,7 +38,10 @@ public class BeamLaserTurret : Turret {
     }
 
     public override bool CanSustain (TurretHandler caller, GameObject target) {
+        if (caller == null || !caller.equipper.CanShoot ()) return false;
         if (target == null) return false;
+        StructureBehaviours targetBehaviours = target.GetComponent<StructureBehaviours> ();
+        if (targetBehaviours != null && !targetBehaviours.CanBeTargeted ()) return false;
         if (!caller.equipper.transform.parent.gameObject.GetComponent<Sector> ()) return false;
         if ((target.transform.localPosition - caller.equipper.transform.localPosition).sqrMagnitude > range * range) return false;
         float angle = target.transform.position - caller.equipper.transform.position == Vector3.zero ?

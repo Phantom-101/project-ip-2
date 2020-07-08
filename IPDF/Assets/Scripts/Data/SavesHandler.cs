@@ -106,8 +106,7 @@ public class SavesHandler : MonoBehaviour {
         }
 
         // Save data of each structure
-        StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
-        foreach (StructureBehaviours structure in structures) {
+        foreach (StructureBehaviours structure in structuresManager.structures) {
             StructureSaveData data = new StructureSaveData ();
             data.name = structure.gameObject.name;
             Transform parent = structure.transform.parent;

@@ -120,7 +120,7 @@ public class GameUIHandler : MonoBehaviour {
         settingsHandler = FindObjectOfType<SettingsHandler> ();
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         canvasScaler = canvas.GetComponent<CanvasScaler> ();
-        canvasScaler.scaleFactor = settingsHandler.settings.UIScale;
+        if (settingsHandler != null) canvasScaler.scaleFactor = settingsHandler.settings.UIScale;
         billboards = canvas.transform.Find ("Billboards").gameObject;
         hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
         for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
@@ -376,7 +376,7 @@ public class GameUIHandler : MonoBehaviour {
             foreach (GameObject selectableBillboard in selectableBillboards.ToArray ()) {
                 ContainerComponent billboardTarget = selectableBillboard.GetComponent<ContainerComponent> ();
                 StructureBehaviours reference = billboardTarget.containers[0].value as StructureBehaviours;
-                if (reference == null || reference.transform.parent != source.transform.parent) {
+                if (reference == null || reference.transform.parent != source.transform.parent || !reference.CanBeTargeted ()) {
                     selectableBillboards.Remove (selectableBillboard);
                     Destroy (selectableBillboard);
                 } else {
