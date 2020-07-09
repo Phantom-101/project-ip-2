@@ -30,6 +30,6 @@ public class SettingsUIHandler : MonoBehaviour {
         canvasScaler.scaleFactor = settingsHandler.settings.UIScale;
         settingsHandler.settings.qualityLevel = graphicsLevelDropdown.value;
         settingsHandler.settings.UIScale = uiScaleSlider.value;
-        uiScale.text = uiScaleSlider.value.ToString () + "x";
+        uiScale.text = uiScaleSlider.value.ToString("0.00") + "x";
     }
 }

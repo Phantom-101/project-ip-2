@@ -24,5 +24,5 @@ MonoBehaviour:
   damage: 55
   asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
   beamColor: {r: 0, g: 1, b: 0, a: 1}
-  beamWidth: 0.3
-  beamDuration: 0.8
+  beamWidth: 0.6
+  beamDuration: 0.6

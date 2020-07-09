@@ -14,7 +14,7 @@ public class PulseLaserProjectile : Projectile {
         turret = handler.turret;
         beam = Instantiate ((turret as PulseLaserTurret).asset, transform) as GameObject;
         beam.transform.localPosition = Vector3.zero;
-        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as PulseLaserTurret).beamColor;
+        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as PulseLaserTurret).beamColor;
         transform.parent = from.transform.parent;
         Vector3 beamFrom = from.transform.position + from.transform.rotation * handler.position;
         transform.localPosition = beamFrom;
@@ -33,7 +33,7 @@ public class PulseLaserProjectile : Projectile {
     public override void Process (float deltaTime) {
         if (!initialized || disabled) return;
         lifetime += deltaTime;
-        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = new Color (
+        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = new Color (
             (turret as PulseLaserTurret).beamColor.r,
             (turret as PulseLaserTurret).beamColor.g,
             (turret as PulseLaserTurret).beamColor.b,

@@ -11,7 +11,7 @@ public class BeamLaserProjectile : Projectile {
         base.Initialize ();
         turret = handler.turret;
         beam = Instantiate ((turret as BeamLaserTurret).asset, transform) as GameObject;
-        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamLaserTurret).beamColor;
+        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamLaserTurret).beamColor;
         transform.parent = from.transform.parent;
         factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
     }

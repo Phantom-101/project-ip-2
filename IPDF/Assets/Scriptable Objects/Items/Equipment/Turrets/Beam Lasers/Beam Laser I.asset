@@ -24,6 +24,6 @@ MonoBehaviour:
   damage: 4
   asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
   beamColor: {r: 1, g: 0, b: 0, a: 1}
-  beamWidth: 0.1
+  beamWidth: 0.2
   depletionRate: 30
   activationThreshold: 0.4
