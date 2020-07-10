@@ -15,18 +15,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   basePrice: 0
   size: 0.1
-  projectile: {fileID: 9166618057121596802, guid: be68f2d9b4f0e5b4fac11e351c0cd0de,
-    type: 3}
-  trailColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  trailTime: 0.1
-  projectileVelocity: 25
-  projectileSticky: 0
-  projectileTracking: 0
-  projectileInitializeRotation: 1
-  projectileInaccuracy: 0
-  leadProjectile: 1
-  fuelRange: 288
-  damage: 54
-  explosiveDamage: 0
-  explosionRange: 0
-  explosionDetail: 0
+  asset: {fileID: 2956826465837218366, guid: dbc31a4b5efafe84c8764729227d47d3, type: 3}
+  mass: 12

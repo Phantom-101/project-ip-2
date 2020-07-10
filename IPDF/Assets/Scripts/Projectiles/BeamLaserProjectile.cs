@@ -10,33 +10,41 @@ public class BeamLaserProjectile : Projectile {
     public override void Initialize () {
         base.Initialize ();
         turret = handler.turret;
+        GameObject soundEffect = new GameObject ("Beam Laser Sound Effect");
+        soundEffect.transform.parent = from.transform.parent;
+        soundEffect.transform.localPosition = from.transform.localPosition;
+        AudioSource audioSource = soundEffect.AddComponent<AudioSource> ();
+        audioSource.spatialBlend = 1;
+        audioSource.minDistance = turret.audioDistance;
+        audioSource.PlayOneShot (turret.clip, 1);
+        Destroy (soundEffect, 5);
         beam = Instantiate ((turret as BeamLaserTurret).asset, transform) as GameObject;
         for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamLaserTurret).beamColor;
         transform.parent = from.transform.parent;
-        factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -turret.damage);
+        factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -(turret as BeamLaserTurret).damage);
     }
 
     public override void Process (float deltaTime) {
         if (!initialized || disabled) return;
+        if (from == null || to == null) { Disable (); return; }
         if (turret != handler.turret) { Disable (); return; }
         if (!handler.activated) { Disable (); return; }
-        if (from == null || to == null) { Disable (); return; }
         if (!turret.CanSustain (handler, to.gameObject)) { Disable (); return; }
         Vector3 beamFrom = from.transform.localPosition + from.transform.rotation * handler.position;
         transform.localPosition = beamFrom;
-        RaycastHit hit;
+        RaycastHit hit; 
         if (Physics.Raycast (beamFrom, to.transform.localPosition - beamFrom, out hit, turret.range)) {
             transform.localRotation = Quaternion.LookRotation (to.transform.localPosition - beamFrom);
             beam.transform.localScale = new Vector3 ((turret as BeamLaserTurret).beamWidth, (turret as BeamLaserTurret).beamWidth, hit.distance);
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
-                hitStructure.TakeDamage (turret.damage * deltaTime, beamFrom);
+                hitStructure.TakeDamage ((turret as BeamLaserTurret).damage * deltaTime, beamFrom);
             }
         }
     }
 
     protected override void Disable () {
-        Destroy (gameObject);
         base.Disable ();
+        Destroy (gameObject);
     }
 }

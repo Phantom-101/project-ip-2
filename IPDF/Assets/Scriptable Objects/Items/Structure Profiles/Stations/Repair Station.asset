@@ -22,6 +22,7 @@ MonoBehaviour:
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
+  pod: {fileID: 0}
   hullUI: {fileID: 21300000, guid: 66cba23a7dd67dd49bd56d5e3c1cb8a4, type: 3}
   enforceHeight: 1
   canFireAt: 1
@@ -60,6 +61,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9efe6c1c009311e4fbfd8f749d4975ec, type: 2}
   - {fileID: 11400000, guid: 5edb9280577256f4eb1a819f2b486368, type: 2}
   - {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
+  - {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
   repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 1000

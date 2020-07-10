@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb012ea4381c3cd47b8b0fe125ea5274, type: 3}
   m_Name: Shield 100
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6d76f2f3ebc819d449d63b24b6ee34a0, type: 3}
   basePrice: 3600
   size: 0
+  meta: 0
   strength: 100
   rechargeRate: 1
   shieldRechargeEfficiency: 1

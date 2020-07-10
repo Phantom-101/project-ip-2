@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1682022843677386025}
   - component: {fileID: 1682022843677386024}
   - component: {fileID: -1635115165223659581}
-  - component: {fileID: 8914693369723982251}
   - component: {fileID: -7118672635096412255}
   m_Layer: 0
   m_Name: Debris 5
@@ -95,20 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1
---- !u!64 &8914693369723982251
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682022843677386031}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6525949916285243375, guid: 698bec8f97ca483449946d79107a4497, type: 3}
 --- !u!54 &-7118672635096412255
 Rigidbody:
   m_ObjectHideFlags: 0

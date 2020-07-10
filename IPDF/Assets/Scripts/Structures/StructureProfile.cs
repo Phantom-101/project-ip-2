@@ -11,6 +11,11 @@ public class StructureProfile : Item {
     public GameObject explosion;
     public Sprite selectableBillboard;
     public GameObject pod;
+    [Header ("Audio")]
+    public AudioClip ambient;
+    public AudioRolloffMode rolloffMode;
+    public float ambientVolume;
+    public float[] ambientMinMax;
     [Header ("UI")]
     public Sprite hullUI;
     [Header ("Adjustables")]

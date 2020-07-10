@@ -5,24 +5,7 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "New Ammunition", menuName = "Ammunition")]
 public class Ammunition : Item {
     [Header ("Appearance")]
-    public GameObject projectile;
-    public Gradient trailGradient;
-    public float trailTime;
-    public GameObject explosion;
-    public float explosionSize;
-    [Header ("Projectile Movement")]
-    public float trackingTime;
-    public float projectileVelocity;
-    public bool projectileSticky;
-    public float projectileTracking;
-    [Header ("Projectile Initial Rotation")]
-    public bool projectileInitializeRotation;
-    public float projectileInaccuracy;
-    public bool leadProjectile;
+    public GameObject asset;
     [Header ("Projectile Stats")]
-    public float fuelRange;
-    public float damage;
-    public float explosiveDamage;
-    public float explosionRange;
-    public int explosionDetail;
+    public float mass;
 }

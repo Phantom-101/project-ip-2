@@ -12,6 +12,8 @@ public class PulseLaserTurret : Turret {
     public Color beamColor;
     public float beamWidth;
     public float beamDuration;
+    [Header ("Turret Stats")]
+    public float damage;
 
     public override void AlterStats (TurretHandler caller) {
         if (!CanSustain (caller, caller.target)) caller.Deactivate ();

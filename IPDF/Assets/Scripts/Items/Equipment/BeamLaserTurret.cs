@@ -13,6 +13,7 @@ public class BeamLaserTurret : Turret {
     public float beamWidth;
     [Header ("Turret Stats")]
     public float depletionRate;
+    public float damage;
     [Header ("Activation Requirements")]
     public float activationThreshold;
 

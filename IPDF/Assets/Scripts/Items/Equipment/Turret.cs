@@ -18,16 +18,14 @@ using UnityEngine;
 using Essentials;
 
 public class Turret : Equipment {
-    [Header ("Appearance")]
-    public GameObject impactEffect;
-    public float impactEffectSize;
+    [Header ("Audio")]
+    public AudioClip clip;
+    public float audioDistance;
     [Header ("Turret Stats")]
     public float maxStoredEnergy;
     public float rechargeRate;
     [Header ("Activation Requirements")]
     public float range;
-    [Header ("Projectile Stats")]
-    public float damage;
 
     public virtual void AlterStats (TurretHandler caller) {}
 
@@ -56,7 +54,7 @@ public class TurretHandler {
     public StructureBehaviours equipper;
     public Turret turret;
     public string turretName;
-    public Ammunition usingAmmunition;
+    public Ammunition ammunition;
     [Header ("Transforms")]
     public Vector3 position;
     public Vector3 rotation;
@@ -83,7 +81,7 @@ public class TurretHandler {
 
     public TurretHandler (TurretHandler turretHandler) {
         this.turret = turretHandler.turret;
-        this.usingAmmunition = turretHandler.usingAmmunition;
+        this.ammunition = turretHandler.ammunition;
         this.online = turretHandler.online;
         this.activated = turretHandler.activated;
         this.storedEnergy = turretHandler.storedEnergy;
@@ -101,7 +99,7 @@ public class TurretHandler {
 
     public bool UseAmmunition (Ammunition ammunition) {
         if (turret.CanUseAmmunition (this, ammunition)) {
-            usingAmmunition = ammunition;
+            this.ammunition = ammunition;
             return true;
         }
         return false;
@@ -123,6 +121,7 @@ public class TurretHandler {
         }
         if (turret != null) turret.AlterStats (this);
         if (activated && !turret.CanSustain (this, target)) Deactivate ();
+        if (turret.GetType () == typeof (KineticTurret)) UseAmmunition ((turret as KineticTurret).ammunition[0]);
     }
 
     public void Interacted (GameObject target) {

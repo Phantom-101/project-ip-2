@@ -8,15 +8,21 @@ public class JumpGate : MonoBehaviour {
     public float forwardDistance;
     [Header ("Link")]
     public JumpGate other;
-
+    [Header ("Components")]
+    public AudioSource audioSource;
     public StructuresManager structuresManager;
     public CameraFollowPlayer cameraFollowPlayer;
     public NavigationManager navigationManager;
+    public ResourcesManager resourcesManager;
 
     void Awake () {
+        audioSource = gameObject.AddComponent<AudioSource> ();
         structuresManager = FindObjectOfType<StructuresManager> ();
         cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
         navigationManager = FindObjectOfType<NavigationManager> ();
+        resourcesManager = FindObjectOfType<ResourcesManager> ();
+        audioSource.spatialBlend = 1;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
         if (other == null) return;
         navigationManager.AddAdjacency (transform.parent.GetComponent<Sector> (),
             other.transform.parent.GetComponent <Sector> (),
@@ -33,12 +39,18 @@ public class JumpGate : MonoBehaviour {
                 structure.transform.position = other.transform.position + other.transform.forward * forwardDistance;
                 structure.transform.rotation = other.transform.rotation;
                 structure.targeted = null;
-                structure.transform.parent.GetComponent<Sector> ().inSector.Remove (structure);
-                foreach (Transform child in structure.transform)
-                    if (child.GetComponent<StructureBehaviours> ())
-                        structure.transform.parent.GetComponent<Sector> ().inSector.Remove (child.GetComponent<StructureBehaviours> ());
+                structure.sector.inSector.Remove (structure);
                 structure.transform.parent = other.transform.parent;
+                Sector otherSector = other.transform.parent.GetComponent<Sector> ();
+                structure.sector = otherSector;
+                otherSector.inSector.Add (structure);
                 if (cameraFollowPlayer.playerStructure == structure) cameraFollowPlayer.ResetPosition ();
+                Jumped ();
+                other.Jumped ();
             }
+    }
+
+    public void Jumped () {
+        audioSource.PlayOneShot (resourcesManager.audioResources.jump[0], 1);
     }
 }

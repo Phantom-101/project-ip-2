@@ -2959,7 +2959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235251617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -912, y: -0, z: -72}
+  m_LocalPosition: {x: -34, y: -0, z: 2424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -2984,6 +2984,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 0
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -2991,9 +2992,9 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+    turret: {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 11400000, guid: 5ef4eeae2c4f4e44784eff562223105c, type: 2}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -3003,9 +3004,9 @@ MonoBehaviour:
     projectile: {fileID: 0}
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+    turret: {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 11400000, guid: 5ef4eeae2c4f4e44784eff562223105c, type: 2}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -3015,9 +3016,9 @@ MonoBehaviour:
     projectile: {fileID: 0}
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+    turret: {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 11400000, guid: 5ef4eeae2c4f4e44784eff562223105c, type: 2}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -3027,9 +3028,9 @@ MonoBehaviour:
     projectile: {fileID: 0}
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+    turret: {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 11400000, guid: 5ef4eeae2c4f4e44784eff562223105c, type: 2}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -3039,9 +3040,9 @@ MonoBehaviour:
     projectile: {fileID: 0}
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+    turret: {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 11400000, guid: 5ef4eeae2c4f4e44784eff562223105c, type: 2}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -3051,9 +3052,9 @@ MonoBehaviour:
     projectile: {fileID: 0}
     storedEnergy: 0
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
+    turret: {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 11400000, guid: 5ef4eeae2c4f4e44784eff562223105c, type: 2}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -3115,6 +3116,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -4658,6 +4660,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 4
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -4667,7 +4670,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -4679,7 +4682,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -4691,7 +4694,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -4703,7 +4706,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -4715,7 +4718,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -4771,6 +4774,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -5785,8 +5789,9 @@ GameObject:
   - component: {fileID: 431661545}
   - component: {fileID: 431661548}
   - component: {fileID: 431661547}
+  - component: {fileID: 431661542}
   m_Layer: 0
-  m_Name: Jump Gate
+  m_Name: Jump Gate (Corsair)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5806,6 +5811,26 @@ Transform:
   m_Father: {fileID: 1033050176}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &431661542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431661540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e91e18a3b99cc40bf5e6ede39880d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerRange: 100
+  forwardDistance: 200
+  other: {fileID: 935539176}
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  cameraFollowPlayer: {fileID: 0}
+  navigationManager: {fileID: 0}
+  resourcesManager: {fileID: 0}
 --- !u!114 &431661545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5825,6 +5850,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 5
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -5878,6 +5904,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -10478,6 +10505,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 3
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -10487,7 +10515,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -10499,7 +10527,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -10511,7 +10539,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -10523,7 +10551,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -10535,7 +10563,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -10591,6 +10619,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -12844,13 +12873,34 @@ GameObject:
   - component: {fileID: 935539180}
   - component: {fileID: 935539182}
   - component: {fileID: 935539181}
+  - component: {fileID: 935539176}
   m_Layer: 0
-  m_Name: Jump Gate
+  m_Name: Jump Gate (Terra)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &935539176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935539175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e91e18a3b99cc40bf5e6ede39880d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerRange: 100
+  forwardDistance: 200
+  other: {fileID: 431661542}
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  cameraFollowPlayer: {fileID: 0}
+  navigationManager: {fileID: 0}
+  resourcesManager: {fileID: 0}
 --- !u!4 &935539178
 Transform:
   m_ObjectHideFlags: 0
@@ -12884,6 +12934,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 5
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -12937,6 +12988,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -14195,6 +14247,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 0
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -14248,6 +14301,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -15031,6 +15085,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 4
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -15040,7 +15095,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -15052,7 +15107,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -15064,7 +15119,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -15076,7 +15131,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -15088,7 +15143,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -15144,6 +15199,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -17826,6 +17882,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
   - {fileID: 11400000, guid: 52ae3ffca57ab3c43a7edeefc1a6faa4, type: 2}
   - {fileID: 11400000, guid: 4baad227289b8554da8335a83bc100b3, type: 2}
+  - {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
 --- !u!4 &1338523145
 Transform:
   m_ObjectHideFlags: 0
@@ -17930,7 +17987,7 @@ MonoBehaviour:
   dampenerSlider: {fileID: 1646076873}
   leftPressed: 0
   rightPressed: 0
-  graphicsManager: {fileID: 0}
+  resourcesManager: {fileID: 0}
 --- !u!114 &1338523149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17949,6 +18006,7 @@ MonoBehaviour:
   celestialObjects:
   - {fileID: 751419958480612410, guid: df08faaa5ab214c4a99ec5e52afd5b46, type: 3}
   - {fileID: 3980009413977360241, guid: f6248344aa7e50b44939341d0078334a, type: 3}
+  audioResources: {fileID: 11400000, guid: 84241b1bceea12045826eca800c4c15c, type: 2}
 --- !u!114 &1338523150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18569,6 +18627,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 3
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -18578,7 +18637,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -18590,7 +18649,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -18602,7 +18661,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -18614,7 +18673,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -18626,7 +18685,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -18688,6 +18747,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -21377,6 +21437,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 4
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -21386,7 +21447,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -21398,7 +21459,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -21410,7 +21471,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -21422,7 +21483,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -21434,7 +21495,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -21490,6 +21551,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -26089,6 +26151,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 4
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -26098,7 +26161,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -26110,7 +26173,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -26122,7 +26185,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -26134,7 +26197,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -26146,7 +26209,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -26202,6 +26265,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -31992,6 +32056,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 4
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -32001,7 +32066,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -32013,7 +32078,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -32025,7 +32090,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -32037,7 +32102,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -32049,7 +32114,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -32105,6 +32170,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -33698,7 +33764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   celestialObjectID: 0
   initialized: 0
-  graphicsManager: {fileID: 0}
+  resourcesManager: {fileID: 0}
 --- !u!114 &751419958717684522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33771,7 +33837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   celestialObjectID: 0
   initialized: 0
-  graphicsManager: {fileID: 0}
+  resourcesManager: {fileID: 0}
 --- !u!114 &751419958770425913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33830,7 +33896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   celestialObjectID: 0
   initialized: 0
-  graphicsManager: {fileID: 0}
+  resourcesManager: {fileID: 0}
 --- !u!114 &751419959203801694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33889,7 +33955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   celestialObjectID: 0
   initialized: 0
-  graphicsManager: {fileID: 0}
+  resourcesManager: {fileID: 0}
 --- !u!114 &751419960064797119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34043,6 +34109,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 4
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -34052,7 +34119,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34064,7 +34131,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34076,7 +34143,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34088,7 +34155,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34100,7 +34167,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 0}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34156,6 +34223,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -34193,6 +34261,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 4
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -34246,6 +34315,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -34326,6 +34396,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 3
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -34335,7 +34406,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34347,7 +34418,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34359,7 +34430,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34371,7 +34442,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34433,6 +34504,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
@@ -34513,6 +34585,7 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 3
+  sector: {fileID: 0}
   route:
     waypoints: []
   inventory:
@@ -34522,7 +34595,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34534,7 +34607,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34546,7 +34619,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34558,7 +34631,7 @@ MonoBehaviour:
   - equipper: {fileID: 0}
     turret: {fileID: 11400000, guid: 6b841d7ee4d92ad41b8afac5994becf6, type: 2}
     turretName: 
-    usingAmmunition: {fileID: 0}
+    ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     angle: 0
@@ -34620,6 +34693,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}

@@ -16,6 +16,7 @@ public class StructureBehaviours : MonoBehaviour {
     public bool cloaked;
     public int factionID;
     [Header ("Navigation")]
+    public Sector sector;
     public Route route;
     [Header ("Inventory")]
     public InventoryHandler inventory;
@@ -41,17 +42,25 @@ public class StructureBehaviours : MonoBehaviour {
     public GameObject billboard;
     public bool initialized;
     [Header ("Component Cache")]
+    public AudioSource audioSource;
     public StructuresManager structuresManager;
     public FactionsManager factionsManager;
     public PlayerController playerController;
     public NavigationManager navigationManager;
 
     public void Initialize () {
+        audioSource = gameObject.AddComponent<AudioSource> ();
         structuresManager = FindObjectOfType<StructuresManager> ();
         factionsManager = FindObjectOfType<FactionsManager> ();
         playerController = FindObjectOfType<PlayerController> ();
         navigationManager = FindObjectOfType<NavigationManager> ();
         structuresManager.AddStructure (this);
+        audioSource.spatialBlend = 1;
+        audioSource.rolloffMode = profile.rolloffMode;
+        if (profile.ambientMinMax != null && profile.ambientMinMax.Length == 2) {
+            audioSource.minDistance = profile.ambientMinMax[0];
+            audioSource.maxDistance = profile.ambientMinMax[1];
+        }
         GameObject meshGameObject = new GameObject ();
         meshGameObject.name = "Mesh";
         meshGameObject.transform.parent = transform;
@@ -108,6 +117,10 @@ public class StructureBehaviours : MonoBehaviour {
             decals.transform.localPosition = Vector3.zero;
             decals.transform.localEulerAngles = Vector3.zero;
         }
+        sector = transform.parent.GetComponent<Sector> ();
+        if (sector == null) sector = transform.parent.parent.GetComponent<Sector> ();
+        if (!sector.inSector.Contains (this)) sector.inSector.Add (this);
+        StartCoroutine (AmbientSound ());
         initialized = true;
     }
 
@@ -118,13 +131,6 @@ public class StructureBehaviours : MonoBehaviour {
             destroyed = true;
             structuresManager.RemoveStructure (this);
             StartCoroutine (DestructionSequence ());
-        }
-        if (transform.parent.GetComponent<Sector> ()) {
-            if (!transform.parent.GetComponent<Sector> ().inSector.Contains (this))
-                transform.parent.GetComponent<Sector> ().inSector.Add (this);
-        } else {
-            if (!transform.parent.parent.GetComponent<Sector> ().inSector.Contains (this))
-                transform.parent.parent.GetComponent<Sector> ().inSector.Add (this);
         }
         if (targeted != null && !targeted.CanBeTargeted ()) targeted = null;
         if (playerController.structureBehaviours != this)
@@ -178,13 +184,6 @@ public class StructureBehaviours : MonoBehaviour {
         if (AI != null) AI.Process (this, deltaTime);
     }
 
-    public Vector3 CalculateLeadPosition (Vector3 currentPosition, Vector3 targetPosition, Vector3 targetVelocity, float projectileVelocity, bool lead) {
-        if (!lead) return targetPosition - currentPosition;
-        float distance = Vector3.Distance(currentPosition, targetPosition);
-        float travelTime = distance / projectileVelocity;
-        return targetPosition + targetVelocity * travelTime - currentPosition;
-    }
-
     public Quaternion RandomQuaternion (float maxRandom) {
         return Quaternion.Euler (
             UnityEngine.Random.Range(-maxRandom, maxRandom),
@@ -204,8 +203,8 @@ public class StructureBehaviours : MonoBehaviour {
     }
 
     public int GetSector (Vector3 to) {
-        float angle = to - (transform.position + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation (to - (transform.position + transform.rotation * profile.offset)));
-        Vector3 perp = Vector3.Cross(transform.forward, to - (transform.position + profile.offset));
+        float angle = to - (transform.localPosition + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation (to - (transform.localPosition + transform.rotation * profile.offset)));
+        Vector3 perp = Vector3.Cross(transform.forward, to - (transform.localPosition + profile.offset));
         float leftRight = Vector3.Dot(perp, transform.up);
         angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
         int directionalSector = 0;
@@ -312,5 +311,11 @@ public class StructureBehaviours : MonoBehaviour {
     
     Vector3 GetExplosionPosition (Vector3[] candidates) {
         return transform.position + transform.rotation * (candidates[Random.Range (0, candidates.Length - 1)] / 2);
+    }
+
+    IEnumerator AmbientSound () {
+        audioSource.PlayOneShot (profile.ambient, profile.ambientVolume);
+        yield return new WaitForSeconds (profile.ambient == null ? 15 : profile.ambient.length);
+        StartCoroutine (AmbientSound ());
     }
 }

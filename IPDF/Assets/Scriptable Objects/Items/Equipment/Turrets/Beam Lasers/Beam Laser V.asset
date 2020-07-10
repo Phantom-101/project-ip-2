@@ -18,6 +18,7 @@ MonoBehaviour:
   meta: 5
   impactEffect: {fileID: 0}
   impactEffectSize: 0
+  clip: {fileID: 8300000, guid: 9bb1228cf80d3f548bb6d7d6fb268b01, type: 3}
   maxStoredEnergy: 750
   rechargeRate: 110
   range: 600

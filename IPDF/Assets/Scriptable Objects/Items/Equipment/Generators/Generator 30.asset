@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec3f6ef55f36e941a550c8460f835a8, type: 3}
   m_Name: Generator 30
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: ed8da7c8cb3d1944ab928b13a09ca2e3, type: 3}
   basePrice: 0
   size: 0
-  icon: {fileID: 0}
+  meta: 0
   generation: 30

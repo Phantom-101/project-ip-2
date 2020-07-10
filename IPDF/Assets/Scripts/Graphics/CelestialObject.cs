@@ -6,14 +6,14 @@ public class CelestialObject : MonoBehaviour {
     public int celestialObjectID;
     public bool initialized = false;
 
-    public GraphicsManager graphicsManager;
+    public ResourcesManager resourcesManager;
 
     void Awake () {
-        graphicsManager = FindObjectOfType<GraphicsManager> ();
+        resourcesManager = FindObjectOfType<ResourcesManager> ();
     }
 
     public void Initialize () {
-        Instantiate (graphicsManager.celestialObjects[celestialObjectID], transform);
+        Instantiate (resourcesManager.celestialObjects[celestialObjectID], transform);
         initialized = true;
     }
 }

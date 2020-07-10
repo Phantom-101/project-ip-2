@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f80d65e601fea408a4db21bf9e125e, type: 3}
   m_Name: Cloak I
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6d76f2f3ebc819d449d63b24b6ee34a0, type: 3}
   basePrice: 0
   size: 0
+  meta: 0
   cloakTime: 100
   maxStoredEnergy: 100
   rechargeRate: 1
