@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dd990f856238d479dec511502f847a, type: 3}
   m_Name: 120mm HE
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c0b3d76003c58d04bbeac3228118d2a3, type: 3}
   basePrice: 0
   size: 0.1
   asset: {fileID: 2956826465837218366, guid: dbc31a4b5efafe84c8764729227d47d3, type: 3}

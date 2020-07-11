@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "New Factory", menuName = "Factory")]
-public class Factory : ScriptableObject {
+public class Factory : Item {
     public Item[] inputs;
     public int[] inputQuantities;
     public Item[] outputs;
@@ -17,6 +17,7 @@ public class Factory : ScriptableObject {
 public class FactoryHandler {
     public StructureBehaviours structure;
     public Factory factory;
+    public string mountedID;
     public bool online;
     public float timer;
 

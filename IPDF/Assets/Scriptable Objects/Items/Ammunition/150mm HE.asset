@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb012ea4381c3cd47b8b0fe125ea5274, type: 3}
-  m_Name: Shield 200
+  m_Script: {fileID: 11500000, guid: c2dd990f856238d479dec511502f847a, type: 3}
+  m_Name: 150mm HE
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 6d76f2f3ebc819d449d63b24b6ee34a0, type: 3}
+  icon: {fileID: 21300000, guid: c0b3d76003c58d04bbeac3228118d2a3, type: 3}
   basePrice: 0
-  size: 0
-  meta: 0
-  strength: 200
-  rechargeRate: 2
-  shieldRechargeEfficiency: 1
+  size: 0.1
+  asset: {fileID: 2956826465837218366, guid: dbc31a4b5efafe84c8764729227d47d3, type: 3}
+  mass: 15

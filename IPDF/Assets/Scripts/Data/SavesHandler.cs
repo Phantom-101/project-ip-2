@@ -127,21 +127,25 @@ public class SavesHandler : MonoBehaviour {
             data.turrets = new List<TurretHandler> ();
             for (int i = 0; i < structure.profile.turretSlots; i++) {
                 data.turrets.Add (structure.turrets[i]);
-                data.turrets[i].turretName = structure.turrets[i].turret == null ? "" : structure.turrets[i].turret.name;
+                data.turrets[i].mountedID = itemsHandler.GetItemId (structure.turrets[i].turret);
             }
             data.shield = structure.shield;
-            data.shield.shieldName = structure.shield.shield == null ? "" : structure.shield.shield.name;
+            data.shield.mountedID = itemsHandler.GetItemId (structure.shield.shield);
             data.capacitor = structure.capacitor;
-            data.capacitor.capacitorName = structure.capacitor.capacitor == null ? "" : structure.capacitor.capacitor.name;
+            data.capacitor.mountedID = itemsHandler.GetItemId (structure.capacitor.capacitor);
             data.generator = structure.generator;
-            data.generator.generatorName = structure.generator.generator == null ? "" : structure.generator.generator.name;
+            data.generator.mountedID = itemsHandler.GetItemId (structure.generator.generator);
             data.engine = structure.engine;
-            data.engine.engineName = structure.engine.engine == null ? "" : structure.engine.engine.name;
+            data.engine.mountedID = itemsHandler.GetItemId (structure.engine.engine);
             data.electronics = structure.electronics;
-            data.electronics.electronicsName = structure.electronics.electronics == null ? "" : structure.electronics.electronics.name;
+            data.electronics.mountedID = itemsHandler.GetItemId (structure.electronics.electronics);
             data.tractorBeam = structure.tractorBeam;
-            data.tractorBeam.tractorBeamName = structure.tractorBeam.tractorBeam == null ? "" : structure.tractorBeam.tractorBeam.name;
-            data.factories = structure.factories;
+            data.tractorBeam.mountedID = itemsHandler.GetItemId (structure.tractorBeam.tractorBeam);
+            data.factories = new List<FactoryHandler> ();
+            for (int i = 0; i < structure.profile.factories.Length; i++) {
+                data.factories.Add (structure.factories[i]);
+                data.factories[i].mountedID = itemsHandler.GetItemId (structure.factories[i].factory);
+            }
             data.AI = structure.AI;
             data.docked = structure.docked;
             data.isPlayer = (playerController.structureBehaviours == structure);
@@ -213,21 +217,23 @@ public class SavesHandler : MonoBehaviour {
                 structureBehaviours.inventory.inventory.Add (itemsHandler.GetItemById (pair.item), pair.amount);
             for (int i = 0; i < data.turrets.Count; i++) {
                 structureBehaviours.turrets.Add (data.turrets[i]);
-                structureBehaviours.turrets[i].turret = itemsHandler.GetItemById (data.turrets[i].turretName) as Turret;
+                structureBehaviours.turrets[i].turret = itemsHandler.GetItemById (data.turrets[i].mountedID) as Turret;
             }
             structureBehaviours.shield = data.shield;
-            structureBehaviours.shield.shield = itemsHandler.GetItemById (data.shield.shieldName) as Shield;
+            structureBehaviours.shield.shield = itemsHandler.GetItemById (data.shield.mountedID) as Shield;
             structureBehaviours.capacitor = data.capacitor;
-            structureBehaviours.capacitor.capacitor = itemsHandler.GetItemById (data.capacitor.capacitorName) as Capacitor;
+            structureBehaviours.capacitor.capacitor = itemsHandler.GetItemById (data.capacitor.mountedID) as Capacitor;
             structureBehaviours.generator = data.generator;
-            structureBehaviours.generator.generator = itemsHandler.GetItemById (data.generator.generatorName) as Generator;
+            structureBehaviours.generator.generator = itemsHandler.GetItemById (data.generator.mountedID) as Generator;
             structureBehaviours.engine = data.engine;
-            structureBehaviours.engine.engine = itemsHandler.GetItemById (data.engine.engineName) as Engine;
+            structureBehaviours.engine.engine = itemsHandler.GetItemById (data.engine.mountedID) as Engine;
             structureBehaviours.electronics = data.electronics;
-            structureBehaviours.electronics.electronics = itemsHandler.GetItemById (data.electronics.electronicsName) as Electronics;
+            structureBehaviours.electronics.electronics = itemsHandler.GetItemById (data.electronics.mountedID) as Electronics;
             structureBehaviours.tractorBeam = data.tractorBeam;
-            structureBehaviours.tractorBeam.tractorBeam = itemsHandler.GetItemById (data.tractorBeam.tractorBeamName) as TractorBeam;
-            structureBehaviours.factories = data.factories;
+            structureBehaviours.tractorBeam.tractorBeam = itemsHandler.GetItemById (data.tractorBeam.mountedID) as TractorBeam;
+            structureBehaviours.factories = new List<FactoryHandler> ();
+            for (int i = 0; i < data.factories.Count; i++)
+                structureBehaviours.factories.Add (data.factories[i]);
             structureBehaviours.AI = data.AI;
             structureBehaviours.docked = data.docked;
             loaded.Add (structureBehaviours);

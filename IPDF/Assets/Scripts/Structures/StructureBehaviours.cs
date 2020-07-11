@@ -97,14 +97,6 @@ public class StructureBehaviours : MonoBehaviour {
         if (engine == null) engine = new EngineHandler ();
         if (electronics == null) electronics = new ElectronicsHandler ();
         if (tractorBeam == null) tractorBeam = new TractorBeamHandler ();
-        if (factories.Count != profile.factories.Length) {
-            factories = new List<FactoryHandler> ();
-            for (int i = 0; i < profile.factories.Length; i++)
-                factories.Add (new FactoryHandler (profile.factories[i]));
-        }
-        for (int i = 0; i < profile.factories.Length; i++)
-            if (factories[i] == null)
-                factories.Add (new FactoryHandler (profile.factories[i]));
         if (docked == null) docked = new int[profile.dockingLocations.Length];
         if (docked.Length != profile.dockingLocations.Length) docked = new int[profile.dockingLocations.Length];
         rigidbody = GetComponent<Rigidbody> ();
@@ -132,6 +124,13 @@ public class StructureBehaviours : MonoBehaviour {
             structuresManager.RemoveStructure (this);
             StartCoroutine (DestructionSequence ());
         }
+        if (factories.Count != profile.factories.Length) {
+            factories = new List<FactoryHandler> ();
+            for (int i = 0; i < profile.factories.Length; i++)
+                factories.Add (new FactoryHandler (profile.factories[i]));
+        }
+        for (int i = 0; i < profile.factories.Length; i++)
+            factories[i].factory = profile.factories[i];
         if (targeted != null && !targeted.CanBeTargeted ()) targeted = null;
         if (playerController.structureBehaviours != this)
             if (AI == null)
@@ -273,21 +272,13 @@ public class StructureBehaviours : MonoBehaviour {
         GameObject explosion;
         Vector3[] vertices = profile.mesh.vertices;
         if (profile.explosion != null) {
-            explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
-            explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
-        }
-        yield return new WaitForSeconds (1);
-        if (profile.explosion != null) {
-            explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
-            explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
-        }
-        yield return new WaitForSeconds (2);
-        if (profile.explosion != null) {
-            explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
-            explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
-        }
-        yield return new WaitForSeconds (2);
-        if (profile.explosion != null) {
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < Random.Range (1, 3); j++) {
+                    explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
+                    explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
+                }
+                yield return new WaitForSeconds (Random.Range (0.1f, 1));
+            }
             explosion = Instantiate (profile.explosion, transform.position, Quaternion.identity) as GameObject;
             explosion.transform.localScale = Vector3.one * profile.apparentSize;
         }

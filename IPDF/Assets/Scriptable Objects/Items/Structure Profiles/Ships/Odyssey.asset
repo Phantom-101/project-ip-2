@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Odyssey
   m_EditorClassIdentifier: 
+  id: 
   icon: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
   basePrice: 700000
   size: 0
@@ -22,6 +23,11 @@ MonoBehaviour:
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
+  pod: {fileID: 0}
+  ambient: {fileID: 0}
+  rolloffMode: 0
+  ambientVolume: 0
+  ambientMinMax: []
   hullUI: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
   enforceHeight: 1
   canFireAt: 1
@@ -32,6 +38,7 @@ MonoBehaviour:
   description: 
   hull: 700
   inventorySize: 500
+  authority: 0
   maxEquipmentMeta: 6
   turretSlots: 9
   turretPositions:

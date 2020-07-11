@@ -6,11 +6,13 @@ public class ItemsHandler : MonoBehaviour {
     public Item[] items;
 
     public string GetItemId (Item item) {
-        return item.name;
+        if (item == null) return "";
+        return item.id;
     }
 
     public Item GetItemById (string id) {
-        foreach (Item item in items) if (item.name == id) return item;
+        if (id == "") return null;
+        foreach (Item item in items) if (item.id == id) return item;
         return null;
     }
 }

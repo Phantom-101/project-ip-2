@@ -16,15 +16,14 @@ MonoBehaviour:
   basePrice: 0
   size: 0
   meta: 4
-  impactEffect: {fileID: 0}
-  impactEffectSize: 0
   clip: {fileID: 8300000, guid: 9bb1228cf80d3f548bb6d7d6fb268b01, type: 3}
-  maxStoredEnergy: 500
+  audioDistance: 0
+  maxStoredEnergy: 400
   rechargeRate: 80
-  range: 380
-  damage: 17
+  range: 550
   asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
   beamColor: {r: 0, g: 1, b: 1, a: 1}
   beamWidth: 0.8
-  depletionRate: 90
+  depletionRate: 120
+  damage: 17
   activationThreshold: 0.4

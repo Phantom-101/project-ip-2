@@ -27,15 +27,21 @@ public class Turret : Equipment {
     [Header ("Activation Requirements")]
     public float range;
 
-    public virtual void AlterStats (TurretHandler caller) {}
-
     public virtual void InitializeProjectile (TurretHandler caller, GameObject projectile) {}
 
     public virtual bool CanActivate (TurretHandler caller, GameObject target) {
         return false;
     }
 
+    public virtual void Activated (TurretHandler caller) {}
+
     public virtual bool CanSustain (TurretHandler caller, GameObject target) {
+        return false;
+    }
+
+    public virtual void Sustained (TurretHandler caller) {}
+
+    public virtual bool CanRepeat (TurretHandler caller, GameObject target) {
         return false;
     }
 
@@ -53,7 +59,7 @@ public class TurretHandler {
     [Header ("Essential Information")]
     public StructureBehaviours equipper;
     public Turret turret;
-    public string turretName;
+    public string mountedID;
     public Ammunition ammunition;
     [Header ("Transforms")]
     public Vector3 position;
@@ -119,22 +125,37 @@ public class TurretHandler {
             turret = null;
             return;
         }
-        if (turret != null) turret.AlterStats (this);
-        if (activated && !turret.CanSustain (this, target)) Deactivate ();
+        if (activated) {
+            if (!turret.CanRepeat (this, target) && !turret.CanSustain (this, target)) Deactivate ();
+            else {
+                TryActivate ();
+                turret.Sustained (this);
+            }
+        }
         if (turret.GetType () == typeof (KineticTurret)) UseAmmunition ((turret as KineticTurret).ammunition[0]);
     }
 
     public void Interacted (GameObject target) {
         if (activated) Deactivate ();
-        else Activate (target);
+        else if (turret.CanActivate (this, target)) {
+            this.target = target;
+            activated = true;
+        }
+    }
+
+    public void TryActivate () {
+        if (turret.CanActivate (this, target)) {
+            turret.Activated (this);
+            projectile = new GameObject (turret.name);
+            turret.InitializeProjectile (this, projectile);
+        }
     }
 
     public void Activate (GameObject target) {
-        if (turret != null && turret.CanActivate (this, target)) {
+        if (turret == null) return;
+        if (turret.CanActivate (this, target)) {
             this.target = target;
             activated = true;
-            projectile = new GameObject (turret.name);
-            turret.InitializeProjectile (this, projectile);
         }
     }
 

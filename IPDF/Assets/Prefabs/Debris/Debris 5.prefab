@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1682022843677386026}
   - component: {fileID: 1682022843677386025}
   - component: {fileID: 1682022843677386024}
-  - component: {fileID: -1635115165223659581}
+  - component: {fileID: -5592952402420102398}
   - component: {fileID: -7118672635096412255}
+  - component: {fileID: -1635115165223659581}
   m_Layer: 0
   m_Name: Debris 5
   m_TagString: Untagged
@@ -81,19 +82,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-1635115165223659581
-MonoBehaviour:
+--- !u!64 &-5592952402420102398
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682022843677386031}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de38ec4e14bc8504da4abf61643f2308, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6525949916285243375, guid: 698bec8f97ca483449946d79107a4497, type: 3}
 --- !u!54 &-7118672635096412255
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,3 +112,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1635115165223659581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682022843677386031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de38ec4e14bc8504da4abf61643f2308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 1

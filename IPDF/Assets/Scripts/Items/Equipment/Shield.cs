@@ -28,7 +28,7 @@ public class Shield : Equipment {
 public class ShieldHandler {
     public StructureBehaviours equipper;
     public Shield shield;
-    public string shieldName;
+    public string mountedID;
     public bool online;
     public float[] strengths;
     public float[] shieldTimesSinceLastDamaged;

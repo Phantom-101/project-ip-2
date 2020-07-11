@@ -5,37 +5,31 @@ using UnityEngine;
 using UnityEngine.VFX;
 using Essentials;
 
-[CreateAssetMenu (fileName = "New Beam Laser Turret", menuName = "Equipment/Turrets/Beam Laser Turret")]
-public class BeamLaserTurret : Turret {
+[CreateAssetMenu (fileName = "New Pulse Turret", menuName = "Equipment/Turrets/Pulse Turret")]
+public class PulseTurret : Turret {
     [Header ("Appearance")]
     public GameObject asset;
     public Color beamColor;
     public float beamWidth;
+    public float beamDuration;
     [Header ("Turret Stats")]
-    public float depletionRate;
     public float damage;
-    [Header ("Activation Requirements")]
-    public float activationThreshold;
-
-    public override void AlterStats (TurretHandler caller) {
-        if (!CanSustain (caller, caller.target)) caller.Deactivate ();
-        if (caller.storedEnergy < depletionRate * Time.deltaTime) caller.Deactivate ();
-        if (caller.activated) caller.storedEnergy -= depletionRate * Time.deltaTime;
-    }
 
     public override void InitializeProjectile (TurretHandler caller, GameObject projectile) {
-        BeamLaserProjectile laserProjectile = projectile.AddComponent<BeamLaserProjectile> ();
-        laserProjectile.handler = caller;
-        laserProjectile.from = caller.equipper;
-        laserProjectile.to = caller.equipper.targeted;
-        laserProjectile.Initialize ();
+        PulseProjectile pulseProjectile = projectile.AddComponent<PulseProjectile> ();
+        pulseProjectile.handler = caller;
+        pulseProjectile.from = caller.equipper;
+        pulseProjectile.to = caller.equipper.targeted;
+        pulseProjectile.Initialize ();
     }
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
-        if (caller.activated || caller.projectile != null) return false;
-        if (caller.storedEnergy / maxStoredEnergy < activationThreshold) return false;
         if (!CanSustain (caller, target)) return false;
         return true;
+    }
+
+    public override void Activated (TurretHandler caller) {
+        caller.storedEnergy = 0;
     }
 
     public override bool CanSustain (TurretHandler caller, GameObject target) {
@@ -43,6 +37,7 @@ public class BeamLaserTurret : Turret {
         if (target == null) return false;
         StructureBehaviours targetBehaviours = target.GetComponent<StructureBehaviours> ();
         if (targetBehaviours != null && !targetBehaviours.CanBeTargeted ()) return false;
+        if (caller.storedEnergy < maxStoredEnergy) return false;
         if (!caller.equipper.transform.parent.gameObject.GetComponent<Sector> ()) return false;
         if ((target.transform.localPosition - caller.equipper.transform.localPosition).sqrMagnitude > range * range) return false;
         float angle = target.transform.position - caller.equipper.transform.position == Vector3.zero ?

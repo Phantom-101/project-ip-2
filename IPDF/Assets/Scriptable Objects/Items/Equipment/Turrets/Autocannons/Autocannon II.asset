@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d58410d9fa9544f8df4ef24771a992, type: 3}
+  m_Name: Autocannon II
+  m_EditorClassIdentifier: 
+  id: 2aea6751-a8fb-493b-9ddb-5015ecfabeaf
+  icon: {fileID: 21300000, guid: f9a723a062f2e89469cf6db6ec702024, type: 3}
+  basePrice: 0
+  size: 0
+  meta: 2
+  clip: {fileID: 8300000, guid: 35a06d60cbedf5d4fb55082755f6def5, type: 3}
+  audioDistance: 50
+  maxStoredEnergy: 15
+  rechargeRate: 20
+  range: 350
+  repeating: 1
+  power: 130
+  damageMultiplier: 0.5
+  ammunition:
+  - {fileID: 11400000, guid: 659f1d0eb40a1ee4c9f82ac71dfc6bd4, type: 2}

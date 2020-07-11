@@ -15,16 +15,15 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 0
   size: 0
-  meta: 1
-  impactEffect: {fileID: 0}
-  impactEffectSize: 0
+  meta: 10
   clip: {fileID: 8300000, guid: 9bb1228cf80d3f548bb6d7d6fb268b01, type: 3}
-  maxStoredEnergy: 100
-  rechargeRate: 100
+  audioDistance: 0
+  maxStoredEnergy: 1000
+  rechargeRate: 200
   range: 1000
-  damage: 100
   asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
   beamColor: {r: 1, g: 0, b: 1, a: 1}
   beamWidth: 1
-  depletionRate: 100
-  activationThreshold: 0
+  depletionRate: 300
+  damage: 50
+  activationThreshold: 0.4

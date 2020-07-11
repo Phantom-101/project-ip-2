@@ -271,7 +271,7 @@ public class GameUIHandler : MonoBehaviour {
                 targetName.text = targetStructureBehaviour.gameObject.name;
                 targetFaction.text = factionsManager.GetFaction(targetStructureBehaviour.factionID).abbreviated;
                 targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
-                float rot = targetStructureBehaviour.GetSector (source.transform.position) * 6;
+                float rot = targetStructureBehaviour.GetSector (source.transform.position) * 60;
                 toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55, Mathf.Cos (rot * Mathf.Deg2Rad) * 55);
                 toSource.eulerAngles = new Vector3 (0, 0, -rot);
             }

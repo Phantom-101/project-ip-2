@@ -29,7 +29,7 @@ public class Capacitor : Equipment {
 public class CapacitorHandler {
     public StructureBehaviours equipper;
     public Capacitor capacitor;
-    public string capacitorName;
+    public string mountedID;
     public float storedEnergy;
 
     public CapacitorHandler (Capacitor capacitor = null) {

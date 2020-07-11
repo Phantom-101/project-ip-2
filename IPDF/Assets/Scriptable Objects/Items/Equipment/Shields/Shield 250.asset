@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb012ea4381c3cd47b8b0fe125ea5274, type: 3}
+  m_Name: Shield 250
+  m_EditorClassIdentifier: 
+  id: 19e61cc1-4d30-4df2-8957-df7087a3d937
+  icon: {fileID: 21300000, guid: 6d76f2f3ebc819d449d63b24b6ee34a0, type: 3}
+  basePrice: 0
+  size: 0
+  meta: 3
+  strength: 250
+  rechargeRate: 5
+  shieldRechargeEfficiency: 0.1

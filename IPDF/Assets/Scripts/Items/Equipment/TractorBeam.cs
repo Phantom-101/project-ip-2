@@ -31,7 +31,7 @@ public class TractorBeam : Equipment {
 public class TractorBeamHandler {
     public StructureBehaviours equipper;
     public TractorBeam tractorBeam;
-    public string tractorBeamName;
+    public string mountedID;
     public bool online;
     public bool activated;
     public float storedEnergy;

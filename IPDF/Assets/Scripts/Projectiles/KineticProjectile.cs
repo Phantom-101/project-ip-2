@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class KineticProjectile : Projectile {
     [Header ("Stats")]
@@ -11,6 +10,7 @@ public class KineticProjectile : Projectile {
     public GameObject mesh;
 
     public override void Initialize () {
+        if (from == null || to == null) { Disable (); return; }
         base.Initialize ();
         turret = handler.turret;
         GameObject soundEffect = new GameObject ("Beam Laser Sound Effect");
@@ -35,7 +35,6 @@ public class KineticProjectile : Projectile {
     public override void Process (float deltaTime) {
         if (!initialized || disabled) return;
         if (from == null || to == null) { Disable (); return; }
-        if (turret != handler.turret) { Disable (); return; }
         Collider[] overlaps = Physics.OverlapSphere (transform.position, speed);
         foreach (Collider hit in overlaps) {
             StructureBehaviours hitStructure = hit.transform.parent.GetComponent<StructureBehaviours> ();
