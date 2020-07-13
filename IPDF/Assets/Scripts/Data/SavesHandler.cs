@@ -23,7 +23,7 @@ public class BaseSaveData {
 
 [System.Serializable]
 public class StructureSaveData : BaseSaveData {
-    public int id;
+    public string id;
     public int sectorID;
     public string profile;
     public float hull;
@@ -38,8 +38,16 @@ public class StructureSaveData : BaseSaveData {
     public TractorBeamHandler tractorBeam;
     public List<FactoryHandler> factories;
     public StructureAI AI;
-    public int[] docked;
+    public string[] docked;
     public bool isPlayer;
+    public JumpGateSaveData jumpGateSaveData;
+}
+
+[System.Serializable]
+public class JumpGateSaveData {
+    public float triggerRange;
+    public float forwardDistance;
+    public string otherId;
 }
 
 [System.Serializable]
@@ -149,6 +157,14 @@ public class SavesHandler : MonoBehaviour {
             data.AI = structure.AI;
             data.docked = structure.docked;
             data.isPlayer = (playerController.structureBehaviours == structure);
+            JumpGate jumpGate = structure.GetComponent<JumpGate> ();
+            if (jumpGate != null) {
+                JumpGateSaveData jumpGateData = new JumpGateSaveData ();
+                jumpGateData.triggerRange = jumpGate.triggerRange;
+                jumpGateData.forwardDistance = jumpGate.forwardDistance;
+                jumpGateData.otherId = jumpGate.other.GetComponent<StructureBehaviours> ().id;
+                data.jumpGateSaveData = jumpGateData;
+            }
             universe.structures.Add (data);
         }
 
@@ -196,6 +212,11 @@ public class SavesHandler : MonoBehaviour {
         StructureBehaviours[] structures = FindObjectsOfType<StructureBehaviours> ();
         structuresManager.structures = new List<StructureBehaviours> ();
         foreach (StructureBehaviours structure in structures) Destroy (structure.gameObject);
+
+        // Destroy all destroyables
+        DestroyAfterT[] destroyables = FindObjectsOfType<DestroyAfterT> ();
+        foreach (DestroyAfterT destroyable in destroyables) Destroy (destroyable.gameObject);
+
         // Load structures
         List<StructureBehaviours> loaded = new List<StructureBehaviours> ();
         foreach (StructureSaveData data in universe.structures) {
@@ -236,16 +257,27 @@ public class SavesHandler : MonoBehaviour {
                 structureBehaviours.factories.Add (data.factories[i]);
             structureBehaviours.AI = data.AI;
             structureBehaviours.docked = data.docked;
+            if (data.jumpGateSaveData != null) {
+                JumpGate jumpGate = structureBehaviours.gameObject.AddComponent<JumpGate> ();
+                jumpGate.triggerRange = data.jumpGateSaveData.triggerRange;
+                jumpGate.forwardDistance = data.jumpGateSaveData.forwardDistance;
+                jumpGate.otherId = data.jumpGateSaveData.otherId;
+            }
             loaded.Add (structureBehaviours);
             if (data.isPlayer) playerController.structureBehaviours = structureBehaviours;
         }
         foreach (StructureBehaviours structureBehaviours in loaded) {
-            foreach (int dockedID in structureBehaviours.docked)
+            foreach (string dockedID in structureBehaviours.docked)
                 foreach (StructureBehaviours possibleDocker in loaded)
                     if (possibleDocker.id == dockedID) {
                         possibleDocker.transform.parent = structureBehaviours.transform;
                         possibleDocker.transform.localPosition = possibleDocker.transform.position;
                     }
+            JumpGate jumpGate = structureBehaviours.GetComponent<JumpGate> ();
+            if (jumpGate != null)
+                foreach (StructureBehaviours possibleConnection in loaded)
+                    if (possibleConnection.id == jumpGate.otherId)
+                        jumpGate.other = possibleConnection.GetComponent<JumpGate> ();
             structureBehaviours.Initialize ();
         }
         // Reset camera position

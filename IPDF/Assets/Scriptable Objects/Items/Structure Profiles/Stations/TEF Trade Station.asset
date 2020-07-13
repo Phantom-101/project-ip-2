@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10,18 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: TEF Trade Station 1
+  m_Name: TEF Trade Station
   m_EditorClassIdentifier: 
+  id: a68d95e1-82bc-41e6-851a-5c71c0fb54bf
   icon: {fileID: 0}
   basePrice: 0
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 3f74945d214ee4e45914e3866fcce593, type: 3}
   material: {fileID: 2100000, guid: 3fa01f9bd2cbf8a4db3d33d03430553a, type: 2}
-  apparentSize: 50
+  apparentSize: 700
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
+  pod: {fileID: 0}
+  ambient: {fileID: 8300000, guid: ec55deda47b988740868ca6a4f21c378, type: 3}
+  rolloffMode: 1
+  ambientVolume: 0.1
+  ambientMinMax:
+  - 100
+  - 250
   hullUI: {fileID: 21300000, guid: 8df26ae6b4484a644935ac5bfbb6ef24, type: 3}
   enforceHeight: 1
   canFireAt: 1

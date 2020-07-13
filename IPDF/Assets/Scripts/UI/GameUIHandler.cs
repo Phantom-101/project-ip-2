@@ -36,6 +36,7 @@ public class GameUIHandler : MonoBehaviour {
     public SavesHandler savesHandler;
     public new Camera camera;
     public SettingsHandler settingsHandler;
+    public ScenesManager scenesManager;
     [Header ("UI Elements")]
     public Stack<GameUIState> activeUI = new Stack<GameUIState> ();
     public Canvas canvas;
@@ -108,6 +109,7 @@ public class GameUIHandler : MonoBehaviour {
     public Button repairConfirmButton;
     public Button repairCancelButton;
     List<GameObject> saveItems = new List<GameObject> ();
+    public GameObject death;
     [Header ("Initialization")]
     public bool initialized;
 
@@ -118,6 +120,7 @@ public class GameUIHandler : MonoBehaviour {
         savesHandler = FindObjectOfType<SavesHandler> ();
         camera = FindObjectOfType<Camera> ();
         settingsHandler = FindObjectOfType<SettingsHandler> ();
+        scenesManager = FindObjectOfType<ScenesManager> ();
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         canvasScaler = canvas.GetComponent<CanvasScaler> ();
         if (settingsHandler != null) canvasScaler.scaleFactor = settingsHandler.settings.UIScale;
@@ -195,13 +198,20 @@ public class GameUIHandler : MonoBehaviour {
         ButtonFunction (() => { RemoveOverlay (); RepairShip (); }, repairConfirmButton);
         repairCancelButton = repairPanel.transform.Find ("Outline/Panel/Cancel Button").GetComponent<Button> ();
         ButtonFunction (() => RemoveOverlay (), repairCancelButton);
+        death = canvas.transform.Find ("Death").gameObject;
+        source = playerController.structureBehaviours;
         activeUI.Push (GameUIState.InSpace);
         UpdateCanvas ();
         initialized = true;
     }
 
     public void TickCanvas () {
-        if (!initialized || source == null) return;
+        if (!initialized) return;
+
+        if (source == null && activeUI.Peek () != GameUIState.Death && activeUI.Peek () != GameUIState.SelectSave) ChangeScreen (GameUIState.Death);
+
+        if (source == null) return;
+
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         if (stationStructureBehaviours != null && activeUI.Peek () == GameUIState.InSpace) AddOverlay (GameUIState.Station);
         if (activeUI.Peek () == GameUIState.InSpace || activeUI.Peek () == GameUIState.Station || activeUI.Peek () == GameUIState.StationRepair) {
@@ -431,7 +441,7 @@ public class GameUIHandler : MonoBehaviour {
     }
 
     void UpdateCanvas () {
-        if (!initialized || source == null) return;
+        if (!initialized) return;
         if (activeUI.Peek () == GameUIState.InSpace) {
             // Control
             playerController.forwardPowerSlider.gameObject.SetActive (true);
@@ -632,12 +642,16 @@ public class GameUIHandler : MonoBehaviour {
                             instantiated.transform.GetChild (2).GetComponent<Text> ().text = faction.name;
                             instantiated.transform.GetChild (3).GetComponent<Text> ().text = faction.wealth.ToString () + " Credits";
                         }
-                    ButtonFunction (() => SaveSelected (save.Name), instantiated.GetComponent<Button> ());
+                    ButtonFunction (() => { SaveSelected (save.Name); Base (GameUIState.InSpace); }, instantiated.GetComponent<Button> ());
                     saveItems.Add (instantiated);
                 }
                 savesPanel.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, saves.Length * 100);
             }
         } else savesSelection.SetActive (false);
+        if (activeUI.Peek () == GameUIState.Death) {
+            death.SetActive (true);
+        }
+        else death.SetActive (false);
     }
 
     void ButtonFunction (UnityEngine.Events.UnityAction action, Button button) {
@@ -783,6 +797,22 @@ public class GameUIHandler : MonoBehaviour {
         activeUI.Push ((GameUIState) target);
         UpdateCanvas ();
     }
+
+    public void Base (GameUIState target) {
+        activeUI = new Stack<GameUIState> ();
+        activeUI.Push (target);
+        UpdateCanvas ();
+    }
+
+    public void Base (int target) {
+        activeUI = new Stack<GameUIState> ();
+        activeUI.Push ((GameUIState) target);
+        UpdateCanvas ();
+    }
+
+    public void Exit () {
+        scenesManager.SetLoadedScene ("Main Menu");
+    }
 }
 
 public enum GameUIState {
@@ -791,5 +821,6 @@ public enum GameUIState {
     StationRepair = 2,
     StationEquipment = 3,
     StationMarket = 4,
-    SelectSave = 5
+    SelectSave = 5,
+    Death = 6
 }

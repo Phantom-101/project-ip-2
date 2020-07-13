@@ -24,9 +24,9 @@ public class Ticker : MonoBehaviour {
     IEnumerator Tick () {
         curTime = Time.time;
         deltaTime = curTime - lastTicked;
-        gameUIHandler.TickCanvas ();
         structuresManager.TickStructures (deltaTime);
         foreach (Projectile projectile in projectiles) projectile.Process (deltaTime);
+        gameUIHandler.TickCanvas ();
         lastTicked = curTime;
         yield return new WaitForSeconds (tickLength);
         StartCoroutine (Tick ());

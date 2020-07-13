@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameUIHandlerInitializer : MonoBehaviour {
+    public bool active;
+
     void Awake () {
-        GetComponent<GameUIHandler> ().Initialize ();
+        if (active) GetComponent<GameUIHandler> ().Initialize ();
     }
 }

@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,16 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Ancient Starbase
   m_EditorClassIdentifier: 
+  id: bf2f3147-0e50-488c-a7b6-d932064cd301
   icon: {fileID: 0}
   basePrice: 0
   size: 0
   mesh: {fileID: 995598639654306925, guid: ece266a5b3a26d642a252450b835a970, type: 3}
   material: {fileID: 2100000, guid: 52c1a74757b29d8498553657f0d0ca88, type: 2}
-  apparentSize: 35
+  apparentSize: 500
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
+  pod: {fileID: 0}
+  ambient: {fileID: 0}
+  rolloffMode: 0
+  ambientVolume: 0
+  ambientMinMax: []
   hullUI: {fileID: 0}
   enforceHeight: 1
   canFireAt: 1
@@ -32,6 +38,7 @@ MonoBehaviour:
   description: 
   hull: 5000
   inventorySize: 1000
+  authority: 0
   maxEquipmentMeta: 0
   turretSlots: 0
   turretPositions: []

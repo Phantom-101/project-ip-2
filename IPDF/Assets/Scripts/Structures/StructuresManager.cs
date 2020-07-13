@@ -15,21 +15,8 @@ public class StructuresManager : MonoBehaviour {
     public void AddStructure (StructureBehaviours structure) {
         if (structure == null) return;
         structures.Add (structure);
-        if (structure.id == 0) {
-            while (true) {
-                int randomizedID = (int) Random.Range (int.MinValue, int.MaxValue);
-                if (randomizedID != 0) {
-                    bool idValid = true;
-                    foreach (StructureBehaviours listedStructure in structures)
-                        if (listedStructure.id == randomizedID)
-                            idValid = false;
-                    if (idValid) {
-                        structure.id = randomizedID;
-                        break;
-                    }
-                }
-            }
-        }
+        if (structure.id == null || structure.id == "")
+            structure.id = System.Guid.NewGuid ().ToString ();
     }
 
     public void RemoveStructure (StructureBehaviours structure) {

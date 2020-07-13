@@ -9,7 +9,7 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("Profile")]
     public StructureProfile profile;
     [Header ("Stats")]
-    public int id;
+    public string id;
     public float hull;
     public float hullTimeSinceLastDamaged;
     public bool destroyed;
@@ -29,7 +29,7 @@ public class StructureBehaviours : MonoBehaviour {
     public ElectronicsHandler electronics;
     public TractorBeamHandler tractorBeam;
     [Header ("Docking")]
-    public int[] docked;
+    public string[] docked;
     [Header ("Production")]
     public List<FactoryHandler> factories;
     [Header ("Physics")]
@@ -97,8 +97,8 @@ public class StructureBehaviours : MonoBehaviour {
         if (engine == null) engine = new EngineHandler ();
         if (electronics == null) electronics = new ElectronicsHandler ();
         if (tractorBeam == null) tractorBeam = new TractorBeamHandler ();
-        if (docked == null) docked = new int[profile.dockingLocations.Length];
-        if (docked.Length != profile.dockingLocations.Length) docked = new int[profile.dockingLocations.Length];
+        if (docked == null) docked = new string[profile.dockingLocations.Length];
+        if (docked.Length != profile.dockingLocations.Length) docked = new string[profile.dockingLocations.Length];
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.mass = profile.mass;
@@ -219,7 +219,7 @@ public class StructureBehaviours : MonoBehaviour {
     public void Dock (StructureBehaviours docker) {
         if (!DockerCanDock (docker)) return;
         for (int i = 0; i < profile.dockingLocations.Length; i++) {
-            if (docked[i] == 0 && profile.dockingSizes[i] >= docker.profile.apparentSize) {
+            if (docked[i] == "" && profile.dockingSizes[i] >= docker.profile.apparentSize) {
                 docker.transform.parent = transform;
                 docked[i] = docker.id;
                 docker.transform.localPosition = profile.dockingLocations[i];
@@ -244,7 +244,7 @@ public class StructureBehaviours : MonoBehaviour {
         for (int i = 0; i < profile.dockingLocations.Length; i++) {
             if (docked[i] == undocker.id) {
                 undocker.transform.parent = transform.parent;
-                docked[i] = 0;
+                docked[i] = "";
                 return;
             }
         }
@@ -253,7 +253,7 @@ public class StructureBehaviours : MonoBehaviour {
     public bool DockerCanDock (StructureBehaviours docker) {
         if ((docker.transform.position - transform.position).sqrMagnitude > profile.dockingRange * profile.dockingRange) return false;
         for (int i = 0; i < profile.dockingLocations.Length; i++)
-            if (docked[i] == 0 && profile.dockingSizes[i] >= docker.profile.apparentSize)
+            if (docked[i] == "" && profile.dockingSizes[i] >= docker.profile.apparentSize)
                 return true;
         return false;
     }
@@ -273,10 +273,8 @@ public class StructureBehaviours : MonoBehaviour {
         Vector3[] vertices = profile.mesh.vertices;
         if (profile.explosion != null) {
             for (int i = 0; i < 5; i++) {
-                for (int j = 0; j < Random.Range (1, 3); j++) {
-                    explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
-                    explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
-                }
+                explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
+                explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
                 yield return new WaitForSeconds (Random.Range (0.1f, 1));
             }
             explosion = Instantiate (profile.explosion, transform.position, Quaternion.identity) as GameObject;

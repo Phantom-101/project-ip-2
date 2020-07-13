@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
         if (structureBehaviours == null) return;
-        uIHandler.source = structureBehaviours;
         // Skybox stuff
         Sector inSector = structureBehaviours.transform.parent.GetComponent<Sector> ();
         if (inSector != null) RenderSettings.skybox = resourcesManager.skyboxes[inSector.sectorData.skyboxID];

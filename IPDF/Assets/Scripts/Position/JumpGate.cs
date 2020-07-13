@@ -7,6 +7,7 @@ public class JumpGate : MonoBehaviour {
     public float triggerRange;
     public float forwardDistance;
     [Header ("Link")]
+    public string otherId;
     public JumpGate other;
     [Header ("Components")]
     public AudioSource audioSource;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
@@ -18,14 +19,8 @@ public class Item : ScriptableObject {
 
     void Awake () {
         if (id == null || id == "") {
+            Undo.RecordObject (this, "ID Initialization");
             id = System.Guid.NewGuid ().ToString ();
-            ForceSerialization ();
         }
-    }
-
-    void ForceSerialization () {
-        #if UNITY_EDITOR
-            UnityEditor.EditorUtility.SetDirty (this);
-        #endif
     }
 }
