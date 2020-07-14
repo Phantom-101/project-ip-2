@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Iron Factory
   m_EditorClassIdentifier: 
+  id: 53bc4f76-9775-4b3c-8cdd-9ed4aa7e9e8e
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
   inputQuantities: 01000000

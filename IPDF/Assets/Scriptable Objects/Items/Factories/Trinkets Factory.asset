@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Trinkets Factory
   m_EditorClassIdentifier: 
+  id: d9c1a874-b84b-4411-9906-42d8a469e3e1
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: f10257b31b7ab654c9ef366af262342f, type: 2}
   inputQuantities: 01000000

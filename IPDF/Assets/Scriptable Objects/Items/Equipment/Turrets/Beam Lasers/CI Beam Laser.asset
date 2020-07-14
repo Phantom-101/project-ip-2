@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45038a71171ecfe4a9d8458e4c43ea4a, type: 3}
   m_Name: CI Beam Laser
   m_EditorClassIdentifier: 
+  id: 7d1a57cb-9206-42b5-8aa0-96c4684e61ea
   icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 0
   size: 0

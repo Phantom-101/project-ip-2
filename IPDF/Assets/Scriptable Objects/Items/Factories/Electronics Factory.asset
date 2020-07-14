@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Electronics Factory
   m_EditorClassIdentifier: 
+  id: 3cd1fa89-7c9f-474c-b6de-a8486e2c6276
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: 73c6df0778b2a424a99d14755582e0c6, type: 2}
   inputQuantities: 03000000

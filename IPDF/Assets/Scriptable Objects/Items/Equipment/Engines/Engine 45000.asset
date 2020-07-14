@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020abdd48621ae4429a821eb67a6d27e, type: 3}
   m_Name: Engine 45000
   m_EditorClassIdentifier: 
+  id: aee076b8-bd5c-42dd-9fd3-5ac1c782e4cb
   icon: {fileID: 21300000, guid: 84c63ade47ba32549b5b9403e12a3e73, type: 3}
   basePrice: 0
   size: 0

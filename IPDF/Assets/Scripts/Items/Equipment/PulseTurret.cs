@@ -25,6 +25,12 @@ public class PulseTurret : Turret {
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
         if (!CanSustain (caller, target)) return false;
+        Vector3 pos = caller.equipper.transform.localPosition + caller.equipper.transform.rotation * caller.position;
+        RaycastHit hit; 
+        if (Physics.Raycast (pos, target.transform.localPosition - pos, out hit, range)) {
+            StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
+            if (hitStructure != target.GetComponent<StructureBehaviours> ()) return false;
+        } else return false;
         return true;
     }
 

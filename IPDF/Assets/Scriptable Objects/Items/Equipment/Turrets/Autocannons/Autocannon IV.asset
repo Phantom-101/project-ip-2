@@ -23,7 +23,6 @@ MonoBehaviour:
   rechargeRate: 80
   range: 450
   repeating: 1
-  power: 200
-  damageMultiplier: 0.8
+  power: 850
   ammunition:
   - {fileID: 11400000, guid: 1924a58184e09744fbe64295d14f5080, type: 2}

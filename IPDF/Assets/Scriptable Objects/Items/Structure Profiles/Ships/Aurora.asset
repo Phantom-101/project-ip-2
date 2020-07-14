@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Aurora
   m_EditorClassIdentifier: 
-  id: 
+  id: c3f66a93-c711-421b-9b35-92817dbc4376
   icon: {fileID: 21300000, guid: d3972f2f464b84e4f86fd0c18bdf4891, type: 3}
   basePrice: 25000
   size: 0
@@ -31,12 +31,12 @@ MonoBehaviour:
   hullUI: {fileID: 21300000, guid: d3972f2f464b84e4f86fd0c18bdf4891, type: 3}
   enforceHeight: 1
   canFireAt: 1
-  engagementRangeMultiplier: 0.3
+  engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
   structureClass: 2
   manufacturer: 12
   description: 
-  hull: 100
+  hull: 200
   inventorySize: 40
   authority: 0
   maxEquipmentMeta: 2

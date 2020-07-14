@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Water Factory
   m_EditorClassIdentifier: 
+  id: 75b8cb45-655e-4115-b20e-5579e7c88ab0
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: 7eb16c7b8fbc4e243be94690f8028648, type: 2}
   inputQuantities: 01000000

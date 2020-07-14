@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Cargo Pod
   m_EditorClassIdentifier: 
+  id: 1f720eb1-8054-4b12-b24d-f8959689a970
   icon: {fileID: 21300000, guid: 2fe59c2fb91177b4da04f87449d3cc44, type: 3}
   basePrice: 0
   size: 0
@@ -22,6 +23,11 @@ MonoBehaviour:
   explosion: {fileID: 0}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
+  pod: {fileID: 0}
+  ambient: {fileID: 0}
+  rolloffMode: 0
+  ambientVolume: 0
+  ambientMinMax: []
   hullUI: {fileID: 21300000, guid: 2fe59c2fb91177b4da04f87449d3cc44, type: 3}
   enforceHeight: 0
   canFireAt: 0
@@ -32,6 +38,7 @@ MonoBehaviour:
   description: A pod for storing items ejected from a destroyed structure.
   hull: 1
   inventorySize: 10000
+  authority: 0
   maxEquipmentMeta: 0
   turretSlots: 0
   turretPositions: []
@@ -44,6 +51,8 @@ MonoBehaviour:
   dockingRange: 0
   market: {fileID: 0}
   factories: []
+  offeredEquipment: []
+  repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
   mass: 0.1
   drag: 0.5

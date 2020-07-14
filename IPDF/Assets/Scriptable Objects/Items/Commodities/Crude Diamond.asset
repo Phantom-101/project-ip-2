@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2069957995ef1b45893d0f06bf24bbc, type: 3}
   m_Name: Crude Diamond
   m_EditorClassIdentifier: 
+  id: 79d87148-5ae4-47d6-95e2-fa7738cf7f3b
   icon: {fileID: 0}
   basePrice: 1000
   size: 0.2

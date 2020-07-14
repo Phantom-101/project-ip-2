@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2069957995ef1b45893d0f06bf24bbc, type: 3}
   m_Name: Trinkets
   m_EditorClassIdentifier: 
+  id: ec1f084c-8d8f-40c5-81fd-c6f3601fef72
   icon: {fileID: 21300000, guid: 2fe59c2fb91177b4da04f87449d3cc44, type: 3}
   basePrice: 180
   size: 0.3

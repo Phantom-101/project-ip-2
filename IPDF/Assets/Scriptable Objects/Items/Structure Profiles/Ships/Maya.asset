@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Maya
   m_EditorClassIdentifier: 
-  id: 
+  id: 979a6214-7efe-400f-8750-09e79e5f6213
   icon: {fileID: 0}
   basePrice: 4000000
   size: 0

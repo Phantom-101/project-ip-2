@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Ship Buster
   m_EditorClassIdentifier: 
+  id: c62c1564-94c2-4a4a-9df8-418cb3394aa7
   icon: {fileID: 0}
   basePrice: 0
   size: 0
@@ -21,6 +22,11 @@ MonoBehaviour:
   explosion: {fileID: 0}
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
+  pod: {fileID: 0}
+  ambient: {fileID: 0}
+  rolloffMode: 0
+  ambientVolume: 0
+  ambientMinMax: []
   hullUI: {fileID: 0}
   enforceHeight: 1
   canFireAt: 1
@@ -31,6 +37,7 @@ MonoBehaviour:
   description: 
   hull: 0
   inventorySize: 0
+  authority: 0
   maxEquipmentMeta: 0
   turretSlots: 1
   turretPositions:

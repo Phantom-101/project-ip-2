@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b7bce5bf4553b4982b99f09d76ed41, type: 3}
   m_Name: Pulse Laser III
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
+  id: 4e05042e-2300-4b27-b73e-e158ce0863a3
+  icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 0
   size: 0
   meta: 3

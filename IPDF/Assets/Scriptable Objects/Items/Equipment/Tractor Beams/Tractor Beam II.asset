@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1209ea0244e9ab4e8f0c736d04286f0, type: 3}
   m_Name: Tractor Beam II
   m_EditorClassIdentifier: 
+  id: 0cb0deba-f252-40b9-a0ad-fce964962a3a
   icon: {fileID: 21300000, guid: 9653f20250ba8fc4a8789520be84dd96, type: 3}
   basePrice: 0
   size: 0
+  meta: 0
   consumptionRate: 25
   activationThreshold: 0
   range: 500

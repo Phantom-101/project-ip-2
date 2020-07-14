@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2069957995ef1b45893d0f06bf24bbc, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
+  id: 53f47544-32f8-4342-883c-3beadc0aaf13
   icon: {fileID: 21300000, guid: a80af8ea84e12464f83ceffd7bcfa1d8, type: 3}
   basePrice: 50
   size: 0.5

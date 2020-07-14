@@ -12,15 +12,4 @@ public class Item : ScriptableObject {
     [Header ("Item Stats")]
     public float basePrice;
     public float size;
-
-    void OnEnable () {
-        hideFlags = HideFlags.DontUnloadUnusedAsset;
-    }
-
-    void Awake () {
-        if (id == null || id == "") {
-            Undo.RecordObject (this, "ID Initialization");
-            id = System.Guid.NewGuid ().ToString ();
-        }
-    }
 }

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Microchips Factory
   m_EditorClassIdentifier: 
+  id: cc335a91-7521-4ea1-badb-68976fb993f9
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: 3b5fbdc106539cf43bef3c78264abbf0, type: 2}
   inputQuantities: 02000000

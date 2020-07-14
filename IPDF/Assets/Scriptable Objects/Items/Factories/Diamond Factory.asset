@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Diamond Factory
   m_EditorClassIdentifier: 
+  id: 87847a96-dbea-4a8b-a371-aade53095341
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: b3018e9aa9b12794a988478ead8e2eef, type: 2}
   inputQuantities: 01000000

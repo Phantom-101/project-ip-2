@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Jewelry Factory
   m_EditorClassIdentifier: 
+  id: b7f3505e-980a-4514-934f-a9c8b993e360
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: 6dc5e03bc2fc88340ba67b49a3b42e05, type: 2}
   - {fileID: 11400000, guid: f10257b31b7ab654c9ef366af262342f, type: 2}

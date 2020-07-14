@@ -7,5 +7,7 @@ public class Ammunition : Item {
     [Header ("Appearance")]
     public GameObject asset;
     [Header ("Projectile Stats")]
+    public float range;
     public float mass;
+    public float damage;
 }

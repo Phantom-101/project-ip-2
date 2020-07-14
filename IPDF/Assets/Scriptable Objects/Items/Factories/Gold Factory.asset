@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Gold Factory
   m_EditorClassIdentifier: 
+  id: 988001f0-bccd-4f11-8d79-bfc6066c3709
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: 0837c1d103ec2e143b8aa8a23a7bf683, type: 2}
   inputQuantities: 01000000

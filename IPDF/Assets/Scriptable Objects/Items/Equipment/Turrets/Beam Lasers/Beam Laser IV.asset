@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45038a71171ecfe4a9d8458e4c43ea4a, type: 3}
   m_Name: Beam Laser IV
   m_EditorClassIdentifier: 
+  id: 8481991a-ee83-4377-88b6-a0e54f6dcc22
   icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 0
   size: 0

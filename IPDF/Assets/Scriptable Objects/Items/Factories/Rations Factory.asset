@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Rations Factory
   m_EditorClassIdentifier: 
+  id: 185c51c1-9a7a-4326-8440-70f745dcf3fa
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: b599fc8366feae545a13970c9104dccb, type: 2}
   inputQuantities: 01000000

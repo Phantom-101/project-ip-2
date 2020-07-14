@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb012ea4381c3cd47b8b0fe125ea5274, type: 3}
   m_Name: Shield 1000
   m_EditorClassIdentifier: 
-  id: 040be59a-4d70-4193-b109-62bb6cafb4b8
+  id: f905405b-c44a-4a02-8e67-6aa96acb0cdd
   icon: {fileID: 21300000, guid: 6d76f2f3ebc819d449d63b24b6ee34a0, type: 3}
   basePrice: 0
   size: 0
-  meta: 5
+  meta: 4
   strength: 1000
   rechargeRate: 20
   shieldRechargeEfficiency: 0.1

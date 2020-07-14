@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2069957995ef1b45893d0f06bf24bbc, type: 3}
   m_Name: Copper
   m_EditorClassIdentifier: 
+  id: 62418acf-7eca-4ea8-a7de-ab8ed73b6970
   icon: {fileID: 21300000, guid: 244ef8e5edc335145829aa61c295fd6a, type: 3}
   basePrice: 60
   size: 0.1

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f47eb56a824024e8bb5c05b21aa3f9, type: 3}
   m_Name: Capacitor 3000
   m_EditorClassIdentifier: 
+  id: dc944db8-f307-4e61-a25b-2b2300a9ec81
+  icon: {fileID: 21300000, guid: caef0f1b17ff3cc4db86194586943449, type: 3}
   basePrice: 0
   size: 0
-  icon: {fileID: 21300000, guid: caef0f1b17ff3cc4db86194586943449, type: 3}
+  meta: 0
   capacitance: 3000

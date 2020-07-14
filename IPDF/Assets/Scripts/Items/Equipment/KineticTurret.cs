@@ -11,7 +11,6 @@ public class KineticTurret : Turret {
     [Header ("Turret Stats")]
     public bool repeating;
     public float power;
-    public float damageMultiplier;
     public Ammunition[] ammunition;
 
     public override void InitializeProjectile (TurretHandler caller, GameObject projectile) {
@@ -24,6 +23,12 @@ public class KineticTurret : Turret {
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
         if (!CanSustain (caller, target)) return false;
+        Vector3 pos = caller.equipper.transform.localPosition + caller.equipper.transform.rotation * caller.position;
+        RaycastHit hit; 
+        if (Physics.Raycast (pos, target.transform.localPosition - pos, out hit, range)) {
+            StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
+            if (hitStructure != target.GetComponent<StructureBehaviours> ()) return false;
+        } else return false;
         return true;
     }
 

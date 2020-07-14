@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Agricultural Produce Factory
   m_EditorClassIdentifier: 
+  id: ec2035d2-7d51-41a8-a8f2-2afd9ffef6d7
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: f23243b527db0c6488ab80557863e16f, type: 2}
   inputQuantities: 01000000

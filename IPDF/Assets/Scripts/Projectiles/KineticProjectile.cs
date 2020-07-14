@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KineticProjectile : Projectile {
     [Header ("Stats")]
+    public Ammunition ammunition;
+    public Vector3 origin;
     public float speed;
     public float damage;
     [Header ("Components")]
@@ -13,6 +15,7 @@ public class KineticProjectile : Projectile {
         if (from == null || to == null) { Disable (); return; }
         base.Initialize ();
         turret = handler.turret;
+        ammunition = handler.ammunition;
         GameObject soundEffect = new GameObject ("Beam Laser Sound Effect");
         soundEffect.transform.parent = from.transform.parent;
         soundEffect.transform.localPosition = from.transform.localPosition;
@@ -21,21 +24,27 @@ public class KineticProjectile : Projectile {
         audioSource.minDistance = turret.audioDistance;
         audioSource.PlayOneShot (turret.clip, 1);
         Destroy (soundEffect, 5);
-        mesh = Instantiate (handler.ammunition.asset, transform) as GameObject;
+        mesh = Instantiate (ammunition.asset, transform) as GameObject;
         mesh.transform.localPosition = Vector3.zero;
         transform.parent = from.transform.parent;
-        Vector3 origin = from.transform.localPosition + from.transform.rotation * handler.position;
+        origin = from.transform.localPosition + from.transform.rotation * handler.position;
         transform.localPosition = origin;
-        speed = (turret as KineticTurret).power / handler.ammunition.mass;
-        transform.localRotation = Quaternion.LookRotation (CalculateLeadPosition (transform.localPosition, to.transform.localPosition, to.GetComponent<Rigidbody> ().velocity / 60, speed));
-        damage = speed * (turret as KineticTurret).damageMultiplier;
+        speed = (turret as KineticTurret).power / ammunition.mass;
+        transform.localRotation = Quaternion.LookRotation (CalculateLeadPosition (
+            transform.localPosition,
+            to.transform.localPosition,
+            to.GetComponent<Rigidbody> ().velocity,
+            speed
+        ));
+        damage = ammunition.damage * (turret as KineticTurret).power;
         factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -damage);
     }
 
     public override void Process (float deltaTime) {
         if (!initialized || disabled) return;
+        if ((origin - transform.localPosition).sqrMagnitude > ammunition.range * ammunition.range) { Disable(); return; }
         if (from == null || to == null) { Disable (); return; }
-        Collider[] overlaps = Physics.OverlapSphere (transform.position, speed);
+        Collider[] overlaps = Physics.OverlapSphere (transform.position, speed * deltaTime);
         foreach (Collider hit in overlaps) {
             StructureBehaviours hitStructure = hit.transform.parent.GetComponent<StructureBehaviours> ();
             if (hitStructure != null && hitStructure != from) {
@@ -43,12 +52,12 @@ public class KineticProjectile : Projectile {
                 Disable ();
             }
         }
-        transform.Translate (new Vector3 (0, 0, speed));
+        transform.Translate (new Vector3 (0, 0, speed * deltaTime));
     }
 
     protected override void Disable () {
         base.Disable ();
-        Destroy (gameObject);
+        Destroy (gameObject, 1);
     }
 
     Vector3 CalculateLeadPosition (Vector3 currentPosition, Vector3 targetPosition, Vector3 targetVelocity, float projectileVelocity, bool lead = true) {

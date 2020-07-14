@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Delta III
   m_EditorClassIdentifier: 
-  id: 
+  id: 7a894040-b360-4313-8964-316bbca7d0bc
   icon: {fileID: 21300000, guid: 4abbcfb9923f56f48b89b8c6039c72e9, type: 3}
   basePrice: 80000
   size: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
   structureClass: 4
   manufacturer: 12
   description: 
-  hull: 500
+  hull: 750
   inventorySize: 100
   authority: 0
   maxEquipmentMeta: 4

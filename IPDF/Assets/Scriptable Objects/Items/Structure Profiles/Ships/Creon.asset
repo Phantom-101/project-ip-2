@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Creon
   m_EditorClassIdentifier: 
-  id: 
+  id: dfa0b9ea-4575-4ef4-b1da-f54c52430a4a
   icon: {fileID: 0}
   basePrice: 0
   size: 0

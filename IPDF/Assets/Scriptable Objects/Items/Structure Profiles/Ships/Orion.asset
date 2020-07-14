@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Orion
   m_EditorClassIdentifier: 
-  id: 
+  id: fd9b475b-c364-41cf-aa66-f34ad03cf2d2
   icon: {fileID: 21300000, guid: b51cf6240800392488dd7d0c265ef2fa, type: 3}
   basePrice: 100000
   size: 0

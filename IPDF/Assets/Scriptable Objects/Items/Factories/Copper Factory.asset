@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Copper Factory
   m_EditorClassIdentifier: 
+  id: ba6300be-5b4c-4ca7-be8b-330f6d005661
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
   inputQuantities: 01000000

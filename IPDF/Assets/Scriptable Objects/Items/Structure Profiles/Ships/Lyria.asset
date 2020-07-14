@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
   m_Name: Lyria
   m_EditorClassIdentifier: 
-  id: 
+  id: 34c7d228-68fe-4c16-895b-99b2ac13aaf2
   icon: {fileID: 0}
   basePrice: 0
   size: 0
@@ -33,10 +33,10 @@ MonoBehaviour:
   canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
-  structureClass: 3
+  structureClass: 4
   manufacturer: 12
-  description: Heavy Forward Attack Corvette
-  hull: 500
+  description: Heavy forward attack frigate.
+  hull: 2500
   inventorySize: 120
   authority: 0
   maxEquipmentMeta: 6

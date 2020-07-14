@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
   m_Name: Alloy Plates Factory
   m_EditorClassIdentifier: 
+  id: 1fd80768-d422-4aa4-8e65-f1b7dd9aa2fc
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
   inputs:
   - {fileID: 11400000, guid: 35876c885c53a754db1e1a27faa0bd39, type: 2}
   inputQuantities: 01000000
