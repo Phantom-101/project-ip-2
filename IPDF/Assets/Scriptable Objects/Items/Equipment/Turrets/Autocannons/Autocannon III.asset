@@ -17,8 +17,7 @@ MonoBehaviour:
   basePrice: 0
   size: 0
   meta: 3
-  clip: {fileID: 8300000, guid: 35a06d60cbedf5d4fb55082755f6def5, type: 3}
-  audioDistance: 50
+  audio: {fileID: 11400000, guid: a6af96ce32a7f2a41a1d34518c39f8f6, type: 2}
   maxStoredEnergy: 20
   rechargeRate: 40
   range: 400

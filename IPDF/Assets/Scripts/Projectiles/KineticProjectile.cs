@@ -16,14 +16,18 @@ public class KineticProjectile : Projectile {
         base.Initialize ();
         turret = handler.turret;
         ammunition = handler.ammunition;
-        GameObject soundEffect = new GameObject ("Beam Laser Sound Effect");
-        soundEffect.transform.parent = from.transform.parent;
-        soundEffect.transform.localPosition = from.transform.localPosition;
-        AudioSource audioSource = soundEffect.AddComponent<AudioSource> ();
-        audioSource.spatialBlend = 1;
-        audioSource.minDistance = turret.audioDistance;
-        audioSource.PlayOneShot (turret.clip, 1);
-        Destroy (soundEffect, 5);
+        if (turret.audio != null) {
+            GameObject soundEffect = new GameObject ("Sound Effect");
+            soundEffect.transform.parent = from.transform.parent;
+            soundEffect.transform.localPosition = from.transform.localPosition;
+            AudioSource audioSource = soundEffect.AddComponent<AudioSource> ();
+            audioSource.spatialBlend = turret.audio.spatialBlend;
+            audioSource.minDistance = turret.audio.minDistance;
+            audioSource.maxDistance = turret.audio.maxDistance;
+            audioSource.rolloffMode = turret.audio.rolloffMode;
+            audioSource.PlayOneShot (turret.audio.clip, turret.audio.volume);
+            Destroy (soundEffect, 5);
+        }
         mesh = Instantiate (ammunition.asset, transform) as GameObject;
         mesh.transform.localPosition = Vector3.zero;
         transform.parent = from.transform.parent;

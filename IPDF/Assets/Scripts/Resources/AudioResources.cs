@@ -4,5 +4,5 @@ using UnityEngine;
 
 [CreateAssetMenu (fileName = "New Audio Resources", menuName = "Resources/Audio Resources")]
 public class AudioResources : ScriptableObject {
-   public AudioClip[] jump;
+   public AudioAsset[] jumps;
 }

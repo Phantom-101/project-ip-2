@@ -24,12 +24,7 @@ MonoBehaviour:
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
   pod: {fileID: 0}
-  ambient: {fileID: 8300000, guid: ec55deda47b988740868ca6a4f21c378, type: 3}
-  rolloffMode: 1
-  ambientVolume: 0.1
-  ambientMinMax:
-  - 100
-  - 250
+  ambience: {fileID: 11400000, guid: 8f94f2bef6491404abd55c7aa89f9921, type: 2}
   hullUI: {fileID: 21300000, guid: 8df26ae6b4484a644935ac5bfbb6ef24, type: 3}
   enforceHeight: 1
   canFireAt: 1

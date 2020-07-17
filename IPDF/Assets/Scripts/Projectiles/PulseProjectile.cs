@@ -11,14 +11,18 @@ public class PulseProjectile : Projectile {
     public override void Initialize () {
         base.Initialize ();
         turret = handler.turret;
-        GameObject soundEffect = new GameObject ("Sound Effect");
-        soundEffect.transform.parent = from.transform.parent;
-        soundEffect.transform.localPosition = from.transform.localPosition;
-        AudioSource audioSource = soundEffect.AddComponent<AudioSource> ();
-        audioSource.spatialBlend = 1;
-        audioSource.minDistance = turret.audioDistance;
-        audioSource.PlayOneShot (turret.clip, 1);
-        Destroy (soundEffect, 5);
+        if (turret.audio != null) {
+            GameObject soundEffect = new GameObject ("Sound Effect");
+            soundEffect.transform.parent = from.transform.parent;
+            soundEffect.transform.localPosition = from.transform.localPosition;
+            AudioSource audioSource = soundEffect.AddComponent<AudioSource> ();
+            audioSource.spatialBlend = turret.audio.spatialBlend;
+            audioSource.minDistance = turret.audio.minDistance;
+            audioSource.maxDistance = turret.audio.maxDistance;
+            audioSource.rolloffMode = turret.audio.rolloffMode;
+            audioSource.PlayOneShot (turret.audio.clip, turret.audio.volume);
+            Destroy (soundEffect, 5);
+        }
         beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
         beam.transform.localPosition = Vector3.zero;
         for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as PulseTurret).beamColor;

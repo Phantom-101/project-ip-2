@@ -51,10 +51,10 @@ MonoBehaviour:
   - {x: 225, y: 0, z: -225}
   - {x: -225, y: 0, z: -225}
   dockingSizes:
-  - 100
-  - 100
-  - 100
-  - 100
+  - 150
+  - 150
+  - 150
+  - 150
   dockingRotations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

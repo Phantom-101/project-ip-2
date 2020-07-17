@@ -2959,7 +2959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235251617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -964, y: 0, z: 36}
+  m_LocalPosition: {x: 263, y: -0, z: 2915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
@@ -2992,7 +2992,7 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 4a8a665b82db1b848abb967f70abcc5f, type: 2}
+    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     mountedID: 
     ammunition: {fileID: 11400000, guid: 1da062b33f0e7fb49902e5315c14c243, type: 2}
     position: {x: 0, y: 0, z: 0}

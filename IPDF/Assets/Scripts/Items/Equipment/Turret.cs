@@ -19,8 +19,7 @@ using Essentials;
 
 public class Turret : Equipment {
     [Header ("Audio")]
-    public AudioClip clip;
-    public float audioDistance;
+    public AudioAsset audio;
     [Header ("Turret Stats")]
     public float maxStoredEnergy;
     public float rechargeRate;

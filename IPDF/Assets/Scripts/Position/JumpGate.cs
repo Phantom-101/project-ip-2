@@ -22,8 +22,6 @@ public class JumpGate : MonoBehaviour {
         cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
         navigationManager = FindObjectOfType<NavigationManager> ();
         resourcesManager = FindObjectOfType<ResourcesManager> ();
-        audioSource.spatialBlend = 1;
-        audioSource.rolloffMode = AudioRolloffMode.Linear;
         if (other == null) return;
         navigationManager.AddAdjacency (transform.parent.GetComponent<Sector> (),
             other.transform.parent.GetComponent <Sector> (),
@@ -52,6 +50,11 @@ public class JumpGate : MonoBehaviour {
     }
 
     public void Jumped () {
-        audioSource.PlayOneShot (resourcesManager.audioResources.jump[0], 1);
+        AudioAsset audio = resourcesManager.audioResources.jumps[0];
+        audioSource.spatialBlend = audio.spatialBlend;
+        audioSource.rolloffMode = audio.rolloffMode;
+        audioSource.minDistance = audio.minDistance;
+        audioSource.maxDistance = audio.maxDistance;
+        audioSource.PlayOneShot (audio.clip, audio.volume);
     }
 }

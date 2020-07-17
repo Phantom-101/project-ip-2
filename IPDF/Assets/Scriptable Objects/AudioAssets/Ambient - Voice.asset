@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9110cc9c282f4f84ca6dc8e1b375002d, type: 3}
-  m_Name: Default Audio Resources
+  m_Script: {fileID: 11500000, guid: 08f0ea6e228082e42a3c9ed9795caaa4, type: 3}
+  m_Name: Ambient - Voice
   m_EditorClassIdentifier: 
-  jumps:
-  - {fileID: 11400000, guid: ab24f1f6037af9d48825295093111412, type: 2}
-  - {fileID: 11400000, guid: 82a03a0154151274d8151e268f816936, type: 2}
+  clip: {fileID: 8300000, guid: 883ab0df090c5aa4a8ad620ec5f7f00c, type: 3}
+  volume: 0.2
+  spatialBlend: 1
+  minDistance: 0
+  maxDistance: 500
+  rolloffMode: 1

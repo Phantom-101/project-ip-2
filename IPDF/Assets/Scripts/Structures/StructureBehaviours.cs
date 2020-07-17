@@ -49,17 +49,18 @@ public class StructureBehaviours : MonoBehaviour {
     public NavigationManager navigationManager;
 
     public void Initialize () {
-        audioSource = gameObject.AddComponent<AudioSource> ();
         structuresManager = FindObjectOfType<StructuresManager> ();
         factionsManager = FindObjectOfType<FactionsManager> ();
         playerController = FindObjectOfType<PlayerController> ();
         navigationManager = FindObjectOfType<NavigationManager> ();
         structuresManager.AddStructure (this);
-        audioSource.spatialBlend = 1;
-        audioSource.rolloffMode = profile.rolloffMode;
-        if (profile.ambientMinMax != null && profile.ambientMinMax.Length == 2) {
-            audioSource.minDistance = profile.ambientMinMax[0];
-            audioSource.maxDistance = profile.ambientMinMax[1];
+        AudioAsset ambience = profile.ambience;
+        if (ambience != null) {
+            audioSource = gameObject.AddComponent<AudioSource> ();
+            audioSource.spatialBlend = ambience.spatialBlend;
+            audioSource.rolloffMode = ambience.rolloffMode;
+            audioSource.minDistance = ambience.minDistance;
+            audioSource.maxDistance = ambience.maxDistance;
         }
         GameObject meshGameObject = new GameObject ();
         meshGameObject.name = "Mesh";
@@ -303,8 +304,10 @@ public class StructureBehaviours : MonoBehaviour {
     }
 
     IEnumerator AmbientSound () {
-        audioSource.PlayOneShot (profile.ambient, profile.ambientVolume);
-        yield return new WaitForSeconds (profile.ambient == null ? 15 : profile.ambient.length);
+        AudioAsset ambience = profile.ambience;
+        if (ambience == null) yield break;
+        audioSource.PlayOneShot (ambience.clip, ambience.volume);
+        yield return new WaitForSeconds (ambience.clip == null ? 15 : ambience.clip.length);
         StartCoroutine (AmbientSound ());
     }
 }
