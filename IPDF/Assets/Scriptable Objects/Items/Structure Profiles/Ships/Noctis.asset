@@ -24,10 +24,7 @@ MonoBehaviour:
   selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
     type: 3}
   pod: {fileID: 0}
-  ambient: {fileID: 0}
-  rolloffMode: 0
-  ambientVolume: 0
-  ambientMinMax: []
+  ambience: {fileID: 0}
   hullUI: {fileID: 21300000, guid: 1b5e9b4c0bd599a40a53a7ff0802e45d, type: 3}
   enforceHeight: 1
   canFireAt: 1
@@ -76,7 +73,7 @@ MonoBehaviour:
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  decals: {fileID: 0}
+  decals: {fileID: 8154981607296779779, guid: f6ba15567370a7e4591f60999b87eeb3, type: 3}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: -1, z: 15}
   rotate: {x: 0, y: 90, z: 0}
