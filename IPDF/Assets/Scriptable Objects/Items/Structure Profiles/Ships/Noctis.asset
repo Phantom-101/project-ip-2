@@ -73,7 +73,7 @@ MonoBehaviour:
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  decals: {fileID: 8154981607296779779, guid: f6ba15567370a7e4591f60999b87eeb3, type: 3}
+  decals: {fileID: 7661878497729942459, guid: c7798a60bc35b6d42874baba72de52f7, type: 3}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: -1, z: 15}
   rotate: {x: 0, y: 90, z: 0}

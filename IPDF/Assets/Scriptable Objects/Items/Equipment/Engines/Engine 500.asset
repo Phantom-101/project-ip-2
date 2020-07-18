@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 020abdd48621ae4429a821eb67a6d27e, type: 3}
-  m_Name: Engine 900
+  m_Name: Engine 500
   m_EditorClassIdentifier: 
-  id: 2482c009-0650-48d8-b97e-af233b0a38f5
+  id: eeca9ae8-07a5-49fb-9665-ba754ec693a1
   icon: {fileID: 21300000, guid: 84c63ade47ba32549b5b9403e12a3e73, type: 3}
   basePrice: 0
   size: 0
   meta: 0
-  forwardPower: 900
-  turnPower: 150
+  forwardPower: 500
+  turnPower: 10

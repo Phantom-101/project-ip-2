@@ -40,8 +40,9 @@ public class MusicManager : MonoBehaviour {
             if (audioSource.volume > 0) audioSource.volume -= deltaTime;
             else {
                 audioSource.Stop ();
-                audioSource.volume = 1;
-                audioSource.clip = current.GetRandomMusic ().clip;
+                AudioAsset asset = current.GetRandomMusic ();
+                audioSource.volume = asset.volume;
+                audioSource.clip = asset.clip;
                 audioSource.Play ();
                 transition = false;
             }

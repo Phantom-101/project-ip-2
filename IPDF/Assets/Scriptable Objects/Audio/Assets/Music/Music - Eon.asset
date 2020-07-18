@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music - Eon
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: cf4ae2854fefc04449e6af0bff1a4651, type: 3}
-  volume: 1
+  volume: 0.5
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

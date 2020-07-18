@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music - Summit
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 5466c1efda87cf44e808e549dbabb071, type: 3}
-  volume: 1
+  volume: 0.5
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

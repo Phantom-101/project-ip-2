@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music - Resonate
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 07475bc53ba936b4da7d0fe520728a02, type: 3}
-  volume: 1
+  volume: 0.5
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0
