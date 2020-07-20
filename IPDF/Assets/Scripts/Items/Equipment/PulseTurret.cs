@@ -19,14 +19,14 @@ public class PulseTurret : Turret {
         PulseProjectile pulseProjectile = projectile.AddComponent<PulseProjectile> ();
         pulseProjectile.handler = caller;
         pulseProjectile.from = caller.equipper;
-        pulseProjectile.to = caller.equipper.targeted;
+        pulseProjectile.to = caller.target.GetComponent<StructureBehaviours> ();
         pulseProjectile.Initialize ();
     }
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
         if (!CanSustain (caller, target)) return false;
         Vector3 pos = caller.equipper.transform.localPosition + caller.equipper.transform.rotation * caller.position;
-        RaycastHit hit; 
+        RaycastHit hit;
         if (Physics.Raycast (pos, target.transform.localPosition - pos, out hit, range)) {
             StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
             if (hitStructure != target.GetComponent<StructureBehaviours> ()) return false;

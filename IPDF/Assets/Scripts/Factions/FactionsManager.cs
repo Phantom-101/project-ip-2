@@ -9,21 +9,7 @@ public class FactionsManager : MonoBehaviour {
     public void AddFaction (Faction faction) {
         if (faction == null) return;
         factions.Add (faction);
-        if (faction.id == 0) {
-            while (true) {
-                int randomizedID = (int) Random.Range (int.MinValue, int.MaxValue);
-                if (randomizedID != 0) {
-                    bool idValid = true;
-                    foreach (Faction f in factions)
-                        if (f.id == randomizedID)
-                            idValid = false;
-                    if (idValid) {
-                        faction.id = randomizedID;
-                        break;
-                    }
-                }
-            }
-        }
+        if (faction.id == 0) faction.id = (int) Random.Range (int.MinValue, int.MaxValue);
     }
 
     public Faction GetFaction (int id) {
@@ -33,119 +19,113 @@ public class FactionsManager : MonoBehaviour {
         return null;
     }
 
-    public long GetWealth (int id) {
-        return GetFaction (id) == null ? -1 : GetFaction (id).wealth;
+    public long GetWealth (Faction faction) {
+        return faction == null ? -1 : faction.wealth;
     }
 
-    public bool SetWealth (int id, long value) {
+    public bool SetWealth (Faction faction, long value) {
         if (value < 0) return false;
-        if (GetFaction (id) == null) return false;
-        GetFaction (id).wealth = value;
+        if (faction == null) return false;
+        faction.wealth = value;
         return true;
     }
 
-    public bool ChangeWealth (int id, long value) {
-        if (GetFaction (id) == null) return false;
-        if (GetFaction (id).wealth + value < 0) return false;
-        GetFaction (id).wealth += value;
+    public bool ChangeWealth (Faction faction, long value) {
+        if (faction == null) return false;
+        if (faction.wealth + value < 0) return false;
+        faction.wealth += value;
         return true;
     }
 
-    public bool TransferWealth (int a, int b, long value) {
+    public bool TransferWealth (Faction a, Faction b, long value) {
         if (a == b) return true;
         if (value < 0) return false;
-        if (GetFaction (a) == null || GetFaction (b) == null) return false;
-        if (GetFaction (a).wealth - value < 0) return false;
-        GetFaction (a).wealth -= value;
-        GetFaction (b).wealth += value;
+        if (a == null || b == null) return false;
+        if (a.wealth - value < 0) return false;
+        a.wealth -= value;
+        b.wealth += value;
         return true;
     }
 
-    public float GetRelations (int a, int b) {
+    public float GetRelations (Faction a, Faction b) {
         if (a == b) return GetAllyThreshold (a);
-        if (GetFaction (a) == null || GetFaction (b) == null) return 0;
-        foreach (FactionRelation relation in GetFaction (a).relations)
-            if (relation.id == b)
+        if (a == null || b == null) return 0;
+        foreach (FactionRelation relation in a.relations)
+            if (relation.id == b.id)
                 return relation.relation;
         return 0;
     }
 
-    public void SetRelations (int a, int b, float value) {
+    public void SetRelations (Faction a, Faction b, float value) {
         if (a == b) return;
-        if (GetFaction (a) == null || GetFaction (b) == null) return;
-        foreach (FactionRelation relation in GetFaction (a).relations)
-            if (relation.id == b) {
+        if (a == null || b == null) return;
+        foreach (FactionRelation relation in a.relations)
+            if (relation.id == b.id) {
                 relation.relation = value;
                 return;
             }
-        GetFaction (a).relations.Add (new FactionRelation (b, value));
+        a.relations.Add (new FactionRelation (b.id, value));
     }
 
-    public void ChangeRelations (int a, int b, float change) {
+    public void ChangeRelations (Faction a, Faction b, float change) {
         if (a == b) return;
-        if (GetFaction (a) == null || GetFaction (b) == null) return;
-        foreach (FactionRelation relation in GetFaction (a).relations)
-            if (relation.id == b) {
+        if (a == null || b == null) return;
+        foreach (FactionRelation relation in a.relations)
+            if (relation.id == b.id) {
                 relation.relation += change;
                 return;
             }
-        GetFaction (a).relations.Add (new FactionRelation (b, change));
+        a.relations.Add (new FactionRelation (b.id, change));
     }
 
-    public float GetHostileThreshold (int id) {
-        Faction faction = GetFaction (id);
+    public float GetHostileThreshold (Faction faction) {
         if (faction == null) return 0;
         return faction.warThreshold;
     }
 
-    public void SetHostileThreshold (int id, float value) {
-        Faction faction = GetFaction (id);
+    public void SetHostileThreshold (Faction faction, float value) {
         if (faction == null) return;
         faction.warThreshold = value;
     }
 
-    public void ChangeHostileThreshold (int id, float change) {
-        Faction faction = GetFaction (id);
+    public void ChangeHostileThreshold (Faction faction, float change) {
         if (faction == null) return;
         faction.warThreshold += change;
     }
 
-    public float GetAllyThreshold (int id) {
-        Faction faction = GetFaction (id);
+    public float GetAllyThreshold (Faction faction) {
         if (faction == null) return 0;
         return faction.allyThreshold;
     }
 
-    public void SetAllyThreshold (int id, float value) {
-        Faction faction = GetFaction (id);
+    public void SetAllyThreshold (Faction faction, float value) {
         if (faction == null) return;
         faction.allyThreshold = value;
     }
 
-    public void ChangeAllyThreshold (int id, float change) {
-        Faction faction = GetFaction (id);
+    public void ChangeAllyThreshold (Faction faction, float change) {
         if (faction == null) return;
         faction.allyThreshold += change;
     }
 
-    public bool Hostile (int a, int b) {
+    public bool Hostile (Faction a, Faction b) {
         if (a == b) return false;
-        if (GetFaction (a) == null || GetFaction (b) == null) return false;
+        if (a == null || b == null) return false;
         return GetRelations (a, b) <= GetHostileThreshold (a);
     }
 
-    public bool Ally (int a, int b) {
+    public bool Ally (Faction a, Faction b) {
         if (a == b) return true;
-        if (GetFaction (a) == null || GetFaction (b) == null) return false;
+        if (a == null || b == null) return false;
         return GetRelations (a, b) >= GetAllyThreshold (a);
     }
 
-    public void ChangeRelationsWithAcquiredModification (int a, int b, float change) {
+    public void ChangeRelationsWithAcquiredModification (Faction a, Faction b, float change) {
         foreach (Faction faction in factions) {
-            if (faction.id == a) ChangeRelations (a, b, change);
-            else if (faction.id != b) {
-                if (GetRelations (faction.id, a) > 0) ChangeRelations (faction.id, b, change / 2);
-                else if (GetRelations (faction.id, a) < 0) ChangeRelations (faction.id, b, -change / 2);
+            if (faction.id == a.id) ChangeRelations (a, b, change);
+            else if (faction.id != b.id) {
+                if (GetRelations (faction, a) > 0) ChangeRelations (faction, b, change / 2);
+                else if (GetRelations (faction, a) < 0) ChangeRelations (faction, b, -change / 2);
             }
         }
     }

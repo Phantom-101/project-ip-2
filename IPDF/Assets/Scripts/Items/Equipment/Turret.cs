@@ -124,6 +124,7 @@ public class TurretHandler {
             turret = null;
             return;
         }
+        if (ammunition != null && !turret.CanUseAmmunition (this, ammunition)) ammunition = null;
         if (activated) {
             if (!turret.CanRepeat (this, target) && !turret.CanSustain (this, target)) Deactivate ();
             else {

@@ -18,4 +18,4 @@ MonoBehaviour:
   size: 0
   meta: 0
   forwardPower: 25000
-  turnPower: 400
+  turnPower: 600

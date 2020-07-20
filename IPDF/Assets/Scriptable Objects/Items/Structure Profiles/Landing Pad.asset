@@ -20,13 +20,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: e19b934b0e04bc943b413418659e0926, type: 2}
   apparentSize: 1
   explosion: {fileID: 0}
-  selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
+  selectableBillboard: {fileID: 21300000, guid: 52f93af48e362764086ab59094aeebf7,
     type: 3}
   pod: {fileID: 0}
-  ambient: {fileID: 0}
-  rolloffMode: 0
-  ambientVolume: 0
-  ambientMinMax: []
+  ambience: {fileID: 0}
   hullUI: {fileID: 0}
   enforceHeight: 1
   canFireAt: 0

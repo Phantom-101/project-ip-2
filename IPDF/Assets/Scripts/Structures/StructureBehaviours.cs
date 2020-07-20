@@ -15,6 +15,7 @@ public class StructureBehaviours : MonoBehaviour {
     public bool destroyed;
     public bool cloaked;
     public int factionID;
+    public Faction faction;
     [Header ("Navigation")]
     public Sector sector;
     public Route route;
@@ -51,6 +52,7 @@ public class StructureBehaviours : MonoBehaviour {
     public void Initialize () {
         structuresManager = FindObjectOfType<StructuresManager> ();
         factionsManager = FindObjectOfType<FactionsManager> ();
+        faction = factionsManager.GetFaction (factionID);
         playerController = FindObjectOfType<PlayerController> ();
         navigationManager = FindObjectOfType<NavigationManager> ();
         structuresManager.AddStructure (this);
@@ -119,12 +121,6 @@ public class StructureBehaviours : MonoBehaviour {
 
     public void Tick (float deltaTime) {
         if (!initialized) return;
-        // Check if should be destroyed
-        if (hull == 0.0f) {
-            destroyed = true;
-            structuresManager.RemoveStructure (this);
-            StartCoroutine (DestructionSequence ());
-        }
         if (factories.Count != profile.factories.Length) {
             factories = new List<FactoryHandler> ();
             for (int i = 0; i < profile.factories.Length; i++)
@@ -199,6 +195,13 @@ public class StructureBehaviours : MonoBehaviour {
         if (residual > 0.0f) {
             hull = MathUtils.Clamp (hull - residual, 0.0f, profile.hull);
             hullTimeSinceLastDamaged = 0.3f;
+        }
+
+        // Check if should be destroyed
+        if (hull == 0.0f) {
+            destroyed = true;
+            structuresManager.RemoveStructure (this);
+            StartCoroutine (DestructionSequence ());
         }
     }
 
@@ -276,7 +279,7 @@ public class StructureBehaviours : MonoBehaviour {
             for (int i = 0; i < 5; i++) {
                 explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
                 explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
-                yield return new WaitForSeconds (Random.Range (0.1f, 1));
+                yield return new WaitForSeconds (Random.Range (0.5f, 1));
             }
             explosion = Instantiate (profile.explosion, transform.position, Quaternion.identity) as GameObject;
             explosion.transform.localScale = Vector3.one * profile.apparentSize;

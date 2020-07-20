@@ -21,13 +21,10 @@ MonoBehaviour:
   apparentSize: 650
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
-  selectableBillboard: {fileID: 21300000, guid: a8b998e818f4e3d4699df922def49692,
+  selectableBillboard: {fileID: 21300000, guid: 52f93af48e362764086ab59094aeebf7,
     type: 3}
   pod: {fileID: 0}
-  ambient: {fileID: 0}
-  rolloffMode: 0
-  ambientVolume: 0
-  ambientMinMax: []
+  ambience: {fileID: 0}
   hullUI: {fileID: 21300000, guid: 037f0c7f98a408d4c9887cf1d44c158c, type: 3}
   enforceHeight: 1
   canFireAt: 1
@@ -51,10 +48,10 @@ MonoBehaviour:
   - {x: 225, y: 0, z: -225}
   - {x: -225, y: 0, z: -225}
   dockingSizes:
-  - 150
-  - 150
-  - 150
-  - 150
+  - 100
+  - 100
+  - 100
+  - 100
   dockingRotations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

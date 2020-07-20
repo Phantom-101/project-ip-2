@@ -41,7 +41,7 @@ public class KineticProjectile : Projectile {
             speed
         ));
         damage = ammunition.damage * (turret as KineticTurret).power;
-        factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -damage);
+        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -damage);
     }
 
     public override void Process (float deltaTime) {

@@ -205,7 +205,67 @@ public class GameUIHandler : MonoBehaviour {
         initialized = true;
     }
 
-    public void TickCanvas () {
+    public void FastestTickCanvas () {
+        if (activeUI.Peek () == GameUIState.InSpace) {
+            // Selectable UI
+            List<StructureBehaviours> referenced = new List<StructureBehaviours> ();
+            foreach (GameObject selectableBillboard in selectableBillboards.ToArray ()) {
+                ContainerComponent billboardTarget = selectableBillboard.GetComponent<ContainerComponent> ();
+                StructureBehaviours reference = billboardTarget.containers[0].value as StructureBehaviours;
+                if (reference == null || reference.transform.parent != source.transform.parent || !reference.CanBeTargeted ()) {
+                    selectableBillboards.Remove (selectableBillboard);
+                    Destroy (selectableBillboard);
+                } else {
+                    if (reference == source) Destroy (selectableBillboard);
+                    else {
+                        Vector3 screenPosition = camera.WorldToScreenPoint (reference.transform.position);
+                        if (screenPosition.z > 0) {
+                            selectableBillboard.SetActive (true);
+                            float canvasScaler = canvas.GetComponent<CanvasScaler> ().scaleFactor;
+                            RectTransform selectableRectTransform = selectableBillboard.GetComponent<RectTransform> ();
+                            selectableRectTransform.anchoredPosition = new Vector2 (screenPosition.x / canvasScaler, screenPosition.y / canvasScaler);
+                            float scaler = Mathf.Sqrt (Vector3.Distance (reference.transform.position, source.transform.position)) * 5;
+                            float size = Mathf.Clamp (250 - scaler, 75, 250) * 0.75f;
+                            selectableRectTransform.sizeDelta = new Vector2 (size, size) * (reference == source.targeted ? 1.5f : 1);
+                            Image billboardImage = selectableBillboard.GetComponent<Image> ();
+                            if (reference.faction == source.faction) billboardImage.color = playerFactionColor;
+                            else {
+                                float relations = factionsManager.GetRelations (reference.faction, source.faction);
+                                if (relations > 0) {
+                                    if (factionsManager.Ally (reference.faction, source.faction)) billboardImage.color = alliedFactionColor;
+                                    else billboardImage.color = positiveFactionRelationsGradient.Evaluate (relations / factionsManager.GetAllyThreshold (reference.faction));
+                                } else {
+                                    if (factionsManager.Hostile (reference.faction, source.faction)) billboardImage.color = hostileFactionColor;
+                                    else billboardImage.color = negativeFactionRelationsGradient.Evaluate (relations / factionsManager.GetHostileThreshold (reference.faction));
+                                }
+                            }
+                        } else selectableBillboard.SetActive (false);
+                        referenced.Add (reference);
+                    }
+                }
+            }
+            List<StructureBehaviours> structures = structuresManager.structures;
+            foreach (StructureBehaviours structure in structures) {
+                if (!referenced.Contains (structure) && structure != source && structure.transform.parent == source.transform.parent) {
+                    GameObject billboard = new GameObject ("Billboard UI Element (" + structure.gameObject.name + ")");
+                    RectTransform billboardRectTransform = billboard.AddComponent<RectTransform> ();
+                    billboardRectTransform.SetParent (billboards.transform);
+                    billboardRectTransform.anchorMin = new Vector2 (0, 0);
+                    billboardRectTransform.anchorMax = new Vector2 (0, 0);
+                    billboard.transform.localPosition = new Vector3 (0, 0, 0.1f);
+                    Image billboardImage = billboard.AddComponent<Image> ();
+                    billboardImage.sprite = structure.profile.selectableBillboard;
+                    ContainerComponent billboardContainerComponent = billboard.AddComponent<ContainerComponent> ();
+                    billboardContainerComponent.containers.Add (new Container<Object> (structure as Object));
+                    selectableBillboards.Add (billboard);
+                    Button billboardButton = billboard.AddComponent<Button> ();
+                    ButtonFunction (() => source.targeted = source.targeted == structure ? null : structure, billboardButton);
+                }
+            }
+        }
+    }
+
+    public void ClampedTickCanvas () {
         if (!initialized) return;
 
         if (source == null && activeUI.Peek () != GameUIState.Death && activeUI.Peek () != GameUIState.SelectSave) ChangeScreen (GameUIState.Death);
@@ -279,7 +339,7 @@ public class GameUIHandler : MonoBehaviour {
                     else for (int i = 0; i < 6; i++) targetShieldUI[i].color = shieldGradient.Evaluate (0);
                 } else for (int i = 0; i < 6; i++) targetShieldUI[i].color = shieldGradient.Evaluate (0);
                 targetName.text = targetStructureBehaviour.gameObject.name;
-                targetFaction.text = factionsManager.GetFaction(targetStructureBehaviour.factionID).abbreviated;
+                targetFaction.text = targetStructureBehaviour.faction.abbreviated;
                 targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
                 float rot = targetStructureBehaviour.GetSector (source.transform.position) * 60;
                 toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55, Mathf.Cos (rot * Mathf.Deg2Rad) * 55);
@@ -309,9 +369,9 @@ public class GameUIHandler : MonoBehaviour {
                 equipmentContainer.containers.Add (new Container<Object> (source.tractorBeam.tractorBeam));
                 referencedTractorBeam = equipmentContainer.containers[0].value as TractorBeam;
             }
-            tractorBeamButton.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, turretButtonsShift * 40);
+            tractorBeamButton.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, turretButtonsShift * 50);
             tractorBeamButton.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTractorBeam == null ? null : referencedTractorBeam.icon;
-            tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy * 30, 3);
+            tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy * 40, 5);
             tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy);
             //tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
             ButtonFunction (() => source.tractorBeam.Interacted (source.gameObject, source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
@@ -339,9 +399,9 @@ public class GameUIHandler : MonoBehaviour {
                 equipmentContainer.containers.Add (new Container<Object> (source.electronics.electronics));
                 referencedElectronics = equipmentContainer.containers[0].value as Electronics;
             }
-            electronicsButton.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, turretButtonsShift * 40);
+            electronicsButton.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, turretButtonsShift * 50);
             electronicsButton.transform.GetChild (0).GetComponent<Image> ().sprite = referencedElectronics == null ? null : referencedElectronics.icon;
-            electronicsButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedElectronics == null ? 0 : source.electronics.storedEnergy / referencedElectronics.maxStoredEnergy * 30, 3);
+            electronicsButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedElectronics == null ? 0 : source.electronics.storedEnergy / referencedElectronics.maxStoredEnergy * 40, 5);
             electronicsButton.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedElectronics == null ? 0 : source.electronics.storedEnergy / referencedElectronics.maxStoredEnergy);
             //tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
             ButtonFunction (() => source.electronics.Activate (), electronicsButton.GetComponent<Button> ());
@@ -370,9 +430,9 @@ public class GameUIHandler : MonoBehaviour {
                     equipmentContainer.containers.Add (new Container<Object> (source.turrets[i].turret));
                     referencedTurret = equipmentContainer.containers[0].value as Turret;
                 }
-                button.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0.0f, (i + turretButtonsShift) * 40.0f);
+                button.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0.0f, (i + turretButtonsShift) * 50);
                 button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
-                button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 30.0f, 3.0f);
+                button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 40, 5);
                 button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
                 button.GetComponent<Button> ().interactable = source.turrets[i].CanPress ();
                 ButtonFunction (() => source.turrets[button.transform.GetSiblingIndex () - 2].Interacted (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
@@ -380,62 +440,6 @@ public class GameUIHandler : MonoBehaviour {
                 if (referencedTurret != null) equipmentButtons[i + 2].gameObject.SetActive (true);
                 else equipmentButtons[i + 2].gameObject.SetActive (false);
                 equipmentButtons[i + 2].transform.SetSiblingIndex(i + 2);
-            }
-            // Selectable UI
-            List<StructureBehaviours> referenced = new List<StructureBehaviours> ();
-            foreach (GameObject selectableBillboard in selectableBillboards.ToArray ()) {
-                ContainerComponent billboardTarget = selectableBillboard.GetComponent<ContainerComponent> ();
-                StructureBehaviours reference = billboardTarget.containers[0].value as StructureBehaviours;
-                if (reference == null || reference.transform.parent != source.transform.parent || !reference.CanBeTargeted ()) {
-                    selectableBillboards.Remove (selectableBillboard);
-                    Destroy (selectableBillboard);
-                } else {
-                    if (reference == source) Destroy (selectableBillboard);
-                    else {
-                        Vector3 screenPosition = camera.WorldToScreenPoint (reference.transform.position);
-                        if (screenPosition.z > 0) {
-                            selectableBillboard.SetActive (true);
-                            float canvasScaler = canvas.GetComponent<CanvasScaler> ().scaleFactor;
-                            RectTransform selectableRectTransform = selectableBillboard.GetComponent<RectTransform> ();
-                            selectableRectTransform.anchoredPosition = new Vector2 (screenPosition.x / canvasScaler, screenPosition.y / canvasScaler);
-                            float scaler = Mathf.Sqrt (Vector3.Distance (reference.transform.position, source.transform.position)) * 5;
-                            float size = Mathf.Clamp (250 - scaler, 50, 250) * 0.75f;
-                            selectableRectTransform.sizeDelta = new Vector2 (size, size) * (reference == source.targeted ? 1.5f : 1);
-                            selectableRectTransform.eulerAngles = reference == source.targeted ? new Vector3 (0, 0, selectableRectTransform.eulerAngles.z - 30 * Time.deltaTime) : Vector3.zero;
-                            Image billboardImage = selectableBillboard.GetComponent<Image> ();
-                            if (reference.factionID == source.factionID) billboardImage.color = playerFactionColor;
-                            else {
-                                float relations = factionsManager.GetRelations (reference.factionID, source.factionID);
-                                if (relations > 0) {
-                                    if (factionsManager.Ally (reference.factionID, source.factionID)) billboardImage.color = alliedFactionColor;
-                                    else billboardImage.color = positiveFactionRelationsGradient.Evaluate (relations / factionsManager.GetAllyThreshold (reference.factionID));
-                                } else {
-                                    if (factionsManager.Hostile (reference.factionID, source.factionID)) billboardImage.color = hostileFactionColor;
-                                    else billboardImage.color = negativeFactionRelationsGradient.Evaluate (relations / factionsManager.GetHostileThreshold (reference.factionID));
-                                }
-                            }
-                        } else selectableBillboard.SetActive (false);
-                        referenced.Add (reference);
-                    }
-                }
-            }
-            List<StructureBehaviours> structures = structuresManager.structures;
-            foreach (StructureBehaviours structure in structures) {
-                if (!referenced.Contains (structure) && structure != source && structure.transform.parent == source.transform.parent) {
-                    GameObject billboard = new GameObject ("Billboard UI Element (" + structure.gameObject.name + ")");
-                    RectTransform billboardRectTransform = billboard.AddComponent<RectTransform> ();
-                    billboardRectTransform.SetParent (billboards.transform);
-                    billboardRectTransform.anchorMin = new Vector2 (0, 0);
-                    billboardRectTransform.anchorMax = new Vector2 (0, 0);
-                    billboard.transform.localPosition = new Vector3 (0, 0, 0.1f);
-                    Image billboardImage = billboard.AddComponent<Image> ();
-                    billboardImage.sprite = structure.profile.selectableBillboard;
-                    ContainerComponent billboardContainerComponent = billboard.AddComponent<ContainerComponent> ();
-                    billboardContainerComponent.containers.Add (new Container<Object> (structure as Object));
-                    selectableBillboards.Add (billboard);
-                    Button billboardButton = billboard.AddComponent<Button> ();
-                    ButtonFunction (() => source.targeted = source.targeted == structure ? null : structure, billboardButton);
-                }
             }
         }
     }
@@ -721,8 +725,8 @@ public class GameUIHandler : MonoBehaviour {
     void BuySelectedMarketItem (int amount) {
         if (!CanBuySelectedMarketItem (amount)) return;
         long price = (long) stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem) * amount;
-        factionsManager.ChangeWealth (stationStructureBehaviours.factionID, price);
-        factionsManager.ChangeWealth (source.factionID, -price);
+        factionsManager.ChangeWealth (stationStructureBehaviours.faction, price);
+        factionsManager.ChangeWealth (source.faction, -price);
         source.inventory.AddItem (selectedMarketItem, amount);
         stationStructureBehaviours.inventory.RemoveItem (selectedMarketItem, amount);
     }
@@ -734,15 +738,15 @@ public class GameUIHandler : MonoBehaviour {
         if (stationStructureBehaviours.inventory.GetItemCount (selectedMarketItem) < amount) return false;
         if (selectedMarketItem.size * amount > source.inventory.GetAvailableSize ()) return false;
         long price = (long) stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem) * amount;
-        if (price > factionsManager.GetWealth (source.factionID)) return false;
+        if (price > factionsManager.GetWealth (source.faction)) return false;
         return true;
     }
 
     void SellSelectedMarketItem (int amount) {
         if (!CanSellSelectedMarketItem (amount)) return;
         long price = (long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem) * amount;
-        factionsManager.ChangeWealth (source.factionID, price);
-        factionsManager.ChangeWealth (stationStructureBehaviours.factionID, -price);
+        factionsManager.ChangeWealth (source.faction, price);
+        factionsManager.ChangeWealth (stationStructureBehaviours.faction, -price);
         stationStructureBehaviours.inventory.AddItem (selectedMarketItem, amount);
         source.inventory.RemoveItem (selectedMarketItem, amount);
     }
@@ -754,7 +758,7 @@ public class GameUIHandler : MonoBehaviour {
         if (source.inventory.GetItemCount (selectedMarketItem) < amount) return false;
         if (selectedMarketItem.size * amount > stationStructureBehaviours.inventory.GetAvailableSize ()) return false;
         long price = (long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem) * amount;
-        if (price > factionsManager.GetWealth (stationStructureBehaviours.factionID)) return false;
+        if (price > factionsManager.GetWealth (stationStructureBehaviours.faction)) return false;
         return true;
     }
 

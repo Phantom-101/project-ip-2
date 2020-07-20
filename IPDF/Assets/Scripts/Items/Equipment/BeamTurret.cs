@@ -21,7 +21,7 @@ public class BeamTurret : Turret {
         BeamProjectile beamProjectile = projectile.AddComponent<BeamProjectile> ();
         beamProjectile.handler = caller;
         beamProjectile.from = caller.equipper;
-        beamProjectile.to = caller.equipper.targeted;
+        beamProjectile.to = caller.target.GetComponent<StructureBehaviours> ();
         beamProjectile.Initialize ();
     }
 

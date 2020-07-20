@@ -17,18 +17,12 @@ public class KineticTurret : Turret {
         KineticProjectile kineticProjectile = projectile.AddComponent<KineticProjectile> ();
         kineticProjectile.handler = caller;
         kineticProjectile.from = caller.equipper;
-        kineticProjectile.to = caller.equipper.targeted;
+        kineticProjectile.to = caller.target.GetComponent<StructureBehaviours> ();
         kineticProjectile.Initialize ();
     }
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
         if (!CanSustain (caller, target)) return false;
-        Vector3 pos = caller.equipper.transform.localPosition + caller.equipper.transform.rotation * caller.position;
-        RaycastHit hit; 
-        if (Physics.Raycast (pos, target.transform.localPosition - pos, out hit, range)) {
-            StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
-            if (hitStructure != target.GetComponent<StructureBehaviours> ()) return false;
-        } else return false;
         return true;
     }
 

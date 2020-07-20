@@ -9,9 +9,12 @@ public class Ticker : MonoBehaviour {
     public StructuresManager structuresManager;
     public List<Projectile> projectiles = new List<Projectile> ();
     public MusicManager musicManager;
-    public float lastTicked = 0;
-    public float curTime = 0;
-    public float deltaTime = 0;
+    public float lastClampedTicked = 0;
+    public float clampedCurTime = 0;
+    public float clampedDeltaTime = 0;
+    public float lastFastestTicked = 0;
+    public float fastestCurTime = 0;
+    public float fastestDeltaTime = 0;
 
     void Awake () {
         gameUIHandler = FindObjectOfType<GameUIHandler> ();
@@ -20,18 +23,28 @@ public class Ticker : MonoBehaviour {
     }
 
     void Start () {
-        StartCoroutine (Tick ());
+        StartCoroutine (ClampedTick ());
+        StartCoroutine (FastestTick ());
     }
 
-    IEnumerator Tick () {
-        curTime = Time.time;
-        deltaTime = curTime - lastTicked;
-        structuresManager.TickStructures (deltaTime);
-        foreach (Projectile projectile in projectiles) projectile.Process (deltaTime);
-        musicManager.Tick (deltaTime);
-        gameUIHandler.TickCanvas ();
-        lastTicked = curTime;
+    IEnumerator ClampedTick () {
+        clampedCurTime = Time.time;
+        clampedDeltaTime = clampedCurTime - lastClampedTicked;
+        structuresManager.TickStructures (clampedDeltaTime);
+        musicManager.Tick (clampedDeltaTime);
+        gameUIHandler.ClampedTickCanvas ();
+        lastClampedTicked = clampedCurTime;
         yield return new WaitForSeconds (tickLength);
-        StartCoroutine (Tick ());
+        StartCoroutine (ClampedTick ());
+    }
+
+    IEnumerator FastestTick () {
+        fastestCurTime = Time.time;
+        fastestDeltaTime = fastestCurTime - lastFastestTicked;
+        foreach (Projectile projectile in projectiles) projectile.Process (fastestDeltaTime);
+        gameUIHandler.FastestTickCanvas ();
+        lastFastestTicked = fastestCurTime;
+        yield return null;
+        StartCoroutine (FastestTick ());
     }
 }

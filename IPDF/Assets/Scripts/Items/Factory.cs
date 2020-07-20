@@ -68,7 +68,7 @@ public class FactoryHandler {
                 float spaceRequired = 0;
                 for (int i = 0; i < factory.outputs.Length; i++) spaceRequired += factory.outputs[i].size * factory.outputQuantities[i];
                 float spaceAvailable = structure.inventory.GetAvailableSize ();
-                if (spaceRequired <= spaceAvailable && structure.factionsManager.ChangeWealth (structure.factionID, (long) factory.wealthChange)) {
+                if (spaceRequired <= spaceAvailable && structure.factionsManager.ChangeWealth (structure.faction, (long) factory.wealthChange)) {
                     for (int i = 0; i < factory.outputs.Length; i++)
                         structure.inventory.AddItem (factory.outputs[i], factory.outputQuantities[i]);
                     timer = 0;

@@ -24,7 +24,7 @@ public class BeamProjectile : Projectile {
         beam = Instantiate ((turret as BeamTurret).asset, transform) as GameObject;
         for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamTurret).beamColor;
         transform.parent = from.transform.parent;
-        factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -(turret as BeamTurret).damage);
+        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as BeamTurret).damage);
     }
 
     public override void Process (float deltaTime) {

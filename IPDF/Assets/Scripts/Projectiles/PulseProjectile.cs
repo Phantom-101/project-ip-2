@@ -38,7 +38,7 @@ public class PulseProjectile : Projectile {
                 hitStructure.TakeDamage ((turret as PulseTurret).damage, beamFrom);
             }
         }
-        factionsManager.ChangeRelationsWithAcquiredModification (to.factionID, from.factionID, -(turret as PulseTurret).damage);
+        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as PulseTurret).damage);
     }
 
     public override void Process (float deltaTime) {
