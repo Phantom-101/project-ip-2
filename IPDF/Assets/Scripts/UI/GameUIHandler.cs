@@ -200,19 +200,19 @@ public class GameUIHandler : MonoBehaviour {
         ButtonFunction (() => RemoveOverlay (), repairCancelButton);
         death = canvas.transform.Find ("Death").gameObject;
         source = playerController.structureBehaviours;
-        activeUI.Push (GameUIState.InSpace);
-        UpdateCanvas ();
+        if (activeUI.Count == 0) activeUI.Push (GameUIState.InSpace);
         initialized = true;
     }
 
     public void FastestTickCanvas () {
+        if (!initialized) return;
         if (activeUI.Peek () == GameUIState.InSpace) {
             // Selectable UI
             List<StructureBehaviours> referenced = new List<StructureBehaviours> ();
             foreach (GameObject selectableBillboard in selectableBillboards.ToArray ()) {
                 ContainerComponent billboardTarget = selectableBillboard.GetComponent<ContainerComponent> ();
                 StructureBehaviours reference = billboardTarget.containers[0].value as StructureBehaviours;
-                if (reference == null || reference.transform.parent != source.transform.parent || !reference.CanBeTargeted ()) {
+                if (reference == null || source == null || reference.transform.parent != source.transform.parent || !reference.CanBeTargeted ()) {
                     selectableBillboards.Remove (selectableBillboard);
                     Destroy (selectableBillboard);
                 } else {
@@ -274,6 +274,88 @@ public class GameUIHandler : MonoBehaviour {
 
         stationStructureBehaviours = source.transform.parent.GetComponent<StructureBehaviours> ();
         if (stationStructureBehaviours != null && activeUI.Peek () == GameUIState.InSpace) AddOverlay (GameUIState.Station);
+        if (activeUI.Peek () == GameUIState.StationEquipment) {
+            if (stationStructureBehaviours == null) {
+                equipmentPanel.SetActive (false);
+            } else {
+                equipmentPanel.SetActive (true);
+                if (bayItems.Count == 0) {
+                    for (int i = 0; i < source.profile.turretSlots + 6; i++) {
+                        GameObject bay = Instantiate (bayItem, baysPanelContent.transform);
+                        RectTransform bayRect = bay.GetComponent<RectTransform> ();
+                        bayRect.anchoredPosition = new Vector2 (0, -i * 45);
+                        string bayName = "";
+                        string equippedName = "";
+                        if (i < source.profile.turretSlots) {
+                            bayName = "Turret " + (i + 1);
+                            equippedName = source.turrets[i].turret == null ? "None" : source.turrets[i].turret.name;
+                        } else if (i == source.profile.turretSlots) {
+                            bayName = "Shield";
+                            equippedName = source.shield.shield == null ? "None" : source.shield.shield.name;
+                        } else if (i == source.profile.turretSlots + 1) {
+                            bayName = "Capacitor";
+                            equippedName = source.capacitor.capacitor == null ? "None" : source.capacitor.capacitor.name;
+                        } else if (i == source.profile.turretSlots + 2) {
+                            bayName = "Generator";
+                            equippedName = source.generator.generator == null ? "None" : source.generator.generator.name;
+                        } else if (i == source.profile.turretSlots + 3) {
+                            bayName = "Engine";
+                            equippedName = source.engine.engine == null ? "None" : source.engine.engine.name;
+                        } else if (i == source.profile.turretSlots + 4) {
+                            bayName = "Electronics";
+                            equippedName = source.electronics.electronics == null ? "None" : source.electronics.electronics.name;
+                        } else if (i == source.profile.turretSlots + 5) {
+                            bayName = "Tractor Beam";
+                            equippedName = source.tractorBeam.tractorBeam == null ? "None" : source.tractorBeam.tractorBeam.name;
+                        }
+                        bay.transform.GetChild (1).GetComponent<Text> ().text = bayName;
+                        bay.transform.GetChild (2).GetComponent<Text> ().text = equippedName;
+                        ButtonFunction (() => { SetSelectedBay (bay.transform.GetSiblingIndex ()); selectedEquipment = null; }, bay.GetComponent<Button> ());
+                        bayItems.Add (bay);
+                    }
+                    baysPanelContent.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, (source.profile.turretSlots + 6) * 45 + 5);
+                }
+                System.Type equipmentType = null;
+                if (selectedBay < source.profile.turretSlots) {
+                    equipmentType = typeof(Turret);
+                } else if (selectedBay == source.profile.turretSlots) {
+                    equipmentType = typeof(Shield);
+                } else if (selectedBay == source.profile.turretSlots + 1) {
+                    equipmentType = typeof(Capacitor);
+                } else if (selectedBay == source.profile.turretSlots + 2) {
+                    equipmentType = typeof(Generator);
+                } else if (selectedBay == source.profile.turretSlots + 3) {
+                    equipmentType = typeof(Engine);
+                } else if (selectedBay == source.profile.turretSlots + 4) {
+                    equipmentType = typeof(Electronics);
+                } else if (selectedBay == source.profile.turretSlots + 5) {
+                    equipmentType = typeof(TractorBeam);
+                }
+                if (equipmentItems.Count == 0) {
+                    int offset = 0;
+                    foreach (Equipment offered in stationStructureBehaviours.profile.offeredEquipment) {
+                        if (offered.GetType ().IsSubclassOf (equipmentType)) {
+                            GameObject equipmentElement = Instantiate (equipmentItem, availableEquipmentPanelContent.transform);
+                            RectTransform rect = equipmentElement.GetComponent<RectTransform> ();
+                            rect.anchoredPosition = new Vector2 (0, -offset * 45);
+                            equipmentElement.transform.GetChild (1).GetComponent<Text> ().text = offered.name;
+                            ButtonFunction (() => selectedEquipment = offered, equipmentElement.GetComponent<Button> ());
+                            offset ++;
+                            equipmentItems.Add (equipmentElement);
+                        }
+                    }
+                    availableEquipmentPanelContent.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, offset * 45 + 5);
+                    if (offset == 0) noEquipmentAvailable.SetActive (true);
+                    else noEquipmentAvailable.SetActive (false);
+                }
+                if (selectedEquipment != null) {
+                    equipmentInformationPanel.SetActive (true);
+                    equipmentIcon.sprite = selectedEquipment.icon;
+                    equipmentName.text = selectedEquipment.name;
+                    replacePrice.text = "Not Implemented";
+                } else equipmentInformationPanel.SetActive (false);
+            }
+        } else equipmentPanel.SetActive (false);
         if (activeUI.Peek () == GameUIState.InSpace || activeUI.Peek () == GameUIState.Station || activeUI.Peek () == GameUIState.StationRepair) {
             // Hull
             hullUI.gameObject.SetActive (true);
@@ -535,88 +617,6 @@ public class GameUIHandler : MonoBehaviour {
                 stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
             }
         } else marketPanel.SetActive (false);
-        if (activeUI.Peek () == GameUIState.StationEquipment) {
-            if (stationStructureBehaviours == null) {
-                equipmentPanel.SetActive (false);
-            } else {
-                equipmentPanel.SetActive (true);
-                if (bayItems.Count == 0) {
-                    for (int i = 0; i < source.profile.turretSlots + 6; i++) {
-                        GameObject bay = Instantiate (bayItem, baysPanelContent.transform);
-                        RectTransform bayRect = bay.GetComponent<RectTransform> ();
-                        bayRect.anchoredPosition = new Vector2 (0, -i * 45);
-                        string bayName = "";
-                        string equippedName = "";
-                        if (i < source.profile.turretSlots) {
-                            bayName = "Turret " + (i + 1);
-                            equippedName = source.turrets[i].turret == null ? "None" : source.turrets[i].turret.name;
-                        } else if (i == source.profile.turretSlots) {
-                            bayName = "Shield";
-                            equippedName = source.shield.shield == null ? "None" : source.shield.shield.name;
-                        } else if (i == source.profile.turretSlots + 1) {
-                            bayName = "Capacitor";
-                            equippedName = source.capacitor.capacitor == null ? "None" : source.capacitor.capacitor.name;
-                        } else if (i == source.profile.turretSlots + 2) {
-                            bayName = "Generator";
-                            equippedName = source.generator.generator == null ? "None" : source.generator.generator.name;
-                        } else if (i == source.profile.turretSlots + 3) {
-                            bayName = "Engine";
-                            equippedName = source.engine.engine == null ? "None" : source.engine.engine.name;
-                        } else if (i == source.profile.turretSlots + 4) {
-                            bayName = "Electronics";
-                            equippedName = source.electronics.electronics == null ? "None" : source.electronics.electronics.name;
-                        } else if (i == source.profile.turretSlots + 5) {
-                            bayName = "Tractor Beam";
-                            equippedName = source.tractorBeam.tractorBeam == null ? "None" : source.tractorBeam.tractorBeam.name;
-                        }
-                        bay.transform.GetChild (1).GetComponent<Text> ().text = bayName;
-                        bay.transform.GetChild (2).GetComponent<Text> ().text = equippedName;
-                        ButtonFunction (() => { SetSelectedBay (bay.transform.GetSiblingIndex ()); selectedEquipment = null; }, bay.GetComponent<Button> ());
-                        bayItems.Add (bay);
-                    }
-                    baysPanelContent.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, (source.profile.turretSlots + 6) * 45 + 5);
-                }
-                System.Type equipmentType = null;
-                if (selectedBay < source.profile.turretSlots) {
-                    equipmentType = typeof(Turret);
-                } else if (selectedBay == source.profile.turretSlots) {
-                    equipmentType = typeof(Shield);
-                } else if (selectedBay == source.profile.turretSlots + 1) {
-                    equipmentType = typeof(Capacitor);
-                } else if (selectedBay == source.profile.turretSlots + 2) {
-                    equipmentType = typeof(Generator);
-                } else if (selectedBay == source.profile.turretSlots + 3) {
-                    equipmentType = typeof(Engine);
-                } else if (selectedBay == source.profile.turretSlots + 4) {
-                    equipmentType = typeof(Electronics);
-                } else if (selectedBay == source.profile.turretSlots + 5) {
-                    equipmentType = typeof(TractorBeam);
-                }
-                if (equipmentItems.Count == 0) {
-                    int offset = 0;
-                    foreach (Equipment offered in stationStructureBehaviours.profile.offeredEquipment) {
-                        if (offered.GetType ().IsSubclassOf (equipmentType)) {
-                            GameObject equipmentElement = Instantiate (equipmentItem, availableEquipmentPanelContent.transform);
-                            RectTransform rect = equipmentElement.GetComponent<RectTransform> ();
-                            rect.anchoredPosition = new Vector2 (0, -offset * 45);
-                            equipmentElement.transform.GetChild (1).GetComponent<Text> ().text = offered.name;
-                            ButtonFunction (() => selectedEquipment = offered, equipmentElement.GetComponent<Button> ());
-                            offset ++;
-                            equipmentItems.Add (equipmentElement);
-                        }
-                    }
-                    availableEquipmentPanelContent.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, offset * 45 + 5);
-                    if (offset == 0) noEquipmentAvailable.SetActive (true);
-                    else noEquipmentAvailable.SetActive (false);
-                }
-                if (selectedEquipment != null) {
-                    equipmentInformationPanel.SetActive (true);
-                    equipmentIcon.sprite = selectedEquipment.icon;
-                    equipmentName.text = selectedEquipment.name;
-                    replacePrice.text = "Not Implemented";
-                } else equipmentInformationPanel.SetActive (false);
-            }
-        } else equipmentPanel.SetActive (false);
         if (activeUI.Peek () == GameUIState.StationRepair) {
             if (stationStructureBehaviours == null) repairPanel.SetActive (false);
             else {

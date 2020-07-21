@@ -198,7 +198,7 @@ public class StructureBehaviours : MonoBehaviour {
         }
 
         // Check if should be destroyed
-        if (hull == 0.0f) {
+        if (hull == 0.0f && !destroyed) {
             destroyed = true;
             structuresManager.RemoveStructure (this);
             StartCoroutine (DestructionSequence ());
@@ -223,7 +223,7 @@ public class StructureBehaviours : MonoBehaviour {
     public void Dock (StructureBehaviours docker) {
         if (!DockerCanDock (docker)) return;
         for (int i = 0; i < profile.dockingLocations.Length; i++) {
-            if (docked[i] == "" && profile.dockingSizes[i] >= docker.profile.apparentSize) {
+            if (System.String.IsNullOrEmpty (docked[i]) && profile.dockingSizes[i] >= docker.profile.apparentSize) {
                 docker.transform.parent = transform;
                 docked[i] = docker.id;
                 docker.transform.localPosition = profile.dockingLocations[i];
@@ -255,9 +255,9 @@ public class StructureBehaviours : MonoBehaviour {
     }
 
     public bool DockerCanDock (StructureBehaviours docker) {
-        if ((docker.transform.position - transform.position).sqrMagnitude > profile.dockingRange * profile.dockingRange) return false;
+        if (Vector3.Distance (docker.transform.localPosition, transform.localPosition) > profile.dockingRange) return false;
         for (int i = 0; i < profile.dockingLocations.Length; i++)
-            if (docked[i] == "" && profile.dockingSizes[i] >= docker.profile.apparentSize)
+            if (System.String.IsNullOrEmpty (docked[i]) && profile.dockingSizes[i] >= docker.profile.apparentSize)
                 return true;
         return false;
     }

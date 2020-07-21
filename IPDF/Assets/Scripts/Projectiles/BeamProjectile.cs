@@ -22,9 +22,9 @@ public class BeamProjectile : Projectile {
             Destroy (soundEffect, 5);
         }
         beam = Instantiate ((turret as BeamTurret).asset, transform) as GameObject;
-        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamTurret).beamColor;
+        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamTurret).beamColor;
         transform.parent = from.transform.parent;
-        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as BeamTurret).damage);
+        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as BeamTurret).damage / 10);
     }
 
     public override void Process (float deltaTime) {
@@ -35,15 +35,9 @@ public class BeamProjectile : Projectile {
         if (!turret.CanSustain (handler, to.gameObject)) { Disable (); return; }
         Vector3 beamFrom = from.transform.localPosition + from.transform.rotation * handler.position;
         transform.localPosition = beamFrom;
-        RaycastHit hit; 
-        if (Physics.Raycast (beamFrom, to.transform.localPosition - beamFrom, out hit, turret.range)) {
-            transform.localRotation = Quaternion.LookRotation (to.transform.localPosition - beamFrom);
-            beam.transform.localScale = new Vector3 ((turret as BeamTurret).beamWidth, (turret as BeamTurret).beamWidth, hit.distance);
-            StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
-            if (hitStructure != null && hitStructure != from) {
-                hitStructure.TakeDamage ((turret as BeamTurret).damage * deltaTime, beamFrom);
-            }
-        }
+        transform.localRotation = Quaternion.LookRotation (to.transform.localPosition - beamFrom);
+        beam.transform.localScale = new Vector3 ((turret as BeamTurret).beamWidth, (turret as BeamTurret).beamWidth, Vector3.Distance (to.transform.localPosition, beamFrom));
+        to.TakeDamage ((turret as BeamTurret).damage * deltaTime, beamFrom);
     }
 
     protected override void Disable () {

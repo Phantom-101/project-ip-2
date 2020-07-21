@@ -53,6 +53,13 @@ MonoBehaviour:
   destroyed: 0
   cloaked: 0
   factionID: 2
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
   sector: {fileID: 0}
   route:
     waypoints: []
@@ -250,5 +257,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bee69b4b67b8654e8b0871f38ba4d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFactionID: 2
+  factionID: 2
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
   range: 1000

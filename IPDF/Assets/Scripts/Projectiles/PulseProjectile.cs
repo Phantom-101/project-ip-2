@@ -25,7 +25,7 @@ public class PulseProjectile : Projectile {
         }
         beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
         beam.transform.localPosition = Vector3.zero;
-        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as PulseTurret).beamColor;
+        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as PulseTurret).beamColor;
         transform.parent = from.transform.parent;
         Vector3 beamFrom = from.transform.localPosition + from.transform.rotation * handler.position;
         transform.localPosition = beamFrom;
@@ -38,13 +38,13 @@ public class PulseProjectile : Projectile {
                 hitStructure.TakeDamage ((turret as PulseTurret).damage, beamFrom);
             }
         }
-        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as PulseTurret).damage);
+        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as PulseTurret).damage / 10);
     }
 
     public override void Process (float deltaTime) {
         if (!initialized || disabled) return;
         lifetime += deltaTime;
-        for (int i = 0; i < 8; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = new Color (
+        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = new Color (
             (turret as PulseTurret).beamColor.r,
             (turret as PulseTurret).beamColor.g,
             (turret as PulseTurret).beamColor.b,

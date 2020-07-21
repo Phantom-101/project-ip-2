@@ -1,19 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class UniverseSaveData {
     public string saveName;
     public List<StructureSaveData> structures = new List<StructureSaveData> ();
     public List<SectorSaveData> sectors = new List<SectorSaveData> ();
     public List<CelestialObjectSaveData> celestialObjects = new List<CelestialObjectSaveData> ();
     public List<Faction> factions = new List<Faction> ();
+    public Dictionary<SerializableFactionPair, float> relations = new Dictionary<SerializableFactionPair, float> ();
 }
 
-[System.Serializable]
+[Serializable]
 public class BaseSaveData {
     public string name;
     public float[] position;
@@ -21,7 +23,7 @@ public class BaseSaveData {
     public float[] scale;
 }
 
-[System.Serializable]
+[Serializable]
 public class StructureSaveData : BaseSaveData {
     public string id;
     public int sectorID;
@@ -43,14 +45,14 @@ public class StructureSaveData : BaseSaveData {
     public JumpGateSaveData jumpGateSaveData;
 }
 
-[System.Serializable]
+[Serializable]
 public class JumpGateSaveData {
     public float triggerRange;
     public float forwardDistance;
     public string otherId;
 }
 
-[System.Serializable]
+[Serializable]
 public class StructureInventoryPair {
     public string item;
     public int amount;
@@ -61,14 +63,25 @@ public class StructureInventoryPair {
     }
 }
 
-[System.Serializable]
+[Serializable]
 public class SectorSaveData : BaseSaveData {
     public SectorData sectorData;
 }
 
-[System.Serializable]
+[Serializable]
 public class CelestialObjectSaveData : BaseSaveData {
     public int celestialObjectID;
+}
+
+[Serializable]
+public struct SerializableFactionPair {
+    public int a;
+    public int b;
+
+    public SerializableFactionPair (FactionPair data) {
+        this.a = data.a.id;
+        this.b = data.b.id;
+    }
 }
 
 public class SavesHandler : MonoBehaviour {
@@ -169,6 +182,9 @@ public class SavesHandler : MonoBehaviour {
         }
 
         universe.factions = factionsManager.factions;
+
+        foreach (FactionPair pair in factionsManager.relations.Keys.ToArray ())
+            universe.relations.Add (new SerializableFactionPair (pair), factionsManager.relations[pair]);
 
         CelestialObject[] celestialObjects = FindObjectsOfType<CelestialObject> ();
         foreach (CelestialObject celestialObject in celestialObjects) {
@@ -284,6 +300,9 @@ public class SavesHandler : MonoBehaviour {
         cameraFollowPlayer.ResetPosition ();
 
         factionsManager.factions = universe.factions;
+
+        foreach (SerializableFactionPair pair in universe.relations.Keys.ToArray ())
+            factionsManager.relations.Add (new FactionPair (pair.a, pair.b, factionsManager), universe.relations[pair]);
 
         foreach (CelestialObjectSaveData data in universe.celestialObjects) {
             GameObject instantiated = new GameObject ("Celestial Object");

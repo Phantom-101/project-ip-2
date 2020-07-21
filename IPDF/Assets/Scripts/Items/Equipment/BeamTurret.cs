@@ -43,12 +43,7 @@ public class BeamTurret : Turret {
             Quaternion.Angle (caller.equipper.transform.rotation * Quaternion.Euler (caller.rotation), Quaternion.LookRotation (target.transform.position - caller.equipper.transform.position)
         );
         if (angle > caller.angle) return false;
-        Vector3 pos = caller.equipper.transform.localPosition + caller.equipper.transform.rotation * caller.position;
-        RaycastHit hit; 
-        if (Physics.Raycast (pos, target.transform.localPosition - pos, out hit, range)) {
-            StructureBehaviours hitStructure = hit.transform.GetComponent<StructureBehaviours> ();
-            if (hitStructure != target.GetComponent<StructureBehaviours> ()) return false;
-        } else return false;
+        if ((caller.equipper.transform.position - target.transform.position).sqrMagnitude > range * range) return false;
         return true;
     }
 

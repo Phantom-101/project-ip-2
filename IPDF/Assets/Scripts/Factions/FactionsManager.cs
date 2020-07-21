@@ -5,6 +5,7 @@ using Essentials;
 
 public class FactionsManager : MonoBehaviour {
     public List<Faction> factions = new List<Faction> ();
+    public Dictionary<FactionPair, float> relations = new Dictionary<FactionPair, float> ();
 
     public void AddFaction (Faction faction) {
         if (faction == null) return;
@@ -50,32 +51,23 @@ public class FactionsManager : MonoBehaviour {
     public float GetRelations (Faction a, Faction b) {
         if (a == b) return GetAllyThreshold (a);
         if (a == null || b == null) return 0;
-        foreach (FactionRelation relation in a.relations)
-            if (relation.id == b.id)
-                return relation.relation;
-        return 0;
+        float res = 0;
+        relations.TryGetValue (new FactionPair (a, b), out res);
+        return res;
     }
 
     public void SetRelations (Faction a, Faction b, float value) {
         if (a == b) return;
         if (a == null || b == null) return;
-        foreach (FactionRelation relation in a.relations)
-            if (relation.id == b.id) {
-                relation.relation = value;
-                return;
-            }
-        a.relations.Add (new FactionRelation (b.id, value));
+        FactionPair pair = new FactionPair (a, b);
+        if (relations.ContainsKey (pair)) relations[pair] = value;
+        else relations.Add (pair, value);
     }
 
     public void ChangeRelations (Faction a, Faction b, float change) {
         if (a == b) return;
         if (a == null || b == null) return;
-        foreach (FactionRelation relation in a.relations)
-            if (relation.id == b.id) {
-                relation.relation += change;
-                return;
-            }
-        a.relations.Add (new FactionRelation (b.id, change));
+        SetRelations (a, b, GetRelations (a, b) + change);
     }
 
     public float GetHostileThreshold (Faction faction) {

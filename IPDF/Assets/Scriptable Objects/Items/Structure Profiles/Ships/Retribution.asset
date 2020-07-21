@@ -32,7 +32,7 @@ MonoBehaviour:
   rangeChangeAngle: 45
   structureClass: 8
   manufacturer: 12
-  description: Phys' dev ship.
+  description: 
   hull: 1000000
   inventorySize: 1000
   authority: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   offeredEquipment: []
   repairCostMultiplier: 0
   collisionMesh: {fileID: 0}
-  mass: 75
+  mass: 150
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}

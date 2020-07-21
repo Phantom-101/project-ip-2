@@ -30,7 +30,7 @@ MonoBehaviour:
   canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
-  structureClass: 2
+  structureClass: 3
   manufacturer: 12
   description: 
   hull: 200
