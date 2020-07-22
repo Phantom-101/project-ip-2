@@ -12,7 +12,7 @@ public class ItemsHandler : MonoBehaviour {
 
     public Item GetItemById (string id) {
         if (id == "") return null;
-        foreach (Item item in items) if (item.id == id) return item;
+        foreach (Item item in items) if (item != null) if (item.id == id) return item;
         return null;
     }
 }

@@ -38,7 +38,7 @@ public class Turret : Equipment {
         return false;
     }
 
-    public virtual void Sustained (TurretHandler caller) {}
+    public virtual void Sustained (TurretHandler caller, float deltaTime) {}
 
     public virtual bool CanRepeat (TurretHandler caller, GameObject target) {
         return false;
@@ -129,7 +129,7 @@ public class TurretHandler {
             if (!turret.CanRepeat (this, target) && !turret.CanSustain (this, target)) Deactivate ();
             else {
                 TryActivate ();
-                turret.Sustained (this);
+                turret.Sustained (this, deltaTime);
             }
         }
         if (turret.GetType () == typeof (KineticTurret)) UseAmmunition ((turret as KineticTurret).ammunition[0]);
@@ -140,15 +140,12 @@ public class TurretHandler {
         else if (turret.CanActivate (this, target)) {
             this.target = target;
             activated = true;
+            HandleActivation ();
         }
     }
 
     public void TryActivate () {
-        if (turret.CanActivate (this, target)) {
-            turret.Activated (this);
-            projectile = new GameObject (turret.name);
-            turret.InitializeProjectile (this, projectile);
-        }
+        if (turret.CanActivate (this, target)) HandleActivation ();
     }
 
     public void Activate (GameObject target) {
@@ -156,7 +153,14 @@ public class TurretHandler {
         if (turret.CanActivate (this, target)) {
             this.target = target;
             activated = true;
+            HandleActivation ();
         }
+    }
+
+    public void HandleActivation () {
+        turret.Activated (this);
+        projectile = new GameObject (turret.name);
+        turret.InitializeProjectile (this, projectile);
     }
 
     public void Deactivate () {

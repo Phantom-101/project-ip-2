@@ -18,7 +18,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: fcbf132e6d93f5b42b358d46e0c46545, type: 3}
   material: {fileID: 2100000, guid: b8e0740f03dcb2b4ca4de3be7e4be61f, type: 2}
-  apparentSize: 55
+  apparentSize: 100
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: 52f93af48e362764086ab59094aeebf7,

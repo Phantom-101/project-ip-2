@@ -9,7 +9,6 @@ using Essentials;
 public class BeamTurret : Turret {
     [Header ("Appearance")]
     public GameObject asset;
-    public Color beamColor;
     public float beamWidth;
     [Header ("Turret Stats")]
     public float depletionRate;
@@ -37,7 +36,7 @@ public class BeamTurret : Turret {
         if (target == null) return false;
         StructureBehaviours targetBehaviours = target.GetComponent<StructureBehaviours> ();
         if (targetBehaviours != null && !targetBehaviours.CanBeTargeted ()) return false;
-        if (!caller.equipper.transform.parent.gameObject.GetComponent<Sector> ()) return false;
+        if (caller.equipper.sector == null) return false;
         float angle = target.transform.position - caller.equipper.transform.position == Vector3.zero ?
             0.0f :
             Quaternion.Angle (caller.equipper.transform.rotation * Quaternion.Euler (caller.rotation), Quaternion.LookRotation (target.transform.position - caller.equipper.transform.position)
@@ -47,9 +46,9 @@ public class BeamTurret : Turret {
         return true;
     }
 
-    public override void Sustained (TurretHandler caller) {
+    public override void Sustained (TurretHandler caller, float deltaTime) {
         if (caller.storedEnergy < depletionRate * Time.deltaTime) caller.Deactivate ();
-        if (caller.activated) caller.storedEnergy -= depletionRate * Time.deltaTime;
+        if (caller.activated) caller.storedEnergy -= depletionRate * deltaTime;
     }
 
     public override bool CanInteract (TurretHandler caller, GameObject target) {

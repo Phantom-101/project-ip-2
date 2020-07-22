@@ -9,7 +9,6 @@ using Essentials;
 public class PulseTurret : Turret {
     [Header ("Appearance")]
     public GameObject asset;
-    public Color beamColor;
     public float beamWidth;
     public float beamDuration;
     [Header ("Turret Stats")]
@@ -26,11 +25,11 @@ public class PulseTurret : Turret {
     public override bool CanActivate (TurretHandler caller, GameObject target) {
         if (caller == null || !caller.equipper.CanShoot ()) return false;
         if (target == null) return false;
+        if (caller.storedEnergy < maxStoredEnergy) return false;
         StructureBehaviours targetBehaviours = target.GetComponent<StructureBehaviours> ();
         if (targetBehaviours != null && !targetBehaviours.CanBeTargeted ()) return false;
-        if (caller.storedEnergy < maxStoredEnergy) return false;
-        if (!caller.equipper.transform.parent.gameObject.GetComponent<Sector> ()) return false;
-        if ((target.transform.localPosition - caller.equipper.transform.localPosition).sqrMagnitude > range * range) return false;
+        if (caller.equipper.sector == null) return false;
+        if (Vector3.Distance (target.transform.localPosition, caller.equipper.transform.localPosition) > range) return false;
         float angle = target.transform.position - caller.equipper.transform.position == Vector3.zero ?
             0.0f :
             Quaternion.Angle (caller.equipper.transform.rotation * Quaternion.Euler (caller.rotation), Quaternion.LookRotation (target.transform.position - caller.equipper.transform.position)
@@ -43,16 +42,8 @@ public class PulseTurret : Turret {
         caller.storedEnergy = 0;
     }
 
-    public override bool CanSustain (TurretHandler caller, GameObject target) {
-        return true;
-    }
-
     public override bool CanInteract (TurretHandler caller, GameObject target) {
         if (caller.activated) return true;
         return CanActivate (caller, target);
-    }
-
-    public override bool CanUseAmmunition (TurretHandler caller, Ammunition ammunition) {
-        return false;
     }
 }

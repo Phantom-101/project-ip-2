@@ -18,7 +18,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: a2dff1e4cd76cfd4a924efc75e5d4af8, type: 3}
   material: {fileID: 2100000, guid: 0c2daaef9ed27274daf1ddb3713a0dec, type: 2}
-  apparentSize: 40
+  apparentSize: 230
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: 52f93af48e362764086ab59094aeebf7,
@@ -84,7 +84,7 @@ MonoBehaviour:
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
-  offset: {x: 0, y: 4, z: 0}
+  offset: {x: 0, y: 4, z: 10}
   rotate: {x: 0, y: -90, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}

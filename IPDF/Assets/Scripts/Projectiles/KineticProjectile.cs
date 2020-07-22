@@ -48,13 +48,9 @@ public class KineticProjectile : Projectile {
         if (!initialized || disabled) return;
         if ((origin - transform.localPosition).sqrMagnitude > ammunition.range * ammunition.range) { Disable(); return; }
         if (from == null || to == null) { Disable (); return; }
-        Collider[] overlaps = Physics.OverlapSphere (transform.position, speed * deltaTime);
-        foreach (Collider hit in overlaps) {
-            StructureBehaviours hitStructure = hit.transform.parent.GetComponent<StructureBehaviours> ();
-            if (hitStructure != null && hitStructure != from) {
-                hitStructure.TakeDamage (damage, transform.localPosition);
-                Disable ();
-            }
+        if ((transform.localPosition - to.transform.position).sqrMagnitude <= to.profile.apparentSize * to.profile.apparentSize) {
+            to.TakeDamage (damage, transform.localPosition);
+            Disable ();
         }
         transform.Translate (new Vector3 (0, 0, speed * deltaTime));
     }

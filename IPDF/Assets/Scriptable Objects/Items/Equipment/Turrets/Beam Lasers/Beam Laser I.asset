@@ -21,9 +21,8 @@ MonoBehaviour:
   maxStoredEnergy: 100
   rechargeRate: 20
   range: 400
-  asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
-  beamColor: {r: 1, g: 0, b: 0, a: 1}
+  asset: {fileID: 2815981471254631833, guid: 4e84e38e5f9e5534d88566b292d9ef9c, type: 3}
   beamWidth: 0.2
-  depletionRate: 30
+  depletionRate: 40
   damage: 4
   activationThreshold: 0.4

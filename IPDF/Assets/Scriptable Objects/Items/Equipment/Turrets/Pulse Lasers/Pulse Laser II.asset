@@ -18,11 +18,10 @@ MonoBehaviour:
   size: 0
   meta: 2
   audio: {fileID: 11400000, guid: a9a03c68b40ffba48b66622c2809e870, type: 2}
-  maxStoredEnergy: 150
-  rechargeRate: 30
+  maxStoredEnergy: 200
+  rechargeRate: 40
   range: 550
-  asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
-  beamColor: {r: 1, g: 1, b: 0, a: 1}
+  asset: {fileID: 7127249040003235709, guid: ed45c5725fb9fcc428b39e8c894ef129, type: 3}
   beamWidth: 0.4
   beamDuration: 0.4
-  damage: 21
+  damage: 20

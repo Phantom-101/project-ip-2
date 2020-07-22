@@ -16,14 +16,13 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
   basePrice: 0
   size: 0
-  meta: 5
+  meta: 1
   audio: {fileID: 11400000, guid: a9a03c68b40ffba48b66622c2809e870, type: 2}
-  maxStoredEnergy: 600
-  rechargeRate: 120
+  maxStoredEnergy: 300
+  rechargeRate: 60
   range: 600
-  asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
-  beamColor: {r: 0, g: 0, b: 1, a: 1}
+  asset: {fileID: 9101518586673965276, guid: 477aa07929a4b0e45bfbf52f5807a84d, type: 3}
   beamWidth: 1
-  depletionRate: 180
-  damage: 25
+  depletionRate: 120
+  damage: 12
   activationThreshold: 0.4

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3939797602325955151}
   - component: {fileID: 3939797602325955148}
   - component: {fileID: 3939797602325955149}
-  - component: {fileID: 3939797602325955147}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -80,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3939797602325955147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939797602325955248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4d5a9024bd35642b635b8c2122fbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0, a: 1}
-  renderer: {fileID: 0}
 --- !u!1 &3939797602936038092
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +124,6 @@ GameObject:
   - component: {fileID: 3939797603279849403}
   - component: {fileID: 3939797603279849400}
   - component: {fileID: 3939797603279849401}
-  - component: {fileID: 3939797603279849399}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -208,20 +192,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3939797603279849399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939797603279849404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4d5a9024bd35642b635b8c2122fbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0, a: 1}
-  renderer: {fileID: 0}
 --- !u!1 &3939797603560157891
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +203,6 @@ GameObject:
   - component: {fileID: 3939797603560157890}
   - component: {fileID: 3939797603560157919}
   - component: {fileID: 3939797603560157888}
-  - component: {fileID: 3939797603560157918}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -302,20 +271,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3939797603560157918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939797603560157891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4d5a9024bd35642b635b8c2122fbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0, a: 1}
-  renderer: {fileID: 0}
 --- !u!1 &3939797603728404327
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +282,6 @@ GameObject:
   - component: {fileID: 3939797603728404326}
   - component: {fileID: 3939797603728404323}
   - component: {fileID: 3939797603728404324}
-  - component: {fileID: 3939797603728404322}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -396,17 +350,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3939797603728404322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939797603728404327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4d5a9024bd35642b635b8c2122fbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0, a: 1}
-  renderer: {fileID: 0}

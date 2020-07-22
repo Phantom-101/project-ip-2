@@ -20,13 +20,12 @@ public class StructureAI {
         StructureBehaviours closest = null;
         float leastWeight = float.MaxValue;
         foreach (StructureBehaviours structure in structureBehaviours.sector.inSector) {
-            if (structure.CanBeTargeted () && structure.profile.canFireAt) {
+            if (structure != null && structure.CanBeTargeted () && structure.profile.canFireAt) {
                 float distance = Vector3.Distance (structureBehaviours.transform.position, structure.transform.position);
-                float weight = distance;
                 if (structure != structureBehaviours &&
                     structureBehaviours.factionsManager.Hostile (structureBehaviours.faction, structure.faction) &&
-                    weight < leastWeight) {
-                    leastWeight = weight;
+                    distance < leastWeight) {
+                    leastWeight = distance;
                     closest = structure;
                 }
             }
@@ -36,8 +35,8 @@ public class StructureAI {
             float totalRange = 0;
             int effectiveTurrets = 0;
             foreach (TurretHandler turretHandler in structureBehaviours.turrets) {
-                if (!turretHandler.activated)
-                    turretHandler.Activate (structureBehaviours.targeted.gameObject);
+                if (turretHandler.activated) turretHandler.Deactivate ();
+                turretHandler.Activate (structureBehaviours.targeted.gameObject);
                 Turret turret = turretHandler.turret;
                 if (turret != null) {
                     totalRange += turret.range;

@@ -22,7 +22,6 @@ public class BeamProjectile : Projectile {
             Destroy (soundEffect, 5);
         }
         beam = Instantiate ((turret as BeamTurret).asset, transform) as GameObject;
-        for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = (turret as BeamTurret).beamColor;
         transform.parent = from.transform.parent;
         factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as BeamTurret).damage / 10);
     }

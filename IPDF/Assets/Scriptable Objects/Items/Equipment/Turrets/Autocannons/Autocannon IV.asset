@@ -16,12 +16,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f9a723a062f2e89469cf6db6ec702024, type: 3}
   basePrice: 0
   size: 0
-  meta: 4
+  meta: 2
   audio: {fileID: 11400000, guid: a6af96ce32a7f2a41a1d34518c39f8f6, type: 2}
-  maxStoredEnergy: 30
-  rechargeRate: 80
+  maxStoredEnergy: 35
+  rechargeRate: 50
   range: 450
   repeating: 1
-  power: 850
+  power: 800
   ammunition:
   - {fileID: 11400000, guid: 1924a58184e09744fbe64295d14f5080, type: 2}

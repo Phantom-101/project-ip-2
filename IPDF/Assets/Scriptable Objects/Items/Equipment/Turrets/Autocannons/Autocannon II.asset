@@ -18,8 +18,8 @@ MonoBehaviour:
   size: 0
   meta: 2
   audio: {fileID: 11400000, guid: a6af96ce32a7f2a41a1d34518c39f8f6, type: 2}
-  maxStoredEnergy: 15
-  rechargeRate: 20
+  maxStoredEnergy: 25
+  rechargeRate: 30
   range: 350
   repeating: 1
   power: 600

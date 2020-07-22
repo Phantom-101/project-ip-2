@@ -171,7 +171,7 @@ public class SavesHandler : MonoBehaviour {
             data.docked = structure.docked;
             data.isPlayer = (playerController.structureBehaviours == structure);
             JumpGate jumpGate = structure.GetComponent<JumpGate> ();
-            if (jumpGate != null) {
+            if (jumpGate != null && jumpGate.other != null) {
                 JumpGateSaveData jumpGateData = new JumpGateSaveData ();
                 jumpGateData.triggerRange = jumpGate.triggerRange;
                 jumpGateData.forwardDistance = jumpGate.forwardDistance;

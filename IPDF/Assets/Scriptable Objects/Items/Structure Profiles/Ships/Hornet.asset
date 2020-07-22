@@ -18,7 +18,7 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 71aeec00603cece43a6209a75dd5b5dd, type: 3}
   material: {fileID: 2100000, guid: 7267bc99e5fd336449fce5da09b3a1e6, type: 2}
-  apparentSize: 2
+  apparentSize: 12
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
   selectableBillboard: {fileID: 21300000, guid: 52f93af48e362764086ab59094aeebf7,
@@ -30,11 +30,11 @@ MonoBehaviour:
   canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
-  structureClass: 3
+  structureClass: 2
   manufacturer: 12
   description: 
-  hull: 200
-  inventorySize: 25
+  hull: 250
+  inventorySize: 50
   authority: 0
   maxEquipmentMeta: 2
   turretSlots: 3
