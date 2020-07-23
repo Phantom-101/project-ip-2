@@ -23,6 +23,10 @@ public class Projectile : MonoBehaviour {
 
     public virtual void Process (float deltaTime) {}
 
+    public virtual void Enable () {
+        disabled = false;
+    }
+
     protected virtual void Disable () {
         disabled = true;
     }

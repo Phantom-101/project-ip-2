@@ -9,7 +9,26 @@ public class PulseProjectile : Projectile {
     public GameObject beam;
 
     public override void Initialize () {
+        if (initialized) return;
         base.Initialize ();
+        turret = handler.turret;
+        beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
+    }
+
+    public override void Process (float deltaTime) {
+        if (!initialized || disabled) return;
+        lifetime += deltaTime;
+        beam.transform.localScale = new Vector3 (
+            (turret as PulseTurret).beamWidth * ((turret as PulseTurret).beamDuration - lifetime) / (turret as PulseTurret).beamDuration,
+            (turret as PulseTurret).beamWidth * ((turret as PulseTurret).beamDuration - lifetime) / (turret as PulseTurret).beamDuration,
+            beam.transform.localScale.z
+        );
+        if (lifetime > (turret as PulseTurret).beamDuration) Disable ();
+    }
+
+    public override void Enable () {
+        base.Enable ();
+        beam.SetActive (true);
         turret = handler.turret;
         if (turret.audio != null) {
             GameObject soundEffect = new GameObject ("Sound Effect");
@@ -23,7 +42,6 @@ public class PulseProjectile : Projectile {
             audioSource.PlayOneShot (turret.audio.clip, turret.audio.volume);
             Destroy (soundEffect, 5);
         }
-        beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
         beam.transform.localPosition = Vector3.zero;
         transform.parent = from.transform.parent;
         Vector3 beamFrom = from.transform.localPosition + from.transform.rotation * handler.position;
@@ -32,27 +50,11 @@ public class PulseProjectile : Projectile {
         transform.localRotation = Quaternion.LookRotation (to.transform.localPosition - beamFrom);
         to.TakeDamage ((turret as PulseTurret).damage, beamFrom);
         factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as PulseTurret).damage / 10);
-    }
-
-    public override void Process (float deltaTime) {
-        if (!initialized || disabled) return;
-        lifetime += deltaTime;
-        /*for (int i = 0; i < 4; i++) beam.transform.GetChild (i).GetComponent<MaterialColor> ().color = new Color (
-            (turret as PulseTurret).beamColor.r,
-            (turret as PulseTurret).beamColor.g,
-            (turret as PulseTurret).beamColor.b,
-            (turret as PulseTurret).beamColor.a * ((turret as PulseTurret).beamDuration - lifetime) / (turret as PulseTurret).beamDuration
-        );*/
-        beam.transform.localScale = new Vector3 (
-            (turret as PulseTurret).beamWidth * ((turret as PulseTurret).beamDuration - lifetime) / (turret as PulseTurret).beamDuration,
-            (turret as PulseTurret).beamWidth * ((turret as PulseTurret).beamDuration - lifetime) / (turret as PulseTurret).beamDuration,
-            beam.transform.localScale.z
-        );
-        if (lifetime > (turret as PulseTurret).beamDuration) Disable ();
+        lifetime = 0;
     }
 
     protected override void Disable () {
         base.Disable ();
-        Destroy (gameObject);
+        beam.SetActive (false);
     }
 }

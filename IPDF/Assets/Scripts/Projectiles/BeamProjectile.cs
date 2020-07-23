@@ -7,23 +7,11 @@ public class BeamProjectile : Projectile {
     public GameObject beam;
 
     public override void Initialize () {
+        if (initialized) return;
         base.Initialize ();
         turret = handler.turret;
-        if (turret.audio != null) {
-            GameObject soundEffect = new GameObject ("Sound Effect");
-            soundEffect.transform.parent = from.transform.parent;
-            soundEffect.transform.localPosition = from.transform.localPosition;
-            AudioSource audioSource = soundEffect.AddComponent<AudioSource> ();
-            audioSource.spatialBlend = turret.audio.spatialBlend;
-            audioSource.minDistance = turret.audio.minDistance;
-            audioSource.maxDistance = turret.audio.maxDistance;
-            audioSource.rolloffMode = turret.audio.rolloffMode;
-            audioSource.PlayOneShot (turret.audio.clip, turret.audio.volume);
-            Destroy (soundEffect, 5);
-        }
         beam = Instantiate ((turret as BeamTurret).asset, transform) as GameObject;
-        transform.parent = from.transform.parent;
-        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as BeamTurret).damage / 10);
+        disabled = true;
     }
 
     public override void Process (float deltaTime) {
@@ -39,8 +27,28 @@ public class BeamProjectile : Projectile {
         to.TakeDamage ((turret as BeamTurret).damage * deltaTime, beamFrom);
     }
 
+    public override void Enable () {
+        base.Enable ();
+        beam.SetActive (true);
+        turret = handler.turret;
+        if (turret.audio != null) {
+            GameObject soundEffect = new GameObject ("Sound Effect");
+            soundEffect.transform.parent = from.transform.parent;
+            soundEffect.transform.localPosition = from.transform.localPosition;
+            AudioSource audioSource = soundEffect.AddComponent<AudioSource> ();
+            audioSource.spatialBlend = turret.audio.spatialBlend;
+            audioSource.minDistance = turret.audio.minDistance;
+            audioSource.maxDistance = turret.audio.maxDistance;
+            audioSource.rolloffMode = turret.audio.rolloffMode;
+            audioSource.PlayOneShot (turret.audio.clip, turret.audio.volume);
+            Destroy (soundEffect, 5);
+        }
+        transform.parent = from.transform.parent;
+        factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -(turret as BeamTurret).damage / 10);
+    }
+
     protected override void Disable () {
         base.Disable ();
-        Destroy (gameObject);
+        beam.SetActive (false);
     }
 }

@@ -17,15 +17,17 @@ public class BeamTurret : Turret {
     public float activationThreshold;
 
     public override void InitializeProjectile (TurretHandler caller, GameObject projectile) {
-        BeamProjectile beamProjectile = projectile.AddComponent<BeamProjectile> ();
+        BeamProjectile beamProjectile = projectile.GetComponent<BeamProjectile> ();
+        if (beamProjectile == null) beamProjectile = projectile.AddComponent<BeamProjectile> ();
         beamProjectile.handler = caller;
         beamProjectile.from = caller.equipper;
         beamProjectile.to = caller.target.GetComponent<StructureBehaviours> ();
         beamProjectile.Initialize ();
+        beamProjectile.Enable ();
     }
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
-        if (caller.projectile != null) return false;
+        if (caller.projectile != null && !caller.projectile.GetComponent<BeamProjectile> ().disabled) return false;
         if (caller.storedEnergy / maxStoredEnergy < activationThreshold) return false;
         if (!CanSustain (caller, target)) return false;
         return true;

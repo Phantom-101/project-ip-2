@@ -30,8 +30,8 @@ MonoBehaviour:
   canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
-  structureClass: 4
-  manufacturer: 12
+  structureClass: 6
+  manufacturer: 4
   description: 
   hull: 1000
   inventorySize: 100
