@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d58410d9fa9544f8df4ef24771a992, type: 3}
+  m_Name: PDC I
+  m_EditorClassIdentifier: 
+  id: d6823f8f-d916-4a73-ab03-9b22b2d84540
+  icon: {fileID: 21300000, guid: 92e488e16bfb25c46ad03b35eb57c0f3, type: 3}
+  basePrice: 0
+  size: 0
+  meta: 2
+  audio: {fileID: 11400000, guid: a6af96ce32a7f2a41a1d34518c39f8f6, type: 2}
+  variant: V
+  maxStoredEnergy: 40
+  rechargeRate: 600
+  range: 500
+  repeating: 1
+  power: 900
+  ammunition:
+  - {fileID: 11400000, guid: 1da062b33f0e7fb49902e5315c14c243, type: 2}
