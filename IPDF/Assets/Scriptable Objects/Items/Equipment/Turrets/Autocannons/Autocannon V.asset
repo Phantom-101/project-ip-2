@@ -18,6 +18,7 @@ MonoBehaviour:
   size: 0
   meta: 2
   audio: {fileID: 11400000, guid: a6af96ce32a7f2a41a1d34518c39f8f6, type: 2}
+  variant: V
   maxStoredEnergy: 40
   rechargeRate: 60
   range: 500

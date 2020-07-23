@@ -516,6 +516,7 @@ public class GameUIHandler : MonoBehaviour {
                 button.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTurret == null ? null : referencedTurret.icon;
                 button.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy * 40, 5);
                 button.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTurret == null ? 0.0f : source.turrets[i].storedEnergy / referencedTurret.maxStoredEnergy);
+                button.transform.GetChild (2).GetComponent<Text> ().text = source.turrets[i].turret.variant;
                 button.GetComponent<Button> ().interactable = source.turrets[i].CanPress ();
                 ButtonFunction (() => source.turrets[button.transform.GetSiblingIndex () - 2].Interacted (source.targeted == null ? null : source.targeted.gameObject), button.GetComponent<Button> ());
                 equipmentButtons[i + 2] = button;

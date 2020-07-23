@@ -21,6 +21,7 @@ public class Turret : Equipment {
     [Header ("Audio")]
     public AudioAsset audio;
     [Header ("Turret Stats")]
+    public string variant;
     public float maxStoredEnergy;
     public float rechargeRate;
     [Header ("Activation Requirements")]
@@ -159,7 +160,7 @@ public class TurretHandler {
 
     public void HandleActivation () {
         turret.Activated (this);
-        projectile = new GameObject (turret.name);
+        if (projectile == null) projectile = new GameObject (turret.name);
         turret.InitializeProjectile (this, projectile);
     }
 

@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4039050
 Transform:
   m_ObjectHideFlags: 0
@@ -13055,7 +13055,7 @@ GameObject:
   - component: {fileID: 734247847}
   - component: {fileID: 734247846}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18114,7 +18114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1033050176
 Transform:
   m_ObjectHideFlags: 0
@@ -24777,7 +24777,7 @@ GameObject:
   - component: {fileID: 1446854829}
   - component: {fileID: 1446854828}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29939,22 +29939,22 @@ PrefabInstance:
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.28472984
+      value: 0.29057077
       objectReference: {fileID: 0}
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.07443155
+      value: 0.051712506
       objectReference: {fileID: 0}
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.9317743
+      value: -0.95398474
       objectReference: {fileID: 0}
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.21256901
+      value: 0.052987546
       objectReference: {fileID: 0}
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
@@ -29964,17 +29964,17 @@ PrefabInstance:
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.0120001
+      value: 7.438
       objectReference: {fileID: 0}
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 325.78198
+      value: 326.387
       objectReference: {fileID: 0}
     - target: {fileID: 747052828637994420, guid: aa9a99f830e21db478bea4438595df5b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 206.01399
+      value: 184.109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa9a99f830e21db478bea4438595df5b, type: 3}
@@ -31123,7 +31123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e1e4cb9382fac409c92b8a662efce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
 --- !u!1 &1726394527
 GameObject:
   m_ObjectHideFlags: 0

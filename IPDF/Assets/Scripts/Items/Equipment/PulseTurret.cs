@@ -15,11 +15,13 @@ public class PulseTurret : Turret {
     public float damage;
 
     public override void InitializeProjectile (TurretHandler caller, GameObject projectile) {
-        PulseProjectile pulseProjectile = projectile.AddComponent<PulseProjectile> ();
+        PulseProjectile pulseProjectile = projectile.GetComponent<PulseProjectile> ();
+        if (pulseProjectile == null) pulseProjectile = projectile.AddComponent<PulseProjectile> ();
         pulseProjectile.handler = caller;
         pulseProjectile.from = caller.equipper;
         pulseProjectile.to = caller.target.GetComponent<StructureBehaviours> ();
         pulseProjectile.Initialize ();
+        pulseProjectile.Enable ();
     }
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
