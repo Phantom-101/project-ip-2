@@ -11,13 +11,15 @@ public class SettingsSaveData {
 }
 
 public class SettingsHandler : MonoBehaviour {
+    public static SettingsHandler current;
+
     [Header ("Settings")]
     public SettingsSaveData settings;
     public RenderPipelineAsset[] graphicsLevels;
 
     void Awake () {
-        SettingsHandler[] existing = FindObjectsOfType<SettingsHandler> ();
-        if (existing.Length > 1) Destroy (gameObject);
+        if (SettingsHandler.GetInstance () != null) Destroy (gameObject);
+        current = this;
         DontDestroyOnLoad (gameObject);
         if (!File.Exists (Application.persistentDataPath + "/settings.txt")) {
             FileStream fileStream = File.Create (Application.persistentDataPath + "/settings.txt");
@@ -29,6 +31,10 @@ public class SettingsHandler : MonoBehaviour {
             settings.qualityLevel = 1;
             settings.UIScale = 1;
         }
+    }
+
+    public static SettingsHandler GetInstance () {
+        return current;
     }
 
     void Update () {

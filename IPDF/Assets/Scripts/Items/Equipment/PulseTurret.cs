@@ -48,4 +48,8 @@ public class PulseTurret : Turret {
         if (caller.activated) return true;
         return CanActivate (caller, target);
     }
+
+    public override GameObject RetrieveFromPool (TurretHandler caller) {
+        return caller.pooler.Retrieve (caller.pooler.pulsePool);
+    }
 }

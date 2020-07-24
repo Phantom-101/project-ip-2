@@ -3,7 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemsHandler : MonoBehaviour {
+    public static ItemsHandler current;
+
     public Item[] items;
+
+    void Awake () {
+        current = this;
+    }
+
+    public static ItemsHandler GetInstance () {
+        return current;
+    }
 
     public string GetItemId (Item item) {
         if (item == null) return "";

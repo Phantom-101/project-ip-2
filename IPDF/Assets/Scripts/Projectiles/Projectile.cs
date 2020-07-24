@@ -15,8 +15,8 @@ public class Projectile : MonoBehaviour {
     public Ticker ticker;
 
     public virtual void Initialize () {
-        factionsManager = FindObjectOfType<FactionsManager> ();
-        ticker = FindObjectOfType<Ticker> ();
+        factionsManager = FactionsManager.GetInstance ();
+        ticker = Ticker.GetInstance ();
         ticker.projectiles.Add (this);
         initialized = true;
     }

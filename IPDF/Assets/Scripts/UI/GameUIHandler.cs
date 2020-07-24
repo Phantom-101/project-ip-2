@@ -7,6 +7,8 @@ using UnityEngine.UI;
 using TMPro;
 
 public class GameUIHandler : MonoBehaviour {
+    public static GameUIHandler current;
+
     [Header ("Source Info")]
     public StructureBehaviours source;
     public StructureBehaviours stationStructureBehaviours;
@@ -113,14 +115,22 @@ public class GameUIHandler : MonoBehaviour {
     [Header ("Initialization")]
     public bool initialized;
 
+    void Awake () {
+        current = this;
+    }
+
+    public static GameUIHandler GetInstance () {
+        return current;
+    }
+
     public void Initialize () {
-        playerController = FindObjectOfType<PlayerController> ();
-        factionsManager = FindObjectOfType<FactionsManager> ();
-        structuresManager = FindObjectOfType<StructuresManager> ();
-        savesHandler = FindObjectOfType<SavesHandler> ();
-        camera = FindObjectOfType<Camera> ();
-        settingsHandler = FindObjectOfType<SettingsHandler> ();
-        scenesManager = FindObjectOfType<ScenesManager> ();
+        playerController = PlayerController.GetInstance ();
+        factionsManager = FactionsManager.GetInstance ();
+        structuresManager = StructuresManager.GetInstance ();
+        savesHandler = SavesHandler.GetInstance ();
+        camera = Camera.main;
+        settingsHandler = SettingsHandler.GetInstance ();
+        scenesManager = ScenesManager.GetInstance ();
         canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
         canvasScaler = canvas.GetComponent<CanvasScaler> ();
         if (settingsHandler != null) canvasScaler.scaleFactor = settingsHandler.settings.UIScale;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour {
+    public static CameraFollowPlayer current;
+
     [Header ("Player")]
     public PlayerController playerController;
     public StructureBehaviours playerStructure;
@@ -21,7 +23,11 @@ public class CameraFollowPlayer : MonoBehaviour {
     public new ConstantForce constantForce;
 
     void Awake () {
-        playerController = FindObjectOfType<PlayerController> ();
+        current = this;
+    }
+
+    void Start () {
+        playerController = PlayerController.GetInstance ();
         playerStructure = playerController.structureBehaviours;
         ResetPosition ();
         rigidbody = GetComponent<Rigidbody> ();
@@ -31,6 +37,10 @@ public class CameraFollowPlayer : MonoBehaviour {
         rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
         constantForce = GetComponent<ConstantForce> ();
         if (constantForce == null) constantForce = gameObject.AddComponent<ConstantForce> ();
+    }
+
+    public static CameraFollowPlayer GetInstance () {
+        return current;
     }
 
     public void ResetPosition () {

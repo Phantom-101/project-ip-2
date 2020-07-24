@@ -50,11 +50,11 @@ public class StructureBehaviours : MonoBehaviour {
     public NavigationManager navigationManager;
 
     public void Initialize () {
-        structuresManager = FindObjectOfType<StructuresManager> ();
-        factionsManager = FindObjectOfType<FactionsManager> ();
+        structuresManager = StructuresManager.GetInstance ();
+        factionsManager = FactionsManager.GetInstance ();
         faction = factionsManager.GetFaction (factionID);
-        playerController = FindObjectOfType<PlayerController> ();
-        navigationManager = FindObjectOfType<NavigationManager> ();
+        playerController = PlayerController.GetInstance ();
+        navigationManager = NavigationManager.GetInstance ();
         structuresManager.AddStructure (this);
         AudioAsset ambience = profile.ambience;
         if (ambience != null) {

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour {
+    public static MusicManager current;
+
     [Header ("Triggers")]
     public MusicTrigger[] triggers;
     public List<MusicTrigger> queue;
-    public MusicTrigger current;
+    public MusicTrigger currentTrigger;
     public bool transition;
     [Header ("Components")]
     public StructuresManager structuresManager;
@@ -14,9 +16,17 @@ public class MusicManager : MonoBehaviour {
     public AudioSource audioSource;
 
     void Awake () {
-        structuresManager = FindObjectOfType<StructuresManager> ();
-        playerController = FindObjectOfType<PlayerController> ();
-        audioSource = FindObjectOfType<Camera> ().gameObject.GetComponent<AudioSource> ();
+        current = this;
+    }
+
+    public static MusicManager GetInstance () {
+        return current;
+    }
+
+    void Start () {
+        structuresManager = StructuresManager.GetInstance ();
+        playerController = PlayerController.GetInstance ();
+        audioSource = Camera.main.gameObject.GetComponent<AudioSource> ();
     }
 
     public void Tick (float deltaTime) {
@@ -25,8 +35,8 @@ public class MusicManager : MonoBehaviour {
                 if (!queue.Contains (trigger)) {
                     queue.Add (trigger);
                     queue.Sort ();
-                    if (queue[0] != current) {
-                        current = queue[0];
+                    if (queue[0] != currentTrigger) {
+                        currentTrigger = queue[0];
                         transition = true;
                     }
                 }
@@ -40,7 +50,7 @@ public class MusicManager : MonoBehaviour {
             if (audioSource.volume > 0) audioSource.volume -= deltaTime;
             else {
                 audioSource.Stop ();
-                AudioAsset asset = current.GetRandomMusic ();
+                AudioAsset asset = currentTrigger.GetRandomMusic ();
                 audioSource.volume = asset.volume;
                 audioSource.clip = asset.clip;
                 audioSource.Play ();

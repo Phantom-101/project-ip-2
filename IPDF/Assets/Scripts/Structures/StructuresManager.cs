@@ -5,8 +5,18 @@ using UnityEngine;
 using Essentials;
 
 public class StructuresManager : MonoBehaviour {
+    public static StructuresManager current;
+
     public List<StructureBehaviours> structures;
     public GameObject cargoPod;
+
+    void Awake () {
+        current = this;
+    }
+
+    public static StructuresManager GetInstance () {
+        return current;
+    }
 
     public void TickStructures (float deltaTime) {
         foreach (StructureBehaviours structure in structures.ToArray ()) structure.Tick (deltaTime);

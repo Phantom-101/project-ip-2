@@ -61,4 +61,8 @@ public class BeamTurret : Turret {
     public override bool CanUseAmmunition (TurretHandler caller, Ammunition ammunition) {
         return false;
     }
+
+    public override GameObject RetrieveFromPool (TurretHandler caller) {
+        return caller.pooler.Retrieve (caller.pooler.beamPool);
+    }
 }

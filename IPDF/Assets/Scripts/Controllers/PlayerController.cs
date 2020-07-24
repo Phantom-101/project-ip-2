@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using Essentials;
 
 public class PlayerController : MonoBehaviour {
+    public static PlayerController current;
+
     [Header ("Basics")]
     public StructureBehaviours structureBehaviours;
     [Header ("UI Elements")]
@@ -20,8 +22,16 @@ public class PlayerController : MonoBehaviour {
     public ResourcesManager resourcesManager;
 
     void Awake () {
-        uIHandler = FindObjectOfType<GameUIHandler> ();
-        resourcesManager = FindObjectOfType<ResourcesManager> ();
+        current = this;
+    }
+
+    void Start () {
+        uIHandler = GameUIHandler.GetInstance ();
+        resourcesManager = ResourcesManager.GetInstance ();
+    }
+
+    public static PlayerController GetInstance () {
+        return current;
     }
 
     void Update () {

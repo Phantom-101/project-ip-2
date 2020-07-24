@@ -85,6 +85,7 @@ public struct SerializableFactionPair {
 }
 
 public class SavesHandler : MonoBehaviour {
+    public static SavesHandler current;
     [Header ("Save Settings")]
     public string universeName = "default";
     [Header ("Components")]
@@ -96,12 +97,20 @@ public class SavesHandler : MonoBehaviour {
     public GameUIHandler gameUIHandler;
 
     void Awake () {
-        factionsManager = FindObjectOfType<FactionsManager> ();
-        structuresManager = FindObjectOfType<StructuresManager> ();
-        playerController = FindObjectOfType<PlayerController> ();
-        itemsHandler = FindObjectOfType<ItemsHandler> ();
-        cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
-        gameUIHandler = FindObjectOfType<GameUIHandler> ();
+        current = this;
+    }
+
+    public static SavesHandler GetInstance () {
+        return current;
+    }
+
+    void Start () {
+        factionsManager = FactionsManager.GetInstance ();
+        structuresManager = StructuresManager.GetInstance ();
+        playerController = PlayerController.GetInstance ();
+        itemsHandler = ItemsHandler.GetInstance ();
+        cameraFollowPlayer = CameraFollowPlayer.GetInstance ();
+        gameUIHandler = GameUIHandler.GetInstance ();
         if (!Directory.Exists (Application.persistentDataPath + "/saves/")) Directory.CreateDirectory (Application.persistentDataPath + "/saves/");
     }
 

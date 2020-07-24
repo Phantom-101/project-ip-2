@@ -52,6 +52,10 @@ public class Turret : Equipment {
     public virtual bool CanUseAmmunition (TurretHandler caller, Ammunition ammunition) {
         return false;
     }
+
+    public virtual GameObject RetrieveFromPool (TurretHandler caller) {
+        return null;
+    }
 }
 
 [Serializable]
@@ -71,6 +75,8 @@ public class TurretHandler {
     public bool activated;
     public GameObject projectile;
     public float storedEnergy;
+    [Header ("Components")]
+    public Pooler pooler;
 
     public TurretHandler (Turret turret = null) {
         if (turret == null) {
@@ -125,6 +131,7 @@ public class TurretHandler {
             turret = null;
             return;
         }
+        if (pooler == null) pooler = Pooler.GetInstance ();
         if (ammunition != null && !turret.CanUseAmmunition (this, ammunition)) ammunition = null;
         if (activated) {
             if (!turret.CanRepeat (this, target) && !turret.CanSustain (this, target)) Deactivate ();
@@ -160,7 +167,7 @@ public class TurretHandler {
 
     public void HandleActivation () {
         turret.Activated (this);
-        if (projectile == null) projectile = new GameObject (turret.name);
+        if (projectile == null) projectile = turret.RetrieveFromPool (this);
         turret.InitializeProjectile (this, projectile);
     }
 

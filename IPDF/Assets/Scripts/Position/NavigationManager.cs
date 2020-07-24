@@ -5,8 +5,18 @@ using System.Linq;
 using UnityEngine;
 
 public class NavigationManager : MonoBehaviour {
+    public static NavigationManager current;
+
     public List<Sector> sectors = new List<Sector> ();
     public Dictionary<Sector, List<SectorLink>> adjacentSectors = new Dictionary<Sector, List<SectorLink>> ();
+
+    void Awake () {
+        current = this;
+    }
+
+    public static NavigationManager GetInstance () {
+        return current;
+    }
 
     public Route GetRoute (Vector3 from, Vector3 to) {
         sectors = FindObjectsOfType<Sector> ().ToList ();

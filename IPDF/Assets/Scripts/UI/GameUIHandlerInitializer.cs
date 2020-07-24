@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameUIHandlerInitializer : MonoBehaviour {
     public bool active;
 
-    void Awake () {
-        if (active) GetComponent<GameUIHandler> ().Initialize ();
+    void Start () {
+        if (active) GameUIHandler.GetInstance ().Initialize ();
     }
 }

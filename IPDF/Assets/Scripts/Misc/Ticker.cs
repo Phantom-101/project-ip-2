@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ticker : MonoBehaviour {
+    public static Ticker current;
+
     public float tickLength = 0.05f;
     public GameUIHandler gameUIHandler;
     public StructuresManager structuresManager;
@@ -17,12 +19,22 @@ public class Ticker : MonoBehaviour {
     public float fastestDeltaTime = 0;
 
     void Awake () {
-        gameUIHandler = FindObjectOfType<GameUIHandler> ();
-        structuresManager = FindObjectOfType<StructuresManager> ();
-        musicManager = FindObjectOfType<MusicManager> ();
+        current = this;
+    }
+
+    public static Ticker GetInstance () {
+        return current;
     }
 
     void Start () {
+        gameUIHandler = GameUIHandler.GetInstance ();
+        structuresManager = StructuresManager.GetInstance ();
+        musicManager = MusicManager.GetInstance ();
+        StartCoroutine (BeginLoops ());
+    }
+
+    IEnumerator BeginLoops () {
+        yield return new WaitForSeconds (0.1f);
         StartCoroutine (ClampedTick ());
         StartCoroutine (FastestTick ());
     }
@@ -41,7 +53,7 @@ public class Ticker : MonoBehaviour {
     IEnumerator FastestTick () {
         fastestCurTime = Time.time;
         fastestDeltaTime = fastestCurTime - lastFastestTicked;
-        foreach (Projectile projectile in projectiles) projectile.Process (fastestDeltaTime);
+        foreach (Projectile projectile in projectiles) if (projectile != null) projectile.Process (fastestDeltaTime);
         gameUIHandler.FastestTickCanvas ();
         lastFastestTicked = fastestCurTime;
         yield return null;

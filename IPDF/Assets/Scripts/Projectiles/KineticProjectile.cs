@@ -12,8 +12,28 @@ public class KineticProjectile : Projectile {
     public GameObject mesh;
 
     public override void Initialize () {
-        if (from == null || to == null) { Disable (); return; }
+        if (initialized) return;
         base.Initialize ();
+        turret = handler.turret;
+        ammunition = handler.ammunition;
+        mesh = Instantiate (ammunition.asset, transform) as GameObject;
+        mesh.transform.localPosition = Vector3.zero;
+    }
+
+    public override void Process (float deltaTime) {
+        if (!initialized || disabled) return;
+        if ((origin - transform.localPosition).sqrMagnitude > ammunition.range * ammunition.range) { Disable(); return; }
+        if (from == null || to == null) { Disable (); return; }
+        if ((transform.localPosition - to.transform.position).sqrMagnitude <= to.profile.apparentSize * to.profile.apparentSize) {
+            to.TakeDamage (damage, transform.localPosition);
+            Disable ();
+        }
+        transform.Translate (new Vector3 (0, 0, speed * deltaTime));
+    }
+
+    public override void Enable () {
+        base.Enable ();
+        gameObject.SetActive (true);
         turret = handler.turret;
         ammunition = handler.ammunition;
         if (turret.audio != null) {
@@ -28,8 +48,6 @@ public class KineticProjectile : Projectile {
             audioSource.PlayOneShot (turret.audio.clip, turret.audio.volume);
             Destroy (soundEffect, 5);
         }
-        mesh = Instantiate (ammunition.asset, transform) as GameObject;
-        mesh.transform.localPosition = Vector3.zero;
         transform.parent = from.transform.parent;
         origin = from.transform.localPosition + from.transform.rotation * handler.position;
         transform.localPosition = origin;
@@ -44,20 +62,13 @@ public class KineticProjectile : Projectile {
         factionsManager.ChangeRelationsWithAcquiredModification (to.faction, from.faction, -damage / 10);
     }
 
-    public override void Process (float deltaTime) {
-        if (!initialized || disabled) return;
-        if ((origin - transform.localPosition).sqrMagnitude > ammunition.range * ammunition.range) { Disable(); return; }
-        if (from == null || to == null) { Disable (); return; }
-        if ((transform.localPosition - to.transform.position).sqrMagnitude <= to.profile.apparentSize * to.profile.apparentSize) {
-            to.TakeDamage (damage, transform.localPosition);
-            Disable ();
-        }
-        transform.Translate (new Vector3 (0, 0, speed * deltaTime));
-    }
-
     protected override void Disable () {
         base.Disable ();
-        Destroy (gameObject, 1);
+        Invoke ("Deactivate", 5);
+    }
+
+    void Deactivate () {
+        gameObject.SetActive (false);
     }
 
     Vector3 CalculateLeadPosition (Vector3 currentPosition, Vector3 targetPosition, Vector3 targetVelocity, float projectileVelocity, bool lead = true) {

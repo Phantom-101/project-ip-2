@@ -11,8 +11,7 @@ public class PulseProjectile : Projectile {
     public override void Initialize () {
         if (initialized) return;
         base.Initialize ();
-        turret = handler.turret;
-        beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
+        disabled = true;
     }
 
     public override void Process (float deltaTime) {
@@ -28,8 +27,10 @@ public class PulseProjectile : Projectile {
 
     public override void Enable () {
         base.Enable ();
-        beam.SetActive (true);
+        gameObject.SetActive (true);
         turret = handler.turret;
+        if (beam != null) Destroy (beam);
+        beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
         if (turret.audio != null) {
             GameObject soundEffect = new GameObject ("Sound Effect");
             soundEffect.transform.parent = from.transform.parent;
@@ -55,6 +56,6 @@ public class PulseProjectile : Projectile {
 
     protected override void Disable () {
         base.Disable ();
-        beam.SetActive (false);
+        gameObject.SetActive (false);
     }
 }

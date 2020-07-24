@@ -4,8 +4,18 @@ using UnityEngine;
 using Essentials;
 
 public class FactionsManager : MonoBehaviour {
+    public static FactionsManager current;
+
     public List<Faction> factions = new List<Faction> ();
     public Dictionary<FactionPair, float> relations = new Dictionary<FactionPair, float> ();
+
+    void Awake () {
+        current = this;
+    }
+
+    public static FactionsManager GetInstance () {
+        return current;
+    }
 
     public void AddFaction (Faction faction) {
         if (faction == null) return;
