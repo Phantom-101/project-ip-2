@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MaterialColor : MonoBehaviour {
     public Color color;
-    public new Renderer renderer;
+    public Renderer renderer;
     
     void Awake () {
         renderer = GetComponent<Renderer> ();

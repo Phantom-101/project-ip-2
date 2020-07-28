@@ -36,7 +36,7 @@ public class GameUIHandler : MonoBehaviour {
     public FactionsManager factionsManager;
     public StructuresManager structuresManager;
     public SavesHandler savesHandler;
-    public new Camera camera;
+    public Camera camera;
     public SettingsHandler settingsHandler;
     public ScenesManager scenesManager;
     [Header ("UI Elements")]

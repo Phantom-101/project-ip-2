@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Essentials;
 
@@ -7,7 +8,7 @@ public class FactionsManager : MonoBehaviour {
     public static FactionsManager current;
 
     public List<Faction> factions = new List<Faction> ();
-    public Dictionary<FactionPair, float> relations = new Dictionary<FactionPair, float> ();
+    public Dictionary<string, float> relations = new Dictionary<string, float> ();
 
     void Awake () {
         current = this;
@@ -61,23 +62,25 @@ public class FactionsManager : MonoBehaviour {
     public float GetRelations (Faction a, Faction b) {
         if (a == b) return GetAllyThreshold (a);
         if (a == null || b == null) return 0;
-        float res = 0;
-        relations.TryGetValue (new FactionPair (a, b), out res);
-        return res;
+        string key = a.id < b.id ? a.id + " " + b.id : b.id + " " + a.id;
+        if (!relations.ContainsKey (key)) relations.Add (key, 0);
+        return relations[key];
     }
 
     public void SetRelations (Faction a, Faction b, float value) {
         if (a == b) return;
         if (a == null || b == null) return;
-        FactionPair pair = new FactionPair (a, b);
-        if (relations.ContainsKey (pair)) relations[pair] = value;
-        else relations.Add (pair, value);
+        string key = a.id < b.id ? a.id + " " + b.id : b.id + " " + a.id;
+        if (!relations.ContainsKey (key)) relations.Add (key, 0);
+        relations[key] = value;
     }
 
     public void ChangeRelations (Faction a, Faction b, float change) {
         if (a == b) return;
         if (a == null || b == null) return;
-        SetRelations (a, b, GetRelations (a, b) + change);
+        string key = a.id < b.id ? a.id + " " + b.id : b.id + " " + a.id;
+        if (!relations.ContainsKey (key)) relations.Add (key, 0);
+        relations[key] += change;
     }
 
     public float GetHostileThreshold (Faction faction) {

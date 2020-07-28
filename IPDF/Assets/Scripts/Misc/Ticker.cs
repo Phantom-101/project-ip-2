@@ -30,16 +30,12 @@ public class Ticker : MonoBehaviour {
         gameUIHandler = GameUIHandler.GetInstance ();
         structuresManager = StructuresManager.GetInstance ();
         musicManager = MusicManager.GetInstance ();
-        StartCoroutine (BeginLoops ());
-    }
-
-    IEnumerator BeginLoops () {
-        yield return new WaitForSeconds (0.1f);
         StartCoroutine (ClampedTick ());
         StartCoroutine (FastestTick ());
     }
 
     IEnumerator ClampedTick () {
+        if (lastClampedTicked == 0) lastClampedTicked = Time.time;
         clampedCurTime = Time.time;
         clampedDeltaTime = clampedCurTime - lastClampedTicked;
         structuresManager.TickStructures (clampedDeltaTime);
@@ -51,6 +47,7 @@ public class Ticker : MonoBehaviour {
     }
 
     IEnumerator FastestTick () {
+        if (lastFastestTicked == 0) lastFastestTicked = Time.time;
         fastestCurTime = Time.time;
         fastestDeltaTime = fastestCurTime - lastFastestTicked;
         foreach (Projectile projectile in projectiles) if (projectile != null) projectile.Process (fastestDeltaTime);

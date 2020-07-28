@@ -19,8 +19,8 @@ public class CameraFollowPlayer : MonoBehaviour {
     public float lookAtInterpolationStrength = 1;
     public bool lookAtTarget = false;
     [Header ("Physics")]
-    public new Rigidbody rigidbody;
-    public new ConstantForce constantForce;
+    public Rigidbody rigidbody;
+    public ConstantForce constantForce;
 
     void Awake () {
         current = this;

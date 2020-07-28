@@ -22,7 +22,7 @@ MonoBehaviour:
   maxStoredEnergy: 350
   rechargeRate: 70
   range: 700
-  asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
+  asset: {fileID: 9101518586673965276, guid: 477aa07929a4b0e45bfbf52f5807a84d, type: 3}
   beamWidth: 1
   beamDuration: 1
   damage: 35

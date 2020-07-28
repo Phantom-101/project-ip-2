@@ -6,6 +6,7 @@ using Essentials;
 public class StructureAI {
     public float lastUpdated;
     public float delay;
+    public float optimalRange;
 
     public StructureAI () {
         lastUpdated = 0;
@@ -17,21 +18,21 @@ public class StructureAI {
         if (lastUpdated < delay) return;
         lastUpdated = 0;
         delay = Random.Range (1, 2.5f);
-        StructureBehaviours closest = null;
-        float leastWeight = float.MaxValue;
-        foreach (StructureBehaviours structure in structureBehaviours.sector.inSector) {
-            if (structure != null && structure.CanBeTargeted () && structure.profile.canFireAt) {
-                float distance = Vector3.Distance (structureBehaviours.transform.position, structure.transform.position);
-                if (structure != structureBehaviours &&
-                    structureBehaviours.factionsManager.Hostile (structureBehaviours.faction, structure.faction) &&
-                    distance < leastWeight) {
-                    leastWeight = distance;
-                    closest = structure;
+        if (structureBehaviours.targeted == null || Vector3.Distance (structureBehaviours.transform.position, structureBehaviours.targeted.transform.position) > optimalRange) {
+            float leastWeight = float.MaxValue;
+            foreach (StructureBehaviours structure in structureBehaviours.sector.inSector) {
+                if (structure != null && structure.CanBeTargeted () && structure.profile.canFireAt) {
+                    float distance = Vector3.Distance (structureBehaviours.transform.position, structure.transform.position);
+                    if (structure != structureBehaviours &&
+                        structureBehaviours.factionsManager.Hostile (structureBehaviours.faction, structure.faction) &&
+                        distance < leastWeight) {
+                        leastWeight = distance;
+                        structureBehaviours.targeted = structure;
+                    }
                 }
             }
         }
-        if (closest != null) {
-            structureBehaviours.targeted = closest;
+        if (structureBehaviours.targeted != null) {
             float totalRange = 0;
             int effectiveTurrets = 0;
             foreach (TurretHandler turretHandler in structureBehaviours.turrets) {
@@ -44,7 +45,7 @@ public class StructureAI {
                 }
             }
             if (structureBehaviours.route == null) {
-                float optimalRange = effectiveTurrets == 0 ? 1000 : totalRange / effectiveTurrets * structureBehaviours.profile.engagementRangeMultiplier;
+                optimalRange = effectiveTurrets == 0 ? 1000 : totalRange / effectiveTurrets * structureBehaviours.profile.engagementRangeMultiplier;
                 structureBehaviours.engine.forwardSetting = 1.0f;
                 Vector3 heading = structureBehaviours.targeted.transform.position - structureBehaviours.transform.position;
                 Vector3 perp = Vector3.Cross (structureBehaviours.transform.forward, heading);

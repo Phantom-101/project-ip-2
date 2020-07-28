@@ -34,7 +34,7 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("Production")]
     public List<FactoryHandler> factories;
     [Header ("Physics")]
-    public new Rigidbody rigidbody;
+    public Rigidbody rigidbody;
     public float dampening = 1;
     [Header ("AI")]
     public StructureAI AI;

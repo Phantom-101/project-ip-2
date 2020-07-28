@@ -19,6 +19,7 @@ public class KineticTurret : Turret {
         kineticProjectile.from = caller.equipper;
         kineticProjectile.to = caller.target.GetComponent<StructureBehaviours> ();
         kineticProjectile.Initialize ();
+        kineticProjectile.Enable ();
     }
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
