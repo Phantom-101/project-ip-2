@@ -63,9 +63,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
+  - {fileID: 11400000, guid: 666a2a907c1331b469de08721290889e, type: 2}
+  - {fileID: 11400000, guid: 666a2a907c1331b469de08721290889e, type: 2}
+  - {fileID: 11400000, guid: 666a2a907c1331b469de08721290889e, type: 2}
   offeredEquipment: []
   repairCostMultiplier: 0
-  collisionMesh: {fileID: 0}
+  collisionMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   mass: 1000
   drag: 1000
   angularDrag: 1000

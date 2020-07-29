@@ -30,6 +30,7 @@ public class MusicManager : MonoBehaviour {
     }
 
     public void Tick (float deltaTime) {
+        if (structuresManager == null || playerController == null || audioSource == null) return;
         foreach (MusicTrigger trigger in triggers) {
             if (trigger.CanBeUsed (structuresManager, playerController.structureBehaviours)) {
                 if (!queue.Contains (trigger)) {

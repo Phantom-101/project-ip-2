@@ -45,13 +45,12 @@ MonoBehaviour:
   dockingLocations:
   - {x: 200, y: 0, z: 0}
   dockingSizes:
-  - 75
+  - 150
   dockingRotations:
   - {x: 0, y: 90, z: 0}
   dockingRange: 300
   market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
-  factories:
-  - {fileID: 11400000, guid: 37fe734d2a0475a4289c5e1a8b5a209a, type: 2}
+  factories: []
   offeredEquipment:
   - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
   - {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
@@ -65,14 +64,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
   - {fileID: 11400000, guid: 5e7c9b1f2c0ca0e4faf49bf2d8829ec1, type: 2}
   repairCostMultiplier: 0
-  collisionMesh: {fileID: 0}
+  collisionMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   mass: 1000
   drag: 1000
   angularDrag: 1000
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  decals: {fileID: 0}
+  decals: {fileID: 4855603805818319563, guid: 705d068b76b1fe6438ce2d0c6c04f692, type: 3}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
-  offset: {x: 0, y: 8, z: 0}
+  offset: {x: -75, y: 8, z: 0}
   rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}

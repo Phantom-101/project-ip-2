@@ -59,7 +59,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37fe734d2a0475a4289c5e1a8b5a209a, type: 2}
   offeredEquipment: []
   repairCostMultiplier: 0
-  collisionMesh: {fileID: 0}
+  collisionMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   mass: 1000
   drag: 1000
   angularDrag: 1000

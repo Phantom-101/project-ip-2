@@ -16,6 +16,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -122,6 +123,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -228,6 +230,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -334,6 +337,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -440,6 +444,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -546,6 +551,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -652,6 +658,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -758,6 +765,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -919,6 +927,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1025,6 +1034,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1131,6 +1141,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1246,7 +1257,7 @@ PrefabInstance:
     - target: {fileID: 1855152661559365219, guid: 1a9c8bef81d9d3e4b9e01c18eebb6d40,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.45409
+      value: -0.01809001
       objectReference: {fileID: 0}
     - target: {fileID: 1855152661559365219, guid: 1a9c8bef81d9d3e4b9e01c18eebb6d40,
         type: 3}
@@ -1337,7 +1348,7 @@ PrefabInstance:
     - target: {fileID: 5824117480276387849, guid: a7220b365c761034d83dea45c8ba0d9d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.603
+      value: -0.167
       objectReference: {fileID: 0}
     - target: {fileID: 5824117480276387849, guid: a7220b365c761034d83dea45c8ba0d9d,
         type: 3}
@@ -1433,7 +1444,7 @@ PrefabInstance:
     - target: {fileID: 1682022843677386026, guid: 40c091c2a6b1798438af34e63de1ad38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.37627
+      value: 0.059729993
       objectReference: {fileID: 0}
     - target: {fileID: 1682022843677386026, guid: 40c091c2a6b1798438af34e63de1ad38,
         type: 3}
@@ -1529,7 +1540,7 @@ PrefabInstance:
     - target: {fileID: 6391503118516523897, guid: ed7dff3734ffd6e46ac4a094b192dd96,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.364
+      value: 0.072
       objectReference: {fileID: 0}
     - target: {fileID: 6391503118516523897, guid: ed7dff3734ffd6e46ac4a094b192dd96,
         type: 3}
@@ -1625,7 +1636,7 @@ PrefabInstance:
     - target: {fileID: 8062325574201841793, guid: b5cecf0de94750744ac2d1e9e1b72052,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.249
+      value: 0.18699999
       objectReference: {fileID: 0}
     - target: {fileID: 8062325574201841793, guid: b5cecf0de94750744ac2d1e9e1b72052,
         type: 3}
@@ -1721,7 +1732,7 @@ PrefabInstance:
     - target: {fileID: 1682022843677386026, guid: 40c091c2a6b1798438af34e63de1ad38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.60975
+      value: -0.17374998
       objectReference: {fileID: 0}
     - target: {fileID: 1682022843677386026, guid: 40c091c2a6b1798438af34e63de1ad38,
         type: 3}
@@ -1822,7 +1833,7 @@ PrefabInstance:
     - target: {fileID: 8653269395106512407, guid: dfbde279c8487554db042cd59537c630,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.42574
+      value: 0.010259986
       objectReference: {fileID: 0}
     - target: {fileID: 8653269395106512407, guid: dfbde279c8487554db042cd59537c630,
         type: 3}
@@ -1918,7 +1929,7 @@ PrefabInstance:
     - target: {fileID: 8653269395106512407, guid: dfbde279c8487554db042cd59537c630,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.51139
+      value: -0.07538998
       objectReference: {fileID: 0}
     - target: {fileID: 8653269395106512407, guid: dfbde279c8487554db042cd59537c630,
         type: 3}
@@ -2014,7 +2025,7 @@ PrefabInstance:
     - target: {fileID: 8653269395106512407, guid: dfbde279c8487554db042cd59537c630,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.348
+      value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: 8653269395106512407, guid: dfbde279c8487554db042cd59537c630,
         type: 3}
@@ -2105,7 +2116,7 @@ PrefabInstance:
     - target: {fileID: 1682022843677386026, guid: 40c091c2a6b1798438af34e63de1ad38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.258
+      value: 0.178
       objectReference: {fileID: 0}
     - target: {fileID: 1682022843677386026, guid: 40c091c2a6b1798438af34e63de1ad38,
         type: 3}
@@ -2206,7 +2217,7 @@ PrefabInstance:
     - target: {fileID: 5609232792486122166, guid: 10e39717b42e3734393d8bb7238ed540,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.38405
+      value: 0.051949978
       objectReference: {fileID: 0}
     - target: {fileID: 5609232792486122166, guid: 10e39717b42e3734393d8bb7238ed540,
         type: 3}

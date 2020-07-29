@@ -535,31 +535,6 @@ public class GameUIHandler : MonoBehaviour {
                 equipmentButtons[i + 2].transform.SetSiblingIndex(i + 2);
             }
         }
-    }
-
-    void UpdateCanvas () {
-        if (!initialized) return;
-        if (activeUI.Peek () == GameUIState.InSpace) {
-            // Control
-            playerController.forwardPowerSlider.gameObject.SetActive (true);
-            playerController.turnLeftButton.gameObject.SetActive (true);
-            playerController.turnRightButton.gameObject.SetActive (true);
-            playerController.dampenerSlider.gameObject.SetActive (true);
-            lockCameraButton.gameObject.SetActive (true);
-        } else {
-            playerController.forwardPowerSlider.gameObject.SetActive (false);
-            playerController.turnLeftButton.gameObject.SetActive (false);
-            playerController.turnRightButton.gameObject.SetActive (false);
-            playerController.dampenerSlider.gameObject.SetActive (false);
-            lockCameraButton.gameObject.SetActive (false);
-            sourceTo.gameObject.SetActive (false);
-            speedCounter.gameObject.SetActive (false);
-            targetInformationPanel.SetActive (false);
-            for (int i = 0; i < equipmentButtons.Count; i++) equipmentButtons[i].SetActive (false);
-            foreach (GameObject selectableBillboard in selectableBillboards) selectableBillboard.SetActive (false);
-        }
-        if (activeUI.Peek () == GameUIState.Station) stationPanel.SetActive (true);
-        else stationPanel.SetActive (false);
         if (activeUI.Peek () == GameUIState.StationMarket) {
             // Market UI
             if (stationStructureBehaviours == null) {
@@ -568,13 +543,13 @@ public class GameUIHandler : MonoBehaviour {
             } else {
                 marketPanel.SetActive (true);
                 float height = 0;
-                Item[] inventoryItems = stationStructureBehaviours.inventory.inventory.Keys.ToArray ();
+                List<Item> tradables = stationStructureBehaviours.profile.market.GetTradableItems (stationStructureBehaviours);
                 List<Item> present = new List<Item> ();
                 foreach (RectTransform itemTransform in itemsPanelContent.transform) {
                     ContainerComponent itemContainer = itemTransform.GetComponent<ContainerComponent> ();
                     if (itemContainer == null) Destroy (itemTransform);
                     else {
-                        if (!inventoryItems.Contains (itemContainer.containers[0].value as Item)) Destroy (itemTransform);
+                        if (!tradables.Contains (itemContainer.containers[0].value as Item)) Destroy (itemTransform);
                         else {
                             itemTransform.anchoredPosition = new Vector2 (0, height);
                             present.Add (itemContainer.containers[0].value as Item);
@@ -582,16 +557,16 @@ public class GameUIHandler : MonoBehaviour {
                         }
                     }
                 }
-                foreach (Item inventoryItem in inventoryItems) {
-                    if (!present.Contains (inventoryItem)) {
+                foreach (Item tradable in tradables) {
+                    if (!present.Contains (tradable)) {
                         GameObject instantiated = Instantiate (itemSmallInfoPanel) as GameObject;
                         RectTransform instantiatedRectTransform = instantiated.GetComponent<RectTransform> ();
                         instantiatedRectTransform.SetParent (itemsPanelContent.transform);
                         instantiatedRectTransform.anchoredPosition = new Vector2 (0, height);
                         ContainerComponent instantiatedContainer = instantiated.AddComponent<ContainerComponent> ();
-                        instantiatedContainer.containers.Add (new Container<Object> (inventoryItem));
-                        instantiatedRectTransform.GetChild (0).GetComponent<Image> ().sprite = inventoryItem.icon;
-                        instantiatedRectTransform.GetChild (0).GetChild (0).GetComponent<TextMeshProUGUI> ().text = inventoryItem.name;
+                        instantiatedContainer.containers.Add (new Container<Object> (tradable));
+                        instantiatedRectTransform.GetChild (0).GetComponent<Image> ().sprite = tradable.icon;
+                        instantiatedRectTransform.GetChild (0).GetChild (0).GetComponent<TextMeshProUGUI> ().text = tradable.name;
                         ButtonFunction (() => selectedMarketItem = instantiated.GetComponent<ContainerComponent> ().containers[0].value as Item, instantiated.GetComponent<Button> ());
                         height -= 50;
                     }
@@ -628,6 +603,31 @@ public class GameUIHandler : MonoBehaviour {
                 stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
             }
         } else marketPanel.SetActive (false);
+    }
+
+    void UpdateCanvas () {
+        if (!initialized) return;
+        if (activeUI.Peek () == GameUIState.InSpace) {
+            // Control
+            playerController.forwardPowerSlider.gameObject.SetActive (true);
+            playerController.turnLeftButton.gameObject.SetActive (true);
+            playerController.turnRightButton.gameObject.SetActive (true);
+            playerController.dampenerSlider.gameObject.SetActive (true);
+            lockCameraButton.gameObject.SetActive (true);
+        } else {
+            playerController.forwardPowerSlider.gameObject.SetActive (false);
+            playerController.turnLeftButton.gameObject.SetActive (false);
+            playerController.turnRightButton.gameObject.SetActive (false);
+            playerController.dampenerSlider.gameObject.SetActive (false);
+            lockCameraButton.gameObject.SetActive (false);
+            sourceTo.gameObject.SetActive (false);
+            speedCounter.gameObject.SetActive (false);
+            targetInformationPanel.SetActive (false);
+            for (int i = 0; i < equipmentButtons.Count; i++) equipmentButtons[i].SetActive (false);
+            foreach (GameObject selectableBillboard in selectableBillboards) selectableBillboard.SetActive (false);
+        }
+        if (activeUI.Peek () == GameUIState.Station) stationPanel.SetActive (true);
+        else stationPanel.SetActive (false);
         if (activeUI.Peek () == GameUIState.StationRepair) {
             if (stationStructureBehaviours == null) repairPanel.SetActive (false);
             else {

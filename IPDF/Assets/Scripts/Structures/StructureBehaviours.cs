@@ -74,8 +74,8 @@ public class StructureBehaviours : MonoBehaviour {
         colliderGameObject.transform.parent = transform;
         MeshCollider meshCollider = colliderGameObject.AddComponent<MeshCollider> ();
         meshCollider.sharedMesh = (profile.collisionMesh == null ? profile.mesh : profile.collisionMesh);
-        if (profile.structureClass != StructureClass.Station)
-            meshCollider.convex = true;
+        colliderGameObject.transform.localScale = (profile.collisionMesh == null ? Vector3.one : Vector3.one * profile.apparentSize);
+        meshCollider.convex = true;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
         renderer.material = profile.material;
@@ -237,6 +237,7 @@ public class StructureBehaviours : MonoBehaviour {
                 docker.electronics.Deactivate ();
                 docker.tractorBeam.Deactivate ();
                 Rigidbody dockerRigidbody = docker.GetComponent<Rigidbody> ();
+                dockerRigidbody.isKinematic = true;
                 dockerRigidbody.velocity = Vector3.zero;
                 dockerRigidbody.angularVelocity = Vector3.zero;
                 return;
@@ -248,6 +249,8 @@ public class StructureBehaviours : MonoBehaviour {
         for (int i = 0; i < profile.dockingLocations.Length; i++) {
             if (docked[i] == undocker.id) {
                 undocker.transform.parent = transform.parent;
+                Rigidbody undockerRigidbody = undocker.GetComponent<Rigidbody> ();
+                undockerRigidbody.isKinematic = false;
                 docked[i] = "";
                 return;
             }

@@ -28,9 +28,11 @@ public class PulseProjectile : Projectile {
     public override void Enable () {
         base.Enable ();
         gameObject.SetActive (true);
-        turret = handler.turret;
-        if (beam != null) Destroy (beam);
-        beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
+        if (turret != handler.turret) {
+            turret = handler.turret;
+            if (beam != null) Destroy (beam);
+            beam = Instantiate ((turret as PulseTurret).asset, transform) as GameObject;
+        }
         if (turret.audio != null) {
             GameObject soundEffect = new GameObject ("Sound Effect");
             soundEffect.transform.parent = from.transform.parent;

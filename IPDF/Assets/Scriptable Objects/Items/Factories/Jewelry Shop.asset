@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f52cca39b2caed479d961ba45960929, type: 3}
+  m_Name: Jewelry Shop
+  m_EditorClassIdentifier: 
+  id: be7695d1-3006-493b-ac30-2044782c9ebd
+  icon: {fileID: 0}
+  basePrice: 0
+  size: 0
+  inputs:
+  - {fileID: 11400000, guid: 9a334185c4166a5498fb258218df22a9, type: 2}
+  inputQuantities: 00000000
+  outputs: []
+  outputQuantities: 
+  time: 5
+  wealthChange: 3000
