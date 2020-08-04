@@ -104,7 +104,7 @@ public class GameUIHandler : MonoBehaviour {
     public GameObject noEquipmentAvailable;
     public List<GameObject> selectableBillboards = new List<GameObject> ();
     public GameObject savesSelection;
-    public GameObject savesPanel;
+    public GameObject savesPanelContent;
     public Button saveExitButton;
     public GameObject repairPanel;
     public Text repairCostText;
@@ -112,6 +112,7 @@ public class GameUIHandler : MonoBehaviour {
     public Button repairCancelButton;
     List<GameObject> saveItems = new List<GameObject> ();
     public GameObject death;
+    public Button pauseButton;
     [Header ("Initialization")]
     public bool initialized;
 
@@ -131,86 +132,27 @@ public class GameUIHandler : MonoBehaviour {
         camera = Camera.main;
         settingsHandler = SettingsHandler.GetInstance ();
         scenesManager = ScenesManager.GetInstance ();
-        canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
-        canvasScaler = canvas.GetComponent<CanvasScaler> ();
         if (settingsHandler != null) canvasScaler.scaleFactor = settingsHandler.settings.UIScale;
-        billboards = canvas.transform.Find ("Billboards").gameObject;
-        hullUI = canvas.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
-        for (int i = 0; i < 6; i++) shieldUI[i] = hullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
-        sourceTo = hullUI.transform.Find ("Angle Arrow").GetComponent<RectTransform> ();
-        speedCounter = canvas.transform.Find ("Forward Speed/Speed Counter").GetComponent<TextMeshProUGUI> ();
-        targetInformationPanel = canvas.transform.Find ("Target Information Panel").gameObject;
-        targetHullUI = targetInformationPanel.transform.Find ("Health Indicators/Hull").GetComponent<Image> ();
-        for (int i = 0; i < 6; i++) targetShieldUI[i] = targetHullUI.transform.Find ("Shield " + i).GetComponent<Image> ();
-        targetName = targetInformationPanel.transform.Find ("Name").GetComponent<TextMeshProUGUI> ();
-        targetFaction = targetInformationPanel.transform.Find ("Faction").GetComponent<TextMeshProUGUI> ();
-        targetDistance = targetInformationPanel.transform.Find ("Distance").GetComponent<TextMeshProUGUI> ();
-        toSource = targetHullUI.transform.Find ("Angle Arrow").GetComponent<RectTransform> ();
-        lockCameraButton = canvas.transform.Find ("Lock Camera").GetComponent<Button> ();
-        equipmentButtonsParent = canvas.transform.Find ("Equipment Buttons Parent");
-        capacitorBackground = canvas.transform.Find ("Capacitor Background").gameObject;
-        capacitorTransform = capacitorBackground.transform.Find ("Capacitor").GetComponent<RectTransform> ();
-        AIInfo = canvas.transform.Find ("AI Indicators").gameObject;
-        dockButton = canvas.transform.Find ("Dock Button").GetComponent<Button> ();
         ButtonFunction (() => { ChangeScreen (GameUIState.Station); playerController.Dock (); }, dockButton);
-        undockButton = canvas.transform.Find ("Undock Button").GetComponent<Button> ();
         ButtonFunction (() => { ChangeScreen (GameUIState.InSpace); playerController.Undock (); }, undockButton);
-        stationPanel = canvas.transform.Find ("Station Panel").gameObject;
-        stationMarket = stationPanel.transform.Find ("Market").GetComponent<Button> ();
-        stationRepair = stationPanel.transform.Find ("Repair").GetComponent<Button> ();
-        stationEquipment = stationPanel.transform.Find ("Equipment").GetComponent<Button> ();
-        marketPanel = canvas.transform.Find ("Market Panel").gameObject;
-        marketExit = marketPanel.transform.Find ("Exit Button").GetComponent<Button> ();
         ButtonFunction (() => RemoveOverlay (), marketExit);
-        itemsPanel = marketPanel.transform.Find ("Items Panel").gameObject;
-        itemsPanelContent = itemsPanel.transform.Find ("Viewport/Content").gameObject;
-        itemInfoPanel = marketPanel.transform.Find ("Item Info Panel").gameObject;
-        itemIcon = itemInfoPanel.transform.Find ("Item Icon").GetComponent<Image> ();
-        itemName = itemIcon.transform.Find ("Item Name").GetComponent<TextMeshProUGUI> ();
-        itemQuantity = itemIcon.transform.Find ("Item Quantity").GetComponent<TextMeshProUGUI> ();
-        stationBuyPrice = itemInfoPanel.transform.Find ("Station Buy Price").GetComponent<TextMeshProUGUI> ();
-        stationSellPrice = itemInfoPanel.transform.Find ("Station Sell Price").GetComponent<TextMeshProUGUI> ();
-        buy1 = marketPanel.transform.Find ("Buy 1 Button").GetComponent<Button> ();
         ButtonFunction (() => BuySelectedMarketItem (1), buy1);
-        sell1 = marketPanel.transform.Find ("Sell 1 Button").GetComponent<Button> ();
         ButtonFunction (() => SellSelectedMarketItem (1), sell1);
-        buy10 = marketPanel.transform.Find ("Buy 10 Button").GetComponent<Button> ();
         ButtonFunction (() => BuySelectedMarketItem (10), buy10);
-        sell10 = marketPanel.transform.Find ("Sell 10 Button").GetComponent<Button> ();
         ButtonFunction (() => SellSelectedMarketItem (10), sell10);
-        buy100 = marketPanel.transform.Find ("Buy 100 Button").GetComponent<Button> ();
         ButtonFunction (() => BuySelectedMarketItem (100), buy100);
-        sell100 = marketPanel.transform.Find ("Sell 100 Button").GetComponent<Button> ();
         ButtonFunction (() => SellSelectedMarketItem (100), sell100);
-        equipmentPanel = canvas.transform.Find ("Equipment Panel").gameObject;
-        equipmentInformationPanel = equipmentPanel.transform.Find ("Item Info Panel").gameObject;
-        equipmentIcon = equipmentInformationPanel.transform.Find ("Item Icon").GetComponent<Image> ();
-        equipmentName = equipmentIcon.transform.Find ("Item Name").GetComponent<TextMeshProUGUI> ();
-        replacePrice = equipmentInformationPanel.transform.Find ("Station Replace Price").GetComponent<TextMeshProUGUI> ();
-        replaceButton = equipmentPanel.transform.Find ("Replace Button").GetComponent<Button> ();
         ButtonFunction (() => ReplaceSelectedEquipment (), replaceButton);
-        unequipButton = equipmentPanel.transform.Find ("Unequip Button").GetComponent<Button> ();
         ButtonFunction (() => UnequipSelectedBay (), unequipButton);
-        equipmentExitButton = equipmentPanel.transform.Find ("Exit Button").GetComponent<Button> ();
         ButtonFunction (() => { RemoveOverlay (); foreach (GameObject go in bayItems.ToArray ()) { bayItems.Remove (go); Destroy (go); } }, equipmentExitButton);
-        baysPanel = equipmentPanel.transform.Find ("Bays Panel").gameObject;
-        baysPanelContent = baysPanel.transform.Find ("Viewport/Content").gameObject;
-        availableEquipmentPanel = equipmentPanel.transform.Find ("Available Equipment Panel").gameObject;
-        availableEquipmentPanelContent = availableEquipmentPanel.transform.Find ("Viewport/Content").gameObject;
-        noEquipmentAvailable = availableEquipmentPanel.transform.Find ("No Equipment Available").gameObject;
-        savesSelection = canvas.transform.Find ("Saves Selection").gameObject;
-        savesPanel = savesSelection.transform.Find ("Outline/Panel/Viewport/Content").gameObject;
-        saveExitButton = savesSelection.transform.Find ("Outline/Exit Button").GetComponent<Button> ();
         ButtonFunction (() => { RemoveOverlay (); foreach (GameObject go in saveItems.ToArray ()) { saveItems.Remove (go); Destroy (go); } }, saveExitButton);
-        repairPanel = canvas.transform.Find ("Repair Panel").gameObject;
-        repairCostText = repairPanel.transform.Find ("Outline/Panel/Repair Cost").GetComponent<Text> ();
-        repairConfirmButton = repairPanel.transform.Find ("Outline/Panel/Confirm Button").GetComponent<Button> ();
         ButtonFunction (() => { RemoveOverlay (); RepairShip (); }, repairConfirmButton);
-        repairCancelButton = repairPanel.transform.Find ("Outline/Panel/Cancel Button").GetComponent<Button> ();
         ButtonFunction (() => RemoveOverlay (), repairCancelButton);
-        death = canvas.transform.Find ("Death").gameObject;
+        ButtonFunction (() => Time.timeScale = (Time.timeScale == 1 ? 0 : 1), pauseButton);
+
         source = playerController.structureBehaviours;
         if (activeUI.Count == 0) activeUI.Push (GameUIState.InSpace);
+        UpdateCanvas ();
         initialized = true;
     }
 
@@ -642,7 +584,7 @@ public class GameUIHandler : MonoBehaviour {
                 FileInfo[] saves = new DirectoryInfo (Application.persistentDataPath + "/saves/").GetFiles ("*.txt").OrderBy (f => f.LastWriteTime).Reverse ().ToArray ();
                 for (int i = 0; i < saves.Length; i++) {
                     FileInfo save = saves[i];
-                    GameObject instantiated = Instantiate (saveItem, savesPanel.transform) as GameObject;
+                    GameObject instantiated = Instantiate (saveItem, savesPanelContent.transform) as GameObject;
                     RectTransform rectTransform = instantiated.GetComponent<RectTransform> ();
                     rectTransform.anchoredPosition = new Vector2 (0, -i * 100);
                     UniverseSaveData universe = JsonUtility.FromJson<UniverseSaveData> (File.ReadAllText (GetSavePath () + save.Name));
@@ -660,12 +602,10 @@ public class GameUIHandler : MonoBehaviour {
                     ButtonFunction (() => { SaveSelected (save.Name); Base (GameUIState.InSpace); }, instantiated.GetComponent<Button> ());
                     saveItems.Add (instantiated);
                 }
-                savesPanel.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, saves.Length * 100);
+                savesPanelContent.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, saves.Length * 100);
             }
         } else savesSelection.SetActive (false);
-        if (activeUI.Peek () == GameUIState.Death) {
-            death.SetActive (true);
-        }
+        if (activeUI.Peek () == GameUIState.Death) death.SetActive (true);
         else death.SetActive (false);
     }
 

@@ -206,7 +206,7 @@ public class SavesHandler : MonoBehaviour {
             data.celestialObjectID = celestialObject.celestialObjectID;
             universe.celestialObjects.Add (data);
         }
-        File.WriteAllText (GetSavePath (universeName + "-" + nowString), JsonUtility.ToJson (universe, true));
+        File.WriteAllText (GetSavePath (universeName + "-" + nowString), JsonUtility.ToJson (universe, false));
     }
 
     public void Load (string savePath) {
