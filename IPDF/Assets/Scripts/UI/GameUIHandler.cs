@@ -48,12 +48,15 @@ public class GameUIHandler : MonoBehaviour {
     public Image[] shieldUI = new Image[6];
     public RectTransform sourceTo;
     public TextMeshProUGUI speedCounter;
-    public GameObject targetInformationPanel;
+    public RectTransform targetInformationPanel;
     public Image targetHullUI;
     public Image[] targetShieldUI = new Image[6];
-    public TextMeshProUGUI targetName;
-    public TextMeshProUGUI targetFaction;
-    public TextMeshProUGUI targetDistance;
+    public Text targetName;
+    public RectTransform targetNameRectTransform;
+    public Text targetFaction;
+    public RectTransform targetFactionRectTransform;
+    public Text targetDistance;
+    public RectTransform targetDistanceRectTransform;
     public RectTransform toSource;
     public Button lockCameraButton;
     public Transform equipmentButtonsParent;
@@ -320,9 +323,22 @@ public class GameUIHandler : MonoBehaviour {
             speedCounter.text = Mathf.Round (source.GetComponent<Rigidbody> ().velocity.magnitude).ToString ();
             // Target information
             StructureBehaviours targetStructureBehaviour = source.targeted;
-            if (targetStructureBehaviour == null) targetInformationPanel.SetActive (false);
+            if (targetStructureBehaviour == null) targetInformationPanel.gameObject.SetActive (false);
             else {
-                targetInformationPanel.SetActive (true);
+                targetInformationPanel.gameObject.SetActive (true);
+                targetInformationPanel.sizeDelta = new Vector2 (
+                    Mathf.Max (
+                        350,
+                        Mathf.Max (
+                            targetNameRectTransform.sizeDelta.x,
+                            Mathf.Max (
+                                targetFactionRectTransform.sizeDelta.x,
+                                targetDistanceRectTransform.sizeDelta.x
+                            )
+                        ) + 160
+                    ),
+                    135
+                );
                 targetHullUI.sprite = targetStructureBehaviour.profile.hullUI;
                 targetHullUI.color = Mathf.Floor ((targetStructureBehaviour.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
                     Color.white :
@@ -527,7 +543,7 @@ public class GameUIHandler : MonoBehaviour {
             lockCameraButton.gameObject.SetActive (false);
             sourceTo.gameObject.SetActive (false);
             speedCounter.gameObject.SetActive (false);
-            targetInformationPanel.SetActive (false);
+            targetInformationPanel.gameObject.SetActive (false);
             for (int i = 0; i < equipmentButtons.Count; i++) equipmentButtons[i].SetActive (false);
             foreach (GameObject selectableBillboard in selectableBillboards) selectableBillboard.SetActive (false);
         }
