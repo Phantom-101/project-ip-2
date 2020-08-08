@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Essentials;
+using System;
 
 /*
 
@@ -24,4 +22,37 @@ $$$$$$$$\ $$$$$$$$\ $$$$$$$$\  $$$$$$\
 
 public class Equipment : Item {
    public int meta;
+}
+
+[Serializable]
+public class EquipmentHandler {
+    [Header ("Essential Information")]
+    public StructureBehaviours equipper;
+    public string mountedID;
+
+    public virtual void SetOnline (bool target) { }
+
+    public virtual void Process (float deltaTime) { }
+
+    public virtual void EnforceEquipment () { }
+
+    public virtual bool EquipmentAllowed (Equipment equipment) {
+        return false;
+    }
+
+    public virtual bool TrySetEquipment (Equipment target) {
+        return false;
+    }
+
+    public virtual string GetSlotName () {
+        return "";
+    }
+
+    public virtual string GetEquippedName () {
+        return "";
+    }
+
+    public virtual Type GetEquipmentType () {
+        return null;
+    }
 }

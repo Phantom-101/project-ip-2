@@ -12,8 +12,6 @@ $$$$$$$$\                                           $$\
 */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Essentials;
 
@@ -59,11 +57,9 @@ public class Turret : Equipment {
 }
 
 [Serializable]
-public class TurretHandler {
+public class TurretHandler : EquipmentHandler {
     [Header ("Essential Information")]
-    public StructureBehaviours equipper;
     public Turret turret;
-    public string mountedID;
     public Ammunition ammunition;
     [Header ("Transforms")]
     public Vector3 position;
@@ -81,25 +77,27 @@ public class TurretHandler {
     public TurretHandler (Turret turret = null) {
         if (turret == null) {
             this.turret = null;
-            this.online = false;
-            this.storedEnergy = 0.0f;
+            online = false;
+            storedEnergy = 0.0f;
         } else {
             this.turret = turret;
-            this.online = true;
-            this.storedEnergy = 0.0f;
+            online = true;
+            storedEnergy = 0.0f;
         }
-        this.activated = false;
+        activated = false;
+        EnforceEquipment ();
     }
 
     public TurretHandler (TurretHandler turretHandler) {
-        this.turret = turretHandler.turret;
-        this.ammunition = turretHandler.ammunition;
-        this.online = turretHandler.online;
-        this.activated = turretHandler.activated;
-        this.storedEnergy = turretHandler.storedEnergy;
+        turret = turretHandler.turret;
+        ammunition = turretHandler.ammunition;
+        online = turretHandler.online;
+        activated = turretHandler.activated;
+        storedEnergy = turretHandler.storedEnergy;
+        EnforceEquipment ();
     }
 
-    public void SetOnline (bool target) {
+    public override void SetOnline (bool target) {
         if (turret == null) {
             online = false;
             storedEnergy = 0.0f;
@@ -125,12 +123,8 @@ public class TurretHandler {
         return available - transferred;
     }
 
-    public void Process (float deltaTime) {
+    public override void Process (float deltaTime) {
         if (turret == null) return;
-        if (turret.meta > equipper.profile.maxEquipmentMeta) {
-            turret = null;
-            return;
-        }
         if (pooler == null) pooler = Pooler.GetInstance ();
         if (ammunition != null && !turret.CanUseAmmunition (this, ammunition)) ammunition = null;
         if (activated) {
@@ -141,6 +135,24 @@ public class TurretHandler {
             }
         }
         if (turret.GetType () == typeof (KineticTurret)) UseAmmunition ((turret as KineticTurret).ammunition[0]);
+    }
+
+    public override void EnforceEquipment () {
+        if (!EquipmentAllowed (turret)) turret = null;
+    }
+
+    public override bool EquipmentAllowed (Equipment equipment) {
+        if (equipment == null) return true;
+        if (!equipment.GetType ().IsSubclassOf (typeof (Turret))) return false;
+        if (equipment.meta > equipper.profile.maxEquipmentMeta) return false;
+        return true;
+    }
+
+    public override bool TrySetEquipment (Equipment target) {
+        if (!EquipmentAllowed (target)) return false;
+        turret = target as Turret;
+        storedEnergy = 0;
+        return true;
     }
 
     public void Interacted (GameObject target) {
@@ -178,7 +190,19 @@ public class TurretHandler {
     public bool CanPress () {
         if (turret == null) return false;
         if (equipper == null) return false;
-        if (!turret.CanInteract (this, equipper.targeted == null ? null : equipper.targeted.gameObject)) return false;
+        if (!turret.CanInteract (this, equipper.targeted?.gameObject)) return false;
         return true;
+    }
+
+    public override string GetSlotName () {
+        return "Turret " + equipper.turrets.IndexOf (this);
+    }
+
+    public override Type GetEquipmentType () {
+        return typeof (Turret);
+    }
+
+    public override string GetEquippedName () {
+        return turret?.name ?? "None";
     }
 }

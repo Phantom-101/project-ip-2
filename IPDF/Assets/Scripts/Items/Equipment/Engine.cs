@@ -26,10 +26,8 @@ public class Engine : Equipment {
 }
 
 [Serializable]
-public class EngineHandler {
-    public StructureBehaviours equipper;
+public class EngineHandler : EquipmentHandler {
     public Engine engine;
-    public string mountedID;
     public bool online;
     public float forwardSetting;
     public float turnSetting;
@@ -37,25 +35,27 @@ public class EngineHandler {
     public EngineHandler (Engine engine = null) {
         if (engine == null) {
             this.engine = null;
-            this.online = false;
-            this.forwardSetting = 0.0f;
-            this.turnSetting = 0.0f;
+            online = false;
+            forwardSetting = 0.0f;
+            turnSetting = 0.0f;
         } else {
             this.engine = engine;
-            this.online = true;
-            this.forwardSetting = 0.0f;
-            this.turnSetting = 0.0f;
+            online = true;
+            forwardSetting = 0.0f;
+            turnSetting = 0.0f;
         }
+        EnforceEquipment ();
     }
 
     public EngineHandler (EngineHandler engineHandler) {
-        this.engine = engineHandler.engine;
-        this.online = engineHandler.online;
-        this.forwardSetting = engineHandler.forwardSetting;
-        this.turnSetting = engineHandler.turnSetting;
+        engine = engineHandler.engine;
+        online = engineHandler.online;
+        forwardSetting = engineHandler.forwardSetting;
+        turnSetting = engineHandler.turnSetting;
+        EnforceEquipment ();
     }
 
-    public void SetOnline (bool target) {
+    public override void SetOnline (bool target) {
         if (engine == null) {
             online = false;
             forwardSetting = 0.0f;
@@ -75,15 +75,40 @@ public class EngineHandler {
         turnSetting = target;
     }
 
-    public void ApplySettings (float deltaTime, Rigidbody target) {
+    public override void Process (float deltaTime) {
         if (!online || engine == null) return;
-        if (engine.meta > equipper.profile.maxEquipmentMeta) {
-            engine = null;
-            return;
-        }
-        target.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower * deltaTime / target.mass), ForceMode.Acceleration);
-        target.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower * deltaTime / target.mass, 0), ForceMode.Acceleration);
-        float targetZRot = -target.GetComponent<Rigidbody> ().angularVelocity.y * 10;
-        target.transform.localEulerAngles = new Vector3 (0.0f, target.transform.localEulerAngles.y, targetZRot);
+        equipper.rigidbody.AddRelativeForce (new Vector3 (0.0f, 0.0f, forwardSetting * engine.forwardPower * deltaTime / equipper.rigidbody.mass), ForceMode.Acceleration);
+        equipper.rigidbody.AddTorque (new Vector3 (0.0f, turnSetting * engine.turnPower * deltaTime / equipper.rigidbody.mass, 0), ForceMode.Acceleration);
+        float targetZRot = -equipper.rigidbody.GetComponent<Rigidbody> ().angularVelocity.y * 10;
+        equipper.rigidbody.transform.localEulerAngles = new Vector3 (0.0f, equipper.rigidbody.transform.localEulerAngles.y, targetZRot);
+    }
+
+    public override string GetSlotName () {
+        return "Engine";
+    }
+
+    public override Type GetEquipmentType () {
+        return typeof (Engine);
+    }
+
+    public override void EnforceEquipment () {
+        if (!EquipmentAllowed (engine)) engine = null;
+    }
+
+    public override bool EquipmentAllowed (Equipment equipment) {
+        if (equipment == null) return true;
+        if (!equipment.GetType ().IsSubclassOf (typeof (Engine))) return false;
+        if (equipment.meta > equipper.profile.maxEquipmentMeta) return false;
+        return true;
+    }
+
+    public override bool TrySetEquipment (Equipment target) {
+        if (!EquipmentAllowed (target)) return false;
+        engine = target as Engine;
+        return true;
+    }
+
+    public override string GetEquippedName () {
+        return engine?.name ?? "None";
     }
 }

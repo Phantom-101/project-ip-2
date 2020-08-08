@@ -12,8 +12,6 @@ $$\   $$ |$$ |  $$ |$$ |$$   ____|$$ |$$ |  $$ | \____$$\
 */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Essentials;
 
@@ -25,10 +23,8 @@ public class Shield : Equipment {
 }
 
 [Serializable]
-public class ShieldHandler {
-    public StructureBehaviours equipper;
+public class ShieldHandler : EquipmentHandler {
     public Shield shield;
-    public string mountedID;
     public bool online;
     public float[] strengths;
     public float[] shieldTimesSinceLastDamaged;
@@ -36,26 +32,28 @@ public class ShieldHandler {
     public ShieldHandler (Shield shield = null) {
         if (shield == null) {
             this.shield = null;
-            this.online = false;
-            this.strengths = new float[6];
-            this.shieldTimesSinceLastDamaged = new float[6];
+            online = false;
+            strengths = new float[6];
+            shieldTimesSinceLastDamaged = new float[6];
         } else {
             this.shield = shield;
-            this.online = true;
-            this.strengths = new float[6];
+            online = true;
+            strengths = new float[6];
             for (int i = 0; i < strengths.Length; i++) strengths[i] = this.shield.strength;
-            this.shieldTimesSinceLastDamaged = new float[6];
+            shieldTimesSinceLastDamaged = new float[6];
         }
+        EnforceEquipment ();
     }
 
     public ShieldHandler (ShieldHandler shieldHandler) {
-        this.shield = shieldHandler.shield;
-        this.online = shieldHandler.online;
-        this.strengths = shieldHandler.strengths;
-        this.shieldTimesSinceLastDamaged = shieldHandler.shieldTimesSinceLastDamaged;
+        shield = shieldHandler.shield;
+        online = shieldHandler.online;
+        strengths = shieldHandler.strengths;
+        shieldTimesSinceLastDamaged = shieldHandler.shieldTimesSinceLastDamaged;
+        EnforceEquipment ();
     }
 
-    public void SetOnline (bool target) {
+    public override void SetOnline (bool target) {
         if (shield == null) {
             online = false;
             strengths = new float[6];
@@ -94,14 +92,10 @@ public class ShieldHandler {
         }
     }
 
-    public void Process (float deltaTime) {
+    public override void Process (float deltaTime) {
         if (!online || shield == null) {
             strengths = new float[6];
             shieldTimesSinceLastDamaged = new float[6];
-            return;
-        }
-        if (shield.meta > equipper.profile.maxEquipmentMeta) {
-            shield = null;
             return;
         }
         if (strengths.Length != 6) strengths = new float[6];
@@ -112,5 +106,36 @@ public class ShieldHandler {
             if (shieldTimesSinceLastDamaged[i] > 1.5f) shieldTimesSinceLastDamaged[i] = 0.0f;
             else if (shieldTimesSinceLastDamaged[i] >= 0.3f) shieldTimesSinceLastDamaged[i] += deltaTime;
         }
+    }
+
+    public override string GetSlotName () {
+        return "Shield";
+    }
+
+    public override Type GetEquipmentType () {
+        return typeof (Shield);
+    }
+
+    public override void EnforceEquipment () {
+        if (!EquipmentAllowed (shield)) shield = null;
+    }
+
+    public override bool EquipmentAllowed (Equipment equipment) {
+        if (equipment == null) return true;
+        if (!equipment.GetType ().IsSubclassOf (typeof (Shield))) return false;
+        if (equipment.meta > equipper.profile.maxEquipmentMeta) return false;
+        return true;
+    }
+
+    public override bool TrySetEquipment (Equipment target) {
+        if (!EquipmentAllowed (target)) return false;
+        shield = target as Shield;
+        for (int i = 0; i < strengths.Length; i++) strengths[i] = this.shield.strength;
+        shieldTimesSinceLastDamaged = new float[6];
+        return true;
+    }
+
+    public override string GetEquippedName () {
+        return shield?.name ?? "None";
     }
 }

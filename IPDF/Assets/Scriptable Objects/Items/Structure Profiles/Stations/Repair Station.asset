@@ -48,7 +48,7 @@ MonoBehaviour:
   - 150
   dockingRotations:
   - {x: 0, y: 90, z: 0}
-  dockingRange: 300
+  dockingRange: 500
   market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
   factories: []
   offeredEquipment:

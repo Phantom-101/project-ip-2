@@ -36,7 +36,7 @@ public class GameUIHandler : MonoBehaviour {
     public FactionsManager factionsManager;
     public StructuresManager structuresManager;
     public SavesHandler savesHandler;
-    public Camera camera;
+    public new Camera camera;
     public SettingsHandler settingsHandler;
     public ScenesManager scenesManager;
     [Header ("UI Elements")]
@@ -87,7 +87,7 @@ public class GameUIHandler : MonoBehaviour {
     public Button sell100;
     public GameObject equipmentPanel;
     public int selectedBay;
-    public Item selectedEquipment;
+    public Equipment selectedEquipment;
     public List<GameObject> bayItems = new List<GameObject> ();
     public List<GameObject> equipmentItems = new List<GameObject> ();
     public Image equipmentIcon;
@@ -236,30 +236,8 @@ public class GameUIHandler : MonoBehaviour {
                         GameObject bay = Instantiate (bayItem, baysPanelContent.transform);
                         RectTransform bayRect = bay.GetComponent<RectTransform> ();
                         bayRect.anchoredPosition = new Vector2 (0, -i * 45);
-                        string bayName = "";
-                        string equippedName = "";
-                        if (i < source.profile.turretSlots) {
-                            bayName = "Turret " + (i + 1);
-                            equippedName = source.turrets[i].turret == null ? "None" : source.turrets[i].turret.name;
-                        } else if (i == source.profile.turretSlots) {
-                            bayName = "Shield";
-                            equippedName = source.shield.shield == null ? "None" : source.shield.shield.name;
-                        } else if (i == source.profile.turretSlots + 1) {
-                            bayName = "Capacitor";
-                            equippedName = source.capacitor.capacitor == null ? "None" : source.capacitor.capacitor.name;
-                        } else if (i == source.profile.turretSlots + 2) {
-                            bayName = "Generator";
-                            equippedName = source.generator.generator == null ? "None" : source.generator.generator.name;
-                        } else if (i == source.profile.turretSlots + 3) {
-                            bayName = "Engine";
-                            equippedName = source.engine.engine == null ? "None" : source.engine.engine.name;
-                        } else if (i == source.profile.turretSlots + 4) {
-                            bayName = "Electronics";
-                            equippedName = source.electronics.electronics == null ? "None" : source.electronics.electronics.name;
-                        } else if (i == source.profile.turretSlots + 5) {
-                            bayName = "Tractor Beam";
-                            equippedName = source.tractorBeam.tractorBeam == null ? "None" : source.tractorBeam.tractorBeam.name;
-                        }
+                        string bayName = source.GetSlot (i).GetSlotName ();
+                        string equippedName = source.GetSlot (i).GetEquippedName ();
                         bay.transform.GetChild (1).GetComponent<Text> ().text = bayName;
                         bay.transform.GetChild (2).GetComponent<Text> ().text = equippedName;
                         ButtonFunction (() => { SetSelectedBay (bay.transform.GetSiblingIndex ()); selectedEquipment = null; }, bay.GetComponent<Button> ());
@@ -267,22 +245,7 @@ public class GameUIHandler : MonoBehaviour {
                     }
                     baysPanelContent.GetComponent<RectTransform> ().sizeDelta = new Vector2 (0, (source.profile.turretSlots + 6) * 45 + 5);
                 }
-                System.Type equipmentType = null;
-                if (selectedBay < source.profile.turretSlots) {
-                    equipmentType = typeof(Turret);
-                } else if (selectedBay == source.profile.turretSlots) {
-                    equipmentType = typeof(Shield);
-                } else if (selectedBay == source.profile.turretSlots + 1) {
-                    equipmentType = typeof(Capacitor);
-                } else if (selectedBay == source.profile.turretSlots + 2) {
-                    equipmentType = typeof(Generator);
-                } else if (selectedBay == source.profile.turretSlots + 3) {
-                    equipmentType = typeof(Engine);
-                } else if (selectedBay == source.profile.turretSlots + 4) {
-                    equipmentType = typeof(Electronics);
-                } else if (selectedBay == source.profile.turretSlots + 5) {
-                    equipmentType = typeof(TractorBeam);
-                }
+                System.Type equipmentType = source.GetSlot (selectedBay).GetEquipmentType ();
                 if (equipmentItems.Count == 0) {
                     int offset = 0;
                     foreach (Equipment offered in stationStructureBehaviours.profile.offeredEquipment) {
@@ -629,20 +592,8 @@ public class GameUIHandler : MonoBehaviour {
     void ReplaceSelectedEquipment () {
         if (stationStructureBehaviours == null) return;
         if (selectedEquipment == null) return;
-        if (selectedBay < source.profile.turretSlots) {
-            source.turrets[selectedBay].turret = selectedEquipment as Turret;
-        } else if (selectedBay == source.profile.turretSlots) {
-            source.shield.shield = selectedEquipment as Shield;
-        } else if (selectedBay == source.profile.turretSlots + 1) {
-            source.capacitor.capacitor = selectedEquipment as Capacitor;
-        } else if (selectedBay == source.profile.turretSlots + 2) {
-            source.generator.generator = selectedEquipment as Generator;
-        } else if (selectedBay == source.profile.turretSlots + 3) {
-            source.engine.engine = selectedEquipment as Engine;
-        } else if (selectedBay == source.profile.turretSlots + 4) {
-            source.electronics.electronics = selectedEquipment as Electronics;
-        } else if (selectedBay == source.profile.turretSlots + 5) {
-            source.tractorBeam.tractorBeam = selectedEquipment as TractorBeam;
+        if (source.GetSlot (selectedBay).TrySetEquipment (selectedEquipment)) {
+            // Pay
         }
         foreach (GameObject go in bayItems.ToArray ()) {
             bayItems.Remove (go);
@@ -652,21 +603,7 @@ public class GameUIHandler : MonoBehaviour {
 
     void UnequipSelectedBay () {
         if (stationStructureBehaviours == null) return;
-        if (selectedBay < source.profile.turretSlots) {
-            source.turrets[selectedBay].turret = null;
-        } else if (selectedBay == source.profile.turretSlots) {
-            source.shield.shield = null;
-        } else if (selectedBay == source.profile.turretSlots + 1) {
-            source.capacitor.capacitor = null;
-        } else if (selectedBay == source.profile.turretSlots + 2) {
-            source.generator.generator = null;
-        } else if (selectedBay == source.profile.turretSlots + 3) {
-            source.engine.engine = null;
-        } else if (selectedBay == source.profile.turretSlots + 4) {
-            source.electronics.electronics = null;
-        } else if (selectedBay == source.profile.turretSlots + 5) {
-            source.tractorBeam.tractorBeam = null;
-        }
+        source.GetSlot (selectedBay).TrySetEquipment (null);
         foreach (GameObject go in bayItems.ToArray ()) {
             bayItems.Remove (go);
             Destroy (go);

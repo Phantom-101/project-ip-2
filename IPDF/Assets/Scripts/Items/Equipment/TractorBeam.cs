@@ -28,10 +28,8 @@ public class TractorBeam : Equipment {
 }
 
 [Serializable]
-public class TractorBeamHandler {
-    public StructureBehaviours equipper;
+public class TractorBeamHandler : EquipmentHandler {
     public TractorBeam tractorBeam;
-    public string mountedID;
     public bool online;
     public bool activated;
     public float storedEnergy;
@@ -40,25 +38,27 @@ public class TractorBeamHandler {
     public TractorBeamHandler (TractorBeam tractorBeam = null) {
         if (tractorBeam == null) {
             this.tractorBeam = null;
-            this.online = false;
-            this.activated = false;
-            this.storedEnergy = 0.0f;
-            this.target = null;
+            online = false;
+            activated = false;
+            storedEnergy = 0.0f;
+            target = null;
         } else {
             this.tractorBeam = tractorBeam;
-            this.online = true;
-            this.activated = false;
-            this.storedEnergy = 0.0f;
-            this.target = null;
+            online = true;
+            activated = false;
+            storedEnergy = 0.0f;
+            target = null;
         }
+        EnforceEquipment ();
     }
 
     public TractorBeamHandler (TractorBeamHandler tractorBeamHandler) {
-        this.tractorBeam = tractorBeamHandler.tractorBeam;
-        this.online = tractorBeamHandler.online;
-        this.activated = tractorBeamHandler.activated;
-        this.storedEnergy = tractorBeamHandler.storedEnergy;
-        this.target = tractorBeamHandler.target;
+        tractorBeam = tractorBeamHandler.tractorBeam;
+        online = tractorBeamHandler.online;
+        activated = tractorBeamHandler.activated;
+        storedEnergy = tractorBeamHandler.storedEnergy;
+        target = tractorBeamHandler.target;
+        EnforceEquipment ();
     }
 
     public float TransferEnergy (float deltaTime, float available) {
@@ -68,7 +68,7 @@ public class TractorBeamHandler {
         return available - transferred;
     }
 
-    public void SetOnline (bool target) {
+    public override void SetOnline (bool target) {
         if (tractorBeam == null) {
             online = false;
             storedEnergy = 0.0f;
@@ -95,23 +95,49 @@ public class TractorBeamHandler {
         target = null;
     }
 
-    public void Process (float deltaTime, GameObject processor) {
+    public override void Process (float deltaTime) {
         if (!online) return;
         if (target == null) {
             Deactivate ();
             return;
         }
-        if (tractorBeam.meta > processor.GetComponent<StructureBehaviours> ().profile.maxEquipmentMeta) {
-            tractorBeam = null;
-            return;
-        }
-        float minSqrMagnitude = processor.GetComponent<StructureBehaviours> ().profile.apparentSize + target.GetComponent<StructureBehaviours> ().profile.apparentSize;
+        float minSqrMagnitude = equipper.profile.apparentSize + target.GetComponent<StructureBehaviours> ().profile.apparentSize;
         minSqrMagnitude *= minSqrMagnitude;
-        if ((processor.transform.position - target.transform.position).sqrMagnitude <= minSqrMagnitude) Deactivate ();
+        if ((equipper.transform.position - target.transform.position).sqrMagnitude <= minSqrMagnitude) Deactivate ();
         if (activated) {
             storedEnergy = MathUtils.Clamp (storedEnergy - tractorBeam.consumptionRate * deltaTime, 0.0f, tractorBeam.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();
-            else target.GetComponent<Rigidbody> ().AddForce ((processor.transform.position - target.transform.position).normalized * tractorBeam.power / target.GetComponent<Rigidbody> ().mass, ForceMode.Acceleration);
+            else target.GetComponent<Rigidbody> ().AddForce ((equipper.transform.position - target.transform.position).normalized * tractorBeam.power / target.GetComponent<Rigidbody> ().mass, ForceMode.Acceleration);
         }
+    }
+
+    public override string GetSlotName () {
+        return "Tractor Beam";
+    }
+
+    public override Type GetEquipmentType () {
+        return typeof (TractorBeam);
+    }
+
+    public override void EnforceEquipment () {
+        if (!EquipmentAllowed (tractorBeam)) tractorBeam = null;
+    }
+
+    public override bool EquipmentAllowed (Equipment equipment) {
+        if (equipment == null) return true;
+        if (!equipment.GetType ().IsSubclassOf (typeof (TractorBeam))) return false;
+        if (equipment.meta > equipper.profile.maxEquipmentMeta) return false;
+        return true;
+    }
+
+    public override bool TrySetEquipment (Equipment target) {
+        if (!EquipmentAllowed (target)) return false;
+        tractorBeam = target as TractorBeam;
+        storedEnergy = 0;
+        return true;
+    }
+
+    public override string GetEquippedName () {
+        return tractorBeam?.name ?? "None";
     }
 }

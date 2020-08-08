@@ -26,25 +26,30 @@ public class Capacitor : Equipment {
 }
 
 [Serializable]
-public class CapacitorHandler {
-    public StructureBehaviours equipper;
+public class CapacitorHandler : EquipmentHandler {
     public Capacitor capacitor;
-    public string mountedID;
     public float storedEnergy;
 
     public CapacitorHandler (Capacitor capacitor = null) {
         if (capacitor == null) {
             this.capacitor = null;
-            this.storedEnergy = 0.0f;
+            storedEnergy = 0.0f;
         } else {
             this.capacitor = capacitor;
-            this.storedEnergy = this.capacitor.capacitance;
+            storedEnergy = this.capacitor.capacitance;
         }
+        EnforceEquipment ();
     }
 
     public CapacitorHandler (CapacitorHandler capacitorHandler) {
-        this.capacitor = capacitorHandler.capacitor;
-        this.storedEnergy = capacitorHandler.storedEnergy;
+        capacitor = capacitorHandler.capacitor;
+        storedEnergy = capacitorHandler.storedEnergy;
+        EnforceEquipment ();
+    }
+
+    public override void Process (float deltaTime) {
+        if (capacitor == null) return;
+        DistributeEnergy (deltaTime, equipper.turrets, equipper.shield, equipper.electronics, equipper.tractorBeam);
     }
 
     public void Recharge (float available) {
@@ -53,11 +58,6 @@ public class CapacitorHandler {
     }
 
     public void DistributeEnergy (float deltaTime, List<TurretHandler> turrets, ShieldHandler shield, ElectronicsHandler electronics, TractorBeamHandler tractorBeam) {
-        if (capacitor == null) return;
-        if (capacitor.meta > equipper.profile.maxEquipmentMeta) {
-            capacitor = null;
-            return;
-        }
         DistributeToTurrets (deltaTime, turrets);
         DistributeToShield (deltaTime, shield);
         DistributeToElectronics (deltaTime, electronics);
@@ -78,5 +78,35 @@ public class CapacitorHandler {
 
     public void DistributeToTractorBeam (float deltaTime, TractorBeamHandler tractorBeam) {
         storedEnergy = tractorBeam.TransferEnergy (deltaTime, storedEnergy);
+    }
+
+    public override string GetSlotName () {
+        return "Capacitor";
+    }
+
+    public override Type GetEquipmentType () {
+        return typeof (Capacitor);
+    }
+
+    public override void EnforceEquipment () {
+        if (!EquipmentAllowed (capacitor)) capacitor = null;
+    }
+
+    public override bool EquipmentAllowed (Equipment equipment) {
+        if (equipment == null) return true;
+        if (!equipment.GetType ().IsSubclassOf (typeof (Capacitor))) return false;
+        if (equipment.meta > equipper.profile.maxEquipmentMeta) return false;
+        return true;
+    }
+
+    public override bool TrySetEquipment (Equipment target) {
+        if (!EquipmentAllowed (target)) return false;
+        capacitor = target as Capacitor;
+        storedEnergy = 0;
+        return true;
+    }
+
+    public override string GetEquippedName () {
+        return capacitor?.name ?? "None";
     }
 }

@@ -27,10 +27,8 @@ public class Electronics : Equipment {
 }
 
 [Serializable]
-public class ElectronicsHandler {
-    public StructureBehaviours equipper;
+public class ElectronicsHandler : EquipmentHandler {
     public Electronics electronics;
-    public string mountedID;
     public bool online;
     public bool activated;
     public float storedEnergy;
@@ -39,28 +37,30 @@ public class ElectronicsHandler {
     public ElectronicsHandler (Electronics electronics = null) {
         if (electronics == null) {
             this.electronics = null;
-            this.online = false;
-            this.activated = false;
-            this.storedEnergy = 0.0f;
-            this.timeSinceToggled = 0.0f;
+            online = false;
+            activated = false;
+            storedEnergy = 0.0f;
+            timeSinceToggled = 0.0f;
         } else {
             this.electronics = electronics;
-            this.online = true;
-            this.activated = false;
-            this.storedEnergy = 0.0f;
-            this.timeSinceToggled = 0.0f;
+            online = true;
+            activated = false;
+            storedEnergy = 0.0f;
+            timeSinceToggled = 0.0f;
         }
+        EnforceEquipment ();
     }
 
     public ElectronicsHandler (ElectronicsHandler electronicsHandler) {
-        this.electronics = electronicsHandler.electronics;
-        this.online = electronicsHandler.online;
-        this.activated = electronicsHandler.activated;
-        this.storedEnergy = electronicsHandler.storedEnergy;
-        this.timeSinceToggled = electronicsHandler.timeSinceToggled;
+        electronics = electronicsHandler.electronics;
+        online = electronicsHandler.online;
+        activated = electronicsHandler.activated;
+        storedEnergy = electronicsHandler.storedEnergy;
+        timeSinceToggled = electronicsHandler.timeSinceToggled;
+        EnforceEquipment ();
     }
 
-    public void SetOnline (bool target) {
+    public override void SetOnline (bool target) {
         if (electronics == null) {
             online = false;
             activated = false;
@@ -91,17 +91,43 @@ public class ElectronicsHandler {
         timeSinceToggled = 0.0f;
     }
 
-    public void Process (float deltaTime, GameObject processor) {
+    public override void Process (float deltaTime) {
         if (!online) return;
-        if (electronics.meta > equipper.profile.maxEquipmentMeta) {
-            electronics = null;
-            return;
-        }
         timeSinceToggled += deltaTime;
         if (activated) {
             storedEnergy = MathUtils.Clamp (storedEnergy - electronics.consumptionRate * deltaTime, 0.0f, electronics.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();
-            else if (timeSinceToggled >= electronics.cloakTime) processor.GetComponent<StructureBehaviours> ().cloaked = false;
-        } else if (timeSinceToggled >= electronics.cloakTime) processor.GetComponent<StructureBehaviours> ().cloaked = true;
+            else if (timeSinceToggled >= electronics.cloakTime) equipper.cloaked = false;
+        } else if (timeSinceToggled >= electronics.cloakTime) equipper.cloaked = true;
+    }
+
+    public override string GetSlotName () {
+        return "Electronics";
+    }
+
+    public override Type GetEquipmentType () {
+        return typeof (Electronics);
+    }
+
+    public override void EnforceEquipment () {
+        if (!EquipmentAllowed (electronics)) electronics = null;
+    }
+
+    public override bool EquipmentAllowed (Equipment equipment) {
+        if (equipment == null) return true;
+        if (!equipment.GetType ().IsSubclassOf (typeof (Electronics))) return false;
+        if (equipment.meta > equipper.profile.maxEquipmentMeta) return false;
+        return true;
+    }
+
+    public override bool TrySetEquipment (Equipment target) {
+        if (!EquipmentAllowed (target)) return false;
+        electronics = target as Electronics;
+        storedEnergy = 0;
+        return true;
+    }
+
+    public override string GetEquippedName () {
+        return electronics?.name ?? "None";
     }
 }

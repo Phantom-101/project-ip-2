@@ -19,8 +19,8 @@ public class CameraFollowPlayer : MonoBehaviour {
     public float lookAtInterpolationStrength = 1;
     public bool lookAtTarget = false;
     [Header ("Physics")]
-    public Rigidbody rigidbody;
-    public ConstantForce constantForce;
+    public new Rigidbody rigidbody;
+    public new ConstantForce constantForce;
 
     void Awake () {
         current = this;
@@ -50,6 +50,7 @@ public class CameraFollowPlayer : MonoBehaviour {
 
     void Update () {
         playerStructure = playerController.structureBehaviours;
+        constantForce.force = Vector3.zero;
         if (playerStructure != null) {
             Vector3 playerPosition = playerStructure.transform.position;
             transform.LookAt (playerPosition + new Vector3 (0.0f, lookAtOffset * playerStructure.profile.apparentSize, 0.0f));

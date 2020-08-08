@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.VFX;
 using Essentials;
+using UnityEngine.UIElements;
+using System.Threading;
 
 public class StructureBehaviours : MonoBehaviour {
     [Header ("Profile")]
@@ -34,7 +36,7 @@ public class StructureBehaviours : MonoBehaviour {
     [Header ("Production")]
     public List<FactoryHandler> factories;
     [Header ("Physics")]
-    public Rigidbody rigidbody;
+    public new Rigidbody rigidbody;
     public float dampening = 1;
     [Header ("AI")]
     public StructureAI AI;
@@ -156,19 +158,19 @@ public class StructureBehaviours : MonoBehaviour {
         shield.equipper = this;
         shield.Process (deltaTime);
         generator.equipper = this;
-        generator.GenerateEnergy (deltaTime, capacitor);
+        generator.Process (deltaTime);
         capacitor.equipper = this;
-        capacitor.DistributeEnergy (deltaTime, turrets, shield, electronics, tractorBeam);
+        capacitor.Process (deltaTime);
         if (transform.parent.GetComponent<StructureBehaviours> ()) {
             engine.forwardSetting = 0.0f;
             engine.turnSetting = 0.0f;
         }
         engine.equipper = this;
-        engine.ApplySettings (deltaTime, rigidbody);
+        engine.Process (deltaTime);
         electronics.equipper = this;
-        electronics.Process (deltaTime, gameObject);
+        electronics.Process (deltaTime);
         tractorBeam.equipper = this;
-        tractorBeam.Process (deltaTime, gameObject);
+        tractorBeam.Process (deltaTime);
         // Production
         inventory.storage = this;
         if (factories.Count != profile.factories.Length) factories = new List<FactoryHandler> (profile.factories.Length);
@@ -186,6 +188,18 @@ public class StructureBehaviours : MonoBehaviour {
             UnityEngine.Random.Range(-maxRandom, maxRandom),
             UnityEngine.Random.Range(-maxRandom, maxRandom)
         );
+    }
+
+    public EquipmentHandler GetSlot (int index) {
+        int length = turrets.Count;
+        if (index < length) return turrets[index];
+        if (index == length) return shield;
+        if (index == length + 1) return capacitor;
+        if (index == length + 2) return generator;
+        if (index == length + 3) return engine;
+        if (index == length + 4) return electronics;
+        if (index == length + 5) return tractorBeam;
+        return null;
     }
 
     public void TakeDamage (float amount, Vector3 from) {

@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MaterialColor : MonoBehaviour {
     public Color color;
-    public Renderer renderer;
+    public new Renderer renderer;
     
     void Awake () {
         renderer = GetComponent<Renderer> ();

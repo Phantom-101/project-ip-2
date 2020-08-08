@@ -2995,8 +2995,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3008,8 +3008,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3021,8 +3021,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3034,8 +3034,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3047,8 +3047,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3060,8 +3060,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 5185c669f2ffee043a97690f5f2601ab, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -3074,8 +3074,8 @@ MonoBehaviour:
     pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
     online: 1
     strengths:
     - 1000000
@@ -3087,33 +3087,33 @@ MonoBehaviour:
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
     online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -4597,213 +4597,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359583921}
   m_CullTransparentMesh: 0
---- !u!1 &375639058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 375639059}
-  - component: {fileID: 375639062}
-  - component: {fileID: 375639061}
-  - component: {fileID: 375639060}
-  m_Layer: 0
-  m_Name: Habitation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &375639059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375639058}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3272, y: -70, z: 698}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &375639060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375639058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &375639061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375639058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &375639062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375639058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 8315f35462a05d044a3a31e2a88ea133, type: 2}
-  id: 
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  destroyed: 0
-  cloaked: 0
-  factionID: 4
-  faction:
-    name: 
-    id: 0
-    abbreviated: 
-    wealth: 0
-    warThreshold: 0
-    allyThreshold: 0
-  sector: {fileID: 0}
-  route:
-    waypoints: []
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
-    mountedID: 
-    online: 0
-    strengths: []
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
-    mountedID: 
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
-    mountedID: 
-    online: 0
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
-    mountedID: 
-    online: 0
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    mountedID: 
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    mountedID: 
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  audioSource: {fileID: 0}
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!1 &375734784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5968,40 +5761,40 @@ MonoBehaviour:
   turrets: []
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 0}
     mountedID: 
+    shield: {fileID: 0}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 0}
     mountedID: 
+    capacitor: {fileID: 0}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 0}
     mountedID: 
+    generator: {fileID: 0}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 0}
     mountedID: 
+    engine: {fileID: 0}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -11089,8 +10882,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -11102,8 +10895,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -11115,8 +10908,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -11128,8 +10921,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -11141,8 +10934,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -11155,40 +10948,40 @@ MonoBehaviour:
     pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -13574,40 +13367,40 @@ MonoBehaviour:
   turrets: []
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 0}
     mountedID: 
+    shield: {fileID: 0}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 0}
     mountedID: 
+    capacitor: {fileID: 0}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 0}
     mountedID: 
+    generator: {fileID: 0}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 0}
     mountedID: 
+    engine: {fileID: 0}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -14971,40 +14764,40 @@ MonoBehaviour:
   turrets: []
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 0}
     mountedID: 
+    shield: {fileID: 0}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 0}
     mountedID: 
+    capacitor: {fileID: 0}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 0}
     mountedID: 
+    generator: {fileID: 0}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 0}
     mountedID: 
+    engine: {fileID: 0}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -15303,8 +15096,6 @@ Transform:
   - {fileID: 751419958717684527}
   - {fileID: 751419958770425904}
   - {fileID: 6355110525750044497}
-  - {fileID: 375639059}
-  - {fileID: 1833002252}
   - {fileID: 2047384823}
   - {fileID: 1099295940}
   - {fileID: 1551932584}
@@ -15961,7 +15752,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1099295941
 MonoBehaviour:
@@ -16021,8 +15812,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -16034,8 +15825,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -16047,8 +15838,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -16060,8 +15851,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -16073,8 +15864,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -16087,40 +15878,40 @@ MonoBehaviour:
     pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -22243,7 +22034,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1551932585
 MonoBehaviour:
@@ -22303,8 +22094,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22316,8 +22107,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22329,8 +22120,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22342,8 +22133,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22355,8 +22146,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -22369,40 +22160,40 @@ MonoBehaviour:
     pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -26902,213 +26693,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1833002251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1833002252}
-  - component: {fileID: 1833002255}
-  - component: {fileID: 1833002254}
-  - component: {fileID: 1833002253}
-  m_Layer: 0
-  m_Name: Habitation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1833002252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833002251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3340, y: 113, z: 858}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1833002253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833002251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1833002254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833002251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1833002255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833002251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 8315f35462a05d044a3a31e2a88ea133, type: 2}
-  id: 
-  hull: 0
-  hullTimeSinceLastDamaged: 0
-  destroyed: 0
-  cloaked: 0
-  factionID: 4
-  faction:
-    name: 
-    id: 0
-    abbreviated: 
-    wealth: 0
-    warThreshold: 0
-    allyThreshold: 0
-  sector: {fileID: 0}
-  route:
-    waypoints: []
-  inventory:
-    storage: {fileID: 0}
-    inventorySize: 0
-  turrets:
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  - equipper: {fileID: 0}
-    turret: {fileID: 0}
-    mountedID: 
-    ammunition: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    angle: 0
-    target: {fileID: 0}
-    online: 0
-    activated: 0
-    projectile: {fileID: 0}
-    storedEnergy: 0
-    pooler: {fileID: 0}
-  shield:
-    equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
-    mountedID: 
-    online: 0
-    strengths: []
-    shieldTimesSinceLastDamaged: []
-  capacitor:
-    equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
-    mountedID: 
-    storedEnergy: 0
-  generator:
-    equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
-    mountedID: 
-    online: 0
-  engine:
-    equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
-    mountedID: 
-    online: 0
-    forwardSetting: 0
-    turnSetting: 0
-  electronics:
-    equipper: {fileID: 0}
-    electronics: {fileID: 0}
-    mountedID: 
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    timeSinceToggled: 0
-  tractorBeam:
-    equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
-    mountedID: 
-    online: 0
-    activated: 0
-    storedEnergy: 0
-    target: {fileID: 0}
-  docked: []
-  factories: []
-  rigidbody: {fileID: 0}
-  dampening: 1
-  targeted: {fileID: 0}
-  billboard: {fileID: 0}
-  initialized: 0
-  audioSource: {fileID: 0}
-  structuresManager: {fileID: 0}
-  factionsManager: {fileID: 0}
-  playerController: {fileID: 0}
-  navigationManager: {fileID: 0}
 --- !u!1 &1863242512
 GameObject:
   m_ObjectHideFlags: 0
@@ -32991,7 +32575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2047384824
 MonoBehaviour:
@@ -33051,8 +32635,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -33064,8 +32648,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -33077,8 +32661,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -33090,8 +32674,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -33103,8 +32687,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -33117,40 +32701,40 @@ MonoBehaviour:
     pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -34916,8 +34500,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -34929,8 +34513,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -34942,8 +34526,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -34955,8 +34539,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -34968,8 +34552,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 0}
     mountedID: 
+    turret: {fileID: 0}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -34982,40 +34566,40 @@ MonoBehaviour:
     pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: 7f4fae439e6bd4744b4d467e2ff4489c, type: 2}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: 50ef7b2ae4e9f3949977efd647dfb49e, type: 2}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -35081,40 +34665,40 @@ MonoBehaviour:
   turrets: []
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 0}
     mountedID: 
+    shield: {fileID: 0}
     online: 0
     strengths: []
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 0}
     mountedID: 
+    capacitor: {fileID: 0}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 0}
     mountedID: 
+    generator: {fileID: 0}
     online: 0
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 0}
     mountedID: 
+    engine: {fileID: 0}
     online: 0
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -35222,8 +34806,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35235,8 +34819,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35248,8 +34832,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35261,8 +34845,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35274,8 +34858,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35287,8 +34871,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35300,8 +34884,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35313,8 +34897,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35326,8 +34910,8 @@ MonoBehaviour:
     storedEnergy: 0
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 45b6e70fcb241f94bafb2cfeca5eba85, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -35340,8 +34924,8 @@ MonoBehaviour:
     pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: d593615bc1825a24c924fe7052e8851c, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: d593615bc1825a24c924fe7052e8851c, type: 2}
     online: 1
     strengths:
     - 10000
@@ -35353,33 +34937,33 @@ MonoBehaviour:
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
     online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: ac2b8671acc2ed44ab7a1c8b65f22f93, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: ac2b8671acc2ed44ab7a1c8b65f22f93, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -35408,7 +34992,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &7218308574373969125
 GameObject:

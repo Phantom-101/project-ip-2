@@ -22,28 +22,28 @@ public class Generator : Equipment {
 }
 
 [Serializable]
-public class GeneratorHandler {
-    public StructureBehaviours equipper;
+public class GeneratorHandler : EquipmentHandler {
     public Generator generator;
-    public string mountedID;
     public bool online;
 
     public GeneratorHandler (Generator generator = null) {
         if (generator == null) {
             this.generator = null;
-            this.online = false;
+            online = false;
         } else {
             this.generator = generator;
-            this.online = true;
+            online = true;
         }
+        EnforceEquipment ();
     }
 
     public GeneratorHandler (GeneratorHandler generatorHandler) {
-        this.generator = generatorHandler.generator;
-        this.online = generatorHandler.online;
+        generator = generatorHandler.generator;
+        online = generatorHandler.online;
+        EnforceEquipment ();
     }
 
-    public void SetOnline (bool target) {
+    public override void SetOnline (bool target) {
         if (generator == null) {
             online = false;
             return;
@@ -51,12 +51,37 @@ public class GeneratorHandler {
         online = target;
     }
 
-    public void GenerateEnergy (float deltaTime, CapacitorHandler capacitor) {
+    public override void Process (float deltaTime) {
         if (!online || generator == null) return;
-        if (generator.meta > equipper.profile.maxEquipmentMeta) {
-            generator = null;
-            return;
-        }
-        capacitor.Recharge (generator.generation * deltaTime);
+        equipper.capacitor.Recharge (generator.generation * deltaTime);
+    }
+
+    public override string GetSlotName () {
+        return "Generator";
+    }
+
+    public override Type GetEquipmentType () {
+        return typeof (Generator);
+    }
+
+    public override void EnforceEquipment () {
+        if (!EquipmentAllowed (generator)) generator = null;
+    }
+
+    public override bool EquipmentAllowed (Equipment equipment) {
+        if (equipment == null) return true;
+        if (!equipment.GetType ().IsSubclassOf (typeof (Generator))) return false;
+        if (equipment.meta > equipper.profile.maxEquipmentMeta) return false;
+        return true;
+    }
+
+    public override bool TrySetEquipment (Equipment target) {
+        if (!EquipmentAllowed (target)) return false;
+        generator = target as Generator;
+        return true;
+    }
+
+    public override string GetEquippedName () {
+        return generator?.name ?? "None";
     }
 }

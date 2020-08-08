@@ -57,7 +57,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  dockingRange: 500
+  dockingRange: 600
   market: {fileID: 11400000, guid: 1c0672b1ac405714496e44232a612a67, type: 2}
   factories:
   - {fileID: 11400000, guid: c5c13981c2df4b5448f43448716d2d22, type: 2}
