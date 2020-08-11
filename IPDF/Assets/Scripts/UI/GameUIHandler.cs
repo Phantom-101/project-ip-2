@@ -110,9 +110,12 @@ public class GameUIHandler : MonoBehaviour {
     public GameObject savesPanelContent;
     public Button saveExitButton;
     public GameObject repairPanel;
-    public Text repairCostText;
-    public Button repairConfirmButton;
-    public Button repairCancelButton;
+    public Text hullRepairCostText;
+    public Button hullRepairConfirmButton;
+    public Button hullRepairCancelButton;
+    public Text shieldRechargeCostText;
+    public Button shieldRechargeConfirmButton;
+    public Button shieldRechargeCancelButton;
     List<GameObject> saveItems = new List<GameObject> ();
     public GameObject death;
     public Button pauseButton;
@@ -149,8 +152,9 @@ public class GameUIHandler : MonoBehaviour {
         ButtonFunction (() => UnequipSelectedBay (), unequipButton);
         ButtonFunction (() => { RemoveOverlay (); foreach (GameObject go in bayItems.ToArray ()) { bayItems.Remove (go); Destroy (go); } }, equipmentExitButton);
         ButtonFunction (() => { RemoveOverlay (); foreach (GameObject go in saveItems.ToArray ()) { saveItems.Remove (go); Destroy (go); } }, saveExitButton);
-        ButtonFunction (() => { RemoveOverlay (); RepairShip (); }, repairConfirmButton);
-        ButtonFunction (() => RemoveOverlay (), repairCancelButton);
+        ButtonFunction (() => { RemoveOverlay (); RepairShipHull (); }, hullRepairConfirmButton);
+        ButtonFunction (() => { RemoveOverlay (); RechargeShipShield (); }, shieldRechargeConfirmButton);
+        ButtonFunction (() => RemoveOverlay (), hullRepairCancelButton);
         ButtonFunction (() => Time.timeScale = (Time.timeScale == 1 ? 0 : 1), pauseButton);
 
         source = playerController.structureBehaviours;
@@ -365,7 +369,7 @@ public class GameUIHandler : MonoBehaviour {
                     if (factionsManager.Hostile (targetStructureBehaviour.faction, source.faction)) targetFaction.color = hostileFactionColor;
                     else targetFaction.color = negativeFactionRelationsGradient.Evaluate (relations / factionsManager.GetHostileThreshold (targetStructureBehaviour.faction));
                 }
-                targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
+                targetDistance.text = Mathf.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position)) + "m";
                 float rot = targetStructureBehaviour.GetSector (source.transform.position) * 60;
                 toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55, Mathf.Cos (rot * Mathf.Deg2Rad) * 55);
                 toSource.eulerAngles = new Vector3 (0, 0, -rot);
@@ -536,6 +540,14 @@ public class GameUIHandler : MonoBehaviour {
                 stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
             }
         } else marketPanel.SetActive (false);
+        if (activeUI.Peek () == GameUIState.StationRepair) {
+            if (stationStructureBehaviours != null) {
+                hullRepairCostText.text = GetHullRepairPrice ().ToString () + " Credits";
+                shieldRechargeCostText.text = GetShieldRechargePrice ().ToString () + " Credits";
+                hullRepairConfirmButton.enabled = factionsManager.GetWealth (source.faction) >= GetHullRepairPrice ();
+                shieldRechargeConfirmButton.enabled = factionsManager.GetWealth (source.faction) >= GetShieldRechargePrice ();
+            }
+        }
     }
 
     void UpdateCanvas () {
@@ -563,10 +575,7 @@ public class GameUIHandler : MonoBehaviour {
         else stationPanel.SetActive (false);
         if (activeUI.Peek () == GameUIState.StationRepair) {
             if (stationStructureBehaviours == null) repairPanel.SetActive (false);
-            else {
-                repairPanel.SetActive (true);
-                repairCostText.text = "Not Implemented";
-            }
+            else repairPanel.SetActive (true);
         } else repairPanel.SetActive (false);
         if (activeUI.Peek () == GameUIState.SelectSave) {
             savesSelection.SetActive (true);
@@ -605,8 +614,25 @@ public class GameUIHandler : MonoBehaviour {
         button.onClick.AddListener(action);
     }
 
-    void RepairShip () {
+    void RepairShipHull () {
         source.hull = source.profile.hull;
+        factionsManager.ChangeWealth (source.faction, -GetHullRepairPrice ());
+    }
+
+    void RechargeShipShield () {
+        for (int i = 0; i < 6; i++) source.shield.strengths[i] = source.shield.shield.strength;
+        factionsManager.ChangeWealth (source.faction, -GetShieldRechargePrice ());
+    }
+
+    long GetHullRepairPrice () {
+        float percentage = source.hull / source.profile.hull;
+        return (long) ((1 - percentage) * source.profile.sellPrice);
+    }
+
+    long GetShieldRechargePrice () {
+        float totalDeficit = 0;
+        for (int i = 0; i < 6; i++) totalDeficit += source.shield.shield.strength - source.shield.strengths[i];
+        return (long) (totalDeficit / source.shield.shield.shieldRechargeEfficiency);
     }
 
     public void SetSelectedBay (int i) {

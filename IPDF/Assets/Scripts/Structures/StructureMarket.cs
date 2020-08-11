@@ -8,31 +8,31 @@ using Essentials;
 public class StructureMarket : ScriptableObject {
     public SturctureMarketType marketType;
 
-    public float GetBuyPrice (StructureBehaviours structure, Item item) {
+    public long GetBuyPrice (StructureBehaviours structure, Item item) {
         if (!GetTradableItems (structure).Contains (item)) return -1;
         if (marketType == SturctureMarketType.Station) {
             foreach (FactoryHandler factoryHandler in structure.factories)
                 if (factoryHandler.factory != null)
                     foreach (Item input in factoryHandler.factory.inputs)
                         if (input == item)
-                            return item.buyPrice * 1.1f;
+                            return (long) (item.buyPrice * 1.1f);
             return -1;
         } else {
-            return item.buyPrice * 0.9f;
+            return (long) (item.buyPrice * 0.9f);
         }
     }
 
-    public float GetSellPrice (StructureBehaviours structure, Item item) {
+    public long GetSellPrice (StructureBehaviours structure, Item item) {
         if (!GetTradableItems (structure).Contains (item)) return -1;
         if (marketType == SturctureMarketType.Station) {
             foreach (FactoryHandler factoryHandler in structure.factories)
                 if (factoryHandler.factory != null)
                     foreach (Item output in factoryHandler.factory.outputs)
                         if (output == item)
-                            return item.sellPrice * 0.9f;
+                            return (long) (item.sellPrice * 0.9f);
             return -1;
         } else {
-            return item.sellPrice * 1.1f;
+            return (long) (item.sellPrice * 1.1f);
         }
     }
 

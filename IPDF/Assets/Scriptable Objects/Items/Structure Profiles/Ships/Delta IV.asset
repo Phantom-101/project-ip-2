@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 806d6dff-9bfb-443f-bfb8-5bf7dbabbf5c
   icon: {fileID: 0}
-  basePrice: 250000
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: -5495902117074765545, guid: 6faf6537b632e054a950f85f3bb4359b, type: 3}
   material: {fileID: 2100000, guid: 1e911f7be096a184abda12e46d14d129, type: 2}
@@ -30,10 +31,10 @@ MonoBehaviour:
   canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
-  structureClass: 0
+  structureClass: 5
   manufacturer: 12
   description: 
-  hull: 1000
+  hull: 1500
   inventorySize: 140
   authority: 0
   maxEquipmentMeta: 5

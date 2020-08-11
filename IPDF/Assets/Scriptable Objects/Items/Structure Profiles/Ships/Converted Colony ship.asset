@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
-  m_Name: Converted Colony ship
+  m_Name: Converted Colony Ship
   m_EditorClassIdentifier: 
   id: 17af67db-9eae-43d7-9e6e-48c6c682e5f2
   icon: {fileID: 21300000, guid: 82c5c1ea455b9a346aaa8263051f24cd, type: 3}
-  basePrice: 700000
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: -7754318969949236687, guid: a30aff3e9e969504dab14827c17c5915, type: 3}
   material: {fileID: 2100000, guid: 0e5f107189e02ae40a5cd397b2f71682, type: 2}
@@ -33,7 +34,7 @@ MonoBehaviour:
   structureClass: 0
   manufacturer: 12
   description: 
-  hull: 2000
+  hull: 3000
   inventorySize: 500
   authority: 0
   maxEquipmentMeta: 5

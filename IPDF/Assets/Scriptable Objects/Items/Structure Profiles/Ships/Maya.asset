@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 979a6214-7efe-400f-8750-09e79e5f6213
   icon: {fileID: 0}
-  basePrice: 4000000
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: 4370537360113272507, guid: 44ebadcffcaaf024f90778ea4ca08848, type: 3}
   material: {fileID: 2100000, guid: 13c4c3efb12070e4db63fbc66dc98832, type: 2}
@@ -33,7 +34,7 @@ MonoBehaviour:
   structureClass: 8
   manufacturer: 12
   description: Large Cydia capital ship.
-  hull: 3000
+  hull: 6800
   inventorySize: 1200
   authority: 0
   maxEquipmentMeta: 8

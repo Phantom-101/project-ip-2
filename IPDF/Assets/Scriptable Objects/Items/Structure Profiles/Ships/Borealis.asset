@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 98e1dc08-6fc9-4527-a704-8d85f0668fcc
   icon: {fileID: 0}
-  basePrice: 0
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: 1573024560784159267, guid: 8cbda229daf51dd4b912d5d631f848df, type: 3}
   material: {fileID: 2100000, guid: bdf6d26c859dc3640bff31faa52e44c6, type: 2}
@@ -30,10 +31,10 @@ MonoBehaviour:
   canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
-  structureClass: 3
+  structureClass: 6
   manufacturer: 12
-  description: Borealis class light corvette.
-  hull: 2000
+  description: Borealis class cruiser.
+  hull: 2500
   inventorySize: 0
   authority: 0
   maxEquipmentMeta: 4

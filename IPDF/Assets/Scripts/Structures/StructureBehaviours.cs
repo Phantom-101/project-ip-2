@@ -177,9 +177,6 @@ public class StructureBehaviours : MonoBehaviour {
         }
         // AI stuff
         if (AI != null) AI.Process (this, deltaTime);
-        foreach (Item item in inventory.inventory.Keys.ToArray ()) {
-            Debug.Log (item.name + " : " + inventory.inventory[item]);
-        }
     }
 
     public Quaternion RandomQuaternion (float maxRandom) {

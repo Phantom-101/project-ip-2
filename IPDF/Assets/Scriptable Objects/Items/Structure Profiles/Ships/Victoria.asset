@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: d02d7cad-0d7b-4aea-ab8e-18eff950d208
   icon: {fileID: 21300000, guid: b8a883e61b5f3b04bb2eb07a55f41c4f, type: 3}
-  basePrice: 230000
+  buyPrice: 0
+  sellPrice: 0
   size: 4
   mesh: {fileID: -7754318969949236687, guid: 2eaf89cd088669e4ea52900192510361, type: 3}
   material: {fileID: 2100000, guid: 62ad9e2812390aa488b0f260edf74180, type: 2}
@@ -33,7 +34,7 @@ MonoBehaviour:
   structureClass: 4
   manufacturer: 12
   description: Pirate ship, prusumed to be manufactured in a captured Delta Shipyard.
-  hull: 1500
+  hull: 1050
   inventorySize: 300
   authority: 0
   maxEquipmentMeta: 5

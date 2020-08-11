@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 34c7d228-68fe-4c16-895b-99b2ac13aaf2
   icon: {fileID: 0}
-  basePrice: 0
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: -6228955713468777133, guid: 4ec7f004f9bd06542849f01127c4b9b5, type: 3}
   material: {fileID: 2100000, guid: 8912cb428ef6b5043ba74543fd9230fe, type: 2}
@@ -30,10 +31,10 @@ MonoBehaviour:
   canFireAt: 1
   engagementRangeMultiplier: 0.75
   rangeChangeAngle: 45
-  structureClass: 4
+  structureClass: 6
   manufacturer: 12
   description: Heavy forward attack frigate.
-  hull: 2500
+  hull: 3200
   inventorySize: 120
   authority: 0
   maxEquipmentMeta: 6
