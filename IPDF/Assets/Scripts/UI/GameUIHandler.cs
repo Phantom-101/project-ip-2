@@ -162,6 +162,25 @@ public class GameUIHandler : MonoBehaviour {
     public void FastestTickCanvas () {
         if (!initialized) return;
         if (activeUI.Peek () == GameUIState.InSpace) {
+            // Resize target information
+            StructureBehaviours targetStructureBehaviour = source.targeted;
+            if (targetStructureBehaviour != null) {
+                targetName.text = targetStructureBehaviour.gameObject.name;
+                targetFaction.text = targetStructureBehaviour.faction.abbreviated;
+                targetInformationPanel.sizeDelta = new Vector2 (
+                    Mathf.Max (
+                        350,
+                        Mathf.Max (
+                            targetNameRectTransform.sizeDelta.x,
+                            Mathf.Max (
+                                targetFactionRectTransform.sizeDelta.x,
+                                targetDistanceRectTransform.sizeDelta.x
+                            )
+                        ) + 160
+                    ),
+                    135
+                );
+            }
             // Selectable UI
             List<StructureBehaviours> referenced = new List<StructureBehaviours> ();
             foreach (GameObject selectableBillboard in selectableBillboards.ToArray ()) {
@@ -326,19 +345,6 @@ public class GameUIHandler : MonoBehaviour {
             if (targetStructureBehaviour == null) targetInformationPanel.gameObject.SetActive (false);
             else {
                 targetInformationPanel.gameObject.SetActive (true);
-                targetInformationPanel.sizeDelta = new Vector2 (
-                    Mathf.Max (
-                        350,
-                        Mathf.Max (
-                            targetNameRectTransform.sizeDelta.x,
-                            Mathf.Max (
-                                targetFactionRectTransform.sizeDelta.x,
-                                targetDistanceRectTransform.sizeDelta.x
-                            )
-                        ) + 160
-                    ),
-                    135
-                );
                 targetHullUI.sprite = targetStructureBehaviour.profile.hullUI;
                 targetHullUI.color = Mathf.Floor ((targetStructureBehaviour.hullTimeSinceLastDamaged + flashOffset) / flashTime) % 2 == 1 && targetStructureBehaviour.hullTimeSinceLastDamaged < flashOffset + flashTime * 2 * flashes - flashTime ?
                     Color.white :
@@ -351,8 +357,14 @@ public class GameUIHandler : MonoBehaviour {
                                 shieldGradient.Evaluate (targetStructureBehaviour.shield.strengths[i] / targetStructureBehaviour.shield.shield.strength);
                     else for (int i = 0; i < 6; i++) targetShieldUI[i].color = shieldGradient.Evaluate (0);
                 } else for (int i = 0; i < 6; i++) targetShieldUI[i].color = shieldGradient.Evaluate (0);
-                targetName.text = targetStructureBehaviour.gameObject.name;
-                targetFaction.text = targetStructureBehaviour.faction.abbreviated;
+                float relations = factionsManager.GetRelations (targetStructureBehaviour.faction, source.faction);
+                if (relations > 0) {
+                    if (factionsManager.Ally (targetStructureBehaviour.faction, source.faction)) targetFaction.color = alliedFactionColor;
+                    else targetFaction.color = positiveFactionRelationsGradient.Evaluate (relations / factionsManager.GetAllyThreshold (targetStructureBehaviour.faction));
+                } else {
+                    if (factionsManager.Hostile (targetStructureBehaviour.faction, source.faction)) targetFaction.color = hostileFactionColor;
+                    else targetFaction.color = negativeFactionRelationsGradient.Evaluate (relations / factionsManager.GetHostileThreshold (targetStructureBehaviour.faction));
+                }
                 targetDistance.text = System.Math.Round (Vector3.Distance (source.transform.position, targetStructureBehaviour.transform.position), 2) + "m";
                 float rot = targetStructureBehaviour.GetSector (source.transform.position) * 60;
                 toSource.anchoredPosition = new Vector2 (Mathf.Sin (rot * Mathf.Deg2Rad) * 55, Mathf.Cos (rot * Mathf.Deg2Rad) * 55);

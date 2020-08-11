@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.VFX;
 using Essentials;
-using UnityEngine.UIElements;
-using System.Threading;
 
 public class StructureBehaviours : MonoBehaviour {
     [Header ("Profile")]
@@ -180,13 +177,16 @@ public class StructureBehaviours : MonoBehaviour {
         }
         // AI stuff
         if (AI != null) AI.Process (this, deltaTime);
+        foreach (Item item in inventory.inventory.Keys.ToArray ()) {
+            Debug.Log (item.name + " : " + inventory.inventory[item]);
+        }
     }
 
     public Quaternion RandomQuaternion (float maxRandom) {
         return Quaternion.Euler (
-            UnityEngine.Random.Range(-maxRandom, maxRandom),
-            UnityEngine.Random.Range(-maxRandom, maxRandom),
-            UnityEngine.Random.Range(-maxRandom, maxRandom)
+            Random.Range(-maxRandom, maxRandom),
+            Random.Range(-maxRandom, maxRandom),
+            Random.Range(-maxRandom, maxRandom)
         );
     }
 

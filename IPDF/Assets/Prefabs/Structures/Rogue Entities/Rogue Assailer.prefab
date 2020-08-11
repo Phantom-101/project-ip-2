@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7218308573696321715}
   - component: {fileID: 7218308573696321714}
   - component: {fileID: 4801963262657937283}
+  - component: {fileID: -2306315127804161773}
   m_Layer: 0
   m_Name: Rogue Assailer
   m_TagString: Untagged
@@ -65,11 +66,11 @@ MonoBehaviour:
     waypoints: []
   inventory:
     storage: {fileID: 0}
-    inventorySize: 0
+    inventorySize: 400
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -79,9 +80,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -91,9 +93,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -103,9 +106,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -115,9 +119,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -127,9 +132,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -139,9 +145,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -151,9 +158,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -163,10 +171,11 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
     online: 1
     strengths:
     - 800
@@ -178,33 +187,33 @@ MonoBehaviour:
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: 3fc78a44b2c40dc4c8979fc375876c6c, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: 3fc78a44b2c40dc4c8979fc375876c6c, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
     online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -266,3 +275,18 @@ MonoBehaviour:
     warThreshold: 0
     allyThreshold: 0
   range: 1000
+--- !u!114 &-2306315127804161773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7218308573696321713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 96643d9b5d71f4941bc75d7548a06330, type: 2}
+  counts: f4010000

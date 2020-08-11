@@ -14,8 +14,6 @@ public class KineticProjectile : Projectile {
     public override void Initialize () {
         if (initialized) return;
         base.Initialize ();
-        turret = handler.turret;
-        ammunition = handler.ammunition;
         mesh = Instantiate (ammunition.asset, transform) as GameObject;
         mesh.transform.localPosition = Vector3.zero;
     }

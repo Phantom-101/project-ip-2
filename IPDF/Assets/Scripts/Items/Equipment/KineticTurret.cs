@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.VFX;
-using Essentials;
 
 [CreateAssetMenu (fileName = "New Kinetic Turret", menuName = "Equipment/Turrets/Kinetic Turret")]
 public class KineticTurret : Turret {
@@ -18,6 +13,8 @@ public class KineticTurret : Turret {
         kineticProjectile.handler = caller;
         kineticProjectile.from = caller.equipper;
         kineticProjectile.to = caller.target.GetComponent<StructureBehaviours> ();
+        kineticProjectile.turret = caller.turret;
+        kineticProjectile.ammunition = caller.ammunition;
         kineticProjectile.Initialize ();
         kineticProjectile.Enable ();
     }
@@ -29,6 +26,7 @@ public class KineticTurret : Turret {
 
     public override void Activated (TurretHandler caller) {
         caller.storedEnergy = 0;
+        caller.equipper.inventory.RemoveItem (caller.ammunition, 1);
     }
 
     public override bool CanSustain (TurretHandler caller, GameObject target) {

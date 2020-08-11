@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Essentials;
+﻿using UnityEngine;
 
 public class StructureAI {
     public float lastUpdated;
@@ -36,7 +33,7 @@ public class StructureAI {
             float totalRange = 0;
             int effectiveTurrets = 0;
             foreach (TurretHandler turretHandler in structureBehaviours.turrets) {
-                if (turretHandler.activated) turretHandler.Deactivate ();
+                //if (turretHandler.activated && turretHandler.target != structureBehaviours.targeted) turretHandler.Deactivate ();
                 turretHandler.Activate (structureBehaviours.targeted.gameObject);
                 Turret turret = turretHandler.turret;
                 if (turret != null) {

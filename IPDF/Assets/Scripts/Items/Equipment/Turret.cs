@@ -126,7 +126,17 @@ public class TurretHandler : EquipmentHandler {
     public override void Process (float deltaTime) {
         if (turret == null) return;
         if (pooler == null) pooler = Pooler.GetInstance ();
-        if (ammunition != null && !turret.CanUseAmmunition (this, ammunition)) ammunition = null;
+        if (ammunition == null) {
+            if (turret is KineticTurret) {
+                foreach (Ammunition possible in (turret as KineticTurret).ammunition)
+                    if (equipper.inventory.GetItemCount (possible) > 0) {
+                        ammunition = possible;
+                        break;
+                    }
+            }
+        } else {
+            if (!turret.CanUseAmmunition (this, ammunition) || equipper.inventory.GetItemCount (ammunition) == 0) ammunition = null;
+        }
         if (activated) {
             if (!turret.CanRepeat (this, target) && !turret.CanSustain (this, target)) Deactivate ();
             else {
