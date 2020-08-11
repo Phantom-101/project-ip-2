@@ -30,6 +30,7 @@ public class KineticTurret : Turret {
     }
 
     public override bool CanSustain (TurretHandler caller, GameObject target) {
+        if (caller.ammunition == null || !CanUseAmmunition (caller, caller.ammunition) || caller.equipper.inventory.GetItemCount (caller.ammunition) == 0) return false;
         if (caller == null || !caller.equipper.CanShoot ()) return false;
         if (target == null) return false;
         StructureBehaviours targetBehaviours = target.GetComponent<StructureBehaviours> ();
