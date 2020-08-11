@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
@@ -10,6 +7,7 @@ public class Item : ScriptableObject {
     [Header ("Icon")]
     public Sprite icon;
     [Header ("Item Stats")]
-    public float basePrice;
+    public float buyPrice;
+    public float sellPrice;
     public float size;
 }
