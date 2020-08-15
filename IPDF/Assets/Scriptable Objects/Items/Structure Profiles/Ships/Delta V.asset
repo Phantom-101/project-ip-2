@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: ecd34ace-ae36-4b70-9515-2a271dbd6bad
   icon: {fileID: 21300000, guid: 0d972ddab9368ed419cbf171a8c21c1f, type: 3}
-  basePrice: 750000
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: -5495902117074765545, guid: d440065178c594d4caa7ae4721fa03fb, type: 3}
   material: {fileID: 2100000, guid: 8afea5536584a57449bba378a368f469, type: 2}
   apparentSize: 15
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
-  selectableBillboard: {fileID: 21300000, guid: ebccd475fd8195c459834e5b554c7b42,
+  selectableBillboard: {fileID: 21300000, guid: 2ff1b767f85d3ac4c846fd174412f16a,
     type: 3}
   pod: {fileID: 0}
   ambience: {fileID: 0}
