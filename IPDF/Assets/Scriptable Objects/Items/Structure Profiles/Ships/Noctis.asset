@@ -19,10 +19,10 @@ MonoBehaviour:
   size: 0
   mesh: {fileID: -5495902117074765545, guid: fcbf132e6d93f5b42b358d46e0c46545, type: 3}
   material: {fileID: 2100000, guid: b8e0740f03dcb2b4ca4de3be7e4be61f, type: 2}
-  apparentSize: 100
+  apparentSize: 50
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
-  selectableBillboard: {fileID: 21300000, guid: ebccd475fd8195c459834e5b554c7b42,
+  selectableBillboard: {fileID: 21300000, guid: 2ff1b767f85d3ac4c846fd174412f16a,
     type: 3}
   pod: {fileID: 0}
   ambience: {fileID: 0}
@@ -40,12 +40,12 @@ MonoBehaviour:
   maxEquipmentMeta: 5
   turretSlots: 6
   turretPositions:
-  - {x: 16, y: 7, z: -11}
-  - {x: -16, y: 7, z: -11}
-  - {x: 0, y: 7, z: 19}
-  - {x: 0, y: 7, z: 35}
-  - {x: 0, y: 13, z: -4}
-  - {x: 0, y: 13, z: -15}
+  - {x: 8, y: 3.5, z: -5.5}
+  - {x: -8, y: 3.5, z: -5.5}
+  - {x: 0, y: 3.5, z: 9.5}
+  - {x: 0, y: 3.5, z: 17.5}
+  - {x: 0, y: 6.5, z: -2}
+  - {x: 0, y: 6.5, z: -7.5}
   turretRotations:
   - {x: 0, y: 90, z: 0}
   - {x: 0, y: -90, z: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   drag: 0.5
   angularDrag: 2
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  decals: {fileID: 4869929264701010417, guid: b9ffde0a85c218c42b791b7ed67b221e, type: 3}
+  decals: {fileID: 6906278983511717657, guid: 807e7f9330832ad4c87e231b7f841708, type: 3}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: -1, z: 15}
   rotate: {x: 0, y: 90, z: 0}
