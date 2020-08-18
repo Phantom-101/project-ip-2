@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6c5f7085f172741bddfdf2671dae4f, type: 3}
-  m_Name: Default
+  m_Script: {fileID: 11500000, guid: 3e789e219c4b8d6489da3db5b266cd42, type: 3}
+  m_Name: Traffic
   m_EditorClassIdentifier: 
   music:
   - {fileID: 11400000, guid: ba54f0c7ac692df4d975c44230c9242e, type: 2}
-  priority: -100
+  - {fileID: 11400000, guid: 56627f7b165f75941a2f2f9a00781097, type: 2}
+  - {fileID: 11400000, guid: a244f6bb062351f46ba536a60ffdbeca, type: 2}
+  priority: -50
+  countThreshold: 10
+  distanceThreshold: 1000

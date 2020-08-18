@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flood
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 1338fa67daea7814c8d5b1dbce7f7ad7, type: 3}
-  volume: 0.5
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

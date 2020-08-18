@@ -10,6 +10,7 @@ public class MusicManager : MonoBehaviour {
     public List<MusicTrigger> queue;
     public MusicTrigger currentTrigger;
     public bool transition;
+    public float transitionFromVolume;
     [Header ("Components")]
     public StructuresManager structuresManager;
     public PlayerController playerController;
@@ -30,16 +31,17 @@ public class MusicManager : MonoBehaviour {
     }
 
     public void Tick (float deltaTime) {
-        if (structuresManager == null || playerController == null || audioSource == null) return;
+        if (structuresManager == null || playerController == null || audioSource == null) {
+            structuresManager = StructuresManager.GetInstance ();
+            playerController = PlayerController.GetInstance ();
+            audioSource = Camera.main.gameObject.GetComponent<AudioSource> ();
+            return;
+        }
         foreach (MusicTrigger trigger in triggers) {
             if (trigger.CanBeUsed (structuresManager, playerController.structureBehaviours)) {
                 if (!queue.Contains (trigger)) {
                     queue.Add (trigger);
                     queue.Sort ();
-                    if (queue[0] != currentTrigger) {
-                        currentTrigger = queue[0];
-                        transition = true;
-                    }
                 }
             } else {
                 if (queue.Contains (trigger)) {
@@ -47,8 +49,13 @@ public class MusicManager : MonoBehaviour {
                 }
             }
         }
+        if (queue[0] != currentTrigger) {
+            currentTrigger = queue[0];
+            transition = true;
+            transitionFromVolume = audioSource.volume;
+        }
         if (transition) {
-            if (audioSource.volume > 0) audioSource.volume -= deltaTime;
+            if (audioSource.volume > 0) audioSource.volume -= deltaTime * transitionFromVolume / 3;
             else {
                 audioSource.Stop ();
                 AudioAsset asset = currentTrigger.GetRandomMusic ();

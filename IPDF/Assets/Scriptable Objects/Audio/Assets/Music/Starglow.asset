@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Starglow
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: bbbc51e8a898abf4b84e26a485298c5a, type: 3}
-  volume: 0.5
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

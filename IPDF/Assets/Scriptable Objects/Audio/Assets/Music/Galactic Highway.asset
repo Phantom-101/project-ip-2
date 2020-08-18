@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Galactic Highway
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: aaa2b0c5bf7b18646a450981e2114128, type: 3}
-  volume: 0.2
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

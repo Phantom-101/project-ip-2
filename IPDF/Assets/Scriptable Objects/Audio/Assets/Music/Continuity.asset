@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Continuity
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: d96cacb466a7bfc409384e26ec36ed85, type: 3}
-  volume: 0.5
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

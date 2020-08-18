@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Serenity PH
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 5e74f649f32b8954c8f415a253bbe1af, type: 3}
-  volume: 0.5
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

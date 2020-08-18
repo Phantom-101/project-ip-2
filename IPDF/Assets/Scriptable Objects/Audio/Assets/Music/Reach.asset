@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Reach
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9d9cd16a2194be545a5a4e9d430d392a, type: 3}
-  volume: 0.5
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

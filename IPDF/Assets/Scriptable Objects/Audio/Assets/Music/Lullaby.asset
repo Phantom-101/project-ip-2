@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lullaby
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 8c9116015a5a45d4b89f18b02afac384, type: 3}
-  volume: 0.5
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0

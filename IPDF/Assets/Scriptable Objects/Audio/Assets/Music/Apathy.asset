@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Apathy
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 90afa8c2ab7bcfa49b5ebfe5df19738f, type: 3}
-  volume: 0.5
+  volume: 0.3
   spatialBlend: 0
   minDistance: 0
   maxDistance: 0
