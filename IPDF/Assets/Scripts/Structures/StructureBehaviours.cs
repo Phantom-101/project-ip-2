@@ -69,13 +69,12 @@ public class StructureBehaviours : MonoBehaviour {
         meshGameObject.transform.parent = transform;
         MeshFilter meshFilter = meshGameObject.AddComponent<MeshFilter> ();
         Renderer renderer = meshGameObject.AddComponent<MeshRenderer> ();
-        GameObject colliderGameObject = new GameObject ();
-        colliderGameObject.name = "Collider";
+        GameObject colliderGameObject = new GameObject {
+            name = "Collider"
+        };
         colliderGameObject.transform.parent = transform;
         MeshCollider meshCollider = colliderGameObject.AddComponent<MeshCollider> ();
-        meshCollider.sharedMesh = (profile.collisionMesh == null ? profile.mesh : profile.collisionMesh);
-        colliderGameObject.transform.localScale = (profile.collisionMesh == null ? Vector3.one : Vector3.one * profile.apparentSize);
-        meshCollider.convex = true;
+        meshCollider.sharedMesh = profile.collisionMesh == null ? profile.mesh : profile.collisionMesh;
         meshCollider.material = profile.physicMaterial;
         meshFilter.mesh = profile.mesh;
         renderer.material = profile.material;
@@ -106,7 +105,8 @@ public class StructureBehaviours : MonoBehaviour {
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.mass = profile.mass;
         rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
-        if (profile.structureClass == StructureClass.Station) rigidbody.isKinematic = true;
+        rigidbody.isKinematic = profile.structureClass == StructureClass.Station;
+        meshCollider.convex = profile.structureClass != StructureClass.Station;
         if (profile.decals != null) {
             GameObject decals = Instantiate (profile.decals) as GameObject;
             decals.transform.parent = transform;

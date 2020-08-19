@@ -22,7 +22,7 @@ MonoBehaviour:
   apparentSize: 50
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
-  selectableBillboard: {fileID: 21300000, guid: 2ff1b767f85d3ac4c846fd174412f16a,
+  selectableBillboard: {fileID: 21300000, guid: ebccd475fd8195c459834e5b554c7b42,
     type: 3}
   pod: {fileID: 0}
   ambience: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 6906278983511717657, guid: 807e7f9330832ad4c87e231b7f841708, type: 3}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
-  offset: {x: 0, y: -1, z: 15}
+  offset: {x: 0, y: -1, z: 5}
   rotate: {x: 0, y: 90, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}

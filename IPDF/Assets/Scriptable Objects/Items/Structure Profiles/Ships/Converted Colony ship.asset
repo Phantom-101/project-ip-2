@@ -22,7 +22,7 @@ MonoBehaviour:
   apparentSize: 25
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
-  selectableBillboard: {fileID: 21300000, guid: 2ff1b767f85d3ac4c846fd174412f16a,
+  selectableBillboard: {fileID: 21300000, guid: ebccd475fd8195c459834e5b554c7b42,
     type: 3}
   pod: {fileID: 0}
   ambience: {fileID: 0}

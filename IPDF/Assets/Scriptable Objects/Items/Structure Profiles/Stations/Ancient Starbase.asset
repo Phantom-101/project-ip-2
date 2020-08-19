@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: bf2f3147-0e50-488c-a7b6-d932064cd301
   icon: {fileID: 0}
-  basePrice: 0
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: 995598639654306925, guid: ece266a5b3a26d642a252450b835a970, type: 3}
   material: {fileID: 2100000, guid: 52c1a74757b29d8498553657f0d0ca88, type: 2}
@@ -50,7 +51,7 @@ MonoBehaviour:
   factories: []
   offeredEquipment: []
   repairCostMultiplier: 0
-  collisionMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  collisionMesh: {fileID: 0}
   mass: 1000
   drag: 1000
   angularDrag: 1000

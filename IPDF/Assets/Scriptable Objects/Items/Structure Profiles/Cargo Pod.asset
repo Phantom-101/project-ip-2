@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1f720eb1-8054-4b12-b24d-f8959689a970
   icon: {fileID: 21300000, guid: 2fe59c2fb91177b4da04f87449d3cc44, type: 3}
-  basePrice: 0
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   mesh: {fileID: 995598639654306925, guid: 8979a4d1e1ab4dd40abde726d9a8d843, type: 3}
   material: {fileID: -2310514774154243031, guid: 8979a4d1e1ab4dd40abde726d9a8d843,
