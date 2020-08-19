@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.04
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1933470773}
-  m_IndirectSpecularColor: {r: 0.05541812, g: 0.011183034, b: 0.0016358983, a: 0.04}
+  m_IndirectSpecularColor: {r: 0.012937668, g: 0.0031814536, b: 0.00019863297, a: 0.04}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16195,9 +16195,6 @@ Transform:
   - {fileID: 2047384823}
   - {fileID: 1099295940}
   - {fileID: 1551932584}
-<<<<<<< HEAD
-  - {fileID: 1205254469}
-=======
   - {fileID: 7218308574373969049}
   - {fileID: 290244898}
   - {fileID: 1947152835}
@@ -16208,7 +16205,6 @@ Transform:
   - {fileID: 1010388052}
   - {fileID: 1983395887}
   - {fileID: 822767324}
->>>>>>> 9e625627d444a1159fc91c16b06dc6eec0fc790f
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18909,81 +18905,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204527612}
   m_CullTransparentMesh: 0
---- !u!1001 &1205254468
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1033050176}
-    m_Modifications:
-    - target: {fileID: 7218308573696321713, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_Name
-      value: Rogue Assailer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -676
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 350
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c380808ef345d324ab680a0e9cde8337, type: 3}
---- !u!4 &1205254469 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7218308573696321741, guid: c380808ef345d324ab680a0e9cde8337,
-    type: 3}
-  m_PrefabInstance: {fileID: 1205254468}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1229430099
 GameObject:
   m_ObjectHideFlags: 0
@@ -20313,21 +20234,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggers:
+  - {fileID: 11400000, guid: b678cb8768cd01142928b732eccf8b87, type: 2}
   - {fileID: 11400000, guid: 8b996690ee089214da5367553b564185, type: 2}
   - {fileID: 11400000, guid: 25bf416dfcdac94449e7a45ab5ff194b, type: 2}
   - {fileID: 11400000, guid: 0ec3d63ee850f2c46a36ed240bdcbf53, type: 2}
   - {fileID: 11400000, guid: 45b1b2837dc85df468398ec0c0abb2c6, type: 2}
   - {fileID: 11400000, guid: e96ae4729286cb34f95da92fc7d6d714, type: 2}
+  - {fileID: 11400000, guid: 575eae171d9cad642a8bb970ea98367a, type: 2}
   - {fileID: 11400000, guid: 0fb2db898b9994a458b3db6a1c1f34e4, type: 2}
   - {fileID: 11400000, guid: 9f7daf03f2cd8fa43b0e9180fe012897, type: 2}
   - {fileID: 11400000, guid: b06b164f37ffc98478991b0722fbf72b, type: 2}
   - {fileID: 11400000, guid: 00dc07723182104489a4512296a1b20b, type: 2}
   - {fileID: 11400000, guid: 715c3a64f54adbd4087e3ff636d47ae1, type: 2}
-  - {fileID: 11400000, guid: b678cb8768cd01142928b732eccf8b87, type: 2}
-  - {fileID: 11400000, guid: 575eae171d9cad642a8bb970ea98367a, type: 2}
   queue: []
   currentTrigger: {fileID: 0}
   transition: 0
+  transitionFromVolume: 0
   structuresManager: {fileID: 0}
   playerController: {fileID: 0}
   audioSource: {fileID: 0}
@@ -37653,8 +37575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
 --- !u!114 &7218308574373969048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37920,4 +37840,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 9e625627d444a1159fc91c16b06dc6eec0fc790f
