@@ -2922,7 +2922,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 0
+  factionID: 67128964
   faction:
     name: 
     id: 0
@@ -3514,7 +3514,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -5049,7 +5049,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -6296,7 +6296,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 5
+  factionID: 0
   faction:
     name: 
     id: 0
@@ -11359,7 +11359,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -12278,7 +12278,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -14185,7 +14185,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 5
+  factionID: 0
   faction:
     name: 
     id: 0
@@ -15582,7 +15582,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 0
+  factionID: 67128964
   faction:
     name: 
     id: 0
@@ -15737,7 +15737,7 @@ GameObject:
   - component: {fileID: 1010388054}
   - component: {fileID: 1010388053}
   m_Layer: 0
-  m_Name: Stardust Maya (7)
+  m_Name: Stardust Gang Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15799,7 +15799,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -16832,7 +16832,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 4
+  factionID: 89542365
   faction:
     name: 
     id: 0
@@ -17154,7 +17154,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -20110,37 +20110,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factions:
   - name: Player
-    id: 0
+    id: 67128964
     abbreviated: Player
     wealth: 10000
     warThreshold: -1000
     allyThreshold: 1000
   - name: Crime Intervention
-    id: 1
+    id: 79695124
     abbreviated: CI
     wealth: 0
     warThreshold: -1000
     allyThreshold: 1000000
   - name: Rogue Entities
-    id: 2
+    id: 89100546
     abbreviated: Rogues
     wealth: 0
     warThreshold: 0
     allyThreshold: 5000
   - name: Stardust Mining
-    id: 3
+    id: 12344558
     abbreviated: SM
     wealth: 1000000
     warThreshold: -1000
     allyThreshold: 1000
   - name: Vera Galactic
-    id: 4
+    id: 89542365
     abbreviated: Vera
     wealth: 5000000
     warThreshold: -500
     allyThreshold: 1000
   - name: Unknown
-    id: 5
+    id: 0
     abbreviated: Unknown
     wealth: 0
     warThreshold: -1000000
@@ -23673,7 +23673,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 4
+  factionID: 89542365
   faction:
     name: 
     id: 0
@@ -25380,7 +25380,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -27843,7 +27843,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -29439,7 +29439,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -34635,7 +34635,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0
@@ -35422,7 +35422,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 4
+  factionID: 89542365
   faction:
     name: 
     id: 0
@@ -37287,7 +37287,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 4
+  factionID: 89542365
   faction:
     name: 
     id: 0
@@ -37451,7 +37451,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 4
+  factionID: 89542365
   faction:
     name: 
     id: 0
@@ -37593,7 +37593,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 3
+  factionID: 12344558
   faction:
     name: 
     id: 0

@@ -8,7 +8,7 @@ public class SectorOwnerTrigger : MusicTrigger {
         FactionsManager factionsManager = FactionsManager.GetInstance ();
         switch (targetOwnerState) {
             case SectorOwnerState.Ally:
-                if (factionsManager.Ally (player.faction, factionsManager.GetFaction (player.sector.controllerID))) return true;
+                if (player.faction.id != player.sector.controllerID && factionsManager.Ally (player.faction, factionsManager.GetFaction (player.sector.controllerID))) return true;
                 return false;
             case SectorOwnerState.Hostile:
                 if (factionsManager.Hostile (player.faction, factionsManager.GetFaction (player.sector.controllerID))) return true;
