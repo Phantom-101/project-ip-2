@@ -2899,7 +2899,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235251617}
   m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 134, y: -0, z: -214}
+  m_LocalPosition: {x: -898, y: -0, z: -4754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4039050}
@@ -20001,7 +20001,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9edaa33f0ec880e45a037549a9659a55, type: 2}
   - {fileID: 11400000, guid: 0c409524a9ece8d4e9edf21621c39ceb, type: 2}
   - {fileID: 11400000, guid: 02defc7dcb286b0489b334acd4449b92, type: 2}
-  - {fileID: 11400000, guid: 4a8a665b82db1b848abb967f70abcc5f, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 9c8d5b22ac1e1c940a819e15739b6a8c, type: 2}
   - {fileID: 11400000, guid: a82d371658b97a24fab26276bb8605d5, type: 2}
   - {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
@@ -20276,6 +20276,9 @@ MonoBehaviour:
       type: 3}
     pool: []
   explosionPool:
+    prefab: {fileID: 0}
+    pool: []
+  miningPulsePool:
     prefab: {fileID: 0}
     pool: []
 --- !u!1 &1342192272

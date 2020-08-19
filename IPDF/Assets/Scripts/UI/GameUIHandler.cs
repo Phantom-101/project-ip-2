@@ -536,8 +536,10 @@ public class GameUIHandler : MonoBehaviour {
                 itemIcon.sprite = selectedMarketItem.icon;
                 itemName.text = selectedMarketItem.name;
                 itemQuantity.text = stationStructureBehaviours.inventory.GetItemCount (selectedMarketItem).ToString ();
-                stationBuyPrice.text = ((long) stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
-                stationSellPrice.text = ((long) stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem)).ToString ();
+                float sellPrice = stationStructureBehaviours.profile.market.GetSellPrice (stationStructureBehaviours, selectedMarketItem);
+                float buyPrice = stationStructureBehaviours.profile.market.GetBuyPrice (stationStructureBehaviours, selectedMarketItem);
+                stationBuyPrice.text = sellPrice == -1 ? "Unavailable" : sellPrice.ToString ();
+                stationSellPrice.text = buyPrice == -1 ? "Unavailable" : buyPrice.ToString ();
             }
         } else marketPanel.SetActive (false);
         if (activeUI.Peek () == GameUIState.StationRepair) {

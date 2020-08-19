@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: ec1f084c-8d8f-40c5-81fd-c6f3601fef72
   icon: {fileID: 21300000, guid: 2fe59c2fb91177b4da04f87449d3cc44, type: 3}
-  basePrice: 180
+  buyPrice: 48
+  sellPrice: 45
   size: 0.3
