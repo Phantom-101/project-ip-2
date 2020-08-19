@@ -12216,7 +12216,7 @@ GameObject:
   - component: {fileID: 822767326}
   - component: {fileID: 822767325}
   m_Layer: 0
-  m_Name: Landing pad
+  m_Name: Landing Pad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
