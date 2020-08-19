@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 961f7743-9df1-4f4c-9d86-fe23dafe04fd
   icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
-  basePrice: 0
-  size: 0
+  buyPrice: 0
+  sellPrice: 0
+  size: 5
   meta: 1
   audio: {fileID: 11400000, guid: a9a03c68b40ffba48b66622c2809e870, type: 2}
   variant: V

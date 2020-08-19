@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Structure Profile", menuName = "Structures/Profile")]
 public class StructureProfile : Item {
@@ -74,6 +72,7 @@ public enum StructureClass {
     Battlecruiser,
     Battleship,
     Carrier,
+    Asteroid,
     Other
 }
 

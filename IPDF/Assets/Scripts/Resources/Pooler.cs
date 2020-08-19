@@ -9,6 +9,7 @@ public class Pooler : MonoBehaviour {
     public Pool pulsePool = new Pool ();
     public Pool kineticPool = new Pool ();
     public Pool explosionPool = new Pool ();
+    public Pool miningPulsePool = new Pool ();
 
     void Awake () {
         current = this;
