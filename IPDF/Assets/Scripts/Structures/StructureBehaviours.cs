@@ -63,8 +63,9 @@ public class StructureBehaviours : MonoBehaviour {
             audioSource.minDistance = ambience.minDistance;
             audioSource.maxDistance = ambience.maxDistance;
         }
-        GameObject meshGameObject = new GameObject ();
-        meshGameObject.name = "Mesh";
+        GameObject meshGameObject = new GameObject {
+            name = "Mesh"
+        };
         meshGameObject.transform.parent = transform;
         MeshFilter meshFilter = meshGameObject.AddComponent<MeshFilter> ();
         Renderer renderer = meshGameObject.AddComponent<MeshRenderer> ();
@@ -104,6 +105,7 @@ public class StructureBehaviours : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody> ();
         if (rigidbody == null) rigidbody = gameObject.AddComponent<Rigidbody> ();
         rigidbody.mass = profile.mass;
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         if (profile.structureClass == StructureClass.Station) rigidbody.isKinematic = true;
         if (profile.decals != null) {
             GameObject decals = Instantiate (profile.decals) as GameObject;

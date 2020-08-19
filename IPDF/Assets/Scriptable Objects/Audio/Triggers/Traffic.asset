@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56627f7b165f75941a2f2f9a00781097, type: 2}
   - {fileID: 11400000, guid: a244f6bb062351f46ba536a60ffdbeca, type: 2}
   priority: -50
-  countThreshold: 10
+  countThreshold: 5
   distanceThreshold: 1000
