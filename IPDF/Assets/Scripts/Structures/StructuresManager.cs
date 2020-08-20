@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Essentials;
 
 public class StructuresManager : MonoBehaviour {
     public static StructuresManager current;

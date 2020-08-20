@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CelestialObject : MonoBehaviour {
     public int celestialObjectID;
@@ -13,7 +11,8 @@ public class CelestialObject : MonoBehaviour {
     }
 
     public void Initialize () {
-        Instantiate (resourcesManager.celestialObjects[celestialObjectID], transform);
+        GameObject obj = Instantiate (resourcesManager.celestialObjects[celestialObjectID], transform);
+        obj.transform.parent = transform.parent;
         initialized = true;
     }
 }

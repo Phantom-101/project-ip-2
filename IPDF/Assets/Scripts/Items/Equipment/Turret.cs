@@ -199,8 +199,8 @@ public class TurretHandler : EquipmentHandler {
 
     public bool CanPress () {
         if (turret == null) return false;
-        if (equipper == null) return false;
-        if (!turret.CanInteract (this, equipper.targeted?.gameObject)) return false;
+        if (equipper == null || equipper.targeted == null) return false;
+        if (!turret.CanInteract (this, equipper.targeted.gameObject)) return false;
         return true;
     }
 

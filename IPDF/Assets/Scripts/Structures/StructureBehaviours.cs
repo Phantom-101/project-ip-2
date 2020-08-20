@@ -84,6 +84,7 @@ public class StructureBehaviours : MonoBehaviour {
         colliderGameObject.transform.localEulerAngles = (profile.collisionMesh == null ? profile.rotate : profile.colliderRotate);
         if (hull == 0 && !destroyed) hull = profile.hull;
         if (inventory == null) inventory = new InventoryHandler (null, profile.inventorySize);
+        inventory.inventorySize = profile.inventorySize;
         if (inventory.inventory == null) inventory.inventory = new Dictionary<Item, int> ();
         if (turrets.Count != profile.turretSlots) {
             turrets = new List<TurretHandler> ();
@@ -273,7 +274,7 @@ public class StructureBehaviours : MonoBehaviour {
     public bool DockerCanDock (StructureBehaviours docker) {
         if (Vector3.Distance (docker.transform.localPosition, transform.localPosition) > profile.dockingRange) return false;
         for (int i = 0; i < profile.dockingLocations.Length; i++)
-            if (System.String.IsNullOrEmpty (docked[i]) && profile.dockingSizes[i] >= docker.profile.apparentSize)
+            if (string.IsNullOrEmpty (docked[i]) && profile.dockingSizes[i] >= docker.profile.apparentSize)
                 return true;
         return false;
     }
@@ -293,17 +294,18 @@ public class StructureBehaviours : MonoBehaviour {
         Vector3[] vertices = profile.mesh.vertices;
         if (profile.explosion != null) {
             for (int i = 0; i < 5; i++) {
-                explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity) as GameObject;
+                explosion = Instantiate (profile.explosion, GetExplosionPosition (vertices), Quaternion.identity);
                 explosion.transform.localScale = Vector3.one * profile.apparentSize / 5;
                 yield return new WaitForSeconds (Random.Range (0.5f, 1));
             }
-            explosion = Instantiate (profile.explosion, transform.position, Quaternion.identity) as GameObject;
+            explosion = Instantiate (profile.explosion, transform.position, Quaternion.identity);
             explosion.transform.localScale = Vector3.one * profile.apparentSize;
         }
         foreach (Item item in inventory.inventory.Keys.ToArray ()) {
             if (inventory.GetItemCount (item) > 0) {
-                GameObject pod = Instantiate (profile.pod, transform.position, Quaternion.identity) as GameObject;
+                GameObject pod = Instantiate (profile.pod, transform.position, Quaternion.identity);
                 pod.transform.parent = transform.parent;
+                pod.GetComponent<StructureBehaviours> ().inventory = new InventoryHandler (new Dictionary<Item, int> (), 10000);
                 pod.GetComponent<StructureBehaviours> ().inventory.AddItem (item, inventory.inventory[item]);
                 pod.AddComponent<CargoPod> ();
             }
@@ -312,7 +314,7 @@ public class StructureBehaviours : MonoBehaviour {
             GameObject debris = Instantiate (profile.debris,
                 transform.position,
                 Quaternion.Euler (new Vector3 (Random.Range (-180, 180), Random.Range (-180, 180), Random.Range (-180, 180)))
-            ) as GameObject;
+            );
             debris.transform.localScale = Vector3.one * profile.apparentSize / 3;
         }
         Destroy (gameObject);

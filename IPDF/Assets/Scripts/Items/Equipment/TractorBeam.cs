@@ -78,16 +78,25 @@ public class TractorBeamHandler : EquipmentHandler {
         if (!online) storedEnergy = 0.0f;
     }
 
-    public void Interacted (GameObject activator, GameObject target) {
-        if (!activated) Activate (activator, target);
+    public void Interacted (GameObject target) {
+        if (!activated) Activate (target);
         else Deactivate ();
     }
 
-    public void Activate (GameObject activator, GameObject target) {
-        if (!online) return;
-        if (tractorBeam == null || storedEnergy < tractorBeam.activationThreshold) return;
+    public void Activate (GameObject target) {
+        if (!CanActivate (target)) return;
         activated = true;
         this.target = target;
+    }
+
+    public bool CanActivate (GameObject target) {
+        if (!online) return false;
+        if (tractorBeam == null || storedEnergy < tractorBeam.activationThreshold) return false;
+        if (target == null) return false;
+        if ((equipper.transform.position - target.transform.position).sqrMagnitude > tractorBeam.range * tractorBeam.range) return false;
+        float minDis = equipper.profile.apparentSize + target.GetComponent<StructureBehaviours> ().profile.apparentSize;
+        if ((equipper.transform.position - target.transform.position).sqrMagnitude <= minDis * minDis) return false;
+        return true;
     }
 
     public void Deactivate () {
@@ -101,9 +110,8 @@ public class TractorBeamHandler : EquipmentHandler {
             Deactivate ();
             return;
         }
-        float minSqrMagnitude = equipper.profile.apparentSize + target.GetComponent<StructureBehaviours> ().profile.apparentSize;
-        minSqrMagnitude *= minSqrMagnitude;
-        if ((equipper.transform.position - target.transform.position).sqrMagnitude <= minSqrMagnitude) Deactivate ();
+        float minDis = equipper.profile.apparentSize + target.GetComponent<StructureBehaviours> ().profile.apparentSize;
+        if ((equipper.transform.position - target.transform.position).sqrMagnitude <= minDis * minDis) Deactivate ();
         if (activated) {
             storedEnergy = MathUtils.Clamp (storedEnergy - tractorBeam.consumptionRate * deltaTime, 0.0f, tractorBeam.maxStoredEnergy);
             if (storedEnergy == 0.0f) Deactivate();

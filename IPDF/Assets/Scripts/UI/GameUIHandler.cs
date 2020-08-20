@@ -112,10 +112,9 @@ public class GameUIHandler : MonoBehaviour {
     public GameObject repairPanel;
     public Text hullRepairCostText;
     public Button hullRepairConfirmButton;
-    public Button hullRepairCancelButton;
     public Text shieldRechargeCostText;
     public Button shieldRechargeConfirmButton;
-    public Button shieldRechargeCancelButton;
+    public Button repairsExitButton;
     List<GameObject> saveItems = new List<GameObject> ();
     public GameObject death;
     public Button pauseButton;
@@ -154,7 +153,7 @@ public class GameUIHandler : MonoBehaviour {
         ButtonFunction (() => { RemoveOverlay (); foreach (GameObject go in saveItems.ToArray ()) { saveItems.Remove (go); Destroy (go); } }, saveExitButton);
         ButtonFunction (() => { RemoveOverlay (); RepairShipHull (); }, hullRepairConfirmButton);
         ButtonFunction (() => { RemoveOverlay (); RechargeShipShield (); }, shieldRechargeConfirmButton);
-        ButtonFunction (() => RemoveOverlay (), hullRepairCancelButton);
+        ButtonFunction (() => RemoveOverlay (), repairsExitButton);
         ButtonFunction (() => Time.timeScale = (Time.timeScale == 1 ? 0 : 1), pauseButton);
 
         source = playerController.structureBehaviours;
@@ -402,8 +401,8 @@ public class GameUIHandler : MonoBehaviour {
             tractorBeamButton.transform.GetChild (0).GetComponent<Image> ().sprite = referencedTractorBeam == null ? null : referencedTractorBeam.icon;
             tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<RectTransform> ().sizeDelta = new Vector2 (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy * 40, 5);
             tractorBeamButton.transform.GetChild (1).GetChild (0).GetComponent<Image> ().color = energyGradient.Evaluate (referencedTractorBeam == null ? 0 : source.tractorBeam.storedEnergy / referencedTractorBeam.maxStoredEnergy);
-            //tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
-            ButtonFunction (() => source.tractorBeam.Interacted (source.gameObject, source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
+            tractorBeamButton.GetComponent<Button> ().interactable = source.tractorBeam.CanActivate (source.targeted == null ? null : source.targeted.gameObject);
+            ButtonFunction (() => source.tractorBeam.Interacted (source.targeted == null ? null : source.targeted.gameObject), tractorBeamButton.GetComponent<Button> ());
             equipmentButtons[0] = tractorBeamButton;
             if (referencedTractorBeam != null) {
                 equipmentButtons[0].gameObject.SetActive (true);

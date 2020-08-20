@@ -11,16 +11,20 @@ public class CustomizableSpawner : MonoBehaviour {
 
     float timeElapsed;
 
-    void Update() {
-        if(timeElapsed < spawnInterval) timeElapsed += Time.deltaTime;
-        instantiated.RemoveAll(item => item == null);
-        if((max == -1 || instantiated.Count < max) && timeElapsed >= spawnInterval) {
-            GameObject go = Instantiate(prefabs[Random.Range(0, prefabs.Length - 1)], transform.position + new Vector3(
-                    Random.Range(-spawnRadius, spawnRadius),
-                    Random.Range(-spawnRadius, spawnRadius),
-                    Random.Range(-spawnRadius, spawnRadius)),
-                Quaternion.identity) as GameObject;
-            instantiated.Add(go);
+    void Update () {
+        if (timeElapsed < spawnInterval) timeElapsed += Time.deltaTime;
+        instantiated.RemoveAll (item => item == null);
+        if ((max == -1 || instantiated.Count < max) && timeElapsed >= spawnInterval) {
+            GameObject go = Instantiate (
+                prefabs[Random.Range (0, prefabs.Length - 1)],
+                transform.position + new Vector3 (
+                    Random.Range (-spawnRadius, spawnRadius),
+                    Random.Range (-spawnRadius, spawnRadius),
+                    Random.Range (-spawnRadius, spawnRadius)),
+                Quaternion.identity
+            );
+            go.transform.parent = transform.parent;
+            instantiated.Add (go);
             timeElapsed = 0.0f;
         }
     }

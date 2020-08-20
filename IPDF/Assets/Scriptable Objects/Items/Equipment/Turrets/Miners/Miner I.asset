@@ -27,4 +27,4 @@ MonoBehaviour:
   beamWidth: 0.2
   beamDuration: 0.2
   damage: 3
-  damageToAsteroidsMultiplier: 10
+  damageToAsteroidsMultiplier: 25
