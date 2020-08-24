@@ -12,12 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4e74c9ee67f964c9d7ac4b43ccd4fb, type: 3}
   m_Name: Domination
   m_EditorClassIdentifier: 
-  music:
-  - {fileID: 11400000, guid: ba54f0c7ac692df4d975c44230c9242e, type: 2}
-  - {fileID: 11400000, guid: 42cb721d45e84ae4496fa353e3468bf5, type: 2}
-  - {fileID: 11400000, guid: 56627f7b165f75941a2f2f9a00781097, type: 2}
-  - {fileID: 11400000, guid: 1d34ebcb3d2911f4e9c4d6eb19e0b2df, type: 2}
-  - {fileID: 11400000, guid: a244f6bb062351f46ba536a60ffdbeca, type: 2}
-  - {fileID: 11400000, guid: aad5aecc6a9916a4499f12b8ad13d721, type: 2}
+  music: []
   priority: -25
   targetOwnerState: 2

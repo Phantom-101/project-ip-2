@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6c5f7085f172741bddfdf2671dae4f, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  music:
-  - {fileID: 11400000, guid: ba54f0c7ac692df4d975c44230c9242e, type: 2}
+  music: []
   priority: -100

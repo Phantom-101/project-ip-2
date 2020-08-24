@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e789e219c4b8d6489da3db5b266cd42, type: 3}
   m_Name: Heavy Traffic
   m_EditorClassIdentifier: 
-  music:
-  - {fileID: 11400000, guid: ba54f0c7ac692df4d975c44230c9242e, type: 2}
-  - {fileID: 11400000, guid: 56627f7b165f75941a2f2f9a00781097, type: 2}
+  music: []
   priority: -49
   countThreshold: 15
   distanceThreshold: 1500

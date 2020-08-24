@@ -20205,19 +20205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb05205c71686846a5a1310c71387bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggers:
-  - {fileID: 11400000, guid: b678cb8768cd01142928b732eccf8b87, type: 2}
-  - {fileID: 11400000, guid: 8b996690ee089214da5367553b564185, type: 2}
-  - {fileID: 11400000, guid: 25bf416dfcdac94449e7a45ab5ff194b, type: 2}
-  - {fileID: 11400000, guid: 0ec3d63ee850f2c46a36ed240bdcbf53, type: 2}
-  - {fileID: 11400000, guid: 45b1b2837dc85df468398ec0c0abb2c6, type: 2}
-  - {fileID: 11400000, guid: e96ae4729286cb34f95da92fc7d6d714, type: 2}
-  - {fileID: 11400000, guid: 575eae171d9cad642a8bb970ea98367a, type: 2}
-  - {fileID: 11400000, guid: 0fb2db898b9994a458b3db6a1c1f34e4, type: 2}
-  - {fileID: 11400000, guid: 9f7daf03f2cd8fa43b0e9180fe012897, type: 2}
-  - {fileID: 11400000, guid: b06b164f37ffc98478991b0722fbf72b, type: 2}
-  - {fileID: 11400000, guid: 00dc07723182104489a4512296a1b20b, type: 2}
-  - {fileID: 11400000, guid: 715c3a64f54adbd4087e3ff636d47ae1, type: 2}
+  triggers: []
   queue: []
   currentTrigger: {fileID: 0}
   structuresManager: {fileID: 0}
@@ -36848,7 +36836,7 @@ PrefabInstance:
     - target: {fileID: 6251091991923055110, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
         type: 3}
       propertyPath: m_Name
-      value: Sparse Icy Asteroid Belt
+      value: Sparse Icy Asteroid Field
       objectReference: {fileID: 0}
     - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
         type: 3}

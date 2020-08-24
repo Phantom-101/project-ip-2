@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9206b76abd2f2cf40ab87cbde4dab175, type: 3}
   m_Name: Large Combat
   m_EditorClassIdentifier: 
-  music:
-  - {fileID: 11400000, guid: 42cb721d45e84ae4496fa353e3468bf5, type: 2}
-  - {fileID: 11400000, guid: 124843265bcb0454bada3b0ab8974cc0, type: 2}
-  - {fileID: 11400000, guid: a244f6bb062351f46ba536a60ffdbeca, type: 2}
-  - {fileID: 11400000, guid: aad5aecc6a9916a4499f12b8ad13d721, type: 2}
+  music: []
   priority: 2
   minSize: 76
   maxSize: 250
