@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -71,6 +70,7 @@ public class SectorSaveData : BaseSaveData {
 [Serializable]
 public class CelestialObjectSaveData : BaseSaveData {
     public int celestialObjectID;
+    public int sectorId;
 }
 
 [Serializable]
@@ -115,12 +115,12 @@ public class SavesHandler : MonoBehaviour {
     }
 
     public void Save () {
-        System.DateTime epochStart = new System.DateTime (1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
-        int curTime = (int) (System.DateTime.UtcNow - epochStart).TotalSeconds;
+        DateTime epochStart = new DateTime (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        int curTime = (int) (DateTime.UtcNow - epochStart).TotalSeconds;
         string nowString = curTime.ToString ();
-        UniverseSaveData universe = new UniverseSaveData ();
-
-        universe.saveName = universeName;
+        UniverseSaveData universe = new UniverseSaveData {
+            saveName = universeName
+        };
 
         // Save sectors
         Sector[] sectors = FindObjectsOfType<Sector> ();
@@ -197,8 +197,10 @@ public class SavesHandler : MonoBehaviour {
 
         CelestialObject[] celestialObjects = FindObjectsOfType<CelestialObject> ();
         foreach (CelestialObject celestialObject in celestialObjects) {
-            CelestialObjectSaveData data = new CelestialObjectSaveData ();
-            data.name = celestialObject.gameObject.name;
+            CelestialObjectSaveData data = new CelestialObjectSaveData {
+                name = celestialObject.gameObject.name,
+                sectorId = celestialObject.transform.parent.GetComponent<Sector> ().sectorData.id
+            };
             Transform transform = celestialObject.gameObject.transform;
             data.position = new float[] { transform.localPosition.x, transform.localPosition.y, transform.localPosition.z };
             data.rotation = new float[] { transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z };
@@ -223,8 +225,9 @@ public class SavesHandler : MonoBehaviour {
 
         List<Sector> sectors = new List<Sector> ();
         foreach (SectorSaveData data in universe.sectors) {
-            GameObject instantiated = new GameObject ();
-            instantiated.name = data.name;
+            GameObject instantiated = new GameObject {
+                name = data.name
+            };
             instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
             instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
             instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);
@@ -314,8 +317,16 @@ public class SavesHandler : MonoBehaviour {
             factionsManager.relations.Add (universe.relations[i].key, universe.relations[i].value);
 
         foreach (CelestialObjectSaveData data in universe.celestialObjects) {
-            GameObject instantiated = new GameObject ("Celestial Object");
-            instantiated.name = data.name;
+            GameObject instantiated = new GameObject () {
+                name = data.name
+            };
+            Sector sector = null;
+            foreach (Sector s in sectors)
+                if (s.sectorData.id == data.sectorId) {
+                    sector = s;
+                    break;
+                }
+            instantiated.transform.parent = sector.transform;
             instantiated.transform.localPosition = new Vector3 (data.position[0], data.position[1], data.position[2]);
             instantiated.transform.localEulerAngles = new Vector3 (data.rotation[0], data.rotation[1], data.rotation[2]);
             instantiated.transform.localScale = new Vector3 (data.scale[0], data.scale[1], data.scale[2]);

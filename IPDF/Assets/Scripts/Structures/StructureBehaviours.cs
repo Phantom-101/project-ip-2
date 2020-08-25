@@ -108,6 +108,7 @@ public class StructureBehaviours : MonoBehaviour {
         rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         //rigidbody.isKinematic = profile.structureClass == StructureClass.Station;
         //meshCollider.convex = profile.structureClass != StructureClass.Station;
+        meshCollider.convex = true;
         if (profile.decals != null) {
             GameObject decals = Instantiate (profile.decals) as GameObject;
             decals.transform.parent = transform;

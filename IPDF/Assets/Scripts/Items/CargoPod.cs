@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CargoPod : MonoBehaviour {
     public StructureBehaviours structure;
-    public float collectionRange = 25.0f;
     public StructuresManager structuresManager;
 
     void Awake () {
@@ -14,11 +13,11 @@ public class CargoPod : MonoBehaviour {
     void Update () {
         if (structure == null || !structure.initialized || structuresManager == null) return;
         gameObject.name = structure.inventory.inventory.Keys.ToArray ()[0].name + " (" + structure.inventory.GetItemCount (structure.inventory.inventory.Keys.ToArray ()[0]) + ")";
-        foreach (StructureBehaviours structureBehaviours in structuresManager.structures) {
-            if (structureBehaviours != structure) {
+        foreach (StructureBehaviours structureBehaviours in structuresManager.structures.ToArray ()) {
+            if (structureBehaviours != null && structureBehaviours != structure) {
                 if (structureBehaviours.tractorBeam != null && structureBehaviours.tractorBeam.activated) {
                     if (structureBehaviours.tractorBeam.target == gameObject) {
-                        if ((structureBehaviours.transform.position - transform.position).sqrMagnitude <= collectionRange * collectionRange) {
+                        if ((structureBehaviours.transform.position - transform.position).sqrMagnitude <= (structureBehaviours.profile.apparentSize * 2) * (structureBehaviours.profile.apparentSize * 2)) {
                             structureBehaviours.tractorBeam.activated = false;
                             Item transferredItem = structure.inventory.inventory.Keys.ToArray ()[0];
                             int canTransferAmount = structureBehaviours.inventory.RoomFor (transferredItem);

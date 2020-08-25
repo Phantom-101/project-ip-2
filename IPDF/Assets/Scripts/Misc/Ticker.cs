@@ -17,6 +17,7 @@ public class Ticker : MonoBehaviour {
     public float lastFastestTicked = 0;
     public float fastestCurTime = 0;
     public float fastestDeltaTime = 0;
+    public bool started = false;
 
     void Awake () {
         current = this;

@@ -54,7 +54,7 @@ MonoBehaviour:
   mass: 2500
   drag: 0.5
   angularDrag: 2
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   debris: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}

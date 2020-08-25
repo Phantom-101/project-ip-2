@@ -30,6 +30,7 @@ public class MusicManager : MonoBehaviour {
     }
 
     public void Tick (float deltaTime) {
+        if (triggers.Length == 0) return;
         if (structuresManager == null || playerController == null || audioSource == null) {
             structuresManager = StructuresManager.GetInstance ();
             playerController = PlayerController.GetInstance ();
