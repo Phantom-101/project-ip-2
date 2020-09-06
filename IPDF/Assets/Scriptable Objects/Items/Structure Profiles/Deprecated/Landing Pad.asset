@@ -57,7 +57,7 @@ MonoBehaviour:
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
   decals: {fileID: 0}
   debris: {fileID: 0}
-  offset: {x: 0, y: 0, z: -20}
+  offset: {x: 0, y: -23, z: -20}
   rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}
