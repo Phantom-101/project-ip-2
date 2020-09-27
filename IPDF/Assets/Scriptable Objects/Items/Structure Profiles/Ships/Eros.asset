@@ -17,8 +17,8 @@ MonoBehaviour:
   buyPrice: 0
   sellPrice: 0
   size: 0
-  mesh: {fileID: 4711208715938537054, guid: b9a6df060ce18af48ae020174aad4003, type: 3}
-  material: {fileID: 2100000, guid: 04abeab4e2c3161418de61f1d515e98a, type: 2}
+  mesh: {fileID: -5495902117074765545, guid: f346df0e24b0fb84db40e20f6de6cebf, type: 3}
+  material: {fileID: 2100000, guid: 363c46976165f474daced4e753bfa0da, type: 2}
   apparentSize: 10
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
@@ -71,6 +71,6 @@ MonoBehaviour:
   decals: {fileID: 0}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: 0, z: 0}
-  rotate: {x: 0, y: -90, z: 0}
+  rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}

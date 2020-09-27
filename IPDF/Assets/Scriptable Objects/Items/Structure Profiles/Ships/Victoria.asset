@@ -17,8 +17,8 @@ MonoBehaviour:
   buyPrice: 0
   sellPrice: 0
   size: 4
-  mesh: {fileID: -7754318969949236687, guid: 2eaf89cd088669e4ea52900192510361, type: 3}
-  material: {fileID: 2100000, guid: 62ad9e2812390aa488b0f260edf74180, type: 2}
+  mesh: {fileID: -7754318969949236687, guid: 9199651fe57d52146ac04f787724ae8c, type: 3}
+  material: {fileID: 2100000, guid: c2c558ec795cb4d499155fecfa8f6c04, type: 2}
   apparentSize: 30
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
