@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Miner II
   m_EditorClassIdentifier: 
   id: 5c82110a-b814-4229-acde-f8e6c7a2dedc
-  icon: {fileID: 21300000, guid: fdd29952a8956144b9e3e9b124186e4e, type: 3}
+  icon: {fileID: 21300000, guid: b124ca417654b554fb74c9b73947499e, type: 3}
   buyPrice: 0
   sellPrice: 0
   size: 10
   meta: 2
-  audio: {fileID: 11400000, guid: a9a03c68b40ffba48b66622c2809e870, type: 2}
+  audio: {fileID: 11400000, guid: 8eb5cada76b600644a312cbfdc1bc90e, type: 2}
   variant: MII
   maxStoredEnergy: 200
   rechargeRate: 40
   range: 275
-  asset: {fileID: 7127249040003235709, guid: ed45c5725fb9fcc428b39e8c894ef129, type: 3}
+  asset: {fileID: 3939797602936038092, guid: e232f26bb30b8fd48b919eaab4fc9f7d, type: 3}
   beamWidth: 0.4
   beamDuration: 0.4
   damage: 4

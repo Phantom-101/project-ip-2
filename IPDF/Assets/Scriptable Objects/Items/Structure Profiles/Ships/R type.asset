@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef5707a88317f4485a4cd51eb35de6, type: 3}
+  m_Name: R type
+  m_EditorClassIdentifier: 
+  id: 124844ab-80f3-40c2-8d23-4424faeb9c4b
+  icon: {fileID: 21300000, guid: 3ba520fbc39bf4e42bcc0968236d13c8, type: 3}
+  buyPrice: 0
+  sellPrice: 0
+  size: 0
+  mesh: {fileID: -5495902117074765545, guid: 2c36b997a09fd9a408d8b9dd096c2007, type: 3}
+  material: {fileID: 2100000, guid: 191b1b3329e229e438c67502237f6a23, type: 2}
+  apparentSize: 40
+  explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
+    type: 3}
+  selectableBillboard: {fileID: 21300000, guid: eadb68b4fd7d66948aebe99f426215ce,
+    type: 3}
+  pod: {fileID: 0}
+  ambience: {fileID: 0}
+  hullUI: {fileID: 21300000, guid: 2fb0e6be0409d594b9148127e9e7eaf7, type: 3}
+  enforceHeight: 1
+  canFireAt: 1
+  engagementRangeMultiplier: 0.75
+  rangeChangeAngle: 45
+  structureClass: 1
+  manufacturer: 2
+  description: 
+  hull: 12000
+  inventorySize: 200
+  authority: 0
+  maxEquipmentMeta: 4
+  turretSlots: 3
+  turretPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretRotations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  turretAngles:
+  - 180
+  - 180
+  - 180
+  electronicsCapable: 0
+  dockingLocations: []
+  dockingSizes: []
+  dockingRotations: []
+  dockingRange: 0
+  market: {fileID: 11400000, guid: 7c3cd1068bd7c144ea392644a71d0baa, type: 2}
+  factories: []
+  offeredEquipment: []
+  repairCostMultiplier: 0
+  collisionMesh: {fileID: 0}
+  mass: 25
+  drag: 0.5
+  angularDrag: 2
+  physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
+  decals: {fileID: 1630306394353637298, guid: bf94bc081b81bb34e928bb884e813098, type: 3}
+  debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  rotate: {x: 0, y: 90, z: 0}
+  colliderOffset: {x: 0, y: 0, z: 0}
+  colliderRotate: {x: 0, y: 0, z: 0}

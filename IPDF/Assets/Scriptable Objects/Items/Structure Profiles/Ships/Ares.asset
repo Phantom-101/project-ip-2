@@ -17,8 +17,8 @@ MonoBehaviour:
   buyPrice: 0
   sellPrice: 0
   size: 0
-  mesh: {fileID: -5495902117074765545, guid: 13f68f7b450973e4aaf439944778811c, type: 3}
-  material: {fileID: 2100000, guid: 5bcedcb7f36dbef449f59a371081b289, type: 2}
+  mesh: {fileID: 995598639654306925, guid: 925bf5b87ee379749980c3da0443567f, type: 3}
+  material: {fileID: 2100000, guid: 52831a613f884f942a0dd4ff1e571a20, type: 2}
   apparentSize: 8
   explosion: {fileID: 4761334245213814950, guid: 307d90270e6e7804481dcfba7b16ba36,
     type: 3}
@@ -26,7 +26,7 @@ MonoBehaviour:
     type: 3}
   pod: {fileID: 0}
   ambience: {fileID: 0}
-  hullUI: {fileID: 21300000, guid: 6405f5dc9b74e8b458c9b59ee0f9b787, type: 3}
+  hullUI: {fileID: 21300000, guid: da4f4d0a36bc52e4c93d50463f5bc6f2, type: 3}
   enforceHeight: 1
   canFireAt: 1
   engagementRangeMultiplier: 0.75
@@ -68,6 +68,6 @@ MonoBehaviour:
   decals: {fileID: 0}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: 0, z: 0}
-  rotate: {x: 0, y: 90, z: 0}
+  rotate: {x: 0, y: 0, z: 0}
   colliderOffset: {x: 0, y: 0, z: 0}
   colliderRotate: {x: 0, y: 0, z: 0}
