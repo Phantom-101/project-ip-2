@@ -17,8 +17,8 @@ MonoBehaviour:
   buyPrice: 0
   sellPrice: 0
   size: 0
-  mesh: {fileID: 4370537360113272507, guid: f61e240bddf43a648bf3629c66f5b515, type: 3}
-  material: {fileID: 2100000, guid: 97bc6ab965316174284d4c4c9eb91ce8, type: 2}
+  mesh: {fileID: 8213300507281005567, guid: 0755f1ffdb6a3b240a29bdf05b391a04, type: 3}
+  material: {fileID: 2100000, guid: 553a3bc8235946348a5adb4a320126e3, type: 2}
   apparentSize: 750
   explosion: {fileID: 9111597190299259239, guid: b64bc85a85143f24f8865c05fa51b85b,
     type: 3}
@@ -26,7 +26,7 @@ MonoBehaviour:
     type: 3}
   pod: {fileID: 0}
   ambience: {fileID: 0}
-  hullUI: {fileID: 21300000, guid: 037f0c7f98a408d4c9887cf1d44c158c, type: 3}
+  hullUI: {fileID: 21300000, guid: 4ee5f8aec9075af42b642a770813631e, type: 3}
   enforceHeight: 1
   canFireAt: 1
   engagementRangeMultiplier: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   drag: 1000
   angularDrag: 1000
   physicMaterial: {fileID: 13400000, guid: 5171d617e55148041bebbd1071446b1e, type: 2}
-  decals: {fileID: 2057204892864582552, guid: 893902a3031b8d0489869305606985d7, type: 3}
+  decals: {fileID: 0}
   debris: {fileID: 5985709510266466331, guid: de4ff7cf0e6fb604ab42d73bfb7e92de, type: 3}
   offset: {x: 0, y: -15, z: 0}
   rotate: {x: 0, y: 0, z: 0}
