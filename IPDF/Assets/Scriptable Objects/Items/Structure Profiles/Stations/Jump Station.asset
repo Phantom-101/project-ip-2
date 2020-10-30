@@ -17,21 +17,22 @@ MonoBehaviour:
   buyPrice: 0
   sellPrice: 0
   size: 0
-  mesh: {fileID: 2534964839176971238, guid: 4694a5228ece3cd4faf4e304e23bdbca, type: 3}
-  material: {fileID: 2100000, guid: fb395ca6ea2f8fa4993b85a4d7fcd7e1, type: 2}
+  mesh: {fileID: 4370537360113272507, guid: e9464e6f941e9984d8d15ab0a0ea57b8, type: 3}
+  material: {fileID: -2310514774154243031, guid: e9464e6f941e9984d8d15ab0a0ea57b8,
+    type: 3}
   apparentSize: 100
   explosion: {fileID: 0}
   selectableBillboard: {fileID: 21300000, guid: eadb68b4fd7d66948aebe99f426215ce,
     type: 3}
   pod: {fileID: 0}
   ambience: {fileID: 11400000, guid: 8f94f2bef6491404abd55c7aa89f9921, type: 2}
-  hullUI: {fileID: 21300000, guid: 54f48a7237845e14cbeeb13502985f88, type: 3}
+  hullUI: {fileID: 21300000, guid: 65f169e66f248ea4ba8e535807bb9107, type: 3}
   enforceHeight: 1
   canFireAt: 0
   engagementRangeMultiplier: 0
   rangeChangeAngle: 0
   structureClass: 0
-  manufacturer: 8
+  manufacturer: 12
   description: A portal through which another sector of space can be found.
   hull: 50000
   inventorySize: 0
