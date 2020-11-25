@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: bc7daffc-99d9-4eb9-8eb7-363b5aec9048
   icon: {fileID: 21300000, guid: 84c63ade47ba32549b5b9403e12a3e73, type: 3}
-  basePrice: 0
+  buyPrice: 0
+  sellPrice: 0
   size: 0
   meta: 0
   forwardPower: 0
-  turnPower: 20
+  turnPower: 250

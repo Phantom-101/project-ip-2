@@ -22,7 +22,7 @@ MonoBehaviour:
   variant: II
   maxStoredEnergy: 200
   rechargeRate: 40
-  range: 550
+  range: 750
   asset: {fileID: 7127249040003235709, guid: ed45c5725fb9fcc428b39e8c894ef129, type: 3}
   beamWidth: 0.4
   beamDuration: 0.4

@@ -22,7 +22,7 @@ MonoBehaviour:
   variant: II
   maxStoredEnergy: 25
   rechargeRate: 30
-  range: 350
+  range: 400
   repeating: 1
   power: 600
   ammunition:

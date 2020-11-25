@@ -22,7 +22,7 @@ MonoBehaviour:
   variant: V
   maxStoredEnergy: 40
   rechargeRate: 60
-  range: 500
+  range: 700
   repeating: 1
   power: 900
   ammunition:

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1133445780160036786
+--- !u!1 &8730564311083946545
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1133445780160036787}
-  - component: {fileID: 1133445780160036790}
-  - component: {fileID: 1133445780160036789}
-  - component: {fileID: 1133445780160036791}
-  - component: {fileID: -4397180308313624857}
+  - component: {fileID: 8730564311083946573}
+  - component: {fileID: 8730564311083946572}
+  - component: {fileID: 8730564311083946547}
+  - component: {fileID: 8730564311083946546}
   m_Layer: 0
-  m_Name: Small Icy Asteroid
+  m_Name: CI Officer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1133445780160036787
+--- !u!4 &8730564311083946573
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133445780160036786}
+  m_GameObject: {fileID: 8730564311083946545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,25 +33,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1133445780160036790
+--- !u!114 &8730564311083946572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133445780160036786}
+  m_GameObject: {fileID: 8730564311083946545}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 5037776cb9cfc0944849e53943ca462e, type: 2}
+  profile: {fileID: 11400000, guid: 04452abe126a43e4b8eea2d03f560f6e, type: 2}
   id: 
   hull: 0
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 0
+  factionID: 79695124
   faction:
     name: 
     id: 0
@@ -72,7 +71,13 @@ MonoBehaviour:
     mountedID: 
     shield: {fileID: 0}
     online: 0
-    strengths: []
+    strengths:
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
@@ -119,51 +124,27 @@ MonoBehaviour:
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
   navigationManager: {fileID: 0}
---- !u!114 &1133445780160036789
+--- !u!114 &8730564311083946547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133445780160036786}
+  m_GameObject: {fileID: 8730564311083946545}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1133445780160036791
+--- !u!114 &8730564311083946546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133445780160036786}
+  m_GameObject: {fileID: 8730564311083946545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: 7eb16c7b8fbc4e243be94690f8028648, type: 2}
-  counts: e8030000
---- !u!114 &-4397180308313624857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133445780160036786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bee69b4b67b8654e8b0871f38ba4d52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  factionID: 0
-  faction:
-    name: 
-    id: 0
-    abbreviated: 
-    wealth: 0
-    warThreshold: 0
-    allyThreshold: 0
-  range: 500

@@ -52,7 +52,7 @@ MonoBehaviour:
   hullTimeSinceLastDamaged: 0
   destroyed: 0
   cloaked: 0
-  factionID: 2
+  factionID: 89100546
   faction:
     name: 
     id: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
     inventorySize: 0
   turrets:
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -79,9 +79,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -91,9 +92,10 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   - equipper: {fileID: 0}
-    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
     mountedID: 
+    turret: {fileID: 11400000, guid: f3d01f9375d73ac46a6c9cb1e13c0988, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -103,10 +105,11 @@ MonoBehaviour:
     activated: 0
     projectile: {fileID: 0}
     storedEnergy: 0
+    pooler: {fileID: 0}
   shield:
     equipper: {fileID: 0}
-    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
     mountedID: 
+    shield: {fileID: 11400000, guid: 747b352d22b386647b0d65520a81b5dd, type: 2}
     online: 1
     strengths:
     - 10000
@@ -118,33 +121,33 @@ MonoBehaviour:
     shieldTimesSinceLastDamaged: []
   capacitor:
     equipper: {fileID: 0}
-    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
     mountedID: 
+    capacitor: {fileID: 11400000, guid: c2bba5e8823428548baa69aa4942f234, type: 2}
     storedEnergy: 0
   generator:
     equipper: {fileID: 0}
-    generator: {fileID: 11400000, guid: 617e74926984aff4cb3bd1e6e160a78f, type: 2}
     mountedID: 
+    generator: {fileID: 11400000, guid: 617e74926984aff4cb3bd1e6e160a78f, type: 2}
     online: 1
   engine:
     equipper: {fileID: 0}
-    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
     mountedID: 
+    engine: {fileID: 11400000, guid: c82192e89db18c84e818b8e44ef336e0, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
   electronics:
     equipper: {fileID: 0}
-    electronics: {fileID: 0}
     mountedID: 
+    electronics: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
     timeSinceToggled: 0
   tractorBeam:
     equipper: {fileID: 0}
-    tractorBeam: {fileID: 0}
     mountedID: 
+    tractorBeam: {fileID: 0}
     online: 0
     activated: 0
     storedEnergy: 0
@@ -197,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bee69b4b67b8654e8b0871f38ba4d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  factionID: 2
+  factionID: 89100546
   faction:
     name: 
     id: 0
@@ -205,4 +208,4 @@ MonoBehaviour:
     wealth: 0
     warThreshold: 0
     allyThreshold: 0
-  range: 1000
+  range: 5000
