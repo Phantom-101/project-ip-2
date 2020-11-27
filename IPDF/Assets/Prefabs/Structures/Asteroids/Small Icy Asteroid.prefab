@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1133445780160036790}
   - component: {fileID: 1133445780160036789}
   - component: {fileID: 1133445780160036791}
-  - component: {fileID: -4397180308313624857}
   m_Layer: 0
   m_Name: Small Icy Asteroid
   m_TagString: Untagged
@@ -111,6 +110,7 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
+  trader: 0
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
@@ -146,24 +146,3 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 7eb16c7b8fbc4e243be94690f8028648, type: 2}
   counts: e8030000
---- !u!114 &-4397180308313624857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133445780160036786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bee69b4b67b8654e8b0871f38ba4d52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  factionID: 0
-  faction:
-    name: 
-    id: 0
-    abbreviated: 
-    wealth: 0
-    warThreshold: 0
-    allyThreshold: 0
-  range: 500

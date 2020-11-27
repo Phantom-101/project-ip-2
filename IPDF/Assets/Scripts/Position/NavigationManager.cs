@@ -42,10 +42,14 @@ public class NavigationManager : MonoBehaviour {
         List<List<Sector>> results = new List<List<Sector>> ();
         foreach (Sector adjacent in GetAdjacentSectors (current))
             results.Add (GetJumps (adjacent, to, visited, chain));
+        List<Sector> jumps = null;
+        int shortest = int.MaxValue;
         foreach (List<Sector> result in results)
-            if (result != null)
-                return result;
-        return null;
+            if (result != null && result.Count < shortest) {
+                jumps = result;
+                shortest = result.Count;
+            }
+        return jumps;
     }
 
     public List<Sector> GetAdjacentSectors (Sector sector) {

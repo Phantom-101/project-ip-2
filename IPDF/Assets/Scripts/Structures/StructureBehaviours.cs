@@ -37,6 +37,7 @@ public class StructureBehaviours : MonoBehaviour {
     public float dampening = 1;
     [Header ("AI")]
     public StructureAI AI;
+    public bool trader;
     [Header ("Misc")]
     public StructureBehaviours targeted;
     public GameObject billboard;
@@ -133,8 +134,10 @@ public class StructureBehaviours : MonoBehaviour {
             factories[i].factory = profile.factories[i];
         if (targeted != null && !targeted.CanBeTargeted ()) targeted = null;
         if (playerController.structureBehaviours != this)
-            if (AI == null)
-                AI = new StructureAI ();
+            if (AI == null) {
+                if (trader) AI = new TraderAI ();
+                else AI = new StructureAI ();
+            }
         // Position and physics stuff
         if (profile.enforceHeight) {
             transform.position = new Vector3 (transform.position.x, 0.0f, transform.position.z);

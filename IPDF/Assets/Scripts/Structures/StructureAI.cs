@@ -11,10 +11,15 @@ public class StructureAI {
     }
 
     public virtual void Process (StructureBehaviours structureBehaviours, float deltaTime) {
+        HandleRouting (structureBehaviours, deltaTime);
         lastUpdated += deltaTime;
         if (lastUpdated < delay) return;
         lastUpdated = 0;
         delay = Random.Range (1, 2.5f);
+        HandleCombat (structureBehaviours, deltaTime);
+    }
+
+    protected void HandleCombat (StructureBehaviours structureBehaviours, float deltaTime) {
         if (structureBehaviours.targeted == null || Vector3.Distance (structureBehaviours.transform.position, structureBehaviours.targeted.transform.position) > optimalRange) {
             float leastWeight = float.MaxValue;
             foreach (StructureBehaviours structure in structureBehaviours.sector.inSector) {
@@ -38,7 +43,7 @@ public class StructureAI {
                 Turret turret = turretHandler.turret;
                 if (turret != null) {
                     totalRange += turret.range;
-                    effectiveTurrets ++;
+                    effectiveTurrets++;
                 }
             }
             if (structureBehaviours.route == null) {
@@ -70,6 +75,9 @@ public class StructureAI {
                 structureBehaviours.engine.turnSetting = 0;
             }
         }
+    }
+
+    protected void HandleRouting (StructureBehaviours structureBehaviours, float deltaTime) {
         if (structureBehaviours.route != null)
             if (structureBehaviours.route.waypoints != null) {
                 if (structureBehaviours.route.waypoints.Count == 0)
