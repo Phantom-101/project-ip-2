@@ -125,6 +125,246 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1426027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426028}
+  - component: {fileID: 1426031}
+  - component: {fileID: 1426030}
+  - component: {fileID: 1426029}
+  m_Layer: 0
+  m_Name: Trader (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426027}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 149, y: -0, z: -232}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1967141522}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1426029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1426030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1426031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &4039049
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +396,11 @@ Transform:
   - {fileID: 935539178}
   - {fileID: 27985594}
   - {fileID: 1138611057}
+  - {fileID: 377340149}
+  - {fileID: 555839921}
+  - {fileID: 1358237140}
+  - {fileID: 939236237}
+  - {fileID: 709049202}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1138,6 +1383,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46434551}
   m_CullTransparentMesh: 0
+--- !u!1 &50159028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 50159029}
+  - component: {fileID: 50159032}
+  - component: {fileID: 50159031}
+  - component: {fileID: 50159030}
+  m_Layer: 0
+  m_Name: Trader (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &50159029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50159028}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 222.1, y: 0, z: -104.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1967141522}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &50159030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50159028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &50159031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50159028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &50159032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50159028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &57272080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,6 +2142,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87435665}
   m_CullTransparentMesh: 0
+--- !u!1 &88788119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88788120}
+  - component: {fileID: 88788123}
+  - component: {fileID: 88788122}
+  - component: {fileID: 88788121}
+  m_Layer: 0
+  m_Name: Trader (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88788120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88788119}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 103, y: -0, z: 377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1381682214}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &88788121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88788119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &88788122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88788119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &88788123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88788119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &92136088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +2578,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104534248}
   m_CullTransparentMesh: 0
+--- !u!1 &105138182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105138183}
+  - component: {fileID: 105138187}
+  - component: {fileID: 105138186}
+  - component: {fileID: 105138185}
+  - component: {fileID: 105138184}
+  m_Layer: 0
+  m_Name: Refinery (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &105138183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105138182}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1668554486}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &105138184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105138182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &105138185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105138182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &105138186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105138182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &105138187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105138182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &124224215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +3626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 603022658}
+  - {fileID: 1317322890}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3442,7 +4334,7 @@ MonoBehaviour:
   engine:
     equipper: {fileID: 0}
     mountedID: 
-    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
@@ -3773,7 +4665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &251461139
 MonoBehaviour:
@@ -5079,6 +5971,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345264175}
   m_CullTransparentMesh: 0
+--- !u!1 &347830001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 347830002}
+  - component: {fileID: 347830005}
+  - component: {fileID: 347830004}
+  - component: {fileID: 347830003}
+  m_Layer: 0
+  m_Name: Trader (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &347830002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347830001}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 1561, y: -0, z: 417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &347830003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347830001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &347830004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347830001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &347830005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347830001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &359583921
 GameObject:
   m_ObjectHideFlags: 0
@@ -5154,6 +6286,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359583921}
   m_CullTransparentMesh: 0
+--- !u!1 &367101724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367101725}
+  - component: {fileID: 367101729}
+  - component: {fileID: 367101728}
+  - component: {fileID: 367101727}
+  - component: {fileID: 367101726}
+  m_Layer: 0
+  m_Name: Importer (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &367101725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367101724}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 498, y: 0, z: 484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1757325922}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &367101726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: 6400000064000000
+--- !u!114 &367101727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &367101728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &367101729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 929d3713aa8d29145a4ceafe48b32594, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &375734784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,12 +6569,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377340148}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -750, y: 0, z: -202}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 474, y: -0, z: 135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1033050176}
-  m_RootOrder: 2
+  m_Father: {fileID: 4039050}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &377340150
 MonoBehaviour:
@@ -5291,9 +6589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: 73c6df0778b2a424a99d14755582e0c6, type: 2}
-  - {fileID: 11400000, guid: 35876c885c53a754db1e1a27faa0bd39, type: 2}
-  counts: 6400000064000000
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
 --- !u!114 &377340151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5487,6 +6785,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383881286}
   m_CullTransparentMesh: 0
+--- !u!1 &386532852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386532853}
+  - component: {fileID: 386532857}
+  - component: {fileID: 386532856}
+  - component: {fileID: 386532855}
+  - component: {fileID: 386532854}
+  m_Layer: 0
+  m_Name: Refinery (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &386532853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386532852}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 592, y: 0, z: -1887}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793351838}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &386532854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386532852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &386532855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386532852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &386532856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386532852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &386532857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386532852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &387750466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5977,6 +7441,246 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &412849843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412849844}
+  - component: {fileID: 412849847}
+  - component: {fileID: 412849846}
+  - component: {fileID: 412849845}
+  m_Layer: 0
+  m_Name: Trader (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412849844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412849843}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 1087, y: -0, z: 922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &412849845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412849843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &412849846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412849843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &412849847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412849843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &415125335
 GameObject:
   m_ObjectHideFlags: 0
@@ -6313,7 +8017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &431661542
 MonoBehaviour:
@@ -7700,7 +9404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &487446900
 MonoBehaviour:
@@ -8765,6 +10469,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543098687}
   m_CullTransparentMesh: 0
+--- !u!1 &555839920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555839921}
+  - component: {fileID: 555839925}
+  - component: {fileID: 555839924}
+  - component: {fileID: 555839923}
+  - component: {fileID: 555839922}
+  m_Layer: 0
+  m_Name: Importer (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &555839921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555839920}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -137, y: -0, z: -401}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4039050}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &555839922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555839920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: 6400000064000000
+--- !u!114 &555839923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555839920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &555839924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555839920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &555839925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555839920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 929d3713aa8d29145a4ceafe48b32594, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &565952715
 GameObject:
   m_ObjectHideFlags: 0
@@ -9849,7 +11719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &628184553 stripped
 Transform:
@@ -12147,6 +14017,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704867767}
   m_CullTransparentMesh: 0
+--- !u!1 &709049201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709049202}
+  - component: {fileID: 709049205}
+  - component: {fileID: 709049204}
+  - component: {fileID: 709049203}
+  m_Layer: 0
+  m_Name: Trader (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &709049202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709049201}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 17.4, y: -0, z: 1168.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4039050}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &709049203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709049201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &709049204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709049201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &709049205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709049201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &714788658
 GameObject:
   m_ObjectHideFlags: 0
@@ -12281,6 +14391,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714788658}
   m_CullTransparentMesh: 0
+--- !u!1 &719790916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719790917}
+  - component: {fileID: 719790921}
+  - component: {fileID: 719790920}
+  - component: {fileID: 719790919}
+  - component: {fileID: 719790918}
+  m_Layer: 0
+  m_Name: Refinery (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &719790917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719790916}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 3535, y: 0, z: 472}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1967141522}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &719790918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719790916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &719790919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719790916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &719790920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719790916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &719790921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719790916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &729409832
 GameObject:
   m_ObjectHideFlags: 0
@@ -12413,6 +14689,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729409832}
   m_CullTransparentMesh: 0
+--- !u!1 &730022169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 730022170}
+  - component: {fileID: 730022173}
+  - component: {fileID: 730022172}
+  - component: {fileID: 730022171}
+  m_Layer: 0
+  m_Name: Trader (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &730022170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730022169}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 236.9, y: 0, z: -42.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1967141522}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &730022171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730022169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &730022172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730022169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &730022173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730022169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &761931640
 GameObject:
   m_ObjectHideFlags: 0
@@ -12492,6 +15008,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761931640}
   m_CullTransparentMesh: 0
+--- !u!1 &782112596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782112597}
+  - component: {fileID: 782112600}
+  - component: {fileID: 782112599}
+  - component: {fileID: 782112598}
+  m_Layer: 0
+  m_Name: Trader (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &782112597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782112596}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 317.6, y: 0, z: -104.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1967141522}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &782112598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782112596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &782112599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782112596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &782112600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782112596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &789878587
 GameObject:
   m_ObjectHideFlags: 0
@@ -14086,6 +16842,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899828172}
   m_CullTransparentMesh: 0
+--- !u!1 &902836935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902836936}
+  - component: {fileID: 902836940}
+  - component: {fileID: 902836939}
+  - component: {fileID: 902836938}
+  - component: {fileID: 902836937}
+  m_Layer: 0
+  m_Name: Importer (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &902836936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902836935}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1757325922}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &902836937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902836935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: 6400000064000000
+--- !u!114 &902836938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902836935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &902836939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902836935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &902836940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902836935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 929d3713aa8d29145a4ceafe48b32594, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &903731814
 GameObject:
   m_ObjectHideFlags: 0
@@ -14652,7 +17574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &920839553
 MonoBehaviour:
@@ -15429,6 +18351,246 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &939236236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939236237}
+  - component: {fileID: 939236240}
+  - component: {fileID: 939236239}
+  - component: {fileID: 939236238}
+  m_Layer: 0
+  m_Name: Trader (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &939236237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939236236}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 67, y: -0, z: 1170}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4039050}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &939236238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939236236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &939236239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939236236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &939236240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939236236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &940265559
 GameObject:
   m_ObjectHideFlags: 0
@@ -15858,6 +19020,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953363670}
   m_CullTransparentMesh: 0
+--- !u!1 &957344614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 957344615}
+  - component: {fileID: 957344619}
+  - component: {fileID: 957344618}
+  - component: {fileID: 957344617}
+  - component: {fileID: 957344616}
+  m_Layer: 0
+  m_Name: Refinery (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &957344615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957344614}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -36, y: 0, z: -936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793351838}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &957344616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957344614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &957344617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957344614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &957344618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957344614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &957344619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957344614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &957694595
 GameObject:
   m_ObjectHideFlags: 0
@@ -16246,6 +19574,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958312776}
   m_CullTransparentMesh: 0
+--- !u!1 &958989408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 958989409}
+  - component: {fileID: 958989412}
+  - component: {fileID: 958989411}
+  - component: {fileID: 958989410}
+  m_Layer: 0
+  m_Name: Trader (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &958989409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958989408}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 157.3, y: -0, z: -3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1967141522}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &958989410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958989408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &958989411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958989408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &958989412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958989408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &965523371
 GameObject:
   m_ObjectHideFlags: 0
@@ -17094,7 +20662,6 @@ Transform:
   m_Children:
   - {fileID: 235251621}
   - {fileID: 628184553}
-  - {fileID: 377340149}
   - {fileID: 1345345546}
   - {fileID: 920839552}
   - {fileID: 487446899}
@@ -17102,6 +20669,9 @@ Transform:
   - {fileID: 627026576}
   - {fileID: 1192578070}
   - {fileID: 251461138}
+  - {fileID: 1181874778}
+  - {fileID: 412849844}
+  - {fileID: 347830002}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18015,6 +21585,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117563861}
   m_CullTransparentMesh: 0
+--- !u!1 &1120585869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120585870}
+  - component: {fileID: 1120585873}
+  - component: {fileID: 1120585872}
+  - component: {fileID: 1120585871}
+  m_Layer: 0
+  m_Name: Trader (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1120585870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120585869}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 24.9, y: -0, z: 543.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1381682214}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1120585871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120585869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1120585872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120585869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1120585873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120585869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1132895840
 GameObject:
   m_ObjectHideFlags: 0
@@ -19275,6 +23085,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172246202}
   m_CullTransparentMesh: 0
+--- !u!1 &1181874777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1181874778}
+  - component: {fileID: 1181874781}
+  - component: {fileID: 1181874780}
+  - component: {fileID: 1181874779}
+  m_Layer: 0
+  m_Name: Trader (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1181874778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181874777}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 497, y: 0, z: 1220}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1181874779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181874777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1181874780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181874777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1181874781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181874777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1184226287
 GameObject:
   m_ObjectHideFlags: 0
@@ -19722,7 +23772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202315428
 GameObject:
@@ -20082,6 +24132,172 @@ MonoBehaviour:
     mountedID: 
     tractorBeam: {fileID: 0}
     online: 0
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
+--- !u!1 &1224198901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1224198902}
+  - component: {fileID: 1224198906}
+  - component: {fileID: 1224198905}
+  - component: {fileID: 1224198904}
+  - component: {fileID: 1224198903}
+  m_Layer: 0
+  m_Name: Refinery (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1224198902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224198901}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 450, y: 0, z: -118}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793351838}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1224198903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224198901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &1224198904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224198901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1224198905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224198901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1224198906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224198901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
     activated: 0
     storedEnergy: 0
     target: {fileID: 0}
@@ -21373,6 +25589,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307594094}
   m_CullTransparentMesh: 0
+--- !u!1 &1317322889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317322890}
+  - component: {fileID: 1317322894}
+  - component: {fileID: 1317322893}
+  - component: {fileID: 1317322892}
+  - component: {fileID: 1317322891}
+  m_Layer: 0
+  m_Name: Refinery (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1317322890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317322889}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 474, y: 0, z: 60}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 180405583}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1317322891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317322889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &1317322892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317322889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1317322893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317322889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1317322894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317322889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1317781128
 GameObject:
   m_ObjectHideFlags: 0
@@ -22177,7 +26559,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1033050176}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1345345547
 MonoBehaviour:
@@ -22445,6 +26827,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357708419}
   m_CullTransparentMesh: 0
+--- !u!1 &1358237139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1358237140}
+  - component: {fileID: 1358237143}
+  - component: {fileID: 1358237142}
+  - component: {fileID: 1358237141}
+  m_Layer: 0
+  m_Name: Trader (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1358237140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358237139}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 67, y: -0, z: 134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4039050}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1358237141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358237139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1358237142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358237139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1358237143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358237139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1368256218
 GameObject:
   m_ObjectHideFlags: 0
@@ -22646,6 +27268,11 @@ Transform:
   - {fileID: 124224220}
   - {fileID: 1256586090}
   - {fileID: 1841713250}
+  - {fileID: 2088530975}
+  - {fileID: 1864667763}
+  - {fileID: 88788120}
+  - {fileID: 1120585870}
+  - {fileID: 1445552819}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22879,6 +27506,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429510601}
   m_CullTransparentMesh: 0
+--- !u!1 &1445552818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1445552819}
+  - component: {fileID: 1445552822}
+  - component: {fileID: 1445552821}
+  - component: {fileID: 1445552820}
+  m_Layer: 0
+  m_Name: Trader (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1445552819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445552818}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 458, y: 0, z: 554}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1381682214}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1445552820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445552818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1445552821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445552818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1445552822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445552818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1445789437
 GameObject:
   m_ObjectHideFlags: 0
@@ -27556,6 +32423,7 @@ Transform:
   m_Children:
   - {fileID: 1560474173}
   - {fileID: 1213787511}
+  - {fileID: 105138183}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29259,6 +34127,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737825967}
   m_CullTransparentMesh: 0
+--- !u!1 &1740707509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1740707510}
+  - component: {fileID: 1740707514}
+  - component: {fileID: 1740707513}
+  - component: {fileID: 1740707512}
+  - component: {fileID: 1740707511}
+  m_Layer: 0
+  m_Name: Refinery (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1740707510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740707509}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 1144, y: 0, z: -1686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793351838}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1740707511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740707509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &1740707512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740707509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1740707513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740707509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1740707514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740707509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &1752301018
 GameObject:
   m_ObjectHideFlags: 0
@@ -29577,6 +34611,8 @@ Transform:
   m_Children:
   - {fileID: 931379284}
   - {fileID: 1808153017}
+  - {fileID: 902836936}
+  - {fileID: 367101725}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30076,6 +35112,11 @@ Transform:
   m_Children:
   - {fileID: 1730708983}
   - {fileID: 651370807}
+  - {fileID: 2036023748}
+  - {fileID: 1224198902}
+  - {fileID: 957344615}
+  - {fileID: 386532853}
+  - {fileID: 1740707510}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30736,6 +35777,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863242512}
   m_CullTransparentMesh: 0
+--- !u!1 &1864667762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864667763}
+  - component: {fileID: 1864667766}
+  - component: {fileID: 1864667765}
+  - component: {fileID: 1864667764}
+  m_Layer: 0
+  m_Name: Trader (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1864667763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864667762}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 118, y: 0, z: 231}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1381682214}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1864667764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864667762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1864667765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864667762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1864667766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864667762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1001 &1865307905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31460,10 +36741,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967141520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50000, y: 0, z: 50000}
+  m_LocalPosition: {x: 25000, y: 0, z: 50000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1936403644}
+  - {fileID: 2019906967}
+  - {fileID: 719790917}
+  - {fileID: 50159029}
+  - {fileID: 730022170}
+  - {fileID: 782112597}
+  - {fileID: 1426028}
+  - {fileID: 958989409}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36542,6 +41830,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017741829}
   m_CullTransparentMesh: 0
+--- !u!1 &2019906966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019906967}
+  - component: {fileID: 2019906971}
+  - component: {fileID: 2019906970}
+  - component: {fileID: 2019906969}
+  - component: {fileID: 2019906968}
+  m_Layer: 0
+  m_Name: Refinery (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2019906967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019906966}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1967141522}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2019906968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019906966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &2019906969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019906966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2019906970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019906966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2019906971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019906966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &2024216038
 GameObject:
   m_ObjectHideFlags: 0
@@ -36621,6 +42075,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024216038}
   m_CullTransparentMesh: 0
+--- !u!1 &2036023747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036023748}
+  - component: {fileID: 2036023752}
+  - component: {fileID: 2036023751}
+  - component: {fileID: 2036023750}
+  - component: {fileID: 2036023749}
+  m_Layer: 0
+  m_Name: Refinery (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036023748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036023747}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 936, y: 0, z: -576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793351838}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2036023749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036023747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee9212597c3f124a9e10ceca3819e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: c86a9aa7ce20a0f48879b50e9ffa9812, type: 2}
+  - {fileID: 11400000, guid: 2e5337c6d189e184aba2e9180b338912, type: 2}
+  counts: e8030000e8030000
+--- !u!114 &2036023750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036023747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2036023751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036023747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2036023752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036023747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e686573e6cdb8e1419dd5cbd904a0b1b, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets: []
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: 343e044c6acd3ba4e87e418478c8bba1, type: 2}
+    online: 1
+    strengths:
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    - 1000000
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: ea744174cefc18f47933596abe7f3dde, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: 8d5e73d685a9420409af5209859a94b0, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 0cba0779f919add42bee93521100c856, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 0
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &2041867871
 GameObject:
   m_ObjectHideFlags: 0
@@ -37182,6 +42802,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070087365}
   m_CullTransparentMesh: 0
+--- !u!1 &2088530974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088530975}
+  - component: {fileID: 2088530978}
+  - component: {fileID: 2088530977}
+  - component: {fileID: 2088530976}
+  m_Layer: 0
+  m_Name: Trader (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088530975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088530974}
+  m_LocalRotation: {x: -0.000000014901161, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 200}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1381682214}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2088530976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088530974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2088530977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088530974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2088530978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088530974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  trader: 1
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
 --- !u!1 &2097901957
 GameObject:
   m_ObjectHideFlags: 0
