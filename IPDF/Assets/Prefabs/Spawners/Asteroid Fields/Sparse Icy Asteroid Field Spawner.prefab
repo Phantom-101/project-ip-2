@@ -47,5 +47,5 @@ MonoBehaviour:
   - {fileID: 1133445780160036786, guid: fe047de6307e56c4db732788a714fba0, type: 3}
   instantiated: []
   max: 25
-  spawnInterval: 30
+  spawnInterval: 15
   spawnRadius: 250

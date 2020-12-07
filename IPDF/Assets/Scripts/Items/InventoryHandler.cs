@@ -7,9 +7,9 @@ using Essentials;
 [Serializable]
 public class InventoryHandler {
     public StructureBehaviours storage;
-    public Dictionary<Item, int> inventory;
+    [SerializeReference] public Dictionary<Item, int> inventory;
     public float inventorySize;
-    
+
     public InventoryHandler (Dictionary<Item, int> inventory = null, float inventorySize = 0.0f) {
         if (inventory == null) this.inventory = new Dictionary<Item, int> ();
         else this.inventory = inventory;
@@ -39,7 +39,7 @@ public class InventoryHandler {
     }
 
     public bool AddItem (Item item, int amount) {
-        float sizeRequired = amount * item.size;
+        float sizeRequired = item.size * amount;
         float availableSize = GetAvailableSize ();
         if (sizeRequired <= availableSize) {
             SetValue (item, GetItemCount (item) + amount);
@@ -63,8 +63,7 @@ public class InventoryHandler {
     }
 
     public void SetValue (Item item, int target) {
-        if (inventory.ContainsKey (item)) inventory[item] = target;
-        else inventory.Add (item, target);
+        inventory[item] = target;
     }
 
     public int RoomFor (Item item) {

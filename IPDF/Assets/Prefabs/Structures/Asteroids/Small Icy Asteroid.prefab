@@ -110,6 +110,8 @@ MonoBehaviour:
   factories: []
   rigidbody: {fileID: 0}
   dampening: 1
+  AI:
+    id: 0
   trader: 0
   targeted: {fileID: 0}
   billboard: {fileID: 0}
@@ -119,6 +121,10 @@ MonoBehaviour:
   factionsManager: {fileID: 0}
   playerController: {fileID: 0}
   navigationManager: {fileID: 0}
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }
 --- !u!114 &1133445780160036789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,4 +151,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 11400000, guid: 7eb16c7b8fbc4e243be94690f8028648, type: 2}
-  counts: e8030000
+  counts: 64000000

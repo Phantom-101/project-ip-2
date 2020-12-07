@@ -36,12 +36,13 @@ public class StructureBehaviours : MonoBehaviour {
     public new Rigidbody rigidbody;
     public float dampening = 1;
     [Header ("AI")]
-    public StructureAI AI;
-    public bool trader;
+    [SerializeReference] public StructureAI AI;
+    public int startAIState;
     [Header ("Misc")]
     public StructureBehaviours targeted;
     public GameObject billboard;
     public bool initialized;
+    public bool printInventory;
     [Header ("Component Cache")]
     public AudioSource audioSource;
     public StructuresManager structuresManager;
@@ -93,7 +94,7 @@ public class StructureBehaviours : MonoBehaviour {
                 turrets.Add (new TurretHandler ());
         }
         for (int i = 0; i < profile.turretSlots; i++)
-            if (turrets[i] == null) 
+            if (turrets[i] == null)
                 turrets.Add (new TurretHandler ());
         if (shield == null) shield = new ShieldHandler ();
         if (capacitor == null) capacitor = new CapacitorHandler ();
@@ -123,6 +124,18 @@ public class StructureBehaviours : MonoBehaviour {
         initialized = true;
     }
 
+    void Update () {
+        if (printInventory) {
+            string msg = "";
+            msg += inventory.GetStoredSize () + "/" + inventory.inventorySize + " (" + inventory.GetAvailableSize () + ")\n";
+            foreach (Item item in inventory.inventory.Keys.ToArray ()) {
+                msg += item.name + " " + inventory.GetItemCount (item) + "\n";
+            }
+            Debug.Log (msg);
+            printInventory = false;
+        }
+    }
+
     public void Tick (float deltaTime) {
         if (!initialized) return;
         if (factories.Count != profile.factories.Length) {
@@ -135,8 +148,9 @@ public class StructureBehaviours : MonoBehaviour {
         if (targeted != null && !targeted.CanBeTargeted ()) targeted = null;
         if (playerController.structureBehaviours != this)
             if (AI == null) {
-                if (trader) AI = new TraderAI ();
-                else AI = new StructureAI ();
+                if (startAIState == 0) AI = new StructureAI ();
+                else if (startAIState == 1) AI = new TraderAI ();
+                else if (startAIState == 2) AI = new MinerAI ();
             }
         // Position and physics stuff
         if (profile.enforceHeight) {
@@ -188,9 +202,9 @@ public class StructureBehaviours : MonoBehaviour {
 
     public Quaternion RandomQuaternion (float maxRandom) {
         return Quaternion.Euler (
-            Random.Range(-maxRandom, maxRandom),
-            Random.Range(-maxRandom, maxRandom),
-            Random.Range(-maxRandom, maxRandom)
+            Random.Range (-maxRandom, maxRandom),
+            Random.Range (-maxRandom, maxRandom),
+            Random.Range (-maxRandom, maxRandom)
         );
     }
 
@@ -219,14 +233,15 @@ public class StructureBehaviours : MonoBehaviour {
         if (hull == 0.0f && !destroyed) {
             destroyed = true;
             structuresManager.RemoveStructure (this);
+            sector.inSector.Remove (this);
             StartCoroutine (DestructionSequence ());
         }
     }
 
     public int GetSector (Vector3 to) {
         float angle = to - (transform.localPosition + transform.rotation * profile.offset) == Vector3.zero ? 0.0f : Quaternion.Angle (transform.rotation, Quaternion.LookRotation (to - (transform.localPosition + transform.rotation * profile.offset)));
-        Vector3 perp = Vector3.Cross(transform.forward, to - (transform.localPosition + profile.offset));
-        float leftRight = Vector3.Dot(perp, transform.up);
+        Vector3 perp = Vector3.Cross (transform.forward, to - (transform.localPosition + profile.offset));
+        float leftRight = Vector3.Dot (perp, transform.up);
         angle *= leftRight >= 0.0f ? 1.0f : -1.0f;
         int directionalSector = 0;
         if (angle >= -150.0f && angle < -90.0f) directionalSector = 4;
@@ -276,7 +291,8 @@ public class StructureBehaviours : MonoBehaviour {
     }
 
     public bool DockerCanDock (StructureBehaviours docker) {
-        if (Vector3.Distance (docker.transform.localPosition, transform.localPosition) > profile.dockingRange) return false;
+        if (sector != docker.sector) return false;
+        if ((docker.transform.localPosition - transform.localPosition).sqrMagnitude > profile.dockingRange * profile.dockingRange) return false;
         for (int i = 0; i < profile.dockingLocations.Length; i++)
             if (string.IsNullOrEmpty (docked[i]) && profile.dockingSizes[i] >= docker.profile.apparentSize)
                 return true;
@@ -323,7 +339,7 @@ public class StructureBehaviours : MonoBehaviour {
         }
         Destroy (gameObject);
     }
-    
+
     Vector3 GetExplosionPosition (Vector3[] candidates) {
         return transform.position + transform.rotation * (candidates[Random.Range (0, candidates.Length - 1)] / 2);
     }

@@ -34,7 +34,7 @@ public class TraderAI : StructureAI {
                         maxBuySb = sb;
                     }
                     if (minSellSb != null && maxBuySb != null) {
-                        float weight = (float) (maxBuy - minSell) / NavigationManager.GetInstance ().GetRoute (minSellSb.transform.position, maxBuySb.transform.position).waypoints.Count;
+                        float weight = (float) (maxBuy - minSell) / (NavigationManager.GetInstance ().GetRoute (minSellSb.transform.position, maxBuySb.transform.position).waypoints.Count + NavigationManager.GetInstance ().GetRoute (structureBehaviours.transform.position, minSellSb.transform.position).waypoints.Count);
                         if (weight > bestWeight) {
                             bestWeight = weight;
                             from = minSellSb;

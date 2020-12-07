@@ -223,7 +223,7 @@ public class GameUIHandler : MonoBehaviour {
             }
             List<StructureBehaviours> structures = structuresManager.structures;
             foreach (StructureBehaviours structure in structures) {
-                if (!referenced.Contains (structure) && structure != source && structure.transform.parent == source.transform.parent) {
+                if (structure != null && !referenced.Contains (structure) && structure != source && structure.transform.parent == source.transform.parent) {
                     GameObject billboard = new GameObject ("Billboard UI Element (" + structure.gameObject.name + ")");
                     RectTransform billboardRectTransform = billboard.AddComponent<RectTransform> ();
                     billboardRectTransform.SetParent (billboards.transform);

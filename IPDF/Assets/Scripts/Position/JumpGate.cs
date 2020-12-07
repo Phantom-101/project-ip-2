@@ -32,8 +32,7 @@ public class JumpGate : MonoBehaviour {
     void Update () {
         if (other == null) return;
         foreach (StructureBehaviours structure in structuresManager.structures)
-            if (structure.transform != transform.parent && structure != null &&
-                (transform.position - structure.transform.position).sqrMagnitude <= triggerRange * triggerRange &&
+            if (structure != null && structure.transform != transform.parent && (transform.position - structure.transform.position).sqrMagnitude <= triggerRange * triggerRange &&
                 structure.profile.structureClass != StructureClass.Station) {
                 structure.transform.position = other.transform.position + other.transform.forward * forwardDistance;
                 structure.transform.rotation = other.transform.rotation;
