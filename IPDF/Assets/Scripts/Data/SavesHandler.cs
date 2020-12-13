@@ -39,6 +39,7 @@ public class StructureSaveData : BaseSaveData {
     public TractorBeamHandler tractorBeam;
     public List<FactoryHandler> factories;
     public StructureAI AI;
+    public int AIState;
     public string[] docked;
     public bool isPlayer;
     public JumpGateSaveData jumpGateSaveData;
@@ -177,6 +178,7 @@ public class SavesHandler : MonoBehaviour {
                 data.factories[i].mountedID = itemsHandler.GetItemId (structure.factories[i].factory);
             }
             data.AI = structure.AI;
+            data.AIState = structure.startAIState;
             data.docked = structure.docked;
             data.isPlayer = (playerController.structureBehaviours == structure);
             JumpGate jumpGate = structure.GetComponent<JumpGate> ();
@@ -284,6 +286,7 @@ public class SavesHandler : MonoBehaviour {
             for (int i = 0; i < data.factories.Count; i++)
                 structureBehaviours.factories.Add (data.factories[i]);
             structureBehaviours.AI = data.AI;
+            structureBehaviours.startAIState = data.AIState;
             structureBehaviours.docked = data.docked;
             if (data.jumpGateSaveData != null) {
                 JumpGate jumpGate = structureBehaviours.gameObject.AddComponent<JumpGate> ();
@@ -312,7 +315,7 @@ public class SavesHandler : MonoBehaviour {
         cameraFollowPlayer.ResetPosition ();
 
         factionsManager.factions = universe.factions;
-        
+
         for (int i = 0; i < universe.relations.Count; i++)
             factionsManager.relations.Add (universe.relations[i].key, universe.relations[i].value);
 

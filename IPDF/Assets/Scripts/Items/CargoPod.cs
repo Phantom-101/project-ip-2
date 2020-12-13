@@ -20,10 +20,8 @@ public class CargoPod : MonoBehaviour {
                         if ((other.transform.position - transform.position).sqrMagnitude <= (other.profile.apparentSize * 2) * (other.profile.apparentSize * 2)) {
                             other.tractorBeam.activated = false;
                             Item transferredItem = structure.inventory.inventory.Keys.ToArray ()[0];
-                            Debug.Log ("transferring " + transferredItem.name);
                             int canTransferAmount = other.inventory.RoomFor (transferredItem);
                             int has = structure.inventory.inventory[transferredItem];
-                            Debug.Log ("transfer amount " + Mathf.Min (canTransferAmount, has));
                             other.inventory.AddItem (transferredItem, Mathf.Min (canTransferAmount, has));
                             structure.inventory.inventory[transferredItem] -= Mathf.Min (canTransferAmount, has);
                             if (structure.inventory.inventory[transferredItem] <= 0) {

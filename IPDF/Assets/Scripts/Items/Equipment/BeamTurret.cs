@@ -27,6 +27,10 @@ public class BeamTurret : Turret {
     }
 
     public override bool CanActivate (TurretHandler caller, GameObject target) {
+        if (caller == null || !caller.equipper.CanShoot ()) return false;
+        if (target == null) return false;
+        StructureBehaviours targetBehaviours = target.GetComponent<StructureBehaviours> ();
+        if (targetBehaviours != null && !targetBehaviours.CanBeTargeted ()) return false;
         if (caller.projectile != null && !caller.projectile.GetComponent<BeamProjectile> ().disabled) return false;
         if (caller.storedEnergy / maxStoredEnergy < activationThreshold) return false;
         if (!CanSustain (caller, target)) return false;

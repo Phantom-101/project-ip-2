@@ -22,11 +22,12 @@ public class NavigationManager : MonoBehaviour {
         sectors = FindObjectsOfType<Sector> ().ToList ();
         Sector fromSector = sectors[0], toSector = sectors[0];
         foreach (Sector sector in sectors) {
-            float fromDis = (from - sector.transform.position).sqrMagnitude, toDis = (to - sector.transform.position).sqrMagnitude;
-            if (fromDis < (from - fromSector.transform.position).sqrMagnitude) fromSector = sector;
-            if (toDis < (to - toSector.transform.position).sqrMagnitude) toSector = sector;
+            float fromDis = (from - sector.transform.position).magnitude, toDis = (to - sector.transform.position).magnitude;
+            if (fromDis < (from - fromSector.transform.position).magnitude) fromSector = sector;
+            if (toDis < (to - toSector.transform.position).magnitude) toSector = sector;
         }
         List<Sector> jumps = GetJumps (fromSector, toSector, new List<Sector> (), new List<Sector> ());
+        if (jumps == null) return null;
         List<Vector3> waypoints = new List<Vector3> ();
         for (int i = 1; i < jumps.Count; i++)
             waypoints.Add (GetAdjacentPosition (jumps[i - 1], jumps[i]));

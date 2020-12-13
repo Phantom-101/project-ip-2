@@ -16,21 +16,22 @@ public class JumpGate : MonoBehaviour {
     public NavigationManager navigationManager;
     public ResourcesManager resourcesManager;
 
-    void Awake () {
-        audioSource = gameObject.AddComponent<AudioSource> ();
-        structuresManager = FindObjectOfType<StructuresManager> ();
-        cameraFollowPlayer = FindObjectOfType<CameraFollowPlayer> ();
-        navigationManager = FindObjectOfType<NavigationManager> ();
-        resourcesManager = FindObjectOfType<ResourcesManager> ();
-        if (other == null) return;
-        navigationManager.AddAdjacency (transform.parent.GetComponent<Sector> (),
-            other.transform.parent.GetComponent <Sector> (),
-            transform.position
-        );
-    }
+    bool initialized = false;
 
     void Update () {
         if (other == null) return;
+        if (!initialized) {
+            initialized = true;
+            audioSource = gameObject.AddComponent<AudioSource> ();
+            structuresManager = StructuresManager.GetInstance ();
+            cameraFollowPlayer = CameraFollowPlayer.GetInstance ();
+            navigationManager = NavigationManager.GetInstance ();
+            resourcesManager = ResourcesManager.GetInstance ();
+            navigationManager.AddAdjacency (transform.parent.GetComponent<Sector> (),
+                other.transform.parent.GetComponent<Sector> (),
+                transform.position
+            );
+        }
         foreach (StructureBehaviours structure in structuresManager.structures)
             if (structure != null && structure.transform != transform.parent && (transform.position - structure.transform.position).sqrMagnitude <= triggerRange * triggerRange &&
                 structure.profile.structureClass != StructureClass.Station) {

@@ -56,10 +56,13 @@ public class MinerAI : StructureAI {
                         asteroids.Add (structure);
                 int minDis = int.MaxValue;
                 foreach (StructureBehaviours asteroid in asteroids) {
-                    int dis = NavigationManager.GetInstance ().GetRoute (structureBehaviours.transform.position, asteroid.transform.position).waypoints.Count;
-                    if (dis < minDis) {
-                        minDis = dis;
-                        mining = asteroid;
+                    Route a = NavigationManager.GetInstance ().GetRoute (structureBehaviours.transform.position, asteroid.transform.position);
+                    if (a != null) {
+                        int dis = a.waypoints.Count;
+                        if (dis < minDis) {
+                            minDis = dis;
+                            mining = asteroid;
+                        }
                     }
                 }
             }

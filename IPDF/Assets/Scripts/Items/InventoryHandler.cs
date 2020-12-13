@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Essentials;
+using System.Linq;
 
 [Serializable]
 public class InventoryHandler {
@@ -26,7 +27,7 @@ public class InventoryHandler {
     public float GetStoredSize () {
         float res = 0.0f;
         if (inventory == null) inventory = new Dictionary<Item, int> ();
-        foreach (Item item in inventory.Keys) res += item.size * inventory[item];
+        foreach (Item item in inventory.Keys.ToArray ()) res += item.size * inventory[item];
         return res;
     }
 

@@ -10,6 +10,7 @@ public class TraderAI : StructureAI {
     public TraderAI () {
         lastUpdated = 0;
         delay = Random.Range (2.0f, 5.0f);
+        bestWeight = 0;
     }
 
     public override void Process (StructureBehaviours structureBehaviours, float deltaTime) {
@@ -34,13 +35,19 @@ public class TraderAI : StructureAI {
                         maxBuySb = sb;
                     }
                     if (minSellSb != null && maxBuySb != null) {
-                        float weight = (float) (maxBuy - minSell) / (NavigationManager.GetInstance ().GetRoute (minSellSb.transform.position, maxBuySb.transform.position).waypoints.Count + NavigationManager.GetInstance ().GetRoute (structureBehaviours.transform.position, minSellSb.transform.position).waypoints.Count);
-                        if (weight > bestWeight) {
-                            bestWeight = weight;
-                            from = minSellSb;
-                            to = maxBuySb;
-                            toTrade = tradable;
-                            bought = false;
+                        Route a = NavigationManager.GetInstance ().GetRoute (minSellSb.transform.position, maxBuySb.transform.position);
+                        Route b = NavigationManager.GetInstance ().GetRoute (structureBehaviours.transform.position, minSellSb.transform.position);
+                        if (a != null && b != null) {
+                            Debug.Log ("valid route");
+                            int jumps = a.waypoints.Count + b.waypoints.Count;
+                            float weight = (float) (maxBuy - minSell) / jumps;
+                            if (weight > bestWeight) {
+                                bestWeight = weight;
+                                from = minSellSb;
+                                to = maxBuySb;
+                                toTrade = tradable;
+                                bought = false;
+                            }
                         }
                     }
                 }

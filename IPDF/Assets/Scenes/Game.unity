@@ -362,6 +362,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -387,7 +388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4039050
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,6 +1047,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -1632,6 +1634,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -2328,6 +2331,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -2696,6 +2700,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -2853,6 +2858,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -3087,7 +3093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &169645356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,7 +3107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 3
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -3561,7 +3567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &180405582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3575,7 +3581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 11
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -4163,7 +4169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  profile: {fileID: 11400000, guid: 0ab1c9b3d4a3e78449d039b340fc35ff, type: 2}
   id: 
   hull: 0
   hullTimeSinceLastDamaged: 0
@@ -4186,7 +4192,7 @@ MonoBehaviour:
   turrets:
   - equipper: {fileID: 0}
     mountedID: 
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -4199,7 +4205,7 @@ MonoBehaviour:
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
     mountedID: 
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -4212,7 +4218,7 @@ MonoBehaviour:
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
     mountedID: 
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -4225,7 +4231,7 @@ MonoBehaviour:
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
     mountedID: 
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -4238,7 +4244,7 @@ MonoBehaviour:
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
     mountedID: 
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -4251,7 +4257,7 @@ MonoBehaviour:
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
     mountedID: 
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -4264,7 +4270,7 @@ MonoBehaviour:
     pooler: {fileID: 0}
   - equipper: {fileID: 0}
     mountedID: 
-    turret: {fileID: 11400000, guid: be705602d9e9a86428b8734f231c0ab8, type: 2}
+    turret: {fileID: 11400000, guid: 05eee9a3a575a724fba770227b4c46ba, type: 2}
     ammunition: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -4301,7 +4307,7 @@ MonoBehaviour:
   engine:
     equipper: {fileID: 0}
     mountedID: 
-    engine: {fileID: 11400000, guid: 53039dcd5a48e7c4f92588b4e869f88b, type: 2}
+    engine: {fileID: 11400000, guid: ac2b8671acc2ed44ab7a1c8b65f22f93, type: 2}
     online: 1
     forwardSetting: 0
     turnSetting: 0
@@ -4331,6 +4337,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -4768,6 +4775,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -6181,6 +6189,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -6428,6 +6437,254 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }
+--- !u!1 &369760594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 369760595}
+  - component: {fileID: 369760598}
+  - component: {fileID: 369760597}
+  - component: {fileID: 369760596}
+  m_Layer: 0
+  m_Name: Miner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &369760595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369760594}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 79, y: 0, z: 226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &369760596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369760594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &369760597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369760594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &369760598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369760594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  AI:
+    id: 0
+  startAIState: 2
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -6690,6 +6947,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -6939,6 +7197,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -7675,6 +7934,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -8126,6 +8386,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -9544,6 +9805,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -9790,6 +10052,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -10285,6 +10548,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -10659,6 +10923,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -11223,6 +11488,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -11742,6 +12008,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -12416,6 +12683,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -13524,7 +13792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &689998814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13538,7 +13806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 5
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -13723,6 +13991,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -14310,6 +14579,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -14616,6 +14886,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -14994,6 +15265,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -15319,6 +15591,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -15328,6 +15601,81 @@ MonoBehaviour:
     version: 1
     00000000:
       type: {class: , ns: , asm: }
+--- !u!1001 &789716330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1033050176}
+    m_Modifications:
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -882
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305043, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_Name
+      value: Rogue Locust
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5164bf50b92024d48b4bc71db4c54198, type: 3}
+--- !u!4 &789716331 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+    type: 3}
+  m_PrefabInstance: {fileID: 789716330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &789878587
 GameObject:
   m_ObjectHideFlags: 0
@@ -15817,6 +16165,253 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808924783}
   m_CullTransparentMesh: 0
+--- !u!1 &813223637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813223638}
+  - component: {fileID: 813223641}
+  - component: {fileID: 813223640}
+  - component: {fileID: 813223639}
+  m_Layer: 0
+  m_Name: Miner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813223638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813223637}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 183, y: -0, z: 442}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &813223639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813223637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &813223640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813223637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &813223641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813223637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  AI:
+    id: 0
+  startAIState: 2
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  printInventory: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }
 --- !u!1 &818993628
 GameObject:
   m_ObjectHideFlags: 0
@@ -16166,6 +16761,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -17091,6 +17687,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -17179,6 +17776,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903731814}
   m_CullTransparentMesh: 0
+--- !u!1001 &904438705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1033050176}
+    m_Modifications:
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -846
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305043, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_Name
+      value: Rogue Locust (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5164bf50b92024d48b4bc71db4c54198, type: 3}
+--- !u!4 &904438706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+    type: 3}
+  m_PrefabInstance: {fileID: 904438705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &911101468
 GameObject:
   m_ObjectHideFlags: 0
@@ -17872,6 +18544,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -18156,6 +18829,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -18428,6 +19102,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -18698,6 +19373,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -18855,6 +19531,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -19305,6 +19982,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -19939,6 +20617,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -20818,6 +21497,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -20975,7 +21655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1026258500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20989,7 +21669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 4
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -21028,7 +21708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1033050176
 Transform:
   m_ObjectHideFlags: 0
@@ -21053,6 +21733,16 @@ Transform:
   - {fileID: 412849844}
   - {fileID: 347830002}
   - {fileID: 1024215939}
+  - {fileID: 369760595}
+  - {fileID: 1667804293}
+  - {fileID: 813223638}
+  - {fileID: 1247788493}
+  - {fileID: 2064832400}
+  - {fileID: 789716331}
+  - {fileID: 1904663261}
+  - {fileID: 1268705405}
+  - {fileID: 1210493458}
+  - {fileID: 904438706}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21617,6 +22307,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -22209,6 +22900,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -22577,6 +23269,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -23205,6 +23898,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -23727,6 +24421,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -24168,6 +24863,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -24400,6 +25096,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204527612}
   m_CullTransparentMesh: 0
+--- !u!1001 &1210493457
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1033050176}
+    m_Modifications:
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1208
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1069
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305043, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_Name
+      value: Rogue Locust (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5164bf50b92024d48b4bc71db4c54198, type: 3}
+--- !u!4 &1210493458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+    type: 3}
+  m_PrefabInstance: {fileID: 1210493457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1213787510
 GameObject:
   m_ObjectHideFlags: 0
@@ -24562,6 +25333,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -24734,6 +25506,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -24863,6 +25636,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229430099}
   m_CullTransparentMesh: 0
+--- !u!1001 &1247788492
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1033050176}
+    m_Modifications:
+    - target: {fileID: 6251091991923055110, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_Name
+      value: Sparse Icy Asteroid Field (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1382
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1378
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f540d0fd25c8cb439c4f73cf22551ce, type: 3}
+--- !u!4 &1247788493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1247788492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1249705245
 GameObject:
   m_ObjectHideFlags: 0
@@ -25025,6 +25873,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -25346,6 +26195,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -25555,6 +26405,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267451480}
   m_CullTransparentMesh: 0
+--- !u!1001 &1268705404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1033050176}
+    m_Modifications:
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305043, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_Name
+      value: Rogue Locust (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5164bf50b92024d48b4bc71db4c54198, type: 3}
+--- !u!4 &1268705405 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+    type: 3}
+  m_PrefabInstance: {fileID: 1268705404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1273600666
 GameObject:
   m_ObjectHideFlags: 0
@@ -25717,6 +26642,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -26199,6 +27125,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -27143,6 +28070,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -27523,6 +28451,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -27698,7 +28627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1381682213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27712,7 +28641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 2
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -28208,6 +29137,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -31031,6 +31961,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -32776,6 +33707,253 @@ RectTransform:
   m_AnchoredPosition: {x: -150, y: 50}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!1 &1667804292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667804293}
+  - component: {fileID: 1667804296}
+  - component: {fileID: 1667804295}
+  - component: {fileID: 1667804294}
+  m_Layer: 0
+  m_Name: Miner (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1667804293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667804292}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 91, y: -0, z: 420}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1033050176}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1667804294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667804292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656e806ae776eaa40a494a15000fec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1667804295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667804292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15adac1082aef498dfe4132fb41ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1667804296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667804292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1724434b118f274fa62480b744fd3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9d61f2f0111fdac42a496b654bfcf733, type: 2}
+  id: 
+  hull: 0
+  hullTimeSinceLastDamaged: 0
+  destroyed: 0
+  cloaked: 0
+  factionID: 67128964
+  faction:
+    name: 
+    id: 0
+    abbreviated: 
+    wealth: 0
+    warThreshold: 0
+    allyThreshold: 0
+  sector: {fileID: 0}
+  route:
+    waypoints: []
+  inventory:
+    storage: {fileID: 0}
+    inventorySize: 0
+  turrets:
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  - equipper: {fileID: 0}
+    mountedID: 
+    turret: {fileID: 11400000, guid: ff667cf1d2db10842b08849ef930531a, type: 2}
+    ammunition: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    angle: 0
+    target: {fileID: 0}
+    online: 1
+    activated: 0
+    projectile: {fileID: 0}
+    storedEnergy: 0
+    pooler: {fileID: 0}
+  shield:
+    equipper: {fileID: 0}
+    mountedID: 
+    shield: {fileID: 11400000, guid: e49af86fa3121c84198d6e248d8f0a64, type: 2}
+    online: 1
+    strengths:
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    - 350
+    shieldTimesSinceLastDamaged: []
+  capacitor:
+    equipper: {fileID: 0}
+    mountedID: 
+    capacitor: {fileID: 11400000, guid: abbddc3f2581c60489521d1b25957f69, type: 2}
+    storedEnergy: 0
+  generator:
+    equipper: {fileID: 0}
+    mountedID: 
+    generator: {fileID: 11400000, guid: ce60f16c24c463a44a9d686e653c94e3, type: 2}
+    online: 1
+  engine:
+    equipper: {fileID: 0}
+    mountedID: 
+    engine: {fileID: 11400000, guid: 1f8710ea7fc1fab41b509942c19161ba, type: 2}
+    online: 1
+    forwardSetting: 0
+    turnSetting: 0
+  electronics:
+    equipper: {fileID: 0}
+    mountedID: 
+    electronics: {fileID: 0}
+    online: 0
+    activated: 0
+    storedEnergy: 0
+    timeSinceToggled: 0
+  tractorBeam:
+    equipper: {fileID: 0}
+    mountedID: 
+    tractorBeam: {fileID: 11400000, guid: 7b1a6a8b5862cb248957afc42b7bc85a, type: 2}
+    online: 1
+    activated: 0
+    storedEnergy: 0
+    target: {fileID: 0}
+  docked: []
+  factories: []
+  rigidbody: {fileID: 0}
+  dampening: 1
+  AI:
+    id: 0
+  startAIState: 2
+  targeted: {fileID: 0}
+  billboard: {fileID: 0}
+  initialized: 0
+  printInventory: 0
+  audioSource: {fileID: 0}
+  structuresManager: {fileID: 0}
+  factionsManager: {fileID: 0}
+  playerController: {fileID: 0}
+  navigationManager: {fileID: 0}
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }
 --- !u!1 &1667923928
 GameObject:
   m_ObjectHideFlags: 0
@@ -32867,7 +34045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1668554485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32881,7 +34059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 10
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -34187,6 +35365,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -34773,6 +35952,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -35067,7 +36247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1757325921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35081,7 +36261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 9
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -35568,7 +36748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1793351837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35582,7 +36762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 6
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -35771,6 +36951,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -35987,7 +37168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1825750447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36001,7 +37182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 7
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -36184,6 +37365,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -36515,6 +37697,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -36754,6 +37937,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868722906}
   m_CullTransparentMesh: 0
+--- !u!1001 &1904663260
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1033050176}
+    m_Modifications:
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1065
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343644136723305043, guid: 5164bf50b92024d48b4bc71db4c54198,
+        type: 3}
+      propertyPath: m_Name
+      value: Rogue Locust (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5164bf50b92024d48b4bc71db4c54198, type: 3}
+--- !u!4 &1904663261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4343644136723305007, guid: 5164bf50b92024d48b4bc71db4c54198,
+    type: 3}
+  m_PrefabInstance: {fileID: 1904663260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1915476658
 GameObject:
   m_ObjectHideFlags: 0
@@ -37056,6 +38314,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -37226,7 +38485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1967141521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37240,7 +38499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorData:
-    id: 1
+    id: 8
     radius: 7500
     alignment: 0
     skyboxID: 1
@@ -42506,6 +43765,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -42757,6 +44017,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -43011,6 +44272,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &2064832399
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1033050176}
+    m_Modifications:
+    - target: {fileID: 6251091991923055110, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_Name
+      value: Sparse Icy Asteroid Field (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -952
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2130
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f540d0fd25c8cb439c4f73cf22551ce, type: 3}
+--- !u!4 &2064832400 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 2064832399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2066058214
 GameObject:
   m_ObjectHideFlags: 0
@@ -43564,6 +44900,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -44038,6 +45375,7 @@ MonoBehaviour:
   targeted: {fileID: 0}
   billboard: {fileID: 0}
   initialized: 0
+  printInventory: 0
   audioSource: {fileID: 0}
   structuresManager: {fileID: 0}
   factionsManager: {fileID: 0}
@@ -44730,17 +46068,17 @@ PrefabInstance:
     - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -641
       objectReference: {fileID: 0}
     - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1499
       objectReference: {fileID: 0}
     - target: {fileID: 6251091991923055112, guid: 8f540d0fd25c8cb439c4f73cf22551ce,
         type: 3}
