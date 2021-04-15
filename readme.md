@@ -1,3 +1,6 @@
+# Important
+The repository has been moved to here: https://github.com/Phantom-101/dark-frontier.
+
 # project-ip-2
 Fan-based project for an Interstellar Pilot sequel.
 
